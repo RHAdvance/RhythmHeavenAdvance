@@ -1924,3 +1924,6 @@
 /* 1921 */ DEFINE_SONG( &s_iai_bgm_studio_seqData,           MUSIC_PLAYER_0 )
 /* 1922 */ DEFINE_SONG( &s_rabbit_bgm_studio_seqData,        MUSIC_PLAYER_0 )
 /* 1923 */ DEFINE_SONG( &s_rat_bgm_studio_seqData,           MUSIC_PLAYER_0 )
+/* 1924 */ DEFINE_SONG( &s_guntai_v_zentai1_r8_seqData,      SFX_PLAYER_1   )
+/* 1925 */ DEFINE_SONG( &s_guntai_v_zentai1_r1_seqData,      SFX_PLAYER_1   )
+/* 1926 */ DEFINE_SONG( &s_guntai_v_migi_muke1_r8_seqData,      SFX_PLAYER_1   )

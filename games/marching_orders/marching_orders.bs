@@ -124,13 +124,12 @@ script script_marching_orders_main
     rest 24
     rest 24
     rest 24
-    rest 24
     start_tracking_perfect_campaign
     call marching_orders_sub_08a83848
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c_nobeat
     set_marking_criteria 0
     call marching_orders_sub_08a83998
     rest 24
@@ -145,13 +144,11 @@ script script_marching_orders_main
     marching_orders_event00 258
     rest 24
     marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
-    call marching_orders_sub_08a83848
+    call marching_orders_sub_08a83848_beatstop
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c_nobeat
     set_marking_criteria 0
     call marching_orders_sub_08a83998
     set_marking_criteria 0
@@ -162,26 +159,24 @@ script script_marching_orders_main
     marching_orders_event00 258
     rest 24
     marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
-    call marching_orders_sub_08a83848
+    call marching_orders_sub_08a83848_beatstop_nobeat
     set_marking_criteria 0
     call marching_orders_sub_08a83998
     set_marking_criteria 0
     call marching_orders_sub_08a8452c
     rest 24
-    marching_orders_event00 258
+    clear_text_f
     rest 24
     marching_orders_event00 258
     rest 24
     marching_orders_event00 258
     rest 24
-    marching_orders_event00 256
-    call marching_orders_sub_08a83848
+    marching_orders_event00 258
+    call marching_orders_sub_08a83848_beatstop
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c_nobeat
     set_marking_criteria 0
     call marching_orders_sub_08a83b24
     set_marking_criteria 1
@@ -255,10 +250,11 @@ script script_marching_orders_practice
     marching_orders_event02 -1
     rest 24
     marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
     clear_text_f
     loop_start
+        rest 24
+        marching_orders_event00 256
+        clear_text_f
         run beatscript_disable_loops
         marching_orders_event02 3
         marching_orders_event01
@@ -290,13 +286,13 @@ script script_marching_orders_practice
         marching_orders_event00 3
         play_sfx s_guntai_v_ka_seqData
         marching_orders_event02 -1
-        rest 24
-        clear_text_f
     loop_end
     loop_start
         run beatscript_disable_loops
-        marching_orders_event01
         play_sfx s_guntai_v_zentai1_seqData
+        rest 24
+        clear_text_f
+        marching_orders_event01
         rest 24
         rest 24
         marching_orders_event01
@@ -349,10 +345,10 @@ script script_marching_orders_practice
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
+        play_sfx s_guntai_v_zentai1_seqData
         rest 24
         marching_orders_event02 -1
         marching_orders_event01
-        play_sfx s_guntai_v_zentai1_seqData
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
@@ -380,9 +376,9 @@ script script_marching_orders_practice
         rest 24
         rest 24
         rest 24
-        rest 24
         marching_orders_event02 -1
     loop_end
+    rest 24
     run gameplay_set_tutorial NULL
     mod_music_volume 0, 168
     print_text_f D_0805c8e0

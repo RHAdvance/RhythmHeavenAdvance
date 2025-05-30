@@ -156,17 +156,22 @@ script script_remix_7_main
     enable_pause_menu
     rest 24
     rest 24
+    play_sfx s_guntai_v_zentai1_r1_seqData
     rest 24
     set_tempo 120
     play_music Lesson1_seqData
-    call marching_orders_sub_08a83848
+    marching_orders_event01
+    rest 24
+    rest 24
+    call marching_orders_sub_08a837ac
+    rest 24
     set_tempo 120
     play_music L1_pat03_seqData
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_2_sub_08a83cc8
-    call marching_orders_2_sub_08a84088
-    call marching_orders_sub_08a83998
+    call marching_orders_2_sub_08a84088_r7
+    call marching_orders_sub_08a83998_r1
     set_game_fade_in_time 0
 
     load_karate_man
@@ -449,10 +454,15 @@ script script_remix_7_main
 
     load_marching_space_rabbits
     beat_anim
+    play_sfx s_guntai_v_zentai1_seqData
     rest 24
     play_music L2_pat01_seqData
-    call marching_orders_sub_08a83848
-    call marching_orders_sub_08a8386c
+    marching_orders_event01
+    rest 24
+    rest 24
+    call marching_orders_sub_08a837ac
+    rest 24
+    call marching_orders_sub_08a8386c_nobeat
     call marching_orders_sub_08a83998
 
     load_tap_trial_remix

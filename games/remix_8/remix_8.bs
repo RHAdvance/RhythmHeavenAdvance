@@ -124,15 +124,20 @@ script script_remix_8_main
     start_perfect_campaign
     rest 24
     enable_pause_menu
+    play_sfx s_guntai_v_zentai1_r8_seqData
     rest 24
     play_music L8_pat_intro_seqData
-    call marching_orders_sub_08a83848
+    marching_orders_event01
+    rest 24
+    rest 24
+    call marching_orders_sub_08a837ac
+    rest 24
     set_game_fade_in_time 0
     play_music L8_pat01_seqData
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
-    call marching_orders_sub_08a8386c
-    call marching_orders_sub_08a83998
+    call marching_orders_sub_08a8386c_nobeat
+    call marching_orders_sub_08a83998_r8
 
     load_karate_man
     beat_anim
@@ -530,7 +535,7 @@ script script_remix_8_main
     rest 24
     clear_text_f
     marching_orders_event01
-    play_sfx s_guntai_v_migi_muke1_seqData
+    play_sfx s_guntai_v_migi_muke1_r8_seqData
     rest 24
     rest 24
     marching_orders_event01

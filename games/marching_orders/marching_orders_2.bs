@@ -116,42 +116,43 @@ script script_marching_orders_2_main
     rest 24
     rest 24
     rest 24
+    call marching_orders_sub_08a83848
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998_nobeat
+    call marching_orders_sub_08a83848
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998
+    set_marking_criteria 0
+    call marching_orders_sub_08a84448_nobeat
+    call marching_orders_sub_08a83848
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998
+    set_marking_criteria 0
+    call marching_orders_sub_08a8452c
+    call marching_orders_sub_08a83848_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998
+    set_marking_criteria 0
+    call marching_orders_sub_08a8452c
     rest 24
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    set_marking_criteria 0
-    call marching_orders_sub_08a84448
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    set_marking_criteria 0
-    call marching_orders_sub_08a8452c
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    set_marking_criteria 0
-    call marching_orders_sub_08a8452c
     set_marking_criteria 1
-    call marching_orders_2_sub_08a84610
+    clear_text_f
+    call marching_orders_2_sub_08a84610_nobeat
     call marching_orders_sub_08a83848
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 0
-    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c_nobeat
     set_marking_criteria 0
     call marching_orders_sub_08a83998
     marching_orders_event04 1
@@ -159,8 +160,11 @@ script script_marching_orders_2_main
     call marching_orders_sub_08a84448
     set_marking_criteria 1
     call marching_orders_2_sub_08a84610
+    rest 24
     set_marking_criteria 0
     call marching_orders_sub_08a8452c
+    clear_text_f
+    rest 24
     set_marking_criteria 1
     call marching_orders_2_sub_08a84610
     rest 24
@@ -185,6 +189,8 @@ script script_marching_orders_2_main
     call marching_orders_sub_08a8386c
     set_marking_criteria 2
     call marching_orders_2_sub_08a84088
+    rest 24
+    clear_text_f
     set_marking_criteria 0
     call marching_orders_sub_08a8386c
     set_marking_criteria 2
