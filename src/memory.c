@@ -151,12 +151,15 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         return 1;
     }
 
-    if ((generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_SIZE) - buffer->header.checksum) != buffer->header.checksum) {
+    if ((generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_OLD_SIZE) - buffer->header.checksum) != buffer->header.checksum) {
         return 2;
     }
-
-    if((memcmp(buffer->data.extraMagic, EXTRA_MAGIC, 4) != 0) || !CHECK_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED)) {
-        memcpy(buffer->data.extraMagic, EXTRA_MAGIC, 4);
+    
+    if(strncmp(buffer->data.extraData.magic, EXTRA_MAGIC, 4) != 0 ||
+            !CHECK_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED) ||
+            generate_save_buffer_checksum((s32 *)((u8 *)D_030046a8 + 4 + SAVE_BUFFER_OLD_SIZE), SAVE_BUFFER_NEW_SIZE - 4) != buffer->data.extraData.checksum) {
+        // convert old save data to new format
+        memcpy(buffer->data.extraData.magic, EXTRA_MAGIC, 4);
 
         for (i = TOTAL_LEVELS; i < ALL_LEVELS; i++) {
             set_level_state(&buffer->data, i, LEVEL_STATE_HIDDEN);
@@ -196,7 +199,10 @@ void flush_save_buffer(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
 
     buffer->header.checksum = 0;
-    buffer->header.checksum = generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_SIZE);
+    buffer->header.checksum = generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_OLD_SIZE);
+
+    buffer->data.extraData.checksum = 0;
+    buffer->data.extraData.checksum = generate_save_buffer_checksum((s32 *)((u8 *)D_030046a8 + 4 + SAVE_BUFFER_OLD_SIZE), SAVE_BUFFER_NEW_SIZE - 4);
 
     write_sram_fast((u8 *)D_030046a8, cartRAM, SAVE_BUFFER_SIZE);
 #endif
@@ -209,13 +215,18 @@ s32 get_offset_from_save_buffer(void *buffer) {
 
 
 void write_save_buffer_header_to_sram(u8 *cartRAM) {
+#ifndef PLAYTEST
     struct SaveBuffer *buffer = D_030046a8;
     s32 bufferOffset = get_offset_from_save_buffer(buffer); // isn't this literally always 0
 
     buffer->header.checksum = 0;
-    buffer->header.checksum = generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_SIZE);
+    buffer->header.checksum = generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_OLD_SIZE);
+
+    buffer->data.extraData.checksum = 0;
+    buffer->data.extraData.checksum = generate_save_buffer_checksum((s32 *)((u8 *)D_030046a8 + SAVE_BUFFER_OLD_SIZE), SAVE_BUFFER_NEW_SIZE);
 
     write_sram_fast((u8 *)D_030046a8 + bufferOffset, cartRAM + bufferOffset, 0x10);
+#endif
 }
 
 
@@ -261,7 +272,7 @@ s32 func_080009fc(void) {
 
 u8 get_level_state(struct TengokuSaveData *saveData, s32 id) {
     if(id >= TOTAL_LEVELS) {
-        return saveData->extraLevelStates[id - TOTAL_LEVELS];
+        return saveData->extraData.extraLevelStates[id - TOTAL_LEVELS];
     } else {
         return saveData->levelStates[id];
     }
@@ -269,7 +280,7 @@ u8 get_level_state(struct TengokuSaveData *saveData, s32 id) {
 
 u16 get_level_score(struct TengokuSaveData *saveData, s32 id) {
     if(id >= TOTAL_LEVELS) {
-        return saveData->extraLevelScores[id - TOTAL_LEVELS];
+        return saveData->extraData.extraLevelScores[id - TOTAL_LEVELS];
     } else {
         return saveData->levelScores[id];
     }
@@ -277,7 +288,7 @@ u16 get_level_score(struct TengokuSaveData *saveData, s32 id) {
 
 u8 get_level_total_plays(struct TengokuSaveData *saveData, s32 id) {
     if(id >= TOTAL_LEVELS) {
-        return saveData->extraLevelTotalPlays[id - TOTAL_LEVELS];
+        return saveData->extraData.extraLevelTotalPlays[id - TOTAL_LEVELS];
     } else {
         return saveData->levelTotalPlays[id];
     }
@@ -285,7 +296,7 @@ u8 get_level_total_plays(struct TengokuSaveData *saveData, s32 id) {
 
 u8 get_level_first_ok(struct TengokuSaveData *saveData, s32 id) {
     if(id >= TOTAL_LEVELS) {
-        return saveData->extraLevelFirstOK[id - TOTAL_LEVELS];
+        return saveData->extraData.extraLevelFirstOK[id - TOTAL_LEVELS];
     } else {
         return saveData->levelFirstOK[id];
     }
@@ -293,7 +304,7 @@ u8 get_level_first_ok(struct TengokuSaveData *saveData, s32 id) {
 
 u8 get_level_first_superb(struct TengokuSaveData *saveData, s32 id) {
     if(id >= TOTAL_LEVELS) {
-        return saveData->extraLevelFirstSuperb[id - TOTAL_LEVELS];
+        return saveData->extraData.extraLevelFirstSuperb[id - TOTAL_LEVELS];
     } else {
         return saveData->levelFirstSuperb[id];
     }   
@@ -301,7 +312,7 @@ u8 get_level_first_superb(struct TengokuSaveData *saveData, s32 id) {
 
 u8 get_campaign_cleared(struct TengokuSaveData *saveData, s32 id) {
     if(id >= TOTAL_PERFECT_CAMPAIGNS) {
-        return saveData->extraCampaignsCleared[id - TOTAL_PERFECT_CAMPAIGNS];
+        return saveData->extraData.extraCampaignsCleared[id - TOTAL_PERFECT_CAMPAIGNS];
     } else {
         return saveData->campaignsCleared[id];
     }
@@ -309,7 +320,7 @@ u8 get_campaign_cleared(struct TengokuSaveData *saveData, s32 id) {
 
 void set_level_state(struct TengokuSaveData *saveData, s32 id, u8 state) {
     if(id >= TOTAL_LEVELS) {
-        saveData->extraLevelStates[id - TOTAL_LEVELS] = state;
+        saveData->extraData.extraLevelStates[id - TOTAL_LEVELS] = state;
     } else {
         saveData->levelStates[id] = state;
     }
@@ -317,7 +328,7 @@ void set_level_state(struct TengokuSaveData *saveData, s32 id, u8 state) {
 
 void set_level_score(struct TengokuSaveData *saveData, s32 id, u16 score) {
     if(id >= TOTAL_LEVELS) {
-        saveData->extraLevelScores[id - TOTAL_LEVELS] = score;
+        saveData->extraData.extraLevelScores[id - TOTAL_LEVELS] = score;
     } else {
         saveData->levelScores[id] = score;
     }
@@ -325,7 +336,7 @@ void set_level_score(struct TengokuSaveData *saveData, s32 id, u16 score) {
 
 void set_level_total_plays(struct TengokuSaveData *saveData, s32 id, u8 totalPlays) {
     if(id >= TOTAL_LEVELS) {
-        saveData->extraLevelTotalPlays[id - TOTAL_LEVELS] = totalPlays;
+        saveData->extraData.extraLevelTotalPlays[id - TOTAL_LEVELS] = totalPlays;
     } else {
         saveData->levelTotalPlays[id] = totalPlays;
     }
@@ -333,7 +344,7 @@ void set_level_total_plays(struct TengokuSaveData *saveData, s32 id, u8 totalPla
 
 void set_level_first_ok(struct TengokuSaveData *saveData, s32 id, u8 firstOK) {
     if(id >= TOTAL_LEVELS) {
-        saveData->extraLevelFirstOK[id - TOTAL_LEVELS] = firstOK;
+        saveData->extraData.extraLevelFirstOK[id - TOTAL_LEVELS] = firstOK;
     } else {
         saveData->levelFirstOK[id] = firstOK;
     }
@@ -341,7 +352,7 @@ void set_level_first_ok(struct TengokuSaveData *saveData, s32 id, u8 firstOK) {
 
 void set_level_first_superb(struct TengokuSaveData *saveData, s32 id, u8 firstSuperb) {
     if(id >= TOTAL_LEVELS) {
-        saveData->extraLevelFirstSuperb[id - TOTAL_LEVELS] = firstSuperb;
+        saveData->extraData.extraLevelFirstSuperb[id - TOTAL_LEVELS] = firstSuperb;
     } else {
         saveData->levelFirstSuperb[id] = firstSuperb;
     }
@@ -349,7 +360,7 @@ void set_level_first_superb(struct TengokuSaveData *saveData, s32 id, u8 firstSu
 
 void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared) {
     if(id >= TOTAL_PERFECT_CAMPAIGNS) {
-        saveData->extraCampaignsCleared[id - TOTAL_PERFECT_CAMPAIGNS] = cleared;
+        saveData->extraData.extraCampaignsCleared[id - TOTAL_PERFECT_CAMPAIGNS] = cleared;
     } else {
         saveData->campaignsCleared[id] = cleared;
     }   

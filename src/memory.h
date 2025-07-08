@@ -3,7 +3,9 @@
 #include "global.h"
 #include "levels.h"
 
-#define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
+#define SAVE_BUFFER_SIZE      sizeof(struct SaveBuffer)
+#define SAVE_BUFFER_NEW_SIZE  sizeof(struct ExtraSaveData)
+#define SAVE_BUFFER_OLD_SIZE  SAVE_BUFFER_SIZE - SAVE_BUFFER_NEW_SIZE
 #define EXTRA_MAGIC "ENOT" // yes, like the slugcat
 
 // helper functions
@@ -88,13 +90,16 @@ extern struct SaveBuffer {
             u8 saveMemory[0x38][0x100];
         } drumReplaysAlloc;
 
-        char extraMagic[4]; // "ENOT"
-        u16 extraLevelScores[TOTAL_EXTRA_LEVELS];
-        u8 extraLevelStates[TOTAL_EXTRA_LEVELS];
-        u8 extraLevelTotalPlays[TOTAL_EXTRA_LEVELS];
-        u8 extraLevelFirstOK[TOTAL_EXTRA_LEVELS];
-        u8 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
-        u8 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
+        struct ExtraSaveData {
+            u32 checksum;
+            char magic[4]; // "ENOT"
+            u16 extraLevelScores[TOTAL_EXTRA_LEVELS];
+            u8 extraLevelStates[TOTAL_EXTRA_LEVELS];
+            u8 extraLevelTotalPlays[TOTAL_EXTRA_LEVELS];
+            u8 extraLevelFirstOK[TOTAL_EXTRA_LEVELS];
+            u8 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
+            u8 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
+        } extraData;
     } data;
 } *D_030046a8;
 
