@@ -36,9 +36,9 @@ struct scene_game_select
     /* Update */ .word func_0801d8d8, 0
     /* Stop   */ .word NULL,          0
 #if REV < 1
-    /* Memory */ .word 0x4FE
+    /* Memory */ .word 0x506
 #else
-    /* Memory */ .word 0x4FA
+    /* Memory */ .word 0x4FE
 #endif
 endstruct
 

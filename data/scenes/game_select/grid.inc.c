@@ -185,11 +185,18 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Level ID */ LEVEL_REMIX_8,
         /* Show Req */ (s8[]) { REQ_CLEAR(8, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(9, 7), REQ_CLEAR(9, 8), REQ_CLEAR(9, 9), REQ_CLEAR(9, 10), REQ_CLEAR(9, 11), END_REQ },
-        /* Targets  */ (s8[]) { TARGET(1, 6), TARGET(9, 11), END_TARGETS },
+        /* Targets  */ (s8[]) { TARGET(1, 6), TARGET(9, 11), TARGET(10, 6), TARGET(10, 7), TARGET(10, 8), TARGET(10, 9), TARGET(10, 10), TARGET(10, 11), END_TARGETS },
         /* Flags */ DELAY_CLEAR,
         /* Delay */ 5
     },
-    /* Entry (x=10, y=06) */ EMPTY_GRID_ENTRY,
+    /* Entry (x=10, y=06) */ {
+        /* Level ID */ LEVEL_REMIX_1_EXTRA,
+        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_CLEAR(10, 7), REQ_CLEAR(10, 8), REQ_CLEAR(10, 9), REQ_CLEAR(10, 10), REQ_CLEAR(10, 11), END_REQ },
+        /* Targets  */ (s8[]) { TARGET(10, 11), END_TARGETS },
+        /* Flags */ DELAY_CLEAR,
+        /* Delay */ 5
+    },
     /* Entry (x=11, y=06) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=06) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=06) */ EMPTY_GRID_ENTRY,
@@ -268,7 +275,14 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 4
     },
-    /* Entry (x=10, y=07) */ EMPTY_GRID_ENTRY,
+    /* Entry (x=10, y=07) */ {
+        /* Level ID */ LEVEL_CLAPPY_TRIO_EXTRA,
+        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_CLEAR(10, 8), END_REQ },
+        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 11), END_TARGETS },
+        /* Flags */ 0,
+        /* Delay */ 4
+    },
     /* Entry (x=11, y=07) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=07) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=07) */ EMPTY_GRID_ENTRY,
@@ -347,7 +361,14 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 3
     },
-    /* Entry (x=10, y=08) */ EMPTY_GRID_ENTRY,
+    /* Entry (x=10, y=08) */ {
+        /* Level ID */ LEVEL_SPACEBALL_EXTRA,
+        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_CLEAR(10, 9), END_REQ },
+        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 7), TARGET(10, 11),END_TARGETS },
+        /* Flags */ 0,
+        /* Delay */ 3
+    },
     /* Entry (x=11, y=08) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=08) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=08) */ EMPTY_GRID_ENTRY,
@@ -426,7 +447,14 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 2
     },
-    /* Entry (x=10, y=09) */ EMPTY_GRID_ENTRY,
+    /* Entry (x=10, y=09) */ {
+        /* Level ID */ LEVEL_MARCHING_ORDERS_EXTRA,
+        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_CLEAR(10, 10), END_REQ },
+        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 8), TARGET(10, 11), END_TARGETS },
+        /* Flags */ 0,
+        /* Delay */ 2
+    },
     /* Entry (x=11, y=09) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=09) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=09) */ EMPTY_GRID_ENTRY,
@@ -505,7 +533,14 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 1
     },
-    /* Entry (x=10, y=10) */ EMPTY_GRID_ENTRY,
+    /* Entry (x=10, y=10) */ {
+        /* Level ID */ LEVEL_RHYTHM_TWEEZERS_EXTRA,
+        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_CLEAR(10, 11), END_REQ },
+        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 9), TARGET(10, 11), END_TARGETS },
+        /* Flags */ 0,
+        /* Delay */ 1
+    },
     /* Entry (x=11, y=10) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=10) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=10) */ EMPTY_GRID_ENTRY,
@@ -584,7 +619,14 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ TARGET_ON_SHOW | DELAY_OPEN,
         /* Delay */ 0
     },
-    /* Entry (x=10, y=11) */ EMPTY_GRID_ENTRY,
+    /* Entry (x=10, y=11) */ {
+        /* Level ID */ LEVEL_KARATE_MAN_EXTRA,
+        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_SHOWN(10, 11), REQ_SHOWN(10, 10), REQ_SHOWN(10, 9), REQ_SHOWN(10, 8), REQ_SHOWN(10, 7), REQ_SHOWN(10, 6), END_REQ },
+        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 10), TARGET(10, 11), END_TARGETS },
+        /* Flags */ TARGET_ON_SHOW | DELAY_OPEN,
+        /* Delay */ 0
+    },
     /* Entry (x=11, y=11) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=11) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=11) */ EMPTY_GRID_ENTRY,

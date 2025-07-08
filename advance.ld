@@ -1,9 +1,10 @@
 OUTPUT_ARCH(arm)
+ENTRY(__romPos)
 
 SECTIONS {    
     . = 0;
     _start = . ;
-    __romPos = 0;
+    __romPos = 0x08000000;
     
     . = 0x03000000;
     .bss . : SUBALIGN(4) {

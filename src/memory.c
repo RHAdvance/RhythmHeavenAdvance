@@ -115,9 +115,9 @@ void set_playtest_save_data(void) {
     u32 i;
     
     // unlock all levels
-    for (i = 0; i < TOTAL_LEVELS; i++) {
-        data->levelStates[i] = (i >= TOTAL_LEVELS-6) ? LEVEL_STATE_CLEARED : LEVEL_STATE_HAS_MEDAL;
-        data->levelScores[i] = DEFAULT_LEVEL_SCORE;
+    for(i = 0; i < ALL_LEVELS; i++) {
+        set_level_state(data, i, (i >= TOTAL_LEVELS-6 && i < TOTAL_LEVELS) ? LEVEL_STATE_CLEARED : LEVEL_STATE_HAS_MEDAL);
+        set_level_score(data, i, DEFAULT_LEVEL_SCORE);
     }
 
     data->campaignState = CAMPAIGN_STATE_INACTIVE;
@@ -143,6 +143,7 @@ void set_playtest_save_data(void) {
 
 s32 copy_to_save_buffer(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
+    s32 i;
 
     read_sram_fast(cartRAM, (u8 *)buffer, SAVE_BUFFER_SIZE);
 
@@ -154,7 +155,27 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         return 2;
     }
 
-    SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
+    if((memcmp(buffer->data.extraMagic, EXTRA_MAGIC, 4) != 0) || !CHECK_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED)) {
+        memcpy(buffer->data.extraMagic, EXTRA_MAGIC, 4);
+
+        for (i = TOTAL_LEVELS; i < ALL_LEVELS; i++) {
+            set_level_state(&buffer->data, i, LEVEL_STATE_HIDDEN);
+            set_level_score(&buffer->data, i, DEFAULT_LEVEL_SCORE);
+            set_level_total_plays(&buffer->data, i, 0);
+            set_level_first_ok(&buffer->data, i, 0);
+            set_level_first_superb(&buffer->data, i, 0);
+        }
+
+        for (i = TOTAL_PERFECT_CAMPAIGNS; i < ALL_PERFECT_CAMPAIGNS; i++) {
+            set_campaign_cleared(&buffer->data, i, FALSE);
+        }
+
+        // karate man
+        buffer->data.gsCursorX = 2;
+        buffer->data.gsCursorY = 11;
+
+        SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
+    }
 
     return 0;
 }
@@ -236,4 +257,100 @@ s32 func_080009d0(s16 *arg1) {
 
 s32 func_080009fc(void) {
 	return 0;
+}
+
+u8 get_level_state(struct TengokuSaveData *saveData, s32 id) {
+    if(id >= TOTAL_LEVELS) {
+        return saveData->extraLevelStates[id - TOTAL_LEVELS];
+    } else {
+        return saveData->levelStates[id];
+    }
+}
+
+u16 get_level_score(struct TengokuSaveData *saveData, s32 id) {
+    if(id >= TOTAL_LEVELS) {
+        return saveData->extraLevelScores[id - TOTAL_LEVELS];
+    } else {
+        return saveData->levelScores[id];
+    }
+}
+
+u8 get_level_total_plays(struct TengokuSaveData *saveData, s32 id) {
+    if(id >= TOTAL_LEVELS) {
+        return saveData->extraLevelTotalPlays[id - TOTAL_LEVELS];
+    } else {
+        return saveData->levelTotalPlays[id];
+    }
+}
+
+u8 get_level_first_ok(struct TengokuSaveData *saveData, s32 id) {
+    if(id >= TOTAL_LEVELS) {
+        return saveData->extraLevelFirstOK[id - TOTAL_LEVELS];
+    } else {
+        return saveData->levelFirstOK[id];
+    }
+}
+
+u8 get_level_first_superb(struct TengokuSaveData *saveData, s32 id) {
+    if(id >= TOTAL_LEVELS) {
+        return saveData->extraLevelFirstSuperb[id - TOTAL_LEVELS];
+    } else {
+        return saveData->levelFirstSuperb[id];
+    }   
+}
+
+u8 get_campaign_cleared(struct TengokuSaveData *saveData, s32 id) {
+    if(id >= TOTAL_PERFECT_CAMPAIGNS) {
+        return saveData->extraCampaignsCleared[id - TOTAL_PERFECT_CAMPAIGNS];
+    } else {
+        return saveData->campaignsCleared[id];
+    }
+}
+
+void set_level_state(struct TengokuSaveData *saveData, s32 id, u8 state) {
+    if(id >= TOTAL_LEVELS) {
+        saveData->extraLevelStates[id - TOTAL_LEVELS] = state;
+    } else {
+        saveData->levelStates[id] = state;
+    }
+}
+
+void set_level_score(struct TengokuSaveData *saveData, s32 id, u16 score) {
+    if(id >= TOTAL_LEVELS) {
+        saveData->extraLevelScores[id - TOTAL_LEVELS] = score;
+    } else {
+        saveData->levelScores[id] = score;
+    }
+}
+
+void set_level_total_plays(struct TengokuSaveData *saveData, s32 id, u8 totalPlays) {
+    if(id >= TOTAL_LEVELS) {
+        saveData->extraLevelTotalPlays[id - TOTAL_LEVELS] = totalPlays;
+    } else {
+        saveData->levelTotalPlays[id] = totalPlays;
+    }
+}
+
+void set_level_first_ok(struct TengokuSaveData *saveData, s32 id, u8 firstOK) {
+    if(id >= TOTAL_LEVELS) {
+        saveData->extraLevelFirstOK[id - TOTAL_LEVELS] = firstOK;
+    } else {
+        saveData->levelFirstOK[id] = firstOK;
+    }
+}
+
+void set_level_first_superb(struct TengokuSaveData *saveData, s32 id, u8 firstSuperb) {
+    if(id >= TOTAL_LEVELS) {
+        saveData->extraLevelFirstSuperb[id - TOTAL_LEVELS] = firstSuperb;
+    } else {
+        saveData->levelFirstSuperb[id] = firstSuperb;
+    }
+}
+
+void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared) {
+    if(id >= TOTAL_PERFECT_CAMPAIGNS) {
+        saveData->extraCampaignsCleared[id - TOTAL_PERFECT_CAMPAIGNS] = cleared;
+    } else {
+        saveData->campaignsCleared[id] = cleared;
+    }   
 }

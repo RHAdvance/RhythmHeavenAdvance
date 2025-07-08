@@ -69,7 +69,13 @@ const u8 *level_icon_texture_table[] = {
     /* 0x32 */ icon_bouncy_road_2_bin,
     /* 0x33 */ icon_polyrhythm_2_bin,
     /* 0x34 */ icon_spaceball_2_bin,
-    /* 0x35 */ icon_sneaky_spirits_2_bin
+    /* 0x35 */ icon_sneaky_spirits_2_bin,
+    /* 0x36 */ icon_karate_man_extra_bin,
+    /* 0x37 */ icon_rhythm_tweezers_extra_bin,
+    /* 0x38 */ icon_marching_orders_extra_bin,
+    /* 0x39 */ icon_spaceball_extra_bin,
+    /* 0x3A */ icon_clappy_trio_extra_bin,
+    /* 0x3B */ icon_remix1_extra_bin,
 };
 
 
@@ -131,5 +137,11 @@ u8 level_icon_palette_table[] = {
     /* 0x32 */ 3,
     /* 0x33 */ 0,
     /* 0x34 */ 0,
-    /* 0x35 */ 4
+    /* 0x35 */ 4,
+    /* 0x36 */ 6,
+    /* 0x37 */ 6,
+    /* 0x38 */ 6,
+    /* 0x39 */ 6,
+    /* 0x3A */ 5,
+    /* 0x3B */ 5,
 };

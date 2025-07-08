@@ -69,8 +69,14 @@ FEATURES ?=
 DEFINES := REV=$(REV) $(FEATURES)
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
 
-CFLAGS := -mthumb-interwork -Wparentheses -O2 -fhex-asm
+CFLAGS := -mthumb-interwork -Wparentheses -fhex-asm
 CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc -undef $(C_DEFINES)
+
+ifeq ($(DEBUG), 1)
+	CFLAGS += -ffix-debug-line -O0 -g
+else
+	CFLAGS += -O2
+endif
 
 #---------------------------------------------------------------------------------
 

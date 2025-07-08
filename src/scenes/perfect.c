@@ -60,7 +60,7 @@ void perfect_scene_start(void *sVar, s32 dArg) {
         giftType = campaign_gifts_table[gPerfect->campaignID].type;
         giftID = campaign_gifts_table[gPerfect->campaignID].id;
 
-        if (!D_030046a8->data.campaignsCleared[gPerfect->campaignID]) {
+        if (!get_campaign_cleared(&D_030046a8->data, gPerfect->campaignID)) {
             switch (giftType) {
                 case CAMPAIGN_GIFT_SONG:
                     save_studio_song(giftID, -1, 1, 0);
@@ -76,9 +76,9 @@ void perfect_scene_start(void *sVar, s32 dArg) {
             }
 
             D_030046a8->data.totalPerfects++;
-            D_030046a8->data.campaignsCleared[gPerfect->campaignID] = TRUE;
+            set_campaign_cleared(&D_030046a8->data, gPerfect->campaignID, TRUE);
 
-            if (D_030046a8->data.totalPerfects == TOTAL_PERFECT_CAMPAIGNS) {
+            if (D_030046a8->data.totalPerfects == ALL_PERFECT_CAMPAIGNS) {
                 unlock_all_unassigned_campaign_gift_songs();
                 D_030046a8->data.unk294[9] = TRUE;
             }
@@ -100,7 +100,7 @@ void perfect_scene_start(void *sVar, s32 dArg) {
     text_printer_set_line_spacing(gPerfect->printer, 16);
     text_printer_center_by_content(gPerfect->printer, TRUE);
 
-    campaignsLeft = TOTAL_PERFECT_CAMPAIGNS - D_030046a8->data.totalPerfects;
+    campaignsLeft = ALL_PERFECT_CAMPAIGNS - D_030046a8->data.totalPerfects;
     strint(count, campaignsLeft);
     memcpy(gPerfect->string, "\0021" "\0011" "\001C" "\0030" "\001s" "\0054" "\0018" "", 25);
     strcat(gPerfect->string, get_campaign_gift_title(gPerfect->campaignID, FALSE));

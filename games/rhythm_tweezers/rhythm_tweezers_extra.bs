@@ -31,12 +31,12 @@ define_gameplay_scene scene_rhythm_tweezers_extra, script_rhythm_tweezers_extra_
 
 script script_rhythm_tweezers_extra_prologue
     set_game_fade_in_time 8
-    load_game rhythm_tweezers_prologue_engine, 0
+    load_game rhythm_tweezers_extra_prologue_engine, 0
     run stop_all_soundplayers
     play_sfx s_jingle_datumo_seqData
     rest 24
     rest 24
-    run func_08045cc4, 5
+    run rhythm_tweezers_extra_prologue_event_play_animation, 5
     rest 24
     rest 24
     rest 24
@@ -431,7 +431,7 @@ script script_rhythm_tweezers_extra_main
     rest 24
     rest 24
     rest 6
-    rhythm_tweezers_set_next_veg VEG_TURNIP
+    rhythm_tweezers_set_next_veg VEG_POTATO
     rhythm_tweezers_scroll_veg 12
     rhythm_tweezers_play_register_sfx
     rest 6

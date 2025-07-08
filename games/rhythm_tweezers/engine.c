@@ -18,6 +18,12 @@ struct CompressedData *rhythm_tweezers_veg_bg_maps[] = {
     &rhythm_tweezers_bg_map_potato
 };
 
+struct CompressedData *rhythm_tweezers_extra_veg_bg_maps[] = {
+    &rhythm_tweezers_extra_bg_map_pumpkin,
+    &rhythm_tweezers_extra_bg_map_sweet_potato,
+    &rhythm_tweezers_extra_bg_map_watermelon
+};
+
 // [D_089e3db0] Buffered Textures List
 struct CompressedData *rhythm_tweezers_buffered_textures[] = {
     END_OF_BUFFERED_TEXTURES_LIST
@@ -263,6 +269,132 @@ struct GraphicsTable rhythm_tweezers_2_potato_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+/*
+extern struct CompressedData rhythm_tweezers_extra_bg_map_pumpkin; // BG Map - Pumpkin
+extern struct CompressedData rhythm_tweezers_extra_bg_map_sweet_potato; // BG Map - Sweet Potato
+extern struct CompressedData rhythm_tweezers_extra_bg_map_watermelon; // BG Map - Watermelon
+*/
+
+// Graphics Table (Rhythm Tweezers Extra - Pumpkin)
+struct GraphicsTable rhythm_tweezers_extra_pumpkin_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &rhythm_tweezers_extra_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &rhythm_tweezers_extra_bg_map_pumpkin,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &rhythm_tweezers_obj,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_extra_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &rhythm_tweezers_no_peeking_sign_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &rhythm_tweezers_no_peeking_sign_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// Graphics Table (Rhythm Tweezers Extra - Sweet Potato)
+struct GraphicsTable rhythm_tweezers_extra_sweet_potato_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &rhythm_tweezers_extra_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &rhythm_tweezers_extra_bg_map_sweet_potato,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &rhythm_tweezers_obj,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_extra_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &rhythm_tweezers_no_peeking_sign_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &rhythm_tweezers_no_peeking_sign_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
+// Graphics Table (Rhythm Tweezers Extra - Watermelon)
+struct GraphicsTable rhythm_tweezers_extra_watermelon_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &rhythm_tweezers_extra_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &rhythm_tweezers_extra_bg_map_watermelon,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &rhythm_tweezers_obj,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ rhythm_tweezers_extra_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ rhythm_tweezers_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &rhythm_tweezers_no_peeking_sign_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &rhythm_tweezers_no_peeking_sign_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
 // [D_089e3ff4] Graphics Table Index
 struct GraphicsTable *rhythm_tweezers_gfx_tables[] = {
     /* 0x00 */ rhythm_tweezers_1_onion_gfx_table,
@@ -271,9 +403,9 @@ struct GraphicsTable *rhythm_tweezers_gfx_tables[] = {
     /* 0x03 */ rhythm_tweezers_2_onion_gfx_table,
     /* 0x04 */ rhythm_tweezers_2_turnip_gfx_table,
     /* 0x05 */ rhythm_tweezers_2_potato_gfx_table,
-    /* 0x06 */ rhythm_tweezers_1_onion_gfx_table,
-    /* 0x07 */ rhythm_tweezers_1_turnip_gfx_table,
-    /* 0x08 */ rhythm_tweezers_1_potato_gfx_table,
+    /* 0x06 */ rhythm_tweezers_extra_pumpkin_table,
+    /* 0x07 */ rhythm_tweezers_extra_sweet_potato_table,
+    /* 0x08 */ rhythm_tweezers_extra_watermelon_table,
 };
 
 

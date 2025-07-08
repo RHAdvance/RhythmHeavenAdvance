@@ -4,6 +4,7 @@
 #include "levels.h"
 
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
+#define EXTRA_MAGIC "ENOT" // yes, like the slugcat
 
 // helper functions
 #define SET_ADVANCE_FLAG(flags, flag) (flags |= (1 << flag))
@@ -86,6 +87,14 @@ extern struct SaveBuffer {
             u16 replaySizes[10];
             u8 saveMemory[0x38][0x100];
         } drumReplaysAlloc;
+
+        char extraMagic[4]; // "ENOT"
+        u16 extraLevelScores[TOTAL_EXTRA_LEVELS];
+        u8 extraLevelStates[TOTAL_EXTRA_LEVELS];
+        u8 extraLevelTotalPlays[TOTAL_EXTRA_LEVELS];
+        u8 extraLevelFirstOK[TOTAL_EXTRA_LEVELS];
+        u8 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
+        u8 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
     } data;
 } *D_030046a8;
 
@@ -112,3 +121,16 @@ extern void func_080009c8_stub(void);
 extern void func_080009cc_stub(void);
 extern s32 func_080009d0(s16 *);
 extern s32 func_080009fc(void);
+
+extern u8 get_level_state(struct TengokuSaveData *saveData, s32 id);
+extern u16 get_level_score(struct TengokuSaveData *saveData, s32 id);
+extern u8 get_level_total_plays(struct TengokuSaveData *saveData, s32 id);
+extern u8 get_level_first_ok(struct TengokuSaveData *saveData, s32 id);
+extern u8 get_level_first_superb(struct TengokuSaveData *saveData, s32 id);
+extern u8 get_campaign_cleared(struct TengokuSaveData *saveData, s32 id);
+extern void set_level_state(struct TengokuSaveData *saveData, s32 id, u8 state);
+extern void set_level_score(struct TengokuSaveData *saveData, s32 id, u16 score);
+extern void set_level_total_plays(struct TengokuSaveData *saveData, s32 id, u8 totalPlays);
+extern void set_level_first_ok(struct TengokuSaveData *saveData, s32 id, u8 firstOK);
+extern void set_level_first_superb(struct TengokuSaveData *saveData, s32 id, u8 firstSuperb);
+extern void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared);

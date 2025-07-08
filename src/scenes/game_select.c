@@ -151,8 +151,8 @@ void get_all_uncleared_campaigns(void) {
 
     notice->totalAvailable = 0;
 
-    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
-        if (!D_030046a8->data.campaignsCleared[i]) {
+    for (i = 0; i < ALL_PERFECT_CAMPAIGNS; i++) {
+        if (!get_campaign_cleared(&D_030046a8->data, i)) {
             if (get_level_state_from_grid_xy(gift->x, gift->y) == LEVEL_STATE_HAS_MEDAL) {
                 notice->indexes[notice->totalAvailable] = i;
                 notice->totalAvailable++;
@@ -247,7 +247,7 @@ void init_campaign_notice(void) {
         case CAMPAIGN_STATE_ACTIVE:
             if ((D_030046a8->data.campaignAttemptsLeft > 0)
              && (D_030046a8->data.unk26A < 3)
-             && (!D_030046a8->data.campaignsCleared[D_030046a8->data.currentCampaign])) {
+             && (!get_campaign_cleared(&D_030046a8->data, D_030046a8->data.currentCampaign))) {
                 notice->id = D_030046a8->data.currentCampaign;
                 notice->x = campaign_gifts_table[notice->id].x;
                 notice->y = campaign_gifts_table[notice->id].y;
@@ -452,7 +452,7 @@ s32 get_campaign_from_grid_xy(s32 x, s32 y) {
     s32 i;
     struct CampaignGiftData *campaign = campaign_gifts_table;
 
-    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++, campaign++) {
+    for (i = 0; i < ALL_PERFECT_CAMPAIGNS; i++, campaign++) {
         if ((campaign->x == x) && (campaign->y == y)) {
             return i;
         }
@@ -499,7 +499,7 @@ s32 get_level_state_from_id(s32 id) {
         return LEVEL_STATE_NULL;
     }
 
-    return saveData->levelStates[id];
+    return get_level_state(saveData, id);
 }
 
 
@@ -552,7 +552,7 @@ void init_game_select_grid_gfx(void) {
     dma3_fill((0x0100 << 16) | 0x0100, iconOverlayMapBase, 0x2000, 0x20, 0x200);
 
     tileNum = 1;
-    for (i = 0; i < 54; i++) {
+    for (i = 0; i < ALL_LEVELS; i++) {
         game_select_print_icon_texture(level_icon_texture_table[i], 0, tileNum);
         tileNum += (3 * 3);
     }
@@ -571,7 +571,7 @@ void init_game_select_grid_gfx(void) {
 
                 levelData = &level_data_table[levelID];
                 levelType = levelData->type;
-                levelState = saveData->levelStates[levelID];
+                levelState = get_level_state(saveData, levelID);
                 overlay = level_icon_overlays_map[levelType][levelState];
                 if (levelState != LEVEL_STATE_HIDDEN) {
                     tileNum = 1 + (levelData->icon * 3 * 3);
@@ -602,7 +602,7 @@ void save_level_state_from_grid_xy(s32 x, s32 y, s32 state) {
         id = game_select_grid_data[x + (y * GS_GRID_WIDTH)].id;
 
         if (id >= 0) {
-            saveData->levelStates[id] = state;
+            set_level_state(saveData, id, state);
         }
     }
 }
@@ -706,6 +706,7 @@ void game_select_scene_init_gfx4(void) {
     init_game_select_grid_gfx();
     game_select_init_icon_overlays();
     gGameSelect->loadingSceneGfx = FALSE;
+    game_select_set_stage_title(gGameSelect->cursorX);
 }
 
 
@@ -745,6 +746,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     s32 recentLevelState, previousLevelState;
     s16 bgOfsX, bgOfsY;
     s32 prevX, prevY;
+    s32 i;
 
     // Init. Graphics
     gGameSelect->loadingSceneGfx = TRUE;
@@ -781,7 +783,6 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     gGameSelect->unk18 = 0;
     gGameSelect->hideStageTitle = FALSE;
     gGameSelect->stageTitlePersistTime = 0;
-    game_select_set_stage_title(gGameSelect->cursorX);
 
     // Init. Various
     init_campaign_notice();
@@ -803,7 +804,8 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     previousLevelState = get_level_state_from_grid_xy(prevX, prevY);
     gGameSelect->baristaLevelEventPending = FALSE;
     gGameSelect->baristaLevelEventTimer = 0;
-
+    gGameSelect->hideIconTime = 0;
+    
     if (recentLevelState > previousLevelState) {
         game_select_start_level_events(60);
         game_select_enqueue_level_event(prevX, prevY, recentLevelState);
@@ -829,6 +831,16 @@ void game_select_scene_start(void *sVar, s32 dArg) {
         } else {
             gGameSelect->sceneState = GS_STATE_MAIN;
         }
+    }
+
+    // unlock tempo up (if existing save file for example) (this is FUCKING dirty and stupid i dont like that and it makes me cry at night)
+    if (get_level_state_from_id(LEVEL_REMIX_8) >= LEVEL_STATE_CLEARED && get_level_state_from_id(LEVEL_KARATE_MAN_EXTRA) == LEVEL_STATE_HIDDEN) {
+        set_level_state(saveData, LEVEL_KARATE_MAN_EXTRA, LEVEL_STATE_OPEN);
+        set_level_state(saveData, LEVEL_RHYTHM_TWEEZERS_EXTRA, LEVEL_STATE_CLOSED);
+        set_level_state(saveData, LEVEL_MARCHING_ORDERS_EXTRA, LEVEL_STATE_CLOSED);
+        set_level_state(saveData, LEVEL_SPACEBALL_EXTRA, LEVEL_STATE_CLOSED);
+        set_level_state(saveData, LEVEL_CLAPPY_TRIO_EXTRA, LEVEL_STATE_CLOSED);
+        set_level_state(saveData, LEVEL_REMIX_1_EXTRA, LEVEL_STATE_CLOSED);
     }
 
     saveData->recentLevelState = LEVEL_STATE_NULL;
@@ -893,6 +905,8 @@ void game_select_scroll_info_pane(s32 x, s32 y, s24_8 rate) {
 // Update Screen Scroll
 void game_select_update_bg_scroll(void) {
     s24_8 x, y;
+    s16 gridX, gridY;
+    s32 i;
 
     if (gGameSelect->gridPaneIsMoving) {
         gGameSelect->gridPaneMotionTime = FIXED_POINT_MUL(gGameSelect->gridPaneMotionTime, gGameSelect->gridPaneMotionDecay);
@@ -990,6 +1004,7 @@ u32 game_select_get_next_valid_xy(s32 *xReq, s32 *yReq, s32 dx, s32 dy) {
 void game_select_read_dpad_inputs(void) {
     s16 screenX, screenY;
     s32 x, y, dx, dy;
+    s32 i;
 
     // Get horizontal and vertical movement.
     dx = dy = 0;
@@ -1089,7 +1104,7 @@ void game_select_read_inputs(void) {
                     canHaveCampaign = TRUE;
 
                     // hold select to replay a cleared campaign level
-                    if(D_030046a8->data.campaignsCleared[get_campaign_from_level_id(levelID)] && (D_03004ac0 & SELECT_BUTTON)) {
+                    if(get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(levelID)) && (D_03004ac0 & SELECT_BUTTON)) {
                         D_030046a8->data.campaignState = CAMPAIGN_STATE_ACTIVE;
                         D_030046a8->data.campaignAttemptsLeft = 1;
                         gGameSelect->campaignNotice.id = get_campaign_from_level_id(levelID);
@@ -1226,8 +1241,21 @@ void game_select_update_stage_title_pos(void) {
 
 // Set Stage Title
 void game_select_set_stage_title(s32 x) {
+    s32 i;
+
     sprite_set_anim(gSpriteHandler, gGameSelect->stageTitleText, game_select_stage_title_anim[x], 0, 1, 0x7f, 0);
     gGameSelect->stageTitlePersistTime = 100;
+
+    if(x == 10){
+        for(i = 6; i < 12; i++){
+            game_select_clear_bg_tiles(28, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 0, 0);
+            game_select_clear_bg_tiles(24, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 1280, 0);
+        }
+        game_select_clear_bg_tiles(28, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 0, 0);
+        game_select_clear_bg_tiles(24, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 1280, 0);
+    } else {
+        gGameSelect->hideIconTime = 16;
+    }
 }
 
 
@@ -1246,6 +1274,7 @@ void game_select_link_sprite_xy_to_bg(s16 sprite) {
 // Scene Update (Active)
 void game_select_scene_update(void *sVar, s32 dArg) {
     s16 bgOfsX, bgOfsY;
+    s32 i;
 
     if (gGameSelect->loadingSceneGfx) {
         return;
@@ -1279,6 +1308,22 @@ void game_select_scene_update(void *sVar, s32 dArg) {
     game_select_update_icon_squares();
     game_select_update_flow_pane();
     game_select_update_medal_pane();
+
+    if(gGameSelect->hideIconTime > 0 && gGameSelect->cursorX < 10){
+        gGameSelect->hideIconTime--;
+
+        if(gGameSelect->cursorX < 8){
+            gGameSelect->hideIconTime = 0;
+        }
+
+        if(gGameSelect->hideIconTime == 0){
+            for (i = 6; i < 12; i++) {
+                game_select_set_icon_map_after_level_event(1, i);
+            }
+            game_select_set_icon_map_after_level_event(2, 6);
+        }
+    }
+
 }
 
 
@@ -1301,7 +1346,7 @@ void game_select_set_unused_static_var(u32 arg0, u32 arg1) {
 
 // Return the Total Number of Levels
 u32 game_select_get_total_levels(void) {
-    return TOTAL_LEVELS;
+    return ALL_LEVELS;
 }
 
 
@@ -1313,7 +1358,7 @@ const char *game_select_get_level_name(s32 id) {
         return NULL;
     }
 
-    if (id >= TOTAL_LEVELS) {
+    if (id >= ALL_LEVELS) {
         return NULL;
     }
 
@@ -1380,7 +1425,7 @@ u32 game_select_check_level_event_req(s32 x, s32 y, s32 newState) {
         return FALSE;
     }
 
-    state = saveData->levelStates[gridEntry->id];
+    state = get_level_state(saveData, gridEntry->id);
     requirements = NULL;
 
     switch (state) {
@@ -1413,7 +1458,7 @@ u32 game_select_check_level_event_req(s32 x, s32 y, s32 newState) {
             return FALSE;
         }
 
-        state = saveData->levelStates[gridEntry->id];
+        state = get_level_state(saveData, gridEntry->id);
 
         switch (requirements[0]) {
             case LEVEL_STATE_HAS_MEDAL:
@@ -1465,7 +1510,7 @@ void game_select_set_icon_map_after_level_event(s32 x, s32 y) {
     tileY = 4 + (y * 3);
     levelData = &level_data_table[id];
     type = levelData->type;
-    state = saveData->levelStates[id];
+    state = get_level_state(saveData, id);
     overlay = level_icon_overlays_map[type][state];
 
     if ((state == LEVEL_STATE_HIDDEN) || (state == LEVEL_STATE_APPEARING)) {
@@ -1607,7 +1652,7 @@ u32 game_select_process_level_events(void) {
             play_sound(&s_f_clear_game_seqData);
 
             cafe_session_remove_level(id);
-            D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
+            set_level_first_ok(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
             break;
 
         case LEVEL_STATE_HAS_MEDAL:
@@ -1621,9 +1666,9 @@ u32 game_select_process_level_events(void) {
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
             cafe_session_remove_level(id);
-            D_030046a8->data.levelFirstSuperb[id] = D_030046a8->data.levelTotalPlays[id];
-            if (D_030046a8->data.levelFirstOK[id] == 0) {
-                D_030046a8->data.levelFirstOK[id] = D_030046a8->data.levelTotalPlays[id];
+            set_level_first_superb(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
+            if(get_level_first_ok(&D_030046a8->data, id) == 0) {
+                set_level_first_ok(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
             }
             break;
     }
@@ -1914,12 +1959,12 @@ void game_select_print_level_rank(s32 levelState) {
     u32 i;
     u32 found = FALSE;
 
-    if (D_030046a8->data.levelScores[gGameSelect->infoPaneLevelID] == DEFAULT_LEVEL_SCORE) {
+    if (get_level_score(&D_030046a8->data, gGameSelect->infoPaneLevelID) == DEFAULT_LEVEL_SCORE) {
         levelState = LEVEL_STATE_OPEN;
     }
 
     // Check if the game has been perfected
-    if (D_030046a8->data.campaignsCleared[get_campaign_from_level_id(gGameSelect->infoPaneLevelID)]) {
+    if (get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(gGameSelect->infoPaneLevelID))) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
 
@@ -1984,7 +2029,7 @@ void game_select_process_info_pane(void) {
                 sprite_set_origin_x_y(gSpriteHandler, gGameSelect->infoPaneRank, &bgOfs->x, &bgOfs->y);
 
                 campaign = get_campaign_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
-                if ((campaign >= 0) && D_030046a8->data.campaignsCleared[campaign]) {
+                if ((campaign >= 0) && get_campaign_cleared(&D_030046a8->data, campaign)) {
                     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, TRUE);
                 }
 
@@ -2036,8 +2081,8 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
     u32 totalScore = 0;
     u32 i;
 
-    for (i = 0; i < TOTAL_LEVELS; i++) {
-        u32 score = saveData->levelScores[i];
+    for (i = 0; i < ALL_LEVELS; i++) {
+        u32 score = get_level_score(saveData, i);
 
         if (score != DEFAULT_LEVEL_SCORE) {
             totalGames++;
@@ -2051,7 +2096,7 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
 
     // Min = 0.7 (0 levels played)
     // Max = 1.4 (48 levels played)
-    completionModifier = INT_TO_FIXED((TOTAL_RHYTHM_GAMES + totalGames) * 7) / (TOTAL_RHYTHM_GAMES * 10);
+    completionModifier = INT_TO_FIXED((ALL_RHYTHM_GAMES + totalGames) * 7) / (ALL_RHYTHM_GAMES * 10);
 
     // Min = 0 (0 * 0.7)
     // Max = 1400 (1000 * 1.4)
@@ -2078,8 +2123,8 @@ u32 game_select_calculate_flow_old(void) {
     u32 totalScore = 0;
     u32 i;
 
-    for (i = 0; i < TOTAL_LEVELS; i++) {
-        u32 score = saveData->levelScores[i];
+    for (i = 0; i < ALL_LEVELS; i++) {
+        u32 score = get_level_score(saveData, i);
 
         if (score != DEFAULT_LEVEL_SCORE) {
             totalGames++;
@@ -2140,7 +2185,7 @@ u32 game_select_update_scores(void) {
 
     // Save new score.
     if (levelID >= 0) {
-        score = saveData->levelScores[levelID];
+        score = get_level_score(saveData, levelID);
 
         if (score == DEFAULT_LEVEL_SCORE) {
             // New scores have a weight of 100%.
@@ -2153,7 +2198,7 @@ u32 game_select_update_scores(void) {
             score = ((newScore + (score * 3)) / 4) & 0xFFFFFF;
         }
 
-        saveData->levelScores[levelID] = score;
+        set_level_score(saveData, levelID, score);
     }
 
     saveData->recentLevelScore = DEFAULT_LEVEL_SCORE;
@@ -2164,11 +2209,11 @@ u32 game_select_update_scores(void) {
         if (newModScore < prevModScore) {
             u32 scoreBonus = (INT_TO_FIXED(prevModScore) / modifier) - average + 1;
 
-            for (i = 0; i < TOTAL_LEVELS; i++) {
-                score = saveData->levelScores[i];
+            for (i = 0; i < ALL_LEVELS; i++) {
+                score = get_level_score(saveData, i);
 
                 if (score != DEFAULT_LEVEL_SCORE) {
-                    saveData->levelScores[i] = clamp_int32(score + scoreBonus, 0, MAX_LEVEL_SCORE);
+                    set_level_score(saveData, i, clamp_int32(score + scoreBonus, 0, MAX_LEVEL_SCORE));
                 }
             }
         }
@@ -2776,4 +2821,93 @@ u32 game_select_check_for_icon_squares(void) {
 // Update BG Squares
 void game_select_update_bg_squares(s32 dx, s32 dy) {
     game_select_update_bg_squares_motion(dx, dy);
+}
+
+void game_select_clear_bg_tiles(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tileNum, u32 palette) {
+    u32 mapX, mapY, mapNum;
+    u16 mapTile;
+    u16 *mapDest;
+    u16 *newMapDest;
+    u32 i, j;
+
+    mapX = tileX >> 5;
+    mapY = tileY >> 5;
+    tileX &= 0x1F;
+    tileY &= 0x1F;
+
+    switch (mapSize) {
+        case 0:
+            mapNum = 0;
+            break;
+        case 1:
+            mapNum = mapX & 1;
+            break;
+        case 2:
+            mapNum = mapY & 1;
+            break;
+        case 3:
+            mapNum = (mapX & 1) + ((mapY & 1) << 1);
+            break;
+        default:
+            mapNum = 0;
+            break;
+    }
+
+    mapDest = ((u16 *)VRAMBase) + ((baseMap + mapNum) << 10) + tileX + (tileY << 5);
+    mapTile = (palette << 12) | tileNum;
+
+    for (i = 0; i < height; i++) {
+        if ((tileY + i) >= 32) {
+/*
+i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware 
+i hate the gba hardware 
+i hate the gba hardware i hate the gba hardware 
+i hate the gba hardware i hate the gba hardware i hate the gba hardware 
+i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware 
+i hate the gba hardware i hate the gba hardware i hate the gba hardware i hate the gba hardware https://www.coranac.com/tonc/text/regbg.htm
+https://www.coranac.com/tonc/text/regbg.htm
+https://www.coranac.com/tonc/text/regbg.htmhttps://www.coranac.com/tonc/text/regbg.htm
+https://www.coranac.com/tonc/text/regbg.htmhttps://www.coranac.com/tonc/text/regbg.htm
+https://www.coranac.com/tonc/text/regbg.htmhttps://www.coranac.com/tonc/text/regbg.htm
+https://www.coranac.com/tonc/text/regbg.htm
+*/
+
+            u32 newMapY = (tileY + i) >> 5;
+            u32 newTileY = (tileY + i) & 0x1F;
+            u32 newMapNum;
+            
+            switch (mapSize) {
+                case 0:
+                    newMapNum = 0;
+                    break;
+                case 1:
+                    newMapNum = mapX & 1;
+                    break;
+                case 2:
+                    newMapNum = newMapY & 1;
+                    break;
+                case 3:
+                    newMapNum = (mapX & 1) + ((newMapY & 1) << 1);
+                    break;
+                default:
+                    newMapNum = 0;
+                    break;
+            }
+            
+            newMapDest = ((u16 *)VRAMBase) + ((baseMap + newMapNum) << 10) + tileX + (newTileY << 5);
+            
+            for (j = 0; j < width; j++) {
+                if ((tileX + j) < 32) {
+                    newMapDest[j] = mapTile;
+                }
+            }
+        } else {
+            for (j = 0; j < width; j++) {
+                if ((tileX + j) < 32) {
+                    mapDest[j] = mapTile;
+                }
+            }
+            mapDest += 0x20;
+        }
+    }
 }

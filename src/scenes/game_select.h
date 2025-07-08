@@ -189,6 +189,7 @@ struct GameSelectSceneData {
     /* [0x4F8] Perfect Rank Icon */
     s16 perfectClearedSprite;
     s16 noPracticeSprite;
+    s32 hideIconTime;
 };
 
 struct CampaignGiftData {
@@ -364,3 +365,4 @@ extern void game_select_update_icon_square(struct NewIconSquare *shadow);
 extern void game_select_update_icon_squares(void);
 extern u32 game_select_check_for_icon_squares(void);
 extern void game_select_update_bg_squares(s32 dx, s32 dy);
+extern void game_select_clear_bg_tiles(u32 baseMap, u32 mapSize, u32 tileX, u32 tileY, u32 width, u32 height, u32 tileNum, u32 palette);

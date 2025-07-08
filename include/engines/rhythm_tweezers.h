@@ -88,6 +88,7 @@ struct RhythmTweezersCue {
 
 // Engine Definition Data:
 extern struct CompressedData *rhythm_tweezers_veg_bg_maps[]; // Array of BG Map pointers for vegetable textures
+extern struct CompressedData *rhythm_tweezers_extra_veg_bg_maps[]; // Array of BG Map pointers for vegetable textures
 extern struct CompressedData *rhythm_tweezers_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable *rhythm_tweezers_gfx_tables[]; // Graphics Table
 extern struct Animation *rhythm_tweezers_veg_face_anim[]; // Array of animation pointers for vegetable faces

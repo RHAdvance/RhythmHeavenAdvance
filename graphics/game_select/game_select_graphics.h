@@ -104,6 +104,12 @@ extern const u8 icon_bouncy_road_2_bin[];
 extern const u8 icon_polyrhythm_2_bin[];
 extern const u8 icon_spaceball_2_bin[];
 extern const u8 icon_sneaky_spirits_2_bin[];
+extern const u8 icon_karate_man_extra_bin[];
+extern const u8 icon_rhythm_tweezers_extra_bin[];
+extern const u8 icon_marching_orders_extra_bin[];
+extern const u8 icon_spaceball_extra_bin[];
+extern const u8 icon_clappy_trio_extra_bin[];
+extern const u8 icon_remix1_extra_bin[];
 
 /* GAME SELECT ICONS - PALETTES */
 

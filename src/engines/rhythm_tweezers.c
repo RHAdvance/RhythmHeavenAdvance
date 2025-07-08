@@ -46,7 +46,7 @@ void rhythm_tweezers_scroll_to_next_veg(u32 time) {
     side = vegetable->bgMapSide;
     bgMap = &RT_VEGETABLE_BG_MAP_R;
     if (side) bgMap = &RT_VEGETABLE_BG_MAP_L;
-    func_08003eb8(rhythm_tweezers_veg_bg_maps[vegetable->typeNext], bgMap);
+    func_08003eb8(gRhythmTweezers->version >= 6 ? rhythm_tweezers_extra_veg_bg_maps[vegetable->typeNext] : rhythm_tweezers_veg_bg_maps[vegetable->typeNext], bgMap);
 }
 
 
