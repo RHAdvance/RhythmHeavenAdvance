@@ -75,7 +75,7 @@ struct Animation *game_select_stage_title_anim[] = {
     /* 07 */ anim_game_select_stage6,
     /* 08 */ anim_game_select_stage7,
     /* 09 */ anim_game_select_stage8,
-    /* 10 */ anim_game_select_stage0,
+    /* 10 */ anim_game_select_stage9,
     /* 11 */ anim_game_select_stage0,
     /* 12 */ anim_game_select_stage0,
     /* 13 */ anim_game_select_stage0,

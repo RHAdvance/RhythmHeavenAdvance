@@ -30,6 +30,7 @@ extern struct Animation anim_game_select_stage0[];
 extern struct Animation anim_game_select_stage6[];
 extern struct Animation anim_game_select_stage7[];
 extern struct Animation anim_game_select_stage8[];
+extern struct Animation anim_game_select_stage9[];
 extern struct Animation anim_game_select_border_perfect2[];
 extern struct Animation anim_game_select_border_perfect1[];
 extern struct Animation anim_game_select_cursor[];
