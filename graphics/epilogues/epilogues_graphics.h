@@ -35,6 +35,12 @@ extern struct CompressedData karate_man_epilogue_bg_map_ok;
 extern struct CompressedData karate_man_epilogue_bg_map_try_again;
 extern Palette epilogue_karate_man_bg_pal[];
 
+extern struct CompressedData karate_man_extra_epilogue_bg_tiles;
+extern struct CompressedData karate_man_extra_epilogue_bg_map_superb;
+extern struct CompressedData karate_man_extra_epilogue_bg_map_ok;
+extern struct CompressedData karate_man_extra_epilogue_bg_map_try_again;
+extern Palette epilogue_karate_man_extra_bg_pal[];
+
 extern struct CompressedData cosmic_dance_epilogue_bg_tiles;
 extern struct CompressedData cosmic_dance_epilogue_bg_map_superb;
 extern struct CompressedData cosmic_dance_epilogue_bg_map_ok;

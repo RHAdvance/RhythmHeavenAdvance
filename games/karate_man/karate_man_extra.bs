@@ -32,24 +32,24 @@ define_gameplay_scene scene_karate_man_extra, script_karate_man_extra_entry
 
 script script_karate_man_extra_prologue
     set_game_fade_in_time 8
-    load_game karate_man_prologue_engine, 0
+    load_game karate_man_extra_prologue_engine, 0
     run stop_all_soundplayers
     rest 24
     play_sfx s_jingle_karate_seqData
-    run func_08045604, 1
+    run karate_man_extra_set_text_frame, 1
     rest 6
-    run func_08045604, 2
+    run karate_man_extra_set_text_frame, 2
     rest 6
-    run func_08045604, 3
+    run karate_man_extra_set_text_frame, 3
     rest 6
-    run func_08045604, 4
+    run karate_man_extra_set_text_frame, 4
     rest 6
     rest 6
     rest 6
     rest 6
     rest 12
     play_sfx s_f_boxing_title_hit_seqData
-    run func_08045628, 0
+    run karate_man_extra_play_kick_anim, 0
     rest 3
     rest 3
     rest 3

@@ -39,8 +39,10 @@ extern struct CompressedData karate_man_bg_map_serious; // BG Map (Serious Mode)
 extern struct CompressedData karate_man_bg_tiles; // BG Textures
 extern struct CompressedData karate_man_bg_map; // BG Map
 extern struct CompressedData karate_man_obj; // OBJ Textures
+extern struct CompressedData karate_man_extra_obj; // OBJ Textures
 
 /* KARATE MAN - PALETTES */
 
 extern Palette karate_man_pal[];
 extern Palette karate_man_2_pal[];
+extern Palette karate_man_extra_pal[];

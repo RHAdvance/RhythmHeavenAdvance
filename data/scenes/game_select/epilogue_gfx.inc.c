@@ -405,9 +405,9 @@ const struct GraphicsTable *epilogue_drum_live_gfx_tables[] = {
 // Extra Games
 
 const struct GraphicsTable *epilogue_karate_man_extra_gfx_tables[] = {
-    /* TRY AGAIN */ INLINE_GFX_TABLE(&karate_man_epilogue_bg_tiles, &karate_man_epilogue_bg_map_try_again, epilogue_karate_man_bg_pal),
-    /* JUST OK   */ INLINE_GFX_TABLE(&karate_man_epilogue_bg_tiles, &karate_man_epilogue_bg_map_ok, epilogue_karate_man_bg_pal),
-    /* SUPERB    */ INLINE_GFX_TABLE(&karate_man_epilogue_bg_tiles, &karate_man_epilogue_bg_map_superb, epilogue_karate_man_bg_pal)
+    /* TRY AGAIN */ INLINE_GFX_TABLE(&karate_man_extra_epilogue_bg_tiles, &karate_man_extra_epilogue_bg_map_try_again, epilogue_karate_man_extra_bg_pal),
+    /* JUST OK   */ INLINE_GFX_TABLE(&karate_man_extra_epilogue_bg_tiles, &karate_man_extra_epilogue_bg_map_ok, epilogue_karate_man_extra_bg_pal),
+    /* SUPERB    */ INLINE_GFX_TABLE(&karate_man_extra_epilogue_bg_tiles, &karate_man_extra_epilogue_bg_map_superb, epilogue_karate_man_extra_bg_pal)
 };
 
 const struct GraphicsTable *epilogue_rhythm_tweezers_extra_gfx_tables[] = {

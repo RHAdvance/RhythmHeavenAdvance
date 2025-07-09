@@ -183,13 +183,53 @@ struct GraphicsTable karate_man_2_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+// [D_089df0e0] Graphics Table (Remix)
+struct GraphicsTable karate_man_extra_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &karate_man_bg_tiles_serious,
+        /* Dest. */ BG_TILESET_BASE(0x8000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &karate_man_bg_map_serious,
+        /* Dest. */ BG_MAP_BASE(0xE000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Tileset */ {
+        /* Src.  */ &karate_man_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &karate_man_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xE800),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &karate_man_extra_obj,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ karate_man_extra_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x200
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ karate_man_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
 // [D_089df1ac] Graphics Table Index
 struct GraphicsTable *karate_gfx_tables[] = {
     /* 0x00 */ karate_man_remix_gfx_table,
     /* 0x01 */ karate_man_faces_gfx_table,
     /* 0x02 */ karate_man_remix_gfx_table,
     /* 0x03 */ karate_man_2_gfx_table,
-    /* 0x04 */ karate_man_remix_gfx_table,
+    /* 0x04 */ karate_man_extra_gfx_table,
 };
 
 // [D_089df1bc] BG Face Textures
