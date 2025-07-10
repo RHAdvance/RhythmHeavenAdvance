@@ -67,5 +67,6 @@
 #include "instruments/instruments_bank61.inc.c"
 #include "instruments/instruments_bank62.inc.c"
 #include "instruments/instruments_bank63.inc.c"
+#include "instruments/instruments_bankextra.inc.c"
 #include "instrument_banks.inc.c"
 #include "instrument_bank_list.inc.c"

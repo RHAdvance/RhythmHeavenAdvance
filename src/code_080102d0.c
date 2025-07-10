@@ -95,5 +95,5 @@ void reset_game_save_data(void) {
 
 // [func_08010478] Bulk Copy to Rhythm Tengoku Game Save Data
 void write_game_save_data(void) {
-    write_save_buffer_data_to_sram((void *)&D_030046a8->data, sizeof(struct TengokuSaveData) - sizeof(struct DrumReplaySaveAlloc));
+    write_save_buffer_data_to_sram((void *)&D_030046a8->data, sizeof(struct TengokuSaveData));
 }
