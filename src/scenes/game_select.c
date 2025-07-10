@@ -804,7 +804,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     previousLevelState = get_level_state_from_grid_xy(prevX, prevY);
     gGameSelect->baristaLevelEventPending = FALSE;
     gGameSelect->baristaLevelEventTimer = 0;
-    gGameSelect->hideIconTime = 0;
+    gGameSelect->modelCornerHidden = FALSE;
     
     if (recentLevelState > previousLevelState) {
         game_select_start_level_events(60);
@@ -1245,17 +1245,6 @@ void game_select_set_stage_title(s32 x) {
 
     sprite_set_anim(gSpriteHandler, gGameSelect->stageTitleText, game_select_stage_title_anim[x], 0, 1, 0x7f, 0);
     gGameSelect->stageTitlePersistTime = 100;
-
-    if(x == 10){
-        for(i = 6; i < 12; i++){
-            game_select_clear_bg_tiles(28, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 0, 0);
-            game_select_clear_bg_tiles(24, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 1280, 0);
-        }
-        game_select_clear_bg_tiles(28, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 0, 0);
-        game_select_clear_bg_tiles(24, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 1280, 0);
-    } else {
-        gGameSelect->hideIconTime = 16;
-    }
 }
 
 
@@ -1309,18 +1298,23 @@ void game_select_scene_update(void *sVar, s32 dArg) {
     game_select_update_flow_pane();
     game_select_update_medal_pane();
 
-    if(gGameSelect->hideIconTime > 0 && gGameSelect->cursorX < 10){
-        gGameSelect->hideIconTime--;
-
-        if(gGameSelect->cursorX < 8){
-            gGameSelect->hideIconTime = 0;
+    if(D_03004b10.BG_OFS[BG_LAYER_3].x >= (9 * 40) - 39){
+        if(!gGameSelect->modelCornerHidden) {
+            for(i = 6; i < 12; i++){
+                game_select_clear_bg_tiles(28, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 0, 0);
+                game_select_clear_bg_tiles(24, 3, 1 + (1 * 5), 4 + (i * 3), 3, 3, 1280, 0);
+            }
+            game_select_clear_bg_tiles(28, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 0, 0);
+            game_select_clear_bg_tiles(24, 3, 1 + (2 * 5), 4 + (6 * 3), 3, 3, 1280, 0);
+            gGameSelect->modelCornerHidden = TRUE;
         }
-
-        if(gGameSelect->hideIconTime == 0){
+    } else {
+        if(gGameSelect->modelCornerHidden) {
             for (i = 6; i < 12; i++) {
                 game_select_set_icon_map_after_level_event(1, i);
             }
             game_select_set_icon_map_after_level_event(2, 6);
+            gGameSelect->modelCornerHidden = FALSE;
         }
     }
 

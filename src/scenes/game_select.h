@@ -189,7 +189,7 @@ struct GameSelectSceneData {
     /* [0x4F8] Perfect Rank Icon */
     s16 perfectClearedSprite;
     s16 noPracticeSprite;
-    s32 hideIconTime;
+    s32 modelCornerHidden;
 };
 
 struct CampaignGiftData {
