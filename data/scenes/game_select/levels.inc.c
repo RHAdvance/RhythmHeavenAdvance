@@ -881,97 +881,97 @@ struct LevelData level_data_table[] = {
     },
     /* KARATE_MAN */ {
         /* Entry Scene   */ &scene_karate_man_extra,
-        /* Level Name    */ "Karate Man EX!",
-        /* Level Desc.   */ "The key to karate,\n"
-                            "like all things, is rhythm.\n"
-                            "Now, let us throw some\n"
+        /* Level Name    */ "Karate Man",
+        /* Level Desc.   */ "We've increased the\n"
+                            "speed! Do your best\n"
+                            "as we throw more\n"
                             "stuff for you to punch.",
         /* Level Icon    */ 54,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_extra_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "There's always tomorrow...",
-            /* OK        */ "Let's break for lunch now!",
-            /* SUPERB    */ "Look at all this stuff I punched away!"
+            /* TRY_AGAIN */ "The tournament didn't go well...",
+            /* OK        */ "I did well at the tournament, even if I didn't win.",
+            /* SUPERB    */ "I won the tournament and took home the gold!"
         }
     },
     /* RHYTHM_TWEEZERS */ {
         /* Entry Scene   */ &scene_rhythm_tweezers_extra,
-        /* Level Name    */ "Rhythm Tweezers EX!",
-        /* Level Desc.   */ "\n"
-                            "My roots are showing!\n"
-                            "Can you pluck them off?\n",
+        /* Level Name    */ "Rhythm Tweezers",
+        /* Level Desc.   */ "My roots are showing!\n"
+                            "Don't let the speed stop\n"
+                            "you from plucking them!\n",
         /* Level Icon    */ 55,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_extra_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "I can't sell these!",
-            /* OK        */ "Wh-why do my vegetables grow hair?",
-            /* SUPERB    */ "So fresh and clean! Even the air tastes delicious!"
+            /* TRY_AGAIN */ "I can't pluck anything at this speed!",
+            /* OK        */ "These hairs are pretty tough to pluck.",
+            /* SUPERB    */ "Look at those flowers! They're so refreshing!"
         }
     },
     /* MARCHING_ORDERS */ {
         /* Entry Scene   */ &scene_marching_orders_extra,
-        /* Level Name    */ "Marching Orders EX!",
-        /* Level Desc.   */ "Ready, march! Following\n"
-                            "orders as a unit builds\n"
-                            "your camaraderie.\n"
-							"Also, rhythm.",
+        /* Level Name    */ "Marching Orders",
+        /* Level Desc.   */ "Ready, march!\n"
+                            "This mission will\n"
+                            "require quick marching,\n"
+							"so keep focused!",
         /* Level Icon    */ 56,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_marching_orders_extra_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Wait! You left without us!",
-            /* OK        */ "Today's mission: Cleaning. ",
-            /* SUPERB    */ "Mission success! We rescued the alien!"
+            /* TRY_AGAIN */ "MONSTER! Retreat! Retreat!",
+            /* OK        */ "Ah, there's the lost puppy!",
+            /* SUPERB    */ "We've successfully rescued the lost puppy! Hooray!"
         }
     },
     /* SPACEBALL */ {
         /* Entry Scene   */ &scene_spaceball_extra,
-        /* Level Name    */ "Spaceball EX!",
-        /* Level Desc.   */ "Ignore the camera's\n"
+        /* Level Name    */ "Spaceball",
+        /* Level Desc.   */ "Ignore the camera's wild\n"
                             "zooms! Make the ball\n"
-                            "zoom away! Don't blink!\n"
-                            "Don't wipe your tears!",
+                            "fly wildly away!\n"
+                            "Don't lose to the speed!",
         /* Level Icon    */ 57,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_spaceball_extra_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Can I have my ball back? I'll give you my last rice ball...",
-            /* OK        */ "Must... train... harder...",
-            /* SUPERB    */ "I won first \"space\"!"
+            /* TRY_AGAIN */ "Ahhh! Nooooooo!",
+            /* OK        */ "Graaaah!",
+            /* SUPERB    */ "A home run! I did it!"
         }
     },
     /* CLAPPY_TRIO */ {
         /* Entry Scene   */ &scene_clappy_trio_extra,
-        /* Level Name    */ "The Clappy Trio EX!",
+        /* Level Name    */ "The Clappy Trio",
         /* Level Desc.   */ "Clap your hands in\n"
                             "order! You're the third\n"
-                            "clapper. Keep an eye\n"
-							"on the other two!",
+                            "clapper. Watch out for\n"
+							"your extra-fast friends!",
         /* Level Icon    */ 58,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_clappy_trio_extra_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "The trio just went solo!",
-            /* OK        */ "You need to make it to more of our practice sessions...",
-            /* SUPERB    */ "Trio-riffic!"
+            /* TRY_AGAIN */ "Wait! Don't leave without us!",
+            /* OK        */ "This is one nice space cruise!",
+            /* SUPERB    */ "I've discovered a new planet! Great!"
         }
     },
     /* REMIX_1 */ {
         /* Entry Scene   */ &scene_remix_1_extra,
-        /* Level Name    */ "Remix ‚P EX!",
-        /* Level Desc.   */ "Let's test your skills!\n"
-                            "Stage 1's games have\n"
-                            "all been remixed!\n"
-                            "Think you can beat it?",
+        /* Level Name    */ "Extra Remix",
+        /* Level Desc.   */ "This is the Extra Stage's\n"
+                            "Remix. Can you keep up\n"
+                            "with its speed?\n"
+                            "Good luck and have fun!",
         /* Level Icon    */ 59,
         /* Level Type    */ LEVEL_TYPE_REMIX,
         /* Epilogue GFX  */ epilogue_remix1_extra_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Your performance was like... a cat's snack.",
-            /* OK        */ "Your preformance was like... an ordinary breakfast.",
-            /* SUPERB    */ "Your performance was like... why, a delicious dinner!"
+            /* TRY_AGAIN */ "This is going to take a while...",
+            /* OK        */ "Just a normal chick. \"Cheep-Cheep!\"",
+            /* SUPERB    */ "You've grown splendidly! You look dignified!"
         }
     }
 };

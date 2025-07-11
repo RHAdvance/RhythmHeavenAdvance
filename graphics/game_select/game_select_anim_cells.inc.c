@@ -1124,3 +1124,9 @@ AnimationCel game_select_cel131[] = {
     /* 004 */ 0x4005, 0x41f3, 0x61c3,
     /* 005 */ 0x4005, 0x0013, 0x61f9
 };
+
+AnimationCel game_select_cel132[] = {
+    /* Len */ 2,
+    /* 000 */ 0x4000, 0x8000, 0x5200,
+    /* 001 */ 0x4000, 0x8020, 0x5204
+};

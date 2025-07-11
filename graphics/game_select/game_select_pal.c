@@ -94,7 +94,7 @@ Palette game_select_obj_pal[] = {
         /* 15 */ TO_RGB555(0xF8F8F8)
     },
     /* PALETTE 05 */ {
-        /* 00 */ TO_RGB555(0x000000),
+        /* 00 */ TO_RGB555(0x8a6f30),
         /* 01 */ TO_RGB555(0x000000),
         /* 02 */ TO_RGB555(0xF8F8F8),
         /* 03 */ TO_RGB555(0x000000),
@@ -107,8 +107,8 @@ Palette game_select_obj_pal[] = {
         /* 10 */ TO_RGB555(0x000000),
         /* 11 */ TO_RGB555(0x000000),
         /* 12 */ TO_RGB555(0x000000),
-        /* 13 */ TO_RGB555(0x000000),
-        /* 14 */ TO_RGB555(0x000000),
+        /* 13 */ TO_RGB555(0xf7b73b),
+        /* 14 */ TO_RGB555(0x9c9494),
         /* 15 */ TO_RGB555(0x000000)
     },
     /* PALETTE 06 */ {

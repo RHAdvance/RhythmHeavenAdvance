@@ -303,4 +303,9 @@ struct Animation anim_game_select_perfect_rank[] = {
 struct Animation anim_game_select_no_practice[] = {
     /* 000 */ { game_select_cel127, 1 },
     /* End */ END_ANIMATION
+};
+
+struct Animation anim_game_select_tempo_up[] = {
+    /* 000 */ { game_select_cel132, 1 },
+    /* End */ END_ANIMATION
 };  

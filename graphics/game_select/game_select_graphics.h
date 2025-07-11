@@ -36,6 +36,7 @@ extern struct Animation anim_game_select_border_perfect1[];
 extern struct Animation anim_game_select_cursor[];
 extern struct Animation anim_game_select_perfect_rank[];
 extern struct Animation anim_game_select_no_practice[];
+extern struct Animation anim_game_select_tempo_up[];
 
 /* GAME SELECT - COMPRESSED GRAPHICS */
 
