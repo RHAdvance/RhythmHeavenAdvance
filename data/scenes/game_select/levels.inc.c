@@ -996,10 +996,10 @@ struct LevelData level_data_table[] = {
     /* REMIX_1 */ {
         /* Entry Scene   */ &scene_remix_1_extra,
         /* Level Name    */ "Remix ‚P",
-        /* Level Desc.   */ "This is the Extra\n"
-                            "Stage's Remix. Can you\n"
-                            "keep up with its speed?\n"
-                            "Good luck and have fun!",
+        /* Level Desc.   */ "This is the Extra Remix.\n"
+                            "Can you keep up with\n"
+                            "its speed? Good luck\n"
+                            "and have fun!",
         /* Level Icon    */ 59,
         /* Level Type    */ LEVEL_TYPE_REMIX,
         /* Epilogue GFX  */ epilogue_remix1_extra_gfx_tables,
