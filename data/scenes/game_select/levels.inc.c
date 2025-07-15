@@ -30,7 +30,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "What's wrong with the speed?!",
             /* OK        */ "Well, that's that. Let's eat!",
             /* SUPERB    */ "I think we went through everything!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* CLAPPY_TRIO */ {
         /* Entry Scene   */ &scene_clappy_trio,
@@ -62,7 +63,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "I spent everything I had on this outfit!",
             /* OK        */ "We were so close...",
             /* SUPERB    */ "Perfect sync! It's gotta be the outfits, right?"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* POLYRHYTHM */ {
         /* Entry Scene   */ &scene_polyrhythm,
@@ -94,7 +96,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "We need to produce a whole lot more red things...",
             /* OK        */ "Producing more of these red things woudn't hurt!",
             /* SUPERB    */ "Red thing production is at an all time high!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* NIGHT_WALK */ {
         /* Entry Scene   */ &scene_night_walk,
@@ -110,7 +113,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Didn't see that hole in the dark!",
             /* OK        */ "Nothing like a stroll at night.",
             /* SUPERB    */ "You followed us up here!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* NIGHT_WALK_2 */ {
         /* Entry Scene   */ &scene_night_walk_2,
@@ -126,7 +130,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "No! You fell!",
             /* OK        */ "The night breeze feels so cool...",
             /* SUPERB    */ "You made friends with the stars!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* RHYTHM_TWEEZERS */ {
         /* Entry Scene   */ &scene_rhythm_tweezers,
@@ -157,7 +162,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only our vegetables grow hair, anyway...?",
             /* SUPERB    */ "How refreshing! Even the air is nice and crisp!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SICK_BEATS */ {
         /* Entry Scene   */ &scene_sick_beats,
@@ -173,7 +179,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "All our research... amounted to nothing...",
             /* OK        */ "Failure may be the key to success!",
             /* SUPERB    */ "We've finally found our cure!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* BOUNCY_ROAD */ {
         /* Entry Scene   */ &scene_bouncy_road,
@@ -205,7 +212,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Ow! We failed!",
             /* OK        */ "We're working our hardest!",
             /* SUPERB    */ "Easy come, easy go."
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* NINJA_BODYGUARD */ {
         /* Entry Scene   */ &scene_ninja_bodyguard,
@@ -221,7 +229,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "I cannot apologize enough, my lord!",
             /* OK        */ "Sorry...",
             /* SUPERB    */ "Not a scratch!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* NINJA_REINCARNATE */ {
         /* Entry Scene   */ &scene_ninja_reincarnate,
@@ -237,7 +246,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Don't give up! We're counting on you!",
             /* OK        */ "You are... strong. Don't give up yet.",
             /* SUPERB    */ "You have proven your worth! You have our blessing..."
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SNEAKY_SPIRITS */ {
         /* Entry Scene   */ &scene_sneaky_spirits,
@@ -269,7 +279,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Gah! They slipped right past you!",
             /* OK        */ "\"L-Let me go! Please!\"",
             /* SUPERB    */ "You ghosts stay and think about what you've done!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SAMURAI_SLICE */ {
         /* Entry Scene   */ &scene_samurai_slice,
@@ -285,7 +296,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "I've broken my blade!",
             /* OK        */ "I shall push myself harder!",
             /* SUPERB    */ "Have you ever seen a sword this sharp?"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SPACEBALL */ {
         /* Entry Scene   */ &scene_spaceball,
@@ -301,7 +313,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Can I have my ball back? I'll give you my last rice ball...",
             /* OK        */ "Must... train... harder...",
             /* SUPERB    */ "I won first \"space\"!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SPACEBALL_2 */ {
         /* Entry Scene   */ &scene_spaceball_2,
@@ -317,7 +330,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Next time, swing your bat somewhere else!",
             /* OK        */ "I can't give up now!",
             /* SUPERB    */ "Guys, guys, look at what I've won!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* TAP_TRIAL */ {
         /* Entry Scene   */ &scene_tap_trial,
@@ -349,7 +363,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Looks like we tapped TOO hard!",
             /* OK        */ "Hey... Where'd our rhythm go?",
             /* SUPERB    */ "Monkeys are the key to tappiness!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* MARCHING_ORDERS */ {
         /* Entry Scene   */ &scene_marching_orders,
@@ -381,7 +396,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "This is unacceptable...",
             /* OK        */ "I know we can perform better than that!",
             /* SUPERB    */ "Now THIS is a reward!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* WIZARDS_WALTZ */ {
         /* Entry Scene   */ &scene_wizards_waltz,
@@ -413,7 +429,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "I'm not sure I thought this through...",
             /* OK        */ "Didn't quite stick the landing...",
             /* SUPERB    */ "A perfect landing! Who needs rockets?!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* FIREWORKS */ {
         /* Entry Scene   */ &scene_fireworks,
@@ -447,7 +464,7 @@ struct LevelData level_data_table[] = {
             /* SUPERB    */ "Woo! Calligraphy party!"
         }
     },
-    /* POWER_CALLIGRAPHY_2 */ {
+    /* POWER_CALLIGRAPHY_2 */ { // this still kills me lmao
         /* Entry Scene   */ &scene_power_calligraphy,
         /* Level Name    */ "",
         /* Level Desc.   */ "\n"
@@ -461,7 +478,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "",
             /* OK        */ "",
             /* SUPERB    */ ""
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* TOSS_BOYS */ {
         /* Entry Scene   */ &scene_toss_boys,
@@ -493,7 +511,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Our spirits have been deflated...",
             /* OK        */ "We still have a long way to go!",
             /* SUPERB    */ "Three cheers for our star tossers!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* RAT_RACE */ {
         /* Entry Scene   */ &scene_rat_race,
@@ -573,7 +592,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "We cannot go on like THIS!",
             /* OK        */ "Is that the best you guys can do?",
             /* SUPERB    */ "We are cosmic superstars!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* RAP_MEN */ {
         /* Entry Scene   */ &scene_rap_men,
@@ -605,7 +625,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "No... This isn't right.",
             /* OK        */ "I know we can rap better than this!",
             /* SUPERB    */ "Yes, yes, YES! We've got it!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* QUIZ_SHOW */ {
         /* Entry Scene   */ &scene_quiz_show,
@@ -653,7 +674,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "It's over...",
             /* OK        */ "When did it start raining?",
             /* SUPERB    */ "Our new Bon Dance is a lot of fun!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_1 */ {
         /* Entry Scene   */ &scene_remix_1,
@@ -669,7 +691,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Your performance was like... a cat's snack.",
             /* OK        */ "Your preformance was like... an ordinary breakfast.",
             /* SUPERB    */ "Your performance was like... why, a delicious dinner!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_2 */ {
         /* Entry Scene   */ &scene_remix_2,
@@ -685,7 +708,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "That was as lively as... playing ball by yourself.",
             /* OK        */ "That was as lively as... a pleasant game of catch.",
             /* SUPERB    */ "That was as lively as... a huge baseball tournament!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_3 */ {
         /* Entry Scene   */ &scene_remix_3,
@@ -701,7 +725,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Their love ended in... heartbreak...",
             /* OK        */ "Their love ended in... a good friendship.",
             /* SUPERB    */ "Their love ended in... a tender marriage!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_4 */ {
         /* Entry Scene   */ &scene_remix_4,
@@ -717,7 +742,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Today's forecast... raining buckets.",
             /* OK        */ "Today's forecast... very cloudy.",
             /* SUPERB    */ "Today's forecast... clear skies all day!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_5 */ {
         /* Entry Scene   */ &scene_remix_5,
@@ -733,7 +759,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "This couple is... in trouble!",
             /* OK        */ "This couple is... a little nervous...",
             /* SUPERB    */ "This couple is... living their happy-ever-after!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_6 */ {
         /* Entry Scene   */ &scene_remix_6,
@@ -749,7 +776,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Your fish tank is... pretty sparse.",
             /* OK        */ "Your fish tank is... unique for sure!",
             /* SUPERB    */ "Your fish tank is... unbelievable!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_7 */ {
         /* Entry Scene   */ &scene_remix_7,
@@ -765,7 +793,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Your Jurassic visit was... terrifying!",
             /* OK        */ "Your Jurassic visit was... rather tame.",
             /* SUPERB    */ "Your Jurassic visit was... too much fun!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_8 */ {
         /* Entry Scene   */ &scene_remix_8,
@@ -781,7 +810,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Your road trip was... oh boy...",
             /* OK        */ "Your road trip was... a little long.",
             /* SUPERB    */ "Your road trip was... absolutely spectacular!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* CAFE */ {
         /* Entry Scene   */ &scene_cafe,
@@ -893,7 +923,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "The tournament didn't go well...",
             /* OK        */ "I did well at the tournament, even if I didn't win.",
             /* SUPERB    */ "I won the tournament and took home the gold!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* RHYTHM_TWEEZERS */ {
         /* Entry Scene   */ &scene_rhythm_tweezers_extra,
@@ -908,7 +939,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "I can't pluck anything at this speed!",
             /* OK        */ "These hairs are pretty tough to pluck.",
             /* SUPERB    */ "Look at those flowers! They're so refreshing!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* MARCHING_ORDERS */ {
         /* Entry Scene   */ &scene_marching_orders_extra,
@@ -924,7 +956,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "MONSTER! Retreat! Retreat!",
             /* OK        */ "Ah, there's the lost puppy!",
             /* SUPERB    */ "We've successfully rescued the lost puppy! Hooray!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SPACEBALL */ {
         /* Entry Scene   */ &scene_spaceball_extra,
@@ -940,7 +973,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Ahhh! Nooooooo!",
             /* OK        */ "Graaaah!",
             /* SUPERB    */ "A home run! I did it!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* CLAPPY_TRIO */ {
         /* Entry Scene   */ &scene_clappy_trio_extra,
@@ -956,7 +990,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Wait! Don't leave without us!",
             /* OK        */ "This is one nice space cruise!",
             /* SUPERB    */ "I've discovered a new planet! Great!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* REMIX_1 */ {
         /* Entry Scene   */ &scene_remix_1_extra,
@@ -972,6 +1007,7 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "This is going to take a while...",
             /* OK        */ "Just a normal chick. \"Cheep-Cheep!\"",
             /* SUPERB    */ "You've grown splendidly! You look dignified!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     }
 };

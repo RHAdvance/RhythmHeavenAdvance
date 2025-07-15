@@ -189,7 +189,7 @@ struct GameSelectSceneData {
     /* [0x4F8] Perfect Rank Icon */
     s16 perfectClearedSprite;
     s16 noPracticeSprite;
-    s16 TempoUp;
+    s16 tempoUpSprite;
     s32 modelCornerHidden;
 };
 
@@ -197,6 +197,12 @@ struct CampaignGiftData {
     s8 x, y;
     u8 type;
     u32 id;
+};
+
+enum LevelDataFlags {
+    LEVEL_DATA_FLAG_NONE = 0,
+    LEVEL_DATA_FLAG_IS_EXTRA = (1 << 0),
+    LEVEL_DATA_FLAG_NO_PRACTICE = (1 << 1),
 };
 
 struct LevelData {
@@ -207,6 +213,7 @@ struct LevelData {
     u8 type;
     const struct GraphicsTable **epilogueGfx;
     const char *epilogueText[3];
+    u8 flags;
 };
 
 struct GameSelectGridEntry {

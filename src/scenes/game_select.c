@@ -7,50 +7,6 @@
 #include "src/scenes/studio.h"
 
 
-/* DATA */
-
-u32 levelsWithNoPractice[] = {
-    LEVEL_REMIX_1,
-    LEVEL_REMIX_2,
-    LEVEL_REMIX_3,
-    LEVEL_REMIX_4,
-    LEVEL_REMIX_5,
-    LEVEL_REMIX_6,
-    LEVEL_REMIX_7,
-    LEVEL_REMIX_8,
-    LEVEL_SPACEBALL,
-    LEVEL_SAMURAI_SLICE,
-    LEVEL_SICK_BEATS,
-    LEVEL_BUNNY_HOP,
-    LEVEL_NIGHT_WALK,
-    LEVEL_POLYRHYTHM,
-    LEVEL_NINJA_BODYGUARD,
-    LEVEL_SNAPPY_TRIO,
-    LEVEL_BON_DANCE,
-    LEVEL_COSMIC_DANCE,
-    LEVEL_RAP_WOMEN,
-    LEVEL_TAP_TRIAL_2,
-    LEVEL_KARATE_MAN_2,
-    LEVEL_RHYTHM_TWEEZERS_2,
-    LEVEL_NINJA_REINCARNATE,
-    LEVEL_NIGHT_WALK_2,
-    LEVEL_MARCHING_ORDERS_2,
-    LEVEL_BOUNCY_ROAD_2,
-    LEVEL_TOSS_BOYS_2,
-    LEVEL_POLYRHYTHM_2,
-    LEVEL_SPACEBALL_2,
-    LEVEL_SNEAKY_SPIRITS_2,
-};
-
-u32 tempoUpLevels[] = {
-    LEVEL_KARATE_MAN_EXTRA,
-    LEVEL_RHYTHM_TWEEZERS_EXTRA,
-    LEVEL_MARCHING_ORDERS_EXTRA,
-    LEVEL_SPACEBALL_EXTRA,
-    LEVEL_CLAPPY_TRIO_EXTRA,
-    LEVEL_REMIX_1_EXTRA
-};
-
 /* GAME SELECT SCENE */
 
 
@@ -332,6 +288,9 @@ void start_campaign_notice(s32 id) {
     string = notice->text;
     memcpy(string, "\001C" "If you get a Perfect in\n", 45); // [Right now]
     strcat(string, level->name); // "<game_name>"
+    if(level->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
+        strcat(string, " EX!"); // Extra
+    }
     strcat(string, "\nright now, you'll earn:\n"); // Get a perfect on this
     strcat(string, ""); // "
     strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
@@ -1895,8 +1854,8 @@ void game_select_init_info_pane(void) {
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, &bgOfs->x, &bgOfs->y);
     gGameSelect->noPracticeSprite = sprite_create(gSpriteHandler, anim_game_select_no_practice, 0, 189, 94, 0x80A, 1, 0, 0x8000);
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->noPracticeSprite, &bgOfs->x, &bgOfs->y);
-    gGameSelect->TempoUp = sprite_create(gSpriteHandler, anim_game_select_tempo_up, 0, 154, 38, 0x80A, 1, 0, 0x8000);
-    sprite_set_origin_x_y(gSpriteHandler, gGameSelect->TempoUp, &bgOfs->x, &bgOfs->y);
+    gGameSelect->tempoUpSprite = sprite_create(gSpriteHandler, anim_game_select_tempo_up, 0, 154, 38, 0x80A, 1, 0, 0x8000);
+    sprite_set_origin_x_y(gSpriteHandler, gGameSelect->tempoUpSprite, &bgOfs->x, &bgOfs->y);
     gGameSelect->infoPaneIsClear = TRUE;
     gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
 }
@@ -1928,7 +1887,7 @@ void game_select_clear_info_pane(void) {
     text_printer_clear(gGameSelect->infoPaneDesc);
     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, FALSE);
     sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, FALSE);
-    sprite_set_visible(gSpriteHandler, gGameSelect->TempoUp, FALSE);
+    sprite_set_visible(gSpriteHandler, gGameSelect->tempoUpSprite, FALSE);
     sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 112);
     text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 50);
     text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 15);
@@ -1973,19 +1932,8 @@ void game_select_print_level_rank(s32 levelState) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
 
-    for(i = 0; i < ARRAY_COUNT(levelsWithNoPractice); i++) {
-        if(levelsWithNoPractice[i] == gGameSelect->infoPaneLevelID) {
-            found = TRUE;
-            break;
-        }
-    }
+    found = gGameSelect->infoPaneLevelData->flags & (LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE);
 
-    for(i = 0; i < ARRAY_COUNT(tempoUpLevels); i++) {
-        if(tempoUpLevels[i] == gGameSelect->infoPaneLevelID) {
-            found = TRUE;
-            break;
-        }
-    }
     text_printer_fill_vram_tiles(16, 26, 16, 2, 0);
     string = game_select_rank_text[levelState];
     anim = text_printer_get_formatted_line_anim(get_current_mem_id(), 16, 26, TEXT_PRINTER_FONT_SMALL, &string, TEXT_ANCHOR_BOTTOM_RIGHT, 0, 104, 0, -1);
@@ -2025,20 +1973,13 @@ void game_select_process_info_pane(void) {
         case INFO_PANE_TASK_PRINT_DESC:
             game_select_print_level_desc(gGameSelect->infoPaneLevelData);
             gGameSelect->infoPaneTask = INFO_PANE_TASK_RENDER;
-            for(i = 0; i < ARRAY_COUNT(levelsWithNoPractice); i++) {
-                if(levelsWithNoPractice[i] == gGameSelect->infoPaneLevelID) {
-                    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
-                    break;
-                }
-            }
 
-            for(i = 0; i < ARRAY_COUNT(tempoUpLevels); i++) {
-                if(tempoUpLevels[i] == gGameSelect->infoPaneLevelID) {
-                    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
-                    break;
-                }
+            if(gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
+                text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
+                text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
+            } else if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
+                text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
+                text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
             }
 
         case INFO_PANE_TASK_RENDER:
@@ -2053,24 +1994,16 @@ void game_select_process_info_pane(void) {
                     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, TRUE);
                 }
 
-                for(i = 0; i < ARRAY_COUNT(levelsWithNoPractice); i++) {
-                    if(levelsWithNoPractice[i] == gGameSelect->infoPaneLevelID) {
-                        sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, TRUE);
-                        sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
-                        text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                        text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
-                        break;
-                    }
-                }
-
-                for(i = 0; i < ARRAY_COUNT(tempoUpLevels); i++) {
-                    if(tempoUpLevels[i] == gGameSelect->infoPaneLevelID) {
-                        sprite_set_visible(gSpriteHandler, gGameSelect->TempoUp, TRUE);
-                        sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
-                        text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
-                        text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
-                        break;
-                    }
+                if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
+                    sprite_set_visible(gSpriteHandler, gGameSelect->tempoUpSprite, TRUE);
+                    sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
+                    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
+                    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
+                } else if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
+                    sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, TRUE);
+                    sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
+                    text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
+                    text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
                 }
 
                 gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
