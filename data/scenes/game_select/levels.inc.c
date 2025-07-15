@@ -982,7 +982,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "Clap your hands in\n"
                             "order! You're the third\n"
                             "clapper. Watch out for\n"
-							"your extra-fast friends!",
+							"your quick friends!",
         /* Level Icon    */ 58,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_clappy_trio_extra_gfx_tables,
@@ -996,9 +996,9 @@ struct LevelData level_data_table[] = {
     /* REMIX_1 */ {
         /* Entry Scene   */ &scene_remix_1_extra,
         /* Level Name    */ "Extra Remix",
-        /* Level Desc.   */ "This is the Extra Stage's\n"
-                            "Remix. Can you keep up\n"
-                            "with its speed?\n"
+        /* Level Desc.   */ "This is the Extra\n"
+                            "Stage's Remix. Can you\n"
+                            "keep up with its speed?\n"
                             "Good luck and have fun!",
         /* Level Icon    */ 59,
         /* Level Type    */ LEVEL_TYPE_REMIX,
