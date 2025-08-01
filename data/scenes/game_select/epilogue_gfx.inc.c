@@ -411,15 +411,15 @@ const struct GraphicsTable *epilogue_karate_man_extra_gfx_tables[] = {
 };
 
 const struct GraphicsTable *epilogue_rhythm_tweezers_extra_gfx_tables[] = {
-    /* TRY AGAIN */ INLINE_GFX_TABLE(&rhythm_tweezers_epilogue_bg_tiles, &rhythm_tweezers_epilogue_bg_map_try_again, epilogue_rhythm_tweezers_bg_pal),
-    /* JUST OK   */ INLINE_GFX_TABLE(&rhythm_tweezers_epilogue_bg_tiles, &rhythm_tweezers_epilogue_bg_map_ok, epilogue_rhythm_tweezers_bg_pal),
-    /* SUPERB    */ INLINE_GFX_TABLE(&rhythm_tweezers_epilogue_bg_tiles, &rhythm_tweezers_epilogue_bg_map_superb, epilogue_rhythm_tweezers_bg_pal)
+    /* TRY AGAIN */ INLINE_GFX_TABLE(&rhythm_tweezers_extra_epilogue_bg_tiles, &rhythm_tweezers_extra_epilogue_bg_map_try_again, epilogue_rhythm_tweezers_extra_bg_pal),
+    /* JUST OK   */ INLINE_GFX_TABLE(&rhythm_tweezers_extra_epilogue_bg_tiles, &rhythm_tweezers_extra_epilogue_bg_map_ok, epilogue_rhythm_tweezers_extra_bg_pal),
+    /* SUPERB    */ INLINE_GFX_TABLE(&rhythm_tweezers_extra_epilogue_bg_tiles, &rhythm_tweezers_extra_epilogue_bg_map_superb, epilogue_rhythm_tweezers_extra_bg_pal)
 };
 
 const struct GraphicsTable *epilogue_marching_orders_extra_gfx_tables[] = {
-    /* TRY AGAIN */ INLINE_GFX_TABLE(&marching_orders_epilogue_bg_tiles, &marching_orders_epilogue_bg_map_try_again, epilogue_marching_orders_bg_pal),
-    /* JUST OK   */ INLINE_GFX_TABLE(&marching_orders_epilogue_bg_tiles, &marching_orders_epilogue_bg_map_ok, epilogue_marching_orders_bg_pal),
-    /* SUPERB    */ INLINE_GFX_TABLE(&marching_orders_epilogue_bg_tiles, &marching_orders_epilogue_bg_map_superb, epilogue_marching_orders_bg_pal)
+    /* TRY AGAIN */ INLINE_GFX_TABLE(&marching_orders_extra_epilogue_bg_tiles, &marching_orders_extra_epilogue_bg_map_try_again, epilogue_marching_orders_extra_bg_pal),
+    /* JUST OK   */ INLINE_GFX_TABLE(&marching_orders_extra_epilogue_bg_tiles, &marching_orders_extra_epilogue_bg_map_ok, epilogue_marching_orders_extra_bg_pal),
+    /* SUPERB    */ INLINE_GFX_TABLE(&marching_orders_extra_epilogue_bg_tiles, &marching_orders_extra_epilogue_bg_map_superb, epilogue_marching_orders_extra_bg_pal)
 };
 
 const struct GraphicsTable *epilogue_spaceball_extra_gfx_tables[] = {

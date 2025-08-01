@@ -1218,6 +1218,62 @@ Palette epilogue_rhythm_tweezers_bg_pal[] = {
         /* 15 */ TO_RGB555(0x000000)
     }
 };
+Palette epilogue_rhythm_tweezers_extra_bg_pal[] = {
+    /* PALETTE 00 */ {
+        /* 00 */ TO_RGB555(0x00ff42),
+        /* 01 */ TO_RGB555(0x000000),
+        /* 02 */ TO_RGB555(0x29bdde),
+        /* 03 */ TO_RGB555(0xbdbdbd),
+        /* 04 */ TO_RGB555(0xe71863),
+        /* 05 */ TO_RGB555(0xd6b58c),
+        /* 06 */ TO_RGB555(0xffffff),
+        /* 07 */ TO_RGB555(0xffdead),
+        /* 08 */ TO_RGB555(0x217b42),
+        /* 09 */ TO_RGB555(0xff0000),
+        /* 10 */ TO_RGB555(0x848484),
+        /* 11 */ TO_RGB555(0x5a5a5a),
+        /* 12 */ TO_RGB555(0x213121),
+        /* 13 */ TO_RGB555(0x5aad52),
+        /* 14 */ TO_RGB555(0x18ce39),
+        /* 15 */ TO_RGB555(0x21ff4a)
+    },
+    /* PALETTE 01 */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x203020),
+        /* 02 */ TO_RGB555(0xF00000),
+        /* 03 */ TO_RGB555(0x207840),
+        /* 04 */ TO_RGB555(0xE01860),
+        /* 05 */ TO_RGB555(0x58A850),
+        /* 06 */ TO_RGB555(0xD0B088),
+        /* 07 */ TO_RGB555(0xF8D8A8),
+        /* 08 */ TO_RGB555(0xF8F8F8),
+        /* 09 */ TO_RGB555(0x18C838),
+        /* 10 */ TO_RGB555(0xB8B8B8),
+        /* 11 */ TO_RGB555(0x808080),
+        /* 12 */ TO_RGB555(0x585858),
+        /* 13 */ TO_RGB555(0x28B8D8),
+        /* 14 */ TO_RGB555(0xF8F8F8),
+        /* 15 */ TO_RGB555(0x000000)
+    },
+    /* PALETTE 02 */ {
+        /* 00 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x304830),
+        /* 02 */ TO_RGB555(0xF80000),
+        /* 03 */ TO_RGB555(0x289050),
+        /* 04 */ TO_RGB555(0xE01860),
+        /* 05 */ TO_RGB555(0x70D868),
+        /* 06 */ TO_RGB555(0xD0B088),
+        /* 07 */ TO_RGB555(0xF8D8A8),
+        /* 08 */ TO_RGB555(0xF8F8F8),
+        /* 09 */ TO_RGB555(0x20F848),
+        /* 10 */ TO_RGB555(0xB8B8B8),
+        /* 11 */ TO_RGB555(0x808080),
+        /* 12 */ TO_RGB555(0x585858),
+        /* 13 */ TO_RGB555(0x30E8F8),
+        /* 14 */ TO_RGB555(0xF8F8F8),
+        /* 15 */ TO_RGB555(0x000000)
+    }
+};
 
 // [D_088ff0ac] BG Palette
 Palette epilogue_fireworks_bg_pal[] = {
@@ -1744,6 +1800,27 @@ Palette epilogue_marching_orders_bg_pal[] = {
         /* 13 */ TO_RGB555(0xF8F8F8),
         /* 14 */ TO_RGB555(0xF87870),
         /* 15 */ TO_RGB555(0x000000)
+    }
+};
+
+Palette epilogue_marching_orders_extra_bg_pal[] = {
+    /* PALETTE 00 */ {
+        /* 00 */ TO_RGB555(0x00ff42),
+        /* 01 */ TO_RGB555(0x000000),
+        /* 02 */ TO_RGB555(0x8c8c8c),
+        /* 03 */ TO_RGB555(0x0800ff),
+        /* 04 */ TO_RGB555(0xc6c6c6),
+        /* 05 */ TO_RGB555(0xffffff),
+        /* 06 */ TO_RGB555(0xff6b08),
+        /* 07 */ TO_RGB555(0xffe7de),
+        /* 08 */ TO_RGB555(0xff7b73),
+        /* 09 */ TO_RGB555(0xd684ff),
+        /* 10 */ TO_RGB555(0xefff00),
+        /* 11 */ TO_RGB555(0x424a29),
+        /* 12 */ TO_RGB555(0xffbd10),
+        /* 13 */ TO_RGB555(0x63ffff),
+        /* 14 */ TO_RGB555(0x636363),
+        /* 15 */ TO_RGB555(0x636363)
     }
 };
 

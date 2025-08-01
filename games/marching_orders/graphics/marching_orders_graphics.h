@@ -102,3 +102,29 @@ extern struct Animation anim_space_rabbit_commander_annoyed[];
 
 extern Palette marching_orders_remix_7_obj_pal[];
 extern Palette marching_orders_remix_7_bg_pal[];
+
+extern struct CompressedData marching_orders_extra_bg_tiles;
+extern struct CompressedData marching_orders_extra_bg_map;
+extern struct CompressedData marching_orders_extra_bg_map_floor;
+extern struct CompressedData marching_orders_extra_obj;
+extern struct CompressedData marching_orders_extra_bg_map_text_bubble;
+extern Palette marching_orders_extra_obj_pal[];
+extern Palette marching_orders_extra_bg_pal[];
+
+extern struct Animation anim_marching_extra_test[];
+extern struct Animation anim_marching_extra_turn_l[];
+extern struct Animation anim_marching_extra_turn_r[];
+extern struct Animation anim_marching_extra_point_l[];
+extern struct Animation anim_marching_extra_point_r[];
+extern struct Animation anim_marching_extra_commander_angry[];
+extern struct Animation anim_marching_extra_stop_beat[];
+extern struct Animation anim_marching_extra_clap[];
+extern struct Animation anim_marching_extra_beat[];
+extern struct Animation anim_marching_extra_step_r[];
+extern struct Animation anim_marching_extra_step_l[];
+extern struct Animation anim_marching_extra_head_turn_r[];
+extern struct Animation anim_marching_extra_head_turn_l[];
+extern struct Animation anim_marching_extra_tutorial_icons[];
+extern struct Animation anim_marching_extra_tutorial_skip_icon[];
+extern struct Animation anim_marching_extra_angry_puff[];
+extern struct Animation anim_marching_extra_commander_annoyed[];

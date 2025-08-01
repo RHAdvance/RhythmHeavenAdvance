@@ -77,6 +77,12 @@ extern struct CompressedData rhythm_tweezers_epilogue_bg_map_ok;
 extern struct CompressedData rhythm_tweezers_epilogue_bg_map_try_again;
 extern Palette epilogue_rhythm_tweezers_bg_pal[];
 
+extern struct CompressedData rhythm_tweezers_extra_epilogue_bg_tiles;
+extern struct CompressedData rhythm_tweezers_extra_epilogue_bg_map_superb;
+extern struct CompressedData rhythm_tweezers_extra_epilogue_bg_map_ok;
+extern struct CompressedData rhythm_tweezers_extra_epilogue_bg_map_try_again;
+extern Palette epilogue_rhythm_tweezers_extra_bg_pal[];
+
 extern struct CompressedData fireworks_epilogue_bg_tiles;
 extern struct CompressedData fireworks_epilogue_bg_map_superb;
 extern struct CompressedData fireworks_epilogue_bg_map_ok;
@@ -112,6 +118,12 @@ extern struct CompressedData marching_orders_epilogue_bg_map_superb;
 extern struct CompressedData marching_orders_epilogue_bg_map_ok;
 extern struct CompressedData marching_orders_epilogue_bg_map_try_again;
 extern Palette epilogue_marching_orders_bg_pal[];
+
+extern struct CompressedData marching_orders_extra_epilogue_bg_tiles;
+extern struct CompressedData marching_orders_extra_epilogue_bg_map_superb;
+extern struct CompressedData marching_orders_extra_epilogue_bg_map_ok;
+extern struct CompressedData marching_orders_extra_epilogue_bg_map_try_again;
+extern Palette epilogue_marching_orders_extra_bg_pal[];
 
 extern struct CompressedData marching_orders_2_epilogue_bg_tiles;
 extern struct CompressedData marching_orders_2_epilogue_bg_map_superb;
