@@ -160,7 +160,7 @@ struct GraphicsTable marching_orders_2_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &marching_orders_extra_bg_map_text_bubble,
+        /* Src.  */ &marching_orders_bg_map_text_bubble,
         /* Dest. */ BG_MAP_BASE(0xF000),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

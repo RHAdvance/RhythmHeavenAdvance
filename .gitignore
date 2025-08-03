@@ -9,6 +9,7 @@ tools/agbcc/*
 *.sav
 *.dump
 *.bps
+*.Identifier
 .reapeaks
 .vscode/*
 ctx.c
