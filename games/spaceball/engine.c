@@ -56,6 +56,20 @@ struct GraphicsTable *spaceball_gfx_tables[] = {
     /* 0x01 */ spaceball_gfx_table
 };
 
+struct Animation **spaceball_anim_table_batter_close_tables[] = {
+    /* 0x00 */ spaceball_anim_table_batter_close,
+    /* 0x01 */ spaceball_anim_table_batter_close
+};
+
+struct Animation **spaceball_anim_table_batter_far_tables[] = {
+    /* 0x00 */ spaceball_anim_table_batter_far,
+    /* 0x01 */ spaceball_anim_table_batter_far
+};
+
+struct Animation **spaceball_anim_table_ball_tables[] = {
+    /* 0x00 */ spaceball_anim_table_ball,
+    /* 0x01 */ spaceball_anim_table_ball
+};
 
 // [D_089de988] Batter Animations (Close)
 struct Animation *spaceball_anim_table_batter_close[] = {

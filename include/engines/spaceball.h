@@ -68,6 +68,9 @@ struct SpaceballCue {
 // Engine Definition Data:
 extern struct CompressedData *spaceball_buffered_textures[]; // Buffered Textures List
 extern struct GraphicsTable spaceball_gfx_table[]; // Graphics Table
+extern struct Animation **spaceball_anim_table_batter_close_tables[];
+extern struct Animation **spaceball_anim_table_batter_far_tables[];
+extern struct Animation **spaceball_anim_table_ball_tables[]; // Spaceball Animations Tables
 extern struct Animation *spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
 extern struct Animation *spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
 extern struct Animation *spaceball_anim_table_ball[3]; // Spaceball Animations

@@ -266,8 +266,8 @@ void spaceball_set_camera_zoom(u32 controls) {
 
 // ENGINE Func_03 - Set Batter Variant
 void spaceball_set_batter_type(u32 index) {
-    gSpaceball->batter.animClose = spaceball_anim_table_batter_close[index];
-    gSpaceball->batter.animFar = spaceball_anim_table_batter_far[index];
+    gSpaceball->batter.animClose = spaceball_anim_table_batter_close_tables[gSpaceball->version][index];
+    gSpaceball->batter.animFar = spaceball_anim_table_batter_far_tables[gSpaceball->version][index];
 }
 
 
@@ -311,7 +311,7 @@ void spaceball_cue_spawn(struct Cue *cue, struct SpaceballCue *cueInfo, u32 arcT
     cueInfo->rotationSpeed = 0x40;
     cueInfo->z = 0;
     cueInfo->unk1C = (arcTime >= 0x18) ? (90 * arcTime / 0x18) : 90;
-    cueInfo->sprite = create_affine_sprite(spaceball_anim_table_ball[gSpaceball->spaceballType], 0, 70, 120, 0x479c, INT_TO_FIXED(1), cueInfo->rotation, 1, 0, 0, TRUE);
+    cueInfo->sprite = create_affine_sprite(spaceball_anim_table_ball_tables[gSpaceball->version][gSpaceball->spaceballType], 0, 70, 120, 0x479c, INT_TO_FIXED(1), cueInfo->rotation, 1, 0, 0, TRUE);
 
     temp = cueInfo->unk1C - 48;
     div = math_sqrt(INT_TO_FIXED(1.0) * INT_TO_FIXED(temp) / cueInfo->unk1C);
