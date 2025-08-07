@@ -22,7 +22,7 @@ void dataroom_scene_init_gfx3(void) {
     s32 task;
 
     func_0800c604(0);
-    task = start_new_texture_loader(get_current_mem_id(), data_room_buffered_textures);
+    task = start_new_texture_loader(get_current_mem_id(), data_room_buffered_textures); // Start new texture loader and store the results in tasks, impressive
     run_func_after_task(task, set_pause_beatscript_scene, FALSE);
 }
 

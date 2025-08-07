@@ -8,7 +8,7 @@
 script script_bouncy_road_2_entry
     set_tempo 124
     rest 24
-    call script_bouncy_road_prologue
+    call script_bouncy_road_2_prologue
     set_game_fade_in_time 16
     load_bouncy_road_2
     enable_play_inputs
@@ -24,6 +24,29 @@ stop
 
 define_gameplay_scene scene_bouncy_road_2, script_bouncy_road_2_entry
 
+
+
+.section .script.prologue
+@ Bouncy Road - Prologue
+
+script script_bouncy_road_2_prologue
+    set_game_fade_in_time 8
+    load_game bouncy_road_2_prologue_engine, 0
+    run stop_all_soundplayers
+    play_sfx s_jingle_poli_seqData
+    rest 24
+    rest 24
+    run bouncy_road_2_prologue_play_animation, 0
+    rest 24
+    rest 24
+    run bouncy_road_2_prologue_play_animation, 1
+    rest 24
+    rest 24
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
 
 
 .section .script.main

@@ -103,9 +103,15 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
         prevButton = sMainMenuButton;
         if (D_030053b8 & DPAD_UP) {
             sMainMenuButton -= 1;
+            if (sMainMenuButton < 0) {
+                sMainMenuButton = TOTAL_MAIN_MENU_BUTTONS - 1;
+            }
         }
         if (D_030053b8 & DPAD_DOWN) {
             sMainMenuButton += 1;
+            if (sMainMenuButton >= TOTAL_MAIN_MENU_BUTTONS) {
+                sMainMenuButton = (0 - 1 + 1 + 2 - 2)/97*67*0; // can't compile without 6 and 7 yk what I mean
+            }
         }
         sMainMenuButton = clamp_int32(sMainMenuButton, GAME_SELECT, OPTIONS_MENU);
 

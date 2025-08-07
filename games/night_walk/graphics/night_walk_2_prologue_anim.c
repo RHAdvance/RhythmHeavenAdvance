@@ -1,0 +1,102 @@
+#include "global.h"
+#include "graphics.h"
+
+#include "night_walk_2_prologue_anim_cells.inc.c"
+
+// [D_088ae048] Play-Yan
+struct Animation anim_night_walk_2_prologue_play_yan[] = {
+    /* 000 */ { night_walk_2_prologue_cel005, 4 },
+    /* 001 */ { night_walk_2_prologue_cel006, 4 },
+    /* 002 */ { night_walk_2_prologue_cel007, 4 },
+    /* 003 */ { night_walk_2_prologue_cel008, 4 },
+    /* 004 */ { night_walk_2_prologue_cel009, 4 },
+    /* 005 */ { night_walk_2_prologue_cel010, 4 },
+    /* 006 */ { night_walk_2_prologue_cel011, 4 },
+    /* 007 */ { night_walk_2_prologue_cel012, 4 },
+    /* 008 */ { night_walk_2_prologue_cel013, 4 },
+    /* 009 */ { night_walk_2_prologue_cel014, 4 },
+    /* 010 */ { night_walk_2_prologue_cel015, 4 },
+    /* 011 */ { night_walk_2_prologue_cel016, 4 },
+    /* 012 */ { night_walk_2_prologue_cel017, 4 },
+    /* 013 */ { night_walk_2_prologue_cel018, 4 },
+    /* 014 */ { night_walk_2_prologue_cel019, 4 },
+    /* 015 */ { night_walk_2_prologue_cel020, 4 },
+    /* 016 */ { night_walk_2_prologue_cel021, 4 },
+    /* 017 */ { night_walk_2_prologue_cel022, 4 },
+    /* 018 */ { night_walk_2_prologue_cel023, 4 },
+    /* 019 */ { night_walk_2_prologue_cel024, 4 },
+    /* 020 */ { night_walk_2_prologue_cel025, 4 },
+    /* 021 */ { night_walk_2_prologue_cel026, 4 },
+    /* 022 */ { night_walk_2_prologue_cel027, 4 },
+    /* 023 */ { night_walk_2_prologue_cel028, 4 },
+    /* 024 */ { night_walk_2_prologue_cel029, 4 },
+    /* 025 */ { night_walk_2_prologue_cel030, 4 },
+    /* 026 */ { night_walk_2_prologue_cel031, 4 },
+    /* 027 */ { night_walk_2_prologue_cel032, 20 },
+    /* 028 */ { night_walk_2_prologue_cel033, 30 },
+    /* 029 */ { night_walk_2_prologue_cel043, 8 },
+    /* 030 */ { night_walk_2_prologue_cel035, 8 },
+    /* 031 */ { night_walk_2_prologue_cel043, 8 },
+    /* 032 */ { night_walk_2_prologue_cel035, 8 },
+    /* 033 */ { night_walk_2_prologue_cel042, 62 },
+    /* End */ END_ANIMATION
+};
+
+// [D_088ae160] Balloons
+struct Animation anim_night_walk_2_prologue_balloons[] = {
+    /* 000 */ { night_walk_2_prologue_cel038, 6 },
+    /* 001 */ { night_walk_2_prologue_cel039, 6 },
+    /* 002 */ { night_walk_2_prologue_cel040, 6 },
+    /* 003 */ { night_walk_2_prologue_cel039, 6 },
+    /* 004 */ { night_walk_2_prologue_cel038, 6 },
+    /* 005 */ { night_walk_2_prologue_cel039, 6 },
+    /* 006 */ { night_walk_2_prologue_cel040, 6 },
+    /* 007 */ { night_walk_2_prologue_cel039, 6 },
+    /* 008 */ { night_walk_2_prologue_cel038, 6 },
+    /* 009 */ { night_walk_2_prologue_cel039, 6 },
+    /* 010 */ { night_walk_2_prologue_cel040, 6 },
+    /* 011 */ { night_walk_2_prologue_cel039, 6 },
+    /* 012 */ { night_walk_2_prologue_cel038, 6 },
+    /* 013 */ { night_walk_2_prologue_cel039, 6 },
+    /* 014 */ { night_walk_2_prologue_cel040, 6 },
+    /* 015 */ { night_walk_2_prologue_cel039, 6 },
+    /* 016 */ { night_walk_2_prologue_cel038, 6 },
+    /* 017 */ { night_walk_2_prologue_cel039, 6 },
+    /* 018 */ { night_walk_2_prologue_cel040, 6 },
+    /* 019 */ { night_walk_2_prologue_cel039, 6 },
+    /* 020 */ { night_walk_2_prologue_cel038, 6 },
+    /* 021 */ { night_walk_2_prologue_cel039, 6 },
+    /* 022 */ { night_walk_2_prologue_cel040, 6 },
+    /* 023 */ { night_walk_2_prologue_cel039, 6 },
+    /* 024 */ { night_walk_2_prologue_cel038, 6 },
+    /* 025 */ { night_walk_2_prologue_cel039, 6 },
+    /* 026 */ { night_walk_2_prologue_cel040, 6 },
+    /* 027 */ { night_walk_2_prologue_cel039, 6 },
+    /* 028 */ { night_walk_2_prologue_cel041, 12 },
+    /* 029 */ { night_walk_2_prologue_cel039, 6 },
+    /* 030 */ { night_walk_2_prologue_cel041, 12 },
+    /* 031 */ { night_walk_2_prologue_cel039, 6 },
+    /* 032 */ { night_walk_2_prologue_cel040, 6 },
+    /* 033 */ { night_walk_2_prologue_cel039, 6 },
+    /* 034 */ { night_walk_2_prologue_cel038, 6 },
+    /* 035 */ { night_walk_2_prologue_cel039, 6 },
+    /* 036 */ { night_walk_2_prologue_cel040, 6 },
+    /* 037 */ { night_walk_2_prologue_cel039, 6 },
+    /* 038 */ { night_walk_2_prologue_cel038, 6 },
+    /* 039 */ { night_walk_2_prologue_cel039, 6 },
+    /* End */ END_ANIMATION
+};
+
+// [D_088ae2a8] Title
+struct Animation anim_night_walk_2_prologue_title[] = {
+    /* 000 */ { night_walk_2_prologue_cel000, 207 },
+    /* 001 */ { night_walk_2_prologue_cel044, 2 },
+    /* 002 */ { night_walk_2_prologue_cel045, 2 },
+    /* 003 */ { night_walk_2_prologue_cel046, 2 },
+    /* 004 */ { night_walk_2_prologue_cel047, 2 },
+    /* 005 */ { night_walk_2_prologue_cel048, 2 },
+    /* 006 */ { night_walk_2_prologue_cel049, 2 },
+    /* 007 */ { night_walk_2_prologue_cel050, 2 },
+    /* 008 */ { night_walk_2_prologue_cel051, 31 },
+    /* End */ END_ANIMATION
+};

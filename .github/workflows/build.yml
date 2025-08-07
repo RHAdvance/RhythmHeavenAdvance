@@ -1,4 +1,4 @@
-name: Build Rhythm Heaven Advance
+name: 'Build Rhythm Heaven Advance'
 
 on: 
   workflow_dispatch:

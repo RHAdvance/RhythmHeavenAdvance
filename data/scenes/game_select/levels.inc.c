@@ -234,7 +234,7 @@ struct LevelData level_data_table[] = {
     },
     /* NINJA_REINCARNATE */ {
         /* Entry Scene   */ &scene_ninja_reincarnate,
-        /* Level Name    */ "Ninja Reincarnate",
+        /* Level Name    */ "Ninja Descendant",
         /* Level Desc.   */ "You know, my family's\n"
                             "ancestors came from\n"
                             "a long lineage of ninjas.\n"

@@ -74,11 +74,11 @@ struct Animation anim_bad_guy_rock_draw[] = {
 
 // [D_089351f8] Woman - Blink
 struct Animation anim_girlfriend_blink[] = {
-    /* 000 */ { ninja_reincarnate_cel011, 8 },
-    /* 001 */ { ninja_reincarnate_cel012, 8 },
-    /* 002 */ { ninja_reincarnate_cel012, 30 },
-    /* 003 */ { ninja_reincarnate_cel011, 8 },
-    /* 004 */ { ninja_reincarnate_cel012, 20 },
+    /* 000 */ { ninja_reincarnate_cel012, 8 },
+    /* 001 */ { ninja_reincarnate_cel011, 8 },
+    /* 002 */ { ninja_reincarnate_cel011, 30 },
+    /* 003 */ { ninja_reincarnate_cel012, 8 },
+    /* 004 */ { ninja_reincarnate_cel011, 20 },
     /* End */ END_ANIMATION
 };
 

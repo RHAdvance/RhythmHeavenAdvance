@@ -46,14 +46,37 @@ enum MarchingOrdersSoundEffectsEnum {
     MARCHING_SFX_CMD_TURN_LEFT
 };
 
+enum MarchingOrdersCueEnum {
+    MARCHING_CUE_STEP,
+    MARCHING_CUE_TURN_LEFT,
+    MARCHING_CUE_TURN_RIGHT,
+    MARCHING_CUE_HALT
+};
+
 
 // Engine Types:
 struct MarchingOrdersEngineData {
-    u8 pad[0x48];
+    u8 version;
+    struct BitmapFontOBJ *font;
+    struct Marcher {
+        s16 sprite;
+        s16 headSprite;
+        u8 currentAction;
+        u16 idleTimer;
+        u8 idled;
+    } marchers[4];
+    u8 marcherNextFoot;
+    u16 playerActionTimer;
+    s16 commanderSprite;
+    u16 commanderActionTimer;
+    s16 textSprite;
+    s16 tutorialIcon;
+    u8 conveyorEnabled;
+    u8 marchersPointing;
 };
 
 struct MarchingOrdersCue {
-    /* add fields here */
+    u8 command;
 };
 
 struct MarchingSfxData {
@@ -76,21 +99,21 @@ extern struct MarchingSfxData marching_sfx_table[][12];
 
 
 // Functions:
-extern struct Animation *func_08034100(u32 anim); // Get Animation
+extern struct Animation *func_08034100(s32 anim); // Get Animation
 extern void marching_init_gfx3(void); // Graphics Init. 3
 extern void marching_init_gfx2(void); // Graphics Init. 2
 extern void marching_init_gfx1(void); // Graphics Init. 1
 extern void marching_engine_start(u32 version); // Game Engine Start
 extern void marching_engine_event_stub(void); // Engine Event 06 (STUB)
 // extern ? func_080343b8(?);
-extern void func_08034544(); // Engine Event 00 (?)
+extern void marching_play_action(); // Engine Event 00 (?)
 // extern ? func_080345cc(?);
 // extern ? func_080346b0(?);
-extern void func_080346e0(); // Engine Event 01 (?)
-extern void func_080347c0(); // Engine Event 02 (?)
-extern void func_0803481c(); // Engine Event 03 (?)
+extern void marching_set_commander_action(u32 action); // Engine Event 01 (?)
+extern void marching_set_tutorial_icon(); // Engine Event 02 (?)
+extern void marching_enable_conveyor(); // Engine Event 03 (Enable Conveyer)
 // extern ? func_0803482c(?);
-extern void func_08034850(); // Engine Event 04 (?)
+extern void marching_set_marchers_pointing(u8 enabled); // Engine Event 04 (?)
 extern void marching_engine_update(void); // Game Engine Update
 extern void marching_engine_stop(void); // Game Engine Close
 extern void marching_cue_spawn(struct Cue *, struct MarchingOrdersCue *, u32 command); // Cue - Spawn
@@ -107,4 +130,4 @@ extern void marching_input_event(u32 pressed, u32 released); // Input Event
 extern void marching_common_beat_animation(void); // Common Event 0 (Beat Animation, Unimplemented)
 extern void marching_common_display_text(const char *); // Common Event 1 (Display Text)
 extern void marching_common_init_tutorial(void); // Common Event 2 (Init. Tutorial, Unimplemented)
-extern void func_08034ae4(u32 sound); // Engine Event 05 (Play Sound)
+extern void marching_play_sound(u32 sound); // Engine Event 05 (Play Sound)

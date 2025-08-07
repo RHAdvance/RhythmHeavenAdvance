@@ -50,6 +50,8 @@ void midi_channel_update_mod(struct MidiBus *midiBus, u32 track) {
     }
 }
 
+// add a comment here it's confusing
+
 
 // Update MidiChannel Modulation (All)
 void midi_channel_update_mod_all(struct MidiBus *midiBus) {
@@ -130,7 +132,7 @@ void midi_channel_stop_all(struct MidiBus *midiBus) {
 void midi_bus_set_priority(struct MidiBus *midiBus, u8 priority) {
     u32 i;
 
-    midiBus->priority = priority;
+    midiBus->priority = priority; // and here too
 
     for (i = 0; i < midiBus->totalChannels; i++) {
         midi_channel_set_priority(midiBus, i, 0);
@@ -174,6 +176,9 @@ void midi_channel_init(struct MidiChannel *midiChannel) {
     midiChannel->keyModDepth = 0;
     midiChannel->keyModInterval = 0;
     midiChannel->keyModCount = 0;
+    
+    // too much text
+
 }
 
 

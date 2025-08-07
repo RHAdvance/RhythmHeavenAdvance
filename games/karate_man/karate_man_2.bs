@@ -9,7 +9,7 @@
 script script_karate_man_2_entry
     set_tempo 124
     rest 24
-    call script_karate_man_prologue
+    call script_karate_man_2_prologue
     set_game_fade_in_time 16
     load_karate_man_2
     enable_play_inputs
@@ -25,7 +25,46 @@ stop
 
 define_gameplay_scene scene_karate_man_2, script_karate_man_2_entry
 
+.section .script.prologue
+@ Karate Man - Prologue
 
+script script_karate_man_2_prologue
+    set_game_fade_in_time 8
+    load_game karate_man_2_prologue_engine, 0
+    run stop_all_soundplayers
+    rest 24
+    play_sfx s_jingle_karate_seqData
+    run karate_man_2_prologue_set_text_frame, 1
+    rest 6
+    run karate_man_2_prologue_set_text_frame, 2
+    rest 6
+    run karate_man_2_prologue_set_text_frame, 3
+    rest 6
+    run karate_man_2_prologue_set_text_frame, 4
+    rest 6
+    rest 6
+    rest 6
+    rest 6
+    rest 12
+    play_sfx s_f_boxing_title_hit_seqData
+    run karate_man_2_prologue_set_text_frame, 5
+    run karate_man_2_prologue_play_kick_anim, 0
+    rest 3
+    rest 3
+    rest 3
+    rest 3
+    rest 12
+    rest 12
+    rest 12
+    rest 12
+    rest 24
+    rest 12
+    play_sfx s_intro_uh_seqData
+    rest 6
+    run func_08006d80, 0
+    rest 18
+    set_game_fade_in_time 16
+return
 
 .section .script.main
 @ Karate Man 2 - Marking Criteria

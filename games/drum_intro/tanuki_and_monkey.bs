@@ -97,44 +97,45 @@ return
 
 
 text D_08a2f220
-    .ascii "じゃ、　とりあえず\n"
-    .asciz "シンプルなやつネ。"
+    .ascii "Okay, let's start\n"
+    .asciz "out simple for now."
 endtext
 
 text D_08a2f248
-    .ascii "やりなおし！\n"
-    .ascii "チャンスはあと２回。\n"
-    .asciz "がんばって！"
+    .ascii "Strike 1!\n"
+    .ascii "You have two more\n"
+    .asciz "chances. Good luck!"
 endtext
 
 text D_08a2f278
-    .ascii "やりなおし！\n"
-    .ascii "ラストチャンス！\n"
-    .asciz "集中！！"
+    .ascii "Strike 2!\n"
+    .ascii "This is your last\n"
+    .asciz "chance! Concentrate!"
 endtext
 
 text D_08a2f2a0
-    .ascii "オッケーです。\n"
-    .ascii "つぎ　いってみよう！\n"
-    .asciz "できるかな？"
+    .ascii "OK! On to the next one!\n"
+    .ascii "Think you can\n"
+    .asciz "handle this one?"
 endtext
 
 text D_08a2f2d4
-    .ascii "やりますね。\n"
-    .ascii "つぎのパターンは\n"
-    .asciz "ポン太くんも叩くヨ！"
+    .ascii "Good job.\n"
+    .ascii "For the next pattern,\n"
+    .asciz "Ponta will play along, too!"
 endtext
 
 text D_08a2f308
-    .ascii "おぉ、　すごい！\n"
-    .ascii "つぎのは　ちょっと\n"
-    .asciz "テクニカルだヨ！"
+    .ascii "That was great!\n"
+    .ascii "This next one's\n"
+    .asciz "a little more tricky!"
 endtext
 
 text D_08a2f340
-    .ascii "くっ、　てごわい！！\n"
-    .ascii "こうなったら\n"
-    .asciz "とっておきのやつだ！"
+    .ascii "Heh, you're better\n"
+    .ascii "than we thought!\n"
+    .ascii "Looks like we'll have\n"
+    .asciz "to bring out the big guns!\n"
 endtext
 
 

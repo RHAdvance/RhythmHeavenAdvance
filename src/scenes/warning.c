@@ -11,7 +11,7 @@ extern u8 D_03004498;
 
 // Render Animated Text (Script Function)
 void warning_scene_render_anim(void) {
-    sprite_create(gSpriteHandler, anim_warning_text_continue, 15, 120, 152, 0, 1, 0, 0);
+    sprite_create(gSpriteHandler, anim_warning_text_continue, 15, 120, 150, 0, 1, 0, 0);
 }
 
 

@@ -423,12 +423,12 @@ EngineEvent marching_common_events[] = {
 
 // [D_089e54fc] Engine Events
 EngineEvent marching_engine_events[] = {
-    /* 0x00 */ func_08034544,
-    /* 0x01 */ func_080346e0,
-    /* 0x02 */ func_080347c0,
-    /* 0x03 */ func_0803481c,
-    /* 0x04 */ func_08034850,
-    /* 0x05 */ func_08034ae4,
+    /* 0x00 */ marching_play_action,
+    /* 0x01 */ marching_set_commander_action,
+    /* 0x02 */ marching_set_tutorial_icon,
+    /* 0x03 */ marching_enable_conveyor,
+    /* 0x04 */ marching_set_marchers_pointing,
+    /* 0x05 */ marching_play_sound,
     /* 0x06 */ marching_engine_event_stub
 };
 

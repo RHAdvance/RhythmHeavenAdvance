@@ -9,7 +9,7 @@
 script script_night_walk_2_entry
     set_tempo 124
     rest 24
-    call script_night_walk_prologue
+    call script_night_walk_2_prologue
     set_game_fade_in_time 16
     load_night_walk
     enable_play_inputs
@@ -25,7 +25,29 @@ stop
 
 define_gameplay_scene scene_night_walk_2, script_night_walk_2_entry
 
+.section .script.prologue
+@ Night Walk - Prologue
 
+script script_night_walk_2_prologue
+    set_game_fade_in_time 8
+    load_game night_walk_2_prologue_engine, 0
+    run stop_all_soundplayers
+    run night_walk_2_play_animation_event, 0
+    rest 24
+    rest 24
+    rest 24
+    run night_walk_2_play_animation_event, 1
+    rest 24
+    play_sfx s_jingle_handclap_seqData
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    run func_08006d80, 0
+    rest 24
+    set_game_fade_in_time 16
+return
 
 .section .script.main
 @ Night Walk 2 - Marking Criteria
