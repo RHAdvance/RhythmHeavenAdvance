@@ -91,6 +91,112 @@ endstruct
 
 @ Marching Orders (Extra) - Main Script
 
+#ifdef SFX
+script script_marching_orders_extra_main
+    set_results_header D_0805c8a8
+    import_marking_criteria marching_orders_extra_marking_criteria
+    run gameplay_set_mercy_count, 1
+    start_tracking_inputs
+    set_tempo 177
+    set_music_volume 256
+    play_music s_guntai2_seqData
+    start_perfect_campaign
+    rest 24
+    enable_pause_menu
+    rest 24
+    rest 24
+    start_tracking_perfect_campaign
+    call marching_orders_sub_08a83848
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998
+    rest 24
+    rest 24
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    call marching_orders_sub_08a83848_beatstop
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998
+    set_marking_criteria 0
+    call marching_orders_sub_08a84448
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    call marching_orders_sub_08a83848_beatstop_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83998
+    set_marking_criteria 0
+    call marching_orders_sub_08a8452c
+    rest 24
+    clear_text_f
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    rest 24
+    marching_orders_event00 258
+    call marching_orders_sub_08a83848_beatstop
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_nobeat
+    set_marking_criteria 0
+    call marching_orders_sub_08a83b24
+    set_marking_criteria 1
+    call marching_orders_sub_08a83bfc
+    set_marking_criteria 0
+    call marching_orders_sub_08a84448
+    set_marking_criteria 0
+    call marching_orders_sub_08a8452c
+    call marching_orders_sub_08a83848
+    print_text_f D_0805c8b4
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_noclear
+    marching_orders_event03
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_noclear
+    set_marking_criteria 0
+    call marching_orders_sub_08a8386c_noclear
+    marching_orders_event00 8
+    play_sfx s_guntai_foot1_seqData
+    rest 12
+    stop_tracking_inputs
+    stop_tracking_perfect_campaign
+    disable_play_inputs
+    rest 12
+    marching_orders_event00 7
+    play_sfx s_guntai_foot2_seqData
+    rest 24
+    marching_orders_event00 8
+    play_sfx s_guntai_foot1_seqData
+    rest 24
+    marching_orders_event00 7
+    play_sfx s_guntai_foot2_seqData
+    rest 24
+    marching_orders_event00 8
+    play_sfx s_guntai_foot1_seqData
+    disable_pause_menu
+return
+
+#else
 script script_marching_orders_extra_main
     set_results_header D_0805c8a8
     import_marking_criteria marching_orders_extra_marking_criteria
@@ -199,5 +305,5 @@ script script_marching_orders_extra_main
     play_sfx s_guntai_foot1_seqData
     disable_pause_menu
 return
-
+#endif
 .end

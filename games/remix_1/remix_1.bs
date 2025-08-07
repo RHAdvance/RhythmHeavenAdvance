@@ -145,14 +145,6 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c_nobeat
     call marching_orders_sub_08a83998
     #else
-    set_tempo 120
-    set_music_volume 256
-    load_marching_orders
-    start_perfect_campaign
-    rest 24
-    enable_pause_menu
-    rest 24
-    rest 24
     rest 24
     start_tracking_perfect_campaign
     set_results_header D_0805cba0

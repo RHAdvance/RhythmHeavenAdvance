@@ -379,7 +379,7 @@ void marching_common_init_tutorial(void) {
 
 // Engine Event 05 (Play Sound)
 void marching_play_sound(u32 arg0) {
-    struct MarchingSfxData *sfx = &marching_sfx_table[gMarchingOrders->version][arg0];
+    struct MarchingSfxData *sfx = &marching_sfx_table[gMarchingOrders->version == 4 ? 0 : gMarchingOrders->version][arg0];
 
     play_sound_w_pitch_volume(sfx->sound, sfx->volume, sfx->pitch);
 }
