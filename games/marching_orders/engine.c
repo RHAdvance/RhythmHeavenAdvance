@@ -52,7 +52,7 @@ struct GraphicsTable marching_orders_1_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &marching_orders_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
-        /* Size  */ COMPRESSED_GFX_SOURCE 
+        /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
         /* Src.  */ &marching_orders_bg_map,
@@ -152,7 +152,7 @@ struct GraphicsTable marching_orders_2_gfx_table[] = {
     /* BG Tileset */ {
         /* Src.  */ &marching_orders_2_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
-        /* Size  */ COMPRESSED_GFX_SOURCE 
+        /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
         /* Src.  */ &marching_orders_2_bg_map,
@@ -449,7 +449,8 @@ struct GameEngine marching_orders_engine = {
 
 
 // [D_089e5538] Sound Effects Table
-struct MarchingSfxData marching_sfx_table[][12] = {
+#ifdef SFX
+struct MarchingSfxData marching_sfx_table[][18] = {
     /* ver0 */ {
         /* SHOUT_START */ {
             /* Sound  */ &s_guntai_v_es_seqData,
@@ -467,7 +468,7 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_ATTENTION */ {
-            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Sound  */ &s_guntai_v_zentai_a_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
@@ -487,7 +488,7 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_RIGHT_FACE_F */ {
-            /* Sound  */ &s_guntai_v_migi_muke2_seqData,
+            /* Sound  */ &s_guntai_v_migi_muke1_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
@@ -502,12 +503,42 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_LEFT_FACE_F */ {
-            /* Sound  */ &s_guntai_v_hidari_muke2_seqData,
+            /* Sound  */ &s_guntai_v_hidari_muke1_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_TURN_LEFT */ {
             /* Sound  */ &s_guntai_v_hidari_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai_ten_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai_ttion_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_guntai_v_hidari_muke1_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_guntai_v_migi_muke1_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_FACE_QUICK */ {
+            /* Sound  */ &s_guntai_v_muke_f_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_FACE_QUICK */ {
+            /* Sound  */ &s_guntai_v_muke_f_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         }
@@ -529,7 +560,7 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(12.0)
         },
         /* CMD_ATTENTION */ {
-            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Sound  */ &s_guntai_v_zentai_a_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
@@ -570,6 +601,36 @@ struct MarchingSfxData marching_sfx_table[][12] = {
         },
         /* CMD_TURN_LEFT */ {
             /* Sound  */ &s_guntai_v_hidari_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai_ten_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai_ttion_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_guntai_v_hidari_muke1_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_guntai_v_migi_muke1_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_FACE_QUICK */ {
+            /* Sound  */ &s_guntai_v_muke_f_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_FACE_QUICK */ {
+            /* Sound  */ &s_guntai_v_muke_f_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         }
@@ -591,7 +652,7 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_ATTENTION */ {
-            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Sound  */ &s_guntai_v_zentai_a_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
@@ -611,7 +672,7 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_RIGHT_FACE_F */ {
-            /* Sound  */ &s_guntai_v_migi_muke2_seqData,
+            /* Sound  */ &s_guntai_v_migi_muke1_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
@@ -626,12 +687,42 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_LEFT_FACE_F */ {
-            /* Sound  */ &s_guntai_v_hidari_muke2_seqData,
+            /* Sound  */ &s_guntai_v_hidari_muke1_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_TURN_LEFT */ {
             /* Sound  */ &s_guntai_v_hidari_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai_ten_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai_ttion_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_guntai_v_hidari_muke1_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_guntai_v_migi_muke1_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_FACE_QUICK */ {
+            /* Sound  */ &s_guntai_v_muke_f_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_FACE_QUICK */ {
+            /* Sound  */ &s_guntai_v_muke_f_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         }
@@ -694,6 +785,36 @@ struct MarchingSfxData marching_sfx_table[][12] = {
         },
         /* CMD_TURN_LEFT */ {
             /* Sound  */ &s_f_marcher2_v_hidari_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_f_marcher2_v_zentai_ten_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_f_marcher2_v_zentai_ttion_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_LEFT */ {
+            /* Sound  */ &s_f_marcher2_v_hidarimukeL_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_RIGHT */ {
+            /* Sound  */ &s_f_marcher2_v_migimukeL_face_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_RIGHT */ {
+            /* Sound  */ &s_f_marcher2_v_migimukeS2_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_LEFT */ {
+            /* Sound  */ &s_f_marcher2_v_hidarimukeS2_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         }
@@ -761,3 +882,255 @@ struct MarchingSfxData marching_sfx_table[][12] = {
         }
     }
 };
+#else
+struct MarchingSfxData marching_sfx_table[][12] = {
+    /* ver0 */ {
+        /* SHOUT_START */ {
+            /* Sound  */ &s_guntai_v_es_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* SHOUT_HALT */ {
+            /* Sound  */ &s_guntai_v_yoh_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* SHOUT_TURN */ {
+            /* Sound  */ &s_guntai_v_ka_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_MARCH */ {
+            /* Sound  */ &s_guntai_v_susume_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_HALT */ {
+            /* Sound  */ &s_guntai_v_tomare_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_guntai_v_migi_muke1_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE_F */ {
+            /* Sound  */ &s_guntai_v_migi_muke2_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_RIGHT */ {
+            /* Sound  */ &s_guntai_v_migi_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_guntai_v_hidari_muke1_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE_F */ {
+            /* Sound  */ &s_guntai_v_hidari_muke2_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_LEFT */ {
+            /* Sound  */ &s_guntai_v_hidari_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        }
+    },
+    /* ver1 */ {
+        /* SHOUT_START */ {
+            /* Sound  */ &s_guntai_v_es_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(12.0)
+        },
+        /* SHOUT_HALT */ {
+            /* Sound  */ &s_guntai_v_yoh_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(12.0)
+        },
+        /* SHOUT_TURN */ {
+            /* Sound  */ &s_guntai_v_ka_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(12.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_MARCH */ {
+            /* Sound  */ &s_guntai_v_susume_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_HALT */ {
+            /* Sound  */ &s_guntai_v_tomare_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_guntai_v_migi_muke1_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE_F */ {
+            /* Sound  */ &s_guntai_v_migi_muke2_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_RIGHT */ {
+            /* Sound  */ &s_guntai_v_migi_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_guntai_v_hidari_muke1_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE_F */ {
+            /* Sound  */ &s_guntai_v_hidari_muke2_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_LEFT */ {
+            /* Sound  */ &s_guntai_v_hidari_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        }
+    },
+    /* ver2 */ {
+        /* SHOUT_START */ {
+            /* Sound  */ &s_guntai_v_es_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* SHOUT_HALT */ {
+            /* Sound  */ &s_guntai_v_yoh_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* SHOUT_TURN */ {
+            /* Sound  */ &s_guntai_v_ka_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_MARCH */ {
+            /* Sound  */ &s_guntai_v_susume_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_HALT */ {
+            /* Sound  */ &s_guntai_v_tomare_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_guntai_v_migi_muke1_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE_F */ {
+            /* Sound  */ &s_guntai_v_migi_muke2_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_RIGHT */ {
+            /* Sound  */ &s_guntai_v_migi_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_guntai_v_hidari_muke1_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE_F */ {
+            /* Sound  */ &s_guntai_v_hidari_muke2_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_LEFT */ {
+            /* Sound  */ &s_guntai_v_hidari_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        }
+    },
+    /* ver3 */ {
+        /* SHOUT_START */ {
+            /* Sound  */ &s_guntai_v_es_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(-4.0)
+        },
+        /* SHOUT_HALT */ {
+            /* Sound  */ &s_guntai_v_yoh_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(-4.0)
+        },
+        /* SHOUT_TURN */ {
+            /* Sound  */ &s_guntai_v_ka_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(-4.0)
+        },
+        /* CMD_ATTENTION */ {
+            /* Sound  */ &s_f_marcher2_v_zentai_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_MARCH */ {
+            /* Sound  */ &s_f_marcher2_v_susume_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_HALT */ {
+            /* Sound  */ &s_f_marcher2_v_tomare_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE */ {
+            /* Sound  */ &s_f_marcher2_v_migimukeL_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_RIGHT_FACE_F */ {
+            /* Sound  */ &s_f_marcher2_v_migimukeS_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_RIGHT */ {
+            /* Sound  */ &s_f_marcher2_v_migi_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE */ {
+            /* Sound  */ &s_f_marcher2_v_hidarimukeL_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_LEFT_FACE_F */ {
+            /* Sound  */ &s_f_marcher2_v_hidarimukeS_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        },
+        /* CMD_TURN_LEFT */ {
+            /* Sound  */ &s_f_marcher2_v_hidari_jp_seqData,
+            /* Volume */ INT_TO_FIXED(1.0),
+            /* Pitch  */ INT_TO_FIXED(0.0)
+        }
+    }
+};
+#endif

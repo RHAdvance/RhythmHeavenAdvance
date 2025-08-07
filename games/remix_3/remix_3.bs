@@ -340,9 +340,15 @@ script script_remix_3_main
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
+    #ifdef SFX
+    rest 6
+    play_sfx s_space_ikeo_sit_seqData
+    rest 18
+    #else
     rest 10
     play_sfx s_space_ikeo_sit_seqData
     rest 14
+    #endif
     space_dance_event00 2
     play_sfx s_space_ikeo_down_seqData
     beat_anim
@@ -487,9 +493,15 @@ script script_remix_3_main
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
+    #ifdef SFX
+    rest 6
+    play_sfx s_space_ikeo_sit_seqData
+    rest 18
+    #else
     rest 10
     play_sfx s_space_ikeo_sit_seqData
     rest 14
+    #endif
     space_dance_event00 2
     play_sfx s_space_ikeo_down_seqData
     beat_anim

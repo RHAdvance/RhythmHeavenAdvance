@@ -224,8 +224,8 @@ const char *cafe_dialogue_all_perfects_clear[] = {
     /* ------------------------------------------------ */
         "\n"
         "I know it's not much of a gift,\n"
-        "but I've opened up more studio songs for you.\n"
-        "\n",
+        "but I've opened up more studio songs\n"
+        "for you.\n",
     /* ------------------------------------------------ */
         "\n"
         "So I guess that means you've collected\n"

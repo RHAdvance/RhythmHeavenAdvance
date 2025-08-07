@@ -43,7 +43,6 @@ return
 
 script script_bouncy_road_unused_2_main
     set_results_header D_0805b778
-    import_marking_criteria bouncy_road_marking_criteria
     set_tempo 120
     set_music_volume 256
     rest 24

@@ -65,6 +65,8 @@ else
 endif
 
 # Preprocessor defines
+
+# Features: SFX, PLUS, PLAYTEST
 FEATURES ?= 
 DEFINES := REV=$(REV) $(FEATURES)
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
@@ -153,7 +155,7 @@ default: $(OUTPUT).gba
 
 clean:
 	$(V)echo clean ...
-	$(V)rm -fr build/asm build/audio build/bin build/data build/games build/graphics build/src
+	$(V)rm -fr build/asm build/bin build/data build/games build/graphics build/src
 	$(V)rm -f build/advance.ld build/*.elf build/*.map build/*.gba
 
 distclean:

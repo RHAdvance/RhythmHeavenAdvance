@@ -114,6 +114,36 @@ endstruct
 @ Remix 8 - Main Script
 
 script script_remix_8_main
+    #ifdef SFX
+    set_results_header D_0806aa24
+    import_marking_criteria remix_8_marking_criteria
+    run gameplay_set_mercy_count, 2
+    start_tracking_inputs
+    set_marking_criteria 0
+    set_tempo 109
+    set_music_volume 256
+    start_perfect_campaign
+    rest 24
+    enable_pause_menu
+    rest 18
+    marching_orders_play_voice_sfx VOICE_ATTENTION
+    rest 6
+    play_music L8_pat_intro_seqData
+    marching_orders_event01
+    marching_orders_play_voice_sfx VOICE_ATTENTION_2
+    rest 9
+    marching_orders_play_voice_sfx VOICE_ATTENTION_3
+    rest 15
+    rest 24
+    call marching_orders_sub_08a837ac
+    rest 24
+    set_game_fade_in_time 0
+    play_music L8_pat01_seqData
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c
+    call marching_orders_sub_08a8386c_nobeat
+    call marching_orders_sub_08a83998
+    #else
     set_results_header D_0806aa24
     import_marking_criteria remix_8_marking_criteria
     run gameplay_set_mercy_count, 2
@@ -133,6 +163,7 @@ script script_remix_8_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
+    #endif
 
     load_karate_man
     beat_anim
@@ -521,6 +552,7 @@ script script_remix_8_main
     rest 24
     rest 24
 
+    #ifdef SFX
     load_marching_orders
     print_text_f D_0806aa50
     rest 24
@@ -531,7 +563,9 @@ script script_remix_8_main
     clear_text_f
     marching_orders_event01
     play_sfx s_guntai_v_migi_muke1_seqData
-    rest 24
+    rest 12
+    play_sfx s_guntai_v_migi_muke1_face_seqData
+    rest 12
     rest 24
     marching_orders_event01
     play_sfx s_guntai_v_migi_seqData
@@ -542,6 +576,29 @@ script script_remix_8_main
     marching_orders_play_voice_sfx SHOUT_TURN
     rest 12
     clear_text_f
+    #else
+    load_marching_orders
+    print_text_f D_0806aa50
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    clear_text_f
+    marching_orders_event01
+    play_sfx s_guntai_v_migi_muke1_jp_seqData
+    rest 24
+    rest 24
+    marching_orders_event01
+    play_sfx s_guntai_v_migi_jp_seqData
+    print_text_f D_0806aa51
+    spawn_cue CUE_TURN_RIGHT
+    rest 24
+    marching_orders_event00 4
+    marching_orders_play_voice_sfx SHOUT_TURN
+    rest 12
+    clear_text_f
+    #endif
 
     load_rhythm_tweezers_potato
     rhythm_tweezers_show_veg_mask

@@ -199,14 +199,14 @@ script script_cosmic_dance_main
     end_switch
     mod_music_volume 80, 72
     space_dance_event04 FALSE
-    play_sfx_vol s_intro_one_seqData, 52
+    play_sfx_vol s_sdance_one_seqData, 52
     rest 24
-    play_sfx_vol s_intro_two_seqData, 60
+    play_sfx_vol s_sdance_two_seqData, 60
     rest 24
-    play_sfx_vol s_intro_three_seqData, 48
+    play_sfx_vol s_sdance_three_seqData, 48
     rest 22
     rest 2
-    play_sfx_vol s_intro_uh_seqData, 56
+    play_sfx_vol s_sdance_go_seqData, 56
     rest 22
     rest 2
     rest 8

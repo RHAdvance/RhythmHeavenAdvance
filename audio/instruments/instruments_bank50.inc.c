@@ -344,12 +344,17 @@ struct InstrumentPCM instrument_pcm_1242 = {
 };
 
 extern struct SampleData sample_131_data;
+extern struct SampleData dlessons_one_data;
 struct InstrumentPCM instrument_pcm_1243 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
+#ifdef SFX
+    /* Sample    */ &dlessons_one_data,
+#else
     /* Sample    */ &sample_131_data,
+#endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -374,12 +379,17 @@ struct InstrumentPCM instrument_pcm_1244 = {
 };
 
 extern struct SampleData sample_133_data;
+extern struct SampleData dlessons_two_data;
 struct InstrumentPCM instrument_pcm_1245 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
+#ifdef SFX
+    /* Sample    */ &dlessons_two_data,
+#else
     /* Sample    */ &sample_133_data,
+#endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -389,12 +399,17 @@ struct InstrumentPCM instrument_pcm_1245 = {
 };
 
 extern struct SampleData sample_134_data;
+extern struct SampleData dlessons_three_data;
 struct InstrumentPCM instrument_pcm_1246 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
+#ifdef SFX
+    /* Sample    */ &dlessons_three_data,
+#else
     /* Sample    */ &sample_134_data,
+#endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,

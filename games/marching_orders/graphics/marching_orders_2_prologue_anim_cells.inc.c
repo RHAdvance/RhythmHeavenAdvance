@@ -262,4 +262,3 @@ AnimationCel marching_orders_2_prologue_cel007[] = {
     0x00c6, 0x81aa, 0x0090,
     0x00c6, 0x81a2, 0x0017,
 };
-

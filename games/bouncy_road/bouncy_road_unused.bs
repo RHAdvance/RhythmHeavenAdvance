@@ -42,8 +42,6 @@ return
 
 
 script script_bouncy_road_unused_main
-    import_marking_criteria bouncy_road_marking_criteria
-    enable_pause_menu
     set_tempo 120
     set_music_volume 256
     play_music s_f_even_road_seqData

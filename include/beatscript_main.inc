@@ -372,6 +372,15 @@ endstruct
     beatscript_cmd 0x29, 0, 0, \sound
 .endm
 
+@ [0x29] Play Sound Effect (Localized)
+.macro play_sfx_localized jap_sound, eng_sound
+#ifdef SFX
+    beatscript_cmd 0x29, 0, 0, \eng_sound
+#else
+    beatscript_cmd 0x29, 0, 0, \jap_sound
+#endif
+.endm
+
 
 @ [0x2A]
 @ [0x2B]

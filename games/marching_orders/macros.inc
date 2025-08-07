@@ -31,6 +31,14 @@
     .set VOICE_LEFT_FACE,       9
     .set VOICE_LEFT_FACE_F,     10
     .set VOICE_TURN_LEFT,       11
+    #ifdef SFX
+    .set VOICE_ATTENTION_2,     12
+    .set VOICE_ATTENTION_3,     13
+    .set VOICE_LEFT_FACE_2,     14
+    .set VOICE_RIGHT_FACE_2,    15
+    .set VOICE_F_FACE_RIGHT,    16
+    .set VOICE_F_FACE_LEFT,     17
+    #endif
 .endm
 
 

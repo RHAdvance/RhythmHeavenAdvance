@@ -80,7 +80,6 @@ endstruct
 script script_mechanical_horse_unused_main
     import_marking_criteria mechanical_horse_unused_marking_criteria
     stop_tracking_inputs
-    enable_pause_menu
     set_tempo 80
     set_music_volume 256
     mechanical_horse_event02 D_0805c4b4

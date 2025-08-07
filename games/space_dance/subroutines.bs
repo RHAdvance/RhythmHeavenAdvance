@@ -134,7 +134,11 @@ script cosmic_dance_sub_08a84e14
     rest 24
     beat_anim
     rest 14
+    #ifdef SFX
+    play_sfx s_space_ikeo_turn_seqData
+    #else
     play_sfx s_space_ikeo_turn_swing_seqData
+    #endif
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
@@ -153,7 +157,7 @@ script cosmic_dance_sub_08a84ef8
     rest 24
     beat_anim
     rest 14
-    play_sfx s_space_ikeo_turn_swing_seqData
+    play_sfx_localized s_space_ikeo_turn_swing_seqData, s_space_ikeo_turn_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
@@ -176,8 +180,8 @@ script cosmic_dance_sub_08a84fdc
     rest 24
     beat_anim
     rest 14
-    play_sfx s_space_ikeo_turn_swing_seqData
-    play_sfx s_space_kou_turn_swing_seqData
+    play_sfx_localized s_space_ikeo_turn_swing_seqData, s_space_ikeo_turn_seqData
+    play_sfx_localized s_space_kou_turn_swing_seqData, s_space_kou_turn_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
@@ -302,9 +306,15 @@ script space_dance_sub_08a85588
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
+    #ifdef SFX
+    rest 6
+    play_sfx s_space_ikeo_sit_seqData
+    rest 18
+    #else
     rest 10
     play_sfx s_space_ikeo_sit_seqData
     rest 14
+    #endif
     space_dance_event00 2
     play_sfx s_space_ikeo_down_seqData
     beat_anim
@@ -324,10 +334,19 @@ script space_dance_sub_08a8566c
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
+    #ifdef SFX
+    rest 6
+    play_sfx s_space_ikeo_sit_seqData
+    rest 4
+    play_sfx s_space_kou_sit_seqData
+    rest 14
+    play_sfx s_space_kou_down_seqData
+    #else
     rest 10
     play_sfx s_space_kou_sit_seqData
     play_sfx s_space_ikeo_sit_seqData
     rest 14
+    #endif
     space_dance_event00 2
     play_sfx s_space_kou_down_seqData
     play_sfx s_space_ikeo_down_seqData
@@ -369,9 +388,15 @@ script cosmic_dance_sub_08a85858
     spawn_cue CUE_SIT_DOWN
     beat_anim
     rest 8
+    #ifdef SFX
+    rest 2
+    play_sfx s_space_ikeo_sit_seqData
+    rest 6
+    #else
     rest 6
     play_sfx s_space_ikeo_sit_seqData
     rest 2
+    #endif
     rest 8
     space_dance_event00 2
     play_sfx s_space_ikeo_down_seqData

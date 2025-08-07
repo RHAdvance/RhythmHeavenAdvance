@@ -258,9 +258,14 @@ script script_space_dance_main
     beat_anim
     rest 24
     beat_anim
+    #ifdef SFX
+    rest 24
+    play_sfx s_space_ikeo_turn_seqData
+    #else
     rest 22
     play_sfx s_space_ikeo_turn_seqData
     rest 2
+    #endif
     play_sfx s_space_kou_turn_seqData
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT

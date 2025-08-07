@@ -93,7 +93,6 @@ return
 
 script script_spaceball_unused_2_main
     import_marking_criteria spaceball_unused_2_marking_criteria
-    enable_pause_menu
     stop_tracking_inputs
     set_tempo 105
     set_music_volume 256
