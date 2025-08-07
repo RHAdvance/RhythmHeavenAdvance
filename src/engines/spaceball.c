@@ -270,6 +270,7 @@ void spaceball_set_batter_type(u32 index) {
     gSpaceball->batter.animFar = spaceball_anim_table_batter_far_tables[gSpaceball->version][index];
 }
 
+// hello this is a stupid comment
 
 // ENGINE Func_05 - Set Next Spaceball Sprite
 void spaceball_set_ball_type(u32 index) {
