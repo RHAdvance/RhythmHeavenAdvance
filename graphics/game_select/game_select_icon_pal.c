@@ -120,7 +120,7 @@ Palette game_select_bg_icon_pal[] = {
         /* 05 */ TO_RGB555(0xeeff00),
         /* 06 */ TO_RGB555(0xff6600),
         /* 07 */ TO_RGB555(0x66ddff),
-        /* 08 */ TO_RGB555(0xded6d6),
+        /* 08 */ TO_RGB555(0xffeedd),
         /* 09 */ TO_RGB555(0xf04cfc),
         /* 10 */ TO_RGB555(0x00aaff),
         /* 11 */ TO_RGB555(0xff9400),
