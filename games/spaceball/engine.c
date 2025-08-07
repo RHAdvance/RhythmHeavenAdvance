@@ -40,6 +40,35 @@ struct GraphicsTable spaceball_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+struct GraphicsTable spaceball_extra_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &spaceball_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &spaceball_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xF000),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &spaceball_extra_obj,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ spaceball_extra_bg_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ spaceball_extra_obj_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
 // i can just make my own table mwehehehe >:) i got freewill
 // i don't have funny moth facts unfortunately
 // writting this comment is a waste of time
@@ -53,22 +82,22 @@ struct GraphicsTable spaceball_gfx_table[] = {
 // that is made like the one above (the fact that the bg is 8bpp doesn't matter)
 struct GraphicsTable *spaceball_gfx_tables[] = {
     /* 0x00 */ spaceball_gfx_table,
-    /* 0x01 */ spaceball_gfx_table
+    /* 0x01 */ spaceball_extra_gfx_table
 };
 
 struct Animation **spaceball_anim_table_batter_close_tables[] = {
     /* 0x00 */ spaceball_anim_table_batter_close,
-    /* 0x01 */ spaceball_anim_table_batter_close
+    /* 0x01 */ spaceball_extra_anim_table_batter_close
 };
 
 struct Animation **spaceball_anim_table_batter_far_tables[] = {
     /* 0x00 */ spaceball_anim_table_batter_far,
-    /* 0x01 */ spaceball_anim_table_batter_far
+    /* 0x01 */ spaceball_extra_anim_table_batter_far
 };
 
 struct Animation **spaceball_anim_table_ball_tables[] = {
     /* 0x00 */ spaceball_anim_table_ball,
-    /* 0x01 */ spaceball_anim_table_ball
+    /* 0x01 */ spaceball_extra_anim_table_ball
 };
 
 // [D_089de988] Batter Animations (Close)
@@ -86,7 +115,6 @@ struct Animation *spaceball_anim_table_batter_far[] = {
     anim_spaceball_batter_pink_far
 };
 
-
 // [D_089de9a0] Ball Animations
 struct Animation *spaceball_anim_table_ball[] = {
     anim_spaceball_baseball,
@@ -94,6 +122,26 @@ struct Animation *spaceball_anim_table_ball[] = {
     anim_spaceball_star_ball
 };
 
+
+struct Animation *spaceball_extra_anim_table_batter_close[] = {
+    anim_spaceball_extra_batter_green,
+    anim_spaceball_extra_batter_red,
+    anim_spaceball_extra_batter_pink
+};
+
+
+// [D_089de994] Batter Animations (Far)
+struct Animation *spaceball_extra_anim_table_batter_far[] = {
+    anim_spaceball_extra_batter_green_far,
+    anim_spaceball_extra_batter_red_far,
+    anim_spaceball_extra_batter_pink_far
+};
+
+struct Animation *spaceball_extra_anim_table_ball[] = {
+    anim_spaceball_extra_baseball,
+    anim_spaceball_extra_rice_ball,
+    anim_spaceball_extra_star_ball
+};
 
   //  //  //  CUE DATA  //  //  //
 

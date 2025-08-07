@@ -19,7 +19,7 @@ Palette marching_orders_extra_prologue_obj_pal[] = {
         /* 12 */ TO_RGB555(0x505050),
         /* 13 */ TO_RGB555(0x686868),
         /* 14 */ TO_RGB555(0xB8B8B8),
-        /* 15 */ TO_RGB555(0xffcc44)
+        /* 15 */ TO_RGB555(0xffbb44)
     }
 };
 

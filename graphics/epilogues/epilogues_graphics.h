@@ -11,6 +11,12 @@ extern struct CompressedData sneaky_spirits_epilogue_bg_map_ok;
 extern struct CompressedData sneaky_spirits_epilogue_bg_map_try_again;
 extern Palette epilogue_sneaky_spirits_bg_pal[];
 
+extern struct CompressedData spaceball_extra_epilogue_bg_tiles;
+extern struct CompressedData spaceball_extra_epilogue_bg_map_superb;
+extern struct CompressedData spaceball_extra_epilogue_bg_map_ok;
+extern struct CompressedData spaceball_extra_epilogue_bg_map_try_again;
+extern Palette epilogue_spaceball_extra_bg_pal[];
+
 extern struct CompressedData spaceball_epilogue_bg_tiles;
 extern struct CompressedData spaceball_epilogue_bg_map_superb;
 extern struct CompressedData spaceball_epilogue_bg_map_ok;
@@ -95,6 +101,12 @@ extern struct CompressedData clappy_trio_epilogue_bg_map_ok;
 extern struct CompressedData clappy_trio_epilogue_bg_map_try_again;
 extern Palette epilogue_clappy_trio_bg_pal[];
 
+extern struct CompressedData clappy_trio_extra_epilogue_bg_tiles;
+extern struct CompressedData clappy_trio_extra_epilogue_bg_map_superb;
+extern struct CompressedData clappy_trio_extra_epilogue_bg_map_ok;
+extern struct CompressedData clappy_trio_extra_epilogue_bg_map_try_again;
+extern Palette epilogue_clappy_trio_extra_bg_pal[];
+
 extern struct CompressedData snappy_trio_epilogue_bg_tiles;
 extern struct CompressedData snappy_trio_epilogue_bg_map_superb;
 extern struct CompressedData snappy_trio_epilogue_bg_map_ok;
@@ -172,6 +184,12 @@ extern struct CompressedData remix_1_epilogue_bg_map_superb;
 extern struct CompressedData remix_1_epilogue_bg_map_ok;
 extern struct CompressedData remix_1_epilogue_bg_map_try_again;
 extern Palette epilogue_remix1_bg_pal[];
+
+extern struct CompressedData remix_1_extra_epilogue_bg_tiles;
+extern struct CompressedData remix_1_extra_epilogue_bg_map_superb;
+extern struct CompressedData remix_1_extra_epilogue_bg_map_ok;
+extern struct CompressedData remix_1_extra_epilogue_bg_map_try_again;
+extern Palette epilogue_remix1_extra_bg_pal[];
 
 extern struct CompressedData remix_2_epilogue_bg_tiles;
 extern struct CompressedData remix_2_epilogue_bg_map_superb;

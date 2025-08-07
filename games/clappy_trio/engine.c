@@ -6,14 +6,14 @@
 
 // [D_089e4520] All Animations
 struct Animation *clappy_trio_anim[][3] = {
-    /* BEAT  */ { anim_clappy_trio_beat, anim_snappy_trio_beat, anim_clappy_trio_beat },
-    /* SMILE */ { anim_clappy_trio_smile, anim_snappy_trio_smile, anim_clappy_trio_smile },
-    /* GLARE */ { anim_clappy_trio_glare, anim_snappy_trio_glare, anim_clappy_trio_glare },
-    /* SMIRK */ { anim_clappy_trio_smirk, anim_snappy_trio_smirk, anim_clappy_trio_smirk },
-    /* CLAP  */ { anim_clappy_trio_clap, anim_snappy_trio_clap, anim_clappy_trio_clap },
-    /* YOU   */ { anim_clappy_trio_player_icon, anim_snappy_trio_player_icon, anim_clappy_trio_player_icon },
-    /* SIGN  */ { anim_clappy_trio_sign, anim_snappy_trio_sign, anim_clappy_trio_sign },
-    /* TEXT  */ { anim_clappy_trio_text_box, anim_snappy_trio_text_box, anim_clappy_trio_text_box }
+    /* BEAT  */ { anim_clappy_trio_beat, anim_snappy_trio_beat, anim_clappy_trio_extra_beat },
+    /* SMILE */ { anim_clappy_trio_smile, anim_snappy_trio_smile, anim_clappy_trio_extra_smile },
+    /* GLARE */ { anim_clappy_trio_glare, anim_snappy_trio_glare, anim_clappy_trio_extra_glare },
+    /* SMIRK */ { anim_clappy_trio_smirk, anim_snappy_trio_smirk, anim_clappy_trio_extra_smirk },
+    /* CLAP  */ { anim_clappy_trio_clap, anim_snappy_trio_clap, anim_clappy_trio_extra_clap },
+    /* YOU   */ { anim_clappy_trio_player_icon, anim_snappy_trio_player_icon, anim_clappy_trio_extra_player_icon },
+    /* SIGN  */ { anim_clappy_trio_sign, anim_snappy_trio_sign, anim_clappy_trio_extra_sign },
+    /* TEXT  */ { anim_clappy_trio_text_box, anim_snappy_trio_text_box, anim_clappy_trio_extra_text_box }
 };
 
 // [D_089e4560] Animation Table
@@ -93,11 +93,40 @@ struct GraphicsTable snappy_trio_gfx_table[] = {
     END_OF_GRAPHICS_TABLE
 };
 
+struct GraphicsTable clappy_trio_extra_gfx_table[] = {
+    /* BG Tileset */ {
+        /* Src.  */ &clappy_trio_extra_bg_tiles,
+        /* Dest. */ BG_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Map */ {
+        /* Src.  */ &clappy_trio_extra_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xE800),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* OBJ Tileset */ {
+        /* Src.  */ &clappy_trio_extra_obj,
+        /* Dest. */ OBJ_TILESET_BASE(0),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    /* BG Palette */ {
+        /* Src.  */ clappy_trio_extra_bg_pal,
+        /* Dest. */ BG_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    /* OBJ Palette */ {
+        /* Src.  */ clappy_trio_extra_obj_pal,
+        /* Dest. */ OBJ_PALETTE_BUFFER(0),
+        /* Size  */ 0x140
+    },
+    END_OF_GRAPHICS_TABLE
+};
+
 // [D_089e4614] Graphics Table Index
 struct GraphicsTable *clappy_trio_gfx_tables[] = {
     /* 0x00 */ clappy_trio_gfx_table,
     /* 0x01 */ snappy_trio_gfx_table,
-    /* 0x02 */ clappy_trio_gfx_table,
+    /* 0x02 */ clappy_trio_extra_gfx_table,
 };
 
 

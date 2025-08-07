@@ -423,19 +423,19 @@ const struct GraphicsTable *epilogue_marching_orders_extra_gfx_tables[] = {
 };
 
 const struct GraphicsTable *epilogue_spaceball_extra_gfx_tables[] = {
-    /* TRY AGAIN */ INLINE_GFX_TABLE(&spaceball_epilogue_bg_tiles, &spaceball_epilogue_bg_map_try_again, epilogue_spaceball_bg_pal),
-    /* JUST OK   */ INLINE_GFX_TABLE(&spaceball_epilogue_bg_tiles, &spaceball_epilogue_bg_map_ok, epilogue_spaceball_bg_pal),
-    /* SUPERB    */ INLINE_GFX_TABLE(&spaceball_epilogue_bg_tiles, &spaceball_epilogue_bg_map_superb, epilogue_spaceball_bg_pal)
+    /* TRY AGAIN */ INLINE_GFX_TABLE(&spaceball_extra_epilogue_bg_tiles, &spaceball_extra_epilogue_bg_map_try_again, epilogue_spaceball_extra_bg_pal),
+    /* JUST OK   */ INLINE_GFX_TABLE(&spaceball_extra_epilogue_bg_tiles, &spaceball_extra_epilogue_bg_map_ok, epilogue_spaceball_extra_bg_pal),
+    /* SUPERB    */ INLINE_GFX_TABLE(&spaceball_extra_epilogue_bg_tiles, &spaceball_extra_epilogue_bg_map_superb, epilogue_spaceball_extra_bg_pal)
 };
 
 const struct GraphicsTable *epilogue_clappy_trio_extra_gfx_tables[] = {
-    /* TRY AGAIN */ INLINE_GFX_TABLE(&clappy_trio_epilogue_bg_tiles, &clappy_trio_epilogue_bg_map_try_again, epilogue_clappy_trio_bg_pal),
-    /* JUST OK   */ INLINE_GFX_TABLE(&clappy_trio_epilogue_bg_tiles, &clappy_trio_epilogue_bg_map_ok, epilogue_clappy_trio_bg_pal),
-    /* SUPERB    */ INLINE_GFX_TABLE(&clappy_trio_epilogue_bg_tiles, &clappy_trio_epilogue_bg_map_superb, epilogue_clappy_trio_bg_pal)
+    /* TRY AGAIN */ INLINE_GFX_TABLE(&clappy_trio_extra_epilogue_bg_tiles, &clappy_trio_extra_epilogue_bg_map_try_again, epilogue_clappy_trio_extra_bg_pal),
+    /* JUST OK   */ INLINE_GFX_TABLE(&clappy_trio_extra_epilogue_bg_tiles, &clappy_trio_extra_epilogue_bg_map_ok, epilogue_clappy_trio_extra_bg_pal),
+    /* SUPERB    */ INLINE_GFX_TABLE(&clappy_trio_extra_epilogue_bg_tiles, &clappy_trio_extra_epilogue_bg_map_superb, epilogue_clappy_trio_extra_bg_pal)
 };
 
 const struct GraphicsTable *epilogue_remix1_extra_gfx_tables[] = {
-    /* TRY AGAIN */ INLINE_GFX_TABLE(&remix_1_epilogue_bg_tiles, &remix_1_epilogue_bg_map_try_again, epilogue_remix1_bg_pal),
-    /* JUST OK   */ INLINE_GFX_TABLE(&remix_1_epilogue_bg_tiles, &remix_1_epilogue_bg_map_ok, epilogue_remix1_bg_pal),
-    /* SUPERB    */ INLINE_GFX_TABLE(&remix_1_epilogue_bg_tiles, &remix_1_epilogue_bg_map_superb, epilogue_remix1_bg_pal)
+    /* TRY AGAIN */ INLINE_GFX_TABLE(&remix_1_extra_epilogue_bg_tiles, &remix_1_extra_epilogue_bg_map_try_again, epilogue_remix1_extra_bg_pal),
+    /* JUST OK   */ INLINE_GFX_TABLE(&remix_1_extra_epilogue_bg_tiles, &remix_1_extra_epilogue_bg_map_ok, epilogue_remix1_extra_bg_pal),
+    /* SUPERB    */ INLINE_GFX_TABLE(&remix_1_extra_epilogue_bg_tiles, &remix_1_extra_epilogue_bg_map_superb, epilogue_remix1_extra_bg_pal)
 };

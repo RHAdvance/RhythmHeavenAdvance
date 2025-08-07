@@ -74,6 +74,9 @@ extern struct Animation **spaceball_anim_table_ball_tables[]; // Spaceball Anima
 extern struct Animation *spaceball_anim_table_batter_close[3]; // Batter Animations (Close)
 extern struct Animation *spaceball_anim_table_batter_far[3]; // Batter Animations (Far)
 extern struct Animation *spaceball_anim_table_ball[3]; // Spaceball Animations
+extern struct Animation *spaceball_extra_anim_table_batter_close[3]; // Batter Animations (Close)
+extern struct Animation *spaceball_extra_anim_table_batter_far[3]; // Batter Animations (Far)
+extern struct Animation *spaceball_extra_anim_table_ball[3]; // Spaceball Animations
 extern struct GraphicsTable *spaceball_gfx_tables[];
 
 // Functions:

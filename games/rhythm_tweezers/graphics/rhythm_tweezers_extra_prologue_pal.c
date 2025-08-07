@@ -18,7 +18,7 @@ Palette rhythm_tweezers_extra_prologue_obj_pal[] = {
         /* 11 */ TO_RGB555(0x000000),
         /* 12 */ TO_RGB555(0x000000),
         /* 13 */ TO_RGB555(0xFFFFFF),
-        /* 14 */ TO_RGB555(0xFF42F7),
+        /* 14 */ TO_RGB555(0xC642F7),
         /* 15 */ TO_RGB555(0x000000)
     },
     /* PALETTE 01 */ {
@@ -36,7 +36,7 @@ Palette rhythm_tweezers_extra_prologue_obj_pal[] = {
         /* 11 */ TO_RGB555(0x000000),
         /* 12 */ TO_RGB555(0x000000),
         /* 13 */ TO_RGB555(0xF3FFD0),
-        /* 14 */ TO_RGB555(0xF371CA),
+        /* 14 */ TO_RGB555(0xc97ac7),
         /* 15 */ TO_RGB555(0x383838)
     },
     /* PALETTE 02 */ {
@@ -54,7 +54,7 @@ Palette rhythm_tweezers_extra_prologue_obj_pal[] = {
         /* 11 */ TO_RGB555(0x000000),
         /* 12 */ TO_RGB555(0x000000),
         /* 13 */ TO_RGB555(0xE7FFA1),
-        /* 14 */ TO_RGB555(0xE7A19D),
+        /* 14 */ TO_RGB555(0xca96ab),
         /* 15 */ TO_RGB555(0x787878)
     },
     /* PALETTE 03 */ {
@@ -72,7 +72,7 @@ Palette rhythm_tweezers_extra_prologue_obj_pal[] = {
         /* 11 */ TO_RGB555(0x000000),
         /* 12 */ TO_RGB555(0x000000),
         /* 13 */ TO_RGB555(0xDAFF71),
-        /* 14 */ TO_RGB555(0xDAD06F),
+        /* 14 */ TO_RGB555(0xccc081),
         /* 15 */ TO_RGB555(0xB8B8B8)
     },
     /* PALETTE 04 */ {
@@ -99,9 +99,9 @@ Palette rhythm_tweezers_extra_prologue_obj_pal[] = {
 Palette rhythm_tweezers_extra_prologue_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xF86808),
-        /* 01 */ TO_RGB555(0x6b9dff),
-        /* 02 */ TO_RGB555(0x1140b0),
-        /* 03 */ TO_RGB555(0x1b63e8),
+        /* 01 */ TO_RGB555(0x6b9cff),
+        /* 02 */ TO_RGB555(0x1842ad),
+        /* 03 */ TO_RGB555(0x2163e7),
         /* 04 */ TO_RGB555(0xc7f036),
         /* 05 */ TO_RGB555(0xF8F8F8),
         /* 06 */ TO_RGB555(0xE0E0E0),
