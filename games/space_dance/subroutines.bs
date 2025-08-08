@@ -157,7 +157,11 @@ script cosmic_dance_sub_08a84ef8
     rest 24
     beat_anim
     rest 14
-    play_sfx_localized s_space_ikeo_turn_swing_seqData, s_space_ikeo_turn_seqData
+    #ifdef SFX
+    play_sfx s_space_ikeo_turn_seqData
+    #else
+    play_sfx s_space_ikeo_turn_swing_seqData
+    #endif
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
@@ -180,8 +184,16 @@ script cosmic_dance_sub_08a84fdc
     rest 24
     beat_anim
     rest 14
-    play_sfx_localized s_space_ikeo_turn_swing_seqData, s_space_ikeo_turn_seqData
-    play_sfx_localized s_space_kou_turn_swing_seqData, s_space_kou_turn_seqData
+    #ifdef SFX
+    play_sfx s_space_ikeo_turn_seqData
+    #else
+    play_sfx s_space_ikeo_turn_swing_seqData
+    #endif
+    #ifdef SFX
+    play_sfx s_space_kou_turn_seqData
+    #else
+    play_sfx s_space_kou_turn_swing_seqData
+    #endif
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
