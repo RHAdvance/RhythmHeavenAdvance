@@ -453,6 +453,7 @@ return
 script script_karate_man_extra_main
     set_results_header D_0805abdc
     start_perfect_campaign
+    rest 24
     enable_pause_menu
     import_marking_criteria karate_man_extra_marking_criteria
     run gameplay_set_mercy_count, 2

@@ -118,6 +118,7 @@ script script_spaceball_extra_main
     set_music_volume 60
     mod_music_volume 180, 192
     play_music s_shibafu1_bgm_seqData
+    start_perfect_campaign
     rest 24
     enable_pause_menu
     rest 24
@@ -171,7 +172,6 @@ script script_spaceball_extra_main
     rest 12
     spaceball_zoom_camera 0xff00, 12
     rest 12
-    start_perfect_campaign
     rest 24
     rest 24
     spawn_cue CUE_LOW
