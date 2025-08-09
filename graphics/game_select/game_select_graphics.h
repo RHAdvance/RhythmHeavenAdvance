@@ -126,6 +126,7 @@ extern const u8 icon_overlay_blank1_bin[]; // Blank
 extern const u8 icon_overlay_medal_bin[]; // Medal
 extern const u8 icon_overlay_new_game_bin[]; // New Game/Remix Circular Spotlight
 extern const u8 icon_overlay_blank2_bin[]; // Blank
+extern const u8 icon_overlay_perfect_bin[]; // Perfect
 
 /* GAME SELECT ICON OVERLAYS - PALETTES */
 

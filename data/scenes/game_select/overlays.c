@@ -141,7 +141,17 @@ struct GameSelectOverlay game_select_icon_overlay_bonus = {
     }
 };
 
-// [D_089cfa74] Overlay Data Table
+// [D_089cfa74] Perfect Cleared
+struct GameSelectOverlay game_select_icon_overlay_perfect = {
+    /* Dimensions */ 3, 3,
+    /* Texture    */ icon_overlay_perfect_bin,
+    /* Anim. Data */ (s8[]) {
+        /* 000 */ 0, 1,
+        /* End */ LEVEL_ICON_ANIM_STOP
+    }
+};
+
+// [D_089cfa80] Overlay Data Table
 struct GameSelectOverlay *level_icon_overlay_data[] = {
     /* 00 */ &game_select_icon_overlay_hidden,
     /* 01 */ &game_select_icon_overlay_closed,
@@ -151,7 +161,8 @@ struct GameSelectOverlay *level_icon_overlay_data[] = {
     /* 05 */ &game_select_icon_overlay_remix_closed,
     /* 06 */ &game_select_icon_overlay_remix_uncleared,
     /* 07 */ &game_select_icon_overlay_bonus,
-    /* 08 */ NULL
+    /* 08 */ &game_select_icon_overlay_perfect,
+    /* 09 */ NULL
 };
 
 
@@ -162,7 +173,8 @@ u8 game_level_icon_overlays_map[] = {
     /* CLOSED    */ LEVEL_ICON_OVERLAY_CLOSED,
     /* UNCLEARED */ LEVEL_ICON_OVERLAY_UNCLEARED,
     /* CLEARED   */ LEVEL_ICON_OVERLAY_CLEARED,
-    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL
+    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL,
+    /* PERFECT   */ LEVEL_ICON_OVERLAY_PERFECT
 };
 
 // [D_089cfa9e] Icon Overlay Map (Remix)
@@ -172,7 +184,8 @@ u8 remix_level_icon_overlays_map[] = {
     /* CLOSED    */ LEVEL_ICON_OVERLAY_REMIX_CLOSED,
     /* UNCLEARED */ LEVEL_ICON_OVERLAY_REMIX_UNCLEARED,
     /* CLEARED   */ LEVEL_ICON_OVERLAY_CLEARED,
-    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL
+    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL,
+    /* PERFECT   */ LEVEL_ICON_OVERLAY_PERFECT
 };
 
 // [D_089cfaa4] Icon Overlay Map (Medal Corner)
@@ -182,7 +195,8 @@ u8 bonus_level_icon_overlays_map[] = {
     /* CLOSED    */ LEVEL_ICON_OVERLAY_CLOSED,
     /* UNCLEARED */ LEVEL_ICON_OVERLAY_UNCLEARED,
     /* CLEARED   */ LEVEL_ICON_OVERLAY_BONUS,
-    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL
+    /* HAS_MEDAL */ LEVEL_ICON_OVERLAY_MEDAL,
+    /* PERFECT   */ LEVEL_ICON_OVERLAY_PERFECT
 };
 
 // [D_089cfaac] Icon Overlay Map

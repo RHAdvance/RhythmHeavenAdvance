@@ -470,6 +470,26 @@ s32 get_level_state_from_id(s32 id) {
 }
 
 
+// Get Level Completion State from Level ID (with Perfect Detection)
+s32 get_level_state_with_perfect_from_id(s32 id) {
+    struct TengokuSaveData *saveData = &D_030046a8->data;
+    s32 levelState;
+
+    if (id < 0) {
+        return LEVEL_STATE_NULL;
+    }
+
+    levelState = get_level_state(saveData, id);
+
+    // Check if the game has been perfected (same logic as rank printing)
+    if (get_campaign_cleared(saveData, get_campaign_from_level_id(id))) {
+        levelState = LEVEL_STATE_PERFECT;
+    }
+
+    return levelState;
+}
+
+
 // Get Level Data from Grid Position
 struct LevelData *get_level_data_from_grid_xy(s32 x, s32 y) {
     return get_level_data_from_id(get_level_id_from_grid_xy(x, y));
@@ -479,6 +499,12 @@ struct LevelData *get_level_data_from_grid_xy(s32 x, s32 y) {
 // Get Level Completion State from Grid Position
 s32 get_level_state_from_grid_xy(s32 x, s32 y) {
     return get_level_state_from_id(get_level_id_from_grid_xy(x, y));
+}
+
+
+// Get Level Completion State from Grid Position (with Perfect Detection)
+s32 get_level_state_with_perfect_from_grid_xy(s32 x, s32 y) {
+    return get_level_state_with_perfect_from_id(get_level_id_from_grid_xy(x, y));
 }
 
 
@@ -538,7 +564,12 @@ void init_game_select_grid_gfx(void) {
 
                 levelData = &level_data_table[levelID];
                 levelType = levelData->type;
-                levelState = get_level_state(saveData, levelID);
+                // Only use perfect detection for actual playable levels (like medal system)
+                if (levelType == LEVEL_TYPE_GAME || levelType == LEVEL_TYPE_REMIX) {
+                    levelState = get_level_state_with_perfect_from_id(levelID);
+                } else {
+                    levelState = get_level_state_from_id(levelID);
+                }
                 overlay = level_icon_overlays_map[levelType][levelState];
                 if (levelState != LEVEL_STATE_HIDDEN) {
                     tileNum = 1 + (levelData->icon * 3 * 3);
@@ -546,7 +577,13 @@ void init_game_select_grid_gfx(void) {
                     game_select_print_icon_maps(28, 3, tileX, tileY, 3, 3, tileNum, palette);
                 }
                 tileNum = 1 + (overlay * 3 * 3) + 0x100;
-                game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 7);
+                
+                // Adjust position for perfect overlay (move right 1 tile)
+                if (overlay == LEVEL_ICON_OVERLAY_PERFECT) {
+                    game_select_print_icon_maps(24, 3, tileX + 1, tileY, 3, 3, tileNum, 8);
+                } else {
+                    game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 8);
+                }
             }
         }
     }
@@ -902,8 +939,9 @@ void game_select_update_bg_scroll(void) {
 
 // Set Selection Border Sprite Z/Layer
 void game_select_set_cursor_border_z(void) {
-    // Adjust Z level to place selection border under the medal icon (if present).
-    if (get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY) == LEVEL_STATE_HAS_MEDAL) {
+    s32 levelState = get_level_state_with_perfect_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
+    // Adjust Z level to place selection border under the medal/perfect icon (if present).
+    if ((levelState == LEVEL_STATE_HAS_MEDAL) || (levelState == LEVEL_STATE_PERFECT)) {
         sprite_set_z(gSpriteHandler, gGameSelect->selectionBorderSprite, 0x8800);
     } else {
         sprite_set_z(gSpriteHandler, gGameSelect->selectionBorderSprite, 0x4800);
@@ -1050,7 +1088,7 @@ void game_select_read_inputs(void) {
         levelState = get_level_state_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
 
         /* If the level can be opened: */
-        if ((levelState == LEVEL_STATE_OPEN) || (levelState == LEVEL_STATE_CLEARED) || (levelState == LEVEL_STATE_HAS_MEDAL)) {
+        if ((levelState == LEVEL_STATE_OPEN) || (levelState == LEVEL_STATE_CLEARED) || (levelState == LEVEL_STATE_HAS_MEDAL) || (levelState == LEVEL_STATE_PERFECT)) {
             D_030046a8->data.gsCursorX = gGameSelect->cursorX;
             D_030046a8->data.gsCursorY = gGameSelect->cursorY;
             levelID = get_level_id_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
@@ -1471,7 +1509,12 @@ void game_select_set_icon_map_after_level_event(s32 x, s32 y) {
     tileY = 4 + (y * 3);
     levelData = &level_data_table[id];
     type = levelData->type;
-    state = get_level_state(saveData, id);
+    // Only use perfect detection for actual playable levels (like medal system)
+    if (type == LEVEL_TYPE_GAME || type == LEVEL_TYPE_REMIX) {
+        state = get_level_state_with_perfect_from_id(id);
+    } else {
+        state = get_level_state_from_id(id);
+    }
     overlay = level_icon_overlays_map[type][state];
 
     if ((state == LEVEL_STATE_HIDDEN) || (state == LEVEL_STATE_APPEARING)) {
@@ -1483,7 +1526,13 @@ void game_select_set_icon_map_after_level_event(s32 x, s32 y) {
     game_select_print_icon_maps(28, 3, tileX, tileY, 3, 3, tileNum, palette);
 
     tileNum = 1 + (overlay * 9) + 0x100;
-    game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 7);
+    
+    // Adjust position for perfect overlay (move right 1 tile)
+    if (overlay == LEVEL_ICON_OVERLAY_PERFECT) {
+        game_select_print_icon_maps(24, 3, tileX + 1, tileY, 3, 3, tileNum, 8);
+    } else {
+        game_select_print_icon_maps(24, 3, tileX, tileY, 3, 3, tileNum, 8);
+    }
 }
 
 

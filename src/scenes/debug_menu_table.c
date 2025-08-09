@@ -494,7 +494,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Tanuki and Monkey */ {
         /* Scene */ &scene_tanuki_and_monkey,
-        /* Label */ "‚s‚‚‚•‚‹‚‰@‚`‚‚„@‚l‚‚‚‹‚…‚™",
+        /* Label */ "‚s‚‚‚•‚‹‚‰@•@‚l‚‚‚‹‚…‚™",
         /* Epil. */ TRUE
     },
     /* R-IQ (Title Screen) */ {

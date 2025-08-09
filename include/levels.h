@@ -119,7 +119,8 @@ enum LevelCompletionStatesEnum {
     /* 02 */ LEVEL_STATE_CLOSED,
     /* 03 */ LEVEL_STATE_OPEN,
     /* 04 */ LEVEL_STATE_CLEARED,
-    /* 05 */ LEVEL_STATE_HAS_MEDAL
+    /* 05 */ LEVEL_STATE_HAS_MEDAL,
+    /* 06 */ LEVEL_STATE_PERFECT
 };
 
 

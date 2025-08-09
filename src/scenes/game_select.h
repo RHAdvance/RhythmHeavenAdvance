@@ -42,7 +42,8 @@ enum LevelIconOverlaysEnum {
     /* 04 */ LEVEL_ICON_OVERLAY_MEDAL,
     /* 05 */ LEVEL_ICON_OVERLAY_REMIX_CLOSED,
     /* 06 */ LEVEL_ICON_OVERLAY_REMIX_UNCLEARED,
-    /* 07 */ LEVEL_ICON_OVERLAY_BONUS
+    /* 07 */ LEVEL_ICON_OVERLAY_BONUS,
+    /* 08 */ LEVEL_ICON_OVERLAY_PERFECT
 };
 
 
@@ -284,8 +285,10 @@ extern s32 get_campaign_from_level_id(s32 id);
 extern s32 get_level_id_from_grid_xy(s32 x, s32 y);
 extern struct LevelData *get_level_data_from_id(s32 id);
 extern s32 get_level_state_from_id(s32 id);
+extern s32 get_level_state_with_perfect_from_id(s32 id);
 extern struct LevelData *get_level_data_from_grid_xy(s32 x, s32 y);
 extern s32 get_level_state_from_grid_xy(s32 x, s32 y);
+extern s32 get_level_state_with_perfect_from_grid_xy(s32 x, s32 y);
 extern void get_grid_xy_from_level_id(s32 id, s32 *xReq, s32 *yReq);
 extern void init_game_select_grid_gfx(void);
 extern void get_pixel_xy_from_grid_xy(s32 x, s32 y, s16 *xReq, s16 *yReq);
