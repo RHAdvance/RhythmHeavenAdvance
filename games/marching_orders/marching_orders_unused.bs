@@ -231,7 +231,8 @@ script script_marching_orders_unused_practice
     set_music_volume 256
     play_music s_guntai1_seqData
     rest 24
-    init_tutorial scene_marching_orders_unused_skipped_practice
+    run gameplay_display_skip_icon, 1
+    run gameplay_set_tutorial scene_marching_orders_unused_skipped_practice
     print_text_f D_0805c828
     rest 24
     rest 24
