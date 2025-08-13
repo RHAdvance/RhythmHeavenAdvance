@@ -460,7 +460,7 @@ script script_karate_man_extra_main
     run gameplay_set_sound_tempo, 124
     set_tempo 177
     set_music_volume 150
-    play_music s_karate_bgm_seqData
+    play_music s_karate_extra_bgm_seqData
     start_tracking_inputs
     call karate_man_extra_sub_089edf88
     call karate_man_extra_sub_089ee168

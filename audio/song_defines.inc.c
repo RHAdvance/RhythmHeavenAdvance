@@ -1962,3 +1962,4 @@
 /* 1932 */ DEFINE_SONG( &s_guntai_v_muke_f_seqData,    SFX_PLAYER_1   )
 /* 1933 */ DEFINE_SONG( &s_f_marcher2_v_hidarimukeS2_seqData, SFX_PLAYER_1   )
 /* 1934 */ DEFINE_SONG( &s_f_marcher2_v_migimukeS2_seqData, SFX_PLAYER_1   )
+/* 1935 */ DEFINE_SONG( &s_karate_extra_bgm_seqData,          MUSIC_PLAYER_0 )

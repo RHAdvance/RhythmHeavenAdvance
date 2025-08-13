@@ -5339,6 +5339,122 @@
         {
             "sample": "ninja_bodyguard_huh.wav",
             "pitch": "C5"
+        },
+        {
+            "sample": "awake_baby.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "baby.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "beat.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "can.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "give_you.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "groove.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hey.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hey_baby.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hey_baby_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hold_on_to_your_ambitions.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hows_it_going.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hows_it_going_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "i.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "in_your.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "is.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "listen.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "new.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "non.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "oh_yeah.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "oh_yeah_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "oh_yeah_3.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "phrase.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "soul.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "stop.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "the_sense_of_rhythm.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "this.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "to_my.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "trust_me.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "you_are_growing_up_well.wav",
+            "pitch": "C5"
         }
     ]
 }

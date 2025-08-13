@@ -749,3 +749,4 @@ char s_f_marcher2_v_migi_jp_seqName[] = "";
 char s_f_marcher2_v_hidarimukeL_jp_seqName[] = "";
 char s_f_marcher2_v_hidarimukeS_jp_seqName[] = "";
 char s_f_marcher2_v_hidari_jp_seqName[] = "";
+char s_karate_extra_bgm_seqName[] = "";

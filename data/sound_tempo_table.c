@@ -158,5 +158,6 @@ struct TempoTable sound_tempo_table[] = {
     { &s_renshu_bgm1_seqData, 125 },
     { &s_renshu_bgm2_seqData, 125 },
     { &s_renshu_bgm3_seqData, 125 },
+    { &s_karate_extra_bgm_seqData, 120 },
     { NULL, 0 }
 };

@@ -111,5 +111,6 @@ union Instrument *instrument_banks[] = {
     /* 109 */ NULL,
     /* 110 */ inst_bank_62,
     /* 111 */ inst_bank_63,
+    /* 111 */ inst_bank_69,
     (void *)1
 };

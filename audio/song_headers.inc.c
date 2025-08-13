@@ -9025,3 +9025,15 @@ struct SongHeader s_f_marcher2_v_hidari_jp_seqData = {
     /* Song Title    */ s_f_marcher2_v_hidari_jp_seqName,
     /* Song Number   */ 709
 };
+
+extern const u8 s_karate_extra_bgm_mid[];
+struct SongHeader s_karate_extra_bgm_seqData = {
+    /* MIDI Sequence */ s_karate_extra_bgm_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_1,
+    /* Volume        */ 90,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_karate_extra_bgm_seqName,
+    /* Song Number   */ 1935
+};
