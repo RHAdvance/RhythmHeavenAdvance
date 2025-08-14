@@ -267,6 +267,7 @@ script script_remix_1_extra_main
     beat_anim
     rest 24
     play_music L1_pat06_seqData
+    run gameplay_set_sound_tempo, 124
     spawn_cue CUE_POT
     beat_anim
     rest 24
