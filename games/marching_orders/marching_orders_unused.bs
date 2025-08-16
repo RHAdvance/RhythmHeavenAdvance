@@ -568,6 +568,7 @@ script script_marching_orders_unused_practice
     rest 24
     rest 24
     clear_text_f
+    run gameplay_set_tutorial NULL
     goto script_marching_orders_unused_main
 #else
 script script_marching_orders_unused_main
