@@ -9037,3 +9037,51 @@ struct SongHeader s_karate_extra_bgm_seqData = {
     /* Song Title    */ s_karate_extra_bgm_seqName,
     /* Song Number   */ 1935
 };
+
+extern const u8 s_f_boxing_hit_sfx_mid[];
+struct SongHeader s_f_boxing_hit_sfx_seqData = {
+    /* MIDI Sequence */ s_f_boxing_hit_sfx_mid,
+    /* Sound Player  */ SFX_PLAYER_2,
+    /* Bank Number   */ INST_BANK_56,
+    /* Volume        */ 120,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_f_boxing_hit_sfx_seqName,
+    /* Song Number   */ 1936
+};
+
+extern const u8 s_f_boxing_three_sfx_mid[];
+struct SongHeader s_f_boxing_three_sfx_seqData = {
+    /* MIDI Sequence */ s_f_boxing_three_sfx_mid,
+    /* Sound Player  */ SFX_PLAYER_2,
+    /* Bank Number   */ INST_BANK_56,
+    /* Volume        */ 120,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_f_boxing_three_sfx_seqName,
+    /* Song Number   */ 1937
+};
+
+extern const u8 s_f_boxing_two_sfx_mid[];
+struct SongHeader s_f_boxing_two_sfx_seqData = {
+    /* MIDI Sequence */ s_f_boxing_two_sfx_mid,
+    /* Sound Player  */ SFX_PLAYER_2,
+    /* Bank Number   */ INST_BANK_56,
+    /* Volume        */ 120,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_f_boxing_two_sfx_seqName,
+    /* Song Number   */ 1938
+};
+
+extern const u8 s_f_boxing_four_sfx_mid[];
+struct SongHeader s_f_boxing_four_sfx_seqData = {
+    /* MIDI Sequence */ s_f_boxing_four_sfx_mid,
+    /* Sound Player  */ SFX_PLAYER_2,
+    /* Bank Number   */ INST_BANK_56,
+    /* Volume        */ 120,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_f_boxing_four_sfx_seqName,
+    /* Song Number   */ 1939
+};

@@ -5455,6 +5455,22 @@
         {
             "sample": "you_are_growing_up_well.wav",
             "pitch": "C5"
+        },
+        {
+            "sample": "hit.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "three.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "two.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "four.wav",
+            "pitch": "C5"
         }
     ]
 }

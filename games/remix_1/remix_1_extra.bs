@@ -131,6 +131,7 @@ script script_remix_1_extra_main
     set_marking_criteria 0
     set_game_fade_in_time 0
     play_music Lesson1_seqData
+    mute_music_track MIDI_TRACK_9
     clear_text_f
     marching_orders_event01
     play_sfx s_guntai_v_zentai_ten_seqData
@@ -250,7 +251,10 @@ script script_remix_1_extra_main
     rest 24
     print_text_f 2
     beat_anim
-    rest 24
+    rest 12
+    play_sfx s_f_boxing_hit_sfx_seqData
+    rest 12
+    play_sfx s_f_boxing_two_sfx_seqData
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
@@ -332,7 +336,10 @@ script script_remix_1_extra_main
     rest 24
     print_text_f 2
     beat_anim
-    rest 24
+    rest 12
+    play_sfx s_f_boxing_hit_sfx_seqData
+    rest 12
+    play_sfx s_f_boxing_two_sfx_seqData
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim

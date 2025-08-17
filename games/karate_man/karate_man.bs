@@ -386,8 +386,11 @@ script karate_man_sub_089ee9cc
     beat_anim
     rest 24
     beat_anim
-    rest 24
     print_text_f 3
+    rest 12
+    play_sfx s_f_boxing_hit_sfx_seqData
+    rest 12
+    play_sfx s_f_boxing_three_sfx_seqData
     beat_anim
     rest 24
     clear_text_f
@@ -453,8 +456,11 @@ script karate_man_sub_089ee9cc
     beat_anim
     rest 24
     beat_anim
-    rest 24
     print_text_f 2
+    rest 12
+    play_sfx s_f_boxing_hit_sfx_seqData
+    rest 12
+    play_sfx s_f_boxing_two_sfx_seqData
     beat_anim
     rest 24
     set_marking_criteria 1
