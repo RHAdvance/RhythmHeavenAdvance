@@ -71,7 +71,7 @@ void perfect_scene_start(void *sVar, s32 dArg) {
                     break;
 
                 case CAMPAIGN_GIFT_READING_MATERIAL:
-                    D_030046a8->data.readingMaterialUnlocked[giftID] = TRUE;
+                    set_reading_material_unlocked(&D_030046a8->data, giftID, TRUE);
                     break;
             }
 

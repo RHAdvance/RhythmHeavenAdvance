@@ -254,8 +254,8 @@ struct CampaignGiftData campaign_gifts_table[] = {
     },
     /* KARATE_MAN_EXTRA */ {
         /* Grid Pos. */ 10, 11,
-        /* Gift Type */ CAMPAIGN_GIFT_SONG,
-        /* Gift ID   */ STUDIO_SONG_SILENCE
+        /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
+        /* Gift ID   */ READING_MATERIAL_CREDITS
     },
     /* RHYTHM_TWEEZERS_EXTRA */ {
         /* Grid Pos. */ 10, 10,

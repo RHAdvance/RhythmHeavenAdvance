@@ -99,6 +99,7 @@ extern struct SaveBuffer {
             u8 extraLevelFirstOK[TOTAL_EXTRA_LEVELS];
             u8 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
             u8 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
+            u8 extraReadingMaterialUnlocked[0];
         } extraData;
     } data;
 } *D_030046a8;
@@ -139,3 +140,5 @@ extern void set_level_total_plays(struct TengokuSaveData *saveData, s32 id, u8 t
 extern void set_level_first_ok(struct TengokuSaveData *saveData, s32 id, u8 firstOK);
 extern void set_level_first_superb(struct TengokuSaveData *saveData, s32 id, u8 firstSuperb);
 extern void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared);
+extern void set_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id, u8 unlocked);
+extern u8 get_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id);

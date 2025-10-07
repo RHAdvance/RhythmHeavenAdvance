@@ -177,6 +177,9 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         buffer->data.gsCursorX = 2;
         buffer->data.gsCursorY = 11;
 
+        // Initialize extra reading material to be locked
+        buffer->data.extraData.extraReadingMaterialUnlocked[0] = FALSE;
+
         SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
     }
 
@@ -364,4 +367,39 @@ void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared) 
     } else {
         saveData->campaignsCleared[id] = cleared;
     }   
+}
+
+void set_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id, u8 unlocked) {
+    if (CHECK_ADVANCE_FLAG(saveData->advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED)) {
+        if (id < 20) {
+            saveData->readingMaterialUnlocked[id] = unlocked;
+        } else if (id == 20) {
+            saveData->extraData.extraReadingMaterialUnlocked[0] = unlocked;
+        }
+    } else {
+        if (id < 20) {
+            saveData->readingMaterialUnlocked[id] = unlocked;
+        }
+    }
+}
+
+u8 get_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id) {
+    // If save is converted, use extra field for the last reading material
+    if (CHECK_ADVANCE_FLAG(saveData->advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED)) {
+        if (id < 20) {
+            return saveData->readingMaterialUnlocked[id];
+        } else if (id == 20) {
+            return saveData->extraData.extraReadingMaterialUnlocked[0];
+        } else {
+            return 0;
+        }
+    } else {
+        // Unconverted saves only have 20 reading materials
+        if (id < 20) {
+            return saveData->readingMaterialUnlocked[id];
+        } else {
+            return 0;
+        }
+    }
+    return 0;
 }
