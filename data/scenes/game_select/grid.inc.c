@@ -120,7 +120,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     /* Entry (x=01, y=06) */ {
         /* Level ID */ LEVEL_LIVE_MENU,
         /* Show Req */ (s8[]) { REQ_CLEAR(2, 6), END_REQ },
-        /* Open Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_OPEN(10, 11), END_REQ },
         /* Targets  */ (s8[]) { TARGET(3, 6), TARGET(3, 7), TARGET(3, 8), TARGET(3, 9), TARGET(3, 10), TARGET(3, 11), END_TARGETS },
         /* Flags */ CLEAR_BY_DEFAULT | DELAY_CLEAR | DELAY_SHOW | TARGET_ON_OPEN,
         /* Delay */ 5
@@ -185,7 +185,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Level ID */ LEVEL_REMIX_8,
         /* Show Req */ (s8[]) { REQ_CLEAR(8, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(9, 7), REQ_CLEAR(9, 8), REQ_CLEAR(9, 9), REQ_CLEAR(9, 10), REQ_CLEAR(9, 11), END_REQ },
-        /* Targets  */ (s8[]) { TARGET(1, 6), TARGET(9, 11), TARGET(10, 6), TARGET(10, 7), TARGET(10, 8), TARGET(10, 9), TARGET(10, 10), TARGET(10, 11), END_TARGETS },
+        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 7), TARGET(10, 8), TARGET(10, 9), TARGET(10, 10), TARGET(9, 11), TARGET(10, 11), END_TARGETS },
         /* Flags */ DELAY_CLEAR,
         /* Delay */ 5
     },
@@ -623,7 +623,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Level ID */ LEVEL_KARATE_MAN_EXTRA,
         /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_SHOWN(10, 11), REQ_SHOWN(10, 10), REQ_SHOWN(10, 9), REQ_SHOWN(10, 8), REQ_SHOWN(10, 7), REQ_SHOWN(10, 6), END_REQ },
-        /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 10), TARGET(10, 11), END_TARGETS },
+        /* Targets  */ (s8[]) { TARGET(1, 6), TARGET(10, 6), TARGET(10, 10), TARGET(10, 11), END_TARGETS },
         /* Flags */ TARGET_ON_SHOW | DELAY_OPEN,
         /* Delay */ 0
     },
