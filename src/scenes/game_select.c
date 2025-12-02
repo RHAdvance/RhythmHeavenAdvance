@@ -838,7 +838,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     }
 
     // unlock tempo up (if existing save file for example) (this is FUCKING dirty and stupid i dont like that and it makes me cry at night)
-    if (get_level_state_from_id(LEVEL_REMIX_8) >= LEVEL_STATE_CLEARED && get_level_state_from_id(LEVEL_KARATE_MAN_EXTRA) == LEVEL_STATE_HIDDEN) {
+    if (D_030046a8->data.totalMedals >= 48 && get_level_state_from_id(LEVEL_KARATE_MAN_EXTRA) == LEVEL_STATE_HIDDEN) {
         set_level_state(saveData, LEVEL_KARATE_MAN_EXTRA, LEVEL_STATE_OPEN);
         set_level_state(saveData, LEVEL_RHYTHM_TWEEZERS_EXTRA, LEVEL_STATE_CLOSED);
         set_level_state(saveData, LEVEL_MARCHING_ORDERS_EXTRA, LEVEL_STATE_CLOSED);

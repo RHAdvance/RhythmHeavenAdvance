@@ -995,7 +995,7 @@ struct LevelData level_data_table[] = {
     },
     /* REMIX_1 */ {
         /* Entry Scene   */ &scene_remix_1_extra,
-        /* Level Name    */ "Remix ‚P",
+        /* Level Name    */ "Extra Remix",
         /* Level Desc.   */ "This is the Extra Remix.\n"
                             "Can you keep up with\n"
                             "its speed? Good luck\n"
