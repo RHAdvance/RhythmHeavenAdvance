@@ -1150,7 +1150,6 @@ void game_select_read_inputs(void) {
                 }
             }
 
-            request_game_save_data_write();
             set_pause_beatscript_scene(FALSE);
             gGameSelect->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
@@ -1169,7 +1168,6 @@ void game_select_read_inputs(void) {
         D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelect->cursorX;
         D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
-        request_game_save_data_write();
         set_pause_beatscript_scene(FALSE);
         gGameSelect->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
@@ -2376,6 +2374,7 @@ void game_select_scene_stop(void *sVar, s32 dArg) {
     func_08004058();
     func_08006d80();
     func_08007014(0);
+    request_game_save_data_write();
 }
 
 
