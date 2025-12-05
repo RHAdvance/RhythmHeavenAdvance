@@ -827,7 +827,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     } else {
         gGameSelect->runningLevelEvents = FALSE;
         gGameSelect->levelEventTimer = 0;
-        write_game_save_data();
+        request_game_save_data_write();
 
         if (gGameSelect->campaignNotice.hasNewCampaign) {
             start_campaign_notice(D_030046a8->data.currentCampaign);
@@ -1150,7 +1150,7 @@ void game_select_read_inputs(void) {
                 }
             }
 
-            write_game_save_data();
+            request_game_save_data_write();
             set_pause_beatscript_scene(FALSE);
             gGameSelect->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
@@ -1169,7 +1169,7 @@ void game_select_read_inputs(void) {
         D_030046a8->data.gsCursorX = D_030046a8->data.recentLevelX = gGameSelect->cursorX;
         D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
         D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
-        write_game_save_data();
+        request_game_save_data_write();
         set_pause_beatscript_scene(FALSE);
         gGameSelect->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
@@ -1819,7 +1819,7 @@ void game_select_update_level_events(void) {
     }
 #endif
 
-    write_game_save_data();
+    request_game_save_data_write();
 
     if (gGameSelect->campaignNotice.hasNewCampaign) {
         start_campaign_notice(D_030046a8->data.currentCampaign);

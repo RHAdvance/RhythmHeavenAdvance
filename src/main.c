@@ -66,6 +66,10 @@ void func_08000224(void) {
 	D_03004498 = TRUE;
 }
 
+static s32 requested_save_data_sync;
+void trigger_req_save_data_sync(void) {
+    requested_save_data_sync = 1;
+}
 
 void agb_main(void) {
 	REG_WAITCNT = (WAITCNT_SRAM_8
@@ -91,6 +95,8 @@ void agb_main(void) {
 	REG_IME = 0;
 
 	D_03004498 = FALSE;
+
+	requested_save_data_sync = 0;
 
 	init_ewram();
 	func_08000224();
@@ -131,6 +137,11 @@ void agb_main(void) {
 		midi_sound_main();
 		update_time_keeper();
 		func_08003ff0();
+
+		if (requested_save_data_sync) {
+			write_game_save_data();
+			requested_save_data_sync = 0;
+		}
 	}
 }
 
