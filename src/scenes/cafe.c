@@ -553,7 +553,7 @@ void cafe_print_dialogue(void) {
                 D_030046a8->data.recentLevelState = LEVEL_STATE_CLEARED;
                 D_030046a8->data.recentLevelClearedByBarista = TRUE;
                 D_030046a8->data.minFailsForBaristaHelp = clamp_int32(D_030046a8->data.minFailsForBaristaHelp + 1, 2, 7);
-                write_game_save_data();
+                request_game_save_data_write();
             } else {
                 // Oh, is that so?
                 // You're determined to beat

@@ -165,7 +165,7 @@ void options_scene_update_main(void) {
                 sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
                 D_030046a8->data.unk294[8] = gOptionsMenu->soundMode;
                 set_sound_mode(gOptionsMenu->soundMode);
-                write_game_save_data();
+                request_game_save_data_write();
             } else {
                 gOptionsMenu->warningCursorPos = OPTIONS_WARNING_NO;
                 options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);

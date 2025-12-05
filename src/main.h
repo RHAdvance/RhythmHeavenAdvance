@@ -43,3 +43,5 @@ extern void set_scene_trans_target(struct Scene *scene, struct Scene *target);
 extern void set_scene_trans_var(struct Scene *scene, s32 variable);
 extern void func_080006f0(struct Scene *target, s32 variable);
 extern struct Scene *get_current_scene(void);
+
+extern void trigger_req_save_data_sync(void);
