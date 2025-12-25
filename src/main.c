@@ -380,7 +380,7 @@ void flash_check(void) {
 
 	// please reconsider either commisioning the project (contact us first!!!!)
 	// or heavily crediting us if you are thinking about removing this.
-	if(GBAROM[0xC0] == 0) {
+	if (GBAROM[0xC0] == 0) {
 		agb_main();
 	}
 

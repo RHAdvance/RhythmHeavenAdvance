@@ -115,7 +115,7 @@ void get_all_uncleared_campaigns(void) {
 
     notice->totalAvailable = 0;
 
-    for (i = 0; i < ALL_PERFECT_CAMPAIGNS; i++) {
+    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
         if (!get_campaign_cleared(&D_030046a8->data, i)) {
             if (get_level_state_from_grid_xy(gift->x, gift->y) == LEVEL_STATE_HAS_MEDAL) {
                 notice->indexes[notice->totalAvailable] = i;
@@ -419,7 +419,7 @@ s32 get_campaign_from_grid_xy(s32 x, s32 y) {
     s32 i;
     struct CampaignGiftData *campaign = campaign_gifts_table;
 
-    for (i = 0; i < ALL_PERFECT_CAMPAIGNS; i++, campaign++) {
+    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++, campaign++) {
         if ((campaign->x == x) && (campaign->y == y)) {
             return i;
         }
@@ -545,7 +545,7 @@ void init_game_select_grid_gfx(void) {
     dma3_fill((0x0100 << 16) | 0x0100, iconOverlayMapBase, 0x2000, 0x20, 0x200);
 
     tileNum = 1;
-    for (i = 0; i < ALL_LEVELS; i++) {
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         game_select_print_icon_texture(level_icon_texture_table[i], 0, tileNum);
         tileNum += (3 * 3);
     }
@@ -1343,7 +1343,7 @@ void game_select_set_unused_static_var(u32 arg0, u32 arg1) {
 
 // Return the Total Number of Levels
 u32 game_select_get_total_levels(void) {
-    return ALL_LEVELS;
+    return TOTAL_LEVELS;
 }
 
 
@@ -1355,7 +1355,7 @@ const char *game_select_get_level_name(s32 id) {
         return NULL;
     }
 
-    if (id >= ALL_LEVELS) {
+    if (id >= TOTAL_LEVELS) {
         return NULL;
     }
 
@@ -2091,7 +2091,7 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
     u32 totalScore = 0;
     u32 i;
 
-    for (i = 0; i < ALL_LEVELS; i++) {
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         u32 score = get_level_score(saveData, i);
 
         if (score != DEFAULT_LEVEL_SCORE) {
@@ -2106,7 +2106,7 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
 
     // Min = 0.7 (0 levels played)
     // Max = 1.4 (48 levels played)
-    completionModifier = INT_TO_FIXED((ALL_RHYTHM_GAMES + totalGames) * 7) / (ALL_RHYTHM_GAMES * 10);
+    completionModifier = INT_TO_FIXED((TOTAL_RHYTHM_GAMES + totalGames) * 7) / (TOTAL_RHYTHM_GAMES * 10);
 
     // Min = 0 (0 * 0.7)
     // Max = 1400 (1000 * 1.4)
@@ -2133,7 +2133,7 @@ u32 game_select_calculate_flow_old(void) {
     u32 totalScore = 0;
     u32 i;
 
-    for (i = 0; i < ALL_LEVELS; i++) {
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         u32 score = get_level_score(saveData, i);
 
         if (score != DEFAULT_LEVEL_SCORE) {
@@ -2219,7 +2219,7 @@ u32 game_select_update_scores(void) {
         if (newModScore < prevModScore) {
             u32 scoreBonus = (INT_TO_FIXED(prevModScore) / modifier) - average + 1;
 
-            for (i = 0; i < ALL_LEVELS; i++) {
+            for (i = 0; i < TOTAL_LEVELS; i++) {
                 score = get_level_score(saveData, i);
 
                 if (score != DEFAULT_LEVEL_SCORE) {

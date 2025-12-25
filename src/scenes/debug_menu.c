@@ -154,7 +154,7 @@ void debug_menu_scene_update(void *sVar, s32 dArg) {
             set_scene_trans_target(&scene_results_ver_rank, &scene_debug_menu);
             set_scene_trans_target(&scene_results_ver_score, &scene_debug_menu);
             set_scene_trans_target(&scene_epilogue, &scene_debug_menu);
-            set_scene_trans_var(&scene_epilogue, (s32)get_level_data_from_id(agb_random(TOTAL_LEVELS))); // yes it's on purpose that PC2 might show up here, it'll show the debug one
+            set_scene_trans_var(&scene_epilogue, (s32)get_level_data_from_id(agb_random(TOTAL_BASE_LEVELS))); // yes it's on purpose that PC2 might show up here, it'll show the debug one
         } else {
             set_scene_trans_target(debug_menu_entry_table[(gDebugMenu->page * DEBUG_MENU_ENTRY_PER_PAGE) + gDebugMenu->row].scene, &scene_debug_menu);
         }

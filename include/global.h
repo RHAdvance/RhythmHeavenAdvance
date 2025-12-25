@@ -44,6 +44,11 @@ typedef s32 s24_8;
 
 #define FLOAT_TO_Q8_16(x) ((int32_t)((x) * 65536.0f))
 
+#define IDENTIFIER_TO_U32(char1, char2, char3, char4) ( \
+    ((u32)(char4) << 24) | ((u32)(char3) << 16) | \
+    ((u32)(char2) <<  8) | ((u32)(char1) <<  0) \
+)
+
 #include "gba/gba.h"
 #include "types.h"
 #include "sequence_data.h"

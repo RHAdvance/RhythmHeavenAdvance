@@ -2,11 +2,13 @@
 
 #include "global.h"
 #include "levels.h"
+#include "scenes/reading_material.h"
 
 #define SAVE_BUFFER_SIZE      sizeof(struct SaveBuffer)
 #define SAVE_BUFFER_NEW_SIZE  sizeof(struct ExtraSaveData)
 #define SAVE_BUFFER_OLD_SIZE  SAVE_BUFFER_SIZE - SAVE_BUFFER_NEW_SIZE
-#define EXTRA_MAGIC "ENOT" // yes, like the slugcat
+
+#define SAVE_EX_IDENTIFIER IDENTIFIER_TO_U32('E','N','O','T')
 
 // helper functions
 #define SET_ADVANCE_FLAG(flags, flag) (flags |= (1 << flag))
@@ -15,9 +17,9 @@
 #define TOGGLE_ADVANCE_FLAG(flags, flag) (flags ^= (1 << flag))
 
 enum AdvanceFlagsEnum {
-    /* 00 */ ADVANCE_FLAG_SAVE_CONVERTED            = (1 << 0),
-    /* 01 */ ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC = (1 << 1),
-    /* 02 */ ADVANCE_FLAG_SEEN_DISCLAMER            = (1 << 2),
+    ADVANCE_FLAG_SAVE_CONVERTED            = 1,
+    ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC = 2,
+    ADVANCE_FLAG_SEEN_DISCLAMER            = 4,
 };
 
 extern struct SaveBuffer {
@@ -34,9 +36,9 @@ extern struct SaveBuffer {
         s8 recentLevelX, recentLevelY;
         s8 recentLevelState;
         u8 recentLevelClearedByBarista;
-        u8 levelStates[TOTAL_LEVELS];
+        u8 levelStates[TOTAL_BASE_LEVELS];
         u16 recentLevelScore;
-        u16 levelScores[TOTAL_LEVELS];
+        u16 levelScores[TOTAL_BASE_LEVELS];
         u16 currentFlow;
         u8 unkB0;
         u8 advanceFlags;
@@ -48,11 +50,11 @@ extern struct SaveBuffer {
             u8 drumKitID;
             u8 unk3;
         } studioSongs[45 + 10];
-        u8 levelTotalPlays[TOTAL_LEVELS];
-        u8 levelFirstOK[TOTAL_LEVELS];
-        u8 levelFirstSuperb[TOTAL_LEVELS];
+        u8 levelTotalPlays[TOTAL_BASE_LEVELS];
+        u8 levelFirstOK[TOTAL_BASE_LEVELS];
+        u8 levelFirstSuperb[TOTAL_BASE_LEVELS];
         u8 totalPerfects;
-        u8 campaignsCleared[TOTAL_PERFECT_CAMPAIGNS];
+        u8 campaignsCleared[TOTAL_BASE_PERFECT_CAMPAIGNS];
         u8 campaignState;
         u8 campaignAttemptsLeft;
         u8 playsUntilNextCampaign;
@@ -92,18 +94,19 @@ extern struct SaveBuffer {
 
         struct ExtraSaveData {
             u32 checksum;
-            char magic[4]; // "ENOT"
+            s32 checksumStart[0];
+            u32 magic; // Compare to SAVE_EX_IDENTIFIER.
             u16 extraLevelScores[TOTAL_EXTRA_LEVELS];
             u8 extraLevelStates[TOTAL_EXTRA_LEVELS];
             u8 extraLevelTotalPlays[TOTAL_EXTRA_LEVELS];
             u8 extraLevelFirstOK[TOTAL_EXTRA_LEVELS];
             u8 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
             u8 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
-            u8 extraReadingMaterialUnlocked[0];
+            u8 extraReadingMaterialUnlocked[TOTAL_EXTRA_READING_MATERIAL];
+            s32 checksumEnd[0];
         } extraData;
     } data;
 } *D_030046a8;
-
 
 extern void init_ewram(void);
 extern void *get_save_buffer_start(void);

@@ -233,7 +233,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     s32 glyphID;
     u32 i;
 
-    if(!haveSeenDisclamer){
+    if (!haveSeenDisclamer) {
         i = agb_random(ARRAY_COUNT(badBoyMessages));
         stream = badBoyMessages[i];
     } else {
