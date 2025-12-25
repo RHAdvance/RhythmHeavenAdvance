@@ -18,14 +18,14 @@ void disclamer_scene_stop(void *sVar, s32 dArg) {
     haveSeenDisclamer = TRUE;
     isInDisclamer = FALSE;
 
-    SET_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAMER);
+    set_advance_flag(&D_030046a8->data, ADVANCE_FLAG_SEEN_DISCLAMER);
     flush_save_buffer_to_sram();
 }
 
 void disclamer_scene_wait_if_not_seen(void) {
     s32 task;
 
-    if(!CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAMER)) {
+    if (!peek_advance_flag(&D_030046a8->data, ADVANCE_FLAG_SEEN_DISCLAMER)) {
         set_beatscript_tempo(20);
     }
     set_pause_beatscript_scene(FALSE);

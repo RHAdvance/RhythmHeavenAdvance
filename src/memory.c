@@ -138,6 +138,15 @@ void set_playtest_save_data(void) {
     data->unkB0 = TRUE;
 }
 
+static inline s32 calc_save_buffer_base_checksum(struct SaveBuffer *buffer) {
+    return generate_save_buffer_checksum((s32 *)buffer, SAVE_BUFFER_BASE_SIZE);
+}
+static inline s32 calc_save_buffer_ext_checksum(struct SaveBuffer *buffer) {
+    return generate_save_buffer_checksum(
+        buffer->data.extraData.checksumStart,
+        (u8 *)buffer->data.extraData.checksumEnd - (u8 *)buffer->data.extraData.checksumStart
+    );
+}
 
 s32 copy_to_save_buffer(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
@@ -149,21 +158,16 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         return 1;
     }
 
-    if ((generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_OLD_SIZE) - buffer->header.checksum) != buffer->header.checksum) {
+    if ((calc_save_buffer_base_checksum(D_030046a8) - buffer->header.checksum) != buffer->header.checksum) {
         return 2;
     }
 
     if (
-        (buffer->data.extraData.magic != SAVE_EX_IDENTIFIER) || // Identifier is nonmatch ..
-        !CHECK_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED) || // Flag hasn't been set ..
-        (
-            generate_save_buffer_checksum(
-                D_030046a8->data.extraData.checksumStart,
-                (u8 *)D_030046a8->data.extraData.checksumEnd - (u8 *)D_030046a8->data.extraData.checksumStart
-            ) != buffer->data.extraData.checksum
-        ) // Checksum is nonmatch ..
+        (buffer->data.extraData.magic != SAVE_EXT_IDENTIFIER) || // Identifier is nonmatch ..
+        !peek_advance_flag(&buffer->data, ADVANCE_FLAG_SAVE_CONVERTED) || // Flag hasn't been set ..
+        calc_save_buffer_ext_checksum(buffer) != buffer->data.extraData.checksum // Checksum is nonmatch ..
     ) {
-        buffer->data.extraData.magic = SAVE_EX_IDENTIFIER;
+        buffer->data.extraData.magic = SAVE_EXT_IDENTIFIER;
 
         for (i = START_EXTRA_LEVELS; i < TOTAL_LEVELS; i++) {
             set_level_state(&buffer->data, i, LEVEL_STATE_HIDDEN);
@@ -185,7 +189,7 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         buffer->data.extraData.extraReadingMaterialUnlocked[0] = FALSE;
 
         // Hooray! We did it!
-        SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
+        set_advance_flag(&buffer->data, ADVANCE_FLAG_SAVE_CONVERTED);
     }
 
     return 0;
@@ -207,10 +211,10 @@ void flush_save_buffer(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
 
     buffer->header.checksum = 0;
-    buffer->header.checksum = generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_OLD_SIZE);
+    buffer->header.checksum = calc_save_buffer_base_checksum(D_030046a8);
 
     buffer->data.extraData.checksum = 0;
-    buffer->data.extraData.checksum = generate_save_buffer_checksum((s32 *)((u8 *)D_030046a8 + 4 + SAVE_BUFFER_OLD_SIZE), SAVE_BUFFER_NEW_SIZE - 4);
+    buffer->data.extraData.checksum = calc_save_buffer_ext_checksum(D_030046a8);
 
     write_sram_fast((u8 *)D_030046a8, cartRAM, SAVE_BUFFER_SIZE);
 #endif
@@ -228,10 +232,10 @@ void write_save_buffer_header_to_sram(u8 *cartRAM) {
     s32 bufferOffset = get_offset_from_save_buffer(buffer); // isn't this literally always 0
 
     buffer->header.checksum = 0;
-    buffer->header.checksum = generate_save_buffer_checksum((s32 *)D_030046a8, SAVE_BUFFER_OLD_SIZE);
+    buffer->header.checksum = calc_save_buffer_base_checksum(D_030046a8);
 
     buffer->data.extraData.checksum = 0;
-    buffer->data.extraData.checksum = generate_save_buffer_checksum((s32 *)((u8 *)D_030046a8 + SAVE_BUFFER_OLD_SIZE), SAVE_BUFFER_NEW_SIZE);
+    buffer->data.extraData.checksum = calc_save_buffer_ext_checksum(D_030046a8);
 
     write_sram_fast((u8 *)D_030046a8 + bufferOffset, cartRAM + bufferOffset, 0x10);
 #endif
@@ -375,7 +379,7 @@ void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared) 
 }
 
 void set_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id, u8 unlocked) {
-    if (CHECK_ADVANCE_FLAG(saveData->advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED)) {
+    if (peek_advance_flag(saveData, ADVANCE_FLAG_SAVE_CONVERTED)) {
         if (id < START_EXTRA_READING_MATERIAL) {
             saveData->readingMaterialUnlocked[id] = unlocked;
         } else {
@@ -390,7 +394,7 @@ void set_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id, u8 
 
 u8 get_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id) {
     // If save is converted, use extra field for the last reading material
-    if (CHECK_ADVANCE_FLAG(saveData->advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED)) {
+    if (peek_advance_flag(saveData, ADVANCE_FLAG_SAVE_CONVERTED)) {
         if (id < START_EXTRA_READING_MATERIAL) {
             return saveData->readingMaterialUnlocked[id];
         } else {

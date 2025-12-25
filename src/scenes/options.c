@@ -132,8 +132,8 @@ void options_scene_update_main(void) {
     }
 
     if (D_030053b8 & RIGHT_SHOULDER_BUTTON) {
-        TOGGLE_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC);
-        if(CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
+        toggle_advance_flag(&D_030046a8->data, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC);
+        if(peek_advance_flag(&D_030046a8->data, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
             play_sound(&s_menu_kettei1_seqData);
         } else {
             play_sound(&s_menu_cancel3_seqData);

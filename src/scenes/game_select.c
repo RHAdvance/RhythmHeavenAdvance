@@ -68,7 +68,7 @@ void enable_game_select_2_bgm(void) {
 
 // Play Game Select Music
 void play_game_select_bgm(void) {
-    if (sPlayAltBGM && !CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
+    if (sPlayAltBGM && !peek_advance_flag(&D_030046a8->data, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
         set_beatscript_tempo(105);
         scene_set_music(&s_shibafu2_bgm_seqData);
         sPlayAltBGM = FALSE;
