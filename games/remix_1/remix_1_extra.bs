@@ -440,7 +440,7 @@ script script_remix_1_extra_main
     rest 12
 
     load_spaceball_extra
-    spaceball_zoom_camera 0xff00, 1
+    spaceball_zoom_camera 0xff00, 2
     spaceball_prep_pitcher
     rest 12
     rest 24
@@ -449,6 +449,7 @@ script script_remix_1_extra_main
     rest 24
     rest 24
     rest 24
+    spaceball_prep_pitcher
     rest 24
     play_music L1_pat10_seqData
     spaceball_zoom_camera 0xff00, 192
