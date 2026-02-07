@@ -1,5 +1,5 @@
 
-<img width="1535" height="1370" alt="image" src="https://github.com/user-attachments/assets/ffbfed42-a33c-4206-babf-9cfb250e39e8" />
+<img width="5000" height="5000" alt="Rhythm_Paradise_Advance" src="https://github.com/user-attachments/assets/d321c977-3542-474c-a70c-b73d661a428f" />
 
 # Rhythm Paradise Advance (French) :
 Un patch de localisation française pour le jeu Rhythm Tengoku sorti sur Game Boy Advance. « Rhythm Paradise Advance (French) » cherche à adapter aussi fidèlement que possible les textes, les illustrations et les voix, tout en gardant une cohérence avec la traduction française des autres jeux de la série Rhythm Paradise.
