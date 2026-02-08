@@ -243,7 +243,7 @@ struct LevelIconAnimatorTask {
 
 
 // DATA
-extern struct CampaignGiftData campaign_gifts_table[];
+extern struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS];
 extern struct Animation *campaign_icon_borders[];
 extern struct LevelData level_data_table[];
 extern const u8 *level_icon_texture_table[];

@@ -387,7 +387,7 @@ void cafe_print_dialogue(void) {
                         break;
 
                     case LEVEL_STATE_HAS_MEDAL:
-                        if ((D_030046a8->data.totalPerfects < ALL_PERFECT_CAMPAIGNS)
+                        if ((D_030046a8->data.totalPerfects < TOTAL_PERFECT_CAMPAIGNS)
                           && !get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(activity->levelID))
                           && (activity->totalStalePlays > 2)) {
                             topic = CAFE_TOPIC_TROUBLE_CLEARING_CAMPAIGN;

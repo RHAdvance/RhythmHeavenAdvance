@@ -47,7 +47,7 @@ void dataroom_scene_init_gfx1(void) {
 
 // Listbox - Get Item Name
 const char *dataroom_listbox_get_item_name(u32 item) {
-    u32 max_items = CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED) ? 21 : 20;
+    u32 max_items = peek_advance_flag(&D_030046a8->data, ADVANCE_FLAG_SAVE_CONVERTED) ? 21 : 20;
     if (item >= max_items) {
         return NULL;
     }
@@ -119,7 +119,7 @@ void dataroom_scene_start(void *sVar, s32 dArg) {
     gDataRoom->listbox = create_new_listbox(
             get_current_mem_id(), 10, 128, 30, 0, 1, 3,
             80, 16, 0x8800, 16, sListSelItem,
-            CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED) ? 21 : 20,
+            peek_advance_flag(&D_030046a8->data, ADVANCE_FLAG_SAVE_CONVERTED) ? 21 : 20,
             anim_data_room_cursor, 3, 4, sListSelLine,
             dataroom_listbox_get_item_name, NULL);
     listbox_run_func_on_scroll(gDataRoom->listbox, dataroom_listbox_on_scroll, 0);

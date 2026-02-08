@@ -37,14 +37,14 @@ void reset_game_save_data(void) {
     data->advanceFlags = 0;
     data->recentLevelScore = DEFAULT_LEVEL_SCORE;
 
-    for (i = 0; i < ALL_LEVELS; i++) {
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         set_level_state(data, i, LEVEL_STATE_HIDDEN);
         set_level_score(data, i, DEFAULT_LEVEL_SCORE);
     }
 
     unlock_default_studio_songs();
 
-    for (i = 0; i < ALL_LEVELS; i++) {
+    for (i = 0; i < TOTAL_LEVELS; i++) {
         set_level_total_plays(data, i, 0);
         set_level_first_ok(data, i, 0);
         set_level_first_superb(data, i, 0);
@@ -53,7 +53,7 @@ void reset_game_save_data(void) {
     reset_all_replay_save_data(&data->drumReplaysAlloc);
     data->totalPerfects = 0;
 
-    for (i = 0; i < ALL_PERFECT_CAMPAIGNS; i++) {
+    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
         set_campaign_cleared(data, i, FALSE);
     }
     data->campaignState = CAMPAIGN_STATE_INACTIVE;
