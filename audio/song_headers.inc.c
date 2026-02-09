@@ -958,9 +958,14 @@ struct SongHeader s_koihoney_bgm_seqData = {
     /* Song Number   */ 1079
 };
 
+extern const u8 s_wish_bgm_fr_mid[];
 extern const u8 s_wish_bgm_mid[];
 struct SongHeader s_wish_bgm_seqData = {
+    #ifdef SFX
+    /* MIDI Sequence */ s_wish_bgm_fr_mid,
+    #else
     /* MIDI Sequence */ s_wish_bgm_mid,
+    #endif
     /* Sound Player  */ MUSIC_PLAYER_0,
     /* Bank Number   */ INST_BANK_43,
     /* Volume        */ 100,
