@@ -84,7 +84,7 @@ Asset Assembly:
 + somethingAccurate
 + TinyCastleGuy
 + The Eggo55
-+ Vincells
++ vincells
 + WindowsTiger
 + Kievit
 + NotWario
@@ -95,7 +95,7 @@ Asset Assembly:
 
 Graphic Design:
 + Tailx
-+ Vincells
++ vincells
 + Borists
 
 Main Programming:
@@ -129,7 +129,7 @@ SFX:
 + Cherryberryfaygo
 + Nabix and all of his family
 + Itaific
-+ Sesu
++ SesuRescue
 
 Audio Engineering:
 + FireChat
