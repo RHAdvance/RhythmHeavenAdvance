@@ -817,10 +817,10 @@ s24_8 results_get_positive_comments(void) {
 
 // [D_089d7b40] Rank Comment Pool (OK)
 const char *results_ok_comment_pool[] = {
-    "I guess that was all right.",
-    "Good enough...",
-    "I don't know...",
-    "Hm..."
+    "Ca pouvait aller.",
+    "Passable...",
+    "Je ne sais pas...",
+    "Hum..."
 };
 
 

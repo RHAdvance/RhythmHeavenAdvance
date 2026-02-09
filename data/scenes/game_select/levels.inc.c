@@ -2,177 +2,178 @@
 struct LevelData level_data_table[] = {
     /* KARATE_MAN */ {
         /* Entry Scene   */ &scene_karate_man,
-        /* Level Name    */ "Karate Man",
-        /* Level Desc.   */ "The key to karate,\n"
-                            "like all things, is rhythm.\n"
-                            "Now, let us throw some\n"
-                            "stuff for you to punch.",
+        /* Level Name    */ "Karat‡Qka",
+        /* Level Desc.   */ "Il faut du rythme,\n"
+                            "pour un beau karat‡Q.\n"
+                            "Faites parler vos\n"
+                            "poings en cadence‡S!",
         /* Level Icon    */ 8,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "There's always tomorrow...",
-            /* OK        */ "Let's break for lunch now!",
-            /* SUPERB    */ "Look at all this stuff I punched away!"
+            /* TRY_AGAIN */ "J'y arriverai peut-ˆ®tre mieux demain...",
+            /* OK        */ "Petite pause d‡Qjeuner‡S!",
+            /* SUPERB    */ "J'en ai frapp‡Q des trucs‡S!"
         }
     },
     /* KARATE_MAN_2 */ {
         /* Entry Scene   */ &scene_karate_man_2,
-        /* Level Name    */ "Karate Man 2",
-        /* Level Desc.   */ "Something's up with\n"
-                            "the speed! Stay sharp\n"
-                            "as we throw you some\n"
-                            "more stuff to punch.",
+        /* Level Name    */ "Karat‡Qka 2",
+        /* Level Desc.   */ "Concentrez-vous\n"
+                            "sur le tempo, il\n"
+                            "risque de vous\n"
+                            "jouer des tours...",
         /* Level Icon    */ 0,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "What's the point of these speed switchups, anyway!?",
-            /* OK        */ "Well, that's that. Let's eat!",
-            /* SUPERB    */ "I think we went through everything!"
+            /* TRY_AGAIN */ "What's the point of these speed switchups, anyway!?", /* TODO: Trad */
+            /* OK        */ "Well, that's that. Let's eat!", /* TODO: Trad */
+            /* SUPERB    */ "I think we went through everything!" /* TODO: Trad */
         }
     },
     /* CLAPPY_TRIO */ {
         /* Entry Scene   */ &scene_clappy_trio,
-        /* Level Name    */ "The Clappy Trio",
-        /* Level Desc.   */ "Clap your hands in\n"
-                            "order! You're the third\n"
-                            "clapper. Keep an eye\n"
-							"on the other two!",
+        /* Level Name    */ "Trio clap clap",
+        /* Level Desc.   */ "Vous ˆ®tes le 3e\n"
+                            "membre d'un trio de\n"
+                            "clappeurs, regardez\n"
+							"bien vos camarades‡S!",
         /* Level Icon    */ 4,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_clappy_trio_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "The trio just went solo!",
-            /* OK        */ "You need to make it to more of our practice sessions...",
-            /* SUPERB    */ "Trio-riffic!"
+            /* TRY_AGAIN */ "Oh‡S! Les deux autres sont d‡Qj‡g partis‡S!",
+            /* OK        */ "C'est encore un peu tˆ¶t pour sauter de joie‡S!",
+            /* SUPERB    */ "Ces trois-l‡g sont comme un seul homme‡S!"
         }
     },
     /* SNAPPY_TRIO */ {
         /* Entry Scene   */ &scene_snappy_trio,
-        /* Level Name    */ "The Snappy Trio",
-        /* Level Desc.   */ "Look at the trio in their\n"
-                            "Western outfits!\n"
-                            "So cool! Dare we say\n"
-                            "they look... snappy?",
+        /* Level Name    */ "Trio western clap",
+        /* Level Desc.   */ "Inspiration western\n"
+                            "pour votre nouveau\n"
+                            "morceau, et avec la\n"
+                            "tenue qu'il faut‡S!",
         /* Level Icon    */ 10,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_snappy_trio_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "I spent everything I had on this outfit!",
-            /* OK        */ "We were so close...",
-            /* SUPERB    */ "Perfect sync! It's gotta be the outfits, right?"
+            /* TRY_AGAIN */ "C'est l'inconv‡Qnient de jouer dans un western...",
+            /* OK        */ "Es-tu sur de vouloir devenir un parfait clappeur‡S?", /* TODO: s?r */
+            /* SUPERB    */ "On est encore meilleurs avec ces costumes‡S!"
         }
     },
     /* POLYRHYTHM */ {
         /* Entry Scene   */ &scene_polyrhythm,
-        /* Level Name    */ "Polyrhythm",
-        /* Level Desc.   */ "Manage the ‡O and ‡M\n"
-							"paths at the same time\n"
-							"to keep those red things\n"
-							"rolling! Simple enough?",
+        /* Level Name    */ "Polyrythme",
+        /* Level Desc.   */ "S'occuper de deux\n"
+							"chaˆ²nes de bidules\n"
+							"en alternant ‡O et ‡M...\n"
+							"ˆ¹a devrait ?tre facile‡S!",
         /* Level Icon    */ 3,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Mass producing these will be harder than I thought...",
-            /* OK        */ "Still getting the hang of making these red things!",
-            /* SUPERB    */ "We've produced more of these than we can stock!"
+            /* TRY_AGAIN */ "La production de masse s'av‡are plus difficile que pr‡Qvue...",
+            /* OK        */ "On arrive ‡g en produire de plus en plus‡S!",
+            /* SUPERB    */ "On en a produit plus qu'on ne peut en stocker‡S!"
         }
     },
     /* POLYRHYTHM_2 */ {
         /* Entry Scene   */ &scene_polyrhythm_2,
-        /* Level Name    */ "Polyrhythm 2",
-        /* Level Desc.   */ "The left and right paths\n"
-                            "have unique patterns!\n"
-                            "Mind the tempo and\n"
-                            "play to the polyrhythm!",
+        /* Level Name    */ "Polyrythme 2",
+        /* Level Desc.   */ "La production de\n"
+                            "bidules acc‡Ql‡are‡S!\n"
+                            "‡Pvitez de prendre\n"
+                            "du retard‡S!",
         /* Level Icon    */ 51,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "We need to produce a whole lot more red things...",
-            /* OK        */ "Producing more of these red things woudn't hurt!",
-            /* SUPERB    */ "Red thing production is at an all time high!"
+            /* TRY_AGAIN */ "Il nous faut produire beaucoup plus de ces bidules...",
+            /* OK        */ "En produire plus ne ferait pas de mal‡S!",
+            /* SUPERB    */ "Nous en produirons toujours plus‡S!"
         }
     },
     /* NIGHT_WALK */ {
         /* Entry Scene   */ &scene_night_walk,
-        /* Level Name    */ "Night Walk",
-        /* Level Desc.   */ "What's better than a\n"
-                            "stroll in the starlight?\n"
-                            "How about a series of\n"
-                            "jumps in the starlight?",
+        /* Level Name    */ "Balade nocturne",
+        /* Level Desc.   */ "Rien de tel qu'une\n"
+                            "balade de nuit pleine de\n"
+                            "rythme et de po‡Qsie pour\n"
+                            "oublier ses soucis.",
         /* Level Icon    */ 7,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_night_walk_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Didn't see that hole in the dark!",
-            /* OK        */ "Nothing like a stroll at night.",
-            /* SUPERB    */ "You followed us up here!"
+            /* TRY_AGAIN */ "Les trous se confondent dans la nuit...",
+            /* OK        */ "Rien de tel qu'une petite promenade ‡g la belle ‡Qtoile‡S!",
+            /* SUPERB    */ "J'ai l'impression de ne faire qu'un avec la voie lact‡Qe‡S!"
         }
     },
     /* NIGHT_WALK_2 */ {
         /* Entry Scene   */ &scene_night_walk_2,
-        /* Level Name    */ "Night Walk 2",
-        /* Level Desc.   */ "Time to jump in the\n"
-                            "starlight again!\n"
-                            "Keep a look out\n"
-                            "for the electric fish.",
+        /* Level Name    */ "Balade nocturne 2",
+        /* Level Desc.   */ "Quelle belle nuit...\n"
+                            "mais attention\n"
+                            "aux poissons\n"
+                            "?lectriques‡S!",
         /* Level Icon    */ 41,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_night_walk_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "No! You fell!",
-            /* OK        */ "The night breeze feels so cool...",
-            /* SUPERB    */ "You made friends with the stars!"
+            /* TRY_AGAIN */ "Nooonnn‡S! Je suis tomb‡Q‡S!",
+            /* OK        */ "Rien de tel que la fraˆ²cheur de la nuit.",
+            /* SUPERB    */ "Me voil‡g devenu l'ami des ‡Qtoiles‡S!"
         }
     },
     /* RHYTHM_TWEEZERS */ {
         /* Entry Scene   */ &scene_rhythm_tweezers,
-        /* Level Name    */ "Rhythm Tweezers",
-        /* Level Desc.   */ "\n"
-                            "My roots are showing!\n"
-                            "Can you pluck them off?\n",
+        /* Level Name    */ "Pince poilante",
+        /* Level Desc.   */ "Faites la peau\n"
+                            "aux poils et la\n"
+                            "peau lisse ‡g\n",
+                            "vos clients‡S!",
         /* Level Icon    */ 14,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "I can't sell these!",
-            /* OK        */ "Wh-why do my vegetables grow hair?",
-            /* SUPERB    */ "So fresh and clean! Even the air tastes delicious!"
+            /* TRY_AGAIN */ "Je ne peux mˆ®me pas les vendre‡S!",
+            /* OK        */ "Pourquoi mes oignons sont-ils poilus‡S?",
+            /* SUPERB    */ "So fresh and clean! Even the air tastes delicious!" /* TODO: Trad */
         }
     },
     /* RHYTHM_TWEEZERS_2 */ {
         /* Entry Scene   */ &scene_rhythm_tweezers_2,
-        /* Level Name    */ "Rhythm Tweezers 2",
-        /* Level Desc.   */ "My roots are\n"
-                            "growing back!\n"
-                            "You've got to pluck\n"
-                            "them off again!",
+        /* Level Name    */ "Pince poilante 2",
+        /* Level Desc.   */ "Ces oignons sont\n"
+                            "encore plus poilus‡S!\n"
+                            "Faites chauffer\n"
+                            "votre pince‡S!",
         /* Level Icon    */ 25,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Why do you have to be so hairy!?",
-            /* OK        */ "Why do only our vegetables grow hair, anyway...?",
-            /* SUPERB    */ "How refreshing! Even the air is nice and crisp!"
+            /* TRY_AGAIN */ "Pourquoi il faut qu'ils soient si poilus...‡S?",
+            /* OK        */ "Pourquoi suis-je le seul qui fait pousser des oignons poilus‡S?",
+            /* SUPERB    */ "Il n'y a plus un poil ‡g l'horizon‡S!"
         }
     },
     /* SICK_BEATS */ {
         /* Entry Scene   */ &scene_sick_beats,
-        /* Level Name    */ "Sick Beats",
-        /* Level Desc.   */ "\0023" "Assistant's memo:\n"
-                            "\"We have an outbreak\n"
-                            "of an unknown virus!\n"
-                            "Help us, Dr. Cutlery!\"",
+        /* Level Name    */ "Tempo labo",
+        /* Level Desc.   */ "\0023" "Note de l'assistant‡S:\n"
+                            "Nous subissons une\n"
+                            "‡Qpid‡Qmie de virus‡S!\n"
+                            "Aidez-nous‡S!",
         /* Level Icon    */ 13,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_sick_beats_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "All our research... amounted to nothing...",
-            /* OK        */ "Failure may be the key to success!",
-            /* SUPERB    */ "We've finally found our cure!"
+            /* TRY_AGAIN */ "Toutes nos recherches... n'ont abouti ‡g rien...",
+            /* OK        */ "L'‡Qchec pourrait ˆ®tre la cl‡Q du succ‡as‡S!",
+            /* SUPERB    */ "Eurˆ®ka‡S! Nous avons trouv‡Q l'antidote‡S!"
         }
     },
     /* BOUNCY_ROAD */ {

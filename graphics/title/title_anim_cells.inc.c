@@ -314,7 +314,6 @@ AnimationCel title_cel014[] = {
     /* Len */ 1,
     /* 000 */ 0x00e0, 0xc1e0, 0x0008
 };
-#ifdef PARADISE
 AnimationCel title_cel015[] = {
     /* Len */ 2,
     /* 000 */ 0x00ef, 0x81f3, 0x01a0,
@@ -350,51 +349,7 @@ AnimationCel title_cel100[] = {
     /* 000 */ 0x00f4, 0x81e6, 0x0220,
     /* 001 */ 0x00f4, 0x81f6, 0x0222
 };
-#else
-// [D_0890cee0]
-AnimationCel title_cel015[] = {
-    /* Len */ 2,
-    /* 000 */ 0x00f1, 0x81f5, 0x01B8,
-    /* 000 */ 0x00f1, 0x81fd, 0x01B9
-};
 
-// [D_0890cee8]
-AnimationCel title_cel016[] = {
-    /* Len */ 3,
-    /* 000 */ 0x00f1, 0x81f1, 0x0238,
-    /* 001 */ 0x00F9, 0x0181, 0x0258,
-    /* 002 */ 0x0011, 0x01f1, 0x02B8
-};
-
-// [D_0890cef6]
-AnimationCel title_cel017[] = {
-    /* Len */ 3,
-    /* 000 */ 0x00F1, 0x81E8, 0x02D8,
-    /* 001 */ 0x00F9, 0x81E8, 0x02F8,
-    /* 002 */ 0x00F1, 0x81F0, 0x02D9
-};
-
-// [D_0890cf0a]
-AnimationCel title_cel018[] = {
-    /* Len */ 2,
-    /* 000 */ 0x00EE, 0x81F4, 0x02A8,
-    /* 001 */ 0x00F6, 0x81F4, 0x02C8
-};
-
-// [D_0890cf1e]
-AnimationCel title_cel019[] = {
-    /* Len */ 2,
-    /* 000 */ 0x00EF, 0x81F1, 0x02AD,
-    /* 000 */ 0x0005, 0x000F, 0x007F
-};
-
-// [D_0890cf1e]
-AnimationCel title_cel100[] = {
-    /* Len */ 2,
-    /* 000 */ 0x00EE, 0x81F2, 0x023C,
-    /* 000 */ 0x00F6, 0x81F2, 0x025C
-};
-#endif
 AnimationCel title_cel101[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x0172

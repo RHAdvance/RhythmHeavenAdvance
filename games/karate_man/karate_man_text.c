@@ -5,55 +5,55 @@
 /* Game Text - Karate Man */
 
 
-const char D_0805ab50[] = "You needed to focus on the basics.";
+const char D_0805ab50[] = "Vous devez revoir les bases.";
 
 const char D_0805ab68[] = "";
 
-const char D_0805ab6c[] = "Your sequential punches were just sad.";
+const char D_0805ab6c[] = "Vos combos ‡Qtaient d‡Qplorables.";
 
-const char D_0805ab90[] = "Stellar sequential punches!";
+const char D_0805ab90[] = "Des combos de coups lasers !";
 
-const char D_0805abb0[] = "You nailed the ending!";
+const char D_0805abb0[] = "Vous avez assur‡Q pour la fin !";
 
 const char D_0805abc4[] =
-    "\n"
-    "Remember to feel the flow!";
+    "Souvenez-vous.\n"
+	"Laissez le rythme\n"
+    "venir ‡g vous...";
 
-const char D_0805abdc[] = "The Master speaks...";
+const char D_0805abdc[] = "Votre maˆ²tre vous murmure";
 
 const char D_0805abec[] =
-    "Welcome to karate \n"
-    "training!";
+    "Bienvenue ‡g votre\n"
+    "entraˆ²nement de karat‡Q.";
 
 const char D_0805ac0c[] = 
-    "Press ‡M to punch the\n"
-    "objects that are flying\n"
-    "your way.\n"
-    "The timing's a little tricky!";
+    "Appuyez sur ‡M pour\n"
+    "frapper les objets\n"
+    "du poing.";
 
 const char D_0805ac60[] =
-    "Here, why don't you give\n"
-    "it a shot?";
+    "Cela devrait ˆ®tre\n"
+    "facile, non‡S?";
 
 const char D_0805aca0[] =
-    "See?\n"
-    "The timing is pretty\n"
-    "strict, isn't it?";
+    "Parfait. Le karat‡Q\n"
+    "vous va tr‡as bien.";
 
 const char D_0805acd8[] =
-    "Now try punching to\n"
-    "the beat of some music!";
+    "Frappez maintenant\n"
+	"les objets en rythme\n"
+    "avec la musique.";
 
 const char D_0805ad04[] =
-    "How was that?\n"
-    "Much easier with the\n"
-    "music, right?";
+    "Comment c'‡Qtait‡S?\n"
+    "N'est-ce pas plus\n"
+    "facile avec la musique‡S?";
 
 const char D_0805ad38[] =
-    "Well, there you have it!\n"
-    "Just flow with the music\n"
-    "and punch away!";
+    "Bonne chance\n"
+    "pour votre\n"
+    "entraˆ²nement‡S!";
 
 const char D_0805ad80[] =
-    "\n"
-    "Ready, set, punch!";
+    "‡f vos marques.\n"
+    "Prˆ®t... Frappez‡S!";

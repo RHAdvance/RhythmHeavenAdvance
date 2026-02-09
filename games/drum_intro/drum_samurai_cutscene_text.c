@@ -6,60 +6,56 @@
 
 
 const char D_0805df4c[] =
-    "Welcome to the\n"
-    "funky world of\n"
-    #ifdef PARADISE
-    "Rhythm Paradise Advance!";
-    #else
-    "Rhythm Heaven Advance!";
-    #endif
+    "Bienvenue dans le\n"
+    "merveilleux monde de\n"
+    "Rhythm Paradise Advance !";
 
 const char D_0805df88[] =
-    "I hope you enjoy your time\n"
-    "with this game!";
+    "J'esp‡are que vous vous\n"
+    "amuserez sur ce jeu !";
 
 const char D_0805dfcc[] =
     "\n"
-    "Well, see you later!";
+    "Eh bien... ‡g plus tard !";
 
 
 /* Game Text - Drumming Intro (Part 1) */
 
 
 const char D_0805e000[] =
-    "Everyone has a\n"
-    "sense of rhythm in\n"
-    "some form or fashion.";
+    "Tout le monde poss‡ade\n"
+    "le sens du rythme, d'une\n"
+    "mani‡are ou d'une autre.";
 
 const char D_0805e03c[] =
-    "And if you pay attention to it,\n"
-    "that sense of rhythm can\n"
-    "be sharpened like any skill.";
+    "Et avec de l'entraˆ²nement,\n"
+    "ce mˆ®me sens peut s'affuter\n"
+    "comme n'importe quel talent.";
 
 const char D_0805e070[] =
-    "Why don't we take a\n"
-    "quick look at your\n"
-    "sense of rhythm?";
+    "Et si on mesurait\n"
+    "la puissance de\n"
+    "votre ryhtme ?";
 
 
 /* Game Text - Drumming Intro (Part 2) */
 
 
 const char D_0805e0a8[] =
-    "How did you do? Did you get\n"
-    "a score you're happy with?\n"
+    "Comment vous en ˆ®tes sorti‡S?\n"
+    "Votre score vous suffit‡S?\n"
     "";
 
 const char D_0805e0d8[] =
-    "Well, your sense of\n"
-    "rhythm can only grow\n"
-    "with some practice, so...";
+    "Dans tous les cas, votre sens\n"
+    "du ryhtme ne peut qu'aller de\n"
+    "l'avant si vous vous entraˆ²nez‡S!";
 
 const char D_0805e10c[] =
-    "...how about trying out\n"
-    "some rhythm games? You\n"
-    "might find it getting\n"
-    "sharper and sharper!";
+    "Jettez-vous dans ces\n"
+    "mini-jeux et vous le\n"
+    "verrez devenir meilleur\n"
+    "de jour en jour‡S!";
 
 const char D_0805e15c[] =
-    "With that, I'll see you around!";
+    "Allez, ‡g la revoyure‡S!";
