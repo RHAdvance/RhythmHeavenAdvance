@@ -133,7 +133,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Pince poilante",
         /* Level Desc.   */ "Faites la peau\n"
                             "aux poils et la\n"
-                            "peau lisse ‡g\n",
+                            "peau lisse ‡g\n"
                             "vos clients‡S!",
         /* Level Icon    */ 14,
         /* Level Type    */ LEVEL_TYPE_GAME,
