@@ -250,11 +250,18 @@ script script_rap_women_main
     clear_text_f
     beat_anim
     rest 24
-    rest 24
-    rest 2
+    #ifdef SFX
+    rest 17
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 9
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    #else
+    rest 26
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -551,10 +558,18 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -651,10 +666,18 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -771,10 +794,18 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
