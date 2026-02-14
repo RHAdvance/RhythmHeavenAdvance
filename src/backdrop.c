@@ -33,6 +33,8 @@ static u8 sGradientStartIndex;
 static u8 sGradientEndIndex;
 
 
+extern u8 sFading;
+
 // Reset Gradient Backdrop
 void func_08003f28(void) {
     volatile u32 dummy;
@@ -49,7 +51,7 @@ void func_08003f50(void) {
 
     REG_DMA0CNT = 0;
 
-    if (!sBackdropRenderer.enabled) {
+    if (!sBackdropRenderer.enabled || sFading) {
         return;
     }
 
@@ -68,7 +70,7 @@ void func_08003f50(void) {
 void func_08003fb4(void) {
     u32 controls;
 
-    if (!sBackdropRenderer.enabled) {
+    if (!sBackdropRenderer.enabled || sFading) {
         return;
     }
 
