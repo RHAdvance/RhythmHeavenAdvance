@@ -2,7 +2,7 @@
 #include "graphics.h"
 
 // [D_0893253c] Warning Scene Palette
-Palette disclamer_pal[] = {
+Palette disclaimer_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0xffffff),
         /* 01 */ TO_RGB555(0xefce39),

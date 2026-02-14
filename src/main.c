@@ -4,7 +4,7 @@
 #include "bitmap_font.h"
 #include "memory_heap.h"
 
-extern u8 haveSeenDisclamer;
+extern u8 haveSeenDisclaimer;
 
 
 static struct Scene *gCurrentScene;
@@ -14,6 +14,7 @@ static u8 D_03000080;
 static struct Scene *D_03000084;
 static s32 D_03000088;
 
+static u8 sIsBadFlashCart = 0;
 
 // Default Interrupt Procedure (Do Nothing)
 void interrupt_default(void) {
@@ -61,8 +62,8 @@ void func_08000224(void) {
 	flush_save_buffer_to_sram_backup();
 	
 	// Initialize disclaimer flag from save data
-	if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAMER)) {
-		haveSeenDisclamer = TRUE;
+	if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAIMER)) {
+		haveSeenDisclaimer = TRUE;
 	}
 	
 	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
@@ -114,8 +115,8 @@ void agb_main(void) {
 
 	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
 	init_scenes(&scene_warning);
-	set_scene_trans_target(&scene_warning, &scene_disclamer);
-	set_scene_trans_target(&scene_disclamer, &scene_title);
+	set_scene_trans_target(&scene_warning, &scene_disclaimer);
+	set_scene_trans_target(&scene_disclaimer, &scene_title);
 	update_key_listener();
 
 	while (TRUE) {
@@ -363,7 +364,6 @@ void delay_loop(u32 count) {
 }
 
 void flash_check(void) {
-	u32 i;
 	const char data[] = {
 		0x77, 0x65, 0x20, 0x64, 0x6F, 0x6E, 0x74, 0x20, 0x73, 0x75, 0x70, 0x70,
 		0x6F, 0x72, 0x74, 0x20, 0x63, 0x68, 0x65, 0x61, 0x70, 0x20, 0x62, 0x6F,
@@ -375,14 +375,11 @@ void flash_check(void) {
 	GBAROM[0xC0] = 33;
 	delay_loop(1000);
 
-	// please reconsider either commisioning the project (contact us first!!!!)
-	// or heavily crediting us if you are thinking about removing this.
-	if(GBAROM[0xC0] == 0) {
-		agb_main();
+	// really low quality flashcart - warn the user
+	if(GBAROM[0xC0] != 0) {
+		GBAROM[0xC0] = 0;
+		sIsBadFlashCart = 1;
 	}
-
-	for (i = 0; i < sizeof(data); i++) {
-		GBAROM[0xC0 + i] = data[i];
-		delay_loop(1000);
-	}
+	
+	agb_main();
 }

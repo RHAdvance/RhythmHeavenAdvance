@@ -413,14 +413,16 @@ void stop_beatscript_scene(void) {
     }
 }
 
-extern u8 haveSeenDisclamer, isInDisclamer, D_03004498;
+extern u8 haveSeenDisclaimer;
 
 // Set Tempo
 void set_beatscript_tempo(u16 tempo) {
     s32 speed;
 
-    if(!haveSeenDisclamer && !isInDisclamer && D_03004498) {
-        if(agb_random(2) == 0){
+    if (tempo > 1000) {
+        tempo -= 1000;
+    } else if (!haveSeenDisclaimer) {
+        if (agb_random(2) == 0) {
             tempo = agb_random(60) + 1;
         } else {
             tempo = agb_random(200) + 240;

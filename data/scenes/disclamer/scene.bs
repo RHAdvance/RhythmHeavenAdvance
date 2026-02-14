@@ -3,12 +3,13 @@
 .section .scene
 
 @ Script
-script script_scene_disclamer
-    set_tempo 120
+script script_scene_disclaimer
+    @ set tempo to over 1000 to bypass randomized tempo
+    set_tempo 1120
     pause_scene
 
     rest 12
-    set_tempo 120
+    set_tempo 1120
     scene_set_byte 0, TRUE
     pause_scene
 
@@ -20,17 +21,17 @@ script script_scene_disclamer
 
 
 @ Local Scene
-struct sub_scene_disclamer
-    /* Start  */ .word disclamer_scene_start,  0
+struct sub_scene_disclaimer
+    /* Start  */ .word disclaimer_scene_start,  0
     /* Paused */ .word NULL,                 0
-    /* Active */ .word disclamer_scene_update, 0
-    /* Stop   */ .word disclamer_scene_stop,   0
-    /* Script */ .word script_scene_disclamer
+    /* Active */ .word disclaimer_scene_update, 0
+    /* Stop   */ .word disclaimer_scene_stop,   0
+    /* Script */ .word script_scene_disclaimer
 endstruct
 
-@ RIQ Disclamer Scene
-struct scene_disclamer
-    /* Start  */ .word func_0801d86c, sub_scene_disclamer
+@ RIQ disclaimer Scene
+struct scene_disclaimer
+    /* Start  */ .word func_0801d86c, sub_scene_disclaimer
     /* Update */ .word func_0801d8d8, 0
     /* Stop   */ .word NULL,          0
     /* Memory */ .word 0x8

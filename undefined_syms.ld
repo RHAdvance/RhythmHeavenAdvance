@@ -168,8 +168,8 @@ write_int_sram_fast = 0x030064cc;
 verify_sram_fast = 0x030064d0;
 
 /* Advance */
-haveSeenDisclamer = 0x030062b0;
-isInDisclamer = 0x030062b1;
+haveSeenDisclaimer = 0x030062b0;
+sIsBadFlashCart = 0x030062b1;
 sReplayingCampaign = 0x030062b2;
 
 /* lib_0804e564 */

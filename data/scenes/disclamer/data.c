@@ -1,31 +1,31 @@
 #include "global.h"
 #include "graphics.h"
-#include "src/scenes/disclamer.h"
-#include "graphics/disclamer/disclamer_graphics.h"
+#include "src/scenes/disclaimer.h"
+#include "graphics/disclaimer/disclaimer_graphics.h"
 
 
-  /* DISCLAMER SCREEN - SCENE DATA */
+  /* disclaimer SCREEN - SCENE DATA */
 
 
 // [D_089dda68] Graphics Table
-struct GraphicsTable disclamer_gfx_table[] = {
+struct GraphicsTable disclaimer_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &disclamer_bg_tiles,
+        /* Src.  */ &disclaimer_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &disclamer_bg_map,
+        /* Src.  */ &disclaimer_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Palette */ {
-        /* Src.  */ disclamer_pal,
+        /* Src.  */ disclaimer_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },
     /* OBJ Palette */ {
-        /* Src.  */ disclamer_pal,
+        /* Src.  */ disclaimer_pal,
         /* Dest. */ OBJ_PALETTE_BUFFER(0),
         /* Size  */ 0x200
     },

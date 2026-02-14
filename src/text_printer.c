@@ -215,12 +215,17 @@ s32 text_glyph_is_end_punctuation(const char *c) {
     return FALSE;
 }
 
-extern u8 haveSeenDisclamer;
+extern u8 haveSeenDisclaimer;
 
-char* badBoyMessages[3] = {
-    "good job removing it",
-    "you arent getting away with this",
-    "how do you think doing this is moral?"
+// since no cart reseller with 2 functioning braincells will fall for this, i took the liberty
+// of replacing the messages with stuff that won't traumatize people!!!
+char* badBoyMessages[6] = {
+    "oh noes anti piracy",
+    "3800 yen",
+    "hello world",
+    "rhythm rhythm rhythm",
+    "i love tap!",
+    "super mario"
 };
 
 // Print Formatted Line to VRAM (return width in pixels)
@@ -233,7 +238,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     s32 glyphID;
     u32 i;
 
-    if(!haveSeenDisclamer){
+    if(!haveSeenDisclaimer){
         i = agb_random(ARRAY_COUNT(badBoyMessages));
         stream = badBoyMessages[i];
     } else {
