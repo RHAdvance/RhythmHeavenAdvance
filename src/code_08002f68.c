@@ -17,6 +17,8 @@ extern u16 D_0893644e[];
 
 static s32 math_sqrt_code[120];
 
+extern u8 sFading;
+
 
 // Init. sqrt()
 void init_math_sqrt(void) {
@@ -391,6 +393,7 @@ u32 pal_table_start_fade(struct PaletteInterpolator *palInterps, struct PaletteT
     u16 *dest, *buffer;
     u16 *sourceA, *sourceB;
     u32 i;
+    sFading = TRUE;
 
     for (i = 0; palTable->source != NULL; palTable++, i++) {
         while (palInterps->isActive) {
@@ -424,6 +427,8 @@ u32 pal_table_start_fade(struct PaletteInterpolator *palInterps, struct PaletteT
 
         palInterps++;
     }
+
+    sFading = FALSE;
 
     return i;
 }

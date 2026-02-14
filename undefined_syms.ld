@@ -171,6 +171,7 @@ verify_sram_fast = 0x030064d0;
 haveSeenDisclamer = 0x030062b0;
 isInDisclamer = 0x030062b1;
 sReplayingCampaign = 0x030062b2;
+sFading = 0x030062b4;
 
 /* lib_0804e564 */
 D_030064d4 = 0x030064d4;
