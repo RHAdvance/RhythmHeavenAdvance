@@ -285,6 +285,8 @@ extern struct SongHeader s_guntai_v_zentai_a_seqData;
 extern struct SongHeader s_guntai_v_zentai1_seqData;
 extern struct SongHeader s_guntai_v_zentai2_seqData;
 extern struct SongHeader s_guntai_v_susume_seqData;
+extern struct SongHeader s_guntai_v_susume_2_seqData;
+extern struct SongHeader s_guntai_v_susume_3_seqData;
 extern struct SongHeader s_guntai_v_tomare_seqData;
 extern struct SongHeader s_guntai_v_migi_muke1_seqData;
 extern struct SongHeader s_guntai_v_migi_muke1_face_seqData;

@@ -106,7 +106,7 @@ extern struct Vector2 D_089e5368[][4];
 #ifdef SFX
 extern struct MarchingSfxData marching_sfx_table[][18];
 #else
-extern struct MarchingSfxData marching_sfx_table[][12];
+extern struct MarchingSfxData marching_sfx_table[][20];
 #endif
 
 

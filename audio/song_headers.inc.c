@@ -9323,3 +9323,27 @@ struct SongHeader s_f_boxing_four_sfx_seqData = {
     /* Song Title    */ s_f_boxing_four_sfx_seqName,
     /* Song Number   */ 1940
 };
+
+extern const u8 s_guntai_v_susume_2_mid[];
+struct SongHeader s_guntai_v_susume_2_seqData = {
+    /* MIDI Sequence */ s_guntai_v_susume_2_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_4,
+    /* Volume        */ 100,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ s_guntai_v_susume_2_seqName,
+    /* Song Number   */ 1537
+};
+
+extern const u8 s_guntai_v_susume_3_mid[];
+struct SongHeader s_guntai_v_susume_3_seqData = {
+    /* MIDI Sequence */ s_guntai_v_susume_3_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_4,
+    /* Volume        */ 100,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ s_guntai_v_susume_3_seqName,
+    /* Song Number   */ 1538
+};

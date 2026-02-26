@@ -603,7 +603,9 @@ script script_remix_8_main
     clear_text_f
     marching_orders_event01
     play_sfx s_guntai_v_migi_muke1_jp_seqData
-    rest 24
+    rest 11
+    play_sfx s_guntai_v_migi_muke1_face_seqData
+    rest 13
     rest 24
     marching_orders_event01
     play_sfx s_guntai_v_migi_jp_seqData

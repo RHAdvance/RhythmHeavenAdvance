@@ -1549,8 +1549,8 @@
 /* 1534 */ DEFINE_SONG( &s_space_miss_seqData,               SFX_PLAYER_0   )
 /* 1535 */ DEFINE_SONG( &s_space_ikeo_turn_swing_seqData,    SFX_PLAYER_1   )
 /* 1536 */ DEFINE_SONG( &s_space_kou_turn_swing_seqData,     SFX_PLAYER_2   )
-/* 1537 */ DEFINE_SONG( NULL, 0 )
-/* 1538 */ DEFINE_SONG( NULL, 0 )
+/* 1537 */ DEFINE_SONG( &s_guntai_v_susume_2_seqData,        SFX_PLAYER_1   )
+/* 1538 */ DEFINE_SONG( &s_guntai_v_susume_3_seqData,        SFX_PLAYER_1   )
 /* 1539 */ DEFINE_SONG( NULL, 0 )
 /* 1540 */ DEFINE_SONG( &s_guntai1_seqData,                  MUSIC_PLAYER_0 )
 /* 1541 */ DEFINE_SONG( &s_guntai2_seqData,                  MUSIC_PLAYER_0 )
@@ -1559,7 +1559,7 @@
 #ifdef SFX
 /* 1544 */ DEFINE_SONG( &s_guntai_v_zentai_a_seqData,       SFX_PLAYER_1   )
 #else
-/* 1544 */ DEFINE_SONG( &s_guntai_v_zentai1_seqData,       SFX_PLAYER_1   )
+/* 1544 */ DEFINE_SONG( &s_guntai_v_zentai1_seqData,        SFX_PLAYER_1   )
 #endif
 /* 1545 */ DEFINE_SONG( &s_guntai_v_zentai2_seqData,         SFX_PLAYER_1   )
 /* 1546 */ DEFINE_SONG( &s_guntai_v_susume_seqData,          SFX_PLAYER_1   )
