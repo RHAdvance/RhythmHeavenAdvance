@@ -149,11 +149,29 @@ void midi_player_stop(struct SoundPlayer *soundPlayer) {
 
 // Set Pause
 void midi_player_set_pause(struct SoundPlayer *soundPlayer, u8 pause) {
+    struct MidiBus *midiBus = soundPlayer->midiBus;
+    u32 i;
+
     soundPlayer->isPaused = pause;
 
-    // Since we already froze DirectSound, all we need to do is stop the PSG channels
     if (pause) {
-        midi_channel_stop_psg_all(soundPlayer->midiBus);
+        midiBus->isPaused = TRUE;
+
+        for (i = 0; i < gMidiSoundChannelCount; i++) {
+            if (gMidiSoundChannelPool[i].active && (gMidiSoundChannelPool[i].midiBus == midiBus)) {
+                midi_sampler_stop(i);
+            }
+        }
+
+        midi_channel_stop_psg_all(midiBus);
+    } else {
+        midiBus->isPaused = FALSE;
+
+        for (i = 0; i < gMidiSoundChannelCount; i++) {
+            if (gMidiSoundChannelPool[i].active && (gMidiSoundChannelPool[i].midiBus == midiBus)) {
+                gMidiSamplerPool[i].active = TRUE;
+            }
+        }
     }
 }
 
@@ -830,7 +848,6 @@ void midi_sound_main(void) {
     s32 rvb1 = gMidiReverbControls[1];
     s32 rvb2 = gMidiReverbControls[2];
     s32 rvb3 = gMidiReverbControls[3];
-    boolean anyPlayerPaused = FALSE;
 
     gMidiVCOUNTAtStart = REG_VCOUNT;
 
@@ -880,20 +897,7 @@ void midi_sound_main(void) {
     if (rvb3 > 127) rvb3 = 127;
 
     midi_directsound_set_reverb(rvb0, rvb1, rvb2, rvb3);
-    
-    // Check if any sound player is paused
-    for (i = 0; i <= last_sound_player_id; i++) {
-        soundPlayer = sound_players[i];
-        if (soundPlayer != NULL && soundPlayer->isPaused) {
-            anyPlayerPaused = TRUE;
-            break;
-        }
-    }
-
-    // Only update DirectSound if no players are paused (only works for samples and not PSG)
-    if (!anyPlayerPaused) {
-        midi_directsound_update();
-    }
+    midi_directsound_update();
 }
 
 

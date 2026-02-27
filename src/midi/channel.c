@@ -219,6 +219,7 @@ void midi_bus_init(struct MidiBus *midiBus, u32 totalChannels, struct MidiChanne
     midiBus->unk8 = (20 << 8);
     midiBus->tuningTable = midi_tuning_table;
     midiBus->totalChannels = totalChannels;
+    midiBus->isPaused = FALSE;
     midiBus->midiChannel = midiChannelArray;
 
     for (i = 0; i < totalChannels; i++) {
@@ -454,6 +455,10 @@ void midi_note_update_id(u32 id) {
     struct SoundChannel *soundChannel = &gMidiSoundChannelPool[id];
 
     if (!soundChannel->active) {
+        return;
+    }
+
+    if (soundChannel->midiBus->isPaused) {
         return;
     }
 
