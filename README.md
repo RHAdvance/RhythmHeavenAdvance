@@ -16,12 +16,12 @@ Feel free to join our [Discord server](https://discord.gg/8PET8w8PU8) if you hav
 ### Requirements
 
 - A legally obtained ROM of *Rhythm Tengoku* **(Rev 0)** with CRC32 checksum: `349D7025`
-- An IPS patcher tool (recommended: [ROM Patcher JS](https://www.marcrobledo.com/RomPatcher.js/))
+- A ROM patcher tool (recommended: [ROM Patcher JS](https://www.marcrobledo.com/RomPatcher.js/))
 
 ### Steps
 
-1. Download the latest `.ips` patch file from the [Releases](https://github.com/RHAdvance/RhythmHeavenAdvance/releases) page or download the latest nightly page at [our website](https://rhadvance.github.io/)
-2. Open your IPS patcher tool
+1. Download the latest `.bps` patch file from the [Releases](https://github.com/RHAdvance/RhythmHeavenAdvance/releases) page or download the latest nightly page at [our website](https://rhadvance.github.io/)
+2. Open your BPS patcher tool
 3. Select your *Rhythm Tengoku* ROM
 4. Apply the downloaded patch
 5. Load the patched ROM in your emulator or flashcard
