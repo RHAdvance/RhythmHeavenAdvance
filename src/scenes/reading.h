@@ -4,7 +4,7 @@
 #include "scenes.h"
 #include "../text_printer.h"
 
-#include "reading_material.h"
+#include "reading_materials.h"
 
 enum ReadingEventsEnum {
     /* 00 */ READING_EV_NONE,
@@ -42,7 +42,7 @@ struct ReadingMaterial {
 
 
 // DATA
-extern struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIAL];
+extern struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS];
 extern struct GraphicsTable reading_gfx_table[];
 extern struct CompressedData *reading_buffered_textures[];
 extern struct ReadingMaterial reading_material_error;

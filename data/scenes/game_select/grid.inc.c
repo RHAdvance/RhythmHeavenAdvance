@@ -4,6 +4,7 @@
 #define REQ_CLEAR(x, y) LEVEL_STATE_CLEARED, x, y
 #define REQ_OPEN(x, y) LEVEL_STATE_OPEN, x, y
 #define REQ_SHOWN(x, y) LEVEL_STATE_CLOSED, x, y
+#define REQ_TOTAL_MEDALS(count) LEVEL_EVENT_REQ_TOTAL_MEDALS, count, 0
 #define END_REQ -1
 
 #define TARGET(x, y) x, y
@@ -191,7 +192,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=10, y=06) */ {
         /* Level ID */ LEVEL_REMIX_1_EXTRA,
-        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
+        /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(10, 7), REQ_CLEAR(10, 8), REQ_CLEAR(10, 9), REQ_CLEAR(10, 10), REQ_CLEAR(10, 11), END_REQ },
         /* Targets  */ (s8[]) { TARGET(10, 11), END_TARGETS },
         /* Flags */ DELAY_CLEAR,
@@ -277,7 +278,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=10, y=07) */ {
         /* Level ID */ LEVEL_CLAPPY_TRIO_EXTRA,
-        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
+        /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(10, 8), END_REQ },
         /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 11), END_TARGETS },
         /* Flags */ 0,
@@ -363,7 +364,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=10, y=08) */ {
         /* Level ID */ LEVEL_SPACEBALL_EXTRA,
-        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
+        /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(10, 9), END_REQ },
         /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 7), TARGET(10, 11),END_TARGETS },
         /* Flags */ 0,
@@ -449,7 +450,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=10, y=09) */ {
         /* Level ID */ LEVEL_MARCHING_ORDERS_EXTRA,
-        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
+        /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(10, 10), END_REQ },
         /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 8), TARGET(10, 11), END_TARGETS },
         /* Flags */ 0,
@@ -535,7 +536,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=10, y=10) */ {
         /* Level ID */ LEVEL_RHYTHM_TWEEZERS_EXTRA,
-        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
+        /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
         /* Open Req */ (s8[]) { REQ_CLEAR(10, 11), END_REQ },
         /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 9), TARGET(10, 11), END_TARGETS },
         /* Flags */ 0,
@@ -621,16 +622,11 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=10, y=11) */ {
         /* Level ID */ LEVEL_KARATE_MAN_EXTRA,
-        /* Show Req */ (s8[]) { REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
-        /* Open Req */ (s8[]) { 
-            REQ_MEDAL(2, 6), REQ_MEDAL(3, 6), REQ_MEDAL(4, 6), REQ_MEDAL(5, 6), REQ_MEDAL(6, 6), REQ_MEDAL(7, 6), REQ_MEDAL(8, 6), REQ_MEDAL(9, 6),
-            REQ_MEDAL(2, 7), REQ_MEDAL(3, 7), REQ_MEDAL(4, 7), REQ_MEDAL(5, 7), REQ_MEDAL(6, 7), REQ_MEDAL(7, 7), REQ_MEDAL(8, 7), REQ_MEDAL(9, 7),
-            REQ_MEDAL(2, 8), REQ_MEDAL(3, 8), REQ_MEDAL(4, 8), REQ_MEDAL(5, 8), REQ_MEDAL(6, 8), REQ_MEDAL(7, 8), REQ_MEDAL(8, 8), REQ_MEDAL(9, 8),
-            REQ_MEDAL(2, 9), REQ_MEDAL(3, 9), REQ_MEDAL(4, 9), REQ_MEDAL(5, 9), REQ_MEDAL(6, 9), REQ_MEDAL(7, 9), REQ_MEDAL(8, 9), REQ_MEDAL(9, 9),
-            REQ_MEDAL(2, 10), REQ_MEDAL(3, 10), REQ_MEDAL(4, 10), REQ_MEDAL(5, 10), REQ_MEDAL(6, 10), REQ_MEDAL(7, 10), REQ_MEDAL(8, 10), REQ_MEDAL(9, 10),
-            REQ_MEDAL(2, 11), REQ_MEDAL(3, 11), REQ_MEDAL(4, 11), REQ_MEDAL(5, 11), REQ_MEDAL(6, 11), REQ_MEDAL(7, 11), REQ_MEDAL(8, 11), REQ_MEDAL(9, 11),
+        /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
+        /* Open Req */ (s8[]) {
+            REQ_TOTAL_MEDALS(48),
             REQ_SHOWN(10, 11), REQ_SHOWN(10, 10), REQ_SHOWN(10, 9), REQ_SHOWN(10, 8), REQ_SHOWN(10, 7), REQ_SHOWN(10, 6),
-            END_REQ 
+            END_REQ
         },
         /* Targets  */ (s8[]) { TARGET(10, 6), TARGET(10, 10), TARGET(10, 11), END_TARGETS },
         /* Flags */ TARGET_ON_SHOW | TARGET_ON_OPEN | DELAY_OPEN,
