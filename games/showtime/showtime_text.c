@@ -5,17 +5,17 @@
 /* Game Text - Showtime */
 
 
-const char D_0805e180[] = "The penguins are unhappy.";
+const char D_0805e180[] = "They're not very happy.";
 
-const char D_0805e194[] = "The penguins are pleased.";
+const char D_0805e194[] = "They're pretty pleased!";
 
-const char D_0805e1a8[] = "The Penguins' Moods";
+const char D_0805e1a8[] = "The penguins' moods...";
 
 const char D_0805e1bc[] = "Ｉｔ’ｓ　ｓｈｏｗｔｉｍｅ！";
 
 const char D_0805e1d4[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｃｅ　ｏｕｒ　ｐｅｎｇｕｉｎ　ｒｏｕｔｉｎｅ．";
 
-const char D_0805e1f8[] = "Ｐｒｅｓｓ　￣ｏｎ　ｔｈｅ　ｃｏｕｎｔ　ｏｆ　３！";
+const char D_0805e1f8[] = "Ｐｒｅｓｓ　ゝ　ｏｎ　ｔｈｅ　ｃｏｕｎｔ　ｏｆ　３！";
 
 const char D_0805e218[] = "";
 

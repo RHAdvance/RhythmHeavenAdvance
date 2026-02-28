@@ -151,7 +151,7 @@ void data_check_print_page(s32 id) {
     memcpy(string, "  ", 3);
     strcat(string, "No. ");
     strcat(string, number);
-    strcat(string, "  ");
+    strcat(string, ":  ");
     strcat(string, game_select_get_level_name(id));
     data_check_print_line(2, 0, string);
 
@@ -164,11 +164,11 @@ void data_check_print_page(s32 id) {
     }
 
     memcpy(string, "  ", 3);
-    strcat(string, "Average Points "); // Average Points:
+    strcat(string, "Average Points: "); // Average Points:
     strcat(string, number);
 
     if (avgPoints != DEFAULT_LEVEL_SCORE) {
-        strcat(string, " Out of 1000 Points"); // (Out of 1000 Points)
+        strcat(string, "/1000"); // (Out of 1000 Points)
     }
 
     data_check_print_line(3, 0, string);
@@ -178,32 +178,31 @@ void data_check_print_page(s32 id) {
     firstSuperb = get_level_first_superb(saveData, id);
 
     memcpy(string, "  ", 3);
-    strcat(string, "Number of Times Played "); // Number of Times Played:
+    strcat(string, "Number of Times Played: "); // Number of Times Played:
     strintf(number, totalPlays);
     strcat(string, number);
-    strcat(string, " Times"); // [x] Times
     data_check_print_line(4, 0, string);
 
     if (totalPlays > 0) {
         memcpy(string, "  ", 3);
-        strcat(string, "  ( First OK: "); // ( First OK:
+        strcat(string, "( First OK: Attempt "); // ( First OK:
 
         if (firstOK == 0) {
-            strcat(string, "Not Yet"); // Not Yet
+            strcat(string, "None Yet"); // Not Yet
         } else {
             strintf(number, firstOK);
             strcat(string, number);
-            strcat(string, "th Time"); // [x]th Time
+            strcat(string, ""); // [x]th Time
         }
 
-        strcat(string, "  First Superb: "); // First Superb:
+        strcat(string, "     First Superb: Attempt "); // First Superb:
 
         if (firstSuperb == 0) {
-            strcat(string, "Not Yet )"); // Not Yet )
+            strcat(string, "0 )"); // Not Yet )
         } else {
             strintf(number, firstSuperb);
             strcat(string, number);
-            strcat(string, "th Time )"); // [x]th Time )
+            strcat(string, " )"); // [x]th Time )
         }
 
         data_check_print_line(5, 0, string);

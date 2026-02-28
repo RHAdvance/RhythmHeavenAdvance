@@ -79,7 +79,7 @@ const char D_08069be4[] = "Ami Tokito";
 
 const char D_08069bf0[] = "Sohshi Tanaka";
 
-const char D_08069bfc[] = "\0023" "Voices";
+const char D_08069bfc[] = "\0023" "Voice";
 
 const char D_08069c04[] = "N. Kitamura";
 
@@ -170,8 +170,8 @@ const char D_08069ddc[] =
 
 const char D_08069e24[] =
     "You're not done yet, though!\n"
-    "You may have beaten\n"
-    "the game, but there's\n"
+    "You may have reached\n"
+    "the credits, but there's\n"
     "still more to play!";
 
 const char D_08069e78[] =

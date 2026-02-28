@@ -22,11 +22,11 @@ void func_08037178(void) {
 
     gQuizShow->unk4c = D_030046a8->data.unk294[3];
 
-    sprite_create(gSpriteHandler, anim_quiz_show_current_score_label, 0, 0xc0, 4, 0x800, 0, 0, 0);
+    sprite_create(gSpriteHandler, anim_quiz_show_current_score_label, 0, 0xba, 4, 0x800, 0, 0, 0);
     sprite_create(gSpriteHandler, anim_quiz_show_high_score_label, 0, 0x3a, 4, 0x800, 0, 0, 0);
 
     for (i = 0; i < 2; i++) {
-        gQuizShow->curScoreSprites[i] = sprite_create(gSpriteHandler, anim_quiz_show_score_num, 0, 0xC6 - (i*8), 4, 0x800, 0, 0x7f, 0);
+        gQuizShow->curScoreSprites[i] = sprite_create(gSpriteHandler, anim_quiz_show_score_num, 0, 0xC0 - (i*8), 4, 0x800, 0, 0x7f, 0);
     }
 
     

@@ -419,7 +419,7 @@ void cafe_print_dialogue(void) {
                     s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\n");
-                    strcat(s, "So hey, I hear you got a Perfect rating in ");
+                    strcat(s, "So hey, I hear you got a Perfect rank in ");
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
                     strcat(s, "\0054" "\0018" "!\n");
@@ -571,10 +571,10 @@ void cafe_print_dialogue(void) {
             // I hope the next game will go
             // much better for you.
             // Tell me about it next time.
-            string = "\n"
-                     "...And that's done. Hey, maybe the\n"
-                     "next couple of games will give you the\n"
-                     "edge you need to finish that last one!";
+            string = "...And that's done. Wonder what the\n"
+                     "next game will be like?\n"
+                     "Hope it goes better!\n"
+                     "See you later.";
             dialogueExhausted = TRUE;
             break;
 

@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_2, script_drum_lesson_short_2_entr
 @ Drum Lesson (Short 2) - Data
 
 text D_08061e24
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -54,9 +54,9 @@ return
 
 
 text D_08061ef4
-    .ascii "I've added a snare to the\n"
-    .ascii "offbeat! Now it feels\n"
-    .ascii "kind of intense!\n"
+    .ascii "\n"
+    .ascii "Now, a snare on the offbeat!\n"
+    .ascii "Makes it feels kind of intense!\n"
     .asciz "One two, one two!"
 endtext
 
@@ -86,10 +86,10 @@ return
 
 
 text D_08061ffc
-    .ascii "\n"
-    .ascii "Let's move one of the\n"
-    .ascii "bass beats a little sooner.\n"
-    .asciz "This one's kinda tricky!"
+    .ascii "Okay, let's mix it up!\n"
+    .ascii "I moved one of the bass\n"
+    .ascii "beats back a little bit.\n"
+    .asciz "It's tricky, but doable!"
 endtext
 
 
@@ -112,7 +112,7 @@ return
 
 text D_080620e4
     .ascii "\n"
-    .ascii "Let's squeeze another beat\n"
+    .ascii "I'll squeeze another beat\n"
     .ascii "into that gap there.\n"
     .asciz "Do your best!\n"
 endtext

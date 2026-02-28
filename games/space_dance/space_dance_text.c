@@ -17,11 +17,11 @@ const char D_0805e320[] = "Your rattling was felt before the chorus.";
 
 const char D_0805e344[] = "The part before the chorus had perfection!";
 
-const char D_0805e364[] = "Space Gramps Says";
+const char D_0805e364[] = "Space Gramps says...";
 
 const char D_0805e37c[] = "Ｃｏｍｍｅｎｃｅ　ｍｏｔｉｏｎｓ！";
 
-const char D_0805e38c[] = "Ｉｔ　ｉｓ　ｔｉｍｅ　ｆｏｒ　ｕｓ　ｔｏ　ｄａｎｃｅ　ｔｏｇｅｔｈｅｒ．";
+const char D_0805e38c[] = "Ｉｔ　ｉｓ　ｔｈｅ　ｔｉｍｅ　ｔｏ　ｄａｎｃｅ　ｔｏｇｅｔｈｅｒ．";
 
 const char D_0805e3a8[] = "Ｆｉｒｓｔ，　ｌｅａｒｎ　ｔｈｅ　ｍｏｔｉｏｎ　ｆｕｎｄａｍｅｎｔａｌｓ．";
 

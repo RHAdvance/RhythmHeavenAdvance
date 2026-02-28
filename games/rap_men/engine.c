@@ -242,7 +242,7 @@ struct CueDefinition *rap_men_cue_index[] = {
 
 // [D_089e65f0] Cue Miss Sounds
 struct SongHeader *rap_men_cue_miss_sfx[] = {
-    /* RAP_MEN   */ &s_intro_two_seqData,
+    /* RAP_MEN   */ &s_rap_two_seqData,
     /* RAP_WOMEN */ &s_f_rapW_v_CheckIt_seqData,
 };
 

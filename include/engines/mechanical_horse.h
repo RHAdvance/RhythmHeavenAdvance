@@ -2,6 +2,7 @@
 
 #include "global.h"
 #include "engines.h"
+#include "src/affine_sprite.h"
 
 #include "games/mechanical_horse/graphics/mechanical_horse_graphics.h"
 
@@ -12,7 +13,6 @@ enum HorseLessonsEnum {
     HORSE_LESSON_3_CANTER,
     HORSE_LESSON_4_GALLOP
 };
-
 
 // Engine Types:
 struct MechanicalHorseEngineData {
@@ -101,7 +101,7 @@ extern const char D_0805a9fc[];
 extern const s32 D_0805aa00[];
 extern const s32 D_0805aa10[];
 extern const s32 D_0805aa20[];
-extern const s32 D_0805aa40[][2];
+extern const s24_8 D_0805aa40[][2];
 extern const u32 D_0805aa60[][4];
 extern const s32 D_0805aaa0[];
 extern const s32 D_0805aab0[][4];
@@ -111,8 +111,8 @@ extern const s32 D_0805aab0[][4];
 extern struct MechanicalHorseBG mechanical_horse_backgrounds[];
 extern struct CompressedData *mechanical_horse_buffered_textures[];
 extern struct GraphicsTable gfx_table_mechanical_horse[];
-extern struct SongHeader *mechanical_horse_player_horse_sfx[][4];
-extern struct SongHeader *mechanical_horse_teacher_horse_sfx[][4];
+extern struct SongHeader *mechanical_horse_player_horse_sfx[];
+extern struct SongHeader *mechanical_horse_teacher_horse_sfx[];
 extern struct SongHeader *mechanical_horse_lesson_bgm[];
 extern struct Animation *mechanical_horse_anim[];
 extern struct Animation *mechanical_horse_jockey_anim[];
@@ -120,13 +120,13 @@ extern struct Animation *mechanical_horse_lesson_text_anim[][4];
 
 
 // Functions:
-// extern ? func_08040c2c(?);
-// extern ? func_08040c58(?);
-// extern ? func_08040cfc(?);
-// extern ? func_08040d10(?);
+extern void func_08040c2c(void);
+extern void func_08040c58(void);
+extern void func_08040cfc(void);
+extern void func_08040d10(void);
 // extern ? func_08040d90(?);
 // extern ? func_08040dd8(?);
-// extern ? func_08040e80(?);
+extern void func_08040e80(void);
 // extern ? func_08040eb0(?);
 extern void mechanical_horse_init_gfx3(void); // Graphics Init. 3
 extern void mechanical_horse_init_gfx2(void); // Graphics Init. 2
@@ -134,22 +134,22 @@ extern void mechanical_horse_init_gfx1(void); // Graphics Init. 1
 extern void mechanical_horse_engine_start(u32 version); // Game Engine Start
 extern void func_08041444(); // Engine Event 0x00 (?)
 extern void func_080415c0(); // Engine Event 0x01 (?)
-extern void func_080416cc(); // Engine Event 0x02 (?)
-extern void func_08041730(); // Engine Event 0x03 (?)
-extern void func_08041744(); // Engine Event 0x04 (?)
+extern void func_080416cc(const char* string); // Engine Event 0x02 (?)
+extern void func_08041730(u8); // Engine Event 0x03 (?)
+extern void func_08041744(u32); // Engine Event 0x04 (?)
 extern void func_080417ac(); // Engine Event 0x05 (?)
 // extern ? func_0804188c(?);
-// extern ? func_08041940(?);
-// extern ? func_08041970(?);
+extern u8 func_08041940(void);
+extern void func_08041970(void);
 // extern ? func_08041c98(?);
 // extern ? func_08041ddc(?);
 // extern ? func_08041f80(?);
 // extern ? func_08042020(?);
 // extern ? func_080420c0(?);
 // extern ? func_0804231c(?);
-// extern ? func_08042438(?);
-// extern ? func_0804249c(?);
-extern void func_080424f0(); // Engine Event 0x06 (?)
+extern void func_08042438(void);
+extern void func_0804249c(void);
+extern void func_080424f0(u16); // Engine Event 0x06 (?)
 extern void func_08042504(); // Engine Event 0x07 (?)
 // extern ? func_08042548(?);
 extern void mechanical_horse_engine_update(void); // Game Engine Update

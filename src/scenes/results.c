@@ -663,17 +663,20 @@ u32 results_get_negative_comments(void) {
     for (i = 0; i < totalFailed; i++) {
         struct Animation *anim;
         u16 sprite;
-        size_t prefixLength = 0;
+        char modifiedComment[0x100];
+
+        // Copy the comment to a modifiable buffer, TO BE ABLE TO ALTER IT CAUSE YOU CANT CHANGE THEM UNLESS YOU FIRST COPY THEM WHICH IS ANNOYING
+        strcpy(modifiedComment, comments[i]);
+
+        // Convert the first character to lowercase for all the comments except the first one
+        // Except for sentences where you don't need to change the capitalization
+        if (i > 0 && modifiedComment[0] >= 'A' && modifiedComment[0] <= 'Z' && !(modifiedComment[0] == 'I' && (modifiedComment[1] == ' ' || modifiedComment[1] == '\''))) {
+            modifiedComment[0] += 32;
+        }
 
         strcpy(commentsText, results_try_again_comment_pool[clamp_int32(i, 0, 2)]);
-        strcat(commentsText, comments[i]);
-        prefixLength = strlen(commentsText) - strlen(comments[i]);
-        
-        // Convert the first character of the statement to lowercase if it's uppercase
-        // An exception is made for sentences starting in the word "I" and contractions like "I'm"
-        if (commentsText[prefixLength] >= 'A' && commentsText[prefixLength] <= 'Z' && results_try_again_comment_pool[i] != "" && !(commentsText[prefixLength] == 'I' && (commentsText[prefixLength+1] == ' ' || commentsText[prefixLength+1]  == '\''))) {
-            commentsText[prefixLength] += 32;
-        }
+        strcat(commentsText, modifiedComment);
+
         anim = results_get_comment_anim(commentsText, TEXT_ANCHOR_BOTTOM_LEFT, 3);
         sprite = sprite_create(gSpriteHandler, anim, 0, 0, 0, 0x800, 0, 0, 0);
         sprite_set_base_palette(gSpriteHandler, sprite, COMMENT_PALETTE);
@@ -702,6 +705,7 @@ s24_8 results_get_positive_comments(void) {
     s24_8 averagePassed;
     u16 *commentSprites;
     u32 imperfectionPenalty;
+    char modifiedComment[0x100];
 
     tracker = score_handler->cueInputTrackers;
     commentSprites = &gResults->commentSprites[gResults->totalNegativeComments];
@@ -744,23 +748,27 @@ s24_8 results_get_positive_comments(void) {
         if (!passedThisCriterion) {
             continue;
         }
+        
+        strcpy(modifiedComment, criteria->positiveRemark);
 
         if (gResults->totalNegativeComments > 0) {
-            char modifiedRemark[0x100];
-            strcpy(modifiedRemark, criteria->positiveRemark);
 
-            // Convert the first character of the positive remark to lowercase if it's uppercase
-            // An exception is made for sentences starting in the word "I" and contractions like "I'm"
-            if (modifiedRemark[0] >= 'A' && modifiedRemark[0] <= 'Z' && !(modifiedRemark[0] == 'I' && (modifiedRemark[1] == ' ' || modifiedRemark[1] == '\''))) {
-                modifiedRemark[0] += 32;
+            // Same system as before
+            if (modifiedComment[0] >= 'A' && modifiedComment[0] <= 'Z' && !(modifiedComment[0] == 'I' && (modifiedComment[1] == ' ' || modifiedComment[1] == '\''))) {
+                modifiedComment[0] += 32;
             }
 
             memcpy(commentsText, "...but ", 8);
-            strcat(commentsText, modifiedRemark);
+            strcat(commentsText, modifiedComment);
             anim = results_get_comment_anim(commentsText, TEXT_ANCHOR_BOTTOM_RIGHT, 3);
             palette = EXTRA_COMMENT_PALETTE;
         } else {
-            size_t prefixLength = 0;
+
+            // Same system as above
+            if (totalPassed > 0 && modifiedComment[0] >= 'A' && modifiedComment[0] <= 'Z' && !(modifiedComment[0] == 'I' && (modifiedComment[1] == ' ' || modifiedComment[1] == '\''))) {
+                modifiedComment[0] += 32;
+            }
+
             switch (totalPassed) {
                 case 0:
                     memcpy(commentsText, "", 1);
@@ -772,18 +780,7 @@ s24_8 results_get_positive_comments(void) {
                     memcpy(commentsText, "Plus, ", 9); // ("also,")
                     break;
             }
-            strcat(commentsText, criteria->positiveRemark);
-            palette = COMMENT_PALETTE;
-            if (totalPassed > 0) {
-                prefixLength = strlen(commentsText) - strlen(criteria->positiveRemark);
-        
-                // Convert the first character of the statement to lowercase if it's uppercase
-                // An exception is made for sentences starting in the word "I" and contractions like "I'm"
-                if (commentsText[prefixLength] >= 'A' && commentsText[prefixLength] <= 'Z' && !(commentsText[prefixLength] == 'I' && (commentsText[prefixLength+1] == ' ' || commentsText[prefixLength+1]  == '\''))) {
-                    commentsText[prefixLength] += 32;
-                }
-            }
-
+            strcat(commentsText, modifiedComment);
             anim = results_get_comment_anim(commentsText, TEXT_ANCHOR_BOTTOM_LEFT, 3);
             palette = COMMENT_PALETTE;
         }

@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_long_4, script_drum_lesson_long_4_entry
 @ Drum Lesson (Long 4) - Data
 
 text D_08062634
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -67,9 +67,9 @@ return
 
 text D_08062794
     .ascii "\n"
-    .ascii "Let's tack on some cymbals\n"
-    .ascii "and snares!\n"
-    .asciz "Just follow my lead."
+    .ascii "Let's tack on some more\n"
+    .ascii "crashes and snares!\n"
+    .asciz "Follow my lead!"
 endtext
 
 
@@ -105,9 +105,9 @@ return
 
 
 text D_080628f0
-    .ascii "One more funky beat!\n"
+    .ascii "Now, one more beat!\n"
     .ascii "It sounds complicated,\n"
-    .ascii "but it's really not!\n"
+    .ascii "but it really isn't!\n"
     .asciz "Can you keep up?"
 endtext
 
@@ -139,10 +139,10 @@ return
 
 
 text D_08062a64
-    .ascii "Let's see if we can keep\n"
-    .ascii "the ending just as cool,\n"
-    .ascii "alright? Follow as well\n"
-    .asciz "as you can!"
+    .ascii "\n"
+    .ascii "Let's make it pop a little!\n"
+    .ascii "Think you can pull this off?\n"
+    .asciz "Follow as best as you can!\n"
 endtext
 
 
@@ -177,10 +177,10 @@ return
 
 
 text D_08062be4
-    .ascii "Lastly, let's add a cymbal.\n"
-    .ascii "The beat's getting real\n"
-    .ascii "groovy! There's no going\n"
-    .asciz "back now, so follow my lead!"
+    .ascii "And lastly, add a crash!\n"
+    .ascii "Things are heating up here!\n"
+    .ascii "and there's no going back!\n"
+    .asciz "So let's finish this right!"
 endtext
 
 

@@ -7,9 +7,9 @@
 
 const char D_080676b4[] = "The first half was kinda rough...";
 
-const char D_080676d4[] = "The first half was pretty good!";
+const char D_080676d4[] = "The first half was really good!";
 
-const char D_080676ec[] = "The second half was rather dreary.";
+const char D_080676ec[] = "The second half was sorta sloppy.";
 
 const char D_08067710[] = "The second half was incredible!";
 
@@ -19,7 +19,7 @@ const char D_08067730[] = "It really ramped up near the end!";
 
 const char D_08067754[] = "The ending was pitch perfect!";
 
-const char D_08067778[] = "The People Say:";
+const char D_08067778[] = "The People Think:";
 
 const char text_bon_odori_ha[] = ".0:0" "ÇgÇÅÇÅÅ`";
 

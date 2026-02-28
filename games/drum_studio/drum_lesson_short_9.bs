@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_9, script_drum_lesson_short_9_entr
 @ Drum Lesson (Short 9) - Data
 
 text D_0806090c
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -57,7 +57,7 @@ text D_080609dc
     .ascii "\n"
     .ascii "Kick each bass twice!\n"
     .ascii "Think you've got this?\n"
-    .asciz "I suggest only using ‡N."
+    .asciz "I'd suggest only using ‡N."
 endtext
 
 
@@ -86,10 +86,10 @@ return
 
 
 text D_08060af4
-    .ascii "Now for a new snare beat,\n"
-    .ascii "right before the end.\n"
-    .ascii "The bass pattern hasn't\n"
-    .asciz "changed, keep that in mind!"
+    .ascii "Now let's do a new snare\n"
+    .ascii "beat, right before the end.\n"
+    .ascii "Careful though, the bass\n"
+    .asciz "is still the same as before!"
 endtext
 
 
@@ -112,7 +112,7 @@ return
 
 text D_08060be0
     .ascii "\n"
-    .ascii "Let's add another snare beat\n"
+    .ascii "Let's add another snare\n"
     .ascii "right after the last one.\n"
     .asciz "The bass still hasn't changed!"
 endtext
@@ -139,9 +139,9 @@ return
 
 text D_08060cd0
     .ascii "Okay, let's add a bit more\n"
-    .ascii "snare to earlier in\n"
-    .ascii "the pattern. Listen carefully\n"
-    .asciz "and don't lose the beat!"
+    .ascii "snare at the beginning.\n"
+    .ascii "Listen carefully and keep\n"
+    .asciz "the beat steady!"
 endtext
 
 
@@ -167,7 +167,7 @@ return
 
 
 text D_08060de4
-    .ascii "Surprise!\n"
+    .ascii "\n"
     .ascii "Another snare beat! It's a\n"
     .ascii "simple change, but it makes\n"
     .asciz "things a lot more difficult."
@@ -198,10 +198,10 @@ return
 
 
 text D_08060f10
-    .ascii "\n"
-    .ascii "Hit the snare right at the\n"
-    .ascii "start of the pattern! It's\n"
-    .asciz "tricky, but it sounds great!\n"
+    .ascii "You're almost done! Now\n"
+    .ascii "another one, at the start.\n"
+    .ascii "It's pretty tricky, but it\n"
+    .asciz "makes it sound great!\n"
 endtext
 
 

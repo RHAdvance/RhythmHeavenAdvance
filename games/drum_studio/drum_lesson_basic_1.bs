@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_basic_1, script_drum_lesson_basic_1_entr
 @ Drum Lesson (Basic 1) - Data
 
 text D_080613e4
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -152,17 +152,17 @@ endtext
 
 text D_080617bc
     .ascii "\n"
-    .ascii "See that light display\n"
-    .ascii "up there? That's the\n"
-    .asciz "Timing Lamp."
+    .ascii "See the lights up there?\n"
+    .ascii "Those are Timing Lights!\n"
+    .asciz ""
 endtext
 
 
 text D_080617f0
-    .ascii "The left lights blink if you're\n"
-    .ascii "early! The right ones blink if\n"
-    .ascii "you're late. The enter blinks\n"
-    .asciz "green if you're perfect!"
+    .ascii "The lights blink to your timing:\n"
+    .ascii "Left if you're early,\n"
+    .ascii "Right if you're late,\n"
+    .asciz "Center if you're on beat!"
 endtext
 
 

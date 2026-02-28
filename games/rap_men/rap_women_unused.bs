@@ -43,39 +43,39 @@ text text_rap_women_unused_naisho_desu_ka
 endtext
 
 text text_rap_women_unused_kare_no_oyatsu_da_ne
-    .asciz ".9:1‚s‚ˆ‚…‚“‚…@‚‚’‚…@‚”‚ˆ‚…‚‰‚’@‚“‚‚‚ƒ‚‹‚“C@.9:0‚™‚‚•@‚‹‚‚‚—H.8:1"
+    .asciz ".9:1‚s‚ˆ‚…‚“‚…@‚‚’‚…@‚‚Œ‚Œ@‚”‚ˆ‚…‚‰‚’@‚“‚‚‚ƒ‚‹‚“C.9:0@‚™‚@‚“‚…‚…H.8:1"
 endtext
 
 text text_rap_women_unused_tabeteii_kamo_ne
-    .asciz ".9:1‚d‚‚”@f‚…‚@‚‚Œ‚Œ@‚•‚C@.9:0‚h@‚“‚•‚‚‚‚“‚….8:1D"
+    .asciz ".9:1‚d‚‚”@f‚…‚@‚‚Œ‚Œ@‚•‚C@.9:0‚™‚@‚†‚…‚…‚Œ@‚‚…H.8:1"
 endtext
 
 text text_rap_women_unused_aketeii_kamo_ne
-    .asciz ".9:1‚n‚‚…‚@f‚…‚@‚•‚C@.9:0‚h@‚“‚•‚‚‚‚“‚….8:1D"
+    .asciz ".9:1‚n‚‚…‚@f‚…‚@‚•‚C@.9:0‚™‚@‚†‚…‚…‚Œ@‚‚…H.8:1"
 endtext
 
 text text_rap_women_unused_oyatsu_wa_saikou
-    .asciz ".a:1‚r‚‚‚ƒ‚‹‚‰‚‚‡@‚‰‚“@.a:0‚”‚ˆ‚…@‚f‚q‚d‚`‚s‚d‚r‚sI.8:1"
+    .asciz ".a:1‚r‚‚‚ƒ‚‹‚‰‚‚‡@‚‰‚“@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
 endtext
 
 text text_rap_women_unused_kibun_wa_saikou
-    .asciz ".a:1‚h@‚†‚…‚…‚Œ@.a:0‚”‚ˆ‚…@‚f‚q‚d‚`‚s‚d‚r‚sI.8:1"
+    .asciz ".a:1‚h@‚†‚…‚…‚Œ@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
 endtext
 
 text text_rap_women_unused_amakute_saikou
-    .asciz ".a:1‚r‚—‚…‚…‚”‚“@‚‚’‚…@.a:0‚”‚ˆ‚…@‚f‚q‚d‚`‚s‚d‚r‚sI.8:1"
+    .asciz ".a:1‚r‚—‚…‚…‚”‚“@‚‚’‚…@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
 endtext
 
 text text_rap_women_unused_betsubara_saikou
-    .asciz ".a:1‚b‚‚‹‚…‚“@‚‚’‚…@.a:0‚”‚ˆ‚…@‚f‚q‚d‚`‚s‚d‚r‚sI.8:1"
+    .asciz ".a:1‚b‚‚‹‚…‚“@‚‚’‚…@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
 endtext
 
 text text_rap_women_unused_kare_ni_wa_naisho
-    .asciz ".a:1‚s‚ˆ‚…‚™@‚—‚‚f‚”@‚‹‚‚‚—@.a:0‚‚•‚’@‚r‚d‚b‚q‚d‚sI.8:1"
+    .asciz ".a:1‚b‚Œ‚•‚…‚Œ‚…‚“‚“@‚”‚ˆ‚‚”@‚—‚…@.a:0‚r‚s‚n‚k‚d@f‚d‚lI.8:1"
 endtext
 
 text text_rap_women_unused_dare_ni_mo_naisho
-    .asciz ".a:1‚j‚…‚…‚@‚‰‚”@‚‚Œ‚Œ@.a:0‚@‚r‚d‚b‚q‚d‚sI.8:1"
+    .asciz ".a:1‚s‚…‚Œ‚Œ@f‚…‚@‚—‚…@‚‚’‚…@.a:0‚k‚n‚`‚s‚g‚r‚n‚l‚dI.8:1"
 endtext
 
 
@@ -214,10 +214,18 @@ script script_rap_women_unused_main
     clear_text_f
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -237,10 +245,18 @@ script script_rap_women_unused_main
     rest 24
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -635,10 +651,18 @@ script script_rap_women_unused_main
     clear_text_f
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -755,10 +779,18 @@ script script_rap_women_unused_main
     rest 24
     beat_anim
     rest 24
+    #ifdef SFX
+    rest 16
+    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    rest 8
+    set_marking_criteria 2
+    print_text_f text_rap_women_unused_oyatsu_wa_saikou
+    #else
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_unused_oyatsu_wa_saikou
     play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24

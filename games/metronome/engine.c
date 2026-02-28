@@ -98,11 +98,11 @@ struct CueDefinition *metronome_cue_index[] = {
     END_OF_CUE_INDEX
 };
 
-const char D_0805a694[] = "音にあわせて、　Ａボタンを押しましょう。";
+const char D_0805a694[] = "Press ⑭ in time with the signal.";
 
-const char D_0805a6c0[] = "計測中";
+const char D_0805a6c0[] = "Measuring...";
 
-const char D_0805a6c8[] = "計測おわり！ さて、 結果は…";
+const char D_0805a6c8[] = "Finished measuring! Your rhythm score is...";
 
   //  //  //  GAME ENGINE DATA  //  //  //
 

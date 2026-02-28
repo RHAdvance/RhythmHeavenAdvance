@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_7, script_drum_lesson_short_7_entr
 @ Drum Lesson (Short 7) - Data
 
 text D_08060310
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -56,9 +56,9 @@ return
 
 text D_080603ec
     .ascii "\n"
-    .ascii "Add a cymbal crash with ‡L\n"
-    .ascii "Hit it at the same time\n"
-    .asciz "as the bass."
+    .ascii "Next up, hit the crash\n"
+    .ascii "with ‡L at the same\n"
+    .asciz "time as the bass!"
 endtext
 
 
@@ -72,8 +72,8 @@ return
 text D_08060454
     .ascii "\n"
     .ascii "Now let's add more snares!\n"
-    .ascii "This should be getting easy\n"
-    .asciz "for you by now!"
+    .ascii "By now, this should be a\n"
+    .asciz "piece of cake for you!"
 endtext
 
 
@@ -107,10 +107,10 @@ return
 
 
 text D_08060568
-    .ascii "What a surprise!\n"
+    .ascii "Would you look at that?\n"
     .ascii "Yet another bass beat!\n"
-    .ascii "It's starting to get a bit\n"
-    .asciz "more tricky, now"
+    .ascii "Careful, though, things\n"
+    .asciz "are getting trickier!"
 endtext
 
 
@@ -130,8 +130,7 @@ return
 
 text D_08060628
     .ascii "\n"
-    .ascii "Okay, let's add one more beat\n"
-    .ascii "on that bass!\n"
+    .ascii "One more beat on that bass!\n"
     .asciz "You're doing great, keep it up!"
 endtext
 
@@ -154,8 +153,9 @@ return
 
 text D_08060700
     .ascii "\n"
-    .ascii "Let's add another one!\n"
-    .asciz "Keep it going!"
+    .ascii "And another one!\n"
+    .ascii "If you keep this pace,\n"
+    .asciz "you'll be done in no time!"
 endtext
 
 
@@ -179,9 +179,9 @@ return
 
 text D_080607f0
     .ascii "Time for the final beat!\n"
-    .ascii "This time, it's on the snare.\n"
-    .ascii "You'll need both hands\n"
-    .asciz "for this!\n"
+    .ascii "Just add one last snare!\n"
+    .ascii "You'll definitely need both\n"
+    .asciz "hands for this one!\n"
 endtext
 
 

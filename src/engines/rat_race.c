@@ -87,7 +87,46 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/rat_race/asm_0803a678.s"
 
-#include "asm/engines/rat_race/asm_0803a798.s"
+void func_0803a798(u32 param) {
+    gRatRace->unk80 = 0;
+    gRatRace->unk80 = 0;
+    gRatRace->unk7C = param;
+
+    if (param > 6) return;
+
+    // another state machine mwehehehe
+    switch (param) {
+        case 0:
+            gRatRace->unk84 = 0x5000;
+            sprite_set_visible(gSpriteHandler, gRatRace->cat_eyelids_sprite, 0);
+            sprite_set_anim_cel(gSpriteHandler, gRatRace->cat_eyelids_sprite, 0);
+            sprite_set_visible(gSpriteHandler, gRatRace->cat_paw_sprite, 0);
+            sprite_set_visible(gSpriteHandler, gRatRace->cat_paw2_sprite, 0);
+        break;
+        case 1: 
+            play_sound(&s_rat_paw_seqData);
+            sprite_set_anim_cel(gSpriteHandler, gRatRace->cat_paw_sprite, 0);
+            sprite_set_playback(gSpriteHandler, gRatRace->cat_paw_sprite, 1, 0x7f, 0);
+            sprite_set_visible(gSpriteHandler, gRatRace->cat_paw_sprite, 1);
+        break;
+        case 2:
+            play_sound(&s_rat_cat_seqData);
+            sprite_set_anim_cel(gSpriteHandler, gRatRace->cat_paw2_sprite, 0);
+            sprite_set_playback(gSpriteHandler, gRatRace->cat_paw2_sprite, 1, 0x7f, 0);
+            sprite_set_visible(gSpriteHandler, gRatRace->cat_paw2_sprite, 1);
+        break;
+        case 4:
+            gRatRace->unk84 = 0;
+        break;
+        case 5:
+            sprite_set_visible(gSpriteHandler, gRatRace->cat_eyelids_sprite, 1);
+        break;
+        case 3:
+        case 6:
+            // do nothing
+        break;
+    }
+}
 
 #include "asm/engines/rat_race/asm_0803a8e4.s"
 

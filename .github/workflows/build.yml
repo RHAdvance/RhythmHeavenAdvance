@@ -45,10 +45,6 @@ jobs:
         mv "Rhythm Tengoku (Japan).gba" baserom.gba
         rm not_a_mean_to_distribute_copyrighted_data.zip
 
-    - name: Build rhythmheavenadvance
-      run: |
-        make -j$(nproc) FEATURES=PLAYTEST
-    
     - name: Compile Flips
       run: |
         git clone https://github.com/Alcaro/Flips
@@ -56,13 +52,31 @@ jobs:
         ./make-linux.sh
         cd ..
 
-    - name: Make BPS patch
+    - name: Build rhythmheavenadvance (Japanese SFX)
       run: |
-        Flips/flips --create baserom.gba build/rhythmheavenadvance.gba rhythmheavenadvance.bps
+        make -j$(nproc) FEATURES=PLAYTEST
+    
+    - name: Make BPS patch (Japanese SFX)
+      run: |
+        Flips/flips --create baserom.gba build/rhythmheavenadvance.gba rhythmheavenadvance-japanesesfx.bps
+
+    - name: Clean build directory
+      run: |
+        make distclean
+
+    - name: Build rhythmheavenadvance (English SFX)
+      run: |
+        make -j$(nproc) FEATURES="PLAYTEST SFX"
+    
+    - name: Make BPS patch (English SFX)
+      run: |
+        Flips/flips --create baserom.gba build/rhythmheavenadvance.gba rhythmheavenadvance-englishsfx.bps
         rm baserom.gba 
 
-    - name: Upload built .bps artifact
+    - name: Upload both patches
       uses: actions/upload-artifact@v4
       with:
         name: rhythmheavenadvance-nightly
-        path: rhythmheavenadvance.bps
+        path: |
+          rhythmheavenadvance-japanesesfx.bps
+          rhythmheavenadvance-englishsfx.bps

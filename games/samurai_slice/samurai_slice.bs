@@ -515,6 +515,7 @@ script script_samurai_slice_main
     play_music s_iai_result_seqData
     set_music_volume 256
     stop_tracking_perfect_campaign
+    disable_play_inputs
     samurai_slice_event06 1
     rest 24
     rest 24

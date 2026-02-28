@@ -117,144 +117,128 @@ struct GraphicsTable *tram_pauline_gfx_tables[] = {
     /* 0x03 */ gfx_table_tram_pauline
 };
 
-// [D_089e8b2c] All Animations (Format: [version][action][character] (may be wrong!))
-struct Animation *tram_pauline_anim_table[][4][6] = {
-    /* 0x00 */ {
-        /* 0x00 */ {
-            /* 0x00 */ anim_casual_fox_beat,
-            /* 0x01 */ anim_casual_fox_beat,
-            /* 0x02 */ anim_casual_tram_beat,
-            /* 0x03 */ anim_casual_pauline_beat,
-            /* 0x04 */ anim_casual_half_tram_beat,
-            /* 0x05 */ anim_casual_half_pauline_beat
-        },
-        /* 0x01 */ {
-            /* 0x00 */ anim_casual_fox_crouch,
-            /* 0x01 */ anim_casual_fox_crouch,
-            /* 0x02 */ anim_casual_tram_crouch,
-            /* 0x03 */ anim_casual_pauline_crouch,
-            /* 0x04 */ anim_casual_half_tram_crouch,
-            /* 0x05 */ anim_casual_half_pauline_crouch
-        },
-        /* 0x02 */ {
-            /* 0x00 */ anim_casual_fox_jump,
-            /* 0x01 */ anim_casual_fox_jump,
-            /* 0x02 */ anim_casual_tram_jump,
-            /* 0x03 */ anim_casual_pauline_jump,
-            /* 0x04 */ anim_casual_half_tram_jump,
-            /* 0x05 */ anim_casual_half_pauline_jump
-        },
-        /* 0x03 */ {
-            /* 0x00 */ anim_casual_fox_transform,
-            /* 0x01 */ anim_casual_fox_transform,
-            /* 0x02 */ anim_casual_tram_transform,
-            /* 0x03 */ anim_casual_pauline_transform,
-            /* 0x04 */ anim_casual_half_tram_transform,
-            /* 0x05 */ anim_casual_half_pauline_transform
-        }
-    },
-    /* 0x01 */ {
-        /* 0x00 */ {
-            /* 0x00 */ anim_circus_fox_beat,
-            /* 0x01 */ anim_circus_fox_beat,
-            /* 0x02 */ anim_circus_tram_beat,
-            /* 0x03 */ anim_circus_pauline_beat,
-            /* 0x04 */ anim_circus_half_tram_beat,
-            /* 0x05 */ anim_circus_half_pauline_beat
-        },
-        /* 0x01 */ {
-            /* 0x00 */ anim_circus_fox_crouch,
-            /* 0x01 */ anim_circus_fox_crouch,
-            /* 0x02 */ anim_circus_tram_crouch,
-            /* 0x03 */ anim_circus_pauline_crouch,
-            /* 0x04 */ anim_circus_half_tram_crouch,
-            /* 0x05 */ anim_circus_half_pauline_crouch
-        },
-        /* 0x02 */ {
-            /* 0x00 */ anim_circus_fox_jump,
-            /* 0x01 */ anim_circus_fox_jump,
-            /* 0x02 */ anim_circus_tram_jump,
-            /* 0x03 */ anim_circus_pauline_jump,
-            /* 0x04 */ anim_circus_half_tram_jump,
-            /* 0x05 */ anim_circus_half_pauline_jump
-        },
-        /* 0x03 */ {
-            /* 0x00 */ anim_circus_fox_transform,
-            /* 0x01 */ anim_circus_fox_transform,
-            /* 0x02 */ anim_circus_tram_transform,
-            /* 0x03 */ anim_circus_pauline_transform,
-            /* 0x04 */ anim_circus_half_tram_transform,
-            /* 0x05 */ anim_circus_half_pauline_transform
-        }
-    },
-    /* 0x02 */ {
-        /* 0x00 */ {
-            /* 0x00 */ anim_casual_fox_beat,
-            /* 0x01 */ anim_casual_fox_beat,
-            /* 0x02 */ anim_casual_tram_beat,
-            /* 0x03 */ anim_casual_pauline_beat,
-            /* 0x04 */ anim_casual_half_tram_beat,
-            /* 0x05 */ anim_casual_half_pauline_beat
-        },
-        /* 0x01 */ {
-            /* 0x00 */ anim_casual_fox_crouch,
-            /* 0x01 */ anim_casual_fox_crouch,
-            /* 0x02 */ anim_casual_tram_crouch,
-            /* 0x03 */ anim_casual_pauline_crouch,
-            /* 0x04 */ anim_casual_half_tram_crouch,
-            /* 0x05 */ anim_casual_half_pauline_crouch
-        },
-        /* 0x02 */ {
-            /* 0x00 */ anim_casual_fox_jump,
-            /* 0x01 */ anim_casual_fox_jump,
-            /* 0x02 */ anim_casual_tram_jump,
-            /* 0x03 */ anim_casual_pauline_jump,
-            /* 0x04 */ anim_casual_half_tram_jump,
-            /* 0x05 */ anim_casual_half_pauline_jump
-        },
-        /* 0x03 */ {
-            /* 0x00 */ anim_casual_fox_transform,
-            /* 0x01 */ anim_casual_fox_transform,
-            /* 0x02 */ anim_casual_tram_transform,
-            /* 0x03 */ anim_casual_pauline_transform,
-            /* 0x04 */ anim_casual_half_tram_transform,
-            /* 0x05 */ anim_casual_half_pauline_transform
-        }
-    },
-    /* 0x03 */ {
-        /* 0x00 */ {
-            /* 0x00 */ anim_circus_fox_beat,
-            /* 0x01 */ anim_circus_fox_beat,
-            /* 0x02 */ anim_circus_tram_beat,
-            /* 0x03 */ anim_circus_pauline_beat,
-            /* 0x04 */ anim_circus_half_tram_beat,
-            /* 0x05 */ anim_circus_half_pauline_beat
-        },
-        /* 0x01 */ {
-            /* 0x00 */ anim_circus_fox_crouch,
-            /* 0x01 */ anim_circus_fox_crouch,
-            /* 0x02 */ anim_circus_tram_crouch,
-            /* 0x03 */ anim_circus_pauline_crouch,
-            /* 0x04 */ anim_circus_half_tram_crouch,
-            /* 0x05 */ anim_circus_half_pauline_crouch
-        },
-        /* 0x02 */ {
-            /* 0x00 */ anim_circus_fox_jump,
-            /* 0x01 */ anim_circus_fox_jump,
-            /* 0x02 */ anim_circus_tram_jump,
-            /* 0x03 */ anim_circus_pauline_jump,
-            /* 0x04 */ anim_circus_half_tram_jump,
-            /* 0x05 */ anim_circus_half_pauline_jump
-        },
-        /* 0x03 */ {
-            /* 0x00 */ anim_circus_fox_transform,
-            /* 0x01 */ anim_circus_fox_transform,
-            /* 0x02 */ anim_circus_tram_transform,
-            /* 0x03 */ anim_circus_pauline_transform,
-            /* 0x04 */ anim_circus_half_tram_transform,
-            /* 0x05 */ anim_circus_half_pauline_transform
-        }
-    }
+// [D_089e8b2c] All Animations
+struct Animation *tram_pauline_anim_table[] = {
+
+    // version = 0
+
+    /* 0x00 */ anim_casual_fox_beat,
+    /* 0x01 */ anim_casual_fox_beat,
+    /* 0x02 */ anim_casual_tram_beat,
+    /* 0x03 */ anim_casual_pauline_beat,
+    /* 0x04 */ anim_casual_half_tram_beat,
+    /* 0x05 */ anim_casual_half_pauline_beat,
+
+    /* 0x06 */ anim_casual_fox_crouch,
+    /* 0x07 */ anim_casual_fox_crouch,
+    /* 0x08 */ anim_casual_tram_crouch,
+    /* 0x09 */ anim_casual_pauline_crouch,
+    /* 0x0a */ anim_casual_half_tram_crouch,
+    /* 0x0b */ anim_casual_half_pauline_crouch,
+
+    /* 0x0c */ anim_casual_fox_jump,
+    /* 0x0d */ anim_casual_fox_jump,
+    /* 0x0e */ anim_casual_tram_jump,
+    /* 0x0f */ anim_casual_pauline_jump,
+    /* 0x10 */ anim_casual_half_tram_jump,
+    /* 0x11 */ anim_casual_half_pauline_jump,
+
+    /* 0x12 */ anim_casual_fox_transform,
+    /* 0x13 */ anim_casual_fox_transform,
+    /* 0x14 */ anim_casual_tram_transform,
+    /* 0x15 */ anim_casual_pauline_transform,
+    /* 0x16 */ anim_casual_half_tram_transform,
+    /* 0x17 */ anim_casual_half_pauline_transform,
+
+    // version = 1
+
+    /* 0x18 */ anim_circus_fox_beat,
+    /* 0x19 */ anim_circus_fox_beat,
+    /* 0x1a */ anim_circus_tram_beat,
+    /* 0x1b */ anim_circus_pauline_beat,
+    /* 0x1c */ anim_circus_half_tram_beat,
+    /* 0x1d */ anim_circus_half_pauline_beat,
+
+    /* 0x1e */ anim_circus_fox_crouch,
+    /* 0x1f */ anim_circus_fox_crouch,
+    /* 0x20 */ anim_circus_tram_crouch,
+    /* 0x21 */ anim_circus_pauline_crouch,
+    /* 0x22 */ anim_circus_half_tram_crouch,
+    /* 0x23 */ anim_circus_half_pauline_crouch,
+
+    /* 0x24 */ anim_circus_fox_jump,
+    /* 0x25 */ anim_circus_fox_jump,
+    /* 0x26 */ anim_circus_tram_jump,
+    /* 0x27 */ anim_circus_pauline_jump,
+    /* 0x28 */ anim_circus_half_tram_jump,
+    /* 0x29 */ anim_circus_half_pauline_jump,
+
+    /* 0x2a */ anim_circus_fox_transform,
+    /* 0x2b */ anim_circus_fox_transform,
+    /* 0x2c */ anim_circus_tram_transform,
+    /* 0x2d */ anim_circus_pauline_transform,
+    /* 0x2e */ anim_circus_half_tram_transform,
+    /* 0x2f */ anim_circus_half_pauline_transform,
+
+    // version = 2
+
+    /* 0x30 */ anim_casual_fox_beat,
+    /* 0x31 */ anim_casual_fox_beat,
+    /* 0x32 */ anim_casual_tram_beat,
+    /* 0x33 */ anim_casual_pauline_beat,
+    /* 0x34 */ anim_casual_half_tram_beat,
+    /* 0x35 */ anim_casual_half_pauline_beat,
+
+    /* 0x36 */ anim_casual_fox_crouch,
+    /* 0x37 */ anim_casual_fox_crouch,
+    /* 0x38 */ anim_casual_tram_crouch,
+    /* 0x39 */ anim_casual_pauline_crouch,
+    /* 0x3a */ anim_casual_half_tram_crouch,
+    /* 0x3b */ anim_casual_half_pauline_crouch,
+
+    /* 0x3c */ anim_casual_fox_jump,
+    /* 0x3d */ anim_casual_fox_jump,
+    /* 0x3e */ anim_casual_tram_jump,
+    /* 0x3f */ anim_casual_pauline_jump,
+    /* 0x40 */ anim_casual_half_tram_jump,
+    /* 0x41 */ anim_casual_half_pauline_jump,
+    
+    /* 0x42 */ anim_casual_fox_transform,
+    /* 0x43 */ anim_casual_fox_transform,
+    /* 0x44 */ anim_casual_tram_transform,
+    /* 0x45 */ anim_casual_pauline_transform,
+    /* 0x46 */ anim_casual_half_tram_transform,
+    /* 0x47 */ anim_casual_half_pauline_transform,
+
+    // version = 3
+
+    /* 0x48 */ anim_circus_fox_beat,
+    /* 0x49 */ anim_circus_fox_beat,
+    /* 0x4a */ anim_circus_tram_beat,
+    /* 0x4b */ anim_circus_pauline_beat,
+    /* 0x4c */ anim_circus_half_tram_beat,
+    /* 0x4d */ anim_circus_half_pauline_beat,
+    
+    /* 0x4e */ anim_circus_fox_crouch,
+    /* 0x4f */ anim_circus_fox_crouch,
+    /* 0x50 */ anim_circus_tram_crouch,
+    /* 0x51 */ anim_circus_pauline_crouch,
+    /* 0x52 */ anim_circus_half_tram_crouch,
+    /* 0x53 */ anim_circus_half_pauline_crouch,
+
+    /* 0x54 */ anim_circus_fox_jump,
+    /* 0x55 */ anim_circus_fox_jump,
+    /* 0x56 */ anim_circus_tram_jump,
+    /* 0x57 */ anim_circus_pauline_jump,
+    /* 0x58 */ anim_circus_half_tram_jump,
+    /* 0x59 */ anim_circus_half_pauline_jump,
+    
+    /* 0x5a */ anim_circus_fox_transform,
+    /* 0x5b */ anim_circus_fox_transform,
+    /* 0x5c */ anim_circus_tram_transform,
+    /* 0x5d */ anim_circus_pauline_transform,
+    /* 0x5e */ anim_circus_half_tram_transform,
+    /* 0x5f */ anim_circus_half_pauline_transform,
 };
 
 

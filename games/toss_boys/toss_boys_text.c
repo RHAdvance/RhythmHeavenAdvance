@@ -17,15 +17,15 @@ const char D_0805d678[] = "You couldn't keep up to speed.";
 
 const char D_0805d694[] = "Speed's no problem for you three!";
 
-const char D_0805d6b0[] = "Tips From The Referee";
+const char D_0805d6b0[] = "Tips from the Referee:";
 
 const char D_0805d6c4[] =
     "\n"
-    "Tossing time!";
+    "Time to toss our best!";
 
 const char D_0805d6d4[] =
     "\n"
-    "The End.";
+    "That's a wrap!";
 
 const char D_0805d6e0[] = "You need to practice tossing more.";
 
@@ -39,7 +39,7 @@ const char D_0805d740[] = "You couldn't keep up to speed.";
 
 const char D_0805d75c[] = "Speed's no problem for you three!";
 
-const char D_0805d778[] = "Tips From The Referee";
+const char D_0805d778[] = "Tips from the Referee:";
 
 const char D_0805d78c[] =
     "\n"
@@ -47,11 +47,11 @@ const char D_0805d78c[] =
 
 const char D_0805d7a8[] =
     "\n"
-    "The End.";
+    "That's a wrap!";
 
 const char D_0805d7b4[] =
     "\n"
-    "Alright, you three! Let's get some practice in!";
+    "Alright! Let's get some practice in!";
 
 const char D_0805d7cc[] =
     "Toss Technique 1:\n"
@@ -59,7 +59,7 @@ const char D_0805d7cc[] =
 
 const char D_0805d7fc[] =
     "\n"
-    "Let's see it one more time!";
+    "Let's do it one more time!";
 
 const char D_0805d80c[] =
     "\n"

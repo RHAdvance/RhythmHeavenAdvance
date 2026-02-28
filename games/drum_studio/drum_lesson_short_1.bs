@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_1, script_drum_lesson_short_1_entr
 @ Drum Lesson (Short 1) - Data
 
 text D_0805f114
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -54,9 +54,9 @@ return
 
 
 text D_0805f1e4
-    .ascii "Now let's swap a beat\n"
-    .ascii "on the bass for a beat\n"
-    .ascii "on the drum.\n"
+    .ascii "\n"
+    .ascii "Now let's swap one of\n"
+    .ascii "the bass beats for a snare.\n"
     .asciz "You know what to do!\n"
 endtext
 
@@ -96,9 +96,9 @@ return
 
 text D_0805f32c
     .ascii "\n"
-    .ascii "Another snare at the end!\n"
-    .ascii "This is starting to sound\n"
-    .asciz "professional!\n"
+    .ascii "One more snare at the end!\n"
+    .ascii "You're getting closer to\n"
+    .asciz "playing like a pro!\n"
 endtext
 
 
@@ -119,9 +119,9 @@ return
 
 
 text D_0805f3f8
-    .ascii "Let's round this out by\n"
-    .ascii "squeezing in a bass beat\n"
-    .ascii "at the start!\n"
+    .ascii "\n"
+    .ascii "Let's round this out with\n"
+    .ascii "a bass beat at the start.\n"
     .asciz "You've got this!\n"
 endtext
 

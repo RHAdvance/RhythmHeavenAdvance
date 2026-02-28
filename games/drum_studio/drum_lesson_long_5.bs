@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_long_5, script_drum_lesson_long_5_entry
 @ Drum Lesson (Long 5) - Data
 
 text D_08063e10
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -96,10 +96,10 @@ return
 
 
 text D_080640d8
-    .ascii "Now, some more snares and\n"
-    .ascii "cymbals!\n"
-    .ascii "I'm sure you won't lose your\n"
-    .asciz "head over this.\n"
+    .ascii "Now then, let's add a\n"
+    .ascii "snare and a crash in here.\n"
+    .ascii "Don't get too comfortable,\n"
+    .asciz "and stay focused!\n"
 endtext
 
 
@@ -164,9 +164,9 @@ return
 
 
 text D_0806439c
-    .ascii "\n"
-    .ascii "Let's switch the snare with\n"
-    .ascii "a tom. Just flow with the beat\n"
+    .ascii "Let's spice it up a little!\n"
+    .ascii "Switch this snare with a tom.\n"
+    .ascii "Just go along with the beat\n"
     .asciz "and you'll be good to go!\n"
 endtext
 
@@ -222,8 +222,8 @@ return
 
 text D_080645fc
     .ascii "To end it off, one last snare!\n"
-    .ascii "Pay attention to the order\n"
-    .ascii "you hit the drums.\n"
+    .ascii "Keep your focus on the\n"
+    .ascii "order you hit the drums.\n"
     .asciz "You've got this!\n"
 endtext
 

@@ -169,3 +169,18 @@ struct InstrumentPCM instrument_pcm_sdgo = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x13E350,
 };
+
+extern struct SampleData mrupbeat_a_data;
+struct InstrumentPCM instrument_pcm_mrup = {
+    /* Type      */ INSTRUMENT_PCM_FIXED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &mrupbeat_a_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};

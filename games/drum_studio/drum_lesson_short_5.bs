@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_5, script_drum_lesson_short_5_entr
 @ Drum Lesson (Short 5) - Data
 
 text D_0805fea0
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -56,9 +56,9 @@ return
 
 text D_0805ff7c
     .ascii "\n"
-    .ascii "Now, let's add a cymbal crash!\n"
-    .ascii "Try using ‡L at the same time\n"
-    .asciz "as the bass."
+    .ascii "Now, let's add a crash cymbal!\n"
+    .ascii "Hit it with ‡L, and time it with\n"
+    .asciz "the bass drum here."
 endtext
 
 
@@ -71,8 +71,8 @@ return
 
 text D_0805ffe4
     .ascii "\n"
-    .ascii "Now for a new beat on the\n"
-    .asciz "snare. Listen carefully!\n"
+    .ascii "Now for a new snare beat.\n"
+    .asciz "Listen carefully and go for it!\n"
 endtext
 
 
@@ -91,7 +91,7 @@ return
 text D_08060080
     .ascii "Let's add a tom beat.\n"
     .ascii "Remember, you can use\n"
-    .ascii "both ‡M and Right on ‡O\n"
+    .ascii "either ‡M or Right on ‡O\n"
     .asciz "for the snare.\n"
 endtext
 
@@ -137,8 +137,8 @@ return
 text D_08060220
     .ascii "We're not done yet!\n"
     .ascii "Add one more snare beat\n"
-    .ascii "at the end, then we'll wrap up\n"
-    .asciz "this lesson!"
+    .ascii "at the end, and we'll\n"
+    .asciz "wrap up this lesson!"
 endtext
 
 

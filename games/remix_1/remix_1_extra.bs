@@ -251,10 +251,14 @@ script script_remix_1_extra_main
     rest 24
     print_text_f 2
     beat_anim
+    #ifdef SFX
     rest 12
     play_sfx s_f_boxing_hit_sfx_seqData
     rest 12
     play_sfx s_f_boxing_two_sfx_seqData
+    #else
+    rest 24
+    #endif
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
@@ -336,10 +340,14 @@ script script_remix_1_extra_main
     rest 24
     print_text_f 2
     beat_anim
+    #ifdef SFX
     rest 12
     play_sfx s_f_boxing_hit_sfx_seqData
     rest 12
     play_sfx s_f_boxing_two_sfx_seqData
+    #else
+    rest 24
+    #endif
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim

@@ -112,6 +112,7 @@ struct SickBeatsEngineData {
     u8 particleCurrent;
     u8 particlePitch;
     u8 particleCels; // Amount of cels in a particle anim
+    u8 highestPriorityState; // Tracks highest priority APPEAR state this frame
 };
 
 struct SickBeatsCue {

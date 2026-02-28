@@ -1,9 +1,11 @@
 # Object files
-*.o
-*.elf
+**/*.o
+**/*.elf
+**/*.d
 
 # General project-specific ignores
 build/*
+agbcc
 tools/agbcc/*
 *.gba
 *.sav

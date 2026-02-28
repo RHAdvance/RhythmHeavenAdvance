@@ -343,6 +343,22 @@ struct InstrumentPCM instrument_pcm_1710 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
+#ifdef SFX
+extern struct SampleData RAPWOMEN_EN_sample_932_data;
+struct InstrumentPCM instrument_pcm_1711 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &RAPWOMEN_EN_sample_932_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x1FC000,
+};
+#else
 extern struct SampleData sample_932_data;
 struct InstrumentPCM instrument_pcm_1711 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
@@ -357,7 +373,24 @@ struct InstrumentPCM instrument_pcm_1711 = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1FC000,
 };
+#endif
 
+#ifdef SFX
+extern struct SampleData RAPWOMEN_EN_sample_933_data;
+struct InstrumentPCM instrument_pcm_1712 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &RAPWOMEN_EN_sample_933_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x1FC000,
+};
+#else
 extern struct SampleData sample_933_data;
 struct InstrumentPCM instrument_pcm_1712 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
@@ -372,7 +405,24 @@ struct InstrumentPCM instrument_pcm_1712 = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1FC000,
 };
+#endif
 
+#ifdef SFX
+extern struct SampleData RAPWOMEN_EN_sample_934_data;
+struct InstrumentPCM instrument_pcm_1713 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &RAPWOMEN_EN_sample_934_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x1FC000,
+};
+#else
 extern struct SampleData sample_934_data;
 struct InstrumentPCM instrument_pcm_1713 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
@@ -387,3 +437,4 @@ struct InstrumentPCM instrument_pcm_1713 = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1FC000,
 };
+#endif

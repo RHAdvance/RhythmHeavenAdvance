@@ -31,9 +31,9 @@ define_gameplay_scene scene_drum_lesson_long_6, script_drum_lesson_long_6_entry
 
 text D_08064874
     .ascii "\n"
-    .ascii "Let's start with a review\n"
-    .ascii "of the last lesson.\n"
-    .asciz "Show me you remember it!"
+    .ascii "Let's just start with\n"
+    .ascii "the end of last lesson.\n"
+    .asciz "Show me you still got it!"
 endtext
 
 
@@ -99,9 +99,9 @@ return
 
 
 text D_08064b30
-    .ascii "\n"
-    .ascii "Let's change the second half!\n"
-    .ascii "It's an odd beat, so listen\n"
+    .ascii "Now, let's switch it up\n"
+    .ascii "on the second half!\n"
+    .ascii "The beat's a bit odd; listen\n"
     .asciz "closely and follow my lead!"
 endtext
 
@@ -153,10 +153,10 @@ return
 
 
 text D_08064d70
-    .ascii "\n"
     .ascii "Let's stack up some cymbals\n"
-    .ascii "for a fancy rhythm! It's not\n"
-    .asciz "too different from before!"
+    .ascii "to really make it stand out!\n"
+    .ascii "It's not that different from\n"
+    .asciz "before, so don't worry!"
 endtext
 
 
@@ -211,10 +211,10 @@ return
 
 
 text D_08064fd8
-    .ascii "Let's add in some toms and\n"
-    .ascii "make the beat even\n"
-    .ascii "more funky!\n"
-    .asciz "Now we're on a roll!"
+    .ascii "\n"
+    .ascii "Okay, now add some toms, to\n"
+    .ascii "give the beat some oomph!\n"
+    .asciz "We're on a roll! Let's go!"
 endtext
 
 
@@ -272,10 +272,10 @@ return
 
 
 text D_08065268
-    .ascii "\n"
-    .ascii "Now to replace the tom\n"
+    .ascii "Final step! Replace the tom\n"
     .ascii "we just added with a roll!\n"
-    .asciz "It's almost too cool to bear!"
+    .ascii "It sounds so cool now, it's\n"
+    .asciz "almost hard to believe!"
 endtext
 
 
@@ -335,23 +335,23 @@ return
 text D_08065500
     .ascii "\n"
     .ascii "For this lesson,\n"
-    .ascii "we'll be starting from\n"
+    .ascii "we'll pick up from right\n"
     .asciz "where we last left off."
 endtext
 
 
 text D_08065530
     .ascii "\n"
-    .ascii "I recommend brushing up\n"
-    .ascii "on the previous lesson\n"
-    .asciz "before you try this one!"
+    .ascii "I'd suggest you first brush\n"
+    .ascii "up on Advanced 5 before\n"
+    .asciz "giving this one a try!"
 endtext
 
 
 text D_08065564
     .ascii "\n"
     .ascii "You ready to go?\n"
-    .asciz "With that, let's begin!"
+    .asciz "Alright, let's do this!"
 
 endtext
 

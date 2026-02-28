@@ -69,6 +69,7 @@ script script_drum_samurai_opening_cutscene_main
     print_text_s D_0805e070
     run gameplay_display_text_and_wait
     rest 12
+    run gameplay_pause_menu_set_quit_destination, scene_drum_samurai_opening_cutscene_2
     run set_next_scene, scene_rhythm_test_opening
     run func_08047e64, scene_drum_samurai_opening_cutscene_2
 return

@@ -19,9 +19,9 @@ const char D_0805eca4[] =
     "\n";
 
 const char D_0805ecb0[] =
-    "See you again\n"
-    "next week!\n"
-    "\n";
+    "Come back and\n"
+    "try again\n"
+    "next week!\n";
 
 const char D_0805ecd4[] = "A Word from Our Sponsor";
 

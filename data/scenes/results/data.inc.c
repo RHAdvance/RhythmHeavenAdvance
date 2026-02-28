@@ -20,9 +20,9 @@ const char *results_letter_ranks[] = {
 
 // [D_089d7998] DEBUG Skill Comments - Accuracy
 const char *results_skill_text_accuracy[] = {
-    "プロから　みた　ピッタシさ",
-    "リズムかん　バッチシさ",
-    "なっとくの　せいかくさ",
+    "Ｐｒｏｆｅｓｓｉｏｎａｌ　ａｃｃｕｒａｃｙ",
+    "Ｓｅｎｓｅ　ｏｆ　ｒｈｙｔｈｍ",
+    "Ｓａｔｉｓｆｙｉｎｇ　ａｃｃｕｒａｃｙ",
     NULL
 };
 
@@ -34,7 +34,7 @@ const char *results_skill_text_accuracy[] = {
 const char *results_skill_text_barely_trk2[] = {
     "Ｔｅｃｈｎｉｑｕｅ　Ｌｅｖｅｌ",
     "Ａｄａｐｔａｂｉｌｉｔｙ",
-    "Reflexes",
+    "Ｒｅｆｌｅｘｅｓ",
     NULL
 };
 
@@ -44,67 +44,67 @@ const char *results_skill_text_barely_trk2[] = {
     //
     // Steadiness
 const char *results_skill_text_barely_trk1[] = {
-    "せきにんかん",
-    "ここ　イッパツ",
-    "てがたい　かんじ",
+    "Ｒｅｓｐｏｎｓｉｂｉｌｉｔｙ",
+    "Ｔｈｅ　ｃｒｕｃｉａｌ　ｐａｒｔ",
+    "Ｓｔｅａｄｉｎｅｓｓ",
     NULL
 };
 
 
 // [D_089d79c8] DEBUG Skill Comments - Hits
 const char *results_skill_text_hit_avg[] = {
-    "シロートめの　ピッタシさ",
-    "いっぱんてき　バッチシど",
-    "ほどほどの　せいかくさ",
+    "Ａｍａｔｅｕｒ－ｌｅｖｅｌ　ａｃｃｕｒａｃｙ",
+    "Ｏｒｄｉｎａｒｙ　ａｃｃｕｒａｃｙ",
+    "Ｍｏｄｅｒａｔｅ　ａｃｃｕｒａｃｙ",
     NULL
 };
 
 
 // [D_089d79d8] DEBUG Skill Comments - Irrelevant Inputs
 const char *results_skill_text_irrelevant_inputs[] = {
-    "せつやく　のうりょく",
-    "ごうりてき　さいのう",
-    "おちつき",
+    "Ｓｔａｍｉｎａ　ｒｅｓｏｕｒｃｅｆｕｌｎｅｓｓ",
+    "Ｒａｔｉｏｎａｌ　ｔａｌｅｎｔ",
+    "Ｃａｌｍｎｅｓｓ",
     NULL
 };
 
 
 // [D_089d79e8] DEBUG Skill Comments - Accuracy (Lenient)
 const char *results_skill_text_accuracy_lenient[] = {
-    "あんていの　ほど",
-    "リズムの　しん",
-    "いっかんせい　みたいなもの",
+    "Ｓｔａｂｉｌｉｔｙ",
+    "Ｔｈｅ　ｃｏｒｅ　ｏｆ　ｙｏｕｒ　ｒｈｙｔｈｍ",
+    "Ｃｏｎｓｉｓｔｅｎｃｙ",
     NULL
 };
 
 
 // [D_089d79f8] DEBUG Skill Comments - Misses
 const char *results_skill_text_miss[] = {
-    "やるき",
-    "どうたい　しりょく",
-    "まえむきな　しせい",
+    "Ｍｏｔｉｖａｔｉｏｎ",
+    "Ｖｉｓｕａｌ　ａｃｕｉｔｙ",
+    "Ｐｏｓｉｔｉｖｉｔｙ",
     NULL
 };
 
 
 // [D_089d7a08] DEBUG Skill Comments - Misses (Tracker 2)
 const char *results_skill_text_miss_trk2[] = {
-    "りんきおうへん",
-    "じゅうなんせい",
-    "ちゅういぶかさ",
+    "Ｒｅｆｌｅｘｅｓ",
+    "Ｆｌｅｘｉｂｉｌｉｔｙ",
+    "Ｃａｒｅｆｕｌｎｅｓｓ",
     NULL
 };
 
 
 // [D_089d7a18] DEBUG Skill Comments - Random
 const char *results_skill_text_random[] = {
-    "らいねんの　れんあい　うん",
-    "ことしの　きんせん　うん",
-    "あしたの　てんき",
-    "きのうの　やしょく",
-    "けつえきがた（すいそく）",
-    "そだちの　よさ",
-    "にんげんせい",
+    "Ｌｏｖｅ　ｆｏｒｔｕｎｅ　ｆｏｒ　ｎｅｘｔ　ｙｅａｒ",
+    "Ｔｈｉｓ　ｙｅａｒ'ｓ　ｆｉｎａｎｃｉａｌ　ｆｏｒｔｕｎｅ",
+    "Ｔｏｍｏｒｒｏｗ'ｓ　ｗｅａｔｈｅｒ",
+    "Ｙｅｓｔｅｒｄａｙ'ｓ　ｄｉｎｎｅｒ",
+    "（Ｐｒｅｄｉｃｔｉｎｇ）　Ｙｏｕｒ　ｂｌｏｏｄ　ｔｙｐｅ",
+    "Ｙｏｕｒ　ｌｅｖｅｌ　ｏｆ　ｕｐｂｒｉｎｇｉｎｇ",
+    "Ｙｏｕｒ　ｈｕｍａｎｉｔｙ",
     NULL
 };
 

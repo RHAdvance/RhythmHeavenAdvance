@@ -20,7 +20,7 @@ const char D_0806a2c0[] = "とても　テクニカルだ！";
 const char D_0806a2d8[] = "Rhythm League notes:";
 
 const char D_0806a2f4[] =
-    "\x01\x52" "\x05\x31" "\x01\x35" "♪ Can't Wait For You　";
+    "\x01\x52" "\x05\x31" "\x01\x35" "♪ WISH - Can't Wait For You　";
 
 const char D_0806a314[] =
     "\x01\x4c" "　Singer:　　Sohshi Tanaka";

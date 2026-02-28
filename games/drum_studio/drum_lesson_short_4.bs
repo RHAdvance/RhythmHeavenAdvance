@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_4, script_drum_lesson_short_4_entr
 @ Drum Lesson (Short 4) - Data
 
 text D_0805f560
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -58,8 +58,7 @@ return
 text D_0805f648
     .ascii "\n"
     .ascii "I slipped in another bass beat!\n"
-    .ascii "We're only just starting!\n"
-    .asciz "Can you guess what it is?\n"
+    .asciz "We're only just starting!\n"
 endtext
 
 
@@ -71,9 +70,9 @@ script D_0805f670
 return
 
 text D_0805f6ac
+    .ascii "\n"
     .ascii "There's a new addition to the\n"
-    .ascii "drum set! Can you guess what\n"
-    .ascii "it is?\n"
+    .ascii "drum set, what could it be?\n"
     .asciz "Press Up on ‡O to find out!"
 endtext
 
@@ -111,10 +110,10 @@ return
 
 
 text D_0805f7f4
-    .ascii "Now for a tom beat at the\n"
-    .ascii "very end!\n"
-    .ascii "You remember where that is?\n"
-    .asciz "Use Right on ‡O to get it."
+    .ascii "Now for a tom beat, right\n"
+    .ascii "at the very end!\n"
+    .ascii "Remember where that is?\n"
+    .asciz "(Hint: Right on ‡O!)"
 endtext
 
 
@@ -162,9 +161,9 @@ return
 
 text D_0805f9cc
     .ascii "\n"
-    .ascii "That just now was a hi-hat\n"
-    .ascii "cymbal! The one you press\n"
-    .asciz "Up on ‡O to use it!\n"
+    .ascii "That just now was our first\n"
+    .ascii "cymbal, the hi-hat!\n"
+    .asciz "You can hit it with Up on ‡O.\n"
 endtext
 
 
@@ -178,9 +177,8 @@ endtext
 
 text D_0805fa60
     .ascii "\n"
-    .ascii "You can unlock\n"
-    .ascii "different drums to\n"
-    .asciz "play in the Studio!"
+    .ascii "Now then, let's get on\n"
+    .asciz "with the lesson!"
 endtext
 
 

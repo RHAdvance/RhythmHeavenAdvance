@@ -15,8 +15,50 @@ struct Rat {
     u32 unkC;
 };
 
+struct RatRaceElement {
+u16 unk0;
+u8 active;
+u8 pad[0x5];
+};
+
 struct RatRaceEngineData {
-    u8 pad[0x120];
+    u8 version;
+    u8 pad1[0xF];
+    u8 unk10;
+    u8 pad2[0x7];
+    u32 unk18;
+    s8 unk1C;
+    u8 pad3[0x3];
+    s32 unk20;
+    u32 unk24;
+    u32 unk28;
+    u8 unk2C;
+    u8 pad4[0x3];
+    u32 unk30;
+    u32 unk34;
+    u8 pad5[0x34];
+    u16 unk6C;
+    u8 pad6[0x2];
+    u32 unk70;
+    u16 cat_pupils_sprite;
+    u16 cat_eyelids_sprite;
+    u16 cat_paw_sprite;
+    u16 cat_paw2_sprite;
+    u8 unk7C;
+    u8 pad7[0x3];
+    u32 unk80;
+    s32 unk84;
+    u8 pad8[0x4A];
+    u8 unkD2;
+    u8 pad9[0x7];
+    u8 unkDA;
+    u8 pad10[0xD];
+    u32 unkE8;
+    struct RatRaceElement element[6];
+    u8 unk11C;
+    u8 unk11D;
+    u8 unk11E;
+    u8 pad11[0x1];
 };
 
 struct RatRaceCue {
@@ -78,7 +120,7 @@ extern void rat_race_common_beat_animation(void); // Common Event 0 (Beat Animat
 extern void rat_race_common_display_text(void); // Common Event 1 (Display Text, Unimplemented)
 extern void rat_race_common_init_tutorial(struct Scene *); // Common Event 2 (Init. Tutorial)
 // extern ? func_0803a678(?);
-extern void func_0803a798(); // Engine Event 05 (?)
+extern void func_0803a798(u32 param); // Engine Event 05 (?)
 // extern ? func_0803a8e4(?);
 extern void func_0803aa58(); // Engine Event 0B (?)
 // extern ? func_0803aa9c(?);

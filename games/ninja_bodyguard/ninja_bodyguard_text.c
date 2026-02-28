@@ -17,7 +17,7 @@ const char D_0805b944[] = "Their four-arrow barrage overwhelmed you.";
 
 const char D_0805b968[] = "You blocked their four-arrow barrage!";
 
-const char D_0805b988[] = "My Lord Solemnly Intones";
+const char D_0805b988[] = "My Lord solemnly intones...";
 
 const char D_0805b99c[] = "I thought you were trying to protect me...";
 
@@ -33,4 +33,4 @@ const char D_0805ba1c[] = "You blocked their five-rock barrage!";
 
 const char D_0805ba40[] = "You deflected two rocks in one go! Brilliant!";
 
-const char D_0805ba68[] = "My Girlfriend Calmly Comments...";
+const char D_0805ba68[] = "My girlfriend calmly comments...";

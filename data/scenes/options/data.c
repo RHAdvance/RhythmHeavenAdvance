@@ -73,7 +73,7 @@ const char *options_desc_text[] = {
     /* DATA CLEAR ------------------------------------- */
         "\0023" "\0013" "\001C" "Clear Data\n"
         "\0021" "\0011" "\001C" "This will delete " "\0022" "all " "\0021" "of your save data and start\n"
-        "you over from the beginning." "\0022" " Think wisely!"
+        "you over from the beginning." "\0022" " Be careful!"
     /* ------------------------------------------------ */
 };
 

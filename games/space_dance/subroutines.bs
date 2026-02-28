@@ -186,12 +186,9 @@ script cosmic_dance_sub_08a84fdc
     rest 14
     #ifdef SFX
     play_sfx s_space_ikeo_turn_seqData
-    #else
-    play_sfx s_space_ikeo_turn_swing_seqData
-    #endif
-    #ifdef SFX
     play_sfx s_space_kou_turn_seqData
     #else
+    play_sfx s_space_ikeo_turn_swing_seqData
     play_sfx s_space_kou_turn_swing_seqData
     #endif
     rest 2
@@ -376,9 +373,15 @@ return
 @ Space Dance
 script space_dance_sub_08a85774
     beat_anim
+    #ifdef SFX
+    rest 22
+    play_sfx s_space_kou_lets_seqData
+    rest 2
+    #else
     rest 22
     rest 2
     play_sfx s_space_kou_lets_seqData
+    #endif
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
@@ -426,9 +429,15 @@ return
 @ Cosmic Dance
 script cosmic_dance_sub_08a85954
     beat_anim
+    #ifdef SFX
+    rest 22
+    play_sfx s_space_kou_lets_seqData
+    rest 2
+    #else
     rest 22
     rest 2
     play_sfx s_space_kou_lets_seqData
+    #endif
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim

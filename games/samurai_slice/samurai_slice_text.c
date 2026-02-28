@@ -11,13 +11,13 @@ const char D_0805bcc4[] = "";
 
 const char D_0805bcc8[] = "They ambushed you in the fog.";
 
-const char D_0805bcec[] = "You got them even through the thick fog!";
+const char D_0805bcec[] = "You cut straight through the fog!";
 
 const char D_0805bd10[] = "You struggled against their quick pace.";
 
 const char D_0805bd30[] = "Even the fastest ones couldn't pass you!";
 
-const char D_0805bd50[] = "You beat the slow enemies effortlessly!";
+const char D_0805bd50[] = "The slow ones couldn't trip you up!";
 
 const char D_0805bd68[] = "　　　Ｓｌｉｃｅ　ｔｈｅ　ｅｎｅｍｉｅｓ！";
 

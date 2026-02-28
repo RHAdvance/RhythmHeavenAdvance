@@ -250,6 +250,8 @@ extern void midi_channel_cut(struct MidiBus *midiBus, u32 track);
 extern void midi_channel_stop(struct MidiBus *midiBus, u32 track);
 extern void midi_channel_cut_all(struct MidiBus *midiBus);
 extern void midi_channel_stop_all(struct MidiBus *midiBus);
+extern void midi_channel_stop_psg(struct MidiBus *midiBus, u32 track);
+extern void midi_channel_stop_psg_all(struct MidiBus *midiBus);
 
 /* MIDI BUS INITIALISATION OPERATIONS */
 

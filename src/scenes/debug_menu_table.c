@@ -84,7 +84,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Bon Dance */ {
         /* Scene */ &scene_bon_dance,
-        /* Label */ "‚a‚‚@‚c‚‚‚ƒ‚…",
+        /* Label */ "‚s‚ˆ‚…@‚a‚‚@‚c‚‚‚ƒ‚…",
         /* Epil. */ TRUE
     },
     /* Rhythm Toys (Cat Machine) */ {
@@ -409,7 +409,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Ninja Bodyguard 2 */ {
         /* Scene */ &scene_ninja_reincarnate,
-        /* Label */ "‚m‚‰‚‚Š‚@‚q‚…‚‰‚‚ƒ‚‚’‚‚‚”‚…",
+        /* Label */ "‚m‚‰‚‚Š‚@‚c‚…‚“‚ƒ‚…‚‚„‚‚‚”",
         /* Epil. */ TRUE
     },
     /* Bouncy Road */ {
@@ -608,7 +608,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Epil. */ FALSE
     },
     /* Disclaimer */ {
-        /* Scene */ &scene_disclamer,
+        /* Scene */ &scene_disclaimer,
         /* Label */ "‚c‚‰‚“‚ƒ‚Œ‚‚‰‚‚…‚’",
         /* Epil. */ FALSE
     },

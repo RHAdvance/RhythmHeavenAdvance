@@ -29,7 +29,7 @@ const char D_0805efd8[] = "You'll have to put in a lot of effort...";
 
 const char D_0805eff4[] = "You'll need to try a little harder.";
 
-const char D_0805f014[] = "You're as accurate as any person could be.";
+const char D_0805f014[] = "You're as accurate as any average guy.";
 
 const char D_0805f034[] = "You have an accurate biological clock!";
 

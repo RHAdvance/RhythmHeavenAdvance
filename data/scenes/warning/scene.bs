@@ -4,7 +4,8 @@
 
 @ Script
 script script_scene_warning
-    set_tempo 120
+    @ set tempo to over 1000 to bypass randomized tempo
+    set_tempo 1120
     pause_scene
 
     rest 12

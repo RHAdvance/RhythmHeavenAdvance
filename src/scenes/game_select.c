@@ -274,7 +274,6 @@ void start_campaign_notice(s32 id) {
     if (giftType == CAMPAIGN_GIFT_SONG) {
         isStandardSong = TRUE;
         switch (giftID) {
-            case STUDIO_SONG_HONEY_SWEET_ANGEL:
             case STUDIO_SONG_WISH:
                 isStandardSong = FALSE;
                 isSpecialSong = TRUE;
@@ -293,7 +292,11 @@ void start_campaign_notice(s32 id) {
     }
     strcat(string, "\nright now, you'll earn:\n"); // Get a perfect on this
     strcat(string, ""); // "
+    if (!isSpecialSong) {
     strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
+    } else {
+        strcat(string, "WISH - Can't Wait\n for You");
+    }
     strcat(string, "\n"); // "
     if (isStandardSong) {
         strcat(string, "as a song."); // 's song

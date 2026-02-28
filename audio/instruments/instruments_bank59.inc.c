@@ -1,3 +1,20 @@
+#ifdef SFX
+extern struct SampleData fireworks_02_data;
+struct InstrumentPCM instrument_pcm_1608 = {
+    /* Type      */ INSTRUMENT_PCM_FIXED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &fireworks_02_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x1FC000,
+};
+#else
+
 extern struct SampleData sample_883_data;
 struct InstrumentPCM instrument_pcm_1608 = {
     /* Type      */ INSTRUMENT_PCM_FIXED,
@@ -12,7 +29,24 @@ struct InstrumentPCM instrument_pcm_1608 = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1FC000,
 };
+#endif
 
+#ifdef SFX
+extern struct SampleData fireworks_01_data;
+struct InstrumentPCM instrument_pcm_1609 = {
+    /* Type      */ INSTRUMENT_PCM_FIXED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &fireworks_01_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x1FC000,
+};
+#else
 extern struct SampleData sample_884_data;
 struct InstrumentPCM instrument_pcm_1609 = {
     /* Type      */ INSTRUMENT_PCM_FIXED,
@@ -27,6 +61,7 @@ struct InstrumentPCM instrument_pcm_1609 = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1FC000,
 };
+#endif
 
 extern struct SampleData sample_214_data;
 struct InstrumentPCM instrument_pcm_1610 = {

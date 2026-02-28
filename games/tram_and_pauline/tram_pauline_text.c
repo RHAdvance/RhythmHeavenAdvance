@@ -17,7 +17,7 @@ const char D_0805db54[] = "Try and focus, you two.";
 
 const char D_0805db74[] = "Amazing acrobatics on both ends!";
 
-const char D_0805db94[] = "Ringmaster's Advice";
+const char D_0805db94[] = "The Ringmaster's advice";
 
 const char D_0805dba0[] = "Ｈｉ，　Ｉ’ｍ　Ｔｒａｍ．．．";
 
@@ -29,7 +29,7 @@ const char D_0805dbd8[] = "Ａｔ　ｔｈｅ　ｐｅａｋ　ｏｆ　ｏｕｒ　ｊｕｍｐｓ，";
 
 const char D_0805dbf4[] = "ｐｒｅｓｓ　＋　ｆｏｒ　ｍｅ，";
 
-const char D_0805dc0c[] = "ａｎｄ　￣ｆｏｒ　ｍｅ，";
+const char D_0805dc0c[] = "ａｎｄ　ゝ　ｆｏｒ　ｍｅ，";
 
 const char D_0805dc24[] = "ａｎｄ　ｗｅ’ｌｌ　ｔｒａｎｓｆｏｒｍ！";
 

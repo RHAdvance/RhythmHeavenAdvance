@@ -183,7 +183,7 @@ text text_remix_6_honto_desu_ka
 endtext
 
 text text_remix_6_kimi_tte_saikou
-    .asciz ".a:1‚x‚‚•@‚‚’‚…@.a:0‚”‚ˆ‚…@‚f‚q‚d‚`‚s‚d‚r‚sI.8:0"
+    .asciz ".a:1‚x‚‚•@‚‚’‚…@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:0"
 endtext
 
 
@@ -358,6 +358,7 @@ script script_remix_6_main
     rest 6
     rat_race_event0D 2
     rat_race_event01 2
+    play_sfx s_rat_squeak_seqData
     spawn_cue CUE_DASH
     rest 12
     rest 6
@@ -959,7 +960,11 @@ script script_remix_6_main
     beat_anim
     rest 24
     print_text_f text_remix_6_kimi_tte_saikou
+    #ifdef SFX
+    play_sfx s_rap_kimitte_saiko_slow_seqData
+    #else
     run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
+    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -978,7 +983,11 @@ script script_remix_6_main
     rest 24
     rest 8
     rest 8
+    #ifdef SFX
+    play_sfx s_rap_honto_desuka_slow_seqData
+    #else
     run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
+    #endif
     rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_6_honto_desu_ka

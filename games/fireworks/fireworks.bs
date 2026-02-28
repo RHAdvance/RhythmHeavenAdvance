@@ -421,7 +421,7 @@ script script_fireworks_practice
         print_text_f D_0805ce5c
         rest 24
         rest 24
-        fireworks_play_sfx SFX_THREE
+        @fireworks_play_sfx SFX_THREE
         play_sfx_synced s_hanabi_1_seqData, 150, 256
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
@@ -441,7 +441,7 @@ script script_fireworks_practice
         print_text_f D_0805ce5c
         rest 24
         rest 24
-        fireworks_play_sfx SFX_THREE
+        @fireworks_play_sfx SFX_THREE
         play_sfx_synced s_hanabi_1_seqData, 150, 256
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK

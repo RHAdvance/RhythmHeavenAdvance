@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_long_2, script_drum_lesson_long_2_entry
 @ Drum Lesson (Long 2) - Data
 
 text D_08062d98
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -64,10 +64,10 @@ return
 
 
 text D_08062ee0
+    .ascii "\n"
     .ascii "Time to kick things up a notch!\n"
-    .ascii "Let's add a cymbal at the\n"
-    .ascii "start and a snare beat\n"
-    .asciz "at the end!"
+    .ascii "Add a crash at the start and a\n"
+    .asciz "snare at the end! Let's go!\n"
 endtext
 
 
@@ -101,10 +101,10 @@ return
 
 
 text D_08063024
-    .ascii "Let's change the bass\n"
-    .ascii "just a little bit.\n"
+    .ascii "\n"
+    .ascii "Let's change the bass a bit.\n"
     .ascii "Listen carefully and keep\n"
-    .asciz "with the rhythm!"
+    .asciz "the rhythm going!"
 endtext
 
 
@@ -137,10 +137,10 @@ return
 
 
 text D_08063184
-    .ascii "\n"
-    .ascii "Finally, let's add one more\n"
-    .ascii "bass beat.\n"
-    .asciz "It's up to you now!\n"
+    .ascii "Last but not least, let's add\n"
+    .ascii "one more bass beat in here.\n"
+    .ascii "We're reaching the end, so\n"
+    .asciz "Let's drive it home now!\n"
 endtext
 
 

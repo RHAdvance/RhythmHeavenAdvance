@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_short_6, script_drum_lesson_short_6_entr
 @ Drum Lesson (Short 6) - Data
 
 text D_08060fa0
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -54,10 +54,10 @@ return
 
 
 text D_08061070
-    .ascii "Now, let's add a snare hit\n"
-    .ascii "right at the end.\n"
-    .ascii "The bass pattern hasn't\n"
-    .asciz "changed, keep that in mind!"
+    .ascii "Now, let's add a snare\n"
+    .ascii "right at the very end.\n"
+    .ascii "Keep the bass pattern\n"
+    .asciz "the same, though!"
 endtext
 
 
@@ -73,10 +73,10 @@ return
 
 
 text D_08061110
-    .ascii "\n"
     .ascii "Let's add another snare,\n"
-    .ascii "this time on the second beat.\n"
-    .asciz "The bass still hasn't changed!\n"
+    .ascii "this time on the 2nd beat.\n"
+    .ascii "Same as before, keep\n"
+    .asciz "the bass as it is!\n"
 endtext
 
 
@@ -94,9 +94,9 @@ return
 
 text D_080611c0
     .ascii "\n"
-    .ascii "Only one more beat to go!\n"
-    .ascii "It's a hi-hat!\n"
-    .asciz "Use Up on ‡O to hit it.\n"
+    .ascii "Let's keep this going!\n"
+    .ascii "This time, a hi-hat.\n"
+    .asciz "Press Up on ‡O for it!\n"
 endtext
 
 
@@ -117,8 +117,8 @@ return
 text D_08061288
     .ascii "Now for a surprise...\n"
     .ascii "It's another hi-hat!\n"
-    .ascii "Don't let your left and right\n"
-    .asciz "hands get mixed up!"
+    .ascii "Don't mix up your left\n"
+    .asciz "and right hand, here!"
 endtext
 
 
@@ -132,9 +132,9 @@ return
 
 text D_08061300
     .ascii "\n"
-    .ascii "Another surprise!\n"
-    .ascii "Let's add even more hi-hats!\n"
-    .asciz "We've got groove now!\n"
+    .ascii "One last surprise!\n"
+    .ascii "Just one more hi-hat!\n"
+    .asciz "That's a groovy beat!\n"
 endtext
 
 

@@ -48,7 +48,7 @@ void night_walk_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
-    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_night_walk_prologue_title, 0, 110, 120, 0, 0, 0x7f, 0);
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_night_walk_prologue_title, 0, 110, 128, 0, 0, 0x7f, 0);
     gPrologueEngineData->playYanSprite = sprite_create(gSpriteHandler, anim_night_walk_prologue_play_yan, 0, 60, 120, 0, 0, 0x7f, 0);
     gPrologueEngineData->balloonsSprite = sprite_create(gSpriteHandler, anim_night_walk_prologue_balloons, 0, 60, 120, 0, 1, 0, 0);
 }

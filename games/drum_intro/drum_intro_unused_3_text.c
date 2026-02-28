@@ -6,24 +6,28 @@
 
 
 const char D_0805e42c[] =
-    "どうも！\n"
-    "ドラム侍です。";
+    "Hi there!\n"
+    "I'm Samurai Drummer";
 
-const char D_0805e444[] = "お元気でしたか？";
+const char D_0805e444[] = "How have you been?";
 
-const char D_0805e458[] = "今回は、　短い曲に合わせて実際に演奏してみましょう。";
+const char D_0805e458[] = 
+    "This lesson, let's play along\n"
+    "with a short music track.";
 
-const char D_0805e490[] = "私の演奏をよくきいて、　マネしてくださいネ。";
+const char D_0805e490[] = 
+    "Listen closely,\n"
+    "then repeat after me.";
 
-const char D_0805e4c0[] = "さっそくですが、　いきます。";
+const char D_0805e4c0[] = "I'll get right to it.";
 
 const char D_0805e4e0[] =
-    "ちがう！\n"
-    "よくきいてネ。";
+    "No, that's wrong!\n"
+    "Listen to me again.";
 
 const char D_0805e4f8[] =
-    "ちがうんです！\n"
-    "よく、　よ～くきいてネ。";
+    "No, that's not right!\n"
+    "Listen to me very carefully.";
 
 const char *const D_0805e520[] = {
     D_0805e4c0,
@@ -34,15 +38,15 @@ const char *const D_0805e520[] = {
 
 const char D_0805e530[] =
     "\n"
-    "あなたの番です。";
+    "Your turn.";
 
 const char D_0805e544[] =
     "\n"
-    "さあ、　いまいちど！";
+    "Good, you've got it now!";
 
 const char D_0805e55c[] =
     "\n"
-    "さあ、　こんどこそ！";
+    "Now, it's your turn!";
 
 const char *const D_0805e574[] = {
     D_0805e530,
@@ -57,11 +61,11 @@ const char D_0805e584[] =
 
 const char D_0805e58c[] = "";
 
-const char D_0805e590[] = "おぉ、　すぐできましたね！";
+const char D_0805e590[] = "Good, you've got it now!";
 
-const char D_0805e5ac[] = "なかなか　のみこみが早いですね！";
+const char D_0805e5ac[] = "You're picking this up quickly!";
 
-const char D_0805e5d0[] = "いいかんじです。";
+const char D_0805e5d0[] = "Nicely done!";
 
 const char *const D_0805e5e4[] = {
     D_0805e58c,
@@ -72,14 +76,14 @@ const char *const D_0805e5e4[] = {
 };
 
 const char D_0805e5f8[] =
-    "次は、　曲のスタートでシンバルをたたいてみましょう。\n"
-    "シンバルは、　Rボタンです。";
+    "Next, start off the song with a crash.\n"
+    "Press ⑬ to hit the cymbals.";
 
-const char D_0805e64c[] = "つまり、　最初だけBボタンとRボタンを同時に押すんです。";
+const char D_0805e64c[] = "You only need to press both\n ⑮ and ⑬ at the same time once.";
 
-const char D_0805e684[] = "曲のスタートの練習を思い出してくださいネ。";
+const char D_0805e684[] = "We went over this in the previous\n lesson, so remember our practice from then.";
 
-const char D_0805e6b0[] = "じゃ、　いきます。";
+const char D_0805e6b0[] = "With that, let's start!";
 
 const char *const D_0805e6c4[] = {
     D_0805e6b0,
@@ -89,12 +93,12 @@ const char *const D_0805e6c4[] = {
 };
 
 const char D_0805e6d4[] =
-    "すばらしい！\n"
-    "その調子です。";
+    "Great work!\n"
+    "Keep it up.";
 
-const char D_0805e6f0[] = "けっこう　簡単でしたか？";
+const char D_0805e6f0[] = "Was that pretty easy?";
 
-const char D_0805e70c[] = "ちょっと、　苦労しちゃいましたね。";
+const char D_0805e70c[] = "That was tough, right?";
 
 const char *const D_0805e730[] = {
     D_0805e58c,
@@ -104,9 +108,9 @@ const char *const D_0805e730[] = {
     NULL
 };
 
-const char D_0805e744[] = "では、　曲の終わりをかっこよくキメてみましょう。";
+const char D_0805e744[] = "Let's end this on a high note!";
 
-const char D_0805e778[] = "お手本、　いきます。";
+const char D_0805e778[] = "Here's an example.";
 
 const char *const D_0805e790[] = {
     D_0805e778,
@@ -117,7 +121,7 @@ const char *const D_0805e790[] = {
 
 const char D_0805e7a0[] =
     "\n"
-    "がんばって！";
+    "Good luck!";
 
 const char *const D_0805e7b0[] = {
     D_0805e7a0,
@@ -127,16 +131,16 @@ const char *const D_0805e7b0[] = {
 };
 
 const char D_0805e7c0[] =
-    "１回で 出来ちゃいましたネ！\n"
-    "すごいです！";
+    "You did it all at once!\n"
+    "I can't believe it!";
 
 const char D_0805e7ec[] =
-    "たったの２回で　できました！\n"
-    "やりますネ！";
+    "You did it in only two tries!\n"
+    "Good job!";
 
 const char D_0805e818[] =
-    "なんとか　出来ましたネ！\n"
-    "イイ感じですヨ！";
+    "You managed to do it somehow!\n"
+    "That's looking good!";
 
 const char *const D_0805e844[] = {
     D_0805e58c,
@@ -146,10 +150,10 @@ const char *const D_0805e844[] = {
     NULL
 };
 
-const char D_0805e858[] = "こんなかんじで、　曲のスタート、　中間、　キメを表\現できれば楽しく演奏できるのではないかと思います。";
+const char D_0805e858[] = "Since you've aced all parts of the songs,\nI think you'll enjoy my drum lessons!";
 
-const char D_0805e8c0[] = "あのコーナーで練習して、　ぜひ楽しくなってください。";
+const char D_0805e8c0[] = "You can play them in the bonus corner.\n Enjoy yourself!";
 
 const char D_0805e8f8[] =
-    "では、　また。\n"
-    "さようなら。";
+    "Well, see you later!\n"
+    "Goodbye!";

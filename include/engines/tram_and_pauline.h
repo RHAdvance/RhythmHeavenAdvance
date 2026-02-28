@@ -16,11 +16,33 @@ enum TramPaulineVersionsEnum {
 
 // Engine Types:
 struct TramPaulineEngineData {
-    u8 pad[0x48];
-};
+    u8 version; // 0
+    // 3 bytes of alignment
+    struct Fox { 
+        s16 sprite; // 0x4
+        u8 unk_5; // 0x6
+        u32 x; // 0x8
+        u32 y; // 0xc
+        u32 unk_F; // 0x10
+        u8 unk_7; // 0x14
+        u8 unk_14; // 0x15
+        // it probably aligns itself to 0x18 here, 0x18-0x4 = 0x14, which is how big the struct should be
+    } foxes[2]; // 0x4-0x2c
 
+    s16 trampolineSprite; // 2c
+    u8 unk_2e; 
+    s16 trampolineSprite2; // 30
+    u8 unk_32;
+    u8 pad[0x5]; // 33, 34, 35, 36, 37 (alignment?)
+    // Mystical magical byte that doesn't exist 
+    struct BitmapFontOBJ *font; // 0x38
+    s16 textSprite; // 0x3c ... :3c??
+    s16 skipTutorialSprite; // 0x3e
+    u8 unk_40;
+    s32 curtainScroll; // 0x44 - 0x48 
+}; 
 struct TramPaulineCue {
-    /* add fields here */
+    u8 character;
 };
 
 
@@ -33,7 +55,7 @@ extern const u32 D_0805a91c[];
 // Engine Definition Data:
 extern struct CompressedData *tram_pauline_buffered_textures[];
 extern struct GraphicsTable *tram_pauline_gfx_tables[];
-extern struct Animation *tram_pauline_anim_table[][4][6];
+extern struct Animation *tram_pauline_anim_table[];
 
 
 // Functions:
@@ -42,7 +64,7 @@ extern void tram_pauline_init_gfx2(void); // Graphics Init. 2
 extern void tram_pauline_init_gfx1(void); // Graphics Init. 1
 extern void tram_pauline_engine_start(u32 version); // Game Engine Start
 extern void func_08040064(); // Engine Event 0x00 (?)
-extern void func_080400d0(); // Engine Event 0x01 (?)
+extern void func_080400d0(u8 arg0); // Engine Event 0x01 (?)
 // extern ? func_0804016c(?);
 // extern ? func_08040314(?);
 extern void func_08040434(); // Engine Event 0x02 (?)

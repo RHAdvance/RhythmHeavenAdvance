@@ -17,7 +17,7 @@ const char D_0805b1bc[] = "You missed quite a few jumps.";
 
 const char D_0805b1dc[] = "Your jumps were right on the money!";
 
-const char D_0805b1f4[] = "The Stars Say";
+const char D_0805b1f4[] = "The stars say...";
 
 const char D_0805b1fc[] = "\x05\x31" "\x01\x35" "Jump in time with the music!";
 
@@ -42,6 +42,8 @@ const char D_0805b308[] = "The Stars Say";
 const char D_0805b310[] = "\x05\x31" "\x01\x35" "Jump in time with the music!";
 
 const char D_0805b334[] = "\x05\x31" "\x01\x35" "Keep an eye out for electric fish!";
+
+const char D_0805b335[] = "\x05\x31" "\x01\x35" "Don't jump when you're under them!";
 
 const char D_0805b35c[] = "\x05\x31" "\x01\x35" "Let's reach the stars before the music ends!";
 

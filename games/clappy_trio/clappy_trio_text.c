@@ -11,15 +11,15 @@ const char D_0805adb0[] = "";
 
 const char D_0805adb4[] = "You struggled with the syncopated parts.";
 
-const char D_0805add0[] = "ウラが　サイコーです！";
+const char D_0805add0[] = "Your syncopation sounded great!";
 
 const char D_0805ade8[] = "You missed more in the slow parts.";
 
-const char D_0805ae08[] = "流れが　みえてる！";
+const char D_0805ae08[] = "You showed a great sense of flow.";
 
-const char D_0805ae1c[] = "速いのが　カンペキ！";
+const char D_0805ae1c[] = "You couldn't keep up in the fast parts.";
 
-const char D_0805ae34[] = "仲間のこえ";
+const char D_0805ae34[] = "Peer review";
 
 const char D_0805ae40[] = "Work on your basics.";
 
@@ -37,7 +37,7 @@ const char D_0805aec8[] = "You couldn't keep up in the fast parts.";
 
 const char D_0805aee8[] = "You were on top of the fast parts!";
 
-const char D_0805af08[] = "Peer Review";
+const char D_0805af08[] = "Peer review";
 
 const char D_0805af14[] = "Hi, we're the Clappy Trio!";
 

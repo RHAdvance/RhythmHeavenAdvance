@@ -17,6 +17,6 @@ const char D_08067b80[] = "Work on your technique.";
 
 const char D_08067b90[] = "Nice technique!";
 
-const char D_08067ba0[] = "MON-K Feedback";
+const char D_08067ba0[] = "MON-K's feedback:";
 
 const char D_08067bb8[] = "‚e‚‚Œ‚Œ‚‚—@‚‚…I";

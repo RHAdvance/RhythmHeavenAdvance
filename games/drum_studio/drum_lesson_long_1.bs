@@ -30,10 +30,10 @@ define_gameplay_scene scene_drum_lesson_long_1, script_drum_lesson_long_1_entry
 @ Drum Lesson (Long 1) - Data
 
 text D_080639f8
-    .ascii "Listen carefully, then copy my\n"
-    .ascii "pattern whenever you're\n"
-    .ascii "ready. If you stop playing,\n"
-    .asciz "I'll show it to you again!"
+    .ascii "Listen to my pattern, then\n"
+    .ascii "repeat when you're ready.\n"
+    .ascii "I'll show it to you again\n"
+    .asciz "if you stop playing."
 endtext
 
 
@@ -83,7 +83,7 @@ return
 text D_08063bc8
     .ascii "\n"
     .ascii "Time to switch things up\n"
-    .ascii "at the very end!\n"
+    .ascii "right at the very end!\n"
     .asciz "Ready to play it?\n"
 endtext
 
@@ -114,7 +114,7 @@ text D_08063cd4
     .ascii "\n"
     .ascii "Just one new beat left!\n"
     .ascii "It might seem simple,\n"
-    .asciz "but still give it your all!\n"
+    .asciz "but give it your all!\n"
 endtext
 
 

@@ -124,8 +124,13 @@ void perfect_scene_start(void *sVar, s32 dArg) {
     if (campaignsLeft > 0) {
         strcat(gPerfect->string, "Looks like there are still " "\0021" "\0011"); // There are still...
         strcat(gPerfect->string, count);
-        strcat(gPerfect->string, " gifts " "\0020" "\0010" "left.\n" // ...gifts
-                                     "Keep up the good work!"); // left to get. Keep going!
+        if (campaignsLeft > 1) {
+            strcat(gPerfect->string, " gifts " "\0020" "\0010" "left.\n" // ...gifts
+                                         "Keep up the good work!"); // left to get. Keep going!
+        } else {
+            strcat(gPerfect->string, " gift " "\0020" "\0010" "left.\n" // ...gift
+                                         "Keep up the good work!"); // left to get. Keep going!
+        }
     } else {
         strcat(gPerfect->string,"\0021" "\0011" "You've earned all of the gifts!" "\0020" "\0010" "\n"); // You finally got them all!
         strcat(gPerfect->string, "That means you got a Perfect in everything!"); // Congratulations!

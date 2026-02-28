@@ -78,8 +78,8 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_honey_sweet_angel
     },
     /* WISH */ {
-        /* Full Title  */ "Can't Wait For You",
-        /* Short Title */ NULL,
+        /* Full Title  */ "WISH - Can't Wait For You",
+        /* Short Title */ "WISH - Can't Wait...",
         /* Drum Script */ script_studio_wish
     },
     /* NIGHT_WALK */ {
@@ -93,7 +93,7 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_bon_odori
     },
     /* BON_DANCE */ {
-        /* Full Title  */ "Bon Dance",
+        /* Full Title  */ "TheÅôBon Dance",
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_bon_dance
     },
@@ -168,7 +168,7 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_tram_pauline
     },
     /* QUIZ_SHOW */ {
-        /* Full Title  */ "Quiz Show",
+        /* Full Title  */ "Quiz Show Opening",
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_quiz_show
     },
@@ -248,7 +248,7 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_game_select_2
     },
     /* CAFE */ {
-        /* Full Title  */ "Caf" "\x87\x51" " Counselling",
+        /* Full Title  */ "CafáQ Counselling",
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_cafe
     },

@@ -39,7 +39,7 @@
 const char *cafe_dialogue_first_visit[] = {
     /* ------------------------------------------------ */
         "\n"
-        "Welcome to the caf" "\x87\x51"".\n"
+        "Welcome to the caf‡Q.\n"
         "This your first time here?\n"
         "\n",
     /* ------------------------------------------------ */
@@ -53,10 +53,10 @@ const char *cafe_dialogue_first_visit[] = {
         "do to help, well, " "\0051" "\0015" "that's\n"
         "what I'm here for." "\0054" "\0018" "",
     /* ------------------------------------------------ */
-        "\n"
         "I'm a little busy right now,\n"
         "since I only just opened,\n"
-        "but we'll talk more later.",
+        "for the day, but we'll talk\n"
+        "more later.",
     /* ------------------------------------------------ */
         "\n"
         "Come back soon!\n"
@@ -379,7 +379,7 @@ const char *cafe_dialogue_rhythm_sense[] = {
     /* ------------------------------------------------ */
         "\n"
         "Maybe I should try some of those\n"
-        "Rhythm Games myself...\n"
+        "rhythm games myself...\n"
         "\n",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
@@ -535,8 +535,8 @@ const char *cafe_dialogue_rhythm_test[] = {
 const char *cafe_dialogue_drum_lessons[] = {
     /* ------------------------------------------------ */
         "\n"
-        "You ever check out the Drum\n"
-        "Lessons in the Bonus Corner?\n"
+        "You ever check out the drum\n"
+        "lessons in the bonus corner?\n"
         "\n",
     /* ------------------------------------------------ */
         "\n"
@@ -604,8 +604,8 @@ const char *cafe_dialogue_adhd[] = {
         "\n",
     /* ------------------------------------------------ */
         "\n"
-        "Maybe some other time I can tell\n"
-        "you all about it... if that's fine with you.\n"
+        "Want to go for a drive with me, sometime?\n"
+        "If that's alright with you, I mean.\n"
         "See you around.",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
@@ -750,7 +750,7 @@ const char *cafe_dialogue_healing_with_music[] = {
     /* ------------------------------------------------ */
         "\n"
         "Maybe if I studied this stuff I'd know,\n"
-        "but I don't! Sorry! Heh.\n"
+        "but I haven't! Sorry! Heh.\n"
         "\n",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
@@ -862,7 +862,7 @@ const char *cafe_dialogue_ranks_and_medals[] = {
         "\n",
     /* ------------------------------------------------ */
         "\n"
-        "And those medals let you unlock\n"
+        "Those medals let you unlock\n"
         "some prizes. Sounds like it\n"
         "would be worth your while.",
     /* ------------------------------------------------ */
