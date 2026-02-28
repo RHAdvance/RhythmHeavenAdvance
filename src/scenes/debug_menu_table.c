@@ -72,11 +72,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q‚…‚‚‰‚˜@‚P",
         /* Epil. */ TRUE
     },
-    /* Remix 1 (Tempo Up) */ {
-        /* Scene */ &scene_remix_1_extra,
-        /* Label */ "‚q‚…‚‚‰‚˜@‚P@i‚s‚…‚‚‚@‚t‚j",
-        /* Epil. */ TRUE
-    },
     /* The Bon Odori */ {
         /* Scene */ &scene_bon_odori,
         /* Label */ "‚s‚ˆ‚…@‚a‚‚@‚n‚„‚‚’‚‰",
@@ -352,11 +347,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚l‚‚’‚ƒ‚ˆ‚‰‚‚‡@‚n‚’‚„‚…‚’‚“@‚Q",
         /* Epil. */ TRUE
     },
-    /* Marching Orders (Tempo Up) */ {
-        /* Scene */ &scene_marching_orders_extra,
-        /* Label */ "‚l‚‚’‚ƒ‚ˆ‚‰‚‚‡@‚n‚’‚„‚…‚’‚“@i‚s‚…‚‚‚@‚t‚j",
-        /* Epil. */ TRUE
-    },
     /* Mechanical Horse */ {
         /* Scene */ &scene_mechanical_horse,
         /* Label */ "‚g‚‚’‚“‚…@‚l‚‚ƒ‚ˆ‚‰‚‚…",
@@ -385,11 +375,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     /* Spaceball 2 */ {
         /* Scene */ &scene_spaceball_2,
         /* Label */ "‚r‚‚‚ƒ‚…‚‚‚‚Œ‚Œ@‚Q",
-        /* Epil. */ TRUE
-    },
-    /* Spaceball (Tempo Up) */ {
-        /* Scene */ &scene_spaceball_extra,
-        /* Label */ "‚r‚‚‚ƒ‚…‚‚‚‚Œ‚Œ@i‚s‚…‚‚‚@‚t‚j",
         /* Epil. */ TRUE
     },
     /* Sneaky Spirits */ {
@@ -437,11 +422,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q‚ˆ‚™‚”‚ˆ‚@‚s‚—‚…‚…‚š‚…‚’‚“@‚Q",
         /* Epil. */ TRUE
     },
-    /* Rhythm Tweezers (Tempo Up) */ {
-        /* Scene */ &scene_rhythm_tweezers_extra,
-        /* Label */ "‚q‚ˆ‚™‚”‚ˆ‚@‚s‚—‚…‚…‚š‚…‚’‚“@i‚s‚…‚‚‚@‚t‚j",
-        /* Epil. */ TRUE
-    },
     /* Night Walk */ {
         /* Scene */ &scene_night_walk,
         /* Label */ "‚m‚‰‚‡‚ˆ‚”@‚v‚‚Œ‚‹",
@@ -472,11 +452,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚s‚ˆ‚…@‚r‚‚‚‚‚™@‚s‚’‚‰‚",
         /* Epil. */ TRUE
     },
-    /* The Clappy Trio (Tempo Up) */ {
-        /* Scene */ &scene_clappy_trio_extra,
-        /* Label */ "‚s‚ˆ‚…@‚b‚Œ‚‚‚‚™@‚s‚’‚‰‚@i‚s‚…‚‚‚@‚t‚j",
-        /* Epil. */ TRUE
-    }, 
     /* Karate Man */ {
         /* Scene */ &scene_karate_man,
         /* Label */ "‚j‚‚’‚‚”‚…@‚l‚‚",
@@ -485,11 +460,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     /* Karate Man 2 */ {
         /* Scene */ &scene_karate_man_2,
         /* Label */ "‚j‚‚’‚‚”‚…@‚l‚‚@‚Q",
-        /* Epil. */ TRUE
-    },
-    /* Karate Man (Tempo Up) */ {
-        /* Scene */ &scene_karate_man_extra,
-        /* Label */ "‚j‚‚’‚‚”‚…@‚l‚‚@i‚s‚…‚‚‚@‚t‚j",
         /* Epil. */ TRUE
     },
     /* Tanuki and Monkey */ {
