@@ -7,10 +7,7 @@
 #include "src/scenes/studio.h"
 
 
-/* GAME SELECT SCENE */
-
-
-#define COLOR_MOD_MAX_WAIT_TIME 60
+/* GAME SELECT SCENE */#define COLOR_MOD_MAX_WAIT_TIME 60
 #define COLOR_MOD_INTERP_TIME 96
 
 enum ColorChangerStatesEnum {
@@ -50,10 +47,6 @@ extern u8 sReplayingCampaign;
 extern u32 D_03005590; // Unused
 extern u32 D_030055d4; // Unused
 
-
-#define LEVEL_STATE_PERFECT 6 // New state for perfected levels
-
-
 // Clear sPlayAltBGM
 void disable_game_select_2_bgm(void) {
     sPlayAltBGM = FALSE;
@@ -68,7 +61,7 @@ void enable_game_select_2_bgm(void) {
 
 // Play Game Select Music
 void play_game_select_bgm(void) {
-    if (sPlayAltBGM && !peek_advance_flag(&D_030046a8->data, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
+    if (sPlayAltBGM && !CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
         set_beatscript_tempo(105);
         scene_set_music(&s_shibafu2_bgm_seqData);
         sPlayAltBGM = FALSE;
@@ -293,7 +286,7 @@ void start_campaign_notice(s32 id) {
     strcat(string, "\nright now, you'll earn:\n"); // Get a perfect on this
     strcat(string, ""); // "
     if (!isSpecialSong) {
-    strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
+        strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
     } else {
         strcat(string, "WISH - Can't Wait\n for You");
     }
@@ -754,7 +747,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     s16 bgOfsX, bgOfsY;
     s32 prevX, prevY;
     s32 i;
-
+    
     // Init. Graphics
     gGameSelect->loadingSceneGfx = TRUE;
     func_08007324(FALSE);
@@ -827,10 +820,12 @@ void game_select_scene_start(void *sVar, s32 dArg) {
         if ((get_level_id_from_grid_xy(prevX, prevY) == LEVEL_REMIX_6) && (recentLevelState >= LEVEL_STATE_CLEARED)) {
             enable_game_select_2_bgm();
         }
+    } else if (game_select_try_queue_tempo_up_unlock(TRUE)) {
+        gGameSelect->runningLevelEvents = TRUE;
     } else {
         gGameSelect->runningLevelEvents = FALSE;
         gGameSelect->levelEventTimer = 0;
-        request_game_save_data_write();
+        write_game_save_data();
 
         if (gGameSelect->campaignNotice.hasNewCampaign) {
             start_campaign_notice(D_030046a8->data.currentCampaign);
@@ -840,15 +835,6 @@ void game_select_scene_start(void *sVar, s32 dArg) {
         }
     }
 
-    // unlock tempo up (if existing save file for example) (this is FUCKING dirty and stupid i dont like that and it makes me cry at night)
-    if (D_030046a8->data.totalMedals >= 48 && get_level_state_from_id(LEVEL_KARATE_MAN_EXTRA) == LEVEL_STATE_HIDDEN) {
-        set_level_state(saveData, LEVEL_KARATE_MAN_EXTRA, LEVEL_STATE_OPEN);
-        set_level_state(saveData, LEVEL_RHYTHM_TWEEZERS_EXTRA, LEVEL_STATE_CLOSED);
-        set_level_state(saveData, LEVEL_MARCHING_ORDERS_EXTRA, LEVEL_STATE_CLOSED);
-        set_level_state(saveData, LEVEL_SPACEBALL_EXTRA, LEVEL_STATE_CLOSED);
-        set_level_state(saveData, LEVEL_CLAPPY_TRIO_EXTRA, LEVEL_STATE_CLOSED);
-        set_level_state(saveData, LEVEL_REMIX_1_EXTRA, LEVEL_STATE_CLOSED);
-    }
 
     saveData->recentLevelState = LEVEL_STATE_NULL;
     saveData->recentLevelClearedByBarista = FALSE;
@@ -1450,6 +1436,14 @@ u32 game_select_check_level_event_req(s32 x, s32 y, s32 newState) {
             return TRUE;
         }
 
+        if (requirements[0] == LEVEL_EVENT_REQ_TOTAL_MEDALS) {
+            if (saveData->totalMedals < (u8)requirements[1]) {
+                return FALSE;
+            }
+            requirements += 3;
+            continue;
+        }
+
         x = requirements[1];
         y = requirements[2];
         gridEntry = game_select_grid_data + x + (y * GS_GRID_WIDTH);
@@ -1676,6 +1670,7 @@ u32 game_select_process_level_events(void) {
 
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
+            game_select_try_queue_tempo_up_unlock(FALSE);
             cafe_session_remove_level(id);
             set_level_first_superb(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
             if(get_level_first_ok(&D_030046a8->data, id) == 0) {
@@ -1820,7 +1815,7 @@ void game_select_update_level_events(void) {
     }
 #endif
 
-    request_game_save_data_write();
+    write_game_save_data();
 
     if (gGameSelect->campaignNotice.hasNewCampaign) {
         start_campaign_notice(D_030046a8->data.currentCampaign);
@@ -2375,9 +2370,13 @@ void game_select_scene_stop(void *sVar, s32 dArg) {
     func_08008628();
     func_08003f28();
     func_08004058();
+
+    // sync to vblank
+    func_080013a8();
+
     func_08006d80();
     func_08007014(0);
-    request_game_save_data_write();
+    write_game_save_data();
 }
 
 
@@ -2924,4 +2923,45 @@ https://www.coranac.com/tonc/text/regbg.htm
             mapDest += 0x20;
         }
     }
+}
+
+
+u32 game_select_try_queue_tempo_up_unlock(u32 startEvents) {
+    s32 x, y;
+    s32 state;
+
+    if (D_030046a8->data.totalMedals < 48) {
+        return FALSE;
+    }
+
+    get_grid_xy_from_level_id(LEVEL_KARATE_MAN_EXTRA, &x, &y);
+    state = get_level_state_from_grid_xy(x, y);
+
+    if (state >= LEVEL_STATE_OPEN) {
+        return FALSE;
+    }
+
+    if (state == LEVEL_STATE_HIDDEN) {
+        if (!game_select_check_level_event_req(x, y, LEVEL_STATE_CLOSED)) {
+            return FALSE;
+        }
+        if (startEvents) {
+            game_select_start_level_events(60);
+        }
+        game_select_enqueue_level_event(x, y, LEVEL_STATE_CLOSED);
+        return TRUE;
+    }
+
+    if (state == LEVEL_STATE_CLOSED) {
+        if (!game_select_check_level_event_req(x, y, LEVEL_STATE_OPEN)) {
+            return FALSE;
+        }
+        if (startEvents) {
+            game_select_start_level_events(60);
+        }
+        game_select_enqueue_level_event(x, y, LEVEL_STATE_OPEN);
+        return TRUE;
+    }
+
+    return FALSE;
 }

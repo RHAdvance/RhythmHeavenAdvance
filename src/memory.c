@@ -91,6 +91,90 @@ s32 generate_save_buffer_checksum(s32 *buffer, u32 bufferSize) {
 	return total;
 }
 
+static void ensure_extra_save_data_header(struct ExtraTengokuSaveData *extra) {
+    memcpy(extra->magic, EXTRA_SAVE_DATA_MAGIC, sizeof(extra->magic));
+    extra->version = EXTRA_SAVE_DATA_VERSION;
+}
+
+static void update_extra_save_data_checksum(struct ExtraTengokuSaveData *extra) {
+    extra->checksum = 0;
+    extra->checksum = generate_save_buffer_checksum((s32 *)extra, sizeof(*extra));
+}
+
+void on_extra_save_upgrade(u16 oldVersion, struct ExtraTengokuSaveData *extra) {
+	(void)oldVersion;
+	(void)extra;
+}
+
+static u32 calculate_save_buffer_checksum(struct SaveBuffer *buffer) {
+    u32 checksum;
+    u32 stored = buffer->header.checksum;
+    u32 baseSize = (u32)((u8 *)&buffer->data.extraData - (u8 *)buffer);
+
+    buffer->header.checksum = 0;
+    checksum = generate_save_buffer_checksum((s32 *)buffer, baseSize);
+    buffer->header.checksum = stored;
+
+    return checksum;
+}
+
+static u32 calculate_extra_save_data_checksum(struct ExtraTengokuSaveData *extra) {
+    u32 checksum;
+    u32 stored = extra->checksum;
+
+    extra->checksum = 0;
+    checksum = generate_save_buffer_checksum((s32 *)extra, sizeof(*extra));
+    extra->checksum = stored;
+
+    return checksum;
+}
+
+static u8 extra_save_data_is_valid(struct ExtraTengokuSaveData *extra) {
+    if (strncmp(extra->magic, EXTRA_SAVE_DATA_MAGIC, sizeof(extra->magic)) != 0) {
+        return FALSE;
+    }
+
+    if (extra->version > EXTRA_SAVE_DATA_VERSION) {
+        return FALSE;
+    }
+
+    if (extra->version < EXTRA_SAVE_DATA_VERSION) {
+		on_extra_save_upgrade(extra->version, extra);
+		ensure_extra_save_data_header(extra);
+		update_extra_save_data_checksum(extra);
+		return TRUE;
+	}
+
+    return extra->checksum == calculate_extra_save_data_checksum(extra);
+}
+
+static void reset_extra_save_data_defaults(struct TengokuSaveData *data) {
+    struct ExtraTengokuSaveData *extra = &data->extraData;
+    u32 i;
+
+    dma3_fill(0, extra, sizeof(*extra), 0x20, 0x100);
+    ensure_extra_save_data_header(extra);
+
+    for (i = 0; i < TOTAL_EXTRA_LEVELS; i++) {
+        extra->extraLevelScores[i] = DEFAULT_LEVEL_SCORE;
+        extra->extraLevelStates[i] = LEVEL_STATE_HIDDEN;
+        extra->extraLevelTotalPlays[i] = 0;
+        extra->extraLevelFirstOK[i] = 0;
+        extra->extraLevelFirstSuperb[i] = 0;
+    }
+
+    for (i = 0; i < TOTAL_EXTRA_PERFECT_CAMPAIGNS; i++) {
+        extra->extraCampaignsCleared[i] = FALSE;
+    }
+
+    for (i = 0; i < TOTAL_EXTRA_READING_MATERIALS; i++) {
+        extra->extraReadingMaterialUnlocked[i] = FALSE;
+    }
+
+    update_extra_save_data_checksum(extra);
+}
+
+
 // Init.
 void init_save_buffer(void) {
     set_sram_fast_func();
@@ -101,56 +185,50 @@ void init_save_buffer(void) {
 void clear_save_data(void) {
     struct SaveBuffer *buffer = D_030046a8;
 
-    dma3_fill(0x00, buffer, SAVE_BUFFER_SIZE, 0x20, 0x100);
+    dma3_fill(0, buffer, SAVE_BUFFER_SIZE, 0x20, 0x100);
     strcpy(buffer->header.RIQ, D_08935fbc);
     buffer->header.bufferSize = SAVE_BUFFER_SIZE;
     buffer->header.checksum = 0;
     buffer->header.unkC = 0x26040000;
     reset_game_save_data();
+    reset_extra_save_data_defaults(&buffer->data);
+	ensure_extra_save_data_header(&buffer->data.extraData);
+	update_extra_save_data_checksum(&buffer->data.extraData);
 }
 
 void set_playtest_save_data(void) {
     struct TengokuSaveData *data = &D_030046a8->data;
     u32 i;
     
-    // Unlock all levels.
-    for(i = 0; i < TOTAL_LEVELS; i++) {
-        set_level_state(data, i, (i >= TOTAL_BASE_LEVELS-6 && i < TOTAL_BASE_LEVELS) ? LEVEL_STATE_CLEARED : LEVEL_STATE_HAS_MEDAL);
+    // unlock all levels
+    for (i = 0; i < TOTAL_LEVELS; i++) {
+        set_level_state(data, i, (i >= TOTAL_LEVELS-6) ? LEVEL_STATE_CLEARED : LEVEL_STATE_HAS_MEDAL);
         set_level_score(data, i, DEFAULT_LEVEL_SCORE);
     }
 
     data->campaignState = CAMPAIGN_STATE_INACTIVE;
 
+    // set medals to 99
     data->totalMedals = 99;
 
-    // Unlock all reading material.
-    for (i = 0; i < ARRAY_COUNT(data->readingMaterialUnlocked); i++) {
-        data->readingMaterialUnlocked[i] = TRUE;
+    // unlock all reading materials
+    for (i = 0; i < TOTAL_READING_MATERIALS; i++) {
+        set_reading_material_unlocked(data, i, TRUE);
     }
-    // Unlock all drum kits.
+    // unlock all drum kits
     for (i = 0; i < ARRAY_COUNT(data->drumKitsUnlocked); i++) {
         data->drumKitsUnlocked[i] = TRUE;
     }
-    // Unlock all songs.
+    // unlock all songs
     unlock_all_unassigned_campaign_gift_songs();
 
     data->currentFlow = 0;
     data->unkB0 = TRUE;
 }
 
-static inline s32 calc_save_buffer_base_checksum(struct SaveBuffer *buffer) {
-    return generate_save_buffer_checksum((s32 *)buffer, SAVE_BUFFER_BASE_SIZE);
-}
-static inline s32 calc_save_buffer_ext_checksum(struct SaveBuffer *buffer) {
-    return generate_save_buffer_checksum(
-        buffer->data.extraData.checksumStart,
-        (u8 *)buffer->data.extraData.checksumEnd - (u8 *)buffer->data.extraData.checksumStart
-    );
-}
 
 s32 copy_to_save_buffer(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
-    s32 i;
 
     read_sram_fast(cartRAM, (u8 *)buffer, SAVE_BUFFER_SIZE);
 
@@ -158,39 +236,15 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         return 1;
     }
 
-    if ((calc_save_buffer_base_checksum(D_030046a8) - buffer->header.checksum) != buffer->header.checksum) {
+    if (calculate_save_buffer_checksum(buffer) != buffer->header.checksum) {
         return 2;
     }
 
-    if (
-        (buffer->data.extraData.magic != SAVE_EXT_IDENTIFIER) || // Identifier is nonmatch ..
-        !peek_advance_flag(&buffer->data, ADVANCE_FLAG_SAVE_CONVERTED) || // Flag hasn't been set ..
-        calc_save_buffer_ext_checksum(buffer) != buffer->data.extraData.checksum // Checksum is nonmatch ..
-    ) {
-        buffer->data.extraData.magic = SAVE_EXT_IDENTIFIER;
-
-        for (i = START_EXTRA_LEVELS; i < TOTAL_LEVELS; i++) {
-            set_level_state(&buffer->data, i, LEVEL_STATE_HIDDEN);
-            set_level_score(&buffer->data, i, DEFAULT_LEVEL_SCORE);
-            set_level_total_plays(&buffer->data, i, 0);
-            set_level_first_ok(&buffer->data, i, 0);
-            set_level_first_superb(&buffer->data, i, 0);
-        }
-
-        for (i = START_EXTRA_PERFECT_CAMPAIGNS; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
-            set_campaign_cleared(&buffer->data, i, FALSE);
-        }
-
-        // Set cursor on Karate Man ..
-        buffer->data.gsCursorX = 2;
-        buffer->data.gsCursorY = 11;
-
-        // Initialize extra reading material to be locked.
-        buffer->data.extraData.extraReadingMaterialUnlocked[0] = FALSE;
-
-        // Hooray! We did it!
-        set_advance_flag(&buffer->data, ADVANCE_FLAG_SAVE_CONVERTED);
+    if (!extra_save_data_is_valid(&buffer->data.extraData)) {
+        reset_extra_save_data_defaults(&buffer->data);
     }
+
+    SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
 
     return 0;
 }
@@ -210,11 +264,9 @@ void flush_save_buffer(u8 *cartRAM) {
 #ifndef PLAYTEST
     struct SaveBuffer *buffer = D_030046a8;
 
+	update_extra_save_data_checksum(&buffer->data.extraData);
     buffer->header.checksum = 0;
-    buffer->header.checksum = calc_save_buffer_base_checksum(D_030046a8);
-
-    buffer->data.extraData.checksum = 0;
-    buffer->data.extraData.checksum = calc_save_buffer_ext_checksum(D_030046a8);
+    buffer->header.checksum = calculate_save_buffer_checksum(buffer);
 
     write_sram_fast((u8 *)D_030046a8, cartRAM, SAVE_BUFFER_SIZE);
 #endif
@@ -227,18 +279,14 @@ s32 get_offset_from_save_buffer(void *buffer) {
 
 
 void write_save_buffer_header_to_sram(u8 *cartRAM) {
-#ifndef PLAYTEST
     struct SaveBuffer *buffer = D_030046a8;
     s32 bufferOffset = get_offset_from_save_buffer(buffer); // isn't this literally always 0
 
+	update_extra_save_data_checksum(&buffer->data.extraData);
     buffer->header.checksum = 0;
-    buffer->header.checksum = calc_save_buffer_base_checksum(D_030046a8);
-
-    buffer->data.extraData.checksum = 0;
-    buffer->data.extraData.checksum = calc_save_buffer_ext_checksum(D_030046a8);
+	buffer->header.checksum = calculate_save_buffer_checksum(buffer);
 
     write_sram_fast((u8 *)D_030046a8 + bufferOffset, cartRAM + bufferOffset, 0x10);
-#endif
 }
 
 
@@ -282,131 +330,107 @@ s32 func_080009fc(void) {
 	return 0;
 }
 
-u8 get_level_state(struct TengokuSaveData *saveData, s32 id) {
-    if (id >= START_EXTRA_LEVELS) {
-        return saveData->extraData.extraLevelStates[id - START_EXTRA_LEVELS];
+u8 get_level_state(struct TengokuSaveData *data, u32 levelID) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        return data->extraData.extraLevelStates[levelID - TOTAL_BASE_LEVELS];
+    }
+    return data->levelStates[levelID];
+}
+
+u16 get_level_score(struct TengokuSaveData *data, u32 levelID) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        return data->extraData.extraLevelScores[levelID - TOTAL_BASE_LEVELS];
+    }
+    return data->levelScores[levelID];
+}
+
+u8 get_level_total_plays(struct TengokuSaveData *data, u32 levelID) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        return data->extraData.extraLevelTotalPlays[levelID - TOTAL_BASE_LEVELS];
+    }
+    return data->levelTotalPlays[levelID];
+}
+
+u8 get_level_first_ok(struct TengokuSaveData *data, u32 levelID) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        return data->extraData.extraLevelFirstOK[levelID - TOTAL_BASE_LEVELS];
+    }
+    return data->levelFirstOK[levelID];
+}
+
+u8 get_level_first_superb(struct TengokuSaveData *data, u32 levelID) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        return data->extraData.extraLevelFirstSuperb[levelID - TOTAL_BASE_LEVELS];
+    }
+    return data->levelFirstSuperb[levelID];
+}
+
+u8 get_campaign_cleared(struct TengokuSaveData *data, u32 campaignID) {
+    if (campaignID >= TOTAL_BASE_PERFECT_CAMPAIGNS){
+        return data->extraData.extraCampaignsCleared[campaignID - TOTAL_BASE_PERFECT_CAMPAIGNS];
+    }
+    return data->campaignsCleared[campaignID];
+}
+
+u8 get_reading_material_unlocked(struct TengokuSaveData *data, u32 materialID) {
+    if (materialID >= TOTAL_BASE_READING_MATERIALS) {
+        return data->extraData.extraReadingMaterialUnlocked[materialID - TOTAL_BASE_READING_MATERIALS];
+    }
+    return data->readingMaterialUnlocked[materialID];
+}
+
+void set_level_state(struct TengokuSaveData *data, u32 levelID, u8 state) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        data->extraData.extraLevelStates[levelID - TOTAL_BASE_LEVELS] = state;
     } else {
-        return saveData->levelStates[id];
+        data->levelStates[levelID] = state;
     }
 }
 
-u16 get_level_score(struct TengokuSaveData *saveData, s32 id) {
-    if (id >= START_EXTRA_LEVELS) {
-        return saveData->extraData.extraLevelScores[id - START_EXTRA_LEVELS];
+void set_level_score(struct TengokuSaveData *data, u32 levelID, u16 score) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        data->extraData.extraLevelScores[levelID - TOTAL_BASE_LEVELS] = score;
     } else {
-        return saveData->levelScores[id];
+        data->levelScores[levelID] = score;
     }
 }
 
-u8 get_level_total_plays(struct TengokuSaveData *saveData, s32 id) {
-    if (id >= START_EXTRA_LEVELS) {
-        return saveData->extraData.extraLevelTotalPlays[id - START_EXTRA_LEVELS];
+void set_level_total_plays(struct TengokuSaveData *data, u32 levelID, u8 totalPlays) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        data->extraData.extraLevelTotalPlays[levelID - TOTAL_BASE_LEVELS] = totalPlays;
     } else {
-        return saveData->levelTotalPlays[id];
+        data->levelTotalPlays[levelID] = totalPlays;
     }
 }
 
-u8 get_level_first_ok(struct TengokuSaveData *saveData, s32 id) {
-    if (id >= START_EXTRA_LEVELS) {
-        return saveData->extraData.extraLevelFirstOK[id - START_EXTRA_LEVELS];
+void set_level_first_ok(struct TengokuSaveData *data, u32 levelID, u8 firstOK) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        data->extraData.extraLevelFirstOK[levelID - TOTAL_BASE_LEVELS] = firstOK;
     } else {
-        return saveData->levelFirstOK[id];
+        data->levelFirstOK[levelID] = firstOK;
     }
 }
 
-u8 get_level_first_superb(struct TengokuSaveData *saveData, s32 id) {
-    if (id >= START_EXTRA_LEVELS) {
-        return saveData->extraData.extraLevelFirstSuperb[id - START_EXTRA_LEVELS];
+void set_level_first_superb(struct TengokuSaveData *data, u32 levelID, u8 firstSuperb) {
+    if (levelID >= TOTAL_BASE_LEVELS){
+        data->extraData.extraLevelFirstSuperb[levelID - TOTAL_BASE_LEVELS] = firstSuperb;
     } else {
-        return saveData->levelFirstSuperb[id];
-    }   
-}
-
-u8 get_campaign_cleared(struct TengokuSaveData *saveData, s32 id) {
-    if (id >= START_EXTRA_PERFECT_CAMPAIGNS) {
-        return saveData->extraData.extraCampaignsCleared[id - START_EXTRA_PERFECT_CAMPAIGNS];
-    } else {
-        return saveData->campaignsCleared[id];
+        data->levelFirstSuperb[levelID] = firstSuperb;
     }
 }
 
-void set_level_state(struct TengokuSaveData *saveData, s32 id, u8 state) {
-    if (id >= START_EXTRA_LEVELS) {
-        saveData->extraData.extraLevelStates[id - START_EXTRA_LEVELS] = state;
+void set_campaign_cleared(struct TengokuSaveData *data, u32 campaignID, u8 cleared) {
+    if (campaignID >= TOTAL_BASE_PERFECT_CAMPAIGNS){
+        data->extraData.extraCampaignsCleared[campaignID - TOTAL_BASE_PERFECT_CAMPAIGNS] = cleared;
     } else {
-        saveData->levelStates[id] = state;
+        data->campaignsCleared[campaignID] = cleared;
     }
 }
 
-void set_level_score(struct TengokuSaveData *saveData, s32 id, u16 score) {
-    if (id >= START_EXTRA_LEVELS) {
-        saveData->extraData.extraLevelScores[id - START_EXTRA_LEVELS] = score;
+void set_reading_material_unlocked(struct TengokuSaveData *data, u32 materialID, u8 unlocked) {
+    if (materialID >= TOTAL_BASE_READING_MATERIALS) {
+        data->extraData.extraReadingMaterialUnlocked[materialID - TOTAL_BASE_READING_MATERIALS] = unlocked;
     } else {
-        saveData->levelScores[id] = score;
-    }
-}
-
-void set_level_total_plays(struct TengokuSaveData *saveData, s32 id, u8 totalPlays) {
-    if (id >= START_EXTRA_LEVELS) {
-        saveData->extraData.extraLevelTotalPlays[id - START_EXTRA_LEVELS] = totalPlays;
-    } else {
-        saveData->levelTotalPlays[id] = totalPlays;
-    }
-}
-
-void set_level_first_ok(struct TengokuSaveData *saveData, s32 id, u8 firstOK) {
-    if (id >= START_EXTRA_LEVELS) {
-        saveData->extraData.extraLevelFirstOK[id - START_EXTRA_LEVELS] = firstOK;
-    } else {
-        saveData->levelFirstOK[id] = firstOK;
-    }
-}
-
-void set_level_first_superb(struct TengokuSaveData *saveData, s32 id, u8 firstSuperb) {
-    if (id >= START_EXTRA_LEVELS) {
-        saveData->extraData.extraLevelFirstSuperb[id - START_EXTRA_LEVELS] = firstSuperb;
-    } else {
-        saveData->levelFirstSuperb[id] = firstSuperb;
-    }
-}
-
-void set_campaign_cleared(struct TengokuSaveData *saveData, s32 id, u8 cleared) {
-    if (id >= START_EXTRA_PERFECT_CAMPAIGNS) {
-        saveData->extraData.extraCampaignsCleared[id - START_EXTRA_PERFECT_CAMPAIGNS] = cleared;
-    } else {
-        saveData->campaignsCleared[id] = cleared;
-    }   
-}
-
-void set_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id, u8 unlocked) {
-    if (peek_advance_flag(saveData, ADVANCE_FLAG_SAVE_CONVERTED)) {
-        if (id < START_EXTRA_READING_MATERIAL) {
-            saveData->readingMaterialUnlocked[id] = unlocked;
-        } else {
-            saveData->extraData.extraReadingMaterialUnlocked[id - START_EXTRA_READING_MATERIAL] = unlocked;
-        }
-    } else {
-        if (id < START_EXTRA_READING_MATERIAL) {
-            saveData->readingMaterialUnlocked[id] = unlocked;
-        }
-    }
-}
-
-u8 get_reading_material_unlocked(struct TengokuSaveData *saveData, s32 id) {
-    // If save is converted, use extra field for the last reading material
-    if (peek_advance_flag(saveData, ADVANCE_FLAG_SAVE_CONVERTED)) {
-        if (id < START_EXTRA_READING_MATERIAL) {
-            return saveData->readingMaterialUnlocked[id];
-        } else {
-            return saveData->extraData.extraReadingMaterialUnlocked[id - START_EXTRA_READING_MATERIAL];
-        }
-    }
-    else {
-        if (id < START_EXTRA_READING_MATERIAL) {
-            return saveData->readingMaterialUnlocked[id];
-        }
-        else {
-            return 0;
-        }
+        data->readingMaterialUnlocked[materialID] = unlocked;
     }
 }
