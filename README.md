@@ -3,7 +3,7 @@
 
 ![Rhythm Heaven Advance](media/rha.png?raw=true "Rhythm Heaven Advance")
 
-An unofficial English localization patch for *Rhythm Tengoku (ƒŠƒYƒ€“V‘)* on the Game Boy Advance.
+An unofficial English localization patch for *Rhythm Tengoku (ãƒªã‚ºãƒ å¤©å›½)* on the Game Boy Advance.
 
 ## About
 
