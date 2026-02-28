@@ -339,8 +339,8 @@ void cafe_print_dialogue(void) {
                 // Are you making progress?
                 // Please do your best!
                 string = "\n"
-                         "Are you enjoying those Rhythm\n"
-                         "Games? Keep up the good work!\n"
+                         "Are you enjoying those rhythm\n"
+                         "games? Keep up the good work!\n"
                          "\n";
             } else if (playtime <= 60) {
                 // Aren't you getting tired?
@@ -528,9 +528,9 @@ void cafe_print_dialogue(void) {
             //
             // "Please skip it."
             // "No, thank you."
-            string = "Because I can make it so you can\n"
-                     "just ""\0051" "\0015" "skip that game altogether.\n"
-                     "\0054" "\0018" "What do you say?\n"
+            string = "Because I can make it so you\n"
+                     "can just ""\0051" "\0015" "skip that game\n"
+                     """\0051" "\0015""altogether. ""\0054" "\0018" "What do you say?\n"
                      "　　　　　　　　　　　　　　\"Please!\"\n"
                      "　　　　　　　　　　　　　　\"No, thanks.\"";
             gCafe->queryEnabled = TRUE;
@@ -562,7 +562,7 @@ void cafe_print_dialogue(void) {
                 string = "\n"
                          "That's the spirit! Stay\n"
                          "confident, and stick\n"
-                         "to it.";
+                         "to it!";
                 dialogueTask = CAFE_EV_OFFER_CLEAR_02_N;
             }
             break;
@@ -582,8 +582,8 @@ void cafe_print_dialogue(void) {
             // Well then, please
             // do your best!
             string = "\n"
-                     "I'll be here, cheering you on from\n"
-                     "behind the counter!\n"
+                     "Do your best,\n"
+                     "I'm rooting for you!\n"
                      "\n";
             dialogueExhausted = TRUE;
             break;

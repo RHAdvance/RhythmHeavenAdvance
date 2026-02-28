@@ -9,9 +9,9 @@ const char D_0805ab50[] = "You needed to focus on the basics.";
 
 const char D_0805ab68[] = "";
 
-const char D_0805ab6c[] = "Your sequential punches were just sad.";
+const char D_0805ab6c[] = "Your consecutive punches were just sad.";
 
-const char D_0805ab90[] = "Stellar sequential punches!";
+const char D_0805ab90[] = "Your consecutive punches were amazing!";
 
 const char D_0805abb0[] = "You nailed the ending!";
 

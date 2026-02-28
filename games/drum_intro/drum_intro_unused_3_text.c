@@ -156,4 +156,4 @@ const char D_0805e8c0[] = "You can play them in the bonus corner.\n Enjoy yourse
 
 const char D_0805e8f8[] =
     "Well, see you later!\n"
-    "Goodbye!";
+    "Goodbye for now!";
