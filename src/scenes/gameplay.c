@@ -119,6 +119,7 @@ void gameplay_start_scene(void) {
     gGameplay->latenessRangeMin = 1;
     gGameplay->earlinessRangeMin = -0x80;
     gGameplay->latenessRangeMax = 0x7f;
+    gGameplay->autoplayEnabled = FALSE;
     midi_player_set_reverb(35, 2, 2, 4);
     if (get_current_scene_trans_target() == NULL) {
         set_next_scene(&scene_results_ver_rank);
@@ -144,44 +145,84 @@ void gameplay_update_scene(void) {
         }
     }
 
-    pressed = D_03004afc & gGameplay->buttonPressFilter;
-    released = D_03004b00 & gGameplay->buttonReleaseFilter;
+    // if L and R are held then enable auto play else disable auto play
+    #ifdef AUTOPLAY
+    if ((D_03004ac0 & (LEFT_SHOULDER_BUTTON | RIGHT_SHOULDER_BUTTON)) == (LEFT_SHOULDER_BUTTON | RIGHT_SHOULDER_BUTTON)) {
+        gGameplay->autoplayEnabled = TRUE;
+    } else {
+        gGameplay->autoplayEnabled = FALSE;
+    }
+    #endif
 
-    if (gGameplay->dpadCannotOverlap == TRUE) {
-        if (gGameplay->dpadIsOpen) {
-            if (pressed & DPAD_ALL) {
-                buttonsOnly = pressed & ~DPAD_ALL;
-                if (pressed & DPAD_UP) {
-                    pressed = DPAD_UP;
+    if(gGameplay->autoplayEnabled){
+        struct Cue *cue = gGameplay->cues;
+        while (cue != NULL) {
+            struct CueDefinition *cueDef = &cue->data;
+            s32 runningTime = cue->runningTime;
+            s32 duration = cue->duration;
+            if (!cue->unk48_b0 && !cue->hasExpired && runningTime == duration) {
+                u16 input = (cueDef->buttonFilter & 0x8000) ? 0 : cueDef->buttonFilter;
+                u16 release = (cueDef->buttonFilter & 0x8000) ? cueDef->buttonFilter : 0;
+
+                // ok so checks if there are multiple buttons
+                // and if there is then only keep the lowest button
+                // (else it registers as a miss for the... wrong button... thanks drum lessons!)
+                if (input & (input - 1)) {
+                    input &= (u16)(0 - input);
                 }
-                if (pressed & DPAD_DOWN) {
-                    pressed = DPAD_DOWN;
+                if (release & (release - 1)) {
+                    release &= (u16)(0 - release);
                 }
-                if (pressed & DPAD_LEFT) {
-                    pressed = DPAD_LEFT;
+                
+                if (gameplay_inputs_are_enabled()) { // if play inputs are enabled
+                    if ((input != 0) || (release != 0)) {
+                        gameplay_update_inputs(input, release); // Update Inputs
+                    }
                 }
-                if (pressed & DPAD_RIGHT) {
-                    pressed = DPAD_RIGHT;
-                }
-                pressed |= buttonsOnly;
-                gGameplay->dpadIsOpen = FALSE;
-                gGameplay->dpadClosedTimer = 10;
             }
-        } else {
-            pressed &= ~DPAD_ALL;
-            if (D_03004ac0 & DPAD_ALL) {
-                if (--gGameplay->dpadClosedTimer == 0) {
-                    gGameplay->dpadIsOpen = TRUE;
+            cue = cue->prev;
+        }
+    } else {
+        pressed = D_03004afc & gGameplay->buttonPressFilter;
+        released = D_03004b00 & gGameplay->buttonReleaseFilter;
+
+        if (gGameplay->dpadCannotOverlap == TRUE) {
+            if (gGameplay->dpadIsOpen) {
+                if (pressed & DPAD_ALL) {
+                    buttonsOnly = pressed & ~DPAD_ALL;
+                    if (pressed & DPAD_UP) {
+                        pressed = DPAD_UP;
+                    }
+                    if (pressed & DPAD_DOWN) {
+                        pressed = DPAD_DOWN;
+                    }
+                    if (pressed & DPAD_LEFT) {
+                        pressed = DPAD_LEFT;
+                    }
+                    if (pressed & DPAD_RIGHT) {
+                        pressed = DPAD_RIGHT;
+                    }
+                    pressed |= buttonsOnly;
+                    gGameplay->dpadIsOpen = FALSE;
+                    gGameplay->dpadClosedTimer = 10;
                 }
             } else {
-                gGameplay->dpadIsOpen = TRUE;
+                pressed &= ~DPAD_ALL;
+                if (D_03004ac0 & DPAD_ALL) {
+                    if (--gGameplay->dpadClosedTimer == 0) {
+                        gGameplay->dpadIsOpen = TRUE;
+                    }
+                } else {
+                    gGameplay->dpadIsOpen = TRUE;
+                }
             }
         }
-    }
 
-    if (gameplay_inputs_are_enabled()) { // if play inputs are enabled
-        if ((pressed != 0) || (released != 0)) {
-            gameplay_update_inputs(pressed, released); // Update Inputs
+
+        if (gameplay_inputs_are_enabled()) { // if play inputs are enabled
+            if ((pressed != 0) || (released != 0)) {
+                gameplay_update_inputs(pressed, released); // Update Inputs
+            }
         }
     }
 

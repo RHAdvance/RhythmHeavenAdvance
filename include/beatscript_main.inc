@@ -104,7 +104,7 @@ struct \name
     /* Init Func   */ .word func_0801d86c, sub_\name
     /* Update Func */ .word func_0801d8d8, NULL
     /* End Func    */ .word NULL,          NULL
-    /* Memory      */ .hword 0x5BC
+    /* Memory      */ .hword 0x5BD
 endstruct
 .endm
 

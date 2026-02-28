@@ -72,6 +72,7 @@ struct GameplaySceneData {
     u8  dpadClosedTimer;
     u8  mercyEnabled;
     u8  forgivableMisses;
+    u8  autoplayEnabled;
 };
 
 
