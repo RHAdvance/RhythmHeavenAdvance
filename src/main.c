@@ -62,7 +62,7 @@ void func_08000224(void) {
 	flush_save_buffer_to_sram_backup();
 	
 	// Initialize disclaimer flag from save data
-	if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAIMER)) {
+	if (peek_advance_flag(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAMER)) {
 		haveSeenDisclaimer = TRUE;
 	}
 	
