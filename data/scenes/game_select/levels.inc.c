@@ -276,7 +276,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Samurai Slice",
         /* Level Desc.   */ "Demons have put\n"
                             "the town in a panic!\n"
-                            "Come on Samurai--\n"
+                            "Come on, Samurai--\n"
                             "slice them all!",
         /* Level Icon    */ 18,
         /* Level Type    */ LEVEL_TYPE_GAME,

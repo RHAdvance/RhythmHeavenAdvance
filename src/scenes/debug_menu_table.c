@@ -104,87 +104,87 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Lesson (Short 1) */ {
         /* Scene */ &scene_drum_lesson_short_1,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　１）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　１）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 4) */ {
         /* Scene */ &scene_drum_lesson_short_4,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　４）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　４）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 8) */ {
         /* Scene */ &scene_drum_lesson_short_8,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　８）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　８）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 5) */ {
         /* Scene */ &scene_drum_lesson_short_5,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　５）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　５）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 7) */ {
         /* Scene */ &scene_drum_lesson_short_7,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　７）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　７）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 6) */ {
         /* Scene */ &scene_drum_lesson_short_6,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　６）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　６）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 9) */ {
         /* Scene */ &scene_drum_lesson_short_9,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　９）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　９）",
         /* Epil. */ FALSE
     },
     /* Lesson (Basic 1) */ {
         /* Scene */ &scene_drum_lesson_basic_1,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　１）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｉｎｔｒｏ　１）",
         /* Epil. */ FALSE
     },
     /* Lesson (Basic 2) */ {
         /* Scene */ &scene_drum_lesson_basic_2,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　２）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｉｎｔｒｏ　２）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 2) */ {
         /* Scene */ &scene_drum_lesson_short_2,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　２）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　２）",
         /* Epil. */ FALSE
     },
     /* Lesson (Short 3) */ {
         /* Scene */ &scene_drum_lesson_short_3,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｓｈｏｒｔ　３）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｂａｓｉｃ　３）",
         /* Epil. */ FALSE
     },
     /* Lesson (Long 4) */ {
         /* Scene */ &scene_drum_lesson_long_4,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｌｏｎｇ　４）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ａｄｖａｎｃｅｄ　４）",
         /* Epil. */ FALSE
     },
     /* Lesson (Long 2) */ {
         /* Scene */ &scene_drum_lesson_long_2,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｌｏｎｇ　２）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ａｄｖａｎｃｅｄ　２）",
         /* Epil. */ FALSE
     },
     /* Lesson (Long 3) */ {
         /* Scene */ &scene_drum_lesson_long_3,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｌｏｎｇ　３）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ａｄｖａｎｃｅｄ　３）",
         /* Epil. */ FALSE
     },
     /* Lesson (Long 1) */ {
         /* Scene */ &scene_drum_lesson_long_1,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｌｏｎｇ　１）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ａｄｖａｎｃｅｄ　１）",
         /* Epil. */ FALSE
     },
     /* Lesson (Long 5) */ {
         /* Scene */ &scene_drum_lesson_long_5,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｌｏｎｇ　５）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ａｄｖａｎｃｅｄ　５）",
         /* Epil. */ FALSE
     },
     /* Lesson (Long 6) */ {
         /* Scene */ &scene_drum_lesson_long_6,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｌｏｎｇ　６）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ａｄｖａｎｃｅｄ　６）",
         /* Epil. */ FALSE
     },
     /* Lesson (High-Tech 1) */ {
