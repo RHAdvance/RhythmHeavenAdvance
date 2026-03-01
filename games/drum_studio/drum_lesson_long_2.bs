@@ -66,8 +66,8 @@ return
 text D_08062ee0
     .ascii "\n"
     .ascii "Time to kick things up a notch!\n"
-    .ascii "Add a crash at the start and a\n"
-    .asciz "snare at the end! Let's go!\n"
+    .ascii "Add a crash at the start and\n"
+    .asciz "a snare at the end! Let's go!\n"
 endtext
 
 
