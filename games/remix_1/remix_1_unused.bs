@@ -914,6 +914,7 @@ script script_remix_1_unused_main
     load_clappy_trio
     clappy_trio_crouch_smirk
     rest 12
+    run stop_sound, s_f_boxing_just_rock_nc_seqData
     clappy_trio_do_clap 0
     rest 12
     clappy_trio_do_clap 1

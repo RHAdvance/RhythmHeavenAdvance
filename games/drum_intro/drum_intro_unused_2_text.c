@@ -15,7 +15,7 @@ const char D_0805d8ec[] =
 
 const char D_0805d900[] =
     "\n"
-    "This part's in waltz time!";
+    "This one's a short waltz!";
 
 const char D_0805d914[] =
     "\n"

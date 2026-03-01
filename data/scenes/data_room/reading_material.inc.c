@@ -27,7 +27,7 @@ struct ReadingMaterial reading_material_table[] = {
 
     /* MANUAL ("Handling Instructions") */ {
         /* TITLE ---------------------------------------------------------- */
-            "How to play",
+            "How to Play",
         /* BODY ----------------------------------------------------------- */
             "How to play the game:\n"
             "\n"
@@ -48,19 +48,19 @@ struct ReadingMaterial reading_material_table[] = {
         /* BODY ----------------------------------------------------------- */
             "I own and operate a Caf‡Q.\n"
             "I guess you could call me the barista.\n"
-            "It's going well thanks to the regulars.\n"
+            "Anyway, it's going well thanks to the regulars.\n"
             "And, uh, just to let you know, I'm a dog.\n"
             "Many of my customers love listening to music.\n"
             "A lot of them have especially good rhythm,\n"
             "and a few have even achieved a full set of Perfects!\n"
             "I'm always amazed by them!\n"
-            "I may look all professional when I run my Caf‡Q,\n"
+            "I may look all professional when I run my caf‡Q,\n"
             "but I'll be honest, I'm really putting on a front.\n"
             "See, it's a little embarrassing, but when I'm off the\n"
             "clock, I'm always jamming out with these little\n"
             "dog-sized headphones! What can I say?\n"
             "I need a little flow wherever I go.\n"
-            "It's complicated. Heh...\n"
+            "It's complicated. Haha...\n"
             "I do go out from time to time, so if you happen to\n"
             "run into me... please pet me!\n"
             "See you around.",
@@ -192,7 +192,6 @@ struct ReadingMaterial reading_material_table[] = {
             "Mr. F: But thinking about the kinds of people who\n"
             "use the Horse Machine and get even a little joy\n"
             "out of it...\n"
-            "\n"
             "Well, the hardships sort of just drift away.\n"
             "\n"
             "Mr. F, you are truly devoted to your craft. We look\n"
@@ -239,7 +238,7 @@ struct ReadingMaterial reading_material_table[] = {
             "It's got to be my imagination, right?\n"
             "\n"
             "May 22:\n"
-            "You'll never believe it! Sarge is...\n"
+            "You'll never believe it! Sarge was...\n"
             "\n"
             "The log ends here.\n"
             "Just what could've been happening with Sarge?",
@@ -273,10 +272,10 @@ struct ReadingMaterial reading_material_table[] = {
             "RM: And if that wasn't enough, they left a little\n"
             "note for us.\n"
             "DJ: What did it say?\n"
-            "RM: It said \"Sweets are so AWESOME!\"\n"
+            "RM: It just said \"Sweets are so AWESOME!\"\n"
             "DJ: Oh wow. How loathsome.\n"
             "RM: Right!? It was enough to make me yell...\n"
-            "DJ: You were like \"Wait a sec, We LOST SOME!\"\n"
+            "DJ: You were like, \"Wait a sec, we LOST SOME!\"\n"
             "RM: Uh... Yeah! How do you know that?\n"
             #ifdef PARADISE
             "DJ: Because I've been playing Rhythm Paradise\n"
@@ -288,6 +287,7 @@ struct ReadingMaterial reading_material_table[] = {
             "AD: UP your flow with Rhythm Heaven Advance!\n"
             #endif
             "Available now! Game and system sold separately.\n"
+            "\n"
             "End.",
         /* STYLE ---------------------------------------------------------- */
             /* GFX */ reading_style_cherry_gfx_table,
@@ -336,7 +336,7 @@ struct ReadingMaterial reading_material_table[] = {
             "Ha~ Bon Odori~\n"
             "\n"
             "\n"
-            "Translation: Mizuka Lover & Castie\n"
+            "Translation: Mizuka & Castie\n"
             "\n"
             "Haa~\n"
             "            Oh when the fireworks fly~\n"
@@ -491,7 +491,7 @@ struct ReadingMaterial reading_material_table[] = {
             #else
             "Rhythm Heaven Advance.\n"
             #endif
-            "That much is undeniable, and I fully recognize it.\n"
+            "That much is undeniable, and we fully recognize it.\n"
             "You are the best! One of the greatest! ...is how I feel,\n"
             "but that's enough praise.\n"
             "See, any rhythm you experienced in this game is just\n"
@@ -506,10 +506,10 @@ struct ReadingMaterial reading_material_table[] = {
             "\n"
             "We believe you have the potential to lead a world\n"
             "of rhythm!\n"
-            "In fact, we can ONLY believe in you!\n"
+            "In fact, it's got to be you, you're the only one\n"
+            "we believe in!\n"
             "You really are the best!\n"
             "Thank you so much for playing!\"\n"
-            "\n"
             "\001R" "Rhythm League Representative\n"
             "\001R" "Space Gramps",
         /* STYLE ---------------------------------------------------------- */
@@ -522,7 +522,7 @@ struct ReadingMaterial reading_material_table[] = {
         /* TITLE ---------------------------------------------------------- */
             "Ninja Scroll",
         /* BODY ----------------------------------------------------------- */
-            "Nice to meet you all. I'm Tanaka. The other day I\n"
+            "I'm Tanaka. It's nice to meet you. So, the other day I\n"
             "found a bizarre scroll in the back of storage.\n"
             "Written was the following:\n"
             "\n"

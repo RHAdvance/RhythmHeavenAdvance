@@ -45,7 +45,7 @@ const char D_0805bf58[] = "Your grip was weak.";
 
 const char D_0805bf70[] = "Nice grip!";
 
-const char D_0805bf8c[] = "You couldn't cope when you couldn't see.";
+const char D_0805bf8c[] = "You couldn't cope with the camera's movement.";
 
 const char D_0805bfa8[] = "You could bat while blindfolded!";
 
@@ -63,7 +63,7 @@ const char D_0805c024[] = "Your grip was weak.";
 
 const char D_0805c03c[] = "Nice grip!";
 
-const char D_0805c058[] = "You couldn't cope when you couldn't see.";
+const char D_0805c058[] = "You couldn't cope with the camera's movement.";
 
 const char D_0805c074[] = "You could bat while blindfolded!";
 

@@ -91,7 +91,7 @@ return
 text D_08060080
     .ascii "Let's add a tom beat.\n"
     .ascii "Remember, you can use\n"
-    .ascii "either ‡M or Right on ‡O\n"
+    .ascii "either ‡M or Left on ‡O\n"
     .asciz "for the snare.\n"
 endtext
 

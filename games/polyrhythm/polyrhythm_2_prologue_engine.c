@@ -12,12 +12,12 @@ struct CompressedData *polyrhythm_2_prologue_buffered_textures[] = {
 // [D_089eb9c0] Graphics Table
 struct GraphicsTable polyrhythm_2_prologue_gfx_table[] = {
     /* BG Tileset */ {
-        /* Src.  */ &polyrhythm_prologue_bg_tiles,
+        /* Src.  */ &polyrhythm_2_prologue_bg_tiles,
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
-        /* Src.  */ &polyrhythm_prologue_bg_map,
+        /* Src.  */ &polyrhythm_2_prologue_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

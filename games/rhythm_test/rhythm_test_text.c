@@ -15,7 +15,7 @@ const char D_0805ef10[] = "2";
 
 const char D_0805ef14[] = "1";
 
-const char D_0805ef18[] = "Press ‡M when the timer hits \"0\".";
+const char D_0805ef18[] = "Press ‡M when the timer hits 0.";
 
 const char D_0805ef44[] = "When there's no sound, count to yourself.";
 

@@ -163,9 +163,9 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_sick_beats,
         /* Level Name    */ "Sick Beats",
         /* Level Desc.   */ "\0023" "Assistant's memo:\n"
-                            "\"We have an outbreak\n"
+                            "We have an outbreak\n"
                             "of an unknown virus!\n"
-                            "Help us, Dr. Cutlery!\"",
+                            "Help us, Dr. Cutlery!",
         /* Level Icon    */ 13,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_sick_beats_gfx_tables,
@@ -234,7 +234,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_ninja_reincarnate_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "You can't give up now! We're counting on you!",
+            /* TRY_AGAIN */ "You can't give up! She's counting on you!",
             /* OK        */ "You are... strong. Don't give up yet.",
             /* SUPERB    */ "You have proven your worth! You have our blessing..."
         }
@@ -267,7 +267,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_sneaky_spirits_2_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Gah! They slipped right past you!",
-            /* OK        */ "\"L-Let me go! Please!\"",
+            /* OK        */ "L-Let me go! Please!",
             /* SUPERB    */ "You ghosts stay and think about what you've done!"
         }
     },
@@ -276,7 +276,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Samurai Slice",
         /* Level Desc.   */ "Demons have put\n"
                             "the town in a panic!\n"
-                            "Come on Samurai,\n"
+                            "Come on Samurai--\n"
                             "slice them all!",
         /* Level Icon    */ 18,
         /* Level Type    */ LEVEL_TYPE_GAME,
@@ -564,7 +564,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Cosmic Dance",
         /* Level Desc.   */ "These paragons of\n"
                             "dancing have mastered\n"
-                            "their Zero-G moves\n"
+                            "their zero-G moves\n"
                             "and want to show off!",
         /* Level Icon    */ 16,
         /* Level Type    */ LEVEL_TYPE_GAME,

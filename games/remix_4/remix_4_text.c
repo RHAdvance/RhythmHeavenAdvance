@@ -43,9 +43,9 @@ const char D_08068128[] =
 const char D_08068138[] = "Ｌｅｔ’ｓ　ｓｌｏｗ　ｔｈｉｎｇｓ　ｄｏｗｎ　ａ　ｂｉｔ．．．";
 
 const char D_0806814c[] =
-    "This is it,\n"
-    "the final\n"
-    "question!\n";
+    "This is it, the\n"
+    "final question!\n"
+    "\n";
 
 const char D_0806815c[] =
     "And the correct\n"

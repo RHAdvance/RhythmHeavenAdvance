@@ -690,8 +690,8 @@ u32 results_get_negative_comments(void) {
 // [D_089d7b34] Rank Comment Pool (Try Again)
 const char *results_try_again_comment_pool[] = {
     "",
-    "Likewise, ",
-    "Also... "
+    "...Also, ",
+    "...Also, "
 };
 
 
@@ -758,7 +758,7 @@ s24_8 results_get_positive_comments(void) {
                 modifiedComment[0] += 32;
             }
 
-            memcpy(commentsText, "...but ", 8);
+            memcpy(commentsText, "...But ", 8);
             strcat(commentsText, modifiedComment);
             anim = results_get_comment_anim(commentsText, TEXT_ANCHOR_BOTTOM_RIGHT, 3);
             palette = EXTRA_COMMENT_PALETTE;
@@ -774,10 +774,10 @@ s24_8 results_get_positive_comments(void) {
                     memcpy(commentsText, "", 1);
                     break;
                 case 1:
-                    memcpy(commentsText, "And, ", 10); // ("moreover,")
+                    memcpy(commentsText, "...And ", 10); // ("moreover,")
                     break;
                 default:
-                    memcpy(commentsText, "Plus, ", 9); // ("also,")
+                    memcpy(commentsText, "...Plus, ", 12); // ("also,")
                     break;
             }
             strcat(commentsText, modifiedComment);
