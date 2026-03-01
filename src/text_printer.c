@@ -338,34 +338,59 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     }
 
     if (maxWidthExceeded && (totalGlyphs != 0)) {
-        if (text_glyph_is_open_bracket(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
-            fGlyphData--;
-            totalGlyphs--;
-            totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-            stream = fGlyphData->formatSrc;
-        } else if (text_glyph_is_end_punctuation(stream)) {
-            do {
+        s32 lastSpace = -1;
+        for (i = totalGlyphs - 1; i >= 0; i--) {
+            if (*sGlyphBuffer[i].charSrc == ' ') {
+                lastSpace = i;
+                break;
+            }
+        }
+
+        if (lastSpace > 0) {
+            stream = sGlyphBuffer[lastSpace + 1].formatSrc;
+            totalGlyphs = lastSpace;
+
+            while (*stream == ' ') {
+                stream++;
+            }
+
+            if (totalGlyphs > 0) {
+                struct FormattedGlyph *lastGlyph = &sGlyphBuffer[totalGlyphs - 1];
+                totalWidth = lastGlyph->xOffset + lastGlyph->width;
+            } else {
+                totalWidth = 0;
+            }
+        } else {
+            // if there are no spaces, do it like originally (useful for japanese)
+            if (text_glyph_is_open_bracket(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
                 fGlyphData--;
                 totalGlyphs--;
                 totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-            } while ((totalGlyphs != 0) && text_glyph_is_end_punctuation(fGlyphData->charSrc));
-            stream = fGlyphData->formatSrc;
-        }
-
-        if (totalGlyphs != 0) {
-            struct FormattedGlyph *lastGlyph;
-            s32 xStart, w1, w2;
-
-            lastGlyph = &sGlyphBuffer[totalGlyphs] - 1;
-            xStart = sGlyphBuffer[0].xOffset;
-            w1 = clamp_int32((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
-            w2 = clamp_int32((lastGlyph->xOffset - xStart), 0, maxWidth);
-
-            for (i = 0; i < totalGlyphs; i++) {
-                sGlyphBuffer[i].xOffset = xStart + ((sGlyphBuffer[i].xOffset - xStart) * w1 / w2);
+                stream = fGlyphData->formatSrc;
+            } else if (text_glyph_is_end_punctuation(stream)) {
+                do {
+                    fGlyphData--;
+                    totalGlyphs--;
+                    totalWidth -= (fGlyphData->width + fGlyphData->spacing);
+                } while ((totalGlyphs != 0) && text_glyph_is_end_punctuation(fGlyphData->charSrc));
+                stream = fGlyphData->formatSrc;
             }
 
-            totalWidth = w1 + lastGlyph->width;
+            if (totalGlyphs != 0) {
+                struct FormattedGlyph *lastGlyph;
+                s32 xStart, w1, w2;
+
+                lastGlyph = &sGlyphBuffer[totalGlyphs] - 1;
+                xStart = sGlyphBuffer[0].xOffset;
+                w1 = clamp_int32((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
+                w2 = clamp_int32((lastGlyph->xOffset - xStart), 0, maxWidth);
+
+                for (i = 0; i < totalGlyphs; i++) {
+                    sGlyphBuffer[i].xOffset = xStart + ((sGlyphBuffer[i].xOffset - xStart) * w1 / w2);
+                }
+
+                totalWidth = w1 + lastGlyph->width;
+            }
         }
     }
 

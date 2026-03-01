@@ -301,17 +301,17 @@ const char *get_campaign_gift_title(s32 id, s32 shortenSongTitle) {
 void start_campaign_notice(s32 id) {
     struct CampaignNotice *notice = &gGameSelect->campaignNotice;
     u32 isSpecialSong = FALSE;
-    u32 isStandardSong = FALSE;
+    u32 isSong = FALSE;
     u32 giftType = campaign_gifts_table[id].type;
     u32 giftID = campaign_gifts_table[id].id;
     struct LevelData *level;
     char *string;
 
     if (giftType == CAMPAIGN_GIFT_SONG) {
-        isStandardSong = TRUE;
+        isSong = TRUE;
         switch (giftID) {
             case STUDIO_SONG_WISH:
-                isStandardSong = FALSE;
+            case STUDIO_SONG_HONEY_SWEET_ANGEL:
                 isSpecialSong = TRUE;
                 break;
         }
@@ -321,21 +321,22 @@ void start_campaign_notice(s32 id) {
     notice->y = campaign_gifts_table[id].y;
     level = get_level_data_from_grid_xy(notice->x, notice->y);
     string = notice->text;
-    memcpy(string, "\001C" "If you get a Perfect in\n", 45); // [Right now]
+    memcpy(string, "\001C" "If you get a Perfect in \n\"", 45); // [Right now]
     strcat(string, level->name); // "<game_name>"
-    strcat(string, "\nright now, you'll earn:\n"); // Get a perfect on this
-    strcat(string, ""); // "
-    if (!isSpecialSong) {
-    strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
-    } else {
-        strcat(string, "WISH - Can't Wait\n for You");
+    strcat(string, "\"\nright now, you'll earn:\n"); // Get a perfect on this
+    if(!isSpecialSong) {
+        strcat(string, "\""); // "
     }
-    strcat(string, "\n"); // "
-    if (isStandardSong) {
-        strcat(string, "as a song."); // 's song
+    strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
+    if (isSong) {
+        if(isSpecialSong) {
+            strcat(string, " as a song.");
+        } else {
+            strcat(string, "\"'s song.");
+        }
     }
     if (giftType == CAMPAIGN_GIFT_DRUM_KIT || giftType == CAMPAIGN_GIFT_READING_MATERIAL) {
-        strcat(string, "as a bonus."); // received as a present!!
+        strcat(string, "\" as a bonus."); // received as a present!!
     }
     text_printer_set_string(notice->printer, string);
 
