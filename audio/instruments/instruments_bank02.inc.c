@@ -553,3 +553,145 @@ struct InstrumentSubRhythm instrument_rhy_0055 = {
     /* Base Key  */ 36,
     /* Sub-Bank  */ inst_bank_54
 };
+
+extern struct SampleData rt_tempo_3_data;
+struct InstrumentPCM instrument_tmp_rt01 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_3_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x208000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_11_data;
+struct InstrumentPCM instrument_tmp_rt02 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_11_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_8_data;
+struct InstrumentPCM instrument_tmp_rt03 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_8_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_12_data;
+struct InstrumentPCM instrument_tmp_rt04 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_12_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_13_data;
+struct InstrumentPCM instrument_tmp_rd01 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_13_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_14_data;
+struct InstrumentPCM instrument_tmp_rd02 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_14_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_15_data;
+struct InstrumentPCM instrument_tmp_rd03 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_15_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_16_data;
+struct InstrumentPCM instrument_tmp_rd04 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_16_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData rt_tempo_17_data;
+struct InstrumentPCM instrument_tmp_rd05 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &rt_tempo_17_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x7F0000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern union Instrument inst_bank_71[];
+struct InstrumentSubRhythm instrument_tmp_rtdm = {
+    /* Type      */ INSTRUMENT_SUB_RHYTHM,
+    /* Base Key  */ 36,
+    /* Sub-Bank  */ inst_bank_71
+};

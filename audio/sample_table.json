@@ -5811,6 +5811,274 @@
         {
             "sample": "shockshort.wav",
             "pitch": "C5"
+        },
+                {
+            "sample": "sb_tempo_1.wav",
+            "pitch": "C6"
+        },
+        {
+            "sample": "sb_tempo_4.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_5.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_6.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_12.wav",
+            "pitch": "E5"
+        },
+        {
+            "sample": "sb_tempo_13.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "sb_tempo_16.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_18.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "sb_tempo_22.wav",
+            "pitch": "E4"
+        },
+        {
+            "sample": "sb_tempo_23.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "sb_tempo_24.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_25.wav",
+            "pitch": "F#5"
+        },
+        {
+            "sample": "sb_tempo_26.wav",
+            "pitch": "F#5"
+        },
+        {
+            "sample": "sb_tempo_27.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_28.wav",
+            "pitch": "F#5"
+        },
+        {
+            "sample": "sb_tempo_29.wav",
+            "pitch": "F#5"
+        },
+        {
+            "sample": "sb_tempo_30.wav",
+            "pitch": "F#5"
+        },
+        {
+            "sample": "sb_tempo_31.wav",
+            "pitch": "F#5"
+        },
+        {
+            "sample": "sb_tempo_32.wav",
+            "pitch": "E5"
+        },
+        {
+            "sample": "sb_tempo_33.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sb_tempo_34.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "rt_tempo_1.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "rt_tempo_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "rt_tempo_3.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "rt_tempo_4.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "rt_tempo_5.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "rt_tempo_6.wav",
+            "pitch": "B4"
+        },
+        {
+            "sample": "rt_tempo_7.wav",
+            "pitch": "B5"
+        },
+        {
+            "sample": "rt_tempo_8.wav",
+            "pitch": "B6"
+        },
+        {
+            "sample": "rt_tempo_9.wav",
+            "pitch": "C5"
+        },
+                {
+            "sample": "rt_tempo_10.wav",
+            "pitch": "C5"
+        },
+                {
+            "sample": "rt_tempo_11.wav",
+            "pitch": "C3"
+        },
+        {
+            "sample": "rt_tempo_12.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "rt_tempo_13.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "rt_tempo_14.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "rt_tempo_15.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "rt_tempo_16.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "rt_tempo_17.wav",
+            "pitch": "C4"
+        },
+                {
+            "sample": "awake_baby.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "baby.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "beat.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "can.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "give_you.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "groove.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hey.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hey_baby.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hey_baby_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hold_on_to_your_ambitions.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hows_it_going.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "hows_it_going_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "i.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "in_your.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "is.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "listen.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "new.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "non.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "oh_yeah.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "oh_yeah_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "oh_yeah_3.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "phrase.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "soul.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "stop.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "the_sense_of_rhythm.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "this.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "to_my.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "trust_me.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "you_are_growing_up_well.wav",
+            "pitch": "C5"
         }
     ]
 }

@@ -113,11 +113,11 @@ script script_spaceball_extra_main
     run gameplay_set_mercy_count, 1
     stop_tracking_inputs
     set_tempo 165
-    set_music_volume 240
+    set_music_volume 512
     spaceball_zoom_camera 0xff00, 96
     set_music_volume 60
     mod_music_volume 180, 192
-    play_music s_shibafu1_bgm_seqData
+    play_music spaceball_tempo_seqData
     start_perfect_campaign
     rest 24
     enable_pause_menu
@@ -127,7 +127,7 @@ script script_spaceball_extra_main
     rest 3
     run scene_stop_music
     rest 21
-    play_music s_shibafu1_bgm_seqData
+    play_music spaceball_tempo_seqData
     rest 24
     rest 24
     rest 24
@@ -136,7 +136,7 @@ script script_spaceball_extra_main
     run scene_stop_music
     rest 21
     loop_start
-        play_music s_shibafu1_bgm_seqData
+        play_music spaceball_tempo_seqData
         spawn_cue CUE_LOW
         rest 24
         spaceball_prep_pitcher
@@ -147,7 +147,7 @@ script script_spaceball_extra_main
         rest 3
         run scene_stop_music
         rest 21
-        play_music s_shibafu1_bgm_seqData
+        play_music spaceball_tempo_seqData
         spawn_cue CUE_LOW
         rest 24
         spaceball_prep_pitcher
@@ -160,7 +160,7 @@ script script_spaceball_extra_main
         rest 21
         spaceball_exit_loop_if_no_miss
     loop_end
-    play_music s_shibafu1_bgm_seqData
+    play_music spaceball_tempo_seqData
     spaceball_zoom_camera 0xfe00, 70
     spawn_cue CUE_LOW
     rest 24
@@ -181,6 +181,7 @@ script script_spaceball_extra_main
     start_tracking_inputs
     set_marking_criteria 0
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24
@@ -215,6 +216,7 @@ script script_spaceball_extra_main
     spaceball_zoom_camera 0xff00, 96
     set_marking_criteria 0
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24
@@ -249,6 +251,7 @@ script script_spaceball_extra_main
     spaceball_zoom_camera 0xff00, 96
     set_marking_criteria 0
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24
@@ -265,6 +268,7 @@ script script_spaceball_extra_main
     spaceball_prep_pitcher
     rest 24
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24
@@ -314,6 +318,7 @@ script script_spaceball_extra_main
     spaceball_zoom_camera 0xfd00, 24
     set_marking_criteria 1
     spawn_cue CUE_HIGH
+    play_sfx_vol spaceball_tempo_mpart_seqData, 176
     rest 24
     rest 24
     spaceball_zoom_camera 0xff00, 48
@@ -322,6 +327,7 @@ script script_spaceball_extra_main
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     spaceball_set_ufo_anim UFO_SWAY
@@ -365,6 +371,7 @@ script script_spaceball_extra_main
     spaceball_set_batter_sprite BATTER_RED
     set_marking_criteria 2
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24
@@ -396,6 +403,7 @@ script script_spaceball_extra_main
     rest 24
     spaceball_zoom_camera 0xff00, 192
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24
@@ -413,6 +421,7 @@ script script_spaceball_extra_main
     rest 24
     set_marking_criteria 0
     spawn_cue CUE_LOW
+    play_sfx_vol spaceball_tempo_cymbal_seqData, 176
     rest 24
     spaceball_prep_pitcher
     rest 24

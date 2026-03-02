@@ -382,3 +382,325 @@ struct InstrumentSubRhythm instrument_rhy_0081 = {
     /* Base Key  */ 36,
     /* Sub-Bank  */ inst_bank_54
 };
+
+extern struct SampleData sb_tempo_1_data;
+struct InstrumentPCM instrument_tmp_sb01 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_1_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x267C1F,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x01A433,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData sb_tempo_12_data;
+struct InstrumentPCM instrument_tmp_sb03 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_12_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x267C1F,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x01A433,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData sb_tempo_13_data;
+struct InstrumentPCM instrument_tmp_sb04 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_13_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000,
+};
+
+extern struct SampleData sb_tempo_16_data;
+struct InstrumentPCM instrument_tmp_sb05 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_16_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x267C1F,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x01A433,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData sb_tempo_18_data;
+struct InstrumentPCM instrument_tmp_sb06 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_18_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x267C1F,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x01A433,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData sb_tempo_22_data;
+struct InstrumentPCM instrument_tmp_sb07 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_22_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x267C1F,
+    /* ADSR Atk  */ 0x600000,
+    /* ADSR Dec  */ 0x01A433,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x13E350,
+};
+
+extern struct SampleData sb_tempo_31_data;
+struct InstrumentPCM instrument_tmp_sd01 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_31_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000,
+};
+
+extern struct SampleData sb_tempo_30_data;
+struct InstrumentPCM instrument_tmp_sd02 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_30_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_23_data;
+struct InstrumentPCM instrument_tmp_sd03 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_23_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_24_data;
+struct InstrumentPCM instrument_tmp_sd04 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_24_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_32_data;
+struct InstrumentPCM instrument_tmp_sd05 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_32_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_34_data;
+struct InstrumentPCM instrument_tmp_sd06 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_34_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_25_data;
+struct InstrumentPCM instrument_tmp_sd07 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_25_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_26_data;
+struct InstrumentPCM instrument_tmp_sd08 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_26_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_29_data;
+struct InstrumentPCM instrument_tmp_sd09 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_29_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_33_data;
+struct InstrumentPCM instrument_tmp_sd10 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_33_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_27_data;
+struct InstrumentPCM instrument_tmp_sd11 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_27_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_28_data;
+struct InstrumentPCM instrument_tmp_sd12 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_28_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_4_data;
+struct InstrumentPCM instrument_tmp_st01 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_4_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_5_data;
+struct InstrumentPCM instrument_tmp_st02 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_5_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern struct SampleData sb_tempo_6_data;
+struct InstrumentPCM instrument_tmp_st03 = {
+    /* Type      */ INSTRUMENT_PCM_ALIGNED,
+    /* Key       */ 0x3C,
+    /* Fast Read */ FALSE,
+    /* Panning   */ 127,
+    /* Sample    */ &sb_tempo_6_data,
+    /* ADSR Init */ 0x7F0000,
+    /* ADSR Sus  */ 0x000000,
+    /* ADSR Atk  */ 0x000000,
+    /* ADSR Dec  */ 0x000000,
+    /* ADSR Fade */ 0x000000,
+    /* ADSR Rel  */ 0x000000
+};
+
+extern union Instrument inst_bank_70[];
+struct InstrumentSubRhythm instrument_tmp_sbdm = {
+    /* Type      */ INSTRUMENT_SUB_RHYTHM,
+    /* Base Key  */ 36,
+    /* Sub-Bank  */ inst_bank_70
+};

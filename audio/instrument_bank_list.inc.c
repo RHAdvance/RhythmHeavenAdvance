@@ -1,7 +1,7 @@
 union Instrument *instrument_banks[] = {
     /* 000 */ NULL,
-    /* 001 */ NULL,
-    /* 002 */ NULL,
+    /* 001 */ inst_bank_71,
+    /* 002 */ inst_bank_70,
     /* 003 */ NULL,
     /* 004 */ NULL,
     /* 005 */ inst_bank_54,
@@ -111,5 +111,6 @@ union Instrument *instrument_banks[] = {
     /* 109 */ NULL,
     /* 110 */ inst_bank_62,
     /* 111 */ inst_bank_63,
+    /* 111 */ inst_bank_69,
     (void *)1
 };

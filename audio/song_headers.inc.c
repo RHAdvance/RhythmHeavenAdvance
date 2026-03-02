@@ -1,3 +1,63 @@
+extern const u8 s_karate_extra_bgm_mid[];
+struct SongHeader s_karate_extra_bgm_seqData = {
+    /* MIDI Sequence */ s_karate_extra_bgm_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_1,
+    /* Volume        */ 90,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_karate_extra_bgm_seqName,
+    /* Song Number   */ 0
+};
+
+extern const u8 rhythmtweezers_tempo_mid[];
+struct SongHeader rhythmtweezers_tempo_seqData = {
+    /* MIDI Sequence */ rhythmtweezers_tempo_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_2,
+    /* Volume        */ 120,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ rhythmtweezers_tempo_seqName,
+    /* Song Number   */ 1
+};
+
+extern const u8 spaceball_tempo_mid[];
+struct SongHeader spaceball_tempo_seqData = {
+    /* MIDI Sequence */ spaceball_tempo_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_3,
+    /* Volume        */ 120,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ spaceball_tempo_seqName,
+    /* Song Number   */ 2
+};
+
+extern const u8 spaceball_tempo_mpart_mid[];
+struct SongHeader spaceball_tempo_mpart_seqData = {
+    /* MIDI Sequence */ spaceball_tempo_mpart_mid,
+    /* Sound Player  */ SFX_PLAYER_5,
+    /* Bank Number   */ INST_BANK_3,
+    /* Volume        */ 127,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ spaceball_tempo_mpart_seqName,
+    /* Song Number   */ 6
+};
+
+extern const u8 spaceball_tempo_cymbal_mid[];
+struct SongHeader spaceball_tempo_cymbal_seqData = {
+    /* MIDI Sequence */ spaceball_tempo_cymbal_mid,
+    /* Sound Player  */ SFX_PLAYER_5,
+    /* Bank Number   */ INST_BANK_3,
+    /* Volume        */ 127,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ spaceball_tempo_cymbal_seqName,
+    /* Song Number   */ 7
+};
+
 extern const u8 Lesson1_mid[];
 struct SongHeader Lesson1_seqData = {
     /* MIDI Sequence */ Lesson1_mid,

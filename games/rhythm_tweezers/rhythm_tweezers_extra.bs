@@ -97,7 +97,7 @@ script script_rhythm_tweezers_extra_main
     start_tracking_inputs
     set_tempo 144
     set_music_volume 220
-    play_music s_datumo_bgm_seqData
+    play_music rhythmtweezers_tempo_seqData
     start_perfect_campaign
     stop_tracking_perfect_campaign
     rest 24
