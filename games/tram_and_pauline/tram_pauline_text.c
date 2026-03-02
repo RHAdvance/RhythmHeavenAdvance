@@ -17,7 +17,7 @@ const char D_0805db54[] = "Try and focus, you two.";
 
 const char D_0805db74[] = "Amazing acrobatics on both ends!";
 
-const char D_0805db94[] = "The Ringmaster's advice";
+const char D_0805db94[] = "The Ringmaster's advice:";
 
 const char D_0805dba0[] = "Ｈｉ，　Ｉ’ｍ　Ｔｒａｍ．．．";
 
