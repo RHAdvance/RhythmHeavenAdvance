@@ -267,7 +267,9 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event01
         play_sfx s_guntai_v_migi_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e1
+        #endif
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
@@ -285,7 +287,9 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event01
         play_sfx s_guntai_v_hidari_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e2
+        #endif
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
@@ -307,7 +311,9 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event01
         play_sfx s_guntai_v_susume_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e3
+        #endif
         rest 24
         marching_orders_event02 1
         play_sfx s_guntai_v_es_seqData
@@ -375,7 +381,9 @@ script script_marching_orders_practice
         marching_orders_event02 2
         marching_orders_event01
         play_sfx s_guntai_v_tomare_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e4
+        #endif
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_HALT
@@ -565,7 +573,9 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event01
         play_sfx s_guntai_v_migi_jp_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e1
+        #endif
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
@@ -583,7 +593,9 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event01
         play_sfx s_guntai_v_hidari_jp_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e2
+        #endif
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
@@ -603,7 +615,9 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event01
         play_sfx s_guntai_v_susume_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e3
+        #endif
         rest 4
         play_sfx s_guntai_v_susume_2_seqData
         rest 6
@@ -674,7 +688,9 @@ script script_marching_orders_practice
         marching_orders_event02 2
         marching_orders_event01
         play_sfx s_guntai_v_tomare_seqData
+        #ifdef PLUS
         print_text_f D_0805c8e4
+        #endif
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_HALT

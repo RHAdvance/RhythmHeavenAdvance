@@ -306,6 +306,7 @@ script script_bunny_hop_main
     start_perfect_campaign
     rest 24
     enable_pause_menu
+    #ifdef PLUS
     bunny_hop_event03 D_0805ccb8
     rest 24
     rest 24
@@ -342,6 +343,29 @@ script script_bunny_hop_main
     bunny_hop_event03 D_0805cc80
     rest 1
     bunny_hop_event03 D_0805ccb9
+    #else
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    rest 24
+    set_marking_criteria 0
+    bunny_hop_event02 FALSE
+    rest 24
+    bunny_hop_event02 FALSE
+    rest 24
+    bunny_hop_event01 1
+    spawn_cue CUE_BUNNY_01
+    spawn_cue CUE_BUNNY_02
+    bunny_hop_event02 FALSE
+    rest 24
+    #endif
     bunny_hop_event02 TRUE
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03

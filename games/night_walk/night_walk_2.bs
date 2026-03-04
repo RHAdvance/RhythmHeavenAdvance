@@ -9,7 +9,11 @@
 script script_night_walk_2_entry
     set_tempo 124
     rest 24
+    #ifdef PLUS
     call script_night_walk_2_prologue
+    #else
+    call script_night_walk_prologue
+    #endif
     set_game_fade_in_time 16
     load_night_walk
     enable_play_inputs
@@ -275,9 +279,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_KICK
     rest 24
     night_walk_set_platform 3
@@ -300,9 +308,13 @@ script script_night_walk_2_main
     set_marking_criteria 2
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     night_walk_set_platform 3
     spawn_cue CUE_SNARE
     rest 24
@@ -320,9 +332,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_KICK
     rest 24
     spawn_cue CUE_SNARE
@@ -345,9 +361,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_SNARE
     rest 24
     spawn_cue CUE_KICK
@@ -376,9 +396,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_SNARE
     rest 24
     spawn_cue CUE_KICK
@@ -387,9 +411,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_SNARE
     rest 24
     night_walk_set_platform 3
@@ -412,9 +440,13 @@ script script_night_walk_2_main
     set_marking_criteria 1
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_SNARE
     rest 24
     spawn_cue CUE_KICK
@@ -473,9 +505,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_KICK
     rest 24
     spawn_cue CUE_SNARE
@@ -484,9 +520,13 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_KICK
     rest 24
     spawn_cue CUE_SNARE
@@ -533,17 +573,25 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_KICK
     rest 24
     night_walk_set_platform 3
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     night_walk_set_platform 2
     spawn_cue CUE_KICK
     rest 24
@@ -559,17 +607,25 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_KICK
     rest 24
     night_walk_set_platform 3
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     night_walk_set_platform 1
     spawn_cue CUE_KICK
     rest 24
@@ -589,25 +645,37 @@ script script_night_walk_2_main
     rest 24
     spawn_cue CUE_KICK
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     night_walk_set_platform 0
     set_marking_criteria 2
     spawn_cue CUE_SNARE
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     spawn_cue CUE_SNARE
     rest 24
     spawn_cue CUE_SNARE
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     rest 12
+    #ifdef PLUS
     play_sfx s_f_shock_seqData
+    #endif
     night_walk_set_platform 1
     spawn_cue CUE_STAR_WAND
     rest 24

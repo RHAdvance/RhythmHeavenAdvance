@@ -10,6 +10,7 @@
 /* DATA */
 
 u32 levelsWithNoPractice[] = {
+    #ifdef PLUS
     LEVEL_REMIX_1,
     LEVEL_REMIX_2,
     LEVEL_REMIX_3,
@@ -40,6 +41,7 @@ u32 levelsWithNoPractice[] = {
     LEVEL_POLYRHYTHM_2,
     LEVEL_SPACEBALL_2,
     LEVEL_SNEAKY_SPIRITS_2,
+    #endif
 };
 
 
@@ -1090,7 +1092,7 @@ void game_select_read_inputs(void) {
                         sPlayCreditsAfterEpilogue = TRUE;
                     }
                     canHaveCampaign = TRUE;
-
+                    #ifdef PLUS
                     // hold select to replay a cleared campaign level
                     if(D_030046a8->data.campaignsCleared[get_campaign_from_level_id(levelID)] && (D_03004ac0 & SELECT_BUTTON)) {
                         D_030046a8->data.campaignState = CAMPAIGN_STATE_ACTIVE;
@@ -1102,7 +1104,7 @@ void game_select_read_inputs(void) {
                     } else {
                         sReplayingCampaign = FALSE;
                     }
-
+                    #endif
                     break;
 
                 case LEVEL_TYPE_BONUS:
@@ -1921,10 +1923,12 @@ void game_select_print_level_rank(s32 levelState) {
         levelState = LEVEL_STATE_OPEN;
     }
 
+    #ifdef PLUS
     // Check if the game has been perfected
     if (D_030046a8->data.campaignsCleared[get_campaign_from_level_id(gGameSelect->infoPaneLevelID)]) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
+    #endif
 
     for(i = 0; i < ARRAY_COUNT(levelsWithNoPractice); i++) {
         if(levelsWithNoPractice[i] == gGameSelect->infoPaneLevelID) {

@@ -104,12 +104,17 @@ void func_0803a798(u32 param) {
             sprite_set_visible(gSpriteHandler, gRatRace->cat_paw2_sprite, 0);
         break;
         case 1: 
+            #ifdef PLUS
             play_sound(&s_rat_paw_seqData);
+            #endif
             sprite_set_anim_cel(gSpriteHandler, gRatRace->cat_paw_sprite, 0);
             sprite_set_playback(gSpriteHandler, gRatRace->cat_paw_sprite, 1, 0x7f, 0);
             sprite_set_visible(gSpriteHandler, gRatRace->cat_paw_sprite, 1);
         break;
         case 2:
+            #ifdef PLUS
+            play_sound(&s_rat_paw_seqData);
+            #endif
             play_sound(&s_rat_cat_seqData);
             sprite_set_anim_cel(gSpriteHandler, gRatRace->cat_paw2_sprite, 0);
             sprite_set_playback(gSpriteHandler, gRatRace->cat_paw2_sprite, 1, 0x7f, 0);

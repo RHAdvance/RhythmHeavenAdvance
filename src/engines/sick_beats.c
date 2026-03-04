@@ -588,7 +588,9 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
             if (isVirusHit) {
                 break;
             }
+            #ifdef PLUS
             {
+                
                 struct SoundPlayer *player;
                 s8 panning;
                 s16 pitch;
@@ -630,6 +632,9 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                     midi_player_set_pitch(player, 0xFFFF, pitch);
                 }
             }
+            #else
+            play_sound(&s_f_virus_uhihi_seqData);
+            #endif
             break;
         case SICK_BEATS_VIRUS_STATE_UP_DASH_INVULN:
         case SICK_BEATS_VIRUS_STATE_LEFT_DASH_INVULN:
