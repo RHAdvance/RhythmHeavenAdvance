@@ -99,7 +99,3 @@ void write_game_save_data(void) {
     write_save_buffer_data_to_sram((void *)&D_030046a8->data, sizeof(struct TengokuSaveData));
 #endif
 }
-
-void request_game_save_data_write(void) {
-    trigger_req_save_data_sync();
-}

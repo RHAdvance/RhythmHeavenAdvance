@@ -828,7 +828,7 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     } else {
         gGameSelect->runningLevelEvents = FALSE;
         gGameSelect->levelEventTimer = 0;
-        request_game_save_data_write();
+        write_game_save_data();
 
         if (gGameSelect->campaignNotice.hasNewCampaign) {
             start_campaign_notice(D_030046a8->data.currentCampaign);
@@ -1818,7 +1818,7 @@ void game_select_update_level_events(void) {
     }
 #endif
 
-    request_game_save_data_write();
+    write_game_save_data();
 
     if (gGameSelect->campaignNotice.hasNewCampaign) {
         start_campaign_notice(D_030046a8->data.currentCampaign);
@@ -2379,7 +2379,7 @@ void game_select_scene_stop(void *sVar, s32 dArg) {
 
     func_08006d80();
     func_08007014(0);
-    request_game_save_data_write();
+    write_game_save_data();
 }
 
 
