@@ -95,10 +95,7 @@ void reset_game_save_data(void) {
 
 // [func_08010478] Bulk Copy to Rhythm Tengoku Game Save Data
 void write_game_save_data(void) {
+#ifndef PLAYTEST
     write_save_buffer_data_to_sram((void *)&D_030046a8->data, sizeof(struct TengokuSaveData));
+#endif
 }
-
-void request_game_save_data_write(void) {
-    trigger_req_save_data_sync();
-}
-

@@ -1,7 +1,7 @@
-#include "src/scenes/reading_material.h"
+#include "reading_materials.h"
 
 // [D_089d7e74] Reading Material Table
-struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIAL] = {
+struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
     /* WELCOME ("Rhythm Tengoku Welcome") */ {
         /* TITLE ---------------------------------------------------------- */
             "Greetings",

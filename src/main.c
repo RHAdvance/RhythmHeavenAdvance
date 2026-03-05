@@ -62,7 +62,7 @@ void func_08000224(void) {
 	flush_save_buffer_to_sram_backup();
 	
 	// Initialize disclaimer flag from save data
-	if (peek_advance_flag(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAMER)) {
+	if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAIMER)) {
 		haveSeenDisclaimer = TRUE;
 	}
 	
@@ -73,11 +73,6 @@ void func_08000224(void) {
 	func_08009150();
 	func_080091d8();
 	D_03004498 = TRUE;
-}
-
-static s32 requested_save_data_sync;
-void trigger_req_save_data_sync(void) {
-    requested_save_data_sync = 1;
 }
 
 void agb_main(void) {
@@ -104,9 +99,7 @@ void agb_main(void) {
 	REG_IME = 0;
 
 	D_03004498 = FALSE;
-
-	requested_save_data_sync = 0;
-
+    
 	init_ewram();
 	func_08000224();
 	debug_menu_scene_init_memory();
@@ -146,11 +139,6 @@ void agb_main(void) {
 		midi_sound_main();
 		update_time_keeper();
 		func_08003ff0();
-
-		if (requested_save_data_sync) {
-			write_game_save_data();
-			requested_save_data_sync = 0;
-		}
 	}
 }
 

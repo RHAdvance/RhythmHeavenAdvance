@@ -92,13 +92,11 @@ enum PerfectCampaignsEnum {
 
 
 // Total standard games and remixes, i.e. those within the main campaign.
-#define TOTAL_BASE_RHYTHM_GAMES (TOTAL_BASE_PERFECT_CAMPAIGNS)
+#define TOTAL_RHYTHM_GAMES ((u32)TOTAL_PERFECT_CAMPAIGNS)
 
-#define TOTAL_RHYTHM_GAMES (TOTAL_PERFECT_CAMPAIGNS)
 
 // Total Medals to collect.
-// TODO (conhlee): this might need to be modified! Check
-#define MAX_MEDALS (TOTAL_BASE_RHYTHM_GAMES)
+#define MAX_MEDALS (TOTAL_RHYTHM_GAMES)
 
 
 // Default score for Levels.
@@ -190,7 +188,7 @@ enum RhythmGameLevelsEnum {
     /* 54 */ LEVEL_LIVE_MENU,
 
     /* -- */ TOTAL_BASE_LEVELS,
-
+    
     /* -- */ START_EXTRA_LEVELS = TOTAL_BASE_LEVELS,
 
     /* 55 */ LEVEL_KARATE_MAN_EXTRA = START_EXTRA_LEVELS,

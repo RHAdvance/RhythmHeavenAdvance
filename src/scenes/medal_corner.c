@@ -219,7 +219,7 @@ void medal_corner_scene_start(void *sVar, s32 dArg) {
 
     gameplay_pause_menu_set_quit_destination(get_current_scene());
     gMedalCorner->inputsEnabled = FALSE;
-    request_game_save_data_write();
+    write_game_save_data();
 }
 
 
