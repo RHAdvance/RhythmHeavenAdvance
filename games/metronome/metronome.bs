@@ -91,6 +91,7 @@ script script_metronome_main
     run score_results_set_grade_comments, metronome_grade_comments
     set_tempo 120
     set_music_volume 256
+    enable_pause_menu
     rest 12
     stop_tracking_inputs
     run gameplay_assess_irrelevant_inputs, FALSE
