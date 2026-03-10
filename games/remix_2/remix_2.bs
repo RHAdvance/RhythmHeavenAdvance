@@ -453,6 +453,7 @@ script script_remix_2_main
     rest 24
     sneaky_spirits_draw_bow
     sneaky_spirits_show_ghost 4
+    #ifdef PLUS
     sneaky_spirits_print_text D_0806801C
     play_sfx s_intro_three_seqData
     beat_anim
@@ -519,6 +520,44 @@ script script_remix_2_main
     rest 24
     sneaky_spirits_print_text D_08068028
     beat_anim
+    #else
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 1
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 2
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 3
+    beat_anim
+    rest 24
+    sneaky_spirits_draw_bow
+    sneaky_spirits_show_ghost 4
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 5
+    beat_anim
+    rest 24
+    sneaky_spirits_show_ghost 6
+    spawn_cue CUE_STRICT
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    #endif
     rest 24
     play_music L2_pat11_seqData
     sneaky_spirits_wind_sfx_enabled TRUE

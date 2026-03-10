@@ -98,6 +98,7 @@ script script_spaceball_unused_2_main
     set_music_volume 256
     run gameplay_force_stop_music_midi_track, 6
     spaceball_zoom_camera 0xff00, 96
+    enable_pause_menu
     loop_start
         spawn_cue CUE_LOW
         beat_anim

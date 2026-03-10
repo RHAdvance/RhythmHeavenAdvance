@@ -152,6 +152,7 @@ char s_tran_seino_seqName[] = "";
 char s_tran_hensin_seqName[] = "";
 char s_tran_jump_se_left_seqName[] = "";
 char s_tran_jump_se_right_seqName[] = "";
+char s_tran_jump_se_seqName[] = "";
 char s_toss_red_blue1_seqName[] = "";
 char s_toss_red_blue2_seqName[] = "";
 char s_toss_red_blue3_seqName[] = "";

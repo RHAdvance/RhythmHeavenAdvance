@@ -690,7 +690,7 @@ u32 results_get_negative_comments(void) {
 // [D_089d7b34] Rank Comment Pool (Try Again)
 const char *results_try_again_comment_pool[] = {
     "",
-    "...Also, ",
+    "...And, ",
     "...Also, "
 };
 

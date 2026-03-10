@@ -39,7 +39,7 @@ void func_080400d0(u8 fox) {
         ],
         0, 0, 0, 0
     );
-    
+    #ifdef PLUS
     if (fox == 0) {
         // Left for Tram
         play_sound_in_player(3, &s_tran_jump_se_left_seqData);
@@ -48,6 +48,9 @@ void func_080400d0(u8 fox) {
         // Right for Pauline
         play_sound_in_player(4, &s_tran_jump_se_right_seqData);
     }
+    #else
+    play_sound_in_player(2, &s_tran_jump_se_seqData);
+    #endif
     
 }
 

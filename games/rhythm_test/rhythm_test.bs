@@ -987,4 +987,13 @@ script script_rhythm_test_main
     rest 24
     goto rhythm_test_sub_08a40cb4
 
+
+script script_rhythm_test_opening_main
+    set_tempo 120
+    set_music_volume 256
+    play_music s_check_machine_seqData
+    rest 24
+    rest 24
+    goto rhythm_test_sub_08a40cb4
+
 .end

@@ -70,7 +70,11 @@ script script_drum_samurai_opening_cutscene_main
     run gameplay_display_text_and_wait
     rest 12
     run gameplay_pause_menu_set_quit_destination, scene_drum_samurai_opening_cutscene_2
+    #ifdef PLUS
     run set_next_scene, scene_rhythm_test_opening
+    #else
+    run set_next_scene, script_rhythm_test_opening_main
+    #endif
     run func_08047e64, scene_drum_samurai_opening_cutscene_2
 return
 
