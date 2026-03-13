@@ -301,6 +301,7 @@ script script_drum_intro_unused_2_intro
     set_tempo 120
     set_music_volume 0
     mod_music_volume 256, 192
+    enable_pause_menu
     stop_tracking_inputs
     rest 24
     rest 24
