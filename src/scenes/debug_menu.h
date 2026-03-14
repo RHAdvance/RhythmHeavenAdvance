@@ -7,7 +7,7 @@
 // MACROS
 #define gDebugMenu ((struct DebugMenuSceneData *)gCurrentSceneData)
 #define END_OF_DEBUG_ENTRIES { NULL, NULL }
-#define DEBUG_MENU_ENTRY_PER_PAGE 7
+#define DEBUG_MENU_ENTRY_PER_PAGE 6
 
 
 // TYPES
