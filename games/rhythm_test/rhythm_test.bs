@@ -13,6 +13,7 @@ script script_rhythm_test_click_entry
     load_rhythm_test
     enable_play_inputs
     start_tracking_inputs
+    enable_pause_menu
     call script_rhythm_test_click_main
     disable_pause_menu
     disable_play_inputs
@@ -35,6 +36,7 @@ script script_rhythm_test_cue_entry
     load_rhythm_test
     enable_play_inputs
     start_tracking_inputs
+    enable_pause_menu
     call script_rhythm_test_cue_main
     disable_pause_menu
     disable_play_inputs
@@ -57,6 +59,7 @@ script script_rhythm_test_trick_entry
     load_rhythm_test
     enable_play_inputs
     start_tracking_inputs
+    enable_pause_menu
     call script_rhythm_test_trick_main
     disable_pause_menu
     disable_play_inputs
@@ -100,6 +103,7 @@ script script_rhythm_test_opening_entry
     rest 24
     load_rhythm_test
     enable_play_inputs
+    enable_pause_menu
     start_tracking_inputs
     call script_rhythm_test_main
     disable_pause_menu
