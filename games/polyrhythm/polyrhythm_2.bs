@@ -9,7 +9,11 @@
 script script_polyrhythm_2_entry
     set_tempo 124
     rest 24
+    #ifdef PLUS
     call script_polyrhythm_2_prologue
+    #else
+    call script_polyrhythm_prologue
+    #endif
     set_game_fade_in_time 16
     load_polyrhythm_2
     enable_play_inputs

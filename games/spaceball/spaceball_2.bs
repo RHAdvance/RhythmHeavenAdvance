@@ -9,7 +9,11 @@
 script script_spaceball_2_entry
     set_tempo 124
     rest 24
+    #ifdef PLUS
     call script_spaceball_2_prologue
+    #else
+    call script_spaceball_prologue
+    #endif
     set_game_fade_in_time 16
     load_spaceball
     enable_play_inputs

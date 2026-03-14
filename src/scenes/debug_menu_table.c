@@ -184,12 +184,12 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Lesson (High-Tech 1) */ {
         /* Scene */ &scene_drum_lesson_hi_tech_1,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｔｅｃｈｎｉｃａｌ　１）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｔｅｃｈｎ．　１）",
         /* Epil. */ FALSE
     },
     /* Lesson (High-Tech 2) */ {
         /* Scene */ &scene_drum_lesson_hi_tech_2,
-        /* Label */ "Ｌｅｓｓｏｎ　（Ｔｅｃｈｎｉｃａｌ　２）",
+        /* Label */ "Ｌｅｓｓｏｎ　（Ｔｅｃｈｎ．　２）",
         /* Epil. */ FALSE
     },
     /* Studio Drummer */ {
@@ -294,7 +294,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Drum Girls LIVE */ {
         /* Scene */ &scene_drum_girls_live_unused,
-        /* Label */ "Ｄｒｕｍ　Ｇｉｒｌｓ",
+        /* Label */ "Ｄｒｕｍ　Ｇｉｒｌｓ　（Ｕｎｕｓｅｄ）",
         /* Epil. */ TRUE
     },
     /* Power Calligraphy */ {

@@ -54,7 +54,7 @@ const char D_0805da00[] =
     "applies when playing music.";
 
 const char D_0805da5c[] =
-    "Alright, Lesson 2.\n"
+    "Alright, lesson 2.\n"
     "Let's practice the\n"
     "\"start\" of the music.";
 

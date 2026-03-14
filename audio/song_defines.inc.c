@@ -1318,7 +1318,7 @@
 /* 1303 */ DEFINE_SONG( &s_tran_hensin_seqData,              SFX_PLAYER_1   )
 /* 1304 */ DEFINE_SONG( &s_tran_jump_se_left_seqData,        SFX_PLAYER_2   )
 /* 1305 */ DEFINE_SONG( &s_tran_jump_se_right_seqData,       SFX_PLAYER_3   )
-/* 1306 */ DEFINE_SONG( NULL, 0 )
+/* 1305 */ DEFINE_SONG( &s_tran_jump_se_seqData,             SFX_PLAYER_2   )
 /* 1307 */ DEFINE_SONG( NULL, 0 )
 /* 1308 */ DEFINE_SONG( NULL, 0 )
 /* 1309 */ DEFINE_SONG( NULL, 0 )

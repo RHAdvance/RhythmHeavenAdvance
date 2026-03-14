@@ -149,6 +149,7 @@ extern struct SongHeader s_tran_seino_seqData;
 extern struct SongHeader s_tran_hensin_seqData;
 extern struct SongHeader s_tran_jump_se_left_seqData;
 extern struct SongHeader s_tran_jump_se_right_seqData;
+extern struct SongHeader s_tran_jump_se_seqData;
 extern struct SongHeader s_toss_red_blue1_seqData;
 extern struct SongHeader s_toss_red_blue2_seqData;
 extern struct SongHeader s_toss_red_blue3_seqData;

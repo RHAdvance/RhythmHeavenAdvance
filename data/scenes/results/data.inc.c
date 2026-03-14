@@ -20,8 +20,8 @@ const char *results_letter_ranks[] = {
 
 // [D_089d7998] DEBUG Skill Comments - Accuracy
 const char *results_skill_text_accuracy[] = {
-    "‚o‚’‚‚†‚…‚“‚“‚‰‚‚‚‚Œ@‚‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
-    "‚r‚…‚‚“‚…@‚‚†@‚’‚ˆ‚™‚”‚ˆ‚",
+    "‚o‚’‚‚†‚…‚“‚“‚‰‚‚‚‚Œ@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
+    "‚r‚…‚‚“‚…@‚‚†@‚q‚ˆ‚™‚”‚ˆ‚",
     "‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™@‚r‚‚”‚‰‚“‚†‚‚ƒ‚”‚‰‚‚",
     NULL
 };
@@ -54,8 +54,8 @@ const char *results_skill_text_barely_trk1[] = {
 // [D_089d79c8] DEBUG Skill Comments - Hits
 const char *results_skill_text_hit_avg[] = {
     "‚`‚‚‚”‚…‚•‚’@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
-    "‚n‚’‚„‚‰‚‚‚’‚™@‚‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
-    "‚l‚‚„‚…‚’‚‚”‚…@‚‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
+    "‚n‚’‚„‚‰‚‚‚’‚™@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
+    "‚l‚‚„‚…‚’‚‚”‚…@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
     NULL
 };
 
@@ -100,11 +100,11 @@ const char *results_skill_text_miss_trk2[] = {
 const char *results_skill_text_random[] = {
     "‚m‚…‚˜‚”@‚x‚…‚‚’f‚“@‚k‚‚–‚…",
     "‚s‚ˆ‚‰‚“@‚x‚…‚‚’f‚“@‚v‚…‚‚Œ‚”‚ˆ",
-    "‚s‚‚‚‚’‚’‚‚—f‚“@‚—‚…‚‚”‚ˆ‚…‚’",
-    "‚x‚…‚“‚”‚…‚’‚„‚‚™f‚“@‚„‚‰‚‚‚…‚’",
+    "‚s‚‚‚‚’‚’‚‚—f‚“@‚v‚…‚‚”‚ˆ‚…‚’",
+    "‚x‚…‚“‚”‚…‚’‚„‚‚™f‚“@‚c‚‰‚‚‚…‚’",
     "‚a‚Œ‚‚‚„@‚s‚™‚‚…@‚o‚’‚…‚„‚‰‚ƒ‚”‚‰‚‚",
     "‚x‚‚•‚’@‚t‚‚‚‚’‚‰‚‚‡‚‰‚‚‡",
-    "‚x‚‚•‚’@‚ˆ‚•‚‚‚‚‰‚”‚™",
+    "‚x‚‚•‚’@‚g‚•‚‚‚‚‰‚”‚™",
     NULL
 };
 

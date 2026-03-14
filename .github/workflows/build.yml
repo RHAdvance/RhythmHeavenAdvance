@@ -54,7 +54,7 @@ jobs:
 
     - name: Build rhythmheavenadvance (Japanese SFX)
       run: |
-        make -j$(nproc) FEATURES=PLAYTEST
+        make -j$(nproc) FEATURES="PLAYTEST PLUS"
     
     - name: Make BPS patch (Japanese SFX)
       run: |
@@ -66,7 +66,7 @@ jobs:
 
     - name: Build rhythmheavenadvance (English SFX)
       run: |
-        make -j$(nproc) FEATURES="PLAYTEST SFX"
+        make -j$(nproc) FEATURES="PLAYTEST PLUS SFX"
     
     - name: Make BPS patch (English SFX)
       run: |

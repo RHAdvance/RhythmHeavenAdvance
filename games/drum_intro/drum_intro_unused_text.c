@@ -13,7 +13,7 @@ const char D_0805d438[] =
 const char D_0805d458[] =
     "Do you like drums?\n"
     "I guess you don't hate them,\n"
-    "that's good at least\n"
+    "at least.\n"
     "Want me to help you play?";
 
 const char D_0805d4b4[] =
@@ -23,7 +23,7 @@ const char D_0805d4b4[] =
     "it'll be a fun one!";
 
 const char D_0805d508[] =
-    "First off, Lesson 1.\n"
+    "First off, lesson 1.\n"
     "I'll play you a pattern,\n"
     "and you copy after me.";
 

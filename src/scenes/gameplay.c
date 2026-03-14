@@ -713,9 +713,20 @@ void gameplay_add_cue_result(u32 markingCriteria, u32 cueResult, s32 timingOffse
     // Perfect Campaign
     if (cueResult == CUE_RESULT_HIT) {
         gameplay_register_perfect_input();
-    } else if (cueResult < 4) {
+    } 
+    #ifdef PLUS
+    else if ((cueResult == CUE_RESULT_BARELY) || (cueResult == CUE_RESULT_MISS)) {
+        gameplay_register_imperfect_input();
+    } else if (cueResult == CUE_RESULT_NONE) {
+        if (gGameplay->cues != NULL) {
+            gameplay_register_imperfect_input();
+        }
+    }
+    #else
+    else if (cueResult < 4) {
         gameplay_register_imperfect_input();
     }
+    #endif
 }
 
 
