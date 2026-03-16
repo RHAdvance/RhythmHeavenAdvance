@@ -6,15 +6,15 @@
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
 // helper functions
-#define SET_ADVANCE_FLAG(flags, flag) (flags |= (1 << flag))
-#define CLEAR_ADVANCE_FLAG(flags, flag) (flags &= ~(1 << flag))
-#define CHECK_ADVANCE_FLAG(flags, flag) ((flags >> flag) & 1)
-#define TOGGLE_ADVANCE_FLAG(flags, flag) (flags ^= (1 << flag))
+#define SET_ADVANCE_FLAG(flags, flag)   ((flags) |= (flag))
+#define CLEAR_ADVANCE_FLAG(flags, flag) ((flags) &= ~(flag))
+#define CHECK_ADVANCE_FLAG(flags, flag) (((flags) & (flag)) != 0)
+#define TOGGLE_ADVANCE_FLAG(flags, flag) ((flags) ^= (flag))
 
 enum AdvanceFlagsEnum {
-    /* 00 */ ADVANCE_FLAG_SAVE_CONVERTED            = (1 << 0),
-    /* 01 */ ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC = (1 << 1),
-    /* 02 */ ADVANCE_FLAG_SEEN_DISCLAIMER            = (1 << 2),
+    /* 01 */ ADVANCE_FLAG_SAVE_CONVERTED                = (1 << 0),
+    /* 02 */ ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC     = (1 << 1),
+    /* 04 */ ADVANCE_FLAG_SEEN_DISCLAIMER               = (1 << 2),
 };
 
 extern struct SaveBuffer {
@@ -62,7 +62,7 @@ extern struct SaveBuffer {
         u8 minFailsForBaristaHelp;
         u8 unk291;
         u32 unk294[16];
-        /*
+        /* why is this commented and not unpacked??????
             u32 highScoreMrUpbeat;
             u32 highScoreMannequinFactory;
             u32 highScoreSickBeatsSP;
