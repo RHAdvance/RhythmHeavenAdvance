@@ -658,7 +658,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Sequence Test */ {
         /* Scene */ &scene_debug_menu,
-        /* Label */ "‚r‚…‚‘‚•‚…‚‚ƒ‚…@‚s‚…‚“‚”",
+        /* Label */ "‚c‚…‚‚‚•‚‡@‚l‚…‚‚•",
         /* Epil. */ FALSE
     },
     END_OF_DEBUG_ENTRIES

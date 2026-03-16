@@ -28,7 +28,7 @@ const char D_0805dd40[] =
     "Welcome!";
 
 const char D_0805dd50[] =
-    "We're Ponta and Monkey\n"
+    "We're Ponta and Monkey.\n"
     "The Samurai Drummer\n"
     "introduced us here\n"
     "to play with you.";
