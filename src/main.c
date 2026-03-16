@@ -115,8 +115,12 @@ void agb_main(void) {
 
 	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
 	init_scenes(&scene_warning);
-	set_scene_trans_target(&scene_warning, &scene_disclaimer);
+    set_scene_trans_target(&scene_warning, &scene_disclaimer);
+#ifdef DEBUG
+    set_scene_trans_target(&scene_disclaimer, &scene_debug_menu);
+#else
 	set_scene_trans_target(&scene_disclaimer, &scene_title);
+#endif
 	update_key_listener();
 
 	while (TRUE) {

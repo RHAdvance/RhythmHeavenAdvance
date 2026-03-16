@@ -38,6 +38,10 @@ extern struct Scene scene_debug_menu;
 extern struct Scene scene_data_check;
 extern struct Scene scene_data_clear;
 extern struct Scene scene_flash_mem_test;
+extern struct Scene scene_save_editor;
+extern struct Scene scene_asset_test;
+extern struct Scene scene_template;
+extern struct Scene scene_read_error;
 
 // Main Games
 extern struct Scene scene_karate_man;
