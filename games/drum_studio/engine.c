@@ -121,21 +121,21 @@ const char D_08059f94[] = "";
 
 const char D_08059f98[] = "";
 
-const char D_08059f9c[] = "\nFocus only on the beginning!";
+const char D_08059f9c[] = "\nFocus just on the start!";
 
-const char D_08059fb4[] = "\nAim for the beginning!";
+const char D_08059fb4[] = "\nAim for the start.";
 
-const char D_08059fd0[] = "\nDon't space out!";
+const char D_08059fd0[] = "\nStay focused!";
 
-const char D_08059fe8[] = "\nPress the A button too.";
+const char D_08059fe8[] = "\nPress (A), too.";
 
-const char D_0805a004[] = "\nPress the R button too.";
+const char D_0805a004[] = "\nPress (R Trigger), too.";
 
-const char D_0805a020[] = "\npress them simultaneously!";
+const char D_0805a020[] = "\nPress (A) and (R) together.";
 
-const char D_0805a038[] = "\nDon't rush it!";
+const char D_0805a038[] = "\nDon't rush it.";
 
-const char D_0805a048[] = "\nYou were late";
+const char D_0805a048[] = "\nYou were late...";
 
 const char D_0805a058[] = "\nFlawless!";
 

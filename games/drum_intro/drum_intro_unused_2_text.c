@@ -38,8 +38,8 @@ const char D_0805d97c[] =
 
 const char D_0805d9a8[] =
     "\n"
-    "Oh, hi again.\n"
-    "I'm Samurai Drummer";
+    "Oh, hello again.\n"
+    "I'm Samurai Drummer.";
 
 const char D_0805d9c8[] =
     "Well...\n"
