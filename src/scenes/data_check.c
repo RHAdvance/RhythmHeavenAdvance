@@ -188,7 +188,7 @@ void data_check_print_page(s32 id) {
         strcat(string, "( First OK: Attempt "); // ( First OK:
 
         if (firstOK == 0) {
-            strcat(string, "None Yet"); // Not Yet
+            strcat(string, "None"); // Not Yet
         } else {
             strintf(number, firstOK);
             strcat(string, number);

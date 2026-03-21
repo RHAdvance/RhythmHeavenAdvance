@@ -38,7 +38,7 @@ const char *const D_0805e520[] = {
 
 const char D_0805e530[] =
     "\n"
-    "Your turn.";
+    "Now for your turn.";
 
 const char D_0805e544[] =
     "\n"
