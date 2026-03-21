@@ -621,24 +621,24 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q|‚h‚p@‚c‚‚”‚@‚b‚ˆ‚…‚ƒ‚‹",
         /* Epil. */ FALSE
     },
-    /* Flash Memory Test */ {
-        /* Scene */ &scene_flash_mem_test,
-        /* Label */ "‚e‚Œ‚‚“‚ˆ@‚l‚…‚‚‚’‚™@‚s‚…‚“‚”",
-        /* Epil. */ FALSE
-    },
     /* Asset Test */ {
         /* Scene */ &scene_asset_test,
         /* Label */ "‚`‚“‚“‚…‚”@‚s‚…‚“‚”",
         /* Epil. */ FALSE  
     },
-    /* Template Scene */ {
-        /* Scene */ &scene_template,
-        /* Label */ "‚s‚…‚‚‚Œ‚‚”‚…@‚r‚ƒ‚…‚‚…",
-        /* Epil. */ FALSE  
+    /* Flash Memory Test */ {
+        /* Scene */ &scene_flash_mem_test,
+        /* Label */ "‚e‚Œ‚‚“‚ˆ@‚l‚…‚‚‚’‚™@‚s‚…‚“‚”",
+        /* Epil. */ FALSE
     },
     /* Read Error */ {
         /* Scene */ &scene_read_error,
         /* Label */ "‚q‚…‚‚„@‚d‚’‚’‚‚’",
+        /* Epil. */ FALSE  
+    },
+    /* Template Scene */ {
+        /* Scene */ &scene_template,
+        /* Label */ "‚s‚…‚‚‚Œ‚‚”‚…@‚r‚ƒ‚…‚‚…",
         /* Epil. */ FALSE  
     },
     /* Data Clear */ {
