@@ -522,9 +522,9 @@ void save_editor_render_page(void) {
     }
     save_editor_draw_line(SE_LINE_HEADER, 0, buf, 8, 24);
 
-    save_editor_draw_line(SE_LINE_HINT_A, 0, "L/R:Change Current Save Member", 8, 48);
+    save_editor_draw_line(SE_LINE_HINT_A, 0, "‡K/‡L:Change Current Save Member", 8, 48);
 
-    save_editor_draw_line(SE_LINE_HINT_B, 0, "Sel: Save and Exit", 8, 64);
+    save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT: Save and Exit", 8, 64);
 
     if (m->kind == SE_KIND_BITFLAGS && m->flagCount > 0) {
         void* ptr = save_editor_get_value_ptr(member, arrIdx, 0);

@@ -57,11 +57,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q|‚h‚p@i‚q‚…‚“‚•‚Œ‚”@‚Sj",
         /* Epil. */ TRUE
     },
-    /* R-IQ (Debug Menu) */ {
-        /* Scene */ &scene_debug_menu,
-        /* Label */ "‚q|‚h‚p@i‚c‚…‚‚‚•‚‡j",
-        /* Epil. */ FALSE
-    },
     /* R-IQ (Rhythm Library) */ {
         /* Scene */ &scene_arrival,
         /* Label */ "‚q|‚h‚p@i‚d‚‚‚‰‚Œj",
@@ -631,16 +626,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚e‚Œ‚‚“‚ˆ@‚l‚…‚‚‚’‚™@‚s‚…‚“‚”",
         /* Epil. */ FALSE
     },
-    /* Data Clear */ {
-        /* Scene */ &scene_data_clear,
-        /* Label */ "‚r‚‚–‚…@‚c‚‚”‚@‚b‚Œ‚…‚‚’",
-        /* Epil. */ FALSE
-    },
-    /* R-IQ Save Editor */ {
-        /* Scene */ &scene_save_editor,
-        /* Label */ "‚q|‚h‚p@‚r‚‚–‚…@‚d‚„‚‰‚”‚‚’",
-        /* Epil. */ FALSE
-    },
     /* Asset Test */ {
         /* Scene */ &scene_asset_test,
         /* Label */ "‚`‚“‚“‚…‚”@‚s‚…‚“‚”",
@@ -656,9 +641,19 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q‚…‚‚„@‚d‚’‚’‚‚’",
         /* Epil. */ FALSE  
     },
+    /* Data Clear */ {
+        /* Scene */ &scene_data_clear,
+        /* Label */ "‚r‚‚–‚…@‚c‚‚”‚@‚b‚Œ‚…‚‚’",
+        /* Epil. */ FALSE
+    },
+    /* R-IQ Save Editor */ {
+        /* Scene */ &scene_save_editor,
+        /* Label */ "‚q|‚h‚p@‚r‚‚–‚…@‚d‚„‚‰‚”‚‚’",
+        /* Epil. */ FALSE
+    },
     /* Sequence Test */ {
         /* Scene */ &scene_debug_menu,
-        /* Label */ "‚c‚…‚‚‚•‚‡@‚l‚…‚‚•",
+        /* Label */ "@",
         /* Epil. */ FALSE
     },
     END_OF_DEBUG_ENTRIES
