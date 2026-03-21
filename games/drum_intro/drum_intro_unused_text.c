@@ -46,5 +46,5 @@ const char D_0805d5a4[] =
 
 const char D_0805d5ec[] =
     "\n"
-    "See you the next lesson.\n"
+    "See you in the next lesson.\n"
     "Goodbye!";

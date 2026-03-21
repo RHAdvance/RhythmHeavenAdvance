@@ -131,7 +131,7 @@ const char *const D_0805e7b0[] = {
 };
 
 const char D_0805e7c0[] =
-    "You did it all at once!\n"
+    "You did it all in one go!\n"
     "I can't believe it!";
 
 const char D_0805e7ec[] =
@@ -140,7 +140,7 @@ const char D_0805e7ec[] =
 
 const char D_0805e818[] =
     "You managed to do it somehow!\n"
-    "That's looking good!";
+    "That's pretty good!";
 
 const char *const D_0805e844[] = {
     D_0805e58c,
