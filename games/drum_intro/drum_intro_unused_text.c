@@ -8,7 +8,7 @@
 const char D_0805d438[] =
     "\n"
     "Oh, hi there.\n"
-    "I'm Samurai Drummer";
+    "I'm Samurai Drummer.";
 
 const char D_0805d458[] =
     "Do you like drums?\n"
@@ -40,8 +40,8 @@ const char D_0805d57c[] =
     "Sorry about that.";
 
 const char D_0805d5a4[] =
-    "I'll try to make sure\n"
-    "you'll have a good time\n"
+    "I'll try to make sure you're\n"
+    "having a good time.\n"
     "Just try your best.";
 
 const char D_0805d5ec[] =

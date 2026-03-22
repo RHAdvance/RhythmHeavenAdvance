@@ -25,13 +25,12 @@ const char D_0805dd28[] =
 const char D_0805dd40[] =
     "\n"
     "\n"
-    "Welcome!";
+    "Hello!";
 
 const char D_0805dd50[] =
     "We're Ponta and Monkey.\n"
-    "Samurai Drummer\n"
-    "introduced us here\n"
-    "to play with you.";
+    "Samurai Drummer brought\n"
+    "us here to play with you.";
 
 const char D_0805dd90[] =
     "We'll be giving out\n"

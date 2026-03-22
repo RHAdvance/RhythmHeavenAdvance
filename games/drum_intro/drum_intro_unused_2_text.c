@@ -23,13 +23,13 @@ const char D_0805d914[] =
 
 const char D_0805d928[] =
     "\n"
-    "And that's it!";
+    "...And that's it!";
 
 const char D_0805d934[] =
-    "That was some good practice,\n"
+    "That was some good practice.\n"
     "How'd you like it?\n"
-    "Keep it in the back of\n"
-    "your mind for later!";
+    "Keep it in the back of your\n"
+    "mind for later!";
 
 const char D_0805d97c[] =
     "\n"
