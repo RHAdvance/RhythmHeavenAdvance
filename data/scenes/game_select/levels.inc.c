@@ -835,7 +835,7 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_lessons_menu,
         /* Level Name    */ "Drum Lessons",
         /* Level Desc.   */ "Collect medals to take\n"
-                            "some drum lessons.\n"
+                            "some Drum Lessons.\n"
                             "You could become\n"
                             "a master drummer!",
         /* Level Icon    */ 48,

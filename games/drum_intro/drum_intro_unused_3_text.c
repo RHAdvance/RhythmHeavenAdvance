@@ -76,12 +76,12 @@ const char *const D_0805e5e4[] = {
 };
 
 const char D_0805e5f8[] =
-    "Next, start off the song with a crash.\n"
+    "Next, let's start off the song\nwith a crash.\n"
     "Press ‡L to hit the cymbals.";
 
-const char D_0805e64c[] = "You only need to press both\n ‡N and ‡L at the same time once.";
+const char D_0805e64c[] = "You only need to press both\n‡N and ‡L at the same time\nonce.";
 
-const char D_0805e684[] = "We went over this in the previous\n lesson, so remember our practice from then.";
+const char D_0805e684[] = "We went over this in the\nprevious lesson, so remember\nour practice from then.";
 
 const char D_0805e6b0[] = "With that, let's start!";
 
@@ -96,9 +96,9 @@ const char D_0805e6d4[] =
     "Great work!\n"
     "Keep it up!";
 
-const char D_0805e6f0[] = "Did you find that easy?";
+const char D_0805e6f0[] = "Did you find that too easy?";
 
-const char D_0805e70c[] = "That was difficult, right?";
+const char D_0805e70c[] = "That was hard, right?";
 
 const char *const D_0805e730[] = {
     D_0805e58c,
@@ -150,9 +150,9 @@ const char *const D_0805e844[] = {
     NULL
 };
 
-const char D_0805e858[] = "Since you've aced all these parts,\nI think you'll enjoy my drum lessons!";
+const char D_0805e858[] = "Since you've aced all the\nparts of a song, I think you'll\nenjoy my drum lessons!";
 
-const char D_0805e8c0[] = "You can play them in the bonus corner.\n Enjoy yourself!";
+const char D_0805e8c0[] = "You can play them in the\nbonus corner. Have fun!";
 
 const char D_0805e8f8[] =
     "Well, see you later!\n"
