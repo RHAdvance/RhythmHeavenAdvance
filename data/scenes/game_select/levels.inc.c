@@ -835,7 +835,7 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_lessons_menu,
         /* Level Name    */ "Drum Lessons",
         /* Level Desc.   */ "Collect medals to take\n"
-                            "some Drum Lessons.\n"
+                            "some drum lessons.\n"
                             "You could become\n"
                             "a master drummer!",
         /* Level Icon    */ 48,
@@ -874,7 +874,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_BONUS,
         /* Epilogue GFX  */ epilogue_drum_live_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "The cleaner says... \"I know you can do it, keep it up!\"",
+            /* TRY_AGAIN */ "The cleaner says... \"I know you can do it, keep at it!\"",
             /* OK        */ "The owner says... \"You've got great skills, you know!\"",
             /* SUPERB    */ "The producer says... \"You should play at our place, too!\""
         }

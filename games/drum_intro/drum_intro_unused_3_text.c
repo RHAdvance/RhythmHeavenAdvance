@@ -22,12 +22,12 @@ const char D_0805e490[] =
 const char D_0805e4c0[] = "I'll get right to it.";
 
 const char D_0805e4e0[] =
-    "No, that's wrong!\n"
+    "No, that's not right!\n"
     "Listen to me again.";
 
 const char D_0805e4f8[] =
-    "No, that's not right!\n"
-    "Listen to me very carefully.";
+    "Still not right!\n"
+    "Listen carefully.";
 
 const char *const D_0805e520[] = {
     D_0805e4c0,
@@ -42,11 +42,11 @@ const char D_0805e530[] =
 
 const char D_0805e544[] =
     "\n"
-    "Good, you've got it now!";
+    "Alright, let's try again!";
 
 const char D_0805e55c[] =
     "\n"
-    "Now, it's your turn!";
+    "Come on! You'll get it this time!";
 
 const char *const D_0805e574[] = {
     D_0805e530,
@@ -63,7 +63,7 @@ const char D_0805e58c[] = "";
 
 const char D_0805e590[] = "Good, you've got it now!";
 
-const char D_0805e5ac[] = "You're picking this up quickly!";
+const char D_0805e5ac[] = "You're a quick learner!";
 
 const char D_0805e5d0[] = "Nicely done!";
 
@@ -94,11 +94,11 @@ const char *const D_0805e6c4[] = {
 
 const char D_0805e6d4[] =
     "Great work!\n"
-    "Keep it up.";
+    "Keep it up!";
 
-const char D_0805e6f0[] = "Was that pretty easy?";
+const char D_0805e6f0[] = "Did you find that easy?";
 
-const char D_0805e70c[] = "That was tough, right?";
+const char D_0805e70c[] = "That was difficult, right?";
 
 const char *const D_0805e730[] = {
     D_0805e58c,
@@ -110,7 +110,7 @@ const char *const D_0805e730[] = {
 
 const char D_0805e744[] = "Let's end this on a high note!";
 
-const char D_0805e778[] = "Here's an example.";
+const char D_0805e778[] = "Here's a demonstration.";
 
 const char *const D_0805e790[] = {
     D_0805e778,
@@ -135,11 +135,11 @@ const char D_0805e7c0[] =
     "I can't believe it!";
 
 const char D_0805e7ec[] =
-    "You did it in only two tries!\n"
+    "You did it in only two attempts!\n"
     "Good job!";
 
 const char D_0805e818[] =
-    "You managed to do it somehow!\n"
+    "You pulled it off in the end!\n"
     "That's pretty good!";
 
 const char *const D_0805e844[] = {
@@ -150,7 +150,7 @@ const char *const D_0805e844[] = {
     NULL
 };
 
-const char D_0805e858[] = "Since you've aced all parts of the songs,\nI think you'll enjoy my drum lessons!";
+const char D_0805e858[] = "Since you've aced all these parts,\nI think you'll enjoy my drum lessons!";
 
 const char D_0805e8c0[] = "You can play them in the bonus corner.\n Enjoy yourself!";
 

@@ -5,7 +5,7 @@
 /* Game Text - Bouncy Road */
 
 
-const char D_0805b778[] = "Gossip from the wind...";
+const char D_0805b778[] = "Gossip on the wind:";
 
 const char D_0805b784[] = "You need to focus on the basics.";
 
@@ -17,7 +17,7 @@ const char D_0805b7cc[] = "You handled all those balls with ease!";
 
 const char D_0805b7f8[] = "Your timing was on point!";
 
-const char D_0805b810[] = "Gossip from the wind...";
+const char D_0805b810[] = "Gossip on the wind:";
 
 const char D_0805b820[] = "You need to focus on the basics.";
 
@@ -31,4 +31,4 @@ const char D_0805b894[] = "Keeping your cool would help your timing.";
 
 const char D_0805b8b8[] = "Your timing was on point!";
 
-const char D_0805b8d0[] = "Gossip from the wind...";
+const char D_0805b8d0[] = "Gossip on the wind:";
