@@ -477,9 +477,9 @@ struct ReadingMaterial reading_material_table[] = {
 
     /* REMIX8 ("The Final Letter") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Final Letter",
+            "Final Words",
         /* BODY ----------------------------------------------------------- */
-            "You received this Final Letter from\n"
+            "You received these final words from\n"
             "the Rhythm League.\n"
             "\n"
             "\"Congratulations on getting a Perfect on Remix 8!\n"
