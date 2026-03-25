@@ -156,7 +156,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only our vegetables grow hair, anyway...?",
-            /* SUPERB    */ "How refreshing! Even the air is nice and crisp!"
+            /* SUPERB    */ "How refreshing! The air is nice and crisp!"
         }
     },
     /* SICK_BEATS */ {
@@ -244,7 +244,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Sneaky Spirits",
         /* Level Desc.   */ "These spirits aren't\n"
                             "exactly evil, but they\n"
-                            "ARE mean; they'll laugh\n"
+                            "ARE mean: they'll laugh\n"
                             "at you if you miss.",
         /* Level Icon    */ 1,
         /* Level Type    */ LEVEL_TYPE_GAME,

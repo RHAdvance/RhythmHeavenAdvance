@@ -510,7 +510,7 @@ struct ReadingMaterial reading_material_table[] = {
             "we believe in!\n"
             "You really are the best!\n"
             "Thank you so much for playing!\"\n"
-            "\001R" "Rhythm League Representative\n"
+            "\001R" "Chairman of the Rhythm League\n"
             "\001R" "Space Gramps",
         /* STYLE ---------------------------------------------------------- */
             /* GFX */ reading_style_mail_gfx_table,
@@ -556,7 +556,7 @@ struct ReadingMaterial reading_material_table[] = {
 
     /* TOSS_BOYS ("Rhythm Stand-Up") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Rhythm Manzai",
+            "Rhythm Stand-Up",
         /* BODY ----------------------------------------------------------- */
             "Yellow: Hello, I'm Yellow!\n"
             "Blue: Hello, I'm Blue!\n"
@@ -985,7 +985,7 @@ struct ReadingMaterial reading_material_table[] = {
             "\001R" "\0030" "\001s" "simply too stubborn\n"
             "\001L" "\0030" "\001s" "\n"
             "\001C" "\0030" "\001s" "\"It can be difficult to count accurately during a rest,\n"
-            "and it's easy to resume the beat prematurely, but the\n"
+            "and it's easy to resume the beat early, but the\n"
             "ability to stay calm and wait affects your \n"
             "flow the most.\"\n"
             "\n"

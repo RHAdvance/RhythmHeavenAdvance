@@ -23,7 +23,7 @@ const char D_0805b544[] = "Welcome!";
 
 const char D_0805b550[] = "Use ‡M or ‡O to pluck the hairs!";
 
-const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "You got it!";
+const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "Good!";
 
 const char D_0805b590[] = "\x05\x34" "\x01\x38" "\x03\x30" "\x01\x73" "For the curly hairs, hold ‡M or ‡O until it's plucked.";
 

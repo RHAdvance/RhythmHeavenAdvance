@@ -5,13 +5,13 @@
 /* Game Text - Rap Women */
 
 
-const char D_08067c80[] = "The \"Huh?\" lines were baffling.";
+const char D_08067c80[] = "The \"huh?\" lines were baffling.";
 
-const char D_08067ca4[] = "The \"Huh?\" lines were really rhythmical!";
+const char D_08067ca4[] = "The \"huh?\" lines were really rhythmical!";
 
-const char D_08067ccc[] = "Your \"Feel\" for this is subpar.";
+const char D_08067ccc[] = "Your \"feel\" for this is subpar.";
 
-const char D_08067cf4[] = "Your \"Feel\" for this is superb!";
+const char D_08067cf4[] = "Your \"feel\" for this is superb!";
 
 const char D_08067d18[] = "The \"AWESOME!\" lines were AWFUL.";
 
