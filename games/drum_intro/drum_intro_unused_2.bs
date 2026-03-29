@@ -80,11 +80,10 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 23
     play_sfx s_intro_three_seqData
+    rest 1
     dmi_event03 3
-    rest 1
-    rest 11
+    rest 12
     play_sfx s_intro_four_seqData
-    rest 1
     rest 12
     dmi_event03 3
     play_music s_intro_pat1_seqData
@@ -131,11 +130,10 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 23
     play_sfx_vol s_intro_three_seqData, 96
-    dmi_event03 3
     rest 1
+    dmi_event03 3
     rest 12
     play_sfx_vol s_intro_four_seqData, 160
-    rest 1
     rest 12
     dmi_event03 3
     no_op
@@ -187,13 +185,12 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 23
     play_sfx_vol s_intro_three_seqData, 128
-    dmi_event03 3
     rest 1
-    rest 11
+    dmi_event03 3
+    rest 12
     play_sfx_vol s_intro_one_seqData, 160
+    rest 12
     dmi_event03 3
-    rest 1
-    rest 10
     play_sfx_vol s_intro_two_seqData, 192
     dmi_event03 3
     rest 24
@@ -245,11 +242,10 @@ script script_drum_intro_unused_2_main
     dmi_event03 3
     rest 23
     play_sfx s_intro_three_seqData
+    rest 1
     dmi_event03 3
-    rest 1
-    rest 11
+    rest 12
     play_sfx s_intro_four_seqData
-    rest 1
     rest 12
     dmi_event03 3
     spawn_cue CUE_KICK
