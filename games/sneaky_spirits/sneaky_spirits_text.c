@@ -51,4 +51,4 @@ const char D_0805bc5c[] = "Your internal count was spot on!";
 
 const char D_0805bc78[] = "You did superbly against the slow ones.";
 
-const char D_0805bc98[] = "spooky voices agree...";
+const char D_0805bc98[] = "Spooky voices agree...";

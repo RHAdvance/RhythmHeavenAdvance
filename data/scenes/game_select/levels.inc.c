@@ -645,7 +645,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "The Bon Festival has\n"
                             "a modern-day style!\n"
                             "Clap along to this\n"
-                            "New arrangement!",
+                            "new arrangement!",
         /* Level Icon    */ 17,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_bon_dance_gfx_tables,

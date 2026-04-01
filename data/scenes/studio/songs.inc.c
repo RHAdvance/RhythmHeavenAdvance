@@ -73,12 +73,12 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_space_dance
     },
     /* HONEY_SWEET_ANGEL */ {
-        /* Full Title  */ "Honey Sweet Angel Of Love",
+        /* Full Title  */ "Honey Sweet Angel of Love",
         /* Short Title */ "Honey Sweet Angel...",
         /* Drum Script */ script_studio_honey_sweet_angel
     },
     /* WISH */ {
-        /* Full Title  */ "WISH - Can't Wait For You",
+        /* Full Title  */ "WISH - Can't Wait for You",
         /* Short Title */ "WISH - Can't Wait...",
         /* Drum Script */ script_studio_wish
     },
