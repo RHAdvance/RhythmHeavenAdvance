@@ -35,15 +35,14 @@ jobs:
         ./build.sh
         ./install.sh ../
         
-    # THIS ZIP IS ONLY USED TO MAKE A PATCH FILE AND IS NOT USED TO DISTRIBUTE ANY KIND OF COPYRIGHT CONTENT
-    - name: Downloads a totally normal ZIP
+    - name: Get file from thin air
       env:
-        AUTH_TOKEN: '${{ secrets.token }}'
+        FILE_PW: ${{ secrets.TOKEN }}
       run: |
-        wget "$(echo $AUTH_TOKEN | base64 --decode)" -O not_a_mean_to_distribute_copyrighted_data.zip
-        unzip not_a_mean_to_distribute_copyrighted_data.zip
-        mv "Rhythm Tengoku (Japan).gba" baserom.gba
-        rm not_a_mean_to_distribute_copyrighted_data.zip
+        openssl enc -aes-256-cbc -d -pbkdf2 -iter 100000 \
+          -in tools/make.build \
+          -out baserom.gba \
+          -pass env:FILE_PW
 
     - name: Compile Flips
       run: |
