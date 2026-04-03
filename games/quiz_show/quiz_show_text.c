@@ -23,7 +23,7 @@ const char D_0805ecb0[] =
     "try again\n"
     "next week!\n";
 
-const char D_0805ecd4[] = "A Word from Our Sponsor";
+const char D_0805ecd4[] = "A word from our sponsor:";
 
 const char D_0805ece8[] =
     "Here's the\n"

@@ -29,8 +29,8 @@ const char D_0805b0d0[] = "Your offbeat was right on the money!";
 
 const char D_0805b0e8[] = "The polyrhythm messed up your timing!";
 
-const char D_0805b110[] = "You couldn't use both hands separately";
+const char D_0805b110[] = "You couldn't use both hands separately.";
 
 const char D_0805b130[] = "Your hands work well separately!";
 
-const char D_0805b14c[] = "From the Factory's Manager";
+const char D_0805b14c[] = "From the Factory's Manager:";

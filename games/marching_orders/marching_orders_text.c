@@ -17,7 +17,7 @@ const char D_0805c7d8[] = "You need to hone your skill even more...";
 
 const char D_0805c7f4[] = "Very technically sound!";
 
-const char D_0805c80c[] = "Sarge says";
+const char D_0805c80c[] = "Sarge says...";
 
 const char D_0805c818[] = "‚f‚I";
 
@@ -33,7 +33,7 @@ const char D_0805c88c[] = "";
 
 const char D_0805c890[] = "Your timing is on point!";
 
-const char D_0805c8a8[] = "Sarge says";
+const char D_0805c8a8[] = "Sarge says...";
 
 const char D_0805c8b4[] = "‚f‚I";
 

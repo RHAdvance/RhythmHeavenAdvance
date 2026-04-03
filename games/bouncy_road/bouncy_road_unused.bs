@@ -44,6 +44,7 @@ return
 script script_bouncy_road_unused_main
     set_tempo 120
     set_music_volume 256
+    enable_pause_menu
     play_music s_f_even_road_seqData
     call script_bouncy_road_unused_wait4
     bouncy_road_enable_ball_goal_sfx

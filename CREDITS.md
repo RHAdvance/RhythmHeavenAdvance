@@ -7,6 +7,7 @@
 ### Contribution
 - Deni_iguess
 - patataofcourse
+- Conhlee
 - Everyone who has worked on the [decompilation](https://github.com/arthurtilly/rhythmtengoku).
 
 ## Assets
@@ -44,9 +45,7 @@
 - itaific
 - SesuRescue
 - FireChat
-- castIe
 - Kievit
-
 
 ## Special Thanks
 - nwqol

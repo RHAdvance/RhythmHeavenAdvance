@@ -13,4 +13,4 @@ const char D_0805c9e4[] = "Don't count on your eyes for everything.";
 
 const char D_0805c9fc[] = "Your pauses were perfect!";
 
-const char D_0805ca20[] = "The Great Sorcerer's Revelations:";
+const char D_0805ca20[] = "The Great Sorcerer's Revelations";

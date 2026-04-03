@@ -1193,3 +1193,158 @@ void func_08008d44(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8
 void func_08008d88(u32 unused_arg0, u32 unused_arg1, s16 arg2, s24_8 arg3, s24_8 arg4, s16 arg5, s24_8 arg6, s24_8 arg7, u16 arg8, struct unk_struct_08008b00 *arg9, u32 arg10) {
     func_08008b00(unused_arg0, unused_arg1, arg2, arg3, arg4, arg5 - 0x200, arg6, arg7, arg8, arg9, arg10, 1);
 }
+
+static void int_to_str(char *buf, s32 value) {
+    char tmp[12];
+    s32 i = 0, j = 0;
+    s32 is_negative = 0;
+    if (value < 0) {
+        is_negative = 1;
+        value = -value;
+    }
+    do {
+        tmp[i++] = '0' + (value % 10);
+        value /= 10;
+    } while (value && i < 11);
+    if (is_negative) tmp[i++] = '-';
+    while (i > 0) buf[j++] = tmp[--i];
+    buf[j] = '\0';
+}
+
+static void uint_to_str(char *buf, u32 value) {
+    char tmp[11];
+    s32 i = 0, j = 0;
+    do {
+        tmp[i++] = '0' + (value % 10);
+        value /= 10;
+    } while (value && i < 10);
+    while (i > 0) buf[j++] = tmp[--i];
+    buf[j] = '\0';
+}
+
+static void uint_to_hex(char *buf, u32 value) {
+    char tmp[9];
+    s32 i = 0, j = 0;
+    do {
+        s32 digit = value & 0xF;
+        tmp[i++] = (digit < 10) ? ('0' + digit) : ('a' + digit - 10);
+        value >>= 4;
+    } while (value && i < 8);
+    while (i > 0) buf[j++] = tmp[--i];
+    buf[j] = '\0';
+}
+
+s32 snprintf(char *s, s32 n, const char *fmt, ...) {
+    va_list args;
+    s32 i = 0, o = 0;
+    s32 k;
+    char pad_char;
+    int width;
+    int left;
+    char spec;
+    char buf_temp[24];
+    int bl, sl;
+    const char *ss;
+    u32 vval;
+    int j;
+    va_start(args, fmt);
+    while (fmt[i] && o < n - 1) {
+        if (fmt[i] == '%') {
+            i++;
+            pad_char = ' ';
+            width = 0;
+            left = 0;
+            /* handle flags: '-' for left-justify, '0' for zero-pad */
+            while (fmt[i] == '-' || fmt[i] == '0') {
+                if (fmt[i] == '-') {
+                    left = 1;
+                    pad_char = ' ';
+                    i++;
+                } else if (fmt[i] == '0') {
+                    if (!left) pad_char = '0';
+                    i++;
+                }
+            }
+            while (fmt[i] >= '0' && fmt[i] <= '9') {
+                width = width * 10 + (fmt[i] - '0');
+                i++;
+            }
+            spec = fmt[i];
+            if (spec == 'd' || spec == 'i') {
+                s32 v = va_arg(args, s32);
+                int_to_str(buf_temp, v);
+                bl = 0; while (buf_temp[bl]) bl++;
+                if (!left) {
+                    for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
+                    for (k = 0; buf_temp[k] && o < n - 1; k++) s[o++] = buf_temp[k];
+                } else {
+                    for (k = 0; buf_temp[k] && o < n - 1; k++) s[o++] = buf_temp[k];
+                    for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
+                }
+            } else if (spec == 'u') {
+                vval = va_arg(args, u32);
+                uint_to_str(buf_temp, vval);
+                bl = 0; while (buf_temp[bl]) bl++;
+                if (!left) {
+                    for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
+                    for (k = 0; buf_temp[k] && o < n - 1; k++) s[o++] = buf_temp[k];
+                } else {
+                    for (k = 0; buf_temp[k] && o < n - 1; k++) s[o++] = buf_temp[k];
+                    for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
+                }
+            } else if (spec == 'x' || spec == 'X') {
+                vval = va_arg(args, u32);
+                uint_to_hex(buf_temp, vval);
+                bl = 0; while (buf_temp[bl]) bl++;
+                if (spec == 'X') {
+                    for (j = 0; j < bl; ++j) {
+                        if (buf_temp[j] >= 'a' && buf_temp[j] <= 'f') buf_temp[j] = buf_temp[j] - 'a' + 'A';
+                    }
+                }
+                if (!left) {
+                    for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
+                    for (k = 0; buf_temp[k] && o < n - 1; k++) s[o++] = buf_temp[k];
+                } else {
+                    for (k = 0; buf_temp[k] && o < n - 1; k++) s[o++] = buf_temp[k];
+                    for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
+                }
+            } else if (spec == 's') {
+                ss = va_arg(args, const char *);
+                sl = 0; while (ss[sl]) sl++;
+                if (!left) {
+                    for (k = 0; k < width - sl && o < n - 1; ++k) s[o++] = pad_char;
+                    for (k = 0; ss[k] && o < n - 1; k++) s[o++] = ss[k];
+                } else {
+                    for (k = 0; ss[k] && o < n - 1; k++) s[o++] = ss[k];
+                    for (k = 0; k < width - sl && o < n - 1; ++k) s[o++] = pad_char;
+                }
+            } else if (spec == 'c') {
+                char c = (char)va_arg(args, int);
+                if (!left) {
+                    for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
+                    s[o++] = c;
+                } else {
+                    s[o++] = c;
+                    for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
+                }
+            } else if (spec == '%') {
+                if (!left) {
+                    for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
+                    s[o++] = '%';
+                } else {
+                    s[o++] = '%';
+                    for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
+                }
+            } else {
+                s[o++] = '%';
+                if (o < n - 1) s[o++] = spec;
+            }
+            i++;
+        } else {
+            s[o++] = fmt[i++];
+        }
+    }
+    s[o] = '\0';
+    va_end(args);
+    return o;
+}

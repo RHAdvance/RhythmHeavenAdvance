@@ -97,8 +97,8 @@ return
 
 
 text D_08a2f220
-    .ascii "Okay, let's start\n"
-    .asciz "out simple for now."
+    .ascii "Okay, let's start out\n"
+    .asciz "simple for now."
 endtext
 
 text D_08a2f248
@@ -114,9 +114,9 @@ text D_08a2f278
 endtext
 
 text D_08a2f2a0
-    .ascii "OK! On to the next one!\n"
-    .ascii "Think you can\n"
-    .asciz "handle this one?"
+    .ascii "OK! Onto the next one!\n"
+    .ascii "Think you can handle\n"
+    .asciz "this one?"
 endtext
 
 text D_08a2f2d4
@@ -127,15 +127,15 @@ endtext
 
 text D_08a2f308
     .ascii "That was great!\n"
-    .ascii "This next one's\n"
-    .asciz "a little more tricky!"
+    .ascii "This next one's a\n"
+    .asciz "little more tricky!"
 endtext
 
 text D_08a2f340
     .ascii "Heh, you're better\n"
     .ascii "than we thought!\n"
-    .ascii "Looks like we'll have\n"
-    .asciz "to bring out the big guns!\n"
+    .ascii "Looks like we'll have to\n"
+    .asciz "bring out the big guns!\n"
 endtext
 
 

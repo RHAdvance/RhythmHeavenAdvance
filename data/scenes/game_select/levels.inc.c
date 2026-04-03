@@ -161,17 +161,16 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only our vegetables grow hair, anyway...?",
-            /* SUPERB    */ "How refreshing! Even the air is nice and crisp!"
-        },
-        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
+            /* SUPERB    */ "How refreshing! The air is nice and crisp!"
+        }
     },
     /* SICK_BEATS */ {
         /* Entry Scene   */ &scene_sick_beats,
         /* Level Name    */ "Sick Beats",
         /* Level Desc.   */ "\0023" "Assistant's memo:\n"
-                            "\"We have an outbreak\n"
+                            "We have an outbreak\n"
                             "of an unknown virus!\n"
-                            "Help us, Dr. Cutlery!\"",
+                            "Help us, Dr. Cutlery!",
         /* Level Icon    */ 13,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_sick_beats_gfx_tables,
@@ -243,7 +242,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_ninja_reincarnate_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "You can't give up now! We're counting on you!",
+            /* TRY_AGAIN */ "You can't give up! She's counting on you!",
             /* OK        */ "You are... strong. Don't give up yet.",
             /* SUPERB    */ "You have proven your worth! You have our blessing..."
         },
@@ -254,7 +253,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Sneaky Spirits",
         /* Level Desc.   */ "These spirits aren't\n"
                             "exactly evil, but they\n"
-                            "ARE mean; they'll laugh\n"
+                            "ARE mean: they'll laugh\n"
                             "at you if you miss.",
         /* Level Icon    */ 1,
         /* Level Type    */ LEVEL_TYPE_GAME,
@@ -277,7 +276,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_sneaky_spirits_2_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Gah! They slipped right past you!",
-            /* OK        */ "\"L-Let me go! Please!\"",
+            /* OK        */ "L-Let me go! Please!",
             /* SUPERB    */ "You ghosts stay and think about what you've done!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
@@ -287,7 +286,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Samurai Slice",
         /* Level Desc.   */ "Demons have put\n"
                             "the town in a panic!\n"
-                            "Come on Samurai,\n"
+                            "Come on, Samurai--\n"
                             "slice them all!",
         /* Level Icon    */ 18,
         /* Level Type    */ LEVEL_TYPE_GAME,
@@ -466,8 +465,8 @@ struct LevelData level_data_table[] = {
     },
     /* POWER_CALLIGRAPHY_2 */ { // this still kills me lmao
         /* Entry Scene   */ &scene_power_calligraphy,
-        /* Level Name    */ "",
-        /* Level Desc.   */ "\n"
+        /* Level Name    */ "Power Calligraphy 2",
+        /* Level Desc.   */ "haha unused\n"
                             "\n"
                             "\n"
                             "",
@@ -582,7 +581,7 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Cosmic Dance",
         /* Level Desc.   */ "These paragons of\n"
                             "dancing have mastered\n"
-                            "their Zero-G moves\n"
+                            "their zero-G moves\n"
                             "and want to show off!",
         /* Level Icon    */ 16,
         /* Level Type    */ LEVEL_TYPE_GAME,
@@ -665,7 +664,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "The Bon Festival has\n"
                             "a modern-day style!\n"
                             "Clap along to this\n"
-                            "New arrangement!",
+                            "new arrangement!",
         /* Level Icon    */ 17,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_bon_dance_gfx_tables,
@@ -903,7 +902,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_BONUS,
         /* Epilogue GFX  */ epilogue_drum_live_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "The cleaner says... \"I know you can do it, keep it up!\"",
+            /* TRY_AGAIN */ "The cleaner says... \"I know you can do it, keep at it!\"",
             /* OK        */ "The owner says... \"You've got great skills, you know!\"",
             /* SUPERB    */ "The producer says... \"You should play at our place, too!\""
         }

@@ -1,0 +1,37 @@
+.include "include/beatscript.inc"
+
+.section .scene
+
+@ Script
+script script_scene_save_editor
+    set_tempo 120
+    pause_scene
+
+    scene_set_byte 12, TRUE
+    pause_scene
+
+    scene_set_byte 12, FALSE
+    fade_music_out 12
+    fade_screen_out 12, BLACK
+    rest 12
+    stop
+
+
+@ Local Scene
+struct sub_scene_save_editor
+    /* Start  */ .word save_editor_scene_start,  0
+    /* Paused */ .word save_editor_scene_paused, 0
+    /* Active */ .word save_editor_scene_update, 0
+    /* Stop   */ .word save_editor_scene_stop,   0
+    /* Script */ .word script_scene_save_editor
+endstruct
+
+@ RIQ Save Editor Scene
+struct scene_save_editor
+    /* Start  */ .word func_0801d86c, sub_scene_save_editor
+    /* Update */ .word func_0801d8d8, 0
+    /* Stop   */ .word NULL,          0
+    /* Memory */ .word 0x38
+endstruct
+
+.end

@@ -53,10 +53,10 @@ const char *cafe_dialogue_first_visit[] = {
         "do to help, well, " "\0051" "\0015" "that's\n"
         "what I'm here for." "\0054" "\0018" "",
     /* ------------------------------------------------ */
+        "\n"
         "I'm a little busy right now,\n"
-        "since I only just opened,\n"
-        "for the day, but we'll talk\n"
-        "more later.",
+        "since I only just opened for the\n"
+        "day, but we'll talk more later.",
     /* ------------------------------------------------ */
         "\n"
         "Come back soon!\n"
@@ -77,8 +77,8 @@ const char *cafe_dialogue_first_visit[] = {
 const char *cafe_dialogue_come_back_later[] = {
     /* ------------------------------------------------ */
         "\n"
-        "I've got some other customers\n"
-        "to deal with. We'll talk later.\n"
+        "Could you come back in a while?\n"
+        "I'm a bit busy.\n"
         "\n",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
@@ -218,24 +218,24 @@ const char *cafe_dialogue_all_perfects_clear[] = {
         "a step above the rest!",
     /* ------------------------------------------------ */
         "\n"
-        "I'm so proud of you. Moved to tears,\n"
-        "even!\n"
+        "I'm so proud of you.\n"
+        "Moved to tears, even!\n"
         "\n",
     /* ------------------------------------------------ */
         "\n"
         "I know it's not much of a gift,\n"
-        "but I've opened up more studio songs\n"
-        "for you.\n",
+        "but I've opened up more studio\n"
+        "songs for you.\n",
     /* ------------------------------------------------ */
         "\n"
-        "So I guess that means you've collected\n"
-        "everything?\n"
+        "So I guess that means you've\n"
+        "collected everything?\n"
         "Impressive!",
     /* ------------------------------------------------ */
         "\n"
         "Good work out there, my friend.\n"
         "You've really earned a break.\n"
-        "\n",
+        "See you around!\n",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
 };
@@ -418,8 +418,8 @@ const char *cafe_dialogue_offbeats[] = {
     /* ------------------------------------------------ */
         "\n"
         "You've probably heard of something\n"
-        "called an offbeat. Do you know what\n"
-        "that is?",
+        "called an offbeat.\n"
+        "Do you know what that is?",
     /* ------------------------------------------------ */
         "\n"
         "I'm no expert myself, but I think\n"
@@ -599,14 +599,14 @@ const char *cafe_dialogue_adhd[] = {
         "\n",
     /* ------------------------------------------------ */
         "\n"
-        "Oops! Sorry. I'm talking to myself again.\n"
-        "Don't mind me.\n"
-        "\n",
+        "Oops! Sorry.\n"
+        "I'm talking to myself again.\n"
+        "Don't mind me.\n",
     /* ------------------------------------------------ */
         "\n"
         "Want to go for a drive with me, sometime?\n"
-        "If that's alright with you, I mean.\n"
-        "See you around.",
+        "If you want to, I mean...\n"
+        "Anyway, see you later.",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
 };
@@ -691,7 +691,7 @@ const char *cafe_dialogue_dog_barista[] = {
     /* ------------------------------------------------ */
         "\n"
         "I'm nine years old. Pretty spry\n"
-        "for my age if I say so.\n"
+        "for my age, if I say so.\n"
         "\n",
     /* ------------------------------------------------ */
         "\n"
@@ -744,14 +744,14 @@ const char *cafe_dialogue_healing_with_music[] = {
         "That never fails to put me at ease.",
     /* ------------------------------------------------ */
         "\n"
-        "Music's weird like that. Why does\n"
-        "it have such power over our feelings,\n"
-        "do you think?",
+        "Music's weird like that.\n"
+        "Why does it hold such power\n"
+        "over our feelings?",
     /* ------------------------------------------------ */
         "\n"
         "Maybe if I studied this stuff I'd know,\n"
-        "but I haven't! Sorry! Heh.\n"
-        "\n",
+        "but I haven't!\n"
+        "Sorry! Heh.\n",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
 };
@@ -794,8 +794,8 @@ const char *cafe_dialogue_speaking_with_music[] = {
     /* ------------------------------------------------ */
         "\n"
         "You can put words and meanings\n"
-        "behind different rhythms like morse\n"
-        "code and talk without speaking.",
+        "behind different rhythms, like morse\n"
+        "code, and talk without speaking.",
     /* ------------------------------------------------ */
         "\n"
         "Like, bang out a message into one\n"
@@ -804,13 +804,13 @@ const char *cafe_dialogue_speaking_with_music[] = {
     /* ------------------------------------------------ */
         "\n"
         "At least that's what a customer\n"
-        "once told me. Doesn't that sound\n"
-        "fun?",
+        "once told me.\n"
+        "Doesn't that sound fun?",
     /* ------------------------------------------------ */
         "\n"
         "But if you had percussive election\n"
         "speeches or bongo arguments...\n"
-        "Expect a lot of noise. Ahahaha!",
+        "Expect a lot of noise. Hahaha!",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
 };

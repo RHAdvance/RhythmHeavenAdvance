@@ -9,13 +9,13 @@ const char D_0806a7a8[] = "Try a little harder.";
 
 const char D_0806a7b8[] = "That was really great!";
 
-const char D_0806a7d4[] = "";
+const char D_0806a7d4[] = "Your decisions took too long.";
 
-const char D_0806a7f8[] = "";
+const char D_0806a7f8[] = "You thought on the spot well!";
 
-const char D_0806a81c[] = "";
+const char D_0806a81c[] = "Keep working on your rhythm.";
 
-const char D_0806a838[] = "";
+const char D_0806a838[] = "You had really great rhythm!";
 
 const char D_0806a850[] = "Rhythm League notes:";
 

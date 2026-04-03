@@ -179,6 +179,9 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -229,6 +232,9 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 5
     spawn_cue CUE_BUNNY_06
     spawn_cue CUE_BUNNY_07
@@ -572,6 +578,9 @@ script script_remix_3_main
     bunny_hop_event02 FALSE
     rest 24
     bunny_hop_event02 FALSE
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -595,6 +604,9 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -618,6 +630,9 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -641,6 +656,9 @@ script script_remix_3_main
     bunny_hop_event01 2
     spawn_cue CUE_BUNNY_03
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 4
     spawn_cue CUE_BUNNY_05
     spawn_cue CUE_BUNNY_07
@@ -649,6 +667,9 @@ script script_remix_3_main
     rest 24
     rest 24
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 5
     spawn_cue CUE_BUNNY_06
     spawn_cue CUE_BUNNY_07
@@ -660,6 +681,9 @@ script script_remix_3_main
     rest 24
     rest 24
     rest 24
+    #ifdef PLUS
+    bunny_hop_event07 s_rabbit_break_seqData
+    #endif
     bunny_hop_event01 6
     spawn_cue CUE_BUNNY_08
     spawn_cue CUE_BUNNY_07

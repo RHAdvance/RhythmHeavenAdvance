@@ -15,7 +15,7 @@ const char D_0805d8ec[] =
 
 const char D_0805d900[] =
     "\n"
-    "This part's in waltz time!";
+    "This one's a short waltz!";
 
 const char D_0805d914[] =
     "\n"
@@ -23,13 +23,13 @@ const char D_0805d914[] =
 
 const char D_0805d928[] =
     "\n"
-    "And that's it!";
+    "...And that's it!";
 
 const char D_0805d934[] =
-    "That was some good practice,\n"
+    "That was some good practice.\n"
     "How'd you like it?\n"
-    "Keep it in the back of\n"
-    "your mind for later!";
+    "Keep it in the back of your\n"
+    "mind for later!";
 
 const char D_0805d97c[] =
     "\n"
@@ -38,8 +38,8 @@ const char D_0805d97c[] =
 
 const char D_0805d9a8[] =
     "\n"
-    "Oh, hi again.\n"
-    "I'm Samurai Drummer";
+    "Oh, hello again.\n"
+    "I'm Samurai Drummer.";
 
 const char D_0805d9c8[] =
     "Well...\n"
@@ -54,7 +54,7 @@ const char D_0805da00[] =
     "applies when playing music.";
 
 const char D_0805da5c[] =
-    "Alright, Lesson 2.\n"
+    "Alright, lesson 2.\n"
     "Let's practice the\n"
     "\"start\" of the music.";
 

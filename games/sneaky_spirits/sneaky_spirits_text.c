@@ -35,7 +35,7 @@ const char D_0805bb9D[] = "Ｎｏｗ！";
 
 const char D_0805bba8[] = "Ｔｉｍｅ　ｔｏ　ｓｔａｒｔ　ｔｈｅ　ｒｅａｌ　ｇａｍｅ．";
 
-const char D_0805bbc8[] = "Spooky voices agree";
+const char D_0805bbc8[] = "Spooky voices agree...";
 
 const char D_0805bbd8[] = "Your archery fundamentals needed work.";
 
@@ -51,4 +51,4 @@ const char D_0805bc5c[] = "Your internal count was spot on!";
 
 const char D_0805bc78[] = "You did superbly against the slow ones.";
 
-const char D_0805bc98[] = "spooky voices agree";
+const char D_0805bc98[] = "Spooky voices agree...";

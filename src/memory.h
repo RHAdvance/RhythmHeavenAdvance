@@ -66,7 +66,7 @@ extern struct SaveBuffer {
         u8 minFailsForBaristaHelp;
         u8 unk291;
         u32 unk294[16];
-        /*
+        /* why is this commented and not unpacked??????
             u32 highScoreMrUpbeat;
             u32 highScoreMannequinFactory;
             u32 highScoreSickBeatsSP;

@@ -44,7 +44,7 @@ const char *drum_live_menu_poster_desc[] = {
     "\n"
     "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　The Clappy Trio\n"
     "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　Tap Trial\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　WISH - Can't Wait For You\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　WISH - Can't Wait for You\n"
     "\n",
 
     /* DRUM BAND  */

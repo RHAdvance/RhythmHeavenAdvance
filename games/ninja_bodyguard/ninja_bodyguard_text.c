@@ -17,7 +17,7 @@ const char D_0805b944[] = "Their four-arrow barrage overwhelmed you.";
 
 const char D_0805b968[] = "You blocked their four-arrow barrage!";
 
-const char D_0805b988[] = "My Lord solemnly intones...";
+const char D_0805b988[] = "My lord solemnly intones...";
 
 const char D_0805b99c[] = "I thought you were trying to protect me...";
 

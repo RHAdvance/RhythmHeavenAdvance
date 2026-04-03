@@ -19,7 +19,7 @@ const char D_0805ae08[] = "You showed a great sense of flow.";
 
 const char D_0805ae1c[] = "You couldn't keep up in the fast parts.";
 
-const char D_0805ae34[] = "Peer review";
+const char D_0805ae34[] = "Peer review:";
 
 const char D_0805ae40[] = "Work on your basics.";
 
@@ -37,7 +37,7 @@ const char D_0805aec8[] = "You couldn't keep up in the fast parts.";
 
 const char D_0805aee8[] = "You were on top of the fast parts!";
 
-const char D_0805af08[] = "Peer review";
+const char D_0805af08[] = "Peer review:";
 
 const char D_0805af14[] = "Hi, we're the Clappy Trio!";
 

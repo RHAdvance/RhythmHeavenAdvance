@@ -20,9 +20,9 @@ const char *results_letter_ranks[] = {
 
 // [D_089d7998] DEBUG Skill Comments - Accuracy
 const char *results_skill_text_accuracy[] = {
-    "Ｐｒｏｆｅｓｓｉｏｎａｌ　ａｃｃｕｒａｃｙ",
-    "Ｓｅｎｓｅ　ｏｆ　ｒｈｙｔｈｍ",
-    "Ｓａｔｉｓｆｙｉｎｇ　ａｃｃｕｒａｃｙ",
+    "Ｐｒｏｆｅｓｓｉｏｎａｌ　Ａｃｃｕｒａｃｙ",
+    "Ｓｅｎｓｅ　ｏｆ　Ｒｈｙｔｈｍ",
+    "Ａｃｃｕｒａｃｙ　Ｓａｔｉｓｆａｃｔｉｏｎ",
     NULL
 };
 
@@ -45,25 +45,25 @@ const char *results_skill_text_barely_trk2[] = {
     // Steadiness
 const char *results_skill_text_barely_trk1[] = {
     "Ｒｅｓｐｏｎｓｉｂｉｌｉｔｙ",
-    "Ｔｈｅ　ｃｒｕｃｉａｌ　ｐａｒｔ",
-    "Ｓｔｅａｄｉｎｅｓｓ",
+    "Ｔｈｅ　Ｍｏｓｔ　Ｉｍｐｏｒｔａｎｔ　Ｐａｒｔ",
+    "Ｇｒａｓｐ",
     NULL
 };
 
 
 // [D_089d79c8] DEBUG Skill Comments - Hits
 const char *results_skill_text_hit_avg[] = {
-    "Ａｍａｔｅｕｒ－ｌｅｖｅｌ　ａｃｃｕｒａｃｙ",
-    "Ｏｒｄｉｎａｒｙ　ａｃｃｕｒａｃｙ",
-    "Ｍｏｄｅｒａｔｅ　ａｃｃｕｒａｃｙ",
+    "Ａｍａｔｅｕｒ　Ａｃｃｕｒａｃｙ",
+    "Ｏｒｄｉｎａｒｙ　Ａｃｃｕｒａｃｙ",
+    "Ｍｏｄｅｒａｔｅ　Ａｃｃｕｒａｃｙ",
     NULL
 };
 
 
 // [D_089d79d8] DEBUG Skill Comments - Irrelevant Inputs
 const char *results_skill_text_irrelevant_inputs[] = {
-    "Ｓｔａｍｉｎａ　ｒｅｓｏｕｒｃｅｆｕｌｎｅｓｓ",
-    "Ｒａｔｉｏｎａｌ　ｔａｌｅｎｔ",
+    "Ｃｏｎｓｅｒｖａｔｉｏｎ　ｏｆ　Ｓｔａｍｉｎａ",
+    "Ｒａｔｉｏｎａｌｉｔｙ",
     "Ｃａｌｍｎｅｓｓ",
     NULL
 };
@@ -72,7 +72,7 @@ const char *results_skill_text_irrelevant_inputs[] = {
 // [D_089d79e8] DEBUG Skill Comments - Accuracy (Lenient)
 const char *results_skill_text_accuracy_lenient[] = {
     "Ｓｔａｂｉｌｉｔｙ",
-    "Ｔｈｅ　ｃｏｒｅ　ｏｆ　ｙｏｕｒ　ｒｈｙｔｈｍ",
+    "Ｙｏｕｒ　Ｒｈｙｔｈｍ’ｓ　Ｃｏｒｅ",
     "Ｃｏｎｓｉｓｔｅｎｃｙ",
     NULL
 };
@@ -81,15 +81,15 @@ const char *results_skill_text_accuracy_lenient[] = {
 // [D_089d79f8] DEBUG Skill Comments - Misses
 const char *results_skill_text_miss[] = {
     "Ｍｏｔｉｖａｔｉｏｎ",
-    "Ｖｉｓｕａｌ　ａｃｕｉｔｙ",
-    "Ｐｏｓｉｔｉｖｉｔｙ",
+    "Ｖｉｓｕａｌ　Ｓｔｒｅｎｇｔｈ",
+    "Ａｔｔｉｔｕｄｅ",
     NULL
 };
 
 
 // [D_089d7a08] DEBUG Skill Comments - Misses (Tracker 2)
 const char *results_skill_text_miss_trk2[] = {
-    "Ｒｅｆｌｅｘｅｓ",
+    "Ａｄａｐｔａｂｉｌｉｔｙ",
     "Ｆｌｅｘｉｂｉｌｉｔｙ",
     "Ｃａｒｅｆｕｌｎｅｓｓ",
     NULL
@@ -98,13 +98,13 @@ const char *results_skill_text_miss_trk2[] = {
 
 // [D_089d7a18] DEBUG Skill Comments - Random
 const char *results_skill_text_random[] = {
-    "Ｌｏｖｅ　ｆｏｒｔｕｎｅ　ｆｏｒ　ｎｅｘｔ　ｙｅａｒ",
-    "Ｔｈｉｓ　ｙｅａｒ'ｓ　ｆｉｎａｎｃｉａｌ　ｆｏｒｔｕｎｅ",
-    "Ｔｏｍｏｒｒｏｗ'ｓ　ｗｅａｔｈｅｒ",
-    "Ｙｅｓｔｅｒｄａｙ'ｓ　ｄｉｎｎｅｒ",
-    "（Ｐｒｅｄｉｃｔｉｎｇ）　Ｙｏｕｒ　ｂｌｏｏｄ　ｔｙｐｅ",
-    "Ｙｏｕｒ　ｌｅｖｅｌ　ｏｆ　ｕｐｂｒｉｎｇｉｎｇ",
-    "Ｙｏｕｒ　ｈｕｍａｎｉｔｙ",
+    "Ｎｅｘｔ　Ｙｅａｒ’ｓ　Ｌｏｖｅ",
+    "Ｔｈｉｓ　Ｙｅａｒ’ｓ　Ｗｅａｌｔｈ",
+    "Ｔｏｍｏｒｒｏｗ’ｓ　Ｗｅａｔｈｅｒ",
+    "Ｙｅｓｔｅｒｄａｙ’ｓ　Ｄｉｎｎｅｒ",
+    "Ｂｌｏｏｄ　Ｔｙｐｅ　Ｐｒｅｄｉｃｔｉｏｎ",
+    "Ｙｏｕｒ　Ｕｐｂｒｉｎｇｉｎｇ",
+    "Ｙｏｕｒ　Ｈｕｍａｎｉｔｙ",
     NULL
 };
 
