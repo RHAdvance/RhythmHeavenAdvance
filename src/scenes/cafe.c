@@ -6,6 +6,7 @@
 #include "levels.h"
 #include "src/scenes/game_select.h"
 #include "src/time_keeper.h"
+#include "src/code_080092cc.h"
 
 
 /* CAFE SCENE */
@@ -259,6 +260,9 @@ void cafe_update_dialogue_inputs(void) {
 
         if (choice != gCafe->queryResult) {
             sprite_set_anim(gSpriteHandler, gCafe->textAdvIcon, cafe_cursor_option_anim[gCafe->queryResult], 0, 1, 0, 0);
+            rumble_play_menu_move();
+        } else if (D_03004afc & (DPAD_UP | DPAD_DOWN)) {
+            rumble_play_menu_limit();
         }
     }
 
@@ -266,6 +270,7 @@ void cafe_update_dialogue_inputs(void) {
         text_printer_set_string(gCafe->printer, NULL);
         sprite_set_visible(gSpriteHandler, gCafe->textAdvIcon, FALSE);
         play_sound(&s_f_cafe_send_mes_seqData);
+        rumble_play_menu_confirm();
         gCafe->textAdvReady = FALSE;
         set_pause_beatscript_scene(FALSE);
     }

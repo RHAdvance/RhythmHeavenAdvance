@@ -6,6 +6,7 @@
 #include "levels.h"
 #include "src/scenes/game_select.h"
 #include "src/scenes/studio.h"
+#include "src/code_080092cc.h"
 
 
 /* PERFECT CERTIFICATE SCENE */
@@ -166,6 +167,7 @@ void perfect_scene_update(void *sVar, s32 dArg) {
     if (perfect_scene_inputs_enabled()) {
         if (D_03004afc & A_BUTTON) {
             play_sound(&s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
             set_pause_beatscript_scene(FALSE);
             gPerfect->inputsEnabled = FALSE;
         }

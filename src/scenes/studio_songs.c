@@ -1,6 +1,7 @@
 #include "global.h"
 #include "studio.h"
 #include "graphics/studio/studio_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* STUDIO SONG LIST */
@@ -219,6 +220,7 @@ void studio_song_list_update(void) {
         case STUDIO_LIST_EV_CONFIRM:
             stop_sound(&s_studio_bgm_seqData);
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
 
             songItem = listbox_get_sel_item(gStudio->songList);
             studio_scene_play_music(songItem);
@@ -242,21 +244,31 @@ void studio_song_list_update(void) {
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            rumble_play_menu_cancel();
             listbox_hide_sel_sprite(gStudio->songList);
             func_0801d968(script_scene_studio_exit);
             gStudio->inputsEnabled = FALSE;
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
-            listbox_scroll_up(gStudio->songList);
+            if (listbox_get_sel_item(gStudio->songList) <= 0) {
+                rumble_play_menu_limit();
+            } else {
+                listbox_scroll_up(gStudio->songList);
+            }
             break;
 
         case STUDIO_LIST_EV_SCROLL_DOWN:
-            listbox_scroll_down(gStudio->songList);
+            if (listbox_get_sel_item(gStudio->songList) >= (gStudio->songList->totalItems - 1)) {
+                rumble_play_menu_limit();
+            } else {
+                listbox_scroll_down(gStudio->songList);
+            }
             break;
 
         case STUDIO_LIST_EV_MOVE_ITEM:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
             gStudio->selectedItem = listbox_get_sel_item(gStudio->songList);
             listbox_link_sprite_x_y_to_line(gStudio->songList, gStudio->itemMoveHighlight, gStudio->selectedItem);
             sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, TRUE);
@@ -268,13 +280,16 @@ void studio_song_list_update(void) {
             if ((D_030046a8->data.studioSongs[songItem].songID == STUDIO_SONG_SILENCE)
               && ((D_030046a8->data.studioSongs[songItem].unk3 & 1) == 0)) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_error_seqData);
+                rumble_play_menu_error();
             } else {
                 D_030046a8->data.studioSongs[songItem].unk3 ^= 2;
                 func_0800b454(gStudio->songList, songItem);
                 if (D_030046a8->data.studioSongs[songItem].unk3 & 2) {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                    rumble_play_menu_cancel();
                 } else {
                     play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                    rumble_play_menu_confirm();
                 }
             }
             break;
@@ -335,6 +350,7 @@ void studio_song_list_update_w_selection(void) {
             if (songItem != gStudio->selectedItem) {
                 studio_song_list_move_item(gStudio->selectedItem, songItem);
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_kettei2_seqData);
+                rumble_play_menu_confirm();
                 sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
                 listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
                 gStudio->sceneState = STUDIO_STATE_NAV_SONG_LIST;
@@ -343,17 +359,26 @@ void studio_song_list_update_w_selection(void) {
 
         case STUDIO_LIST_EV_CANCEL:
             play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+            rumble_play_menu_cancel();
             sprite_set_visible(gSpriteHandler, gStudio->itemMoveHighlight, FALSE);
             listbox_set_sel_sprite(gStudio->songList, anim_studio_selection_item);
             gStudio->sceneState = STUDIO_STATE_NAV_SONG_LIST;
             break;
 
         case STUDIO_LIST_EV_SCROLL_UP:
-            listbox_scroll_up(gStudio->songList);
+            if (listbox_get_sel_item(gStudio->songList) <= 0) {
+                rumble_play_menu_limit();
+            } else {
+                listbox_scroll_up(gStudio->songList);
+            }
             break;
 
         case STUDIO_LIST_EV_SCROLL_DOWN:
-            listbox_scroll_down(gStudio->songList);
+            if (listbox_get_sel_item(gStudio->songList) >= (gStudio->songList->totalItems - 1)) {
+                rumble_play_menu_limit();
+            } else {
+                listbox_scroll_down(gStudio->songList);
+            }
             break;
     }
 }

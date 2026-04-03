@@ -14,6 +14,7 @@
 #include "src/midi/midi.h"
 #include "src/lib_0804ca80.h"
 #include "src/backdrop.h"
+#include "src/code_080092cc.h"
 
 // Could use better split
 
@@ -1049,7 +1050,7 @@ void func_0800c694(u32 arg) {
         arg = 24;
     }
 
-    func_08009564(arg);
+    rumble_request_pulse(arg);
 }
 
 

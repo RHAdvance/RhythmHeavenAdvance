@@ -3,6 +3,7 @@
 #include "graphics/game_select/game_select_graphics.h"
 
 #include "levels.h"
+#include "src/code_080092cc.h"
 #include "src/scenes/reading.h"
 #include "src/scenes/studio.h"
 
@@ -416,6 +417,7 @@ void update_campaign_notice(void) {
             sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, TRUE);
             gGameSelect->hideStageTitle = FALSE;
             play_sound(&s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
             scene_interpolate_music_volume(INT_TO_FIXED(1.0), ticks_to_frames(0x18));
             gGameSelect->sceneState = GS_STATE_MAIN;
         }
@@ -995,6 +997,7 @@ u32 game_select_get_next_valid_xy(s32 *xReq, s32 *yReq, s32 dx, s32 dy) {
 // Read Directional Inputs
 void game_select_read_dpad_inputs(void) {
     s16 screenX, screenY;
+    s32 levelID;
     s32 x, y, dx, dy;
 
     // Get horizontal and vertical movement.
@@ -1027,6 +1030,7 @@ void game_select_read_dpad_inputs(void) {
 
     // If the movement is invalid or zero, exit.
     if (!game_select_get_next_valid_xy(&x, &y, dx, dy)) {
+        rumble_play_menu_limit();
         return;
     }
 
@@ -1041,6 +1045,12 @@ void game_select_read_dpad_inputs(void) {
     }
 
     play_sound(&s_menu_cursor1_seqData);
+    levelID = get_level_id_from_grid_xy(x, y);
+    if ((levelID > LEVEL_NULL) && (get_level_data_from_id(levelID)->type == LEVEL_TYPE_BONUS)) {
+        rumble_play_menu_bonus();
+    } else {
+        rumble_play_menu_move();
+    }
 }
 
 
@@ -1140,11 +1150,17 @@ void game_select_read_inputs(void) {
             set_pause_beatscript_scene(FALSE);
             gGameSelect->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
+            if (levelData->type == LEVEL_TYPE_BONUS) {
+                rumble_play_menu_bonus();
+            } else {
+                rumble_play_menu_confirm();
+            }
             return;
         }
 
         /* If the level cannot be opened: */
         play_sound(&s_menu_error_seqData);
+        rumble_play_menu_error();
         return;
     }
 
@@ -1159,6 +1175,7 @@ void game_select_read_inputs(void) {
         set_pause_beatscript_scene(FALSE);
         gGameSelect->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
+        rumble_play_menu_cancel();
     }
 }
 
