@@ -42,6 +42,7 @@ extern struct Scene scene_save_editor;
 extern struct Scene scene_asset_test;
 extern struct Scene scene_template;
 extern struct Scene scene_read_error;
+extern struct Scene scene_gbp_handshake;
 
 // Main Games
 extern struct Scene scene_karate_man;

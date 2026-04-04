@@ -124,7 +124,12 @@ void agb_main(void) {
 	REG_IME = 1;
 
 	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
+	#ifdef RUMBLE
+	init_scenes(&scene_gbp_handshake);
+	set_scene_trans_target(&scene_gbp_handshake, &scene_warning);
+	#else
 	init_scenes(&scene_warning);
+	#endif
     set_scene_trans_target(&scene_warning, &scene_disclaimer);
 #ifdef DEBUG
     set_scene_trans_target(&scene_disclaimer, &scene_debug_menu);
