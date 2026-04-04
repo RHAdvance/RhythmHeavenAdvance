@@ -467,6 +467,49 @@ s32 get_level_state_from_id(s32 id) {
 }
 
 
+// Check if this level still has a queued "Perfect" reveal event.
+static u32 game_select_has_pending_perfect_event(s32 levelID) {
+    struct TengokuSaveData *saveData = &D_030046a8->data;
+    u32 queueID, totalQueued;
+    u32 i;
+
+    if (levelID < 0) {
+        return FALSE;
+    }
+
+    if ((saveData->recentLevelState == LEVEL_STATE_PERFECT)
+      && (get_level_id_from_grid_xy(saveData->recentLevelX, saveData->recentLevelY) == levelID)) {
+        return TRUE;
+    }
+
+    if (saveData->recentLevelState != LEVEL_STATE_NULL) {
+        return FALSE;
+    }
+
+    totalQueued = gGameSelect->totalLevelEventsQueued;
+    if (totalQueued > ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
+        totalQueued = ARRAY_COUNT(gGameSelect->levelEventsQueue);
+    }
+
+    queueID = gGameSelect->levelEventDequeueID;
+
+    for (i = 0; i < totalQueued; i++) {
+        struct QueuedLevelEvent *event = &gGameSelect->levelEventsQueue[queueID];
+
+        if ((event->state == LEVEL_STATE_PERFECT)
+          && (get_level_id_from_grid_xy(event->x, event->y) == levelID)) {
+            return TRUE;
+        }
+
+        if (++queueID >= ARRAY_COUNT(gGameSelect->levelEventsQueue)) {
+            queueID = 0;
+        }
+    }
+
+    return FALSE;
+}
+
+
 // Get Level Completion State from Level ID (with Perfect Detection)
 s32 get_level_state_with_perfect_from_id(s32 id) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
@@ -478,8 +521,9 @@ s32 get_level_state_with_perfect_from_id(s32 id) {
 
     levelState = get_level_state(saveData, id);
 
-    // Check if the game has been perfected (same logic as rank printing)
-    if (get_campaign_cleared(saveData, get_campaign_from_level_id(id))) {
+    // make sure you don't overlay a perfect medal on top of a regular one if the perfect event is still pending 
+    if (!game_select_has_pending_perfect_event(id)
+      && get_campaign_cleared(saveData, get_campaign_from_level_id(id))) {
         levelState = LEVEL_STATE_PERFECT;
     }
 
@@ -1624,7 +1668,7 @@ u32 game_select_process_level_events(void) {
     struct GameSelectGridEntry *gridEntry;
     const s8 *eventTargets;
     s16 screenX, screenY;
-    s32 x, y, state, id;
+    s32 x, y, state, saveState, id;
     s16 sprite;
 
     if (gGameSelect->levelEventPending) {
@@ -1640,6 +1684,7 @@ u32 game_select_process_level_events(void) {
 
     id = get_level_id_from_grid_xy(x, y);
     get_pixel_xy_from_grid_xy(x, y, &screenX, &screenY);
+    saveState = state;
 
     switch (state) {
         case LEVEL_STATE_OPEN:
@@ -1664,7 +1709,7 @@ u32 game_select_process_level_events(void) {
         case LEVEL_STATE_HAS_MEDAL:
             screenX += 47;
             screenY += 68;
-            sprite = sprite_create(gSpriteHandler, anim_game_select_get_superb, 0, screenX, screenY, 0x4864, 1, 0, 3);
+            sprite = sprite_create(gSpriteHandler, anim_game_select_get_superb, 0, screenX, screenY, 0x8864, 1, 0, 3);
             game_select_link_sprite_xy_to_bg(sprite);
             play_sound_w_pitch_volume(&s_f_clear_game_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(2.0));
             play_sound(&s_f_get_medal_seqData);
@@ -1678,9 +1723,21 @@ u32 game_select_process_level_events(void) {
                 set_level_first_ok(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
             }
             break;
+
+        case LEVEL_STATE_PERFECT:
+            screenX += 47;
+            screenY += 68;
+            sprite = sprite_create(gSpriteHandler, anim_game_select_get_superb, 0, screenX, screenY, 0x8864, 1, 0, 3);
+            game_select_link_sprite_xy_to_bg(sprite);
+            play_sound_w_pitch_volume(&s_f_clear_game_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(2.0));
+            play_sound(&s_f_get_medal_seqData);
+
+            saveState = LEVEL_STATE_HAS_MEDAL;
+            cafe_session_remove_level(id);
+            break;
     }
 
-    save_level_state_from_grid_xy(x, y, state);
+    save_level_state_from_grid_xy(x, y, saveState);
     game_select_set_icon_map_after_level_event(x, y);
 
     if ((x == gGameSelect->cursorX) && (y == gGameSelect->cursorY)) {
@@ -1690,7 +1747,7 @@ u32 game_select_process_level_events(void) {
 
     gridEntry = game_select_grid_data + x + (y * GS_GRID_WIDTH);
 
-    if ((state == LEVEL_STATE_CLEARED) || (state == LEVEL_STATE_HAS_MEDAL)) {
+    if ((state == LEVEL_STATE_CLEARED) || (state == LEVEL_STATE_HAS_MEDAL) || (state == LEVEL_STATE_PERFECT)) {
         if ((gridEntry->flags & LEVEL_EVENT_DELAY_CLEAR)) {
             gGameSelect->levelEventTimer = 60;
         }

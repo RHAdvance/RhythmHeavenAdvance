@@ -84,7 +84,7 @@ void perfect_scene_start(void *sVar, s32 dArg) {
             }
 
             cafe_session_add_perfect_level(get_level_id_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY));
-            results_save_to_cart(LEVEL_STATE_NULL);
+            results_save_to_cart(LEVEL_STATE_PERFECT);
         }
     } else {
         gPerfect->campaignID = 0;

@@ -119,11 +119,11 @@ struct GameSelectOverlay game_select_icon_overlay_medal = {
     /* Dimensions */ 3, 3,
     /* Texture    */ icon_overlay_medal_bin,
     /* Anim. Data */ (s8[]) {
-        /* 000 */ 0, 40,
         /* 001 */ 1, 3,
         /* 002 */ 2, 3,
         /* 003 */ 3, 3,
         /* 004 */ 4, 3,
+        /* 000 */ 0, 40,
         /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
@@ -143,11 +143,17 @@ struct GameSelectOverlay game_select_icon_overlay_bonus = {
 
 // [D_089cfa74] Perfect Cleared
 struct GameSelectOverlay game_select_icon_overlay_perfect = {
-    /* Dimensions */ 3, 3,
+    /* Dimensions */ 3, 4,
     /* Texture    */ icon_overlay_perfect_bin,
     /* Anim. Data */ (s8[]) {
-        /* 000 */ 0, 1,
-        /* End */ LEVEL_ICON_ANIM_STOP
+        /* 000 */ 1, 1,
+        /* 001 */ 2, 2,
+        /* 002 */ 3, 2,
+        /* 003 */ 4, 2,
+        /* 004 */ 5, 2,
+        /* 005 */ 1, 1,
+        /* 006 */ 0, 42,
+        /* End */ LEVEL_ICON_ANIM_LOOP
     }
 };
 
