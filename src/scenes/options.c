@@ -1,6 +1,7 @@
 #include "global.h"
 #include "options.h"
 #include "graphics/options/options_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* OPTIONS MENU SCENE */
@@ -114,12 +115,16 @@ void options_scene_update_main(void) {
     if (D_03004afc & DPAD_UP) {
         if (gOptionsMenu->cursorPos >= OPTIONS_BUTTON_DATA_CLEAR) {
             event = OPTIONS_EV_CURSOR_UP;
+        } else {
+            rumble_play_menu_limit();
         }
     }
 
     if (D_03004afc & DPAD_DOWN) {
         if (gOptionsMenu->cursorPos <= OPTIONS_BUTTON_SOUND_MODE) {
             event = OPTIONS_EV_CURSOR_DOWN;
+        } else {
+            rumble_play_menu_limit();
         }
     }
 
@@ -135,8 +140,10 @@ void options_scene_update_main(void) {
         TOGGLE_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC);
         if(CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC)) {
             play_sound(&s_menu_kettei1_seqData);
+            rumble_play_menu_confirm();
         } else {
             play_sound(&s_menu_cancel3_seqData);
+            rumble_play_menu_cancel();
         }
     }
     #endif
@@ -149,6 +156,7 @@ void options_scene_update_main(void) {
             sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_off_data_clear, 0, 0, 0, 0);
             text_printer_set_string(gOptionsMenu->descText, options_desc_text[OPTIONS_BUTTON_SOUND_MODE]);
             play_sound(&s_menu_cursor2_seqData);
+            rumble_play_menu_move();
             break;
 
         case OPTIONS_EV_CURSOR_DOWN:
@@ -158,6 +166,7 @@ void options_scene_update_main(void) {
             sprite_set_anim(gSpriteHandler, gOptionsMenu->uiDataClear, anim_options_select_data_clear, 0, 0, 0, 0);
             text_printer_set_string(gOptionsMenu->descText, options_desc_text[OPTIONS_BUTTON_DATA_CLEAR]);
             play_sound(&s_menu_cursor2_seqData);
+            rumble_play_menu_move();
             break;
 
         case OPTIONS_EV_CONFIRM:
@@ -176,6 +185,7 @@ void options_scene_update_main(void) {
                 gOptionsMenu->state = OPTIONS_SCENE_STATE_WARNING;
             }
             play_sound(&s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
             break;
 
         case OPTIONS_EV_CANCEL:
@@ -184,6 +194,7 @@ void options_scene_update_main(void) {
             set_pause_beatscript_scene(FALSE);
             gOptionsMenu->inputsEnabled = FALSE;
             play_sound(&s_menu_cancel3_seqData);
+            rumble_play_menu_cancel();
             break;
     }
 }
@@ -201,6 +212,7 @@ void options_scene_update_warning(void) {
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningCursor, FALSE);
         text_printer_show_text(gOptionsMenu->warningText, FALSE);
         gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
+        rumble_play_menu_cancel();
         return;
     }
 
@@ -212,6 +224,7 @@ void options_scene_update_warning(void) {
             gOptionsMenu->inputsEnabled = FALSE;
             gOptionsMenu->state = OPTIONS_SCENE_STATE_EXIT;
             play_sound(&s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
             return;
         } else {
             sprite_set_visible(gSpriteHandler, gOptionsMenu->uiWarningPane, FALSE);
@@ -219,6 +232,7 @@ void options_scene_update_warning(void) {
             text_printer_show_text(gOptionsMenu->warningText, FALSE);
             play_sound(&s_menu_cancel2_seqData);
             gOptionsMenu->state = OPTIONS_SCENE_STATE_MAIN;
+            rumble_play_menu_cancel();
         }
     }
 
@@ -228,6 +242,9 @@ void options_scene_update_warning(void) {
             options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
             sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiWarningCursor, 0);
             play_sound(&s_menu_cursor1_seqData);
+            rumble_play_menu_move();
+        } else {
+            rumble_play_menu_limit();
         }
     }
 
@@ -237,6 +254,9 @@ void options_scene_update_warning(void) {
             options_scene_move_warning_cursor(gOptionsMenu->warningCursorPos);
             sprite_set_anim_cel(gSpriteHandler, gOptionsMenu->uiWarningCursor, 0);
             play_sound(&s_menu_cursor1_seqData);
+            rumble_play_menu_move();
+        } else {
+            rumble_play_menu_limit();
         }
     }
 }

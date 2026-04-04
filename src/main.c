@@ -1,6 +1,8 @@
 #include "main.h"
 #include "memory.h"
 #include "code_08003b28.h"
+#include "code_080092cc.h"
+#include "rumble_backend.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
 
@@ -39,6 +41,10 @@ void func_08000224(void) {
 	init_key_listener();
 	init_time_keeper();
 	init_fast_udivsi3();
+#ifdef RUMBLE
+	rumble_backend_init();
+	rumble_init(3);
+#endif
 	init_math_sqrt();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
 	task_pool_init();
@@ -109,7 +115,11 @@ void agb_main(void) {
 	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 
 	REG_DISPSTAT = 8;
-	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);
+	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK
+#ifdef RUMBLE
+		| INTERRUPT_COMM
+#endif
+	);
 	REG_IF = 0xFFFF;
 	REG_IME = 1;
 
@@ -127,6 +137,9 @@ void agb_main(void) {
 		func_080013a8();
 		get_agb_random_var();
 		update_key_listener();
+		#ifdef RUMBLE
+		rumble_backend_update();
+		#endif
 		D_030046a0 += 1;
 		process_scenes();
 
@@ -136,7 +149,9 @@ void agb_main(void) {
 			if ((keysPressed & RESET_BUTTON_COMBO) == RESET_BUTTON_COMBO) {
 				key_rec_set_mode(0, 0x3ff, 0, 0);
 				set_current_scene(&scene_soft_reset);
-				func_08009548();
+				#ifdef RUMBLE
+				rumble_shutdown();
+				#endif
 				D_03004498 = FALSE;
 			}
 		}

@@ -1,4 +1,5 @@
 #include "engines/rhythm_toys.h"
+#include "src/code_080092cc.h"
 
 // For readability.
 #define gRhythmToys ((struct RhythmToysEngineData *)gCurrentEngineData)
@@ -345,6 +346,7 @@ void rhythm_toys_engine_update(void) {
             }
 
             play_sound(&s_menu_cancel2_seqData);
+            rumble_play_menu_cancel();
         }
 
         if (gRhythmToys->changeRapMachineSfxTableTimer) {

@@ -1,6 +1,7 @@
 #include "global.h"
 #include "debug_menu.h"
 #include "src/scenes/medal_corner.h"
+#include "src/code_080092cc.h"
 
 
 /* DEBUG MENU SCENE */
@@ -135,17 +136,21 @@ void debug_menu_scene_update(void *sVar, s32 dArg) {
     if (D_030053b8 & DPAD_UP) {
         debug_menu_render_table(gDebugMenu->page, (gDebugMenu->row > 0) ? gDebugMenu->row - 1 : maxRow - 1);
         play_sound(&s_menu_cursor1_seqData);
+        rumble_play_menu_move();
     } else if (D_030053b8 & DPAD_DOWN) {
         debug_menu_render_table(gDebugMenu->page, (gDebugMenu->row < maxRow - 1) ? gDebugMenu->row + 1 : 0);
         play_sound(&s_menu_cursor1_seqData);
+        rumble_play_menu_move();
     }
 
     if (D_030053b8 & DPAD_LEFT) {
         debug_menu_render_table(gDebugMenu->page - 1, gDebugMenu->row);
         play_sound(&s_f_pause_cursor_seqData);
+        rumble_play_menu_move();
     } else if (D_030053b8 & DPAD_RIGHT) {
         debug_menu_render_table(gDebugMenu->page + 1, gDebugMenu->row);
         play_sound(&s_f_pause_cursor_seqData);
+        rumble_play_menu_move();
     }
 
     if (D_03004afc & (START_BUTTON | A_BUTTON)) {
@@ -161,11 +166,13 @@ void debug_menu_scene_update(void *sVar, s32 dArg) {
         set_pause_beatscript_scene(FALSE);
         gDebugMenu->inputsEnabled = FALSE;
         play_sound(&s_menu_kettei1_seqData);
+        rumble_play_menu_confirm();
     } else if (D_03004afc & B_BUTTON) {
         set_next_scene(&scene_main_menu);
         set_pause_beatscript_scene(FALSE);
         gDebugMenu->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
+        rumble_play_menu_cancel();
     }
 }
 

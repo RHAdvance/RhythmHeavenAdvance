@@ -1,6 +1,7 @@
 #include "global.h"
 #include "title.h"
 #include "graphics/title/title_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* TITLE SCENE */
@@ -234,6 +235,7 @@ void title_scene_update_inputs(void) {
         func_0801d968(script_scene_title_exit);
         gTitle->inputsEnabled = FALSE;
         play_sound_w_pitch_volume(&s_nyuka_fan_seqData, INT_TO_FIXED(1.25), INT_TO_FIXED(0.0));
+        rumble_play_menu_confirm();
         scene_set_music_volume_env(100);
         D_030046a8->data.unkB0 = TRUE;
         gTitle->timeUntilDemo = 9999;

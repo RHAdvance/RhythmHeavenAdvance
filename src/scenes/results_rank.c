@@ -1,6 +1,7 @@
 #include "global.h"
 #include "results.h"
 #include "graphics/results/results_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* RESULTS SCENE 2 (RANK-TYPE) */
@@ -83,6 +84,7 @@ void rank_results_scene_update(void *sVar, s32 dArg) {
         set_pause_beatscript_scene(FALSE);
         gResults->inputsEnabled = FALSE;
         play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
+        rumble_play_menu_confirm();
     }
 }
 
