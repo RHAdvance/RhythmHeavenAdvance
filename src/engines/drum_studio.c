@@ -11,6 +11,7 @@
 #include "src/text_printer.h"
 #include "src/code_0800b778.h"
 #include "src/lib_0804ca80.h"
+#include "src/code_080092cc.h"
 
 asm(".include \"include/gba.inc\""); // Temporary
 
@@ -1067,18 +1068,25 @@ void drum_studio_update_save_options(void) {
             sprite_set_anim(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, anim_drum_studio_save_option_y, 0, 1, 0, 0);
             gDrumStudio->currentSaveOption = REPLAY_SAVE_OPTION_YES;
             play_sound(&s_menu_cursor1_seqData);
+            rumble_play_menu_move();
             return;
         } else if ((D_03004afc & DPAD_RIGHT) && (gDrumStudio->currentSaveOption == REPLAY_SAVE_OPTION_YES)) {
             sprite_set_anim(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, anim_drum_studio_save_option_n, 0, 1, 0, 0);
             gDrumStudio->currentSaveOption = REPLAY_SAVE_OPTION_NO;
             play_sound(&s_menu_cursor1_seqData);
+            rumble_play_menu_move();
+            return;
+        } else if ((D_03004afc & DPAD_LEFT) || (D_03004afc & DPAD_RIGHT)) {
+            rumble_play_menu_limit();
             return;
         } else if ((D_03004afc & A_BUTTON)) {
             if (gDrumStudio->currentSaveOption == REPLAY_SAVE_OPTION_YES) {
                 play_sound(&s_menu_kettei2_seqData);
+                rumble_play_menu_confirm();
                 drum_studio_save_replay();
             } else {
                 play_sound(&s_menu_cancel3_seqData);
+                rumble_play_menu_cancel();
             }
             sprite_set_visible(gSpriteHandler, gDrumStudio->replaySaveOptionSprite, FALSE);
             text_printer_clear(gDrumStudio->replayTextPrinter);

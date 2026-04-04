@@ -3,6 +3,7 @@
 #include "graphics/epilogues/epilogues_graphics.h"
 
 #include "levels.h"
+#include "src/code_080092cc.h"
 #include "src/scenes/game_select.h"
 #include "src/scenes/results.h"
 #include "src/scenes/studio.h"
@@ -118,6 +119,7 @@ void epilogue_scene_update(void *sVar, s32 dArg) {
             set_pause_beatscript_scene(FALSE);
             play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), 0);
             gEpilogue->inputsEnabled = FALSE;
+            rumble_play_menu_confirm();
         }
     }
 }

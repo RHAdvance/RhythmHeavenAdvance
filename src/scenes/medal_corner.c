@@ -2,6 +2,7 @@
 #include "medal_corner.h"
 #include "graphics/medal_corner/medal_corner_graphics.h"
 #include "src/scenes/results.h"
+#include "src/code_080092cc.h"
 
 
 /* MEDAL CORNER MENU SCENES */
@@ -283,23 +284,34 @@ void medal_corner_scene_update(void *sVar, s32 dArg) {
                 play_sound(&s_menu_kettei2_seqData);
                 set_pause_beatscript_scene(FALSE);
                 gMedalCorner->inputsEnabled = FALSE;
+                rumble_play_menu_bonus();
             } else {
                 play_sound(&s_menu_error_seqData);
+                rumble_play_menu_error();
             }
             break;
 
         case MEDAL_CORNER_EV_SCROLL_UP:
-            listbox_scroll_up(gMedalCorner->listbox);
+            if (listbox_get_sel_item(gMedalCorner->listbox) <= 0) {
+                rumble_play_menu_limit();
+            } else {
+                listbox_scroll_up(gMedalCorner->listbox);
+            }
             break;
 
         case MEDAL_CORNER_EV_SCROLL_DOWN:
-            listbox_scroll_down(gMedalCorner->listbox);
+            if (listbox_get_sel_item(gMedalCorner->listbox) >= (gMedalCorner->listbox->totalItems - 1)) {
+                rumble_play_menu_limit();
+            } else {
+                listbox_scroll_down(gMedalCorner->listbox);
+            }
             break;
 
         case MEDAL_CORNER_EV_CANCEL:
             play_sound(&s_menu_cancel3_seqData);
             set_pause_beatscript_scene(FALSE);
             gMedalCorner->inputsEnabled = FALSE;
+            rumble_play_menu_cancel();
             break;
     }
 

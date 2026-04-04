@@ -3,6 +3,7 @@
 
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
+#include "src/code_080092cc.h"
 #include "data/text_printer_data.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
@@ -1468,6 +1469,7 @@ void listbox_scroll_up(struct Listbox *listbox) {
 
     listbox->selItem--;
     func_0800ae3c(listbox, listbox->unk12);
+    rumble_play_menu_move();
 
     if (listbox->onScroll != NULL) {
         listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem + 1);
@@ -1516,6 +1518,7 @@ void listbox_scroll_down(struct Listbox *listbox) {
 
     listbox->selItem++;
     func_0800ae3c(listbox, listbox->unk12);
+    rumble_play_menu_move();
 
     if (listbox->onScroll != NULL) {
         listbox->onScroll(listbox->onScrollArg, listbox->selItem, listbox->selItem - 1);

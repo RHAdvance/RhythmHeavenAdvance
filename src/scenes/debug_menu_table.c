@@ -67,11 +67,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q|‚h‚p@i‚o‚…‚’‚†‚…‚ƒ‚”j",
         /* Epil. */ FALSE
     },
-    /* R-IQ (Cafe) */ {
-        /* Scene */ &scene_cafe,
-        /* Label */ "‚q|‚h‚p@i‚b‚‚†‚…j",
-        /* Epil. */ FALSE
-    },
     /* R-IQ (Endless Games) */ {
         /* Scene */ &scene_endless_menu,
         /* Label */ "‚q|‚h‚p@i‚d‚‚„‚Œ‚…‚“‚“@‚f‚‚‚…‚“j",

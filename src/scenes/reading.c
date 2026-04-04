@@ -2,6 +2,7 @@
 #include "scenes.h"
 #include "reading.h"
 #include "graphics/data_room/data_room_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* READING MATERIAL SCENE */
@@ -166,16 +167,22 @@ void reading_scene_update(void *sVar, s32 dArg) {
         if (D_03004ac0 & DPAD_UP) {
             if (gReading->currentPage > 0) {
                 event = READING_EV_SCROLL_UP;
+            } else {
+                rumble_play_menu_limit();
             }
         }
         if (D_03004ac0 & DPAD_DOWN) {
             if ((text_printer_get_text(gReading->printer) != NULL) && (gReading->currentPage < 31)) {
                 event = READING_EV_SCROLL_DOWN;
+            } else {
+                rumble_play_menu_limit();
             }
         }
         if (D_03004afc & A_BUTTON) {
             if ((text_printer_get_text(gReading->printer) != NULL) && (gReading->currentPage < 31)) {
                 event = READING_EV_SCROLL_DOWN;
+            } else {
+                rumble_play_menu_limit();
             }
         }
         if (D_03004afc & B_BUTTON) {
@@ -189,6 +196,7 @@ void reading_scene_update(void *sVar, s32 dArg) {
             gReading->targetY = -SCREEN_HEIGHT;
             gReading->relativeY = SCREEN_HEIGHT;
             play_sound(&s_f_env_paper_rev_seqData);
+            rumble_play_menu_move();
             break;
 
         case READING_EV_SCROLL_DOWN:
@@ -196,12 +204,14 @@ void reading_scene_update(void *sVar, s32 dArg) {
             gReading->targetY = SCREEN_HEIGHT;
             gReading->relativeY = -SCREEN_HEIGHT;
             play_sound(&s_f_env_paper_seqData);
+            rumble_play_menu_move();
             break;
 
         case READING_EV_CANCEL:
             set_pause_beatscript_scene(FALSE);
             gReading->inputsEnabled = FALSE;
             play_sound_in_player(SFX_PLAYER_3, &s_menu_cancel2_seqData);
+            rumble_play_menu_cancel();
             break;
     }
 

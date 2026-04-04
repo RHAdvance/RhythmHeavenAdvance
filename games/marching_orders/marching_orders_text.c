@@ -5,7 +5,7 @@
 /* Game Text - Marching Orders */
 
 
-const char D_0805c774[] = "You needed to focus on the basics.";
+const char D_0805c774[] = "You haven't grasped the basics.";
 
 const char D_0805c790[] = "Impressive marching!";
 
@@ -25,7 +25,7 @@ const char D_0805c828[] = "Ｆａｌｌ　ｉｎ！";
 
 const char D_0805c844[] = "Ｔｉｍｅ　ｆｏｒ　ｔｈｅ　ｒｅａｌ　ｔｈｉｎｇ！";
 
-const char D_0805c858[] = "You needed to focus on the basics.";
+const char D_0805c858[] = "You haven't grasped the basics.";
 
 const char D_0805c874[] = "Impressive marching!";
 
@@ -51,7 +51,7 @@ const char D_0805c8e4[] = "Ｈａｌｔ！";
 
 const char D_0805c8f4[] = "You still don't have the basics down!";
 
-const char D_0805c910[] = "You were pretty good!";
+const char D_0805c910[] = "That wasn't half bad!";
 
 const char D_0805c92c[] = "Your timing needs work.";
 

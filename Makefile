@@ -67,7 +67,7 @@ REV    := 0 # Note the REV 1 is not supported by the team and bugs or issues rel
 
 # Preprocessor defines
 
-# Features: SFX, PLUS, PLAYTEST, PARADISE
+# Features: SFX, PLUS, PLAYTEST, PARADISE, RUMBLE
 FEATURES ?= 
 DEFINES := REV=$(REV) $(FEATURES)
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
@@ -117,6 +117,13 @@ BINFILES	:=	$(foreach dir,$(BIN),$(wildcard $(dir)/*.bin)) \
 				$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.bin)) \
 				$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.raw.4bpp))
 WAVFILES    :=  $(foreach dir,$(SFX),$(wildcard $(dir)/*.wav))
+
+RUMBLE_BINFILES := bin/gbp_logo_palette.bin bin/gbp_logo_tiles.bin bin/gbp_logo_pixels.bin
+ifneq ($(filter RUMBLE,$(FEATURES)),)
+    BINFILES := $(sort $(BINFILES))
+else
+    BINFILES := $(filter-out $(RUMBLE_BINFILES),$(BINFILES))
+endif
 
 4BPPFILES   :=  $(filter-out $(BINFILES),$(foreach dir,$(GRAPHICS),$(wildcard $(dir)/*.4bpp)))
 TILEMAPS	:=  $(foreach dir,$(GFX_DIRS),$(wildcard $(dir)/*.tilemap))
