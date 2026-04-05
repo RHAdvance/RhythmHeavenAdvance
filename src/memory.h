@@ -15,6 +15,8 @@ enum AdvanceFlagsEnum {
     /* 01 */ ADVANCE_FLAG_SAVE_CONVERTED                = (1 << 0),
     /* 02 */ ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC     = (1 << 1),
     /* 04 */ ADVANCE_FLAG_SEEN_DISCLAIMER               = (1 << 2),
+    /* 08 */ ADVANCE_FLAG_SKIP_DISCLAIMER               = (1 << 3),
+    /* 10 */ ADVANCE_FLAG_DISABLE_RUMBLE                = (1 << 4),
 };
 
 extern struct SaveBuffer {

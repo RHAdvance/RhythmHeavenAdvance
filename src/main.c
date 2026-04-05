@@ -18,6 +18,12 @@ static s32 D_03000088;
 
 static u8 sIsBadFlashCart = 0;
 
+#ifdef DEBUG
+#define INITIAL_SCENE &scene_debug_menu
+#else
+#define INITIAL_SCENE &scene_title
+#endif
+
 // Default Interrupt Procedure (Do Nothing)
 void interrupt_default(void) {
 }
@@ -125,17 +131,14 @@ void agb_main(void) {
 
 	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
 	#ifdef RUMBLE
-	init_scenes(&scene_gbp_handshake);
-	set_scene_trans_target(&scene_gbp_handshake, &scene_warning);
+	init_scenes(&scene_warning);
+	set_scene_trans_target(&scene_warning, &scene_gbp_handshake);
 	#else
 	init_scenes(&scene_warning);
 	#endif
-    set_scene_trans_target(&scene_warning, &scene_disclaimer);
-#ifdef DEBUG
-    set_scene_trans_target(&scene_disclaimer, &scene_debug_menu);
-#else
-	set_scene_trans_target(&scene_disclaimer, &scene_title);
-#endif
+    set_scene_trans_target(&scene_gbp_handshake, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
+	set_scene_trans_target(&scene_disclaimer, INITIAL_SCENE);
+
 	update_key_listener();
 
 	while (TRUE) {

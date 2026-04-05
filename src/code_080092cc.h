@@ -28,6 +28,7 @@ extern void rumble_play_menu_cancel(void);
 extern void rumble_play_menu_limit(void);
 extern void rumble_play_menu_error(void);
 extern void rumble_play_menu_bonus(void);
+extern void rumble_play_long(void);
 extern void func_080095a8(void);
 extern void func_080095c0(void);
 extern void func_080095e8(u32);

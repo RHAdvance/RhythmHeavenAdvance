@@ -12,9 +12,9 @@ asm(".include \"include/gba.inc\"");//Temporary
 #define gGameplay ((struct GameplaySceneData *)gCurrentSceneData)
 
 #ifdef RUMBLE
-#define RUMBLE_CUE_DUE_INTENSITY 40
-#define RUMBLE_CUE_BARELY_INTENSITY 36
-#define RUMBLE_CUE_HIT_INTENSITY 48
+#define RUMBLE_CUE_DUE_INTENSITY 120
+#define RUMBLE_CUE_BARELY_INTENSITY 108
+#define RUMBLE_CUE_HIT_INTENSITY 144
 
 static void gameplay_trigger_due_cue_rumble(void) {
     struct Cue *cue;

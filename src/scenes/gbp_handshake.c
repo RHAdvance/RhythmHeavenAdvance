@@ -70,6 +70,9 @@ void gbp_handshake_scene_start(void *sVar, s32 dArg) {
     REG_BG0HOFS = 0;
     REG_BG0VOFS = 0;
 
+    // clear entire tilemap to avoid garbage on screen, then load logo data
+    DmaFill16(3, 0, (void *)VRAMBase, (256/8)*(256/8)*2);
+
     DmaCopy16(3, gbp_logo_pixels_bin, (void *)(VRAMBase + 0x8000), RUMBLE_GBP_LOGO_TILESET_SIZE);
     DmaCopy16(3, gbp_logo_tiles_bin, (void *)VRAMBase, RUMBLE_GBP_LOGO_TILEMAP_SIZE);
     DmaCopy16(3, gbp_logo_palette_bin, (void *)PaletteRAMBase, RUMBLE_GBP_LOGO_PALETTE_SIZE);

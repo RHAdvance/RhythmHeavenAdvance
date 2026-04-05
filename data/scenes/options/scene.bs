@@ -39,7 +39,7 @@ struct scene_options_menu
     /* Start  */ .word func_0801d86c, sub_scene_options_menu
     /* Update */ .word func_0801d8d8, 0
     /* Stop   */ .word NULL,          0
-    /* Memory */ .word 0x2C
+    /* Memory */ .word 0xAC
 endstruct
 
 .end

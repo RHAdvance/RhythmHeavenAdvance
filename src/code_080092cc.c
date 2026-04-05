@@ -2,20 +2,21 @@
 #ifdef RUMBLE
 #include "rumble_backend.h"
 #endif
+#include "memory.h"
 
 // Gyro/Rumble Library Interface
 
-#define RUMBLE_MAX_INTENSITY 0x30
+#define RUMBLE_MAX_INTENSITY 0xFF
 
 #ifdef RUMBLE
-#define RUMBLE_MENU_MOVE_INTENSITY 32
-#define RUMBLE_MENU_CONFIRM_INTENSITY 40
-#define RUMBLE_MENU_CANCEL_INTENSITY 28
-#define RUMBLE_MENU_LIMIT_INTENSITY 24
+#define RUMBLE_MENU_MOVE_INTENSITY 96
+#define RUMBLE_MENU_CONFIRM_INTENSITY 120
+#define RUMBLE_MENU_CANCEL_INTENSITY 84
+#define RUMBLE_MENU_LIMIT_INTENSITY 72
 #define RUMBLE_MENU_LIMIT_PULSE_COUNT 2
 #define RUMBLE_MENU_LIMIT_GAP_TICKS 14
-#define RUMBLE_MENU_ERROR_INTENSITY 28
-#define RUMBLE_MENU_BONUS_INTENSITY 48
+#define RUMBLE_MENU_ERROR_INTENSITY 84
+#define RUMBLE_MENU_BONUS_INTENSITY 144
 #endif
 
 static struct struct_0300443c D_03001110;
@@ -233,6 +234,12 @@ void rumble_play_menu_bonus(void) {
 #endif
 }
 
+void rumble_play_long(void) {
+#ifdef RUMBLE
+    rumble_request_pulse(RUMBLE_MAX_INTENSITY);
+#endif
+}
+
 void func_080095a8(void) {
     func_0804e8f8(FALSE);
     D_030011a4 = 0;
@@ -323,6 +330,10 @@ static u32 rumble_clamp_intensity(u32 intensity) {
 
 static void rumble_begin_pulse(u32 arg0) {
     s24_8 targetIntensity;
+    
+    if(CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_DISABLE_RUMBLE)) {
+        return;
+    }
 
     arg0 = rumble_clamp_intensity(arg0);
     targetIntensity = INT_TO_FIXED(arg0) * 16;
