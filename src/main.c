@@ -133,11 +133,12 @@ void agb_main(void) {
 	#ifdef RUMBLE
 	init_scenes(&scene_warning);
 	set_scene_trans_target(&scene_warning, &scene_gbp_handshake);
+	set_scene_trans_target(&scene_gbp_handshake, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
 	#else
 	init_scenes(&scene_warning);
+	set_scene_trans_target(&scene_warning, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
 	#endif
-    set_scene_trans_target(&scene_gbp_handshake, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
-	set_scene_trans_target(&scene_disclaimer, INITIAL_SCENE);
+    set_scene_trans_target(&scene_disclaimer, INITIAL_SCENE);
 
 	update_key_listener();
 
