@@ -14,6 +14,12 @@ static const struct SaveEditorFlag sAdvanceFlags[] = {
     END_OF_FLAG
 };
 
+static const struct SaveEditorFlag sAdvanceGameFlags[] = {
+    { "Non-JP Sound Effects",    0 },
+    { "Non-JP Music",            1 },
+    END_OF_FLAG
+};
+
 static const struct SaveEditorField sStudioSongFields[] = {
     { "songID",   SE_KIND_U8 },
     { "replayID", SE_KIND_S8 },
@@ -46,6 +52,10 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     { "unkB0",                               SE_KIND_U8,    0,  -1, -1, NULL,   0, NULL,               0 },
     /* SE_MBR_ADVANCE_FLAGS */
     { "Advance Flags",                       SE_KIND_BITFLAGS,    0,  -1, -1, sAdvanceFlags, 5, NULL,               0 },
+    /* SE_MBR_EXTRA_VERSION */
+    { "Extra Data Version",                  SE_KIND_U16,         0,  -1, -1, NULL,          0, NULL,               0 },
+    /* SE_MBR_EXTRA_GAME_FLAGS */
+    { "Game Data Flags",                     SE_KIND_BITFLAGS, TOTAL_LEVELS, -1, -1, sAdvanceGameFlags, 1, NULL,    0 },
     /* SE_MBR_TOTAL_SONGS */
     { "Total Songs",                         SE_KIND_U8,          0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_UNK_B3 */
@@ -73,9 +83,9 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     /* SE_MBR_UNK_26A */
     { "unk26A",                              SE_KIND_U8,          0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_READING_MATERIAL_UNLOCKED */
-    { "Reading Material Unlocked",           SE_KIND_U8,         20,  -1, -1, NULL,          0, NULL,               0 },
+    { "Reading Material Unlocked",           SE_KIND_U8,  TOTAL_READING_MATERIALS, -1, -1, NULL, 0, NULL,            0 },
     /* SE_MBR_DRUM_KITS_UNLOCKED */
-    { "Drum Kits Unlocked",                  SE_KIND_U8,         15,  -1, -1, NULL,          0, NULL,               0 },
+    { "Drum Kits Unlocked",                  SE_KIND_U8,  TOTAL_STUDIO_DRUMS, -1, -1, NULL, 0, NULL,                0 },
     /* SE_MBR_TOTAL_MEDALS */
     { "Total Medals",                        SE_KIND_U8,          0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_UNK_28F */
@@ -310,14 +320,44 @@ void *save_editor_get_value_ptr(u32 member, u32 arrayIndex, u32 fieldIndex) {
         case SE_MBR_UNK_28F:                           return &save->unk28F;
         case SE_MBR_MINIMUM_FAILS_FOR_BARISTA_HELP:    return &save->minFailsForBaristaHelp;
         case SE_MBR_UNK_291:                           return &save->unk291;
+        case SE_MBR_EXTRA_VERSION:                     return &save->extraData.version;
 
-        case SE_MBR_LEVEL_STATES:                      return &save->levelStates[arrayIndex];
-        case SE_MBR_LEVEL_SCORES:                      return &save->levelScores[arrayIndex];
-        case SE_MBR_LEVEL_TOTAL_PLAYS:                 return &save->levelTotalPlays[arrayIndex];
-        case SE_MBR_LEVEL_FIRST_OK:                    return &save->levelFirstOK[arrayIndex];
-        case SE_MBR_LEVEL_FIRST_SUPERB:                return &save->levelFirstSuperb[arrayIndex];
-        case SE_MBR_CAMPAIGNS_CLEARED:                 return &save->campaignsCleared[arrayIndex];
-        case SE_MBR_READING_MATERIAL_UNLOCKED:         return &save->readingMaterialUnlocked[arrayIndex];
+        case SE_MBR_LEVEL_STATES:
+            if (arrayIndex < TOTAL_BASE_LEVELS) {
+                return &save->levelStates[arrayIndex];
+            }
+            return &save->extraData.extraLevelStates[arrayIndex - TOTAL_BASE_LEVELS];
+        case SE_MBR_LEVEL_SCORES:
+            if (arrayIndex < TOTAL_BASE_LEVELS) {
+                return &save->levelScores[arrayIndex];
+            }
+            return &save->extraData.extraLevelScores[arrayIndex - TOTAL_BASE_LEVELS];
+        case SE_MBR_LEVEL_TOTAL_PLAYS:
+            if (arrayIndex < TOTAL_BASE_LEVELS) {
+                return &save->levelTotalPlays[arrayIndex];
+            }
+            return &save->extraData.extraLevelTotalPlays[arrayIndex - TOTAL_BASE_LEVELS];
+        case SE_MBR_LEVEL_FIRST_OK:
+            if (arrayIndex < TOTAL_BASE_LEVELS) {
+                return &save->levelFirstOK[arrayIndex];
+            }
+            return &save->extraData.extraLevelFirstOK[arrayIndex - TOTAL_BASE_LEVELS];
+        case SE_MBR_LEVEL_FIRST_SUPERB:
+            if (arrayIndex < TOTAL_BASE_LEVELS) {
+                return &save->levelFirstSuperb[arrayIndex];
+            }
+            return &save->extraData.extraLevelFirstSuperb[arrayIndex - TOTAL_BASE_LEVELS];
+        case SE_MBR_CAMPAIGNS_CLEARED:
+            if (arrayIndex < TOTAL_BASE_PERFECT_CAMPAIGNS) {
+                return &save->campaignsCleared[arrayIndex];
+            }
+            return &save->extraData.extraCampaignsCleared[arrayIndex - TOTAL_BASE_PERFECT_CAMPAIGNS];
+        case SE_MBR_READING_MATERIAL_UNLOCKED:
+            if (arrayIndex < TOTAL_BASE_READING_MATERIALS) {
+                return &save->readingMaterialUnlocked[arrayIndex];
+            }
+            return &save->extraData.extraReadingMaterialUnlocked[arrayIndex - TOTAL_BASE_READING_MATERIALS];
+        case SE_MBR_EXTRA_GAME_FLAGS:                  return &save->extraData.gameFlags[arrayIndex];
         case SE_MBR_DRUM_KITS_UNLOCKED:                return &save->drumKitsUnlocked[arrayIndex];
 
         case SE_MBR_STUDIO_SONGS: {
@@ -420,7 +460,7 @@ void save_editor_draw_line(u32 line, u32 palette, const char *string, s16 x, s16
     dma3_fill(0, tileset, 0x800, 0x20, 0x200);
 
     anim   = text_printer_get_unformatted_line_anim(get_current_mem_id(), 0, tileY,
-                 TEXT_PRINTER_FONT_SMALL, string, TEXT_ANCHOR_BOTTOM_LEFT, 0, 256);
+                 TEXT_PRINTER_FONT_SMALL, string, TEXT_ANCHOR_BOTTOM_LEFT, 0, SCREEN_WIDTH - x);
     sprite = sprite_create(gSpriteHandler, anim, 0, x, y, 0, 0, 0, 0);
     sprite_set_base_palette(gSpriteHandler, sprite, palette + 8);
 
@@ -514,8 +554,19 @@ void save_editor_render_page(void) {
                  m->name, arrIdx, (u32)(m->arrayLen - 1),
                  m->fields[fieldIdx].name, valStr);
     } else if (m->kind == SE_KIND_BITFLAGS && m->flagCount > 0) {
-        snprintf(buf, sizeof(buf), "%s: %s",
-                 m->name, valStr);
+        if (m->arrayLen > 0) {
+            if (member == SE_MBR_EXTRA_GAME_FLAGS) {
+                snprintf(buf, sizeof(buf), "%s [%u/%u] (%s%s): %s",
+                         m->name, arrIdx, (u32)(m->arrayLen - 1),
+                         (arrIdx < TOTAL_LEVELS) ? game_select_get_level_name(arrIdx) : "n/a", (get_level_data_from_id(arrIdx)->flags & LEVEL_DATA_FLAG_IS_EXTRA) ? " (Extra)" : "", valStr);
+            } else {
+                snprintf(buf, sizeof(buf), "%s [%u/%u]: %s",
+                         m->name, arrIdx, (u32)(m->arrayLen - 1), valStr);
+            }
+        } else {
+            snprintf(buf, sizeof(buf), "%s: %s",
+                     m->name, valStr);
+        }
     } else if (m->arrayLen > 0) {
         snprintf(buf, sizeof(buf), "%s [%u/%u]: %s",
                  m->name, arrIdx, (u32)(m->arrayLen - 1), valStr);
@@ -558,16 +609,16 @@ void save_editor_render_page(void) {
 
         if(m->arrayLen>0){
             if(member == SE_MBR_LEVEL_STATES || member == SE_MBR_LEVEL_SCORES || member == SE_MBR_LEVEL_TOTAL_PLAYS || member == SE_MBR_LEVEL_FIRST_OK || member == SE_MBR_LEVEL_FIRST_SUPERB){
-                snprintf(buf, sizeof(buf), "Level: %s", (arrIdx < TOTAL_LEVELS) ? game_select_get_level_name(arrIdx) : "n/a");
+                snprintf(buf, sizeof(buf), "Level: %s%s", (arrIdx < TOTAL_LEVELS) ? game_select_get_level_name(arrIdx) : "n/a", (get_level_data_from_id(arrIdx)->flags & LEVEL_DATA_FLAG_IS_EXTRA) ? " (Extra)" : "");
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, buf, 32, 80);
             } else if (member == SE_MBR_CAMPAIGNS_CLEARED){
-                snprintf(buf, sizeof(buf), "Campaign: %s", (arrIdx < TOTAL_PERFECT_CAMPAIGNS) ? get_level_name_from_campaign(arrIdx) : "n/a");
+                snprintf(buf, sizeof(buf), "Campaign: %s%s", (arrIdx < TOTAL_PERFECT_CAMPAIGNS) ? get_level_name_from_campaign(arrIdx) : "n/a", (get_level_data_from_campaign(arrIdx)->flags & LEVEL_DATA_FLAG_IS_EXTRA) ? "  (Extra)" : "");
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, buf, 32, 80);
             } else if (member == SE_MBR_READING_MATERIAL_UNLOCKED){
-                snprintf(buf, sizeof(buf), "Reading Material: %s", (arrIdx < 20) ? reading_material_table[arrIdx].title : "n/a");
+                snprintf(buf, sizeof(buf), "Reading Material: %s", (arrIdx < TOTAL_READING_MATERIALS) ? reading_material_table[arrIdx].title : "n/a");
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, buf, 32, 80);
             } else if (member == SE_MBR_DRUM_KITS_UNLOCKED){
-                snprintf(buf, sizeof(buf), "Drum Kit: %s", (arrIdx < 20) ? studio_drum_kit_names[arrIdx] : "n/a");
+                snprintf(buf, sizeof(buf), "Drum Kit: %s", (arrIdx < TOTAL_STUDIO_DRUMS) ? studio_drum_kit_names[arrIdx] : "n/a");
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, buf, 32, 80);
             } else {
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, "shaffy did something wrong :(", 64, 80);

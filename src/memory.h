@@ -7,7 +7,7 @@
 #define SAVE_BUFFER_SIZE sizeof(struct SaveBuffer)
 
 #define EXTRA_SAVE_DATA_MAGIC   "ENOT" // extra not original thing <3
-#define EXTRA_SAVE_DATA_VERSION 0x0000
+#define EXTRA_SAVE_DATA_VERSION 0x0001
 
 // helper functions
 #define SET_ADVANCE_FLAG(flags, flag)   ((flags) |= (flag))
@@ -21,6 +21,11 @@ enum AdvanceFlagsEnum {
     /* 04 */ ADVANCE_FLAG_SEEN_DISCLAIMER               = (1 << 2),
     /* 08 */ ADVANCE_FLAG_SKIP_DISCLAIMER               = (1 << 3),
     /* 10 */ ADVANCE_FLAG_DISABLE_RUMBLE                = (1 << 4),
+};
+
+enum AdvanceGameFlagsEnum {
+    /* 01 */ ADVANCE_GAME_FLAG_NON_JP_SOUNDEFFECTS      = (1 << 0),
+    /* 02 */ ADVANCE_GAME_FLAG_NON_JP_MUSIC             = (1 << 1),
 };
 
 extern struct SaveBuffer {
@@ -105,6 +110,7 @@ extern struct SaveBuffer {
             u16 extraLevelFirstSuperb[TOTAL_EXTRA_LEVELS];
             u16 extraCampaignsCleared[TOTAL_EXTRA_PERFECT_CAMPAIGNS];
             u16 extraReadingMaterialUnlocked[TOTAL_EXTRA_READING_MATERIALS];
+            u8 gameFlags[TOTAL_LEVELS];
         } extraData;
     } data;
 } *D_030046a8;

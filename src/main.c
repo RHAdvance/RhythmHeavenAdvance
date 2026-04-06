@@ -16,7 +16,7 @@ static u8 D_03000080;
 static struct Scene *D_03000084;
 static s32 D_03000088;
 
-static u8 sIsBadFlashCart = 0;
+COMMON_DATA u8 sIsBadFlashCart = 0;
 
 #ifdef DEBUG
 #define INITIAL_SCENE &scene_debug_menu

@@ -286,6 +286,7 @@ extern s32 get_campaign_from_level_id(s32 id);
 
 extern s32 get_level_id_from_grid_xy(s32 x, s32 y);
 extern struct LevelData *get_level_data_from_id(s32 id);
+extern struct LevelData *get_level_data_from_campaign(s32 id);
 extern s32 get_level_state_from_id(s32 id);
 extern s32 get_level_state_with_perfect_from_id(s32 id);
 extern struct LevelData *get_level_data_from_grid_xy(s32 x, s32 y);

@@ -456,6 +456,14 @@ struct LevelData *get_level_data_from_id(s32 id) {
     return &level_data_table[id];
 }
 
+// Get Level Data from Campaign ID
+struct LevelData *get_level_data_from_campaign(s32 id) {
+    if (id < 0) {
+        return NULL;
+    }
+
+    return get_level_data_from_grid_xy(campaign_gifts_table[id].x, campaign_gifts_table[id].y);
+}
 
 // Get Level Completion State from Level ID
 s32 get_level_state_from_id(s32 id) {

@@ -101,8 +101,13 @@ static void update_extra_save_data_checksum(struct ExtraTengokuSaveData *extra) 
 }
 
 void on_extra_save_upgrade(u16 oldVersion, struct ExtraTengokuSaveData *extra) {
-	(void)oldVersion;
-	(void)extra;
+    u32 i;
+
+    if (oldVersion < 1) {
+        for (i = 0; i < TOTAL_LEVELS; i++) {
+            extra->gameFlags[i] = 0;
+        }
+    }
 }
 
 static u32 calculate_save_buffer_checksum(struct SaveBuffer *buffer) {
@@ -168,6 +173,10 @@ static void reset_extra_save_data_defaults(struct TengokuSaveData *data) {
 
     for (i = 0; i < TOTAL_EXTRA_READING_MATERIALS; i++) {
         extra->extraReadingMaterialUnlocked[i] = FALSE;
+    }
+
+    for (i = 0; i < TOTAL_LEVELS; i++) {
+        extra->gameFlags[i] = 0;
     }
 
     update_extra_save_data_checksum(extra);
