@@ -110,7 +110,7 @@ enum SaveEditorLine {
     SE_LINE_FLAG_5  = 8,
     SE_LINE_FLAG_6  = 9,
     SE_LINE_FLAG_7  = 10,
-    SE_LINE_COUNT   = 11
+    SE_LINE_COUNT
 };
 
 struct SaveEditorSceneData {
