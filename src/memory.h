@@ -135,6 +135,8 @@ extern void write_save_buffer_header_to_sram(u8 *cartRAM);
 extern void write_save_buffer_data_to_sram(u8 *buffer, u32 size);
 extern void flush_save_buffer_to_sram(void);
 extern void flush_save_buffer_to_sram_backup(void);
+extern void update_save_buffer_sram_writes(void);
+extern void finish_save_buffer_sram_writes(void);
 extern void func_080009c8_stub(void);
 extern void func_080009cc_stub(void);
 extern s32 func_080009d0(s16 *);

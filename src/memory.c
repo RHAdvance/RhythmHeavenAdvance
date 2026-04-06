@@ -7,12 +7,27 @@ static u16 sEWRAMMemoryHeapStart;
 static u16 sEWRAMMemoryHeapLength;
 static s32 unused_03000094; // unknown
 
+#define SRAM_SAVE_CHUNK_BYTES 0x100
+#define VBLANK_START_LINE 160
+
+static struct SramSaveWriteState {
+    u8 active;
+    u8 _pad[3];
+    u8 *cartRAM;
+    u32 dataOffset;
+    u32 dataSize;
+    u32 bytesWritten;
+    u32 expectedChecksum;
+} sSramSaveWriteState;
+
 extern u8 *save_memory_base; // CartRAMBase (0x0E000000)
 extern u8 *backup_save_memory_base; // CartRAMBase + 0x4000 (0x0E004000)
 extern char D_08935fbc[]; // "RIQ"
 extern char D_08935fc4[]; // "CAL"
 
 extern void unlock_all_unassigned_campaign_gift_songs(void);
+
+static u32 calculate_save_buffer_checksum(struct SaveBuffer *buffer);
 
 
 /* SAVE/MEMORY */
@@ -98,6 +113,69 @@ static void ensure_extra_save_data_header(struct ExtraTengokuSaveData *extra) {
 static void update_extra_save_data_checksum(struct ExtraTengokuSaveData *extra) {
     extra->checksum = 0;
     extra->checksum = generate_save_buffer_checksum((s32 *)extra, sizeof(*extra));
+}
+
+static void update_save_buffer_header(struct SaveBuffer *buffer) {
+    update_extra_save_data_checksum(&buffer->data.extraData);
+    buffer->header.checksum = 0;
+    buffer->header.checksum = calculate_save_buffer_checksum(buffer);
+}
+
+static void queue_save_buffer_write(u8 *cartRAM, u32 dataOffset, u32 dataSize) {
+    struct SaveBuffer *buffer = D_030046a8;
+
+    if (dataOffset > SAVE_BUFFER_SIZE) {
+        dataOffset = SAVE_BUFFER_SIZE;
+    }
+    if (dataSize > (SAVE_BUFFER_SIZE - dataOffset)) {
+        dataSize = SAVE_BUFFER_SIZE - dataOffset;
+    }
+
+    update_save_buffer_header(buffer);
+
+    sSramSaveWriteState.active = TRUE;
+    sSramSaveWriteState.cartRAM = cartRAM;
+    sSramSaveWriteState.dataOffset = dataOffset;
+    sSramSaveWriteState.dataSize = dataSize;
+    sSramSaveWriteState.bytesWritten = 0;
+    sSramSaveWriteState.expectedChecksum = buffer->header.checksum;
+}
+
+static void process_queued_save_buffer_write(u32 maxBytes) {
+    struct SaveBuffer *buffer;
+    u32 remaining;
+    u32 bytesToWrite;
+    u32 writeOffset;
+
+    if (!sSramSaveWriteState.active || (maxBytes == 0)) {
+        return;
+    }
+
+    buffer = D_030046a8;
+
+    remaining = sSramSaveWriteState.dataSize - sSramSaveWriteState.bytesWritten;
+    if (remaining > 0) {
+        bytesToWrite = (remaining < maxBytes) ? remaining : maxBytes;
+        writeOffset = sSramSaveWriteState.dataOffset + sSramSaveWriteState.bytesWritten;
+
+        write_sram_fast((u8 *)buffer + writeOffset, sSramSaveWriteState.cartRAM + writeOffset, bytesToWrite);
+        sSramSaveWriteState.bytesWritten += bytesToWrite;
+    }
+
+    if (sSramSaveWriteState.bytesWritten < sSramSaveWriteState.dataSize) {
+        return;
+    }
+
+    update_save_buffer_header(buffer);
+    if (buffer->header.checksum != sSramSaveWriteState.expectedChecksum) {
+        // Save data changed while this transfer was in progress; restart with a fresh checksum.
+        sSramSaveWriteState.bytesWritten = 0;
+        sSramSaveWriteState.expectedChecksum = buffer->header.checksum;
+        return;
+    }
+
+    write_sram_fast((u8 *)buffer, sSramSaveWriteState.cartRAM, sizeof(buffer->header));
+    sSramSaveWriteState.active = FALSE;
 }
 
 void on_extra_save_upgrade(u16 oldVersion, struct ExtraTengokuSaveData *extra) {
@@ -187,6 +265,7 @@ static void reset_extra_save_data_defaults(struct TengokuSaveData *data) {
 void init_save_buffer(void) {
     set_sram_fast_func();
     D_030046a8 = get_save_buffer_start();
+    sSramSaveWriteState.active = FALSE;
 }
 
 
@@ -272,11 +351,13 @@ void flush_save_buffer(u8 *cartRAM) {
 #ifndef PLAYTEST
     struct SaveBuffer *buffer = D_030046a8;
 
-	update_extra_save_data_checksum(&buffer->data.extraData);
-    buffer->header.checksum = 0;
-    buffer->header.checksum = calculate_save_buffer_checksum(buffer);
+    update_save_buffer_header(buffer);
 
-    write_sram_fast((u8 *)D_030046a8, cartRAM, SAVE_BUFFER_SIZE);
+    write_sram_fast((u8 *)buffer, cartRAM, SAVE_BUFFER_SIZE);
+
+    if (sSramSaveWriteState.active && (sSramSaveWriteState.cartRAM == cartRAM)) {
+        sSramSaveWriteState.active = FALSE;
+    }
 #endif
 }
 
@@ -288,33 +369,59 @@ s32 get_offset_from_save_buffer(void *buffer) {
 
 void write_save_buffer_header_to_sram(u8 *cartRAM) {
     struct SaveBuffer *buffer = D_030046a8;
-    s32 bufferOffset = get_offset_from_save_buffer(buffer); // isn't this literally always 0
 
-	update_extra_save_data_checksum(&buffer->data.extraData);
-    buffer->header.checksum = 0;
-	buffer->header.checksum = calculate_save_buffer_checksum(buffer);
+    update_save_buffer_header(buffer);
+    write_sram_fast((u8 *)buffer, cartRAM, sizeof(buffer->header));
 
-    write_sram_fast((u8 *)D_030046a8 + bufferOffset, cartRAM + bufferOffset, 0x10);
+    if (sSramSaveWriteState.active && (sSramSaveWriteState.cartRAM == cartRAM)) {
+        sSramSaveWriteState.active = FALSE;
+    }
 }
 
 
 void write_save_buffer_data_to_sram(u8 *buffer, u32 size) {
+#ifndef PLAYTEST
     s32 bufferOffset;
 
-    write_save_buffer_header_to_sram(save_memory_base);
     bufferOffset = get_offset_from_save_buffer(buffer);
-
-    write_sram_fast((u8 *)D_030046a8 + bufferOffset, save_memory_base + bufferOffset, size);
+    queue_save_buffer_write(save_memory_base, bufferOffset, size);
+#endif
 }
 
 
 void flush_save_buffer_to_sram(void) {
-	flush_save_buffer(save_memory_base);
+#ifndef PLAYTEST
+    queue_save_buffer_write(save_memory_base, sizeof(struct SaveBufferHeader), SAVE_BUFFER_SIZE - sizeof(struct SaveBufferHeader));
+#endif
 }
 
 
 void flush_save_buffer_to_sram_backup(void) {
 	flush_save_buffer(backup_save_memory_base);
+}
+
+
+void update_save_buffer_sram_writes(void) {
+#ifndef PLAYTEST
+    if (!sSramSaveWriteState.active) {
+        return;
+    }
+
+    if (!(REG_DISPCNT & DISPCNT_FORCE_BLANK) && (REG_VCOUNT < VBLANK_START_LINE)) {
+        return;
+    }
+
+    process_queued_save_buffer_write(SRAM_SAVE_CHUNK_BYTES);
+#endif
+}
+
+
+void finish_save_buffer_sram_writes(void) {
+#ifndef PLAYTEST
+    if (sSramSaveWriteState.active) {
+        flush_save_buffer(sSramSaveWriteState.cartRAM);
+    }
+#endif
 }
 
 

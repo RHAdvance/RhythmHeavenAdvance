@@ -4,6 +4,7 @@
 #include "src/main.h"
 #include "src/code_08001360.h"
 #include "src/bitmap_font.h"
+#include "src/memory.h"
 #include "src/task_pool.h"
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
@@ -513,6 +514,7 @@ FontPalette dev_text_font_pal2[] = {
 
 // Stop
 void soft_reset_scene_stop(void *endParam) {
+    finish_save_buffer_sram_writes();
     func_08000224();
     #ifdef RUMBLE
     set_next_scene(&scene_gbp_handshake);

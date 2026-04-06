@@ -141,6 +141,7 @@ void agb_main(void) {
 
 	while (TRUE) {
 		func_080013a8();
+		update_save_buffer_sram_writes();
 		get_agb_random_var();
 		update_key_listener();
 		#ifdef RUMBLE
