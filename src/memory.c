@@ -7,12 +7,11 @@ static u16 sEWRAMMemoryHeapStart;
 static u16 sEWRAMMemoryHeapLength;
 static s32 unused_03000094; // unknown
 
-#define SRAM_SAVE_CHUNK_BYTES 0x100
+#define SRAM_SAVE_CHUNK_BYTES 0x800
 #define VBLANK_START_LINE 160
 
 static struct SramSaveWriteState {
     u8 active;
-    u8 _pad[3];
     u8 *cartRAM;
     u32 dataOffset;
     u32 dataSize;
