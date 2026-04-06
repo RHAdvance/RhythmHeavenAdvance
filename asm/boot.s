@@ -110,8 +110,16 @@ glabel interrupt_handler_jtbl_rom
 /* 0804f310 */ .word interrupt_default @ INTERRUPT_TIMER0
 /* 0804f314 */ .word interrupt_default @ INTERRUPT_TIMER1
 /* 0804f318 */ .word interrupt_default @ INTERRUPT_TIMER2
+#ifdef RUMBLE
+/* 0804f31c */ .word rumble_timer_isr @ INTERRUPT_TIMER3
+#else
 /* 0804f31c */ .word interrupt_default @ INTERRUPT_TIMER3
+#endif
+#ifdef RUMBLE
+/* 0804f320 */ .word rumble_backend_serial_isr @ INTERRUPT_COMM
+#else
 /* 0804f320 */ .word interrupt_default @ INTERRUPT_COMM
+#endif
 /* 0804f324 */ .word interrupt_default @ INTERRUPT_DMA0
 /* 0804f328 */ .word interrupt_default @ INTERRUPT_DMA1
 /* 0804f32c */ .word interrupt_default @ INTERRUPT_DMA3

@@ -77,6 +77,31 @@ const char *options_desc_text[] = {
     /* ------------------------------------------------ */
 };
 
+const char *advance_options_label_text[] = {
+#ifdef RUMBLE
+    "Ｒｕｍｂｌｅ",
+#endif
+    "Ｓｈｏｗ　Ｄｉｓｃｌａｉｍｅｒ",
+    "Ａｌｔ．　Ｇａｍｅ　Ｓｅｌｅｃｔ　Ｍｕｓｉｃ",
+};
+
+const char *advance_options_desc_text[] = {
+    /* RUMBLE ----------------------------------------- */
+#ifdef RUMBLE
+        "\0023" "\0013" "\001C" "Rumble\n"
+        "\0024" "\0011" "\001L" "On　　　 " "\0021" "Rumble is active during gameplay.\n"
+        "\0024" "\0011" "\001L" "Off　　　 " "\0021" "Rumble is disabled.",
+#endif
+    /* SHOW DISCLAIMER -------------------------------- */
+        "\0023" "\0013" "\001C" "Show Disclaimer\n"
+        "\0024" "\0011" "\001L" "Show　　 " "\0021" "Show the disclaimer at startup.\n"
+        "\0024" "\0011" "\001L" "Skip　　 " "\0021" "Skip the disclaimer at startup.",
+    /* ALT GAME SELECT MUSIC --------------------------- */
+        "\0023" "\0013" "\001C" "Alt. Game Select Music\n"
+        "\0024" "\0011" "\001L" "On　　　 " "\0021" "Use alternate music in Game Select.\n"
+        "\0024" "\0011" "\001L" "Off　　　 " "\0021" "Use normal music in Game Select.",
+};
+
 
 // [D_089cfb1c] Audio Options
 struct Animation *options_sound_mode_anim[][2] = {

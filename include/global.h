@@ -43,6 +43,7 @@ typedef s32 s24_8;
 #define ARRAY_COUNT(a) (s32)(sizeof(a))/sizeof((a)[0])
 
 #define FLOAT_TO_Q8_16(x) ((int32_t)((x) * 65536.0f))
+#define COMMON_DATA __attribute__((section(".common_data"), aligned(4)))
 
 #define IDENTIFIER_TO_U32(char1, char2, char3, char4) ( \
     ((u32)(char4) << 24) | ((u32)(char3) << 16) | \

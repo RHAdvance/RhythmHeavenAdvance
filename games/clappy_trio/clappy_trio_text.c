@@ -55,6 +55,6 @@ const char D_0805afa8[] = "Just like that.";
 
 const char D_0805afb8[] = "Let's speed it up a bit.";
 
-const char D_0805afd0[] = "OK";
+const char D_0805afd0[] = "OK.";
 
 const char D_0805afd4[] = "It's time for our show! Clap like you mean it!";

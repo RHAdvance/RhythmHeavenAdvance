@@ -17,7 +17,6 @@ extern void unlock_all_unassigned_campaign_gift_songs(void);
 
 /* SAVE/MEMORY */
 
-
 // Initiate the size and positions of the save buffer and memory heap.
 void init_ewram(void) {
     u16 ewramStart = 4;

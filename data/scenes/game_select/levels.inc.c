@@ -160,7 +160,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_2_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
-            /* OK        */ "Why do only our vegetables grow hair, anyway...?",
+            /* OK        */ "Why do only my vegetables grow hair, anyway...?",
             /* SUPERB    */ "How refreshing! The air is nice and crisp!"
         }
     },
@@ -276,7 +276,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_sneaky_spirits_2_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Gah! They slipped right past you!",
-            /* OK        */ "L-Let me go! Please!",
+            /* OK        */ "L-let me go! Please!",
             /* SUPERB    */ "You ghosts stay and think about what you've done!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
@@ -606,7 +606,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "We need more practice...",
             /* OK        */ "I think our tone was off.",
-            /* SUPERB    */ "We're looking forward to hearing you again!"
+            /* SUPERB    */ "We're looking forward to hearing from you again!"
         }
     },
     /* RAP_WOMEN */ {

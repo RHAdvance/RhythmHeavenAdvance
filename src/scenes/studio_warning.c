@@ -1,6 +1,7 @@
 #include "global.h"
 #include "studio.h"
 #include "graphics/studio/studio_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* STUDIO WARNING POPUP */
@@ -42,6 +43,7 @@ void studio_warning_update(void) {
         case STUDIO_WARNING_OPT_DISMISS:
             if (D_03004afc & (A_BUTTON | B_BUTTON)) {
                 play_sound_in_player(MUSIC_PLAYER_2, gStudio->warningSfx);
+                rumble_play_menu_confirm();
                 event = 1;
             }
             break;
@@ -51,12 +53,17 @@ void studio_warning_update(void) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
                 gStudio->warningOption = STUDIO_WARNING_OPT_N;
                 sprite_set_anim(gSpriteHandler, gStudio->warningAdvIcon, anim_studio_warning_options_n, 0, 1, 0, 0);
+                rumble_play_menu_move();
             } else if (D_03004afc & A_BUTTON) {
                 play_sound_in_player(MUSIC_PLAYER_2, gStudio->warningSfx);
+                rumble_play_menu_confirm();
                 event = 1;
             } else if (D_03004afc & B_BUTTON) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                rumble_play_menu_cancel();
                 event = 3;
+            } else if (D_03004afc & DPAD_LEFT) {
+                rumble_play_menu_limit();
             }
             break;
 
@@ -65,12 +72,17 @@ void studio_warning_update(void) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cursor1_seqData);
                 gStudio->warningOption = STUDIO_WARNING_OPT_Y;
                 sprite_set_anim(gSpriteHandler, gStudio->warningAdvIcon, anim_studio_warning_options_y, 0, 1, 0, 0);
+                rumble_play_menu_move();
             } else if (D_03004afc & A_BUTTON) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                rumble_play_menu_cancel();
                 event = 2;
             } else if (D_03004afc & B_BUTTON) {
                 play_sound_in_player(MUSIC_PLAYER_2, &s_menu_cancel3_seqData);
+                rumble_play_menu_cancel();
                 event = 3;
+            } else if (D_03004afc & DPAD_RIGHT) {
+                rumble_play_menu_limit();
             }
             break;
     }

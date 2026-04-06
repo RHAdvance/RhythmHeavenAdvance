@@ -15,6 +15,7 @@ struct disclaimerSceneData {
     u32 timer;
 };
 
+extern u8 haveSeenDisclaimer;
 
 // DATA
 extern struct GraphicsTable disclaimer_gfx_table[];

@@ -514,12 +514,22 @@ FontPalette dev_text_font_pal2[] = {
 // Stop
 void soft_reset_scene_stop(void *endParam) {
     func_08000224();
+    #ifdef RUMBLE
+    set_next_scene(&scene_gbp_handshake);
+    if (haveSeenDisclaimer) {
+        set_scene_trans_target(&scene_gbp_handshake, &scene_title);
+    } else {
+        set_scene_trans_target(&scene_gbp_handshake, &scene_disclaimer);
+        set_scene_trans_target(&scene_disclaimer, &scene_title);
+    }
+    #else
     if (haveSeenDisclaimer) {
         set_next_scene(&scene_title);
     } else {
         set_next_scene(&scene_disclaimer);
         set_scene_trans_target(&scene_disclaimer, &scene_title);
     }
+    #endif
 }
 
 

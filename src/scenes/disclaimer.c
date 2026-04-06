@@ -5,7 +5,7 @@
 
 /* disclaimer SCENE */
 
-extern u8 haveSeenDisclaimer;
+COMMON_DATA u8 haveSeenDisclaimer = FALSE;
 
 // Render Animated Text (Script Function)
 void disclaimer_scene_render_anim(void) {
@@ -62,7 +62,6 @@ void disclaimer_scene_init_gfx1(void) {
 void disclaimer_scene_start(void *sVar, s32 dArg) {
     func_0801d860(TRUE);
     disclaimer_scene_init_gfx1();
-    haveSeenDisclaimer = FALSE;
     gdisclaimer->inputsEnabled = FALSE;
     gdisclaimer->timer = 3600;
 }

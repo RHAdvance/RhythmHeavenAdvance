@@ -11,7 +11,7 @@ const char D_0805dafc[] = "Your tricks were cool!";
 
 const char D_0805db18[] = "Practice more, Pauline.";
 
-const char D_0805db34[] = "Beautiful performance!";
+const char D_0805db34[] = "What a beautiful performance!";
 
 const char D_0805db54[] = "Try and focus, you two.";
 

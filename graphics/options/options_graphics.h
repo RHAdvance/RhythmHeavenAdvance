@@ -16,6 +16,8 @@ extern struct Animation anim_options_off_mono[];
 extern struct Animation anim_options_off_data_clear[];
 extern struct Animation anim_options_warning_box[];
 extern struct Animation anim_options_cursor_default[];
+extern struct Animation anim_options_rshoulder[];
+extern struct Animation anim_options_lshoulder[];
 
 /* OPTIONS - COMPRESSED GRAPHICS */
 

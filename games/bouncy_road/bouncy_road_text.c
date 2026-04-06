@@ -7,7 +7,7 @@
 
 const char D_0805b778[] = "Word on the wind:";
 
-const char D_0805b784[] = "You need to focus on the basics.";
+const char D_0805b784[] = "Your basics need work.";
 
 const char D_0805b7a0[] = "";
 
@@ -19,7 +19,7 @@ const char D_0805b7f8[] = "Your timing was on point!";
 
 const char D_0805b810[] = "Word on the wind:";
 
-const char D_0805b820[] = "You need to focus on the basics.";
+const char D_0805b820[] = "Your basics need work.";
 
 const char D_0805b83c[] = "";
 

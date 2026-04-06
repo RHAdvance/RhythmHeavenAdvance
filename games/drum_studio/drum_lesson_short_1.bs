@@ -55,8 +55,8 @@ return
 
 text D_0805f1e4
     .ascii "\n"
-    .ascii "Now let's swap one of\n"
-    .ascii "the bass beats for a snare.\n"
+    .ascii "Now let's add on\n"
+    .ascii "another bass beat.\n"
     .asciz "You know what to do!\n"
 endtext
 

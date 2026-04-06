@@ -1,15 +1,19 @@
 OUTPUT_ARCH(arm)
-ENTRY(__romPos)
 
 SECTIONS {    
     . = 0;
     _start = . ;
-    __romPos = 0x08000000;
+    __romPos = 0;
     
     . = 0x03000000;
     .bss . : SUBALIGN(4) {
         "build/src/*.o"(.bss);
         "build/asm/*.o"(.bss);
+    }
+
+    .common_data (NOLOAD) : SUBALIGN(4) {
+        "build/src/*.o"(.common_data);
+        "build/asm/*.o"(.common_data);
     }
     
     . = 0x08000000;

@@ -9,9 +9,9 @@ const char D_0805ab50[] = "You needed to focus on the basics.";
 
 const char D_0805ab68[] = "";
 
-const char D_0805ab6c[] = "Your consecutive punches were just sad.";
+const char D_0805ab6c[] = "Your consecutive punches were poor.";
 
-const char D_0805ab90[] = "Your consecutive punches were amazing!";
+const char D_0805ab90[] = "Your consecutive punches were precise!";
 
 const char D_0805abb0[] = "You nailed the ending!";
 
@@ -26,9 +26,9 @@ const char D_0805abec[] =
     "training!";
 
 const char D_0805ac0c[] = 
-    "Press ‡M to punch the\n"
-    "objects that are flying\n"
-    "your way.\n"
+    "Watch out for flying objects,\n"
+    "And press ‡M to punch them!\n"
+    "\n"
     "The timing's a little tricky!";
 
 const char D_0805ac60[] =

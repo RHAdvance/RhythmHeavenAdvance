@@ -3,9 +3,9 @@
 
 asm(".include \"include/gba.inc\"");//Temporary
 
-extern u16 verify_sram_fast_code[];    // Static Copy of verify_sram_fast_rom()
-extern u16 read_sram_fast_code[];      // Static Copy of read_sram_fast_rom()
-extern u32 write_int_sram_fast_code[]; // Static Copy of write_int_sram_fast_rom()
+u16 verify_sram_fast_code[0x50] __attribute__((nocommon));    // Static Copy of verify_sram_fast_rom()
+u16 read_sram_fast_code[0x40] __attribute__((nocommon));      // Static Copy of read_sram_fast_rom()
+u32 write_int_sram_fast_code[0x0C] __attribute__((nocommon)); // Static Copy of write_int_sram_fast_rom()
 
 extern void (*write_int_sram_fast_rom)(const u8 *src, u8 *dest, u32 size); // ARM Function
 

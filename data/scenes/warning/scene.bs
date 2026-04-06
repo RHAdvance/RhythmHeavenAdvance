@@ -15,7 +15,11 @@ script script_scene_warning
     pause_scene
 
     fade_music_out 48
+#ifdef RUMBLE
+    fade_screen_out 12, WHITE
+#else
     fade_screen_out 12, BLACK
+#endif
     rest 12
     rest 12
     stop

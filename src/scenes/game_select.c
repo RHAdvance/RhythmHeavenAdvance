@@ -3,6 +3,7 @@
 #include "graphics/game_select/game_select_graphics.h"
 
 #include "levels.h"
+#include "src/code_080092cc.h"
 #include "src/scenes/reading.h"
 #include "src/scenes/studio.h"
 
@@ -44,7 +45,7 @@ static u16 D_0300131e_padding; // unused
 static s8 sCurrentCampaign; // Current Perfect Campaign ID
 static u16 D_03001322_padding; // unused
 static u8 sPlayCreditsAfterEpilogue; // Currently playing through Remix 6 for the first time.
-extern u8 sReplayingCampaign;
+COMMON_DATA u8 sReplayingCampaign = FALSE;
 
 
 extern u32 D_03005590; // Unused
@@ -374,6 +375,7 @@ void update_campaign_notice(void) {
             sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, TRUE);
             gGameSelect->hideStageTitle = FALSE;
             play_sound(&s_menu_kettei2_seqData);
+            rumble_play_menu_confirm();
             scene_interpolate_music_volume(INT_TO_FIXED(1.0), ticks_to_frames(0x18));
             gGameSelect->sceneState = GS_STATE_MAIN;
         }
@@ -1042,6 +1044,7 @@ u32 game_select_get_next_valid_xy(s32 *xReq, s32 *yReq, s32 dx, s32 dy) {
 // Read Directional Inputs
 void game_select_read_dpad_inputs(void) {
     s16 screenX, screenY;
+    s32 levelID;
     s32 x, y, dx, dy;
     s32 i;
 
@@ -1075,6 +1078,7 @@ void game_select_read_dpad_inputs(void) {
 
     // If the movement is invalid or zero, exit.
     if (!game_select_get_next_valid_xy(&x, &y, dx, dy)) {
+        rumble_play_menu_limit();
         return;
     }
 
@@ -1089,6 +1093,12 @@ void game_select_read_dpad_inputs(void) {
     }
 
     play_sound(&s_menu_cursor1_seqData);
+    levelID = get_level_id_from_grid_xy(x, y);
+    if ((levelID > LEVEL_NULL) && (get_level_data_from_id(levelID)->type == LEVEL_TYPE_BONUS)) {
+        rumble_play_menu_bonus();
+    } else {
+        rumble_play_menu_move();
+    }
 }
 
 
@@ -1187,11 +1197,17 @@ void game_select_read_inputs(void) {
             set_pause_beatscript_scene(FALSE);
             gGameSelect->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
+            if (levelData->type == LEVEL_TYPE_BONUS) {
+                rumble_play_menu_bonus();
+            } else {
+                rumble_play_menu_confirm();
+            }
             return;
         }
 
         /* If the level cannot be opened: */
         play_sound(&s_menu_error_seqData);
+        rumble_play_menu_error();
         return;
     }
 
@@ -1205,6 +1221,7 @@ void game_select_read_inputs(void) {
         set_pause_beatscript_scene(FALSE);
         gGameSelect->inputsEnabled = FALSE;
         play_sound(&s_menu_cancel3_seqData);
+        rumble_play_menu_cancel();
     }
 }
 
@@ -2030,12 +2047,10 @@ void game_select_print_level_rank(s32 levelState) {
         levelState = LEVEL_STATE_OPEN;
     }
 
-    #ifdef PLUS
     // Check if the game has been perfected
     if (get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(gGameSelect->infoPaneLevelID))) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
-    #endif
 
     found = gGameSelect->infoPaneLevelData->flags & (LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE);
 

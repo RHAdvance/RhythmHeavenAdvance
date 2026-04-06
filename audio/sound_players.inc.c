@@ -11,7 +11,6 @@
 
 
 // STATIC VARIABLES
-// !TODO - figure out how to align this stuff
 static struct SoundPlayer sMusicPlayer0;
 static struct SoundPlayer sMusicPlayer1;
 static struct SoundPlayer sMusicPlayer2;
@@ -25,11 +24,6 @@ static struct SoundPlayer sSfxPlayer6;
 static struct SoundPlayer sSfxPlayer7;
 static struct SoundPlayer sSfxPlayer8;
 static struct SoundPlayer sSfxPlayer9;
-
-extern u8 sPCMBufferArea[2][1568];
-extern s32 sPCMScratchArea[0x80 * 2];
-extern struct SampleStream sSamplerArea[12];
-extern struct SoundChannel sSoundChannelArea[12];
 
 extern struct MidiChannel sMusicPlayer0Channels[N_TRACKS_MUS0];
 extern struct MidiBus sMusicPlayer0MidiBus;
@@ -70,7 +64,6 @@ extern struct MidiTrackStream sSfxPlayer8Streams[N_TRACKS_SFX];
 extern struct MidiChannel sSfxPlayer9Channels[N_TRACKS_SFX];
 extern struct MidiBus sSfxPlayer9MidiBus;
 extern struct MidiTrackStream sSfxPlayer9Streams[N_TRACKS_SFX];
-
 
 // Last SoundPlayer Index
 u32 last_sound_player_id = SOUND_PLAYER_COUNT - 1;

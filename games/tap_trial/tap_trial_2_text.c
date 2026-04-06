@@ -5,9 +5,9 @@
 /* Game Text - Tap Trial 2 */
 
 
-const char D_08067b28[] = "You aren't good at this.";
+const char D_08067b28[] = "You haven't got it.";
 
-const char D_08067b38[] = "That was cool!";
+const char D_08067b38[] = "You've got it!";
 
 const char D_08067b50[] = "Not quick enough.";
 

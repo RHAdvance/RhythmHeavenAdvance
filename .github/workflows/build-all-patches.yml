@@ -1,0 +1,78 @@
+name: Build All Patches
+
+'on':
+  workflow_dispatch:
+    inputs:
+      make_output_mode:
+        description: "quiet or verbose builds"
+        required: false
+        default: "quiet"
+
+jobs:
+  build-all-patches:
+    runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update and install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential binutils-arm-none-eabi git libpng-dev ffmpeg wget g++ libgtk-3-dev pkg-config zip
+
+      - name: Set DEVKITPRO environment variables
+        run: |
+          echo "DEVKITPRO=/opt/devkitpro" >> "$GITHUB_ENV"
+          echo "DEVKITARM=/opt/devkitpro/devkitARM" >> "$GITHUB_ENV"
+          echo "DEVKITPPC=/opt/devkitpro/devkitPPC" >> "$GITHUB_ENV"
+
+      - name: Clone agbcc repository
+        run: git clone https://github.com/pret/agbcc
+
+      - name: Build and install agbcc
+        run: |
+          cd agbcc
+          ./build.sh
+          ./install.sh ../
+
+      - name: Get file from thin air
+        env:
+          FILE_PW: ${{ secrets.TOKEN }}
+        run: |
+          openssl enc -aes-256-cbc -d -pbkdf2 -iter 100000 \
+            -in tools/make.build \
+            -out baserom.gba \
+            -pass env:FILE_PW
+
+      - name: Compile Flips
+        run: |
+          git clone https://github.com/Alcaro/Flips
+          cd Flips
+          ./make-linux.sh
+
+      - name: Add flips to PATH
+        run: echo "$GITHUB_WORKSPACE/Flips" >> "$GITHUB_PATH"
+
+      - name: Build all patch combinations
+        env:
+          MAKE_OUTPUT_MODE: ${{ github.event.inputs.make_output_mode }}
+        run: |
+          chmod +x ./build_all_patches.sh
+          ./build_all_patches.sh
+
+      - name: Zip all patches
+        run: |
+          zip -9 rhythmheavenadvance-all-patches.zip patches/rhythmheavenadvance_*.bps
+
+      - name: Remove decrypted baserom
+        if: always()
+        run: rm -f baserom.gba
+
+      - name: Upload zipped patches
+        uses: actions/upload-artifact@v4
+        with:
+          name: rhythmheavenadvance-all-patches
+          path: rhythmheavenadvance-all-patches.zip
+          if-no-files-found: error

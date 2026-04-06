@@ -126,10 +126,10 @@ typedef volatile u16 *IOReg;
 
 
 // STATIC VARIABLES
-// extern volatile s32 sPCMBufferArea[1568 * 2 / 4];   // DIRECTSOUND - DMA Source Addresses { &sPCMBufferArea[0] = Right; &sPCMBufferArea[gMidiPCMBufSize32] = Left }
-// extern s32 sPCMScratchArea[0x80 * 2];               // DIRECTSOUND - Sample Processing ScratchPad
-// extern struct SampleStream sSamplerArea[12];        // DIRECTSOUND - DMA Sample Readers (12 Channels)
-// extern struct SoundChannel sSoundChannelArea[12];   // DIRECTSOUND - DirectSound Channels (12 Channels)
+extern volatile u8 sPCMBufferArea[2][DMA_SAMPLE_BUFFER_SIZE];             // DIRECTSOUND - DMA Source Addresses { &sPCMBufferArea[0] = Right; &sPCMBufferArea[1] = Left }
+extern s32 sPCMScratchArea[SAMPLE_SCRATCHPAD_SIZE * 2];                // DIRECTSOUND - Sample Processing ScratchPad
+extern struct SampleStream sSamplerArea[12];         // DIRECTSOUND - DMA Sample Readers (12 Channels)
+extern struct SoundChannel sSoundChannelArea[12];    // DIRECTSOUND - DirectSound Channels (12 Channels)
 
 extern u16 gMidiVCOUNTAtStart;      // MAIN - Set to REG_VCOUNT near the start of each update.
 extern u32 gMidiSoundMode;          // DIRECTSOUND - Initial Sound Mode { 0 = Stereo; 1 = Mono (One Channel); 2 = Mono (Two Channels) }

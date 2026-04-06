@@ -8,7 +8,9 @@
 static const struct SaveEditorFlag sAdvanceFlags[] = {
     { "Save Converted",          0 },
     { "Use. Alt GS Music",       1 },
-    { "Seen Disclaimer",     2 },
+    { "Seen Disclaimer",         2 },
+    { "Skip Disclaimer",         3 },
+    { "Disable Rumble",          4 },
     END_OF_FLAG
 };
 
@@ -43,7 +45,7 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     /* SE_MBR_UNK_B0 */
     { "unkB0",                               SE_KIND_U8,    0,  -1, -1, NULL,   0, NULL,               0 },
     /* SE_MBR_ADVANCE_FLAGS */
-    { "Advance Flags",                       SE_KIND_BITFLAGS,    0,  -1, -1, sAdvanceFlags, 3, NULL,               0 },
+    { "Advance Flags",                       SE_KIND_BITFLAGS,    0,  -1, -1, sAdvanceFlags, 5, NULL,               0 },
     /* SE_MBR_TOTAL_SONGS */
     { "Total Songs",                         SE_KIND_U8,          0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_UNK_B3 */

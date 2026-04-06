@@ -1,6 +1,8 @@
 #include "main.h"
 #include "memory.h"
 #include "code_08003b28.h"
+#include "code_080092cc.h"
+#include "rumble_backend.h"
 #include "bitmap_font.h"
 #include "memory_heap.h"
 
@@ -15,6 +17,12 @@ static struct Scene *D_03000084;
 static s32 D_03000088;
 
 static u8 sIsBadFlashCart = 0;
+
+#ifdef DEBUG
+#define INITIAL_SCENE &scene_debug_menu
+#else
+#define INITIAL_SCENE &scene_title
+#endif
 
 // Default Interrupt Procedure (Do Nothing)
 void interrupt_default(void) {
@@ -39,6 +47,10 @@ void func_08000224(void) {
 	init_key_listener();
 	init_time_keeper();
 	init_fast_udivsi3();
+#ifdef RUMBLE
+	rumble_backend_init();
+	rumble_init(3);
+#endif
 	init_math_sqrt();
 	mem_heap_init(get_memory_heap_start(), get_memory_heap_length());
 	task_pool_init();
@@ -60,11 +72,9 @@ void func_08000224(void) {
 	set_playtest_save_data();
 #endif
 	flush_save_buffer_to_sram_backup();
-	
+
 	// Initialize disclaimer flag from save data
-	if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAIMER)) {
-		haveSeenDisclaimer = TRUE;
-	}
+	haveSeenDisclaimer = CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SEEN_DISCLAIMER);
 	
 	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 	set_scene_object_current_text_id(scene_get_default_text_id());
@@ -108,24 +118,34 @@ void agb_main(void) {
 	set_sound_mode(D_030046a8->data.unk294[8]); // Set DirectSound Mode (Stereo/Mono)
 
 	REG_DISPSTAT = 8;
-	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK);
+	REG_IE = (INTERRUPT_CART | INTERRUPT_DMA2 | INTERRUPT_TIMER3 | INTERRUPT_VBLANK
+#ifdef RUMBLE
+		| INTERRUPT_COMM
+#endif
+	);
 	REG_IF = 0xFFFF;
 	REG_IME = 1;
 
 	func_0801d860(FALSE); // Init. Script Operator (Init. Static Variables)
+	#ifdef RUMBLE
 	init_scenes(&scene_warning);
-    set_scene_trans_target(&scene_warning, &scene_disclaimer);
-#ifdef DEBUG
-    set_scene_trans_target(&scene_disclaimer, &scene_debug_menu);
-#else
-	set_scene_trans_target(&scene_disclaimer, &scene_title);
-#endif
+	set_scene_trans_target(&scene_warning, &scene_gbp_handshake);
+	set_scene_trans_target(&scene_gbp_handshake, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
+	#else
+	init_scenes(&scene_warning);
+	set_scene_trans_target(&scene_warning, (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? INITIAL_SCENE : &scene_disclaimer));
+	#endif
+    set_scene_trans_target(&scene_disclaimer, INITIAL_SCENE);
+
 	update_key_listener();
 
 	while (TRUE) {
 		func_080013a8();
 		get_agb_random_var();
 		update_key_listener();
+		#ifdef RUMBLE
+		rumble_backend_update();
+		#endif
 		D_030046a0 += 1;
 		process_scenes();
 
@@ -135,7 +155,9 @@ void agb_main(void) {
 			if ((keysPressed & RESET_BUTTON_COMBO) == RESET_BUTTON_COMBO) {
 				key_rec_set_mode(0, 0x3ff, 0, 0);
 				set_current_scene(&scene_soft_reset);
-				func_08009548();
+				#ifdef RUMBLE
+				rumble_shutdown();
+				#endif
 				D_03004498 = FALSE;
 			}
 		}

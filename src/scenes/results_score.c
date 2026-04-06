@@ -1,6 +1,7 @@
 #include "global.h"
 #include "results.h"
 #include "graphics/results/results_graphics.h"
+#include "src/code_080092cc.h"
 
 
 /* RESULTS SCENE 3 (SCORE-TYPE) */
@@ -125,6 +126,7 @@ void score_results_scene_update(void *sVar, s32 dArg) {
             set_pause_beatscript_scene(FALSE);
             gResults->inputsEnabled = FALSE;
             play_sound_w_pitch_volume(&s_menu_se20_seqData, INT_TO_FIXED(0.5), INT_TO_FIXED(0.0));
+            rumble_play_menu_confirm();
         }
     }
 }
