@@ -11,12 +11,14 @@ enum OptionsPageEnum {
 };
 
 enum OptionsBitmapEntryEnum {
+    OPTIONS_BITMAP_NON_JP_SFX,
+    OPTIONS_BITMAP_NON_JP_MUSIC,
 #ifdef RUMBLE
     OPTIONS_BITMAP_RUMBLE,
 #endif
     OPTIONS_BITMAP_SKIP_DISCLAIMER,
     OPTIONS_BITMAP_ALT_GAME_SELECT_MUSIC,
-    OPTIONS_BITMAP_TOTAL
+    OPTIONS_BITMAP_TOTAL,
 };
 
 enum OptionsSceneStatesEnum {

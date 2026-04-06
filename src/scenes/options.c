@@ -72,6 +72,11 @@ static void options_scene_refresh_classic_visuals(void) {
 
 static const char *options_scene_bitmap_get_value(s32 entry) {
     switch (entry) {
+        case OPTIONS_BITMAP_NON_JP_SFX:
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) ? "‚d‚Ž‚‡‚Œ‚‰‚“‚ˆ" : "‚i‚‚‚‚Ž‚…‚“‚…";
+
+        case OPTIONS_BITMAP_NON_JP_MUSIC:
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC) ? "‚d‚Ž‚‡‚Œ‚‰‚“‚ˆ" : "‚i‚‚‚‚Ž‚…‚“‚…";
 #ifdef RUMBLE
         case OPTIONS_BITMAP_RUMBLE:
             return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_DISABLE_RUMBLE) ? "‚n‚†‚†" : "‚n‚Ž";
@@ -631,6 +636,32 @@ static void options_scene_update_main_bitmap(void) {
             selectedItem = gOptionsMenu->bitmapSelected;
 
             switch (selectedItem) {
+                case OPTIONS_BITMAP_NON_JP_SFX:
+                    TOGGLE_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX);
+                    write_game_save_data();
+                    options_scene_bitmap_refresh_line(OPTIONS_BITMAP_NON_JP_SFX);
+                    if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX)) {
+                        play_sound(&s_menu_kettei2_seqData);
+                        rumble_play_menu_confirm();
+                    } else {
+                        play_sound(&s_menu_cancel3_seqData);
+                        rumble_play_menu_cancel();
+                    }
+                    break;
+
+                case OPTIONS_BITMAP_NON_JP_MUSIC:
+                    TOGGLE_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC);
+                    write_game_save_data();
+                    options_scene_bitmap_refresh_line(OPTIONS_BITMAP_NON_JP_MUSIC);
+                    if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC)) {
+                        play_sound(&s_menu_kettei2_seqData);
+                        rumble_play_menu_confirm();
+                    } else {
+                        play_sound(&s_menu_cancel3_seqData);
+                        rumble_play_menu_cancel();
+                    }
+                    break;
+
 #ifdef RUMBLE
                 case OPTIONS_BITMAP_RUMBLE:
                     TOGGLE_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_DISABLE_RUMBLE);

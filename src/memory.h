@@ -21,6 +21,8 @@ enum AdvanceFlagsEnum {
     /* 04 */ ADVANCE_FLAG_SEEN_DISCLAIMER               = (1 << 2),
     /* 08 */ ADVANCE_FLAG_SKIP_DISCLAIMER               = (1 << 3),
     /* 10 */ ADVANCE_FLAG_DISABLE_RUMBLE                = (1 << 4),
+    /* 20 */ ADVANCE_FLAG_NON_JP_SFX                    = (1 << 5),
+    /* 40 */ ADVANCE_FLAG_NON_JP_MUSIC                  = (1 << 6),
 };
 
 enum AdvanceGameFlagsEnum {
