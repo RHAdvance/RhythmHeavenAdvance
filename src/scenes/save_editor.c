@@ -61,7 +61,7 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     /* SE_MBR_TOTAL_PERFECTS */
     { "Total Perfects",                      SE_KIND_U8,          0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_CAMPAIGNS_CLEARED */
-    { "Campaigns Cleared",                   SE_KIND_U8,  TOTAL_PERFECT_CAMPAIGNS, -1, -1, NULL, 0, NULL,           0 },
+    { "Campaigns Cleared",                   SE_KIND_BOOL,  TOTAL_PERFECT_CAMPAIGNS, 0, 1, NULL, 0, NULL,           0 },
     /* SE_MBR_CAMPAIGN_STATE */
     { "Campaign State",                      SE_KIND_CAMPAIGN_STATE, 0,  0, 2, NULL,          0, NULL,               0 },
     /* SE_MBR_CAMPAIGN_ATTEMPTS_LEFT */
@@ -524,7 +524,7 @@ void save_editor_render_page(void) {
     }
     save_editor_draw_line(SE_LINE_HEADER, 0, buf, 8, 24);
 
-    save_editor_draw_line(SE_LINE_HINT_A, 0, "‡K/‡L:Change Current Save Member", 8, 48);
+    save_editor_draw_line(SE_LINE_HINT_A, 0, "‡K/‡L: Change Current Save Member", 8, 48);
 
     save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT: Save and Exit", 8, 64);
 
