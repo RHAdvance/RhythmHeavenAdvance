@@ -27,6 +27,7 @@ extern volatile u16 D_03004438; // GPIO Data Reserve
 extern volatile u16 D_0300443a; // GPIO Direction Reserve
 extern struct struct_0300443c *D_0300443c; // Gyro Status
 extern u8 D_03004440; // Rumble Enabled
+extern u32 D_03004448[6]; // Unused?
 
 extern s32 (*D_030064d4)(void); // Read Gyro Data Function?
 
