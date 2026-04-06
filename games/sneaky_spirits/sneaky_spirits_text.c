@@ -23,7 +23,7 @@ const char D_0805bb40[] = "Ｓｔｏｐ　ｔｈｏｓｅ　ｇｈｏｓｔｓ！";
 
 const char D_0805bb58[] = "Ｄｏｎ’ｔ　ｌｅｔ　ｔｈｅｍ　ｇｅｔ　ａｗａｙ！";
 
-const char D_0805bb68[] = "Ｔｈｅ　ｔｉｍｉｎｇ　ｈａｓ　ｔｏ　ｂｅ．．．";
+const char D_0805bb68[] = "Ｙｏｕｒ　ｔｉｍｉｎｇ　ｈａｓ　ｔｏ　ｂｅ．．．";
 
 const char D_0805bb78[] = "．．．ｐｅｒｆｅｃｔ！";
 
@@ -33,7 +33,7 @@ const char D_0805bb9c[] = "Ｒｉｇｈｔ．．．";
 
 const char D_0805bb9D[] = "Ｎｏｗ！";
 
-const char D_0805bba8[] = "Ｔｉｍｅ　ｔｏ　ｓｔａｒｔ　ｔｈｅ　ｒｅａｌ　ｇａｍｅ．";
+const char D_0805bba8[] = "Ｄｏｎ＇ｔ　ｌｅｔ　ａｎｙ　ｇｅｔ　ｐａｓｔ　ｙｏｕ！";
 
 const char D_0805bbc8[] = "Spooky voices agree...";
 

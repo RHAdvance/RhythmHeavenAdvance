@@ -68,8 +68,8 @@ const char options_data_clear_confirm_text[] =
 const char *options_desc_text[] = {
     /* SOUND MODE ------------------------------------- */
         "\0023" "\0013" "\001C" "Sound Mode\n"
-        "\0024" "\0011" "\001L" "Stereo　　" "\0021" " For dual-speaker systems. (DS, etc...)\n"
-        "\0024" "\0011" "\001L" "Mono　　 " "\x87\x53" "\0021" "For single-speaker systems. (GBA, etc...)",
+        "\0024" "\0011" "\001L" "Stereo　　" "\0021" " For dual-speaker systems. (DS, etc.)\n"
+        "\0024" "\0011" "\001L" "Mono　　 " "\x87\x53" "\0021" "For single-speaker systems. (GBA, etc.)",
     /* DATA CLEAR ------------------------------------- */
         "\0023" "\0013" "\001C" "Clear Data\n"
         "\0021" "\0011" "\001C" "This will delete " "\0022" "all " "\0021" "of your save data and start\n"

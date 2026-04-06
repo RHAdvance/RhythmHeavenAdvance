@@ -26,9 +26,9 @@ const char D_0805abec[] =
     "training!";
 
 const char D_0805ac0c[] = 
-    "Watch out for flying objects,\n"
-    "And press ‡M to punch them!\n"
-    "\n"
+    "Watch out for flying\n"
+    "objects, and press ‡M\n"
+    "to punch them!\n"
     "The timing's a little tricky!";
 
 const char D_0805ac60[] =

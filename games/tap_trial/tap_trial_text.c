@@ -35,11 +35,11 @@ const char D_0805c1e8[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
 
 const char D_0805c1f8[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
 
-const char D_0805c210[] = "ＯＫ，　ｏｎｅ　ｍｏｒｅ！";
+const char D_0805c210[] = "Ｎｉｃｅ！　Ｏｎｅ　ｍｏｒｅ！　";
 
-const char D_0805c228[] = "ＯＫ，　ｌａｓｔ　ｏｎｅ！";
+const char D_0805c228[] = "Ｇｏｏｄ！　Ｌａｓｔ　ｏｎｅ！";
 
-const char D_0805c240[] = "ＯＫ，　ｎｉｃｅ　ｗｏｒｋ！";
+const char D_0805c240[] = "Ｏｏｋｉｉ！　Ｎｉｃｅ　ｗｏｒｋ！";
 
 const char D_0805c248[] = "Your basics were a little sloppy.";
 
@@ -73,8 +73,8 @@ const char D_0805c374[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
 
 const char D_0805c384[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
 
-const char D_0805c39c[] = "ＯＫ，　ｏｎｅ　ｍｏｒｅ！";
+const char D_0805c39c[] = "Ｎｉｃｅ！　Ｏｎｅ　ｍｏｒｅ！　";
 
-const char D_0805c3b4[] = "ＯＫ，　ｌａｓｔ　ｏｎｅ！";
+const char D_0805c3b4[] = "Ｇｏｏｄ！　Ｌａｓｔ　ｏｎｅ！";
 
-const char D_0805c3cc[] = "ＯＫ，　ｎｉｃｅ　ｗｏｒｋ！";
+const char D_0805c3cc[] = "Ｏｏｋｉｉ！　Ｎｉｃｅ　ｗｏｒｋ！";
