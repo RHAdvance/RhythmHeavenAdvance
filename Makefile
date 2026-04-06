@@ -104,7 +104,6 @@ ALL_DIRS       := $(sort $(ALL_DIRS)) # remove duplicates
 BUILD_DIRS     := $(BUILD) $(addprefix $(BUILD)/,$(ALL_DIRS))
 
 LD_SCRIPT := advance.ld
-SYMBOLS := symbols.ld
 
 #---------------------------------------------------------------------------------
 
@@ -190,8 +189,8 @@ $(OUTPUT).gba	:	$(OUTPUT).elf
 	$(call step,ROM Assembled!)
 
 $(OUTPUT).elf	:	$(OFILES) | $(BUILD)/$(LD_SCRIPT)
-	$(call step,Linking ROM...)
-	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(BUILD)/$(LD_SCRIPT) -T $(SYMBOLS) -Wl,--no-warn-rwx-segments,-Map $(@:.elf=.map) -nostartfiles -o $@
+	$(V)echo "Building ROM..."
+	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(BUILD)/$(LD_SCRIPT) -Wl,--no-warn-rwx-segments,-Map $(@:.elf=.map) -nostartfiles -o $@
 
 
 # Binary data
