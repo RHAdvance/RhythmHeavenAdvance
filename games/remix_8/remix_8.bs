@@ -293,6 +293,8 @@ script script_remix_8_main
     rest 24
     print_text_f 3
     #endif
+    beat_anim
+    rest 24
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
