@@ -190,6 +190,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ DELAY_CLEAR,
         /* Delay */ 5
     },
+#ifdef TEMPOUP
     /* Entry (x=10, y=06) */ {
         /* Level ID */ LEVEL_REMIX_1_EXTRA,
         /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
@@ -198,6 +199,9 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ DELAY_CLEAR,
         /* Delay */ 5
     },
+#else
+    /* Entry (x=10, y=06) */ EMPTY_GRID_ENTRY,
+#endif
     /* Entry (x=11, y=06) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=06) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=06) */ EMPTY_GRID_ENTRY,
@@ -276,6 +280,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 4
     },
+#ifdef TEMPOUP
     /* Entry (x=10, y=07) */ {
         /* Level ID */ LEVEL_CLAPPY_TRIO_EXTRA,
         /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
@@ -284,6 +289,9 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 4
     },
+#else
+    /* Entry (x=10, y=07) */ EMPTY_GRID_ENTRY,
+#endif
     /* Entry (x=11, y=07) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=07) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=07) */ EMPTY_GRID_ENTRY,
@@ -362,6 +370,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 3
     },
+#ifdef TEMPOUP
     /* Entry (x=10, y=08) */ {
         /* Level ID */ LEVEL_SPACEBALL_EXTRA,
         /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
@@ -370,6 +379,9 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 3
     },
+#else
+    /* Entry (x=10, y=08) */ EMPTY_GRID_ENTRY,
+#endif
     /* Entry (x=11, y=08) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=08) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=08) */ EMPTY_GRID_ENTRY,
@@ -448,6 +460,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 2
     },
+#ifdef TEMPOUP
     /* Entry (x=10, y=09) */ {
         /* Level ID */ LEVEL_MARCHING_ORDERS_EXTRA,
         /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
@@ -456,6 +469,9 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 2
     },
+#else
+    /* Entry (x=10, y=09) */ EMPTY_GRID_ENTRY,
+#endif
     /* Entry (x=11, y=09) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=09) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=09) */ EMPTY_GRID_ENTRY,
@@ -534,6 +550,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 1
     },
+#ifdef TEMPOUP
     /* Entry (x=10, y=10) */ {
         /* Level ID */ LEVEL_RHYTHM_TWEEZERS_EXTRA,
         /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
@@ -542,6 +559,9 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ 0,
         /* Delay */ 1
     },
+#else
+    /* Entry (x=10, y=10) */ EMPTY_GRID_ENTRY,
+#endif
     /* Entry (x=11, y=10) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=10) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=10) */ EMPTY_GRID_ENTRY,
@@ -620,6 +640,7 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ TARGET_ON_SHOW | DELAY_OPEN,
         /* Delay */ 0
     },
+#ifdef TEMPOUP
     /* Entry (x=10, y=11) */ {
         /* Level ID */ LEVEL_KARATE_MAN_EXTRA,
         /* Show Req */ (s8[]) { REQ_TOTAL_MEDALS(48), REQ_CLEAR(9, 6), REQ_OPEN(1, 6), END_REQ },
@@ -632,6 +653,9 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
         /* Flags */ TARGET_ON_SHOW | TARGET_ON_OPEN | DELAY_OPEN,
         /* Delay */ 0
     },
+#else
+    /* Entry (x=10, y=11) */ EMPTY_GRID_ENTRY,
+#endif
     /* Entry (x=11, y=11) */ EMPTY_GRID_ENTRY,
     /* Entry (x=12, y=11) */ EMPTY_GRID_ENTRY,
     /* Entry (x=13, y=11) */ EMPTY_GRID_ENTRY,
