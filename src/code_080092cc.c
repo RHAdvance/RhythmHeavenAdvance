@@ -1,4 +1,5 @@
 #include "code_080092cc.h"
+#include "code_08001360.h"
 #ifdef RUMBLE
 #include "rumble_backend.h"
 #endif
@@ -43,6 +44,10 @@ static u8 sRumbleQueuedPulseCount;
 static u8 sRumbleQueuedPulseGap;
 static u8 sRumbleQueuedPulseDelay;
 static u32 sRumbleQueuedPulseIntensity;
+static u16 sRumblePatternReleaseMask;
+static u8 sRumblePatternLastPulseCount;
+static u8 sRumblePatternLastGap;
+static u32 sRumblePatternLastIntensity;
 
 extern u32 (*fast_udivsi3)(u32 dividend, u32 divisor); // move into a header
 
@@ -52,6 +57,8 @@ static u32 rumble_clamp_intensity(u32 intensity);
 static void rumble_begin_pulse(u32 intensity);
 static void rumble_queue_pattern(u32 intensity, u32 pulseCount, u32 gapTicks);
 static void rumble_clear_pattern(void);
+static void rumble_unlock_pattern_repeat(void);
+static u32 rumble_pattern_repeat_is_locked(u32 intensity, u32 pulseCount, u32 gapTicks);
 static void rumble_cancel_pulse(void);
 static void rumble_set_enabled(u32 enable);
 
@@ -182,6 +189,7 @@ void func_08009548(void) {
 void rumble_request_pulse(u32 arg0) {
     s24_8 temp_r4;
 #ifdef RUMBLE
+    rumble_unlock_pattern_repeat();
     rumble_clear_pattern();
     rumble_begin_pulse(arg0);
     return;
@@ -346,18 +354,59 @@ static void rumble_begin_pulse(u32 arg0) {
 }
 
 
+static void rumble_unlock_pattern_repeat(void) {
+    sRumblePatternReleaseMask = 0;
+    sRumblePatternLastIntensity = 0;
+    sRumblePatternLastPulseCount = 0;
+    sRumblePatternLastGap = 0;
+}
+
+
+static u32 rumble_pattern_repeat_is_locked(u32 intensity, u32 pulseCount, u32 gapTicks) {
+    u16 pressedKeys;
+
+    pressedKeys = D_03004ac0;
+
+    if ((sRumblePatternReleaseMask != 0)
+        && ((pressedKeys & sRumblePatternReleaseMask) == 0)) {
+        rumble_unlock_pattern_repeat();
+    }
+
+    if ((sRumblePatternReleaseMask != 0)
+        && (sRumblePatternLastIntensity == intensity)
+        && (sRumblePatternLastPulseCount == pulseCount)
+        && (sRumblePatternLastGap == gapTicks)) {
+        return TRUE;
+    }
+
+    sRumblePatternLastIntensity = intensity;
+    sRumblePatternLastPulseCount = pulseCount;
+    sRumblePatternLastGap = gapTicks;
+    sRumblePatternReleaseMask = pressedKeys;
+    return FALSE;
+}
+
+
 static void rumble_queue_pattern(u32 intensity, u32 pulseCount, u32 gapTicks) {
-    rumble_clear_pattern();
     if (pulseCount == 0) {
+        rumble_clear_pattern();
+        rumble_unlock_pattern_repeat();
         return;
     }
+
+    intensity = rumble_clamp_intensity(intensity);
+    if (rumble_pattern_repeat_is_locked(intensity, pulseCount, gapTicks)) {
+        return;
+    }
+
+    rumble_clear_pattern();
 
     rumble_begin_pulse(intensity);
     if (pulseCount > 1) {
         sRumbleQueuedPulseCount = pulseCount - 1;
         sRumbleQueuedPulseGap = gapTicks;
         sRumbleQueuedPulseDelay = gapTicks;
-        sRumbleQueuedPulseIntensity = rumble_clamp_intensity(intensity);
+        sRumbleQueuedPulseIntensity = intensity;
     }
 }
 
@@ -412,6 +461,7 @@ void rumble_init(u32 arg0) {
     D_03001208 = 0;
     D_03001200 = 1;
     rumble_clear_pattern();
+    rumble_unlock_pattern_repeat();
 }
 
 void rumble_shutdown(void) {
@@ -426,6 +476,7 @@ static void rumble_cancel_pulse(void) {
     D_03001204 = 0;
     D_03001208 = 0;
     rumble_clear_pattern();
+    rumble_unlock_pattern_repeat();
 }
 
 static void rumble_set_enabled(u32 arg0) {

@@ -9,7 +9,7 @@ extern u8 haveSeenDisclaimer;
 
 static void options_scene_refresh_classic_visuals(void);
 static const char *options_scene_bitmap_get_value(s32 entry);
-static void options_scene_bitmap_build_line_text(s32 line);
+static void options_scene_bitmap_build_line_text(s32 line, u32 lineBuffer);
 static void options_scene_bitmap_delete_line_sprite(u32 lineIndex);
 static void options_scene_bitmap_refresh_visible_lines(void);
 static void options_scene_bitmap_refresh_line(s32 itemIndex);
@@ -91,13 +91,17 @@ static const char *options_scene_bitmap_get_value(s32 entry) {
     return "ÇrÇgÇ`ÇeÇeÇxÅ@ÇeÇtÇbÇjÇdÇcÅ@ÇtÇo";
 }
 
-static void options_scene_bitmap_build_line_text(s32 line) {
-    if ((line < 0) || (line >= OPTIONS_BITMAP_TOTAL)) {
-        gOptionsMenu->bitmapLineBuffer[0] = '\0';
+static void options_scene_bitmap_build_line_text(s32 line, u32 lineBuffer) {
+    if (lineBuffer >= OPTIONS_BITMAP_LINE_SPRITE_COUNT) {
         return;
     }
 
-    snprintf(gOptionsMenu->bitmapLineBuffer, sizeof(gOptionsMenu->bitmapLineBuffer), "%sÅFÅ@%s",
+    if ((line < 0) || (line >= OPTIONS_BITMAP_TOTAL)) {
+        gOptionsMenu->bitmapLineBuffer[lineBuffer][0] = '\0';
+        return;
+    }
+
+    snprintf(gOptionsMenu->bitmapLineBuffer[lineBuffer], OPTIONS_BITMAP_LINE_BUFFER_SIZE, "%sÅFÅ@%s",
             advance_options_label_text[line], options_scene_bitmap_get_value(line));
 }
 
@@ -132,8 +136,8 @@ static void options_scene_bitmap_refresh_visible_lines(void) {
             continue;
         }
 
-        options_scene_bitmap_build_line_text(itemIndex);
-        textAnim = bmp_font_obj_print_l(gOptionsMenu->bitmapFont, gOptionsMenu->bitmapLineBuffer, 1, 0);
+        options_scene_bitmap_build_line_text(itemIndex, line);
+        textAnim = bmp_font_obj_print_l(gOptionsMenu->bitmapFont, gOptionsMenu->bitmapLineBuffer[line], 1, 0);
         gOptionsMenu->bitmapLineSprites[line] = sprite_create(gSpriteHandler, textAnim->frames, 0,
                 OPTIONS_BITMAP_TEXT_X,
             OPTIONS_BITMAP_LINE_START_Y + (((s32)line - OPTIONS_BITMAP_LINE_CENTER_INDEX) * OPTIONS_BITMAP_LINE_SPACING_Y),
@@ -161,9 +165,9 @@ static void options_scene_bitmap_refresh_line(s32 itemIndex) {
     }
 
     options_scene_bitmap_delete_line_sprite(lineIndex);
-    options_scene_bitmap_build_line_text(itemIndex);
+    options_scene_bitmap_build_line_text(itemIndex, lineIndex);
 
-    textAnim = bmp_font_obj_print_l(gOptionsMenu->bitmapFont, gOptionsMenu->bitmapLineBuffer, 1, 0);
+    textAnim = bmp_font_obj_print_l(gOptionsMenu->bitmapFont, gOptionsMenu->bitmapLineBuffer[lineIndex], 1, 0);
     y = OPTIONS_BITMAP_LINE_START_Y
             + (((s32)lineIndex - OPTIONS_BITMAP_LINE_CENTER_INDEX) * OPTIONS_BITMAP_LINE_SPACING_Y)
             + gOptionsMenu->bitmapCursor;
@@ -177,13 +181,26 @@ static void options_scene_bitmap_refresh_line(s32 itemIndex) {
 
 static void options_scene_bitmap_position_lines(s16 yOffset) {
     u32 line;
+    s16 y;
+    const s16 minY = OPTIONS_BITMAP_LINE_START_Y;
+    const s16 maxY = OPTIONS_BITMAP_LINE_START_Y
+            + ((OPTIONS_BITMAP_VISIBLE_ROWS - 1) * OPTIONS_BITMAP_LINE_SPACING_Y);
+    const s16 transitionMinY = minY - OPTIONS_BITMAP_LINE_SPACING_Y;
+    const s16 transitionMaxY = maxY + OPTIONS_BITMAP_LINE_SPACING_Y;
+    u32 moving;
+
+    moving = (yOffset != 0);
 
     for (line = 0; line < OPTIONS_BITMAP_LINE_SPRITE_COUNT; line++) {
         if (gOptionsMenu->bitmapLineSprites[line] >= 0) {
-            sprite_set_y(gSpriteHandler, gOptionsMenu->bitmapLineSprites[line],
-                    OPTIONS_BITMAP_LINE_START_Y
+            y = OPTIONS_BITMAP_LINE_START_Y
                     + (((s32)line - OPTIONS_BITMAP_LINE_CENTER_INDEX) * OPTIONS_BITMAP_LINE_SPACING_Y)
-                    + yOffset);
+                    + yOffset;
+
+            sprite_set_y(gSpriteHandler, gOptionsMenu->bitmapLineSprites[line], y);
+            sprite_set_visible(gSpriteHandler, gOptionsMenu->bitmapLineSprites[line],
+                    moving ? ((y >= transitionMinY) && (y <= transitionMaxY))
+                           : ((y >= minY) && (y <= maxY)));
         }
     }
 }
@@ -306,20 +323,22 @@ static void options_scene_set_page(u32 page) {
 
     gOptionsMenu->activePage = page;
 
+    sprite_set_visible(gSpriteHandler, gOptionsMenu->uiSoundMode, FALSE);
+    sprite_set_visible(gSpriteHandler, gOptionsMenu->uiDataClear, FALSE);
+    for (i = 0; i < OPTIONS_BITMAP_LINE_SPRITE_COUNT; i++) {
+        if (gOptionsMenu->bitmapLineSprites[i] >= 0) {
+            sprite_set_visible(gSpriteHandler, gOptionsMenu->bitmapLineSprites[i], FALSE);
+        }
+    }
+
     if (page == OPTIONS_PAGE_ADVANCE) {
         options_scene_bitmap_refresh_visible_lines();
 
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiBarista, TRUE);
         sprite_set_x(gSpriteHandler, gOptionsMenu->uiBarista, OPTIONS_CURSOR_ADVANCE_X);
         sprite_set_y(gSpriteHandler, gOptionsMenu->uiBarista, gOptionsMenu->bitmapCursorY);
-        sprite_set_visible(gSpriteHandler, gOptionsMenu->uiSoundMode, FALSE);
-        sprite_set_visible(gSpriteHandler, gOptionsMenu->uiDataClear, FALSE);
 
-        for (i = 0; i < OPTIONS_BITMAP_LINE_SPRITE_COUNT; i++) {
-            if (gOptionsMenu->bitmapLineSprites[i] >= 0) {
-                sprite_set_visible(gSpriteHandler, gOptionsMenu->bitmapLineSprites[i], TRUE);
-            }
-        }
+        options_scene_bitmap_position_lines(gOptionsMenu->bitmapCursor);
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiBarista, TRUE);
         options_scene_bitmap_set_description(gOptionsMenu->bitmapSelected);
 
@@ -332,12 +351,6 @@ static void options_scene_set_page(u32 page) {
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiDataClear, TRUE);
         options_scene_refresh_classic_visuals();
         text_printer_set_string(gOptionsMenu->descText, options_desc_text[gOptionsMenu->cursorPos]);
-
-        for (i = 0; i < OPTIONS_BITMAP_LINE_SPRITE_COUNT; i++) {
-            if (gOptionsMenu->bitmapLineSprites[i] >= 0) {
-                sprite_set_visible(gSpriteHandler, gOptionsMenu->bitmapLineSprites[i], FALSE);
-            }
-        }
 
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiRShoulder, TRUE);
         sprite_set_visible(gSpriteHandler, gOptionsMenu->uiLShoulder, TRUE);

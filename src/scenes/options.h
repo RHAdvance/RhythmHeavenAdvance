@@ -62,7 +62,7 @@ enum OptionsWarningEnum {
 #define gOptionsMenu ((struct OptionsSceneData *)gCurrentSceneData)
 
 #define OPTIONS_BITMAP_VISIBLE_ROWS 3
-#define OPTIONS_BITMAP_LINE_SPRITE_COUNT (OPTIONS_BITMAP_VISIBLE_ROWS + 1)
+#define OPTIONS_BITMAP_LINE_SPRITE_COUNT (OPTIONS_BITMAP_VISIBLE_ROWS + 2)
 #define OPTIONS_BITMAP_LINE_CENTER_INDEX 1
 #define OPTIONS_BITMAP_LINE_START_Y 40
 #define OPTIONS_BITMAP_LINE_SPACING_Y 20
@@ -106,7 +106,7 @@ struct OptionsSceneData {
     u8 bitmapTopIndex;
     s16 bitmapCursorY;
     s16 bitmapCursorTargetY;
-    char bitmapLineBuffer[OPTIONS_BITMAP_LINE_BUFFER_SIZE];
+    char bitmapLineBuffer[OPTIONS_BITMAP_LINE_SPRITE_COUNT][OPTIONS_BITMAP_LINE_BUFFER_SIZE];
 };
 
 

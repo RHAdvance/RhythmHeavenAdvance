@@ -16,6 +16,46 @@ asm(".include \"include/gba.inc\"");//Temporary
 #define RUMBLE_CUE_BARELY_INTENSITY 108
 #define RUMBLE_CUE_HIT_INTENSITY 144
 
+extern void drum_live_engine_update(void);
+
+static u16 sDrumLiveRumbleBeatGate;
+
+static u32 gameplay_is_drum_live_engine(void) {
+    return (gGameplay->gameEngine != NULL) && (gGameplay->gameEngine->updateFunc == drum_live_engine_update);
+}
+
+static u16 gameplay_get_beat_gate_frames(void) {
+    u32 beatFrames;
+
+    beatFrames = ticks_to_frames(24);
+    if (beatFrames == 0) {
+        beatFrames = 1;
+    }
+
+    return beatFrames;
+}
+
+static void gameplay_update_drum_live_rumble_gate(void) {
+    if (sDrumLiveRumbleBeatGate != 0) {
+        sDrumLiveRumbleBeatGate--;
+    }
+}
+
+static void gameplay_rumble_cue_event(u32 intensity) {
+    if (!gameplay_is_drum_live_engine()) {
+        sDrumLiveRumbleBeatGate = 0;
+        rumble_request_pulse(intensity);
+        return;
+    }
+
+    if (sDrumLiveRumbleBeatGate != 0) {
+        return;
+    }
+
+    rumble_request_pulse(intensity);
+    sDrumLiveRumbleBeatGate = gameplay_get_beat_gate_frames();
+}
+
 static void gameplay_trigger_due_cue_rumble(void) {
     struct Cue *cue;
 
@@ -29,7 +69,7 @@ static void gameplay_trigger_due_cue_rumble(void) {
 
         cueDef = &cue->data;
         if (!cue->unk48_b0 && !cue->hasExpired && ((cueDef->buttonFilter & ~0x8000) != 0) && (cue->runningTime == cue->duration)) {
-            rumble_request_pulse(RUMBLE_CUE_DUE_INTENSITY);
+            gameplay_rumble_cue_event(RUMBLE_CUE_DUE_INTENSITY);
             return;
         }
         cue = cue->prev;
@@ -149,6 +189,9 @@ void gameplay_start_scene(void) {
     gGameplay->earlinessRangeMin = -0x80;
     gGameplay->latenessRangeMax = 0x7f;
     gGameplay->autoplayEnabled = FALSE;
+#ifdef RUMBLE
+    sDrumLiveRumbleBeatGate = 0;
+#endif
     midi_player_set_reverb(35, 2, 2, 4);
     if (get_current_scene_trans_target() == NULL) {
         set_next_scene(&scene_results_ver_rank);
@@ -184,6 +227,7 @@ void gameplay_update_scene(void) {
     #endif
 
     #ifdef RUMBLE
+    gameplay_update_drum_live_rumble_gate();
     gameplay_trigger_due_cue_rumble();
     #endif
 
@@ -323,6 +367,9 @@ void gameplay_set_current_engine(const struct GameEngine *engine, u32 version) {
     gameplay_prevent_dpad_overlap(TRUE);
     gGameplay->sfxTempo = 0;
     gGameplay->gameEngine = engine;
+#ifdef RUMBLE
+    sDrumLiveRumbleBeatGate = 0;
+#endif
 
     if (engine == NULL) {
         return;
@@ -1021,7 +1068,7 @@ void gameplay_register_hit_barely(struct Cue *cue, s32 timingLevel, s32 offset, 
 
     #ifdef RUMBLE
     rumbleIntensity = (timingLevel == CUE_TIMING_HIT) ? RUMBLE_CUE_HIT_INTENSITY : RUMBLE_CUE_BARELY_INTENSITY;
-    rumble_request_pulse(rumbleIntensity);
+    gameplay_rumble_cue_event(rumbleIntensity);
     #endif
 
     if (timingLevel == CUE_TIMING_HIT) {

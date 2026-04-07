@@ -4,6 +4,10 @@
 .set FALSE, 0
 .set TRUE,  1
 
+@ Localized condition
+.set CURRENT_GAME, 0
+.set GLOBAL_VARIABLE, 1
+
 @ Buttons
 .set A_BUTTON,              (1 << 0)
 .set B_BUTTON,              (1 << 1)

@@ -79,6 +79,10 @@ static void rumble_backend_gbp_serial_start(void) {
 void rumble_backend_serial_isr(void) {
     u32 result;
 
+    if (sRumblePlatformMode != RUMBLE_PLATFORM_GBP) {
+        return;
+    }
+
     sGbpComms.serialIn = REG_SIODATA32;
     result = 0;
 
@@ -158,11 +162,16 @@ void rumble_backend_select_platform(u32 useGbp) {
 
     if (useGbp) {
         sRumblePlatformMode = RUMBLE_PLATFORM_GBP;
+        REG_IE |= INTERRUPT_COMM;
         REG_RCNT = R_NORMAL;
         REG_SIOCNT = SIO_32BIT | SIO_SO_HIGH;
         REG_SIOCNT |= SIO_IRQ;
         rumble_backend_reset_gbp_comms();
     } else {
+        sRumblePlatformMode = RUMBLE_PLATFORM_CARTRIDGE;
+        REG_IE &= ~INTERRUPT_COMM;
+        REG_IF = INTERRUPT_COMM;
+        REG_SIOCNT &= ~SIO_IRQ;
         rumble_backend_init_cartridge_gpio();
     }
 
