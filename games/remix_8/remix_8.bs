@@ -528,13 +528,13 @@ script script_remix_8_main
     rest 24
     beat_anim
     rest 22
-    play_sfx s_space_ikeo_turn_seqData
+    play_sfx_localized s_space_ikeo_turn_seqData, s_space_ikeo_turn_en_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 22
-    play_sfx s_space_ikeo_right_seqData
+    play_sfx_localized s_space_ikeo_right_seqData, s_space_ikeo_right_en_seqData
     rest 2
     space_dance_event00 0
     beat_anim

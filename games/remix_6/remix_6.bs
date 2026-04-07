@@ -1423,17 +1423,17 @@ script script_remix_6_main
     beat_anim
     rest 24
     space_dance_event00 4
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 12
     space_dance_event00 5
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 12
     space_dance_event00 4
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     spawn_cue CUE_PUNCH
     rest 12
     space_dance_event00 1
-    play_sfx s_space_ikeo_punch_seqData
+    play_sfx_localized s_space_ikeo_punch_seqData, s_space_ikeo_punch_en_seqData
     space_dance_event01 -8, 24
     rest 12
     call space_dance_sub_08a85588
@@ -1469,17 +1469,17 @@ script script_remix_6_main
     call space_dance_sub_08a84928
     call space_dance_sub_08a85588
     space_dance_event00 4
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 12
     space_dance_event00 5
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 12
     space_dance_event00 4
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     spawn_cue CUE_PUNCH
     rest 12
     space_dance_event00 1
-    play_sfx s_space_ikeo_punch_seqData
+    play_sfx_localized s_space_ikeo_punch_seqData, s_space_ikeo_punch_en_seqData
     rest 12
     rest 24
     rest 12

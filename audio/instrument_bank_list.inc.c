@@ -34,7 +34,7 @@ union Instrument *instrument_banks[] = {
     /* 032 */ inst_bank_15,
     /* 033 */ inst_bank_16,
     /* 034 */ inst_bank_17,
-    /* 035 */ NULL,
+    /* 035 */ inst_bank_space_dance_en,
     /* 036 */ NULL,
     /* 037 */ NULL,
     /* 038 */ NULL,

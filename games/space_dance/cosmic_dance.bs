@@ -157,17 +157,17 @@ script script_cosmic_dance_main
     beat_anim
     rest 24
     space_dance_event00 6
-    play_sfx s_space_kou_lets_seqData
+    play_sfx_localized s_space_kou_lets_seqData, s_space_kou_lets_en_seqData
     spawn_cue CUE_SIT_DOWN
     beat_anim
     rest 8
     rest 6
-    play_sfx s_space_kou_sit_seqData
+    play_sfx_localized s_space_kou_sit_seqData, s_space_kou_sit_en_seqData
     rest 2
     rest 8
     space_dance_event01 0, 0
     space_dance_event00 2
-    play_sfx s_space_kou_down_seqData
+    play_sfx_localized s_space_kou_down_seqData, s_space_kou_down_en_seqData
     add_music MUSIC_PLAYER_2, s_studio_bgm_seqData
     set_music_volume 40
     mod_music_volume 150, 144
@@ -216,23 +216,23 @@ script script_cosmic_dance_main
     rest 8
     rest 24
     space_dance_event00 4
-    play_sfx s_space_kou_pa_seqData
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     rest 8
     space_dance_event00 5
-    play_sfx s_space_kou_pa_seqData
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     space_dance_event00 4
-    play_sfx s_space_kou_pa_seqData
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     spawn_cue CUE_PUNCH_S
     rest 8
     space_dance_event00 1
-    play_sfx s_space_kou_punch_seqData
-    play_sfx s_space_ikeo_punch_seqData
+    play_sfx_localized s_space_kou_punch_seqData, s_space_kou_punch_en_seqData
+    play_sfx_localized s_space_ikeo_punch_seqData, s_space_ikeo_punch_en_seqData
     space_dance_event01 -8, -24
     mod_lcd_blend_to 0x442, 24
     run gameplay_set_reverb, 30
@@ -246,19 +246,19 @@ script script_cosmic_dance_main
     beat_anim
     rest 24
     space_dance_event00 4
-    play_sfx s_space_kou_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
     rest 8
     rest 8
     space_dance_event00 5
-    play_sfx s_space_kou_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
     rest 8
     space_dance_event00 4
-    play_sfx s_space_kou_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
     rest 8
     spawn_cue CUE_PUNCH_S
     rest 8
     space_dance_event00 1
-    play_sfx s_space_kou_punch_seqData
+    play_sfx_localized s_space_kou_punch_seqData, s_space_kou_punch_en_seqData
     space_dance_event01 -8, 24
     mod_lcd_blend_to 0x442, 24
     rest 8
@@ -269,24 +269,24 @@ script script_cosmic_dance_main
     beat_anim
     rest 24
     space_dance_event00 4
-    play_sfx s_space_kou_pa_seqData
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     rest 8
     space_dance_event00 5
-    play_sfx s_space_kou_pa_seqData
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     mod_lcd_blend_from 0x442, 24
     rest 8
     space_dance_event00 4
-    play_sfx s_space_kou_pa_seqData
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_kou_pa_seqData, s_space_kou_pa_en_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     spawn_cue CUE_PUNCH_S
     rest 8
     space_dance_event00 1
-    play_sfx s_space_kou_punch_seqData
-    play_sfx s_space_ikeo_punch_seqData
+    play_sfx_localized s_space_kou_punch_seqData, s_space_kou_punch_en_seqData
+    play_sfx_localized s_space_ikeo_punch_seqData, s_space_ikeo_punch_en_seqData
     space_dance_event01 -8, 24
     rest 8
     run gameplay_set_reverb, 0
@@ -295,19 +295,19 @@ script script_cosmic_dance_main
     call cosmic_dance_sub_08a84e14
     call cosmic_dance_sub_08a85858
     space_dance_event00 4
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     rest 8
     space_dance_event00 5
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     space_dance_event00 4
-    play_sfx s_space_ikeo_pa_seqData
+    play_sfx_localized s_space_ikeo_pa_seqData, s_space_ikeo_pa_en_seqData
     rest 8
     spawn_cue CUE_PUNCH_S
     rest 8
     space_dance_event00 1
-    play_sfx s_space_ikeo_punch_seqData
+    play_sfx_localized s_space_ikeo_punch_seqData, s_space_ikeo_punch_en_seqData
     rest 8
     rest 24
     space_dance_event04 TRUE

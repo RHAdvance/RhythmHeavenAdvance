@@ -191,7 +191,7 @@ $(BUILD_DIRS):
 	$(V)mkdir -p $@
 
 $(OUTPUT).gba	:	$(OUTPUT).elf
-	$(V)$(OBJCOPY) --pad-to=0x1000000 --gap-fill=0x00 -O binary $< $@
+	$(V)$(OBJCOPY) --pad-to=0x2000000 --gap-fill=0x00 -O binary $< $@
 	$(call step,ROM Assembled!)
 
 $(OUTPUT).elf	:	$(OFILES) | $(BUILD)/$(LD_SCRIPT)

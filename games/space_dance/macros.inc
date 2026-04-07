@@ -39,18 +39,21 @@
 .macro load_space_dance
     load_space_dance_labels
     load_game space_dance_engine, 0
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Cosmic Dance
 .macro load_cosmic_dance
     load_space_dance_labels
     load_game space_dance_engine, 1
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Space Dance (Remix 3)
 .macro load_space_dance_remix_3
     load_space_dance_labels
     load_game space_dance_engine, 2
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 

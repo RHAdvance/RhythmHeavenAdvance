@@ -222,12 +222,12 @@ script script_remix_7_main
     load_space_dance
     rest 12
     rest 22
-    play_sfx s_space_ikeo_turn_seqData
+    play_sfx_localized s_space_ikeo_turn_seqData, s_space_ikeo_turn_en_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
     rest 22
-    play_sfx s_space_ikeo_right_seqData
+    play_sfx_localized s_space_ikeo_right_seqData, s_space_ikeo_right_en_seqData
     rest 2
     space_dance_event00 0
     rest 24
@@ -842,13 +842,13 @@ script script_remix_7_main
     load_space_dance
     beat_anim
     rest 16
-    play_sfx s_space_ikeo_turn_seqData
+    play_sfx_localized s_space_ikeo_turn_seqData, s_space_ikeo_turn_en_seqData
     rest 2
     space_dance_event00 3
     spawn_cue CUE_TURN_RIGHT
     beat_anim
     rest 22
-    play_sfx s_space_ikeo_right_seqData
+    play_sfx_localized s_space_ikeo_right_seqData, s_space_ikeo_right_en_seqData
     rest 2
     space_dance_event00 0
     rest 24

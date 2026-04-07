@@ -261,6 +261,10 @@ extern struct SongHeader s_ghost_dash_seqData;
 extern struct SongHeader s_ghost_warai_seqData;
 extern struct SongHeader s_ghost_gosha_seqData;
 extern struct SongHeader s_ghost_rain_seqData;
+
+// --- Space Dance SFX -----------------------------------------
+
+// Japanese Space Dance SFX
 extern struct SongHeader s_space_ikeo_turn_seqData;
 extern struct SongHeader s_space_ikeo_right_seqData;
 extern struct SongHeader s_space_ikeo_lets_seqData;
@@ -268,6 +272,7 @@ extern struct SongHeader s_space_ikeo_sit_seqData;
 extern struct SongHeader s_space_ikeo_down_seqData;
 extern struct SongHeader s_space_ikeo_pa_seqData;
 extern struct SongHeader s_space_ikeo_punch_seqData;
+
 extern struct SongHeader s_space_kou_turn_seqData;
 extern struct SongHeader s_space_kou_right_seqData;
 extern struct SongHeader s_space_kou_lets_seqData;
@@ -275,9 +280,34 @@ extern struct SongHeader s_space_kou_sit_seqData;
 extern struct SongHeader s_space_kou_down_seqData;
 extern struct SongHeader s_space_kou_pa_seqData;
 extern struct SongHeader s_space_kou_punch_seqData;
-extern struct SongHeader s_space_miss_seqData;
+
 extern struct SongHeader s_space_ikeo_turn_swing_seqData;
 extern struct SongHeader s_space_kou_turn_swing_seqData;
+
+// English Space Dance SFX
+extern struct SongHeader s_space_ikeo_turn_en_seqData;
+extern struct SongHeader s_space_ikeo_right_en_seqData;
+extern struct SongHeader s_space_ikeo_lets_en_seqData;
+extern struct SongHeader s_space_ikeo_sit_en_seqData;
+extern struct SongHeader s_space_ikeo_down_en_seqData;
+extern struct SongHeader s_space_ikeo_pa_en_seqData;
+extern struct SongHeader s_space_ikeo_punch_en_seqData;
+
+extern struct SongHeader s_space_kou_turn_en_seqData;
+extern struct SongHeader s_space_kou_right_en_seqData;
+extern struct SongHeader s_space_kou_lets_en_seqData;
+extern struct SongHeader s_space_kou_sit_en_seqData;
+extern struct SongHeader s_space_kou_down_en_seqData;
+extern struct SongHeader s_space_kou_pa_en_seqData;
+extern struct SongHeader s_space_kou_punch_en_seqData;
+
+extern struct SongHeader s_space_ikeo_turn_swing_en_seqData;
+extern struct SongHeader s_space_kou_turn_swing_en_seqData;
+
+extern struct SongHeader s_space_miss_seqData;
+
+// -------------------------------------------------------------
+
 extern struct SongHeader s_guntai1_seqData;
 extern struct SongHeader s_guntai2_seqData;
 extern struct SongHeader s_guntai_foot1_seqData;

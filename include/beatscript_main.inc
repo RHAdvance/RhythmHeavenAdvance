@@ -4,10 +4,6 @@
 .set FALSE, 0
 .set TRUE,  1
 
-@ Localized condition
-.set CURRENT_GAME, 0
-.set GLOBAL_VARIABLE, 1
-
 @ Buttons
 .set A_BUTTON,              (1 << 0)
 .set B_BUTTON,              (1 << 1)
@@ -701,6 +697,9 @@ endstruct
 
 
 @ [0xB3] Set Localized Condition Flag
+.set BEATSCRIPT_LOCALIZED_COND_CURRENT_GAME, 0
+.set BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX, 1
+
 .macro set_localized condition
     beatscript_cmd 0xB3, 0, 0, \condition
 .endm
