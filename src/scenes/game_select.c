@@ -112,7 +112,11 @@ void get_all_uncleared_campaigns(void) {
 
     notice->totalAvailable = 0;
 
+#ifdef TEMPOUP
     for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
+#else
+    for (i = 0; i < TOTAL_BASE_PERFECT_CAMPAIGNS; i++) {
+#endif
         if (!get_campaign_cleared(&D_030046a8->data, i)) {
             if (get_level_state_from_grid_xy(gift->x, gift->y) == LEVEL_STATE_HAS_MEDAL) {
                 notice->indexes[notice->totalAvailable] = i;

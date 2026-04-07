@@ -675,6 +675,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚q|‚h‚p@‚r‚‚–‚…@‚d‚„‚‰‚”‚‚’",
         /* Epil. */ FALSE
     },
+    /* Sequence Player */ {
+        /* Scene */ &scene_sequence_player,
+        /* Label */ "‚r‚…‚‘‚•‚…‚‚ƒ‚…@‚o‚Œ‚‚™‚…‚’",
+        /* Epil. */ FALSE
+    },
     /* Debug Menu */ {
         /* Scene */ &scene_debug_menu,
         /* Label */ "‚c‚…‚‚‚•‚‡@‚l‚…‚‚•",

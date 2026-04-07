@@ -731,7 +731,7 @@ void interp_screen_window_size(u16 memID, u32 window, u32 duration,
 /* STRING */
 
 
-extern char D_08936c64[]; // "?¿½O?¿½P?¿½Q?¿½R?¿½S?¿½T?¿½U?¿½V?¿½W?¿½X"
+extern char D_08936c64[]; // "?ï¿½ï¿½O?ï¿½ï¿½P?ï¿½ï¿½Q?ï¿½ï¿½R?ï¿½ï¿½S?ï¿½ï¿½T?ï¿½ï¿½U?ï¿½ï¿½V?ï¿½ï¿½W?ï¿½ï¿½X"
 
 
 // Copy Substring
@@ -1241,12 +1241,19 @@ s32 snprintf(char *s, s32 n, const char *fmt, ...) {
     char pad_char;
     int width;
     int left;
+    int plus_sign;
+    int precision;
     char spec;
     char buf_temp[24];
     int bl, sl;
     const char *ss;
     u32 vval;
     int j;
+
+    if ((s == NULL) || (fmt == NULL) || (n <= 0)) {
+        return 0;
+    }
+
     va_start(args, fmt);
     while (fmt[i] && o < n - 1) {
         if (fmt[i] == '%') {
@@ -1254,8 +1261,10 @@ s32 snprintf(char *s, s32 n, const char *fmt, ...) {
             pad_char = ' ';
             width = 0;
             left = 0;
+            plus_sign = 0;
+            precision = -1;
             /* handle flags: '-' for left-justify, '0' for zero-pad */
-            while (fmt[i] == '-' || fmt[i] == '0') {
+            while (fmt[i] == '-' || fmt[i] == '0' || fmt[i] == '+') {
                 if (fmt[i] == '-') {
                     left = 1;
                     pad_char = ' ';
@@ -1263,16 +1272,48 @@ s32 snprintf(char *s, s32 n, const char *fmt, ...) {
                 } else if (fmt[i] == '0') {
                     if (!left) pad_char = '0';
                     i++;
+                } else if (fmt[i] == '+') {
+                    plus_sign = 1;
+                    i++;
                 }
             }
             while (fmt[i] >= '0' && fmt[i] <= '9') {
                 width = width * 10 + (fmt[i] - '0');
                 i++;
             }
+
+            if (fmt[i] == '.') {
+                i++;
+                precision = 0;
+                while (fmt[i] >= '0' && fmt[i] <= '9') {
+                    precision = precision * 10 + (fmt[i] - '0');
+                    i++;
+                }
+            }
+
             spec = fmt[i];
+            if (spec == '\0') {
+                break;
+            }
+
             if (spec == 'd' || spec == 'i') {
                 s32 v = va_arg(args, s32);
                 int_to_str(buf_temp, v);
+
+                if ((plus_sign) && (v >= 0)) {
+                    bl = 0;
+                    while (buf_temp[bl]) {
+                        bl++;
+                    }
+
+                    if (bl < (s32)(sizeof(buf_temp) - 1)) {
+                        for (j = bl; j >= 0; --j) {
+                            buf_temp[j + 1] = buf_temp[j];
+                        }
+                        buf_temp[0] = '+';
+                    }
+                }
+
                 bl = 0; while (buf_temp[bl]) bl++;
                 if (!left) {
                     for (k = 0; k < width - bl && o < n - 1; ++k) s[o++] = pad_char;
@@ -1310,33 +1351,47 @@ s32 snprintf(char *s, s32 n, const char *fmt, ...) {
                 }
             } else if (spec == 's') {
                 ss = va_arg(args, const char *);
-                sl = 0; while (ss[sl]) sl++;
+                if (ss == NULL) {
+                    ss = "<null>";
+                }
+
+                sl = 0;
+                if (precision >= 0) {
+                    while (ss[sl] && sl < precision) {
+                        sl++;
+                    }
+                } else {
+                    while (ss[sl]) {
+                        sl++;
+                    }
+                }
+
                 if (!left) {
                     for (k = 0; k < width - sl && o < n - 1; ++k) s[o++] = pad_char;
-                    for (k = 0; ss[k] && o < n - 1; k++) s[o++] = ss[k];
+                    for (k = 0; k < sl && o < n - 1; k++) s[o++] = ss[k];
                 } else {
-                    for (k = 0; ss[k] && o < n - 1; k++) s[o++] = ss[k];
+                    for (k = 0; k < sl && o < n - 1; k++) s[o++] = ss[k];
                     for (k = 0; k < width - sl && o < n - 1; ++k) s[o++] = pad_char;
                 }
             } else if (spec == 'c') {
                 char c = (char)va_arg(args, int);
                 if (!left) {
                     for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
-                    s[o++] = c;
+                    if (o < n - 1) s[o++] = c;
                 } else {
-                    s[o++] = c;
+                    if (o < n - 1) s[o++] = c;
                     for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
                 }
             } else if (spec == '%') {
                 if (!left) {
                     for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
-                    s[o++] = '%';
+                    if (o < n - 1) s[o++] = '%';
                 } else {
-                    s[o++] = '%';
+                    if (o < n - 1) s[o++] = '%';
                     for (k = 0; k < width - 1 && o < n - 1; ++k) s[o++] = pad_char;
                 }
             } else {
-                s[o++] = '%';
+                if (o < n - 1) s[o++] = '%';
                 if (o < n - 1) s[o++] = spec;
             }
             i++;
