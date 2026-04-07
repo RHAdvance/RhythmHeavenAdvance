@@ -85,6 +85,7 @@ extern struct BeatscriptScene {
     u32 interpolatingTempo:1;
     u32 interpolatingMusicPitch:1;
     u32 musicInterpolationEnabled:1;
+    u32 isLocalized:1;
     struct SoundPlayer *musicPlayer; // [D_030053c4] Music Player
     u16 musicBaseBPM;
     u16 scriptBaseBPM;

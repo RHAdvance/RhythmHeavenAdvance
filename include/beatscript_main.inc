@@ -372,15 +372,6 @@ endstruct
     beatscript_cmd 0x29, 0, 0, \sound
 .endm
 
-@ [0x29] Play Sound Effect (Localized)
-.macro play_sfx_localized jap_sound, eng_sound
-#ifdef SFX
-    beatscript_cmd 0x29, 0, 0, \eng_sound
-#else
-    beatscript_cmd 0x29, 0, 0, \jap_sound
-#endif
-.endm
-
 
 @ [0x2A]
 @ [0x2B]
@@ -702,4 +693,22 @@ endstruct
 
 .macro play_sfx_synced sound, baseBPM, volume
     play_sfx_synced_pitch \sound, \baseBPM, \volume, 0
+.endm
+
+
+@ [0xB3] Set Localized Condition Flag
+.macro set_localized condition
+    beatscript_cmd 0xB3, 0, 0, \condition
+.endm
+
+
+@ [0xB4] Rest (Localized)
+.macro rest_localized jp_rest, en_rest
+    beatscript_cmd 0xB4, 0, \en_rest, \jp_rest
+.endm
+
+
+@ [0xB5] Play Sound Effect (Localized)
+.macro play_sfx_localized jp_sound, en_sound
+    beatscript_cmd 0xB5, 0, \en_sound, \jp_sound
 .endm

@@ -15,6 +15,9 @@
 #include "src/lib_0804ca80.h"
 #include "src/backdrop.h"
 #include "src/code_080092cc.h"
+#include "src/scenes/gameplay.h"
+#include "src/scenes/game_select.h"
+#include "src/memory.h"
 
 // Could use better split
 
@@ -121,6 +124,7 @@ void start_beatscript_scene(u32 mode) {
     D_030053c0.bypassLoops = FALSE;
     D_030053c0.exitLoopNextUpdate = FALSE;
     D_030053c0.paused = FALSE;
+    D_030053c0.isLocalized = FALSE;
     D_030053c0.musicPlayer = NULL;
     D_030053c0.unk0_b7 = FALSE;
     D_030053c0.unk0_b6 = FALSE;
@@ -1315,8 +1319,956 @@ s16 beatscript_stream_get_sprite_for_motion(s16 *spritePool, s16 args, s16 *dest
 }
 
 
+enum BeatScriptArgumentFormat {
+    BEATSCRIPT_ARG_TYPE_32,
+    BEATSCRIPT_ARG_TYPE_16,
+    BEATSCRIPT_ARG_TYPE_8,
+    BEATSCRIPT_ARG_TYPE_FUNC
+};
+
+
+union FreeType { // convenience until casting mismatched are solved (or permanent?, since it's clean)
+    u32 u32;
+    s32 s32;
+    u16 u16;
+    s16 s16;
+    u8 u8;
+    s8 s8;
+    u32 *u32ptr;
+    s32 *s32ptr;
+    u16 *u16ptr;
+    s16 *s16ptr;
+    u8 *u8ptr;
+    s8 *s8ptr;
+    void *vptr;
+    u32 (*ufunc)();
+    void (*vfunc)();
+};
+
+
+enum BeatscriptLocalizedConditionEnum {
+    BEATSCRIPT_LOCALIZED_COND_CURRENT_GAME
+};
+
+
+static s32 beatscript_get_current_level_id(void) {
+    s32 levelX = D_030046a8->data.recentLevelX;
+    s32 levelY = D_030046a8->data.recentLevelY;
+
+    if ((levelX < 0) || (levelY < 0) || (levelX >= GS_GRID_WIDTH) || (levelY >= GS_GRID_HEIGHT)) {
+        return LEVEL_NULL;
+    }
+
+    return get_level_id_from_grid_xy(levelX, levelY);
+}
+
+
+static u32 beatscript_get_localized_condition(u32 condition) {
+    s32 levelID;
+
+    switch (condition) {
+        case BEATSCRIPT_LOCALIZED_COND_CURRENT_GAME:
+            levelID = beatscript_get_current_level_id();
+            if ((levelID < 0) || (levelID >= TOTAL_LEVELS)) {
+                return FALSE;
+            }
+
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.extraData.gameFlags[levelID], ADVANCE_GAME_FLAG_NON_JP_SOUNDEFFECTS);
+
+        default:
+            return FALSE;
+    }
+}
+
+
 // Beatscript Stream - Update
-#include "asm/code_0800b778/asm_0800cb28.s"
+void func_0800cb28(u32 arg) { // r10
+    struct BeatscriptScene *handler;
+    struct BeatscriptThread *thread; // r9
+    const struct Beatscript *current; // r3
+    union FreeType var1, var2, var3;
+    s16 *sprites; // r2
+
+    u32 temp, temp1, temp2, temp3, temp4;
+    u16 temp5, temp6;
+    void *pointer, *pointer2;
+    u32 i;
+
+    struct {
+        u32 unk0_b0:2; // spC, sp1C, sp2C
+        u32 unk0_b2:15;
+        u32 unk4; // sp10, sp20, sp30
+        s32 unk8; // sp14, sp24, sp34
+        s32 unkC; // sp18, sp28, sp38
+    } struct42, structA1, structA2;
+    struct {
+        u32 unk0_b0:2; // sp3C
+        u32 unk0_b2:30;
+        u32 unk4; // sp40
+        s32 unk8; // sp44
+        s32 unkC; // sp48
+    } structA4;
+    s16 vx; // sp4c
+    s16 vy; // sp4e
+    // sp50
+
+    void *src;
+    void *dest;
+    u32 shift;
+    u32 mask;
+    u16 sprite; // r4
+    u32 duration; // r5
+    u32 offset;
+    u32 size;
+    u16 *palette; // r7
+    u16 playAnim;
+    u16 *oam;
+
+
+
+    handler = &D_030053c0;
+    sprite_handler_set_mem_id(gSpriteHandler, arg + 1);
+    handler = &D_030053c0;
+    thread = &D_030053c0.threads[arg];
+    D_03005588 = &D_030053c0.localVariables[arg];
+    sprites = D_0300558c = D_030053c0.threads[arg].sprites; // r2
+    
+    current = thread->currentCmd++;
+    var1.u32 = current->param1; // r7
+    var2.u32 = current->param2; // r6
+    var3.u32 = current->param3; // r8
+
+
+
+    switch (current->command) {
+        case BS_CMD_REST:
+            thread->timeUntilNext += INT_TO_FIXED(var3.u32);
+            return;
+
+        case BS_CMD_SET_LOCALIZED:
+            D_030053c0.isLocalized = beatscript_get_localized_condition(var3.u32);
+            return;
+
+        case BS_CMD_REST_LOCALIZED:
+            thread->timeUntilNext += INT_TO_FIXED((D_030053c0.isLocalized) ? var2.u32 : var3.u32);
+            return;
+
+        case BS_CMD_STOP:
+            thread->active = FALSE;
+            return;
+
+        case BS_CMD_CALL:
+            thread->jumpStack[thread->stackCounter] = thread->currentCmd;
+            thread->currentCmd = var2.vptr;
+            thread->stackCounter++;
+            return;
+
+        case BS_CMD_CALL_RESULT:
+            if (D_030053c0.globalVariable != NULL) {
+                thread->jumpStack[thread->stackCounter] = thread->currentCmd;
+                thread->currentCmd = (struct BeatScript *)D_030053c0.globalVariable;
+                thread->stackCounter++;
+            }
+            return;
+
+        case BS_CMD_RETURN:
+            thread->stackCounter--;
+            thread->currentCmd = thread->jumpStack[thread->stackCounter];
+            return;
+
+        case BS_CMD_GOTO:
+            thread->currentCmd = var2.vptr;
+            return;
+
+        case BS_CMD_REST_RESET:
+            thread->timeUntilNext = 0;
+            return;
+
+        case BS_CMD_LOOP_START:
+            thread->loopStart = thread->currentCmd;
+            return;
+
+        case BS_CMD_LOOP_END:
+            if (!D_030053c0.bypassLoops) {
+                thread->currentCmd = thread->loopStart;
+            }
+            return;
+
+
+
+        case BS_CMD_IF_EQ:
+        case BS_CMD_IF_NEQ:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    temp = (*var2.u32ptr != var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    temp = (*var2.u16ptr != var3.u16);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    temp = (*var2.u8ptr != var3.u8);
+                    break;
+            }
+            if (current->command == BS_CMD_IF_NEQ) {
+                temp = !temp;
+            }
+            if (temp) {
+                thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            }
+            return;
+
+        case BS_CMD_IF_SET:
+            if (!(*var2.u32ptr & var3.u32)) {
+                thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            }
+            return;
+
+        case BS_CMD_IF_CLEAR:
+            if (*var2.u32ptr & var3.u32) {
+                thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            }
+            return;
+
+        case BS_CMD_ELSE:
+            thread->currentCmd = beatscript_stream_jump_cond_else(thread->currentCmd);
+            return;
+
+        case BS_CMD_SWITCH:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    temp = *var3.u32ptr;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    temp = *var3.u16ptr;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    temp = *var3.u8ptr;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_FUNC:
+                    temp = var3.ufunc();
+                    break;
+            }
+            thread->currentCmd = beatscript_stream_jump_cond_switch(thread->currentCmd, temp);
+            return;
+
+        case BS_CMD_BREAK:
+            thread->currentCmd = beatscript_stream_jump_cond_break(thread->currentCmd);
+            return;
+
+        case BS_CMD_WHILE_NEQ:
+        case BS_CMD_WHILE_EQ:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    temp = (*var2.u32ptr == var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    temp = (*var2.u16ptr == var3.u16);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    temp = (*var2.u8ptr == var3.u8);
+                    break;
+            }
+            if (current->command == BS_CMD_WHILE_EQ) {
+                temp = !temp;
+            }
+            if (temp) {
+                thread->currentCmd = beatscript_stream_jump_cond_while(thread->currentCmd);
+            }
+            return;
+
+        case BS_CMD_END_WHILE:
+            thread->currentCmd = beatscript_stream_jump_cond_end_while(thread->currentCmd - 1);
+            return;
+
+        case BS_CMD_SCENE_IF_EQ:
+        case BS_CMD_SCENE_IF_NEQ:
+            pointer = (void *)((u8 *)gCurrentSceneData + var2.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    temp = (*(u32 *)pointer != var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    temp = (*(u16 *)pointer != var3.u16);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    temp = (*(u8 *)pointer != var3.u8);
+                    break;
+            }
+            if (current->command == BS_CMD_SCENE_IF_NEQ) {
+                temp = !temp;
+            }
+            if (temp) {
+                thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            }
+            return;
+
+        case BS_CMD_SCENE_SWITCH:
+            pointer = (void *)((u8 *)gCurrentSceneData + var3.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    temp = *(u32 *)pointer;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    temp = *(u16 *)pointer;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    temp = *(u8 *)pointer;
+                    break;
+            }
+            thread->currentCmd = beatscript_stream_jump_cond_switch(thread->currentCmd, temp);
+            return;
+
+        case BS_CMD_SCENE_WHILE_EQ:
+        case BS_CMD_SCENE_WHILE_NEQ:
+            pointer = (void *)((u8 *)gCurrentSceneData + var2.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    temp = (*(u32 *)pointer == var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    temp = (*(u16 *)pointer == var3.u16);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    temp = (*(u8 *)pointer == var3.u8);
+                    break;
+            }
+            if (current->command == BS_CMD_SCENE_WHILE_EQ) {
+                temp = !temp;
+            }
+            if (temp) {
+                thread->currentCmd = beatscript_stream_jump_cond_while(thread->currentCmd);
+            }
+            return;
+
+
+
+        case BS_CMD_SCENE_RUN:
+            D_030053c0.globalVariable = var2.ufunc(&D_030053c0.localVariables[arg], var3.u32);
+            return;
+
+        case BS_CMD_RUN_1ARG:
+            D_030053c0.globalVariable = var2.ufunc(var3.u32);
+            return;
+
+        case BS_CMD_RUN_2ARG:
+            D_030053c0.globalVariable = var2.ufunc(var3.u32, var1.u32);
+            return;
+
+
+
+        case BS_CMD_SET_VAR:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *var2.u32ptr = var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *var2.u16ptr = var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *var2.u8ptr = var3.u32;
+                    break;
+            }
+            return;
+
+        case BS_CMD_ADD_VAR:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *var2.u32ptr += var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *var2.u16ptr += var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *var2.u8ptr += var3.u32;
+                    break;
+            }
+            return;
+
+        case BS_CMD_SET_BIT:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *var2.u32ptr |= (1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *var2.u16ptr |= (1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *var2.u8ptr |= (1 << var3.u32);
+                    break;
+            }
+            return;
+
+        case BS_CMD_CLEAR_BIT:
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *var2.u32ptr &= ~(1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *var2.u16ptr &= ~(1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *var2.u8ptr &= ~(1 << var3.u32);
+                    break;
+            }
+            return;
+
+        case BS_CMD_SCENE_SET_VAR:
+            temp = (u32)((u8 *)gCurrentSceneData + var2.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *(u32 *)temp = var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *(u16 *)temp = var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *(u8 *)temp = var3.u32;
+                    break;
+            }
+            return;
+
+        case BS_CMD_SCENE_ADD_VAR:
+            temp = (u32)((u8 *)gCurrentSceneData + var2.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *(u32 *)temp += var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *(u16 *)temp += var3.u32;
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *(u8 *)temp += var3.u32;
+                    break;
+            }
+            return;
+
+        case BS_CMD_SCENE_SET_BIT:
+            temp = (u32)((u8 *)gCurrentSceneData + var2.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *(u32 *)temp |= (1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *(u16 *)temp |= (1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *(u8 *)temp |= (1 << var3.u32);
+                    break;
+            }
+            return;
+
+        case BS_CMD_SCENE_CLEAR_BIT:
+            temp = (u32)((u8 *)gCurrentSceneData + var2.u32);
+            switch (var1.u32) {
+                case BEATSCRIPT_ARG_TYPE_32:
+                    *(u32 *)temp &= ~(1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_16:
+                    *(u16 *)temp &= ~(1 << var3.u32);
+                    break;
+                case BEATSCRIPT_ARG_TYPE_8:
+                    *(u8 *)temp &= ~(1 << var3.u32);
+                    break;
+            }
+            return;
+
+
+
+        case BS_CMD_PLAY_MUSIC:
+            if (var2.u32 < 0xff) {
+                scene_set_music_with_soundplayer(var3.vptr, var2.u32);
+            } else {
+                scene_set_music(var3.vptr);
+            }
+            return;
+
+        case BS_CMD_ADD_MUSIC:
+            if (var2.u32 < 0xff) {
+                scene_play_music_with_soundplayer(var3.vptr, var2.u32);
+            } else {
+                scene_play_music(var3.vptr);
+            }
+            return;
+
+        case BS_CMD_PLAY_SFX:
+            play_sound(var3.vptr);
+            return;
+
+        case BS_CMD_PLAY_SFX_LOCALIZED:
+            play_sound((D_030053c0.isLocalized) ? var2.vptr : var3.vptr);
+            return;
+
+        case BS_CMD_PLAY_SFX_SP:
+            play_sound_w_pitch_volume(var3.vptr, var1.u32, var2.s32);
+            return;
+
+        case BS_CMD_PLAY_SFX_SYNCED:
+            pointer = play_sound_w_pitch_volume(var3.vptr, (var2.u32 & 0xffff), (var2.s32 >> 16));
+            set_soundplayer_speed(pointer, INT_TO_FIXED(get_beatscript_tempo()) / var1.u32);
+            return;
+
+        case BS_CMD_FADE_MUSIC_IN:
+            scene_fade_music_in((var1.u32) ? ticks_to_frames(var3.u32) : var3.u32);
+            return;
+
+        case BS_CMD_FADE_MUSIC_OUT:
+            scene_fade_music_out((var1.u32) ? ticks_to_frames(var3.u32) : var3.u32);
+            return;
+
+        case BS_CMD_FADE_SFX_OUT:
+            fade_out_sound(var2.vptr, ticks_to_frames(var3.u16));
+            return;
+
+
+
+        case BS_CMD_18:
+            src = (u8 *)(var2.u32);
+            dest  = (u8 *)(&D_030053c0.globalVariable);
+            shift = (var3.u32 >> 27);
+            mask = (var3.u32 & 0x7ffffff);
+            for (i = 0; i < 4; i++) {
+                ((u8 *)dest)[i] = ((u8 *)src)[i];
+            }
+            D_030053c0.globalVariable = (D_030053c0.globalVariable >> shift) & mask;
+            return;
+
+        case BS_CMD_19:
+            {
+                u32 var = var2.ufunc();
+                u32 *dest = (u32 *)&D_030053c0;
+                 shift = (var3.u32 >> 27);
+                 mask = (var3.u32 & 0x7ffffff);
+                dest[9] = mask & (var >> shift);
+            }
+            return;
+
+        case BS_CMD_LOAD_GRAPHICS:
+            func_08002e78(var2.u32);
+            return;
+
+        case BS_CMD_LOAD_GRAPHICS_ASYNC: // load graphics??
+            func_08002ee0(get_current_mem_id(), var2.vptr, var3.u32);
+            return;
+
+
+
+        case BS_CMD_SET_SPEED:
+            set_beatscript_speed(var3.u16);
+            return;
+
+        case BS_CMD_SET_SPEED_TO_MUSIC: // play music and change script tempo to match..?
+            scene_set_music(var3.vptr);
+            set_beatscript_tempo(get_music_base_tempo(var3.vptr));
+            return;
+
+        case BS_CMD_SET_MUSIC_PITCH_S:
+            scene_set_music_pitch_env(var3.s16);
+            return;
+
+        case BS_CMD_SET_MUSIC_PITCH:
+            scene_set_music_pitch(var3.s16);
+            return;
+
+
+
+        case BS_CMD_INTERP_LCD_BLEND:
+            temp = (var3.s32 & 0x7fffffff);
+            if (var3.s32 < 0) {
+                temp = ticks_to_frames(temp);
+            }
+            interp_lcd_blend_mode((u16) get_current_mem_id(), var2.u32, temp, var1.u32);
+            return;
+
+        case BS_CMD_CHANGE_PALETTE:
+            temp = (var1.u32 << 9) >> 18; // var2.paletteMod.speed
+            if (var1.u32 & 0x800000) { // var2.paletteMod.flag
+                temp = ticks_to_frames(temp);
+            }
+            offset = (var1.u32 & 0xf) + 1; // var2.paletteMod.offset
+            size = ((var1.u32 >> 4) & 0x1f);
+            palette = D_03004b10.bgPalette[size]; // var2.paletteMod.size
+            
+            if (var2.u32 < 0x10000) {
+                palette_fade_in(get_current_mem_id(), temp, offset, var2.u32, var3.u32, palette);
+            } else if (var3.u32 < 0x10000) { 
+                offset = (u8)offset;
+                palette_fade_out(get_current_mem_id(), temp, offset, var2.u16ptr, var3.u32, palette);
+            } else {
+                offset = (u8)offset;
+                palette_fade_to(get_current_mem_id(), temp, offset, var2.u16ptr, var3.u16ptr, palette);
+            }
+            return;
+
+        case BS_CMD_SET_BG_REG:
+            temp = var1.u32 & 3; // target layer
+            if (var1.u32 & 4) { // display layer (boolean)
+                scene_show_bg_layer(temp);
+            } else {
+                scene_hide_bg_layer(temp);
+            }
+            D_03004b10.BG_OFS[temp].x = var2.s32;
+            D_03004b10.BG_OFS[temp].y = var2.s32 >> 16;
+            D_03004b10.BG_CNT[temp] = var3.u32;
+            return;
+
+        case BS_CMD_START_INTEGER_LERP:
+            struct42.unk0_b0 = (var1.u32 & 3);
+            struct42.unk0_b2 = ticks_to_frames(var1.u32 >> 2);
+            struct42.unk4 = var2.s32;
+            struct42.unk8 = var3.s16;
+            struct42.unkC = var3.s32 >> 16;
+            thread->currentTaskID = start_new_task((u16)get_current_mem_id(), &integer_interp_task, &struct42, 0, 0);
+            return;
+
+        case BS_CMD_START_INTEGER_ALTERNATOR:
+            structA1.unk0_b0 = (var1.u32 & 3);
+            structA1.unk0_b2 = ticks_to_frames(var1.u32 >> 2);
+            structA1.unk4 = var2.s32;
+            structA1.unk8 = var3.s16;
+            structA1.unkC = var3.s32 >> 16;
+            thread->currentTaskID = start_new_task((u16)get_current_mem_id(), &integer_alternator_task, &structA1, 0, 0);
+            return;
+
+        case BS_CMD_START_INTEGER_INCREMENTER:
+            structA2.unk0_b0 = (var1.u32 & 3);
+            structA2.unk0_b2 = ticks_to_frames(var1.u32 >> 2);
+            structA2.unk4 = var2.s32;
+            structA2.unk8 = var3.s16;
+            structA2.unkC = var3.s32 >> 16;
+            thread->currentTaskID = start_new_task((u16)get_current_mem_id(), &integer_incrementer_task, &structA2, 0, 0);
+            return;
+
+        case BS_CMD_START_INTEGER_SINE_INTERP:
+            structA4.unk0_b0 = (var1.u32 & 3);
+            structA4.unk8 = var1.u32 >> 2;
+            structA4.unkC = var2.s32;
+            structA4.unk0_b2 = var3.s16 << 8;
+            structA4.unk4 = (var3.s32 >> 16) << 8;
+            thread->currentTaskID = start_new_task((u16)get_current_mem_id(), &integer_sine_interp_task, &structA4, 0, 0);
+            return;
+
+        case BS_CMD_46:
+            func_0800ed60_stub(D_030053c0.spriteAnimSpeed); // stub
+            return;
+
+        case BS_CMD_SET_BACKDROP:
+            func_080041d0(var1.u16, var2.u16, var3.u16);
+            return;
+
+        case BS_CMD_SET_VIDEO_MODE: // set BG mode
+            D_03004b10.DISPCNT = (D_03004b10.DISPCNT & 0xFFF8) | var2.u32;
+            return;
+
+        case BS_CMD_FADE_SCREEN:
+            if (var1.u32) {
+                func_080070c4(ticks_to_frames(var2.u32), var3.u16);
+            } else {
+                func_0800703c(ticks_to_frames(var2.u32), var3.u16);
+            }
+            return;
+
+
+
+        case BS_CMD_INTERP_TEMPO:
+            scene_interpolate_tempo(var2.u32, var3.u32);
+            return;
+
+        case BS_CMD_INCREASE_SPEED:
+            scene_interpolate_tempo((get_beatscript_tempo() * var2.u32) >> 8, var3.u32);
+            return;
+
+        case BS_CMD_INTERP_MUSIC_PITCH:
+            scene_interpolate_music_pitch(var2.s32, var3.u32);
+            return;
+
+        case BS_CMD_INTERP_MUSIC_VOLUME:
+            scene_interpolate_music_volume(var2.u32, ticks_to_frames(var3.u32));
+            return;
+
+        case BS_CMD_SET_MUSIC_TRACK_VOLUME:
+            scene_set_music_track_volume(var1.u16, var2.u16);
+            return;
+
+        case BS_CMD_INTERP_MUSIC_TRACK_VOLUME:
+            scene_set_music_track_volume(var1.u16, D_030053c0.musicTrkVolume);
+            scene_interpolate_music_track_volume(var2.u32, ticks_to_frames(var3.u32));
+            return;
+
+
+
+        case BS_CMD_51:
+            thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            return;
+
+        case BS_CMD_52:
+            thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            return;
+
+        case BS_CMD_SPRITE_SET_ANIM: // set animation
+            // a2 = (arg2 & 0xff)        [sprite:8]
+            // a3 = (arg2 << 16) >> 24   [arg3:8]
+            // a4 = (arg2 << 12) >> 28   [arg4:4]
+            // a5 = (arg2 << 4) >> 24    [arg5:8]
+            // a6 = (arg2 >> 24)         [arg6:4]
+
+            sprite = sprites[var2.u32 & 0xff];
+            temp1 = (var2.u32 << 16) >> 24;
+            temp2 = (var2.s32 << 12) >> 28;
+            temp3 = (var2.u32 << 4) >> 24;
+            temp6 = (var2.u32 << 0) >> 28;
+            sprite_set_anim(gSpriteHandler, sprite, var3.vptr, temp1, temp2, temp3, temp6);
+            return;
+
+        case BS_CMD_SPRITE_SET_FRAME: // set animation frame
+            sprite = sprites[var2.u32];
+            sprite_set_anim_cel(gSpriteHandler, sprites[var2.u32], var3.s8);
+            return;
+
+        case BS_CMD_SPRITE_SET_PLAYBACK: // set animation playback(?)
+            sprite = sprites[var2.u32];
+            temp1 = (var3.s32 << 28) >> 28;
+            temp2 = (var3.u32 << 20) >> 24;
+            temp6 = (var3.u32 >> 12) & 0xf;
+            sprite_set_playback(gSpriteHandler, sprite, temp1, temp2, temp6);
+            return;
+
+        case BS_CMD_SPRITE_SET_XYZ:
+            sprite = (u16) sprites[var2.u32 & 0xffff];
+            vx = var3.s32;
+            vy = var3.s32 >> 16;
+            temp5 = var2.u32 >> 16;
+            sprite_set_x_y_z(gSpriteHandler, sprite, vx, vy, temp5);
+            return;
+
+        case BS_CMD_SPRITE_SET_XY: // move sprite..?
+            vx = var3.s32;
+            vy = (var3.s32 >> 16);
+            sprite = beatscript_stream_get_sprite_for_motion(sprites, var2.u32, &vx, &vy);
+            sprite_set_x_y(gSpriteHandler, sprite, vx, vy);
+            return;
+
+        case BS_CMD_SPRITE_SET_Z:
+            sprite = sprites[var2.u32];
+            temp5 = var3.u16;
+            sprite_set_z(gSpriteHandler, sprite, temp5);
+            return;
+
+        case BS_CMD_SPRITE_ADD_XY:
+            sprite = sprites[var1.u32];
+            vx = (var2.u32 != 0x7FFF) ? var2.u32 : 0;
+            vy = (var3.u32 != 0x7FFF) ? var3.u32 : 0;
+            vx += sprite_get_data(gSpriteHandler, sprite, 4);
+            vy += sprite_get_data(gSpriteHandler, sprite, 5);
+            sprite_set_x_y(gSpriteHandler, sprite, vx, vy);
+            return;
+
+        case BS_CMD_SPRITE_ADD_Z:
+            sprite = sprites[var1.u32];
+            temp5 = (u16) (sprite_get_data(gSpriteHandler, sprite, 6) + var2.u32);
+            sprite_set_z(gSpriteHandler, sprite, temp5);
+            return;
+
+        case BS_CMD_SPRITE_RENDER: // play/pause animation
+            sprite = sprites[var2.u32];
+            playAnim = var3.u16;
+            sprite_set_visible(gSpriteHandler, sprite, playAnim);
+            return;
+
+        case BS_CMD_SPRITE_SET_XY_WITH_VECTOR2: // set sprite position to vector
+            sprite = sprites[var2.u32];
+            sprite_set_x_y(gSpriteHandler, sprite, var3.s16ptr[0], var3.s16ptr[1]);
+            return;
+
+        case BS_CMD_SPRITE_SET_PALETTE:
+            sprite = sprites[var2.u32];
+            sprite_set_base_palette(gSpriteHandler, sprite, var3.u32);
+            return;
+
+        case BS_CMD_SPRITE_SET_TILE_NUM:
+            sprite = sprites[var2.u32];
+            sprite_set_base_tile(gSpriteHandler, sprite, var3.u32);
+            return;
+
+        case BS_CMD_SPRITE_EDIT_ATTRIBUTES:
+            sprite = (u16) sprites[var2.u32];
+            switch (var1.u32) {
+                case 0:
+                    sprite_attr_set(gSpriteHandler, sprite, var3.u32);
+                    break;
+                case 1:
+                    sprite_attr_orr(gSpriteHandler, sprite, var3.u32);
+                    break;
+                case 2:
+                    sprite_attr_bic(gSpriteHandler, sprite, var3.u32);
+                    break;
+            }
+            return;
+
+        case BS_CMD_SPRITE_SET_ENABLE_UPDATES:
+            sprite = sprites[var2.u32];
+            sprite_set_enable_updates(gSpriteHandler, sprite, var3.u32);
+            return;
+
+        case BS_CMD_SPRITE_SET_ANIM_SPEED:
+            sprite = (u16) sprites[var2.u32];
+            switch (var1.u32) {
+                case 0:
+                    sprite_set_anim_speed(gSpriteHandler, sprite, (var3.u32 * D_030053c0.spriteAnimSpeed) >> 8);
+                    break;
+                case 1:
+                    sprite_set_anim_speed(gSpriteHandler, sprite, func_0800c1b4());
+                    break;
+            }
+            return;
+
+        case BS_CMD_SPRITE_START_MOTION_INDEFINITE:
+            thread->currentTaskID = scene_move_sprite_indefinite(sprites[var1.u32], var2.s32, (var2.s32 >> 16));
+            return;
+
+        case BS_CMD_SPRITE_START_MOTION_DECELERATE:
+            vx = var2.s32;
+            vy = (var2.s32 >> 16);
+            sprite = beatscript_stream_get_sprite_for_motion(sprites, var1.u32, &vx, &vy);
+            thread->currentTaskID = scene_move_sprite_decelerate(sprite, vx, vy, var3.u32);
+            return;
+
+        case BS_CMD_SPRITE_START_MOTION_ACCELERATE:
+            vx = var2.s32;
+            vy = (var2.s32 >> 16);
+            sprite = beatscript_stream_get_sprite_for_motion(sprites, var1.u32, &vx, &vy);
+            thread->currentTaskID = scene_move_sprite_accelerate(sprite, vx, vy, var3.u32, (var3.u32 >> 16));
+            return;
+
+        case BS_CMD_SPRITE_START_MOTION_LERP:
+            vx = var2.s32;
+            vy = (var2.s32 >> 16);
+            sprite = beatscript_stream_get_sprite_for_motion(sprites, var1.u32, &vx, &vy);
+            thread->currentTaskID = scene_move_sprite_lerp(sprite, vx, vy, ticks_to_frames(var3.u16));
+            return;
+
+        case BS_CMD_SPRITE_START_MOTION_SINE_VEL:
+            vx = var2.s32;
+            vy = (var2.s32 >> 16);
+            sprite = (u16) beatscript_stream_get_sprite_for_motion(sprites, var1.u32, &vx, &vy);
+            thread->currentTaskID = scene_move_sprite_sine_vel(sprite, (var3.u32 >> 16), vx, vy, ticks_to_frames(var3.u16));
+            return;
+
+        case BS_CMD_SPRITE_START_MOTION_SINE_WAVE:
+            vx = var2.s32;
+            vy = (var2.s32 >> 16);
+            sprite = (u16) beatscript_stream_get_sprite_for_motion(sprites, var1.u32, &vx, &vy);
+            thread->currentTaskID = scene_move_sprite_sine_wave(sprite, vx, vy, (var3.u32 >> 16), ticks_to_frames(var3.u16));
+            return;
+
+        case BS_CMD_SPRITE_MOVE_DECELERATE:
+            thread->currentTaskID = scene_move_sprite_decelerate(sprites[var1.u32], var2.s16ptr[0], var2.s16ptr[1], var3.u32);
+            return;
+
+        case BS_CMD_SPRITE_MOVE_ACCELERATE:
+            thread->currentTaskID = scene_move_sprite_accelerate(sprites[var1.u32], var2.s16ptr[0], var2.s16ptr[1], var3.u32, (var3.u32 >> 16));
+            return;
+
+        case BS_CMD_SPRITE_MOVE_LERP:
+            thread->currentTaskID = scene_move_sprite_lerp(sprites[var1.u32], var2.s16ptr[0], var2.s16ptr[1], ticks_to_frames(var3.u16));
+            return;
+
+        case BS_CMD_SPRITE_MOVE_SINE_VEL:
+            thread->currentTaskID = scene_move_sprite_sine_vel(sprites[var1.u32], (var3.u32 >> 16), var2.s16ptr[0], var2.s16ptr[1], ticks_to_frames(var3.u16));
+            return;
+
+        case BS_CMD_SPRITE_MOVE_SINE_WAVE:
+            thread->currentTaskID = scene_move_sprite_sine_wave(sprites[var1.u32], var2.s16ptr[0], var2.s16ptr[1], (var3.u32 >> 16), ticks_to_frames(var3.u16));
+            return;
+
+        case BS_CMD_SPRITE_SET_MOTION_CALLBACK:
+            run_func_after_task(thread->currentTaskID, var2.u32, var3.u32);
+            return;
+
+        case BS_CMD_TEXT_DELETE_ANIM:
+            sprite = sprites[var3.u32];
+            oam = (u16 *)sprite_get_data(gSpriteHandler, sprite, 7);
+            bmp_font_obj_delete_printed_anim(*var2.u32ptr, oam);
+            if (var1.u32) {
+                sprite_delete(gSpriteHandler, sprite);
+            } else {
+                sprite_set_visible(gSpriteHandler, sprite, FALSE);
+                sprite_set_anim(gSpriteHandler, sprite, D_089ccbc0, 0, 0, 0, 0);
+            }
+            return;
+
+        case BS_CMD_TEXT_MANAGE:
+            switch (var1.u32) {
+                case 0:
+                    import_all_scene_objects(gSpriteHandler, *var2.u32ptr, var3.u32, D_0300558c);
+                    break;
+                case 1:
+                    start_new_scene_object_importer((u16) get_current_mem_id(), gSpriteHandler, *var2.u32ptr, var3.u32, D_0300558c);
+                    break;
+                case 2:
+                    delete_all_scene_objects(gSpriteHandler, *var2.u32ptr, var3.u32, D_0300558c);
+                    break;
+                case 3:
+                    display_all_scene_objects(gSpriteHandler, *var2.u32ptr, var3.u32, D_0300558c, 1);
+                    break;
+                case 4:
+                    display_all_scene_objects(gSpriteHandler, *var2.u32ptr, var3.u32, D_0300558c, 0);
+                    break;
+            }
+            return;
+
+        case BS_CMD_SPRITE_SET_ANIM_CALLBACK:
+            sprite = (u16) D_0300558c[var1.u32 & 0xff];
+            if (var3.s32 >= 0) {
+                sprite_set_callback_cel(gSpriteHandler, sprite, (var1.s32 >> 8));
+                sprite_set_callback(gSpriteHandler, sprite, var2.vptr, var3.s32);
+            } else {
+                sprite_set_callback(gSpriteHandler, sprite, NULL, 0);
+            }
+            return;
+
+        case BS_CMD_TEXT_A9:
+            func_0800e8f4(D_0300558c[var1.u32], var2.u32);
+            return;
+
+        case BS_CMD_SPRITE_DELETE:
+            sprite = D_0300558c[var2.u32];
+            sprite_delete(gSpriteHandler, sprite);
+            return;
+
+        case BS_CMD_SPRITE_DELETE_ALL:
+            sprite_id_set_enable_updates(gSpriteHandler, (u16) get_current_mem_id(), 1);
+            return;
+
+        case BS_CMD_PAUSE_TASKS:
+            task_pool_pause_id((u16) get_current_mem_id(), 1);
+            return;
+
+        case BS_CMD_GET_ACTIVE_TASK:
+            *var2.u32ptr = thread->currentTaskID;
+            return;
+
+        case BS_CMD_STOP_TASK:
+            if (var2.u32ptr != NULL) {
+                force_stop_task(*var2.u32ptr);
+            } else {
+                force_stop_task(thread->currentTaskID);
+            }
+            return;
+
+        case BS_CMD_DMA3_SET:
+            dma3_set(var2.u32, var3.u32, var1.u32 * 2, 0x10, 0x200);
+            return;
+
+        case BS_CMD_SPRITE_LINK_XY_TO_BG_OFFSET:
+            sprite_set_origin_x_y(
+                gSpriteHandler,
+                D_0300558c[var2.u32],
+                &D_03004b10.BG_OFS[var3.u32].x,
+                &D_03004b10.BG_OFS[var3.u32].y
+            );
+            return;
+    }
+}
 
 
 // Stub
