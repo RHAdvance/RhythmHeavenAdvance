@@ -92,7 +92,11 @@ enum PerfectCampaignsEnum {
 
 
 // Total standard games and remixes, i.e. those within the main campaign.
+#ifdef TEMPOUP
 #define TOTAL_RHYTHM_GAMES ((u32)TOTAL_PERFECT_CAMPAIGNS)
+#else
+#define TOTAL_RHYTHM_GAMES ((u32)TOTAL_BASE_PERFECT_CAMPAIGNS)
+#endif
 
 
 // Total Medals to collect.

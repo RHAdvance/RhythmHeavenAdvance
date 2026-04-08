@@ -286,23 +286,20 @@ void start_campaign_notice(s32 id) {
     notice->y = campaign_gifts_table[id].y;
     level = get_level_data_from_grid_xy(notice->x, notice->y);
     string = notice->text;
-    memcpy(string, "\001C" "If you get a Perfect in \n\"", 45); // [Right now]
+    memcpy(string, "\001C" "If you get a Perfect on\n", 45); // [Right now]
     strcat(string, level->name); // "<game_name>"
-    strcat(string, "\"\nright now, you'll earn:\n"); // Get a perfect on this
-    if(!isSpecialSong) {
-        strcat(string, "\""); // "
+    strcat(string, "\nright now, you'll earn "); // Get a perfect on this
+    if (giftType == CAMPAIGN_GIFT_DRUM_KIT || giftType == CAMPAIGN_GIFT_READING_MATERIAL) {
+        strcat(string, "the following bonus:\n"); // received as a present!!
     }
-    strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
     if (isSong) {
         if(isSpecialSong) {
-            strcat(string, " as a song.");
+            strcat(string, "the following song:\n");
         } else {
-            strcat(string, "\"'s song.");
-        }
+            strcat(string, "the game's song, also titled\n");
     }
-    if (giftType == CAMPAIGN_GIFT_DRUM_KIT || giftType == CAMPAIGN_GIFT_READING_MATERIAL) {
-        strcat(string, "\" as a bonus."); // received as a present!!
     }
+    strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
     text_printer_set_string(notice->printer, string);
 
     sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, FALSE);
@@ -413,7 +410,14 @@ void hide_campaign_icon_border(void) {
 
 // Get Level Name from Campaign ID
 const char *get_level_name_from_campaign(s32 id) {
-    return get_level_data_from_grid_xy(campaign_gifts_table[id].x, campaign_gifts_table[id].y)->name;
+    struct LevelData *levelData;
+
+    levelData = get_level_data_from_campaign(id);
+    if (levelData == NULL) {
+        return "n/a";
+    }
+
+    return levelData->name;
 }
 
 
@@ -462,7 +466,7 @@ struct LevelData *get_level_data_from_id(s32 id) {
 
 // Get Level Data from Campaign ID
 struct LevelData *get_level_data_from_campaign(s32 id) {
-    if (id < 0) {
+    if ((id < 0) || (id >= TOTAL_PERFECT_CAMPAIGNS)) {
         return NULL;
     }
 

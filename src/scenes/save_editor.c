@@ -614,7 +614,9 @@ void save_editor_render_page(void) {
                 snprintf(buf, sizeof(buf), "Level: %s%s", (arrIdx < TOTAL_LEVELS) ? game_select_get_level_name(arrIdx) : "n/a", (get_level_data_from_id(arrIdx)->flags & LEVEL_DATA_FLAG_IS_EXTRA) ? " (Extra)" : "");
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, buf, 32, 80);
             } else if (member == SE_MBR_CAMPAIGNS_CLEARED){
-                snprintf(buf, sizeof(buf), "Campaign: %s%s", (arrIdx < TOTAL_PERFECT_CAMPAIGNS) ? get_level_name_from_campaign(arrIdx) : "n/a", (get_level_data_from_campaign(arrIdx)->flags & LEVEL_DATA_FLAG_IS_EXTRA) ? "  (Extra)" : "");
+                struct LevelData *campaignLevel = (arrIdx < TOTAL_PERFECT_CAMPAIGNS) ? get_level_data_from_campaign(arrIdx) : NULL;
+
+                snprintf(buf, sizeof(buf), "Campaign: %s%s", (campaignLevel != NULL) ? campaignLevel->name : "n/a", ((campaignLevel != NULL) && (campaignLevel->flags & LEVEL_DATA_FLAG_IS_EXTRA)) ? "  (Extra)" : "");
                 save_editor_draw_line(SE_LINE_FLAG_0, 0, buf, 32, 80);
             } else if (member == SE_MBR_READING_MATERIAL_UNLOCKED){
                 snprintf(buf, sizeof(buf), "Reading Material: %s", (arrIdx < TOTAL_READING_MATERIALS) ? reading_material_table[arrIdx].title : "n/a");
