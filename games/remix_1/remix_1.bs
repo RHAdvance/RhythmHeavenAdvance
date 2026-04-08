@@ -775,7 +775,11 @@ script script_remix_1_main
     rest 24
 
     load_karate_man
+    #ifdef PLUS
     print_text_f 5
+    #else
+    print_text_f 4
+    #endif
     #ifdef SFX
     rest 12
     play_sfx s_f_boxing_hit_sfx_seqData
