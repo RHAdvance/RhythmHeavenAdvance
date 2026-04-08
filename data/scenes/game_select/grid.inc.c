@@ -422,8 +422,8 @@ struct GameSelectGridEntry game_select_grid_data[GS_GRID_WIDTH * GS_GRID_HEIGHT]
     },
     /* Entry (x=05, y=09) */ {
         /* Level ID */ LEVEL_POWER_CALLIGRAPHY,
-        /* Show Req */ (s8[]) { REQ_CLEAR(5, 8), END_REQ },
-        /* Open Req */ (s8[]) { REQ_CLEAR(5, 8), END_REQ },
+        /* Show Req */ (s8[]) { REQ_CLEAR(4, 6), END_REQ },
+        /* Open Req */ (s8[]) { REQ_CLEAR(5, 10), END_REQ },
         /* Targets  */ (s8[]) { TARGET(5, 6), TARGET(5, 8), TARGET(5, 11), TARGET(10, 11), END_TARGETS },
         /* Flags */ 0,
         /* Delay */ 2

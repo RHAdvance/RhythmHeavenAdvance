@@ -443,7 +443,7 @@ s32 get_campaign_from_level_id(s32 id) {
 
 // Get Level ID from Grid Position
 s32 get_level_id_from_grid_xy(s32 x, s32 y) {
-    if ((x < GS_GRID_WIDTH) && (y < GS_GRID_HEIGHT)) {
+    if ((x >= 0) && (x < (s32)GS_GRID_WIDTH) && (y >= 0) && (y < (s32)GS_GRID_HEIGHT)) {
         return game_select_grid_data[x + (y * GS_GRID_WIDTH)].id;
     }
 
@@ -567,9 +567,10 @@ s32 get_level_state_with_perfect_from_grid_xy(s32 x, s32 y) {
 void get_grid_xy_from_level_id(s32 id, s32 *xReq, s32 *yReq) {
     s32 x, y;
 
+    *xReq = -1;
+    *yReq = -1;
+
     if (id < 0) {
-        *xReq = -1;
-        *yReq = -1;
         return;
     }
 
@@ -657,11 +658,70 @@ void save_level_state_from_grid_xy(s32 x, s32 y, s32 state) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
     s32 id;
 
-    if ((x < GS_GRID_WIDTH) && (y < GS_GRID_HEIGHT)) {
+    if ((x >= 0) && (x < (s32)GS_GRID_WIDTH) && (y >= 0) && (y < (s32)GS_GRID_HEIGHT)) {
         id = game_select_grid_data[x + (y * GS_GRID_WIDTH)].id;
 
         if (id >= 0) {
             set_level_state(saveData, id, state);
+        }
+    }
+}
+
+static void game_select_repair_unlock_progress(void) {
+    struct TengokuSaveData *saveData = &D_030046a8->data;
+    u32 pass;
+
+    for (pass = 0; pass < (GS_GRID_WIDTH * GS_GRID_HEIGHT); pass++) {
+        u32 x, y;
+        u32 changes = 0;
+
+        for (y = 0; y < GS_GRID_HEIGHT; y++) {
+            for (x = 0; x < GS_GRID_WIDTH; x++) {
+                struct GameSelectGridEntry *gridEntry;
+                s32 id, state, newState;
+
+                gridEntry = game_select_grid_data + x + (y * GS_GRID_WIDTH);
+                id = gridEntry->id;
+
+                if (id < 0) {
+                    continue;
+                }
+
+                if (level_data_table[id].flags & LEVEL_DATA_FLAG_IS_EXTRA) {
+                    continue;
+                }
+
+                state = get_level_state(saveData, id);
+                if (state == LEVEL_STATE_APPEARING) {
+                    state = LEVEL_STATE_HIDDEN;
+                    set_level_state(saveData, id, state);
+                    changes++;
+                }
+
+                if (state >= LEVEL_STATE_OPEN) {
+                    continue;
+                }
+
+                newState = LEVEL_STATE_NULL;
+                if (game_select_check_level_event_req(x, y, LEVEL_STATE_OPEN)) {
+                    if (gridEntry->flags & LEVEL_EVENT_CLEAR_BY_DEFAULT) {
+                        newState = LEVEL_STATE_CLEARED;
+                    } else {
+                        newState = LEVEL_STATE_OPEN;
+                    }
+                } else if (game_select_check_level_event_req(x, y, LEVEL_STATE_CLOSED)) {
+                    newState = LEVEL_STATE_CLOSED;
+                }
+
+                if (newState > state) {
+                    set_level_state(saveData, id, newState);
+                    changes++;
+                }
+            }
+        }
+
+        if (changes == 0) {
+            break;
         }
     }
 }
@@ -806,6 +866,8 @@ void game_select_scene_start(void *sVar, s32 dArg) {
     s16 bgOfsX, bgOfsY;
     s32 prevX, prevY;
     s32 i;
+
+    game_select_repair_unlock_progress();
     
     // Init. Graphics
     gGameSelect->loadingSceneGfx = TRUE;
@@ -879,18 +941,23 @@ void game_select_scene_start(void *sVar, s32 dArg) {
         if ((get_level_id_from_grid_xy(prevX, prevY) == LEVEL_REMIX_6) && (recentLevelState >= LEVEL_STATE_CLEARED)) {
             enable_game_select_2_bgm();
         }
-    } else if (game_select_try_queue_tempo_up_unlock(TRUE)) {
-        gGameSelect->runningLevelEvents = TRUE;
     } else {
-        gGameSelect->runningLevelEvents = FALSE;
-        gGameSelect->levelEventTimer = 0;
-        write_game_save_data();
+        #ifdef TEMPOUP
+        if (game_select_try_queue_tempo_up_unlock(TRUE)) {
+            gGameSelect->runningLevelEvents = TRUE;
+        } else
+        #endif
+        {
+            gGameSelect->runningLevelEvents = FALSE;
+            gGameSelect->levelEventTimer = 0;
+            write_game_save_data();
 
-        if (gGameSelect->campaignNotice.hasNewCampaign) {
-            start_campaign_notice(D_030046a8->data.currentCampaign);
-            gGameSelect->campaignNotice.hasNewCampaign = FALSE;
-        } else {
-            gGameSelect->sceneState = GS_STATE_MAIN;
+            if (gGameSelect->campaignNotice.hasNewCampaign) {
+                start_campaign_notice(D_030046a8->data.currentCampaign);
+                gGameSelect->campaignNotice.hasNewCampaign = FALSE;
+            } else {
+                gGameSelect->sceneState = GS_STATE_MAIN;
+            }
         }
     }
 
@@ -1745,7 +1812,9 @@ u32 game_select_process_level_events(void) {
 
             D_030046a8->data.totalMedals++;
             game_select_refresh_medal_count(127);
+            #ifdef TEMPOUP
             game_select_try_queue_tempo_up_unlock(FALSE);
+            #endif
             cafe_session_remove_level(id);
             set_level_first_superb(&D_030046a8->data, id, get_level_total_plays(&D_030046a8->data, id));
             if(get_level_first_ok(&D_030046a8->data, id) == 0) {
@@ -1985,8 +2054,12 @@ void game_select_init_info_pane(void) {
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, &bgOfs->x, &bgOfs->y);
     gGameSelect->noPracticeSprite = sprite_create(gSpriteHandler, anim_game_select_no_practice, 0, 188, 94, 0x80A, 1, 0, 0x8000);
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->noPracticeSprite, &bgOfs->x, &bgOfs->y);
+    #ifdef TEMPOUP
     gGameSelect->tempoUpSprite = sprite_create(gSpriteHandler, anim_game_select_tempo_up, 0, 154, 38, 0x80A, 1, 0, 0x8000);
     sprite_set_origin_x_y(gSpriteHandler, gGameSelect->tempoUpSprite, &bgOfs->x, &bgOfs->y);
+    #else
+    gGameSelect->tempoUpSprite = -1;
+    #endif
     gGameSelect->infoPaneIsClear = TRUE;
     gGameSelect->infoPaneTask = INFO_PANE_TASK_NONE;
 }
@@ -2018,7 +2091,9 @@ void game_select_clear_info_pane(void) {
     text_printer_clear(gGameSelect->infoPaneDesc);
     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, FALSE);
     sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, FALSE);
+    #ifdef TEMPOUP
     sprite_set_visible(gSpriteHandler, gGameSelect->tempoUpSprite, FALSE);
+    #endif
     sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 112);
     text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 50);
     text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 15);
@@ -2063,7 +2138,11 @@ void game_select_print_level_rank(s32 levelState) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
 
+    #ifdef TEMPOUP
     found = gGameSelect->infoPaneLevelData->flags & (LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE);
+    #else
+    found = gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE;
+    #endif
 
     text_printer_fill_vram_tiles(16, 26, 16, 2, 0);
     string = game_select_rank_text[levelState];
@@ -2105,10 +2184,13 @@ void game_select_process_info_pane(void) {
             game_select_print_level_desc(gGameSelect->infoPaneLevelData);
             gGameSelect->infoPaneTask = INFO_PANE_TASK_RENDER;
 
+            #ifdef TEMPOUP
             if(gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
                 text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
                 text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
-            } else if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
+            } else
+            #endif
+            if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
                 text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
                 text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
             }
@@ -2125,12 +2207,15 @@ void game_select_process_info_pane(void) {
                     sprite_set_visible(gSpriteHandler, gGameSelect->perfectClearedSprite, TRUE);
                 }
 
+                #ifdef TEMPOUP
                 if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) {
                     sprite_set_visible(gSpriteHandler, gGameSelect->tempoUpSprite, TRUE);
                     sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
                     text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
                     text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
-                } else if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
+                } else
+                #endif
+                if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
                     sprite_set_visible(gSpriteHandler, gGameSelect->noPracticeSprite, TRUE);
                     sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 115);
                     text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
@@ -3007,7 +3092,7 @@ https://www.coranac.com/tonc/text/regbg.htm
     }
 }
 
-
+#ifdef TEMPOUP
 u32 game_select_try_queue_tempo_up_unlock(u32 startEvents) {
     s32 x, y;
     s32 state;
@@ -3047,3 +3132,4 @@ u32 game_select_try_queue_tempo_up_unlock(u32 startEvents) {
 
     return FALSE;
 }
+#endif
