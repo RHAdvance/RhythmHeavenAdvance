@@ -117,34 +117,6 @@ script script_remix_1_main
     enable_pause_menu
     rest 24
     rest 24
-    #ifdef SFX
-    rest 18
-    play_sfx s_guntai_v_zentai_a_seqData
-    rest 6
-    start_tracking_perfect_campaign
-    set_results_header D_0805cba0
-    import_marking_criteria remix_1_marking_criteria
-    run gameplay_set_mercy_count, 2
-    start_tracking_inputs
-    set_marking_criteria 0
-    set_game_fade_in_time 0
-    play_music Lesson1_seqData
-    clear_text_f
-    marching_orders_event01
-    play_sfx s_guntai_v_zentai_ten_seqData
-    rest 9
-    play_sfx s_guntai_v_zentai_ttion_seqData
-    rest 15
-    rest 24
-    call marching_orders_sub_08a837ac
-    rest 24
-    play_music L1_pat01_seqData
-    call marching_orders_sub_08a8386c
-    call marching_orders_sub_08a8386c
-    call marching_orders_sub_08a8386c
-    call marching_orders_sub_08a8386c_nobeat
-    call marching_orders_sub_08a83998
-    #else
     rest 24
     start_tracking_perfect_campaign
     set_results_header D_0805cba0
@@ -161,7 +133,6 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
-    #endif
 
     load_karate_man
     beat_anim
@@ -178,9 +149,6 @@ script script_remix_1_main
 
     load_marching_orders
     rest 24
-    #ifdef PLUS
-    marching_orders_play_voice_sfx SHOUT_START
-    #endif
     marching_orders_event00 263
     spawn_cue CUE_STEP
     beat_anim
@@ -189,11 +157,7 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
-    #ifdef SFX
-    call marching_orders_sub_08a8386c_nobeat
-    #else
     call marching_orders_sub_08a8386c
-    #endif
     call marching_orders_sub_08a83998
 
     load_karate_man
@@ -220,9 +184,6 @@ script script_remix_1_main
 
     load_marching_orders
     rest 24
-    #ifdef PLUS
-    marching_orders_play_voice_sfx SHOUT_START
-    #endif
     marching_orders_event00 263
     spawn_cue CUE_STEP
     beat_anim
@@ -231,11 +192,7 @@ script script_remix_1_main
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a8386c
-    #ifdef SFX
-    call marching_orders_sub_08a8386c_nobeat
-    #else
     call marching_orders_sub_08a8386c
-    #endif
     call marching_orders_sub_08a83998
 
     load_karate_man
@@ -249,16 +206,8 @@ script script_remix_1_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
@@ -338,16 +287,8 @@ script script_remix_1_main
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
-    print_text_f 2
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
-    #else
     rest 24
     print_text_f 2
-    #endif
     beat_anim
     rest 24
     clear_text_f
