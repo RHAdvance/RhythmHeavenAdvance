@@ -222,7 +222,7 @@ extern u8 haveSeenDisclaimer;
 // of replacing the messages with stuff that won't traumatize people!!!
 char* badBoyMessages[6] = {
     "oh noes anti piracy",
-    "3800 yen",
+    "38000 yen",
     "hello world",
     "rhythm rhythm rhythm",
     "i love tap!",
