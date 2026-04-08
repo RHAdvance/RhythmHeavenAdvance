@@ -260,10 +260,7 @@ script script_remix_1_main
     print_text_f 2
     #endif
     beat_anim
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
+    rest 24
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
@@ -352,10 +349,7 @@ script script_remix_1_main
     print_text_f 2
     #endif
     beat_anim
-    rest 12
-    play_sfx s_f_boxing_hit_sfx_seqData
-    rest 12
-    play_sfx s_f_boxing_two_sfx_seqData
+    rest 24
     clear_text_f
     spawn_cue CUE_LIGHT_BULB
     beat_anim
