@@ -413,7 +413,14 @@ void hide_campaign_icon_border(void) {
 
 // Get Level Name from Campaign ID
 const char *get_level_name_from_campaign(s32 id) {
-    return get_level_data_from_grid_xy(campaign_gifts_table[id].x, campaign_gifts_table[id].y)->name;
+    struct LevelData *levelData;
+
+    levelData = get_level_data_from_campaign(id);
+    if (levelData == NULL) {
+        return "n/a";
+    }
+
+    return levelData->name;
 }
 
 
@@ -462,7 +469,7 @@ struct LevelData *get_level_data_from_id(s32 id) {
 
 // Get Level Data from Campaign ID
 struct LevelData *get_level_data_from_campaign(s32 id) {
-    if (id < 0) {
+    if ((id < 0) || (id >= TOTAL_PERFECT_CAMPAIGNS)) {
         return NULL;
     }
 
