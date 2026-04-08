@@ -45,7 +45,7 @@ const char D_0805bbf8[] = "The silent ghosts sneaked past you.";
 
 const char D_0805bc1c[] = "You hit them even when they were quiet.";
 
-const char D_0805bc3c[] = "You should have counted to yourself.";
+const char D_0805bc3c[] = "Don't forget to count in your head.";
 
 const char D_0805bc5c[] = "Your internal count was spot on!";
 

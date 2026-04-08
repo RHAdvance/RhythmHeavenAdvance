@@ -495,7 +495,7 @@ void cafe_print_dialogue(void) {
                     s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\nSay, I heard that there's a chance\n"
-                              "for a Perfect in ");
+                              "for a Perfect on ");
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
                     strcat(s, "\0054" "\0018" ".\n\n");
