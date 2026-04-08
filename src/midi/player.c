@@ -546,15 +546,59 @@ void midi_player_parse_controller_change(struct SoundPlayer *soundPlayer, u32 tr
     }
 }
 
+static u32 midi_player_should_apply_pc_transpose(struct SoundPlayer *soundPlayer, u32 track) {
+    struct MidiBus *midiBus;
+    union Instrument instrument;
+
+    if ((soundPlayer == NULL) || (soundPlayer->song == NULL)) {
+        return FALSE;
+    }
+
+    midiBus = soundPlayer->midiBus;
+    if ((midiBus == NULL) || (track >= midiBus->totalChannels) || (midiBus->soundBank == NULL)) {
+        return FALSE;
+    }
+
+    instrument = midiBus->soundBank[midiBus->midiChannel[track].instPatch];
+    if (instrument.type == NULL) {
+        return FALSE;
+    }
+
+    return (*instrument.type == INSTRUMENT_SUB_RHYTHM) || (*instrument.type == INSTRUMENT_SUB_SPLIT);
+}
+
+
+static u8 midi_player_get_transposed_key(struct SoundPlayer *soundPlayer, u32 track, u32 key) {
+    s32 transposedKey = key;
+
+    if ((soundPlayer != NULL) && (soundPlayer->song != NULL)) {
+        transposedKey += soundPlayer->song->transpose;
+
+        if (midi_player_should_apply_pc_transpose(soundPlayer, track)) {
+            transposedKey += soundPlayer->song->pcTranspose;
+        }
+    }
+
+    if (transposedKey < 0) {
+        return 0;
+    }
+
+    if (transposedKey > 0x7F) {
+        return 0x7F;
+    }
+
+    return transposedKey;
+}
+
 
 // MidiStream Note Off/On [Evnt_8; Evnt_9]
-void midi_player_add_note(u32 track, u32 key, u32 velocity) {
+void midi_player_add_note(struct SoundPlayer *soundPlayer, u32 track, u32 key, u32 velocity) {
     struct MidiNote *midiNote;
 
     if (gMidiNoteNext < ARRAY_COUNT(gMidiNotePool)) {
         midiNote = &gMidiNotePool[gMidiNoteNext++];
         midiNote->channel = track;
-        midiNote->key = key;
+        midiNote->key = midi_player_get_transposed_key(soundPlayer, track, key);
         midiNote->velocity = velocity;
     }
 }
@@ -643,13 +687,13 @@ u32 midi_player_read_track(struct SoundPlayer *soundPlayer, u32 track) {
         switch (command & 0xF0) {
             // Note Off
             case MSG_NOTE_OFF:
-                midi_player_add_note(track, byteStream[0], 0);
+                midi_player_add_note(soundPlayer, track, byteStream[0], 0);
                 byteStream += 2;
                 break;
 
             // Note On
             case MSG_NOTE_ON:
-                midi_player_add_note(track, byteStream[0], byteStream[1]);
+                midi_player_add_note(soundPlayer, track, byteStream[0], byteStream[1]);
                 byteStream += 2;
                 break;
 
@@ -1029,7 +1073,7 @@ u32 midi_direct_player_read_sequence(void) {
                     lengthIsInsufficient = TRUE;
                     break;
                 }
-                midi_player_add_note(track, arg0, 0);
+                midi_player_add_note(soundPlayer, track, arg0, 0);
                 stream += longCommandLength;
                 sequenceLength -= longCommandLength;
                 break;
@@ -1040,7 +1084,7 @@ u32 midi_direct_player_read_sequence(void) {
                     lengthIsInsufficient = TRUE;
                     break;
                 }
-                midi_player_add_note(track, arg0, arg1);
+                midi_player_add_note(soundPlayer, track, arg0, arg1);
                 stream += longCommandLength;
                 sequenceLength -= longCommandLength;
                 break;

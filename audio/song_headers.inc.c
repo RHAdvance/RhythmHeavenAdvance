@@ -9014,3 +9014,10 @@ struct SongHeader s_guntai_v_susume_3_seqData = {
     /* Song Title    */ s_guntai_v_susume_3_seqName,
     /* Song Number   */ 1538
 };
+
+extern const u8 s_dummy_whole_mid[];
+extern const u8 s_dummy_half_mid[];
+extern const u8 s_dummy_quarter_mid[];
+extern const u8 s_dummy_eighth_mid[];
+extern const u8 s_dummy_sixteenth_mid[];
+extern const u8 s_dummy_thirtysecond_mid[];

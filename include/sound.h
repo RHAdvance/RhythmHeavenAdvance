@@ -300,6 +300,8 @@ struct SongHeader {
     u32 unk8;
     char *title;
     u32 songNum;
+    s32 transpose;
+    s32 pcTranspose;
 };
 
 
