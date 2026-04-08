@@ -2194,10 +2194,12 @@ void game_select_process_info_pane(void) {
                 text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 60);
             } else
             #endif
+            #ifdef PLUS
             if (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) {
                 text_printer_set_line_spacing(gGameSelect->infoPaneDesc, 14);
                 text_printer_set_x_y(gGameSelect->infoPaneDesc, 129, 47);
             }
+            #endif
 
         case INFO_PANE_TASK_RENDER:
             if (!text_printer_is_busy(gGameSelect->infoPaneDesc)) {
