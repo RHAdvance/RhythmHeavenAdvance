@@ -92,6 +92,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚v‚‚’‚‚‰‚‚‡",
         /* Epil. */ FALSE
     },
+    /* GBP Handshake */ {
+        /* Scene */ &scene_gbp_handshake,
+        /* Label */ "‚f‚a‚o@‚g‚‚‚„‚“‚ˆ‚‚‹‚…",
+        /* Epil. */ FALSE
+    },
     /* Disclaimer */ {
         /* Scene */ &scene_disclaimer,
         /* Label */ "‚c‚‰‚“‚ƒ‚Œ‚‚‰‚‚…‚’",
@@ -683,11 +688,6 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     /* Debug Menu */ {
         /* Scene */ &scene_debug_menu,
         /* Label */ "‚c‚…‚‚‚•‚‡@‚l‚…‚‚•",
-        /* Epil. */ FALSE
-    },
-    /* GBP Handshake */ {
-        /* Scene */ &scene_gbp_handshake,
-        /* Label */ "‚f‚a‚o@‚g‚‚‚„‚“‚ˆ‚‚‹‚…",
         /* Epil. */ FALSE
     },
     END_OF_DEBUG_ENTRIES

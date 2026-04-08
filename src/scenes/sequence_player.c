@@ -532,10 +532,10 @@ void sequence_player_render_page(void) {
         sequence_player_clear_line(SP_LINE_OPTION_0 + i);
     }
 
-    snprintf(buf, sizeof(buf), "Options %u-%u/%u  Scroll: U/D", optionTop + 1, optionEnd, SP_TOTAL_OPTIONS);
+    snprintf(buf, sizeof(buf), "Options %u-%u/%u  Scroll: Up/Down (‡O)", optionTop + 1, optionEnd, SP_TOTAL_OPTIONS);
     sequence_player_draw_line(SP_LINE_OPTION_4, 0, buf, 8, 120);
 
-    sequence_player_draw_line(SP_LINE_HINT, 0, "L/R Song  U/D Option  Left/Right Edit  A Play", 8, 134);
+    sequence_player_draw_line(SP_LINE_HINT, 0, "‡K/‡L Song | Left/Right (‡O) Edit | ‡M Play", 8, 134);
 
     snprintf(buf, sizeof(buf), "Status: %.32s", status);
     sequence_player_draw_line(SP_LINE_STATUS, 0, buf, 8, 148);
