@@ -90,6 +90,9 @@ void reset_game_save_data(void) {
     data->drumKitsUnlocked[STUDIO_DRUM_STANDARD] = TRUE;
     data->readingMaterialUnlocked[READING_MATERIAL_WELCOME] = TRUE;
     data->readingMaterialUnlocked[READING_MATERIAL_MANUAL] = TRUE;
+
+    SET_ADVANCE_FLAG(data->advanceFlags, ADVANCE_FLAG_NON_JP_SFX);
+    SET_ADVANCE_FLAG(data->advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC);
 }
 
 
