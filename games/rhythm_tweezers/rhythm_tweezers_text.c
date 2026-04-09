@@ -15,7 +15,7 @@ const char D_0805b4d0[] = "Good work on the curly ones!";
 
 const char D_0805b4ec[] = "You missed a few.";
 
-const char D_0805b510[] = "The hairest areas were plucked clean!";
+const char D_0805b510[] = "The hairiest areas were plucked clean!";
 
 const char D_0805b530[] = "Unwanted-hair check:";
 
@@ -41,7 +41,7 @@ const char D_0805b654[] = "Good work on the curly ones!";
 
 const char D_0805b670[] = "You missed a few.";
 
-const char D_0805b694[] = "The hairest areas were plucked clean!";
+const char D_0805b694[] = "The hairiest areas were plucked clean!";
 
 const char D_0805b6b8[] = "You were plucking a mile a minute!";
 
