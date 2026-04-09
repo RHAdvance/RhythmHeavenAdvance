@@ -539,11 +539,13 @@ s32 get_level_state_with_perfect_from_id(s32 id) {
 
     levelState = get_level_state(saveData, id);
 
-    // make sure you don't overlay a perfect medal on top of a regular one if the perfect event is still pending 
+#ifdef PLUS
+    // make sure you don't overlay a perfect medal on top of a regular one if the perfect event is still pending
     if (!game_select_has_pending_perfect_event(id)
       && get_campaign_cleared(saveData, get_campaign_from_level_id(id))) {
         levelState = LEVEL_STATE_PERFECT;
     }
+#endif
 
     return levelState;
 }
@@ -2132,6 +2134,7 @@ void game_select_print_level_rank(s32 levelState) {
     const char *string;
     u32 i;
     u32 found = FALSE;
+    u32 hasNoPracticeIcon = FALSE;
 
     if (get_level_score(&D_030046a8->data, gGameSelect->infoPaneLevelID) == DEFAULT_LEVEL_SCORE) {
         levelState = LEVEL_STATE_OPEN;
@@ -2142,10 +2145,14 @@ void game_select_print_level_rank(s32 levelState) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
 
+#ifdef PLUS
+    hasNoPracticeIcon = (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) != 0;
+#endif
+
     #ifdef TEMPOUP
-    found = gGameSelect->infoPaneLevelData->flags & (LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE);
+    found = ((gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_IS_EXTRA) != 0) || hasNoPracticeIcon;
     #else
-    found = gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE;
+    found = hasNoPracticeIcon;
     #endif
 
     text_printer_fill_vram_tiles(16, 26, 16, 2, 0);
@@ -2207,6 +2214,7 @@ void game_select_process_info_pane(void) {
                 sprite_set_origin_x_y(gSpriteHandler, gGameSelect->infoPaneName, &bgOfs->x, &bgOfs->y);
                 sprite_set_visible(gSpriteHandler, gGameSelect->infoPaneRank, TRUE);
                 sprite_set_origin_x_y(gSpriteHandler, gGameSelect->infoPaneRank, &bgOfs->x, &bgOfs->y);
+                sprite_set_x_y(gSpriteHandler, gGameSelect->perfectClearedSprite, 187, 112);
 
                 campaign = get_campaign_from_grid_xy(gGameSelect->cursorX, gGameSelect->cursorY);
                 if ((campaign >= 0) && get_campaign_cleared(&D_030046a8->data, campaign)) {
