@@ -41,7 +41,7 @@ void rhythm_toys_rap_machine_play(u32 button) {
     }
 
     gRhythmToys->changeRapMachineSfxTableTimer = ticks_to_frames(0x24);
-    gRhythmToys->soundPlayer = play_sound(rap_machine_sfx_pool[gRhythmToys->rapMachineSfxTable][button]);
+    gRhythmToys->soundPlayer = play_sound(rap_machine_sfx_pool[gRhythmToys->rapMachineSfxTable][button][CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) ? 1 : 0]);
 
     if (button == RHYTHM_TOYS_DOWN_BUTTON) {
         if (gRhythmToys->musicPlaying) {
