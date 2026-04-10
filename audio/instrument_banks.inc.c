@@ -2071,3 +2071,38 @@ union Instrument inst_bank_space_dance_en[] = {
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 124 */ NULL,                            NULL,                            NULL,                            NULL
 };
+
+union Instrument inst_bank_RAPMEN_en[] = {
+    /* 000 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 008 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_yeah },
+    /* 012 */ { .pcm = &instrument_pcm_yo   }, { .pcm = &instrument_pcm_3pm  }, { .pcm = &instrument_pcm_snacktime }, NULL,
+    /* 016 */ { .pcm = &instrument_pcm_huh }, NULL,                            { .pcm = &instrument_pcm_tasty }, { .pcm = &instrument_pcm_healthy },
+    /* 020 */ { .pcm = &instrument_pcm_howitbe }, { .pcm = &instrument_pcm_mightvebeen }, { .pcm = &instrument_pcm_havinfun }, { .pcm = &instrument_pcm_yfm },
+    /* 024 */ { .pcm = &instrument_pcm_snackingis }, { .pcm = &instrument_pcm_ifeelso }, { .pcm = &instrument_pcm_weareso }, NULL,
+    /* 028 */ NULL,                            { .pcm = &instrument_pcm_waitasec }, { .pcm = &instrument_pcm_guessitshow }, { .pcm = &instrument_pcm_lostsome },
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_you },
+    /* 048 */ { .pcm = &instrument_pcm_are }, { .pcm = &instrument_pcm_so }, { .pcm = &instrument_pcm_awe }, { .pcm = &instrument_pcm_some },
+    /* 052 */ { .pcm = &instrument_pcm_may }, { .pcm = &instrument_pcm_be }, { .pcm = &instrument_pcm_maybeso }, { .pcm = &instrument_pcm_mbsohuh },
+    /* 056 */ { .pcm = &instrument_pcm_getit }, { .pcm = &instrument_pcm_nowhuh }, NULL,                         NULL,
+    /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0464 }
+};

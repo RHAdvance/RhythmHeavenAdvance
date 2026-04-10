@@ -249,7 +249,7 @@ script script_rap_men_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_men_sanji_desu_ka
-    play_sfx s_rap_15ji_desuka_seqData
+    play_sfx_localized s_rap_15ji_desuka_seqData, s_rap_15ji_desuka_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24

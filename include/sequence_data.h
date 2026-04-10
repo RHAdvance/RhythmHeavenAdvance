@@ -435,6 +435,7 @@ extern struct SongHeader s_rap_two_seqData;
 extern struct SongHeader s_rap_bgm_renshu_seqData;
 extern struct SongHeader s_rap_bgm_seqData;
 extern struct SongHeader s_rap_jazz_bgm_seqData;
+// -------------------------------------------------
 extern struct SongHeader s_rap_15ji_desuka_seqData;
 extern struct SongHeader s_rap_oyatu_desuka_seqData;
 extern struct SongHeader s_rap_honto_desuka_seqData;
@@ -452,6 +453,23 @@ extern struct SongHeader s_rap_kimitte_saiko_slow_seqData;
 extern struct SongHeader s_rap_honto_desuka_slow_seqData;
 extern struct SongHeader s_rap_oyatuga_naiyo_seqData;
 extern struct SongHeader s_rap_oresira_naiyo_seqData;
+// -------------------------------------------------
+extern struct SongHeader s_rap_15ji_desuka_en_seqData;
+extern struct SongHeader s_rap_oyatu_desuka_en_seqData;
+extern struct SongHeader s_rap_honto_desuka_en_seqData;
+extern struct SongHeader s_rap_wakari_desuka_en_seqData;
+extern struct SongHeader s_rap_oisi_kamone_en_seqData;
+extern struct SongHeader s_rap_herusi_kamone_en_seqData;
+extern struct SongHeader s_rap_orenosei_kamone_en_seqData;
+extern struct SongHeader s_rap_soremoso_kamone_en_seqData;
+extern struct SongHeader s_rap_tanosi_kamone_en_seqData;
+extern struct SongHeader s_rap_oyatuha_saiko_en_seqData;
+extern struct SongHeader s_rap_kibunha_saiko_en_seqData;
+extern struct SongHeader s_rap_orette_saiko_en_seqData;
+extern struct SongHeader s_rap_kimitte_saiko_en_seqData;
+extern struct SongHeader s_rap_oyatuga_naiyo_en_seqData;
+extern struct SongHeader s_rap_oresira_naiyo_en_seqData;
+// -------------------------------------------------
 extern struct SongHeader s_rap_un_seqData;
 extern struct SongHeader s_rap_uun_seqData;
 extern struct SongHeader s_rap_yeah_seqData;
