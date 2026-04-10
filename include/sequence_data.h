@@ -705,6 +705,7 @@ extern struct SongHeader s_f_quiz_ok_seqData;
 extern struct SongHeader s_f_ninja_kabe_seqData;
 extern struct SongHeader s_f_ninja_demo_seqData;
 extern struct SongHeader s_f_ninja_v_nanu_seqData;
+extern struct SongHeader s_f_ninja_v_huh_seqData;
 extern struct SongHeader s_f_rapW_v_YoOyatuDesuka_seqData;
 extern struct SongHeader s_f_rapW_v_Yo10JiDesuka_seqData;
 extern struct SongHeader s_f_rapW_v_Naishodesuka_seqData;

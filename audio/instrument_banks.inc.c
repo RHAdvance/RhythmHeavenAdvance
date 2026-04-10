@@ -1853,7 +1853,7 @@ union Instrument inst_bank_56[] = {
     /* 064 */ { .pcm = &instrument_pcm_1544 }, { .psg = &instrument_psg_1545 }, { .pcm = &instrument_pcm_1546 }, { .pcm = &instrument_pcm_1547 },
     /* 068 */ { .pcm = &instrument_pcm_1548 }, { .pcm = &instrument_pcm_1549 }, { .pcm = &instrument_pcm_1550 }, { .pcm = &instrument_pcm_1551 },
     /* 072 */ { .pcm = &instrument_pcm_1552 }, { .pcm = &instrument_pcm_1553 }, { .pcm = &instrument_pcm_1554 }, { .pcm = &instrument_pcm_1577 },
-    /* 076 */ { .pcm = &instrument_pcm_1578 }, { .pcm = &instrument_pcm_1579 }, { .pcm = &instrument_pcm_4000 }, NULL,
+    /* 076 */ { .pcm = &instrument_pcm_1578 }, { .pcm = &instrument_pcm_1579 }, { .pcm = &instrument_pcm_4000 }, { .pcm = &instrument_pcm_4001 },
     /* 080 */ { .rhy = &instrument_rhy_1555 }, NULL,                            NULL,                            NULL,
     /* 084 */ NULL,                            { .pcm = &instrument_pcm_1556 }, { .pcm = &instrument_pcm_1557 }, { .pcm = &instrument_pcm_1558 },
     /* 088 */ { .psg = &instrument_psg_1559 }, { .pcm = &instrument_pcm_1560 }, { .psg = &instrument_psg_1561 }, { .pcm = &instrument_pcm_1562 },

@@ -668,6 +668,7 @@ char s_f_quiz_ok_seqName[] = "";
 char s_f_ninja_kabe_seqName[] = "";
 char s_f_ninja_demo_seqName[] = "";
 char s_f_ninja_v_nanu_seqName[] = "";
+char s_f_ninja_v_huh_seqName[] = "";
 char s_f_rapW_v_YoOyatuDesuka_seqName[] = "";
 char s_f_rapW_v_Yo10JiDesuka_seqName[] = "";
 char s_f_rapW_v_Naishodesuka_seqName[] = "";

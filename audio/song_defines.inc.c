@@ -41,7 +41,7 @@
 /* 0038 */ DEFINE_SONG( &s_rap_kimitte_saiko_en_seqData,          SFX_PLAYER_1   )
 /* 0039 */ DEFINE_SONG( &s_rap_oyatuga_naiyo_en_seqData,          SFX_PLAYER_1   )
 /* 0040 */ DEFINE_SONG( &s_rap_oresira_naiyo_en_seqData,          SFX_PLAYER_1   )
-/* 0041 */ DEFINE_SONG( NULL, 0 )
+/* 0041 */ DEFINE_SONG( &s_f_ninja_v_huh_seqData,           SFX_PLAYER_1   )
 /* 0042 */ DEFINE_SONG( NULL, 0 )
 /* 0043 */ DEFINE_SONG( NULL, 0 )
 /* 0044 */ DEFINE_SONG( NULL, 0 )

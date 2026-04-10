@@ -7716,6 +7716,18 @@ struct SongHeader s_f_ninja_v_nanu_seqData = {
     /* Song Number   */ 592
 };
 
+extern const u8 s_f_ninja_v_huh_mid[];
+struct SongHeader s_f_ninja_v_huh_seqData = {
+    /* MIDI Sequence */ s_f_ninja_v_huh_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_56,
+    /* Volume        */ 90,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_f_ninja_v_huh_seqName,
+    /* Song Number   */ 41
+};
+
 extern const u8 s_f_rapW_v_YoOyatuDesuka_en_mid[];
 extern const u8 s_f_rapW_v_YoOyatuDesuka_mid[];
 struct SongHeader s_f_rapW_v_YoOyatuDesuka_seqData = {
