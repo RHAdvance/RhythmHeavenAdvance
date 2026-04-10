@@ -187,7 +187,7 @@ struct SongHeader s_rap_15ji_desuka_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1752
+    /* Song Number   */ 26
 };
 
 struct SongHeader s_rap_oyatu_desuka_en_seqData = {
@@ -198,7 +198,7 @@ struct SongHeader s_rap_oyatu_desuka_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1753
+    /* Song Number   */ 27
 };
 
 struct SongHeader s_rap_honto_desuka_en_seqData = {
@@ -209,7 +209,7 @@ struct SongHeader s_rap_honto_desuka_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1754
+    /* Song Number   */ 28
 };
 
 struct SongHeader s_rap_wakari_desuka_en_seqData = {
@@ -220,7 +220,7 @@ struct SongHeader s_rap_wakari_desuka_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1755
+    /* Song Number   */ 29
 };
 
 struct SongHeader s_rap_oisi_kamone_en_seqData = {
@@ -231,7 +231,7 @@ struct SongHeader s_rap_oisi_kamone_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1756
+    /* Song Number   */ 30
 };
 
 struct SongHeader s_rap_herusi_kamone_en_seqData = {
@@ -242,7 +242,7 @@ struct SongHeader s_rap_herusi_kamone_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1757
+    /* Song Number   */ 31
 };
 
 struct SongHeader s_rap_orenosei_kamone_en_seqData = {
@@ -253,7 +253,7 @@ struct SongHeader s_rap_orenosei_kamone_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1758
+    /* Song Number   */ 32
 };
 
 struct SongHeader s_rap_soremoso_kamone_en_seqData = {
@@ -264,7 +264,7 @@ struct SongHeader s_rap_soremoso_kamone_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1759
+    /* Song Number   */ 33
 };
 
 struct SongHeader s_rap_tanosi_kamone_en_seqData = {
@@ -275,7 +275,7 @@ struct SongHeader s_rap_tanosi_kamone_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1760
+    /* Song Number   */ 34
 };
 
 struct SongHeader s_rap_oyatuha_saiko_en_seqData = {
@@ -286,7 +286,7 @@ struct SongHeader s_rap_oyatuha_saiko_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1761
+    /* Song Number   */ 35
 };
 
 struct SongHeader s_rap_kibunha_saiko_en_seqData = {
@@ -297,7 +297,7 @@ struct SongHeader s_rap_kibunha_saiko_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1762
+    /* Song Number   */ 36
 };
 
 struct SongHeader s_rap_orette_saiko_en_seqData = {
@@ -308,7 +308,7 @@ struct SongHeader s_rap_orette_saiko_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1763
+    /* Song Number   */ 37
 };
 
 struct SongHeader s_rap_kimitte_saiko_en_seqData = {
@@ -319,7 +319,7 @@ struct SongHeader s_rap_kimitte_saiko_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1764
+    /* Song Number   */ 38
 };
 
 extern const u8 s_rap_kimitte_saiko_slow_mid[];
@@ -354,7 +354,7 @@ struct SongHeader s_rap_oyatuga_naiyo_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1765
+    /* Song Number   */ 39
 };
 
 struct SongHeader s_rap_oresira_naiyo_en_seqData = {
@@ -365,5 +365,5 @@ struct SongHeader s_rap_oresira_naiyo_en_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1766
+    /* Song Number   */ 40
 };
