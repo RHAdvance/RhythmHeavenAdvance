@@ -586,7 +586,9 @@ script script_remix_8_main
     rest 24
     marching_orders_event01
     play_sfx s_guntai_v_migi_seqData
+    #ifdef PLUS
     print_text_f D_0806aa51
+    #endif
     spawn_cue CUE_TURN_RIGHT
     rest 24
     marching_orders_event00 4
@@ -610,7 +612,9 @@ script script_remix_8_main
     rest 24
     marching_orders_event01
     play_sfx s_guntai_v_migi_jp_seqData
+    #ifdef PLUS
     print_text_f D_0806aa51
+    #endif
     spawn_cue CUE_TURN_RIGHT
     rest 24
     marching_orders_event00 4
