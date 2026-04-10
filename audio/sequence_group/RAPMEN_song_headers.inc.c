@@ -179,8 +179,9 @@ struct SongHeader s_rap_oresira_naiyo_seqData = {
 };
 // --- ENGLISH ----------------------------------------------------------
 
+extern const u8 s_rap_15ji_desuka_en_mid[];
 struct SongHeader s_rap_15ji_desuka_en_seqData = {
-    /* MIDI Sequence */ s_rap_15ji_desuka_mid,
+    /* MIDI Sequence */ s_rap_15ji_desuka_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -190,8 +191,9 @@ struct SongHeader s_rap_15ji_desuka_en_seqData = {
     /* Song Number   */ 26
 };
 
+extern const u8 s_rap_oyatu_desuka_en_mid[];
 struct SongHeader s_rap_oyatu_desuka_en_seqData = {
-    /* MIDI Sequence */ s_rap_oyatu_desuka_mid,
+    /* MIDI Sequence */ s_rap_oyatu_desuka_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -201,8 +203,9 @@ struct SongHeader s_rap_oyatu_desuka_en_seqData = {
     /* Song Number   */ 27
 };
 
+extern const u8 s_rap_honto_desuka_en_mid[];
 struct SongHeader s_rap_honto_desuka_en_seqData = {
-    /* MIDI Sequence */ s_rap_honto_desuka_mid,
+    /* MIDI Sequence */ s_rap_honto_desuka_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -289,8 +292,9 @@ struct SongHeader s_rap_oyatuha_saiko_en_seqData = {
     /* Song Number   */ 35
 };
 
+extern const u8 s_rap_kibunha_saiko_en_mid[];
 struct SongHeader s_rap_kibunha_saiko_en_seqData = {
-    /* MIDI Sequence */ s_rap_kibunha_saiko_mid,
+    /* MIDI Sequence */ s_rap_kibunha_saiko_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -300,8 +304,9 @@ struct SongHeader s_rap_kibunha_saiko_en_seqData = {
     /* Song Number   */ 36
 };
 
+extern const u8 s_rap_orette_saiko_en_mid[];
 struct SongHeader s_rap_orette_saiko_en_seqData = {
-    /* MIDI Sequence */ s_rap_orette_saiko_mid,
+    /* MIDI Sequence */ s_rap_orette_saiko_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -311,8 +316,9 @@ struct SongHeader s_rap_orette_saiko_en_seqData = {
     /* Song Number   */ 37
 };
 
+extern const u8 s_rap_kimitte_saiko_en_mid[];
 struct SongHeader s_rap_kimitte_saiko_en_seqData = {
-    /* MIDI Sequence */ s_rap_kimitte_saiko_mid,
+    /* MIDI Sequence */ s_rap_kimitte_saiko_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -346,8 +352,9 @@ struct SongHeader s_rap_honto_desuka_slow_seqData = {
     /* Song Number   */ 1746
 };
 
+extern const u8 s_rap_oyatuga_naiyo_en_mid[];
 struct SongHeader s_rap_oyatuga_naiyo_en_seqData = {
-    /* MIDI Sequence */ s_rap_oyatuga_naiyo_mid,
+    /* MIDI Sequence */ s_rap_oyatuga_naiyo_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
@@ -357,8 +364,9 @@ struct SongHeader s_rap_oyatuga_naiyo_en_seqData = {
     /* Song Number   */ 39
 };
 
+extern const u8 s_rap_oresira_naiyo_en_mid[];
 struct SongHeader s_rap_oresira_naiyo_en_seqData = {
-    /* MIDI Sequence */ s_rap_oresira_naiyo_mid,
+    /* MIDI Sequence */ s_rap_oresira_naiyo_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,
