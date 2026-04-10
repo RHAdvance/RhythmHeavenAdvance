@@ -330,6 +330,10 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         reset_extra_save_data_defaults(&buffer->data);
     }
 
+    if(buffer->data.totalMedals > MAX_MEDALS) {
+        buffer->data.totalMedals = MAX_MEDALS;
+    }
+    
     SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
 
     return 0;
