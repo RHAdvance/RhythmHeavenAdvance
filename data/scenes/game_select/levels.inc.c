@@ -77,9 +77,9 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Mass producing these will be harder than I thought...",
+            /* TRY_AGAIN */ "Producing these red things is harder than I thought...",
             /* OK        */ "Still getting the hang of making these red things!",
-            /* SUPERB    */ "We've produced more of these than we can stock!"
+            /* SUPERB    */ "We've produced more red things than we can stock!"
         }
     },
     /* POLYRHYTHM_2 */ {

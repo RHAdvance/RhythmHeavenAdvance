@@ -23,7 +23,7 @@ const char D_0805e21c[] = "‚P";
 
 const char D_0805e220[] = "‚Q";
 
-const char D_0805e224[] = "‚f‚nI";
+const char D_0805e224[] = "‚f‚I";
 
 const char D_0805e22c[] = "‚k‚…‚”f‚“@‚‚‚–‚…@‚‚DDD";
 
