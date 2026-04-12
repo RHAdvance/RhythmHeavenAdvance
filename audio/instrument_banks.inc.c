@@ -2093,7 +2093,7 @@ union Instrument inst_bank_RAPMEN_en[] = {
     /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 080 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ { .rhy = &instrument_rhy_1556 }, NULL,                            NULL,                            NULL,
     /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -2104,5 +2104,19 @@ union Instrument inst_bank_RAPMEN_en[] = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0464 }
+    /* 124 */ NULL,                            NULL,                            NULL,                            NULL,
+};
+
+union Instrument inst_bank_RAPWOMEN_en[] = {
+    /* 000 */ { .pcm = &instrument_pcm_Wyo }, { .pcm = &instrument_pcm_Wsnacktime }, { .pcm = &instrument_pcm_W10am }, { .pcm = &instrument_pcm_Whuh },
+    /* 004 */ { .pcm = &instrument_pcm_Wwhostoknow }, { .pcm = &instrument_pcm_Walltheirsnacks }, { .pcm = &instrument_pcm_Weatemallup }, { .pcm = &instrument_pcm_Wopenemup },
+    /* 008 */ { .pcm = &instrument_pcm_Wyfm }, { .pcm = &instrument_pcm_mWLn }, { .pcm = &instrument_pcm_mWRn }, { .pcm = &instrument_pcm_Wsnacking },
+    /* 012 */ { .pcm = &instrument_pcm_Wifeelso }, { .pcm = &instrument_pcm_Wsweetsare }, { .pcm = &instrument_pcm_Wcakesare }, { .pcm = &instrument_pcm_Wawesome },
+    /* 016 */ { .pcm = &instrument_pcm_Wclueless }, { .pcm = &instrument_pcm_Wtellemweare }, { .pcm = &instrument_pcm_Wstolem }, { .pcm = &instrument_pcm_Wyeah },
+    /* 020 */ { .pcm = &instrument_pcm_1730 }, { .pcm = &instrument_pcm_1731 }, { .pcm = &instrument_pcm_1732 }, { .pcm = &instrument_pcm_Wloathsome },
+    /* 024 */ { .pcm = &instrument_pcm_1733 }, { .pcm = &instrument_pcm_1734 }, { .pcm = &instrument_pcm_1735 }, { .pcm = &instrument_pcm_1736 },
+    /* 028 */ { .pcm = &instrument_pcm_1737 }, { .pcm = &instrument_pcm_1738 }, { .pcm = &instrument_pcm_1739 }, { .pcm = &instrument_pcm_1740 },
+    /* 032 */ { .pcm = &instrument_pcm_1741 }, { .pcm = &instrument_pcm_mWA2 }, { .pcm = &instrument_pcm_mWA3 }, { .pcm = &instrument_pcm_mWLf },
+    /* 036 */ { .pcm = &instrument_pcm_mWRf }
+
 };

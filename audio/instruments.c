@@ -69,5 +69,6 @@
 #include "instruments/instruments_bank63.inc.c"
 #include "instruments/instruments_space_dance_en.inc.c"
 #include "instruments/instruments_RAPMEN_en.inc.c"
+#include "instruments/instruments_RAPWOMEN_en.inc.c"
 #include "instrument_banks.inc.c"
 #include "instrument_bank_list.inc.c"

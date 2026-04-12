@@ -167,7 +167,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_women_oyatsu_desu_ka
-    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    play_sfx_localized s_f_rapW_v_YoOyatuDesuka_seqData, s_f_rapW_v_YoOyatuDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -200,7 +200,7 @@ script script_rap_women_main
     rest 22
     set_marking_criteria 0
     print_text_f text_rap_women_juji_desu_ka
-    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    play_sfx_localized s_f_rapW_v_Yo10JiDesuka_seqData, s_f_rapW_v_Yo10JiDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -233,7 +233,7 @@ script script_rap_women_main
     rest 22
     set_marking_criteria 0
     print_text_f text_rap_women_oyatsu_desu_ka
-    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    play_sfx_localized s_f_rapW_v_YoOyatuDesuka_seqData, s_f_rapW_v_YoOyatuDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -250,18 +250,11 @@ script script_rap_women_main
     clear_text_f
     beat_anim
     rest 24
-    #ifdef SFX
-    rest 17
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    rest 9
+    rest_localized 26, 17
+    play_sfx_localized s_f_rapW_v_OyatuwaSaiko_seqData, s_f_rapW_v_OyatuwaSaiko_en_seqData
+    rest_localized 0, 9
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
-    #else
-    rest 26
-    set_marking_criteria 2
-    print_text_f text_rap_women_oyatsu_wa_saikou
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -281,7 +274,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_amakute_saikou
-    play_sfx s_f_rapW_v_AmakuteSaiko_seqData
+    play_sfx_localized s_f_rapW_v_AmakuteSaiko_seqData, s_f_rapW_v_AmakuteSaiko_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -301,7 +294,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_kibun_wa_saikou
-    play_sfx s_f_rapW_v_KibunnwaSaiko_seqData
+    play_sfx_localized s_f_rapW_v_KibunnwaSaiko_seqData, s_f_rapW_v_KibunnwaSaiko_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -322,7 +315,7 @@ script script_rap_women_main
     rest 24
     rest 12
     rest 6
-    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    play_sfx_localized s_f_rapW_v_Naishodesuka_seqData, s_f_rapW_v_Naishodesuka_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     rest 6
     beat_anim
@@ -341,7 +334,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_women_juji_desu_ka
-    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    play_sfx_localized s_f_rapW_v_Yo10JiDesuka_seqData, s_f_rapW_v_Yo10JiDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -361,7 +354,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 1
     print_text_f text_rap_women_kare_no_oyatsu_da_ne
-    play_sfx s_f_rapW_v_KarenoOyatudane_seqData
+    play_sfx_localized s_f_rapW_v_KarenoOyatudane_seqData, s_f_rapW_v_KarenoOyatudane_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
@@ -381,7 +374,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 1
     print_text_f text_rap_women_aketeii_kamo_ne
-    play_sfx s_f_rapW_v_AketeIikamone_seqData
+    play_sfx_localized s_f_rapW_v_AketeIikamone_seqData, s_f_rapW_v_AketeIikamone_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
@@ -401,7 +394,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_kare_ni_wa_naisho
-    play_sfx s_f_rapW_v_KareniwaNaisho_seqData
+    play_sfx_localized s_f_rapW_v_KareniwaNaisho_seqData, s_f_rapW_v_KareniwaNaisho_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -421,7 +414,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_women_oyatsu_desu_ka
-    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    play_sfx_localized s_f_rapW_v_YoOyatuDesuka_seqData, s_f_rapW_v_YoOyatuDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -441,7 +434,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_women_juji_desu_ka
-    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    play_sfx_localized s_f_rapW_v_Yo10JiDesuka_seqData, s_f_rapW_v_Yo10JiDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -461,7 +454,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 1
     print_text_f text_rap_women_tabeteii_kamo_ne
-    play_sfx s_f_rapW_v_TabeteIikamone_seqData
+    play_sfx_localized s_f_rapW_v_TabeteIikamone_seqData, s_f_rapW_v_TabeteIikamone_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
@@ -482,7 +475,7 @@ script script_rap_women_main
     rest 24
     rest 12
     rest 6
-    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    play_sfx_localized s_f_rapW_v_Naishodesuka_seqData, s_f_rapW_v_Naishodesuka_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     rest 6
     beat_anim
@@ -501,7 +494,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_women_oyatsu_desu_ka
-    play_sfx s_f_rapW_v_YoOyatuDesuka_seqData
+    play_sfx_localized s_f_rapW_v_YoOyatuDesuka_seqData, s_f_rapW_v_YoOyatuDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -521,7 +514,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 0
     print_text_f text_rap_women_juji_desu_ka
-    play_sfx s_f_rapW_v_Yo10JiDesuka_seqData
+    play_sfx_localized s_f_rapW_v_Yo10JiDesuka_seqData, s_f_rapW_v_Yo10JiDesuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -541,7 +534,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_kare_ni_wa_naisho
-    play_sfx s_f_rapW_v_KareniwaNaisho_seqData
+    play_sfx_localized s_f_rapW_v_KareniwaNaisho_seqData, s_f_rapW_v_KareniwaNaisho_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -558,18 +551,11 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
-    #ifdef SFX
-    rest 16
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    rest 8
+    rest_localized 24, 16
+    play_sfx_localized s_f_rapW_v_OyatuwaSaiko_seqData, s_f_rapW_v_OyatuwaSaiko_en_seqData
+    rest_localized 0, 8
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
-    #else
-    rest 24
-    set_marking_criteria 2
-    print_text_f text_rap_women_oyatsu_wa_saikou
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -589,7 +575,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 1
     print_text_f text_rap_women_kare_no_oyatsu_da_ne
-    play_sfx s_f_rapW_v_KarenoOyatudane_seqData
+    play_sfx_localized s_f_rapW_v_KarenoOyatudane_seqData, s_f_rapW_v_KarenoOyatudane_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
@@ -609,7 +595,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 1
     print_text_f text_rap_women_aketeii_kamo_ne
-    play_sfx s_f_rapW_v_AketeIikamone_seqData
+    play_sfx_localized s_f_rapW_v_AketeIikamone_seqData, s_f_rapW_v_AketeIikamone_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
@@ -629,7 +615,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 1
     print_text_f text_rap_women_tabeteii_kamo_ne
-    play_sfx s_f_rapW_v_TabeteIikamone_seqData
+    play_sfx_localized s_f_rapW_v_TabeteIikamone_seqData, s_f_rapW_v_TabeteIikamone_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     beat_anim
     rest 24
@@ -650,7 +636,7 @@ script script_rap_women_main
     rest 24
     rest 12
     rest 6
-    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    play_sfx_localized s_f_rapW_v_Naishodesuka_seqData, s_f_rapW_v_Naishodesuka_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     rest 6
     beat_anim
@@ -666,18 +652,11 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
-    #ifdef SFX
-    rest 16
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    rest 8
+    rest_localized 24, 16
+    play_sfx_localized s_f_rapW_v_OyatuwaSaiko_seqData, s_f_rapW_v_OyatuwaSaiko_en_seqData
+    rest_localized 0, 8
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
-    #else
-    rest 24
-    set_marking_criteria 2
-    print_text_f text_rap_women_oyatsu_wa_saikou
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -697,7 +676,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_amakute_saikou
-    play_sfx s_f_rapW_v_AmakuteSaiko_seqData
+    play_sfx_localized s_f_rapW_v_AmakuteSaiko_seqData, s_f_rapW_v_AmakuteSaiko_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -717,7 +696,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_kibun_wa_saikou
-    play_sfx s_f_rapW_v_KibunnwaSaiko_seqData
+    play_sfx_localized s_f_rapW_v_KibunnwaSaiko_seqData, s_f_rapW_v_KibunnwaSaiko_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -737,7 +716,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_betsubara_saikou
-    play_sfx s_f_rapW_v_BetubaraSaiko_seqData
+    play_sfx_localized s_f_rapW_v_BetubaraSaiko_seqData, s_f_rapW_v_BetubaraSaiko_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -757,7 +736,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_kare_ni_wa_naisho
-    play_sfx s_f_rapW_v_KareniwaNaisho_seqData
+    play_sfx_localized s_f_rapW_v_KareniwaNaisho_seqData, s_f_rapW_v_KareniwaNaisho_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -777,7 +756,7 @@ script script_rap_women_main
     rest 24
     set_marking_criteria 2
     print_text_f text_rap_women_dare_ni_mo_naisho
-    play_sfx s_f_rapW_v_DarenimoNaisho_seqData
+    play_sfx_localized s_f_rapW_v_DarenimoNaisho_seqData, s_f_rapW_v_DarenimoNaisho_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -794,18 +773,11 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
-    #ifdef SFX
-    rest 16
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    rest 8
+    rest_localized 24, 16
+    play_sfx_localized s_f_rapW_v_OyatuwaSaiko_seqData, s_f_rapW_v_OyatuwaSaiko_en_seqData
+    rest_localized 0, 8
     set_marking_criteria 2
     print_text_f text_rap_women_oyatsu_wa_saikou
-    #else
-    rest 24
-    set_marking_criteria 2
-    print_text_f text_rap_women_oyatsu_wa_saikou
-    play_sfx s_f_rapW_v_OyatuwaSaiko_seqData
-    #endif
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -825,7 +797,7 @@ script script_rap_women_main
     rest 24
     rest 12
     rest 6
-    play_sfx s_f_rapW_v_Naishodesuka_seqData
+    play_sfx_localized s_f_rapW_v_Naishodesuka_seqData, s_f_rapW_v_Naishodesuka_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     rest 6
     beat_anim
@@ -847,7 +819,7 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
-    play_sfx s_f_rapW_v_Yeah_seqData
+    play_sfx_localized s_f_rapW_v_Yeah_seqData, s_f_rapW_v_Yeah_en_seqData
     rap_men_animate_rapper ANIM_KAMONE
     rest 24
     beat_anim

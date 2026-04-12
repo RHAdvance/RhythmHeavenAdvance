@@ -417,3 +417,10 @@ struct InstrumentPCM instrument_pcm_nowhuh = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1E7FBA,
 };
+
+extern union Instrument inst_bank_RAPWOMEN_en[];
+struct InstrumentSubRhythm instrument_rhy_1556 = {
+    /* Type      */ INSTRUMENT_SUB_RHYTHM,
+    /* Base Key  */ 36,
+    /* Sub-Bank  */ inst_bank_RAPWOMEN_en
+};
