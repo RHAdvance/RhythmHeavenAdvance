@@ -489,21 +489,15 @@ script script_remix_3_main
     rest 6
     rest 12
     beat_anim
-    rest 22
+    rest 21
     play_sfx_localized s_space_ikeo_lets_seqData, s_space_ikeo_lets_en_seqData
-    rest 2
+    rest 3
     space_dance_event00 6
     spawn_cue CUE_SIT_DOWN
     beat_anim
-    #ifdef SFX
-    rest 6
+    rest_localized 10, 6
     play_sfx_localized s_space_ikeo_sit_seqData, s_space_ikeo_sit_en_seqData
-    rest 18
-    #else
-    rest 10
-    play_sfx_localized s_space_ikeo_sit_seqData, s_space_ikeo_sit_en_seqData
-    rest 14
-    #endif
+    rest_localized 14, 18
     space_dance_event00 2
     play_sfx_localized s_space_ikeo_down_seqData, s_space_ikeo_down_en_seqData
     beat_anim
@@ -662,6 +656,7 @@ script script_remix_3_main
     rest 24
     rest 24
     rest 24
+    run stop_sound, s_rabbit_break_seqData
     rest 24
     #ifdef PLUS
     bunny_hop_event07 s_rabbit_break_seqData
@@ -669,7 +664,6 @@ script script_remix_3_main
     bunny_hop_event01 5
     spawn_cue CUE_BUNNY_06
     spawn_cue CUE_BUNNY_07
-    rest 24
     rest 24
     rest 24
     rest 24
