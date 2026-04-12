@@ -671,6 +671,7 @@ script script_remix_3_main
     rest 24
     rest 24
     rest 24
+    rest 24
     #ifdef PLUS
     bunny_hop_event07 s_rabbit_break_seqData
     #endif
