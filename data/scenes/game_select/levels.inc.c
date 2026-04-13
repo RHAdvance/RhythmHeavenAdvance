@@ -162,7 +162,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only my vegetables grow hair, anyway...?",
             /* SUPERB    */ "How refreshing! The air is nice and crisp!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SICK_BEATS */ {
         /* Entry Scene   */ &scene_sick_beats,
@@ -510,7 +511,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Our spirits have been deflated...",
             /* OK        */ "We still have a long way to go!",
             /* SUPERB    */ "Three cheers for our star tosser!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* RAT_RACE */ {
         /* Entry Scene   */ &scene_rat_race,
