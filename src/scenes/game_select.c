@@ -1201,6 +1201,9 @@ void game_select_read_inputs_sub2(void) {
 void game_select_read_inputs(void) {
     struct LevelData *levelData;
     s32 levelState, levelID;
+#ifdef PLUS
+    s32 replayCampaignID;
+#endif
     u32 canHaveCampaign;
 
     if (!game_select_scene_inputs_enabled()) {
@@ -1238,12 +1241,11 @@ void game_select_read_inputs(void) {
                     canHaveCampaign = TRUE;
                     #ifdef PLUS
                     // hold select to replay a cleared campaign level
-                    if(get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(levelID)) && (D_03004ac0 & SELECT_BUTTON)) {
-                        D_030046a8->data.campaignState = CAMPAIGN_STATE_ACTIVE;
-                        D_030046a8->data.campaignAttemptsLeft = 1;
-                        gGameSelect->campaignNotice.id = get_campaign_from_level_id(levelID);
-                        gGameSelect->campaignNotice.x = gGameSelect->cursorX;
-                        gGameSelect->campaignNotice.y = gGameSelect->cursorY;
+                    replayCampaignID = get_campaign_from_level_id(levelID);
+                    if ((replayCampaignID >= 0)
+                     && get_campaign_cleared(&D_030046a8->data, replayCampaignID)
+                     && (D_03004ac0 & SELECT_BUTTON)) {
+                        set_current_campaign(replayCampaignID);
                         sReplayingCampaign = TRUE;
                     } else {
                         sReplayingCampaign = FALSE;
@@ -1269,7 +1271,10 @@ void game_select_read_inputs(void) {
             D_030046a8->data.gsCursorY = D_030046a8->data.recentLevelY = gGameSelect->cursorY;
             D_030046a8->data.recentLevelState = LEVEL_STATE_NULL;
 
-            if (canHaveCampaign && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE) && (gGameSelect->campaignNotice.id >= 0)) {
+            if (canHaveCampaign
+             && !sReplayingCampaign
+             && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE)
+             && (gGameSelect->campaignNotice.id >= 0)) {
                 if ((gGameSelect->cursorX == gGameSelect->campaignNotice.x) && (gGameSelect->cursorY == gGameSelect->campaignNotice.y)) {
                     set_current_campaign(gGameSelect->campaignNotice.id);
                     D_030046a8->data.campaignAttemptsLeft--;
