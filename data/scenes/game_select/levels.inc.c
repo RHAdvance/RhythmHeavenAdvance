@@ -80,7 +80,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Producing these red things is harder than I thought...",
             /* OK        */ "Still getting the hang of making these red things!",
             /* SUPERB    */ "We've produced more red things than we can stock!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* POLYRHYTHM_2 */ {
         /* Entry Scene   */ &scene_polyrhythm_2,
