@@ -112,11 +112,7 @@ void get_all_uncleared_campaigns(void) {
 
     notice->totalAvailable = 0;
 
-#ifdef TEMPOUP
-    for (i = 0; i < TOTAL_PERFECT_CAMPAIGNS; i++) {
-#else
-    for (i = 0; i < TOTAL_BASE_PERFECT_CAMPAIGNS; i++) {
-#endif
+    for (i = 0; i < ACTIVE_AVAILABLE_CAMPAIGNS; i++) {
         if (!get_campaign_cleared(&D_030046a8->data, i)) {
             if (get_level_state_from_grid_xy(gift->x, gift->y) == LEVEL_STATE_HAS_MEDAL) {
                 notice->indexes[notice->totalAvailable] = i;
@@ -140,13 +136,13 @@ void start_new_campaign(void) {
     }
 
     playsUntilNewCampaign = 0;
-    if (D_030046a8->data.totalMedals < MAX_MEDALS) {
+    if (D_030046a8->data.totalMedals < BASE_CAMPAIGN_MEDAL_GATE) {
         playsUntilNewCampaign = 1;
     }
-    if (D_030046a8->data.totalMedals < (MAX_MEDALS - 3)) {
+    if (D_030046a8->data.totalMedals < (BASE_CAMPAIGN_MEDAL_GATE - 3)) {
         playsUntilNewCampaign = agb_random(2) + 2;
     }
-    if (D_030046a8->data.totalMedals < (MAX_MEDALS - 18)) {
+    if (D_030046a8->data.totalMedals < (BASE_CAMPAIGN_MEDAL_GATE - 18)) {
         playsUntilNewCampaign = agb_random(4) + 3;
     }
 
@@ -2277,6 +2273,7 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
     struct TengokuSaveData *saveData = &D_030046a8->data;
     s24_8 completionModifier;
     u32 modifiedScore;
+    u32 clampedGames;
     u32 totalGames = 0;
     u32 totalScore = 0;
     u32 i;
@@ -2294,9 +2291,15 @@ u32 game_select_calculate_flow(u32 *modifierReq, u32 *averageReq) {
         return 0;
     }
 
+    clampedGames = totalGames;
+    if (clampedGames > BASE_CAMPAIGN_MILESTONE_TOTAL) {
+        clampedGames = BASE_CAMPAIGN_MILESTONE_TOTAL;
+    }
+
     // Min = 0.7 (0 levels played)
-    // Max = 1.4 (48 levels played)
-    completionModifier = INT_TO_FIXED((TOTAL_RHYTHM_GAMES + totalGames) * 7) / (TOTAL_RHYTHM_GAMES * 10);
+    // Max = 1.4 (48+ levels played)
+    completionModifier = INT_TO_FIXED((BASE_CAMPAIGN_MILESTONE_TOTAL + clampedGames) * 7)
+                        / (BASE_CAMPAIGN_MILESTONE_TOTAL * 10);
 
     // Min = 0 (0 * 0.7)
     // Max = 1400 (1000 * 1.4)
@@ -3118,7 +3121,7 @@ u32 game_select_try_queue_tempo_up_unlock(u32 startEvents) {
     s32 x, y;
     s32 state;
 
-    if (D_030046a8->data.totalMedals < 48) {
+    if (D_030046a8->data.totalMedals < BASE_CAMPAIGN_MEDAL_GATE) {
         return FALSE;
     }
 

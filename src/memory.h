@@ -150,6 +150,8 @@ extern u8 get_level_total_plays(struct TengokuSaveData *data, u32 levelID);
 extern u8 get_level_first_ok(struct TengokuSaveData *data, u32 levelID);
 extern u8 get_level_first_superb(struct TengokuSaveData *data, u32 levelID);
 extern u8 get_campaign_cleared(struct TengokuSaveData *data, u32 campaignID);
+extern u32 get_total_base_cleared_campaigns(struct TengokuSaveData *data);
+extern u32 get_total_active_cleared_campaigns(struct TengokuSaveData *data);
 extern u8 get_reading_material_unlocked(struct TengokuSaveData *data, u32 materialID);
 
 extern void set_level_state(struct TengokuSaveData *data, u32 levelID, u8 state);
