@@ -3118,71 +3118,6 @@ struct SongHeader s_intro_stick_seqData = {
     /* Song Number   */ 1480
 };
 
-extern const u8 s_intro_a_mid[];
-struct SongHeader s_intro_a_seqData = {
-    /* MIDI Sequence */ s_intro_a_mid,
-    /* Sound Player  */ MUSIC_PLAYER_1,
-    /* Bank Number   */ INST_BANK_8,
-    /* Volume        */ 60,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_intro_a_seqName,
-    /* Song Number   */ 1481
-};
-
-extern const u8 s_intro_one_mid[];
-struct SongHeader s_intro_one_seqData = {
-    /* MIDI Sequence */ s_intro_one_mid,
-    /* Sound Player  */ MUSIC_PLAYER_1,
-    /* Bank Number   */ INST_BANK_8,
-    /* Volume        */ 75,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_intro_one_seqName,
-    /* Song Number   */ 1482
-};
-
-extern const u8 s_intro_two_mid[];
-struct SongHeader s_intro_two_seqData = {
-    /* MIDI Sequence */ s_intro_two_mid,
-    /* Sound Player  */ MUSIC_PLAYER_1,
-    /* Bank Number   */ INST_BANK_8,
-    /* Volume        */ 127,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_intro_two_seqName,
-    /* Song Number   */ 1483
-};
-
-extern const u8 s_intro_three_mid[];
-struct SongHeader s_intro_three_seqData = {
-    /* MIDI Sequence */ s_intro_three_mid,
-    /* Sound Player  */ MUSIC_PLAYER_1,
-    /* Bank Number   */ INST_BANK_8,
-    /* Volume        */ 127,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_intro_three_seqName,
-    /* Song Number   */ 1484
-};
-
-extern const u8 s_intro_go_mid[];
-extern const u8 s_intro_four_mid[];
-struct SongHeader s_intro_four_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_intro_go_mid,
-    #else
-    /* MIDI Sequence */ s_intro_four_mid,
-    #endif
-    /* Sound Player  */ MUSIC_PLAYER_1,
-    /* Bank Number   */ INST_BANK_8,
-    /* Volume        */ 127,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_intro_four_seqName,
-    /* Song Number   */ 1485
-};
-
 extern const u8 s_intro_uh_mid[];
 struct SongHeader s_intro_uh_seqData = {
     /* MIDI Sequence */ s_intro_uh_mid,
@@ -3332,6 +3267,8 @@ struct SongHeader s_ghost_rain_seqData = {
 #include "audio/sequence_group/RAPMEN_song_headers.inc.c"
 
 #include "audio/sequence_group/RAPWOMEN_song_headers.inc.c"
+
+#include "audio/sequence_group/countin_song_headers.inc.c"
 
 extern const u8 s_guntai1_mid[];
 struct SongHeader s_guntai1_seqData = {

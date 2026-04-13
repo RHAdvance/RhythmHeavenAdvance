@@ -244,11 +244,19 @@ extern struct SongHeader s_hanabi_wish2_seqData;
 extern struct SongHeader s_hanabi_wish3_seqData;
 extern struct SongHeader s_hanabi_wish4_seqData;
 extern struct SongHeader s_intro_stick_seqData;
+// ------- Count-in SFX -----------------------------------------
 extern struct SongHeader s_intro_a_seqData;
 extern struct SongHeader s_intro_one_seqData;
 extern struct SongHeader s_intro_two_seqData;
 extern struct SongHeader s_intro_three_seqData;
 extern struct SongHeader s_intro_four_seqData;
+// ------- Count-in SFX (English) -------------------------------
+extern struct SongHeader s_intro_a_en_seqData;
+extern struct SongHeader s_intro_one_en_seqData;
+extern struct SongHeader s_intro_two_en_seqData;
+extern struct SongHeader s_intro_three_en_seqData;
+extern struct SongHeader s_intro_go_en_seqData;
+// --------------------------------------------------------------
 extern struct SongHeader s_intro_uh_seqData;
 extern struct SongHeader s_intro_comeon_seqData;
 extern struct SongHeader s_intro_pat1_seqData;
