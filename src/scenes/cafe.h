@@ -35,9 +35,9 @@ enum CafeDialogueTasksEnum {
     /* 26 */ CAFE_EV_UPCOMING_CAMPAIGN_00,
     /* 27 */ CAFE_EV_ALL_CAMPAIGNS_CLEAR_00,
     /* 28 */ CAFE_EV_ALL_CAMPAIGNS_CLEAR_01,
-    /* 29 */ CAFE_EV_UNUSED_29,
-    /* 30 */ CAFE_EV_UNUSED_30,
-    /* 31 */ CAFE_EV_UNUSED_31,
+    /* 29 */ CAFE_EV_EXTRA_CAMPAIGNS_CLEAR_00,
+    /* 30 */ CAFE_EV_ALL_CAMPAIGNS_BIG_CLEAR_00,
+    /* 31 */ CAFE_EV_ALL_CAMPAIGNS_BIG_CLEAR_01,
     /* 32 */ CAFE_EV_CONTINUE_DIALOGUE
 };
 
@@ -125,6 +125,8 @@ extern const char *cafe_dialogue_shouts_cheer[];
 extern const char *cafe_dialogue_practicing_perfect[];
 extern const char *cafe_dialogue_not_practicing_perfect[];
 extern const char *cafe_dialogue_all_perfects_clear[];
+extern const char *cafe_dialogue_extra_perfects_clear[];
+extern const char *cafe_dialogue_all_perfects_clear_big[];
 
 
 // FUNCTIONS

@@ -9,6 +9,11 @@
 #include "src/code_080092cc.h"
 
 
+#define CAFE_CLEAR_DIALOGUE_MAIN_PENDING 9
+#define CAFE_CLEAR_DIALOGUE_EXTRA_PENDING 10
+#define CAFE_CLEAR_DIALOGUE_BIG_PENDING 11
+
+
 /* CAFE SCENE */
 
 
@@ -322,7 +327,7 @@ void cafe_print_dialogue(void) {
                 dialogue = cafe_dialogue_first_visit;
                 break;
             }
-            if (D_030046a8->data.unk294[9]) {
+            if (D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_MAIN_PENDING]) {
                 // Oh! You're here, you're here!
                 // I've been waiting, you know!!
                 string = "\n"
@@ -330,10 +335,30 @@ void cafe_print_dialogue(void) {
                          "I've been waiting for you!\n"
                          "\n";
                 cafe_session_remove_perfect_levels();
-                D_030046a8->data.unk294[9] = FALSE;
+                D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_MAIN_PENDING] = FALSE;
                 dialogueTask = CAFE_EV_ALL_CAMPAIGNS_CLEAR_00;
                 break;
             }
+#ifdef TEMPOUP
+            if (D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_EXTRA_PENDING]) {
+                string = "\n"
+                         "extra intro\n"
+                         "\n";
+                cafe_session_remove_perfect_levels();
+                D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_EXTRA_PENDING] = FALSE;
+                dialogueTask = CAFE_EV_EXTRA_CAMPAIGNS_CLEAR_00;
+                break;
+            }
+            if (D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_BIG_PENDING]) {
+                string = "\n"
+                         "combined main + extra intro\n"
+                         "\n";
+                cafe_session_remove_perfect_levels();
+                D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_BIG_PENDING] = FALSE;
+                dialogueTask = CAFE_EV_ALL_CAMPAIGNS_BIG_CLEAR_00;
+                break;
+            }
+#endif
             if (gCafe->timeSinceLastVisit == 0) {
                 dialogue = cafe_dialogue_come_back_later;
                 break;
@@ -649,6 +674,29 @@ void cafe_print_dialogue(void) {
             gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
             gCafe->textAdvHold = 4;
             dialogue = cafe_dialogue_all_perfects_clear;
+            break;
+
+        case CAFE_EV_EXTRA_CAMPAIGNS_CLEAR_00:
+            string = "\0032" "\001l" "\0051" "\0015" "\n"
+                     "woohoo extra!" "\0030" "\001s" "\0054" "\0018";
+            gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
+            gCafe->textAdvHold = 4;
+            dialogue = cafe_dialogue_extra_perfects_clear;
+            break;
+
+        case CAFE_EV_ALL_CAMPAIGNS_BIG_CLEAR_00:
+            string = "\n"
+                     "woohoo main & extra!\n"
+                     "\n";
+            dialogueTask++;
+            break;
+
+        case CAFE_EV_ALL_CAMPAIGNS_BIG_CLEAR_01:
+            string = "\0032" "\001l" "\0051" "\0015" "\n"
+                     "woohoo you beat the game!" "\0030" "\001s" "\0054" "\0018";
+            gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
+            gCafe->textAdvHold = 4;
+            dialogue = cafe_dialogue_all_perfects_clear_big;
             break;
 
         case CAFE_EV_CONTINUE_DIALOGUE:
