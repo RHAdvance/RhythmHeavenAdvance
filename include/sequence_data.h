@@ -234,10 +234,21 @@ extern struct SongHeader s_hanabi_pon_seqData;
 extern struct SongHeader s_hanabi_utiage_seqData;
 extern struct SongHeader s_hanabi_utiage_v_seqData;
 extern struct SongHeader s_hanabi_bgm_seqData;
+// --------------------------------------------------------------
 extern struct SongHeader s_hanabi_1_seqData;
 extern struct SongHeader s_hanabi_2_seqData;
 extern struct SongHeader s_hanabi_3_seqData;
 extern struct SongHeader s_hanabi_hai_seqData;
+extern struct SongHeader s_f_hanabi_v_tamaya_seqData;
+extern struct SongHeader s_f_hanabi_v_nuei_seqData;
+// --------------------------------------------------------------
+extern struct SongHeader s_hanabi_1_en_seqData;
+extern struct SongHeader s_hanabi_2_en_seqData;
+extern struct SongHeader s_hanabi_3_en_seqData;
+extern struct SongHeader s_hanabi_hai_en_seqData;
+extern struct SongHeader s_f_hanabi_v_tamaya_en_seqData;
+extern struct SongHeader s_f_hanabi_v_nuei_en_seqData;
+// --------------------------------------------------------------
 extern struct SongHeader s_hanabi_ah_seqData;
 extern struct SongHeader s_hanabi_wish1_seqData;
 extern struct SongHeader s_hanabi_wish2_seqData;
@@ -654,8 +665,6 @@ extern struct SongHeader s_f_shuji_v_nuahaha_seqData;
 extern struct SongHeader s_f_rat_goal_seqData;
 extern struct SongHeader s_f_rat_error_seqData;
 extern struct SongHeader s_f_rat_slip_seqData;
-extern struct SongHeader s_f_hanabi_v_tamaya_seqData;
-extern struct SongHeader s_f_hanabi_v_nuei_seqData;
 extern struct SongHeader s_f_hanabi_kansei_seqData;
 extern struct SongHeader s_f_iai_cut_seqData;
 extern struct SongHeader s_f_iai_cut2_seqData;

@@ -2990,61 +2990,6 @@ struct SongHeader s_hanabi_bgm_seqData = {
     /* Song Title    */ s_hanabi_bgm_seqName,
     /* Song Number   */ 1468
 };
-#ifdef SFX
-extern const u8 s_hanabi_1_en_mid[];
-#else
-extern const u8 s_hanabi_1_mid[];
-#endif
-struct SongHeader s_hanabi_1_seqData = {
-    #ifdef SFX
-    /* MIDI Sequence */ s_hanabi_1_en_mid,
-    #else
-    /* MIDI Sequence */ s_hanabi_1_mid,
-    #endif
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 80,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_1_seqName,
-    /* Song Number   */ 1469
-};
-
-extern const u8 s_hanabi_2_mid[];
-struct SongHeader s_hanabi_2_seqData = {
-    /* MIDI Sequence */ s_hanabi_2_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 80,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_2_seqName,
-    /* Song Number   */ 1470
-};
-
-extern const u8 s_hanabi_3_mid[];
-struct SongHeader s_hanabi_3_seqData = {
-    /* MIDI Sequence */ s_hanabi_3_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 80,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_3_seqName,
-    /* Song Number   */ 1471
-};
-
-extern const u8 s_hanabi_hai_mid[];
-struct SongHeader s_hanabi_hai_seqData = {
-    /* MIDI Sequence */ s_hanabi_hai_mid,
-    /* Sound Player  */ SFX_PLAYER_5,
-    /* Bank Number   */ INST_BANK_7,
-    /* Volume        */ 90,
-    /* Priority      */ 80,
-    /* unk8          */ 0x40,
-    /* Song Title    */ s_hanabi_hai_seqName,
-    /* Song Number   */ 1472
-};
 
 extern const u8 s_hanabi_ah_mid[];
 struct SongHeader s_hanabi_ah_seqData = {
@@ -3269,6 +3214,8 @@ struct SongHeader s_ghost_rain_seqData = {
 #include "audio/sequence_group/RAPWOMEN_song_headers.inc.c"
 
 #include "audio/sequence_group/countin_song_headers.inc.c"
+
+#include "audio/sequence_group/fireworks_song_headers.inc.c"
 
 extern const u8 s_guntai1_mid[];
 struct SongHeader s_guntai1_seqData = {
@@ -6945,30 +6892,6 @@ struct SongHeader s_f_rat_slip_seqData = {
     /* unk8          */ 0xff,
     /* Song Title    */ s_f_rat_slip_seqName,
     /* Song Number   */ 522
-};
-
-extern const u8 s_f_hanabi_v_tamaya_mid[];
-struct SongHeader s_f_hanabi_v_tamaya_seqData = {
-    /* MIDI Sequence */ s_f_hanabi_v_tamaya_mid,
-    /* Sound Player  */ SFX_PLAYER_0,
-    /* Bank Number   */ INST_BANK_59,
-    /* Volume        */ 70,
-    /* Priority      */ 80,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_hanabi_v_tamaya_seqName,
-    /* Song Number   */ 525
-};
-
-extern const u8 s_f_hanabi_v_nuei_mid[];
-struct SongHeader s_f_hanabi_v_nuei_seqData = {
-    /* MIDI Sequence */ s_f_hanabi_v_nuei_mid,
-    /* Sound Player  */ SFX_PLAYER_4,
-    /* Bank Number   */ INST_BANK_59,
-    /* Volume        */ 105,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_f_hanabi_v_nuei_seqName,
-    /* Song Number   */ 527
 };
 
 extern const u8 s_f_hanabi_kansei_mid[];

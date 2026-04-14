@@ -2126,3 +2126,13 @@ union Instrument inst_bank_countin_en[] = {
     /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
 };
+
+union Instrument inst_bank_fireworks_en[] = {
+    /* 000 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_hereitcomes }, { .pcm = &instrument_pcm_hiyah },
+    /* 004 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_fireone },
+    /* 008 */ { .pcm = &instrument_pcm_fireone },                            { .pcm = &instrument_pcm_firetwo }, { .pcm = &instrument_pcm_firethree }, { .pcm = &instrument_pcm_firego },
+    /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
+};

@@ -71,5 +71,6 @@
 #include "instruments/instruments_RAPMEN_en.inc.c"
 #include "instruments/instruments_RAPWOMEN_en.inc.c"
 #include "instruments/instruments_countin_en.inc.c"
+#include "instruments/instruments_fireworks_en.inc.c"
 #include "instrument_banks.inc.c"
 #include "instrument_bank_list.inc.c"
