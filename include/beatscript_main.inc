@@ -715,3 +715,8 @@ endstruct
 .macro play_sfx_localized jp_sound, en_sound
     beatscript_cmd 0xB5, 0, \en_sound, \jp_sound
 .endm
+
+@ [0xB6] If Localized Condition Flag Set
+.macro if_localized
+    beatscript_cmd 0xB6, 0, 0, 0
+.endm

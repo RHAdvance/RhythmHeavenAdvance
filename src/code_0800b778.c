@@ -1456,6 +1456,12 @@ void func_0800cb28(u32 arg) { // r10
             thread->timeUntilNext += INT_TO_FIXED((D_030053c0.isLocalized) ? var2.u32 : var3.u32);
             return;
 
+        case BS_CMD_IF_LOCALIZED:
+            if (!D_030053c0.isLocalized) {
+                thread->currentCmd = beatscript_stream_jump_cond_if(thread->currentCmd);
+            }
+            return;
+
         case BS_CMD_STOP:
             thread->active = FALSE;
             return;
