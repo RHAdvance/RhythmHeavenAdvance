@@ -17,28 +17,28 @@ const char D_0805cc28[] = "You missed the breaks.";
 
 const char D_0805cc48[] = "You nailed the breaks!";
 
-const char D_0805cc68[] = "‚m‚…‚˜‚”DDD";
+const char D_0805cc68[] = "Next...";
 
-const char D_0805cc70[] = "‚’‚…‚“‚”@‚†‚‚’@‚@‚”‚—‚|‚ƒ‚‚•‚‚”D";
+const char D_0805cc70[] = "rest for a two-count.";
 
 const char D_0805cc80[] = "";
 
-const char D_0805cc84[] = "‚’‚…‚“‚”@‚†‚‚’@‚@‚†‚‚•‚’|‚ƒ‚‚•‚‚”D";
+const char D_0805cc84[] = "rest for a four-count.";
 
-const char D_0805cc94[] = "‚P";
+const char D_0805cc94[] = "1";
 
-const char D_0805cc98[] = "‚Q";
+const char D_0805cc98[] = "2";
 
-const char D_0805cc9c[] = "‚R";
+const char D_0805cc9c[] = "3";
 
-const char D_0805cca0[] = "‚S";
+const char D_0805cca0[] = "4";
 
-const char D_0805cca4[] = "‚’‚…‚“‚”@‚†‚‚’@‚‚@‚…‚‰‚‡‚ˆ‚”|‚ƒ‚‚•‚‚”D";
+const char D_0805cca4[] = "rest for an eight-count.";
 
 const char D_0805ccb4[] = "Sea friends' report:";
 
-const char D_0805ccb8[] = "@@@@@@@@@@@@@@@@@@@@‚o‚’‚…‚“‚“@T@‚‚@‚‚‚…‚‚”@‚”‚@‚ˆ‚‚@‚‚ƒ‚’‚‚“‚“D";
+const char D_0805ccb8[] = "                    Press ã‚ on beat to hop across.";
 
-const char D_0805ccb9[] = "‚f‚I";
+const char D_0805ccb9[] = "Go!";
 
-const char D_0805ccc5[] = "‚q‚…‚‚„‚™H";
+const char D_0805ccc5[] = "Ready?";

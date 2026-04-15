@@ -69,7 +69,7 @@ struct LevelData level_data_table[] = {
     /* POLYRHYTHM */ {
         /* Entry Scene   */ &scene_polyrhythm,
         /* Level Name    */ "Polyrhythm",
-        /* Level Desc.   */ "Manage the áO and áM\n"
+        /* Level Desc.   */ "Manage the ‚ëØ and ‚ë≠\n"
 							"paths at the same time\n"
 							"to keep those red things\n"
 							"rolling! Simple enough?",
@@ -222,7 +222,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "An enemy is attacking\n"
                             "your lord! Block the\n"
                             "arrows with your sword\n"
-							"using áO and áM!",
+							"using ‚ëØ and ‚ë≠!",
         /* Level Icon    */ 5,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_ninja_bodyguard_gfx_tables,
@@ -647,7 +647,7 @@ struct LevelData level_data_table[] = {
     },
     /* BON_ODORI */ {
         /* Entry Scene   */ &scene_bon_odori,
-        /* Level Name    */ "TheÅôBon Odori",
+        /* Level Name    */ "The‚òÜBon Odori",
         /* Level Desc.   */ "Let's celebrate the\n"
                             "Japanese Bon Festival!\n"
                             "Clap along as they sing\n"
@@ -663,7 +663,7 @@ struct LevelData level_data_table[] = {
     },
     /* BON_DANCE */ {
         /* Entry Scene   */ &scene_bon_dance,
-        /* Level Name    */ "TheÅôBon Dance",
+        /* Level Name    */ "The‚òÜBon Dance",
         /* Level Desc.   */ "The Bon Festival has\n"
                             "a modern-day style!\n"
                             "Clap along to this\n"
@@ -816,7 +816,7 @@ struct LevelData level_data_table[] = {
     },
     /* CAFE */ {
         /* Entry Scene   */ &scene_cafe,
-        /* Level Name    */ "CafáQ Counselling",
+        /* Level Name    */ "Caf‚ë± Counselling",
         /* Level Desc.   */ "How are you feeling?\n"
                             "If something's on your\n"
                             "mind, feel free to\n"

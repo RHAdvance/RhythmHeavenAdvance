@@ -19,24 +19,24 @@ const char D_0805e344[] = "The part before the chorus had perfection!";
 
 const char D_0805e364[] = "Space Gramps says...";
 
-const char D_0805e37c[] = "Ｃｏｍｍｅｎｃｅ　ｍｏｔｉｏｎｓ！";
+const char D_0805e37c[] = "Commence motions!";
 
-const char D_0805e38c[] = "Ｉｔ　ｉｓ　ｔｈｅ　ｔｉｍｅ　ｔｏ　ｄａｎｃｅ　ｔｏｇｅｔｈｅｒ．";
+const char D_0805e38c[] = "It is the time to dance together.";
 
-const char D_0805e3a8[] = "Ｆｉｒｓｔ，　ｌｅａｒｎ　ｔｈｅ　ｍｏｔｉｏｎ　ｆｕｎｄａｍｅｎｔａｌｓ．";
+const char D_0805e3a8[] = "First, learn the motion fundamentals.";
 
-const char D_0805e3d8[] = "Ｍｏｔｉｏｎ　ｔｈｅ　ｆｉｒｓｔ！";
+const char D_0805e3d8[] = "Motion the first!";
 
-const char D_0805e3ec[] = "Ｏｂｓｅｒｖｅ　ａｎｄ　ｄｕｐｌｉｃａｔｅ！";
+const char D_0805e3ec[] = "Observe and duplicate!";
 
-const char D_0805e3fc[] = "Ｓａｔｉｓｆａｃｔｏｒｙ　ｉｓ　ｂｅｉｎｇ！";
+const char D_0805e3fc[] = "Satisfactory is being!";
 
-const char D_0805e3fd[] = "Ｙｏｕ　ｈａｖｅ　ｓｑｕａｔｔｅｄ　ａｃｃｅｐｔａｂｌｙ！";
+const char D_0805e3fd[] = "You have squatted acceptably!";
 
-const char D_0805e3fe[] = "Ｐｕｎｃｈｉｎｇ　ｔｏ　ｒｅｑｕｉｒｅｄ　ｐｒｏｆｉｃｉｅｎｃｙ！";
+const char D_0805e3fe[] = "Punching to required proficiency!";
 
-const char D_0805e404[] = "Ｎｏｗ　ｉｓ　ｔｉｍｅ　ｆｏｒ　ｔｈｅ　ｎｅｘｔ　ｔｅａｃｈｉｎｇ．";
+const char D_0805e404[] = "Now is time for the next teaching.";
 
-const char D_0805e40c[] = "Ｍｏｖｅｍｅｎｔ　ｔｈｅ　ｆｉｎａｌ！";
+const char D_0805e40c[] = "Movement the final!";
 
-const char D_0805e414[] = "Ｔｈｅ　ｔｉｍｅ　ｏｆ　ｔｈｅ　ｄａｎｃｉｎｇｓ　ｓｈａｌｌ　ｂｅｇｉｎ！";
+const char D_0805e414[] = "The time of the dancings shall begin!";

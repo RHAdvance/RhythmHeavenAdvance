@@ -10,19 +10,19 @@
 
 // [D_089d7984] Letter Ranks
 const char *results_letter_ranks[] = {
-    ":1.1" "‚c",
-    ":1.5" "‚b",
-    ":1.4" "‚a",
-    ":1.6" "‚`",
-    ":1.2" "‚r"
+    ":1.1" "D",
+    ":1.5" "C",
+    ":1.4" "B",
+    ":1.6" "A",
+    ":1.2" "S"
 };
 
 
 // [D_089d7998] DEBUG Skill Comments - Accuracy
 const char *results_skill_text_accuracy[] = {
-    "‚o‚’‚‚†‚…‚“‚“‚‰‚‚‚‚Œ@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
-    "‚r‚…‚‚“‚…@‚‚†@‚q‚ˆ‚™‚”‚ˆ‚",
-    "‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™@‚r‚‚”‚‰‚“‚†‚‚ƒ‚”‚‰‚‚",
+    "Professional Accuracy",
+    "Sense of Rhythm",
+    "Accuracy Satisfaction",
     NULL
 };
 
@@ -32,9 +32,9 @@ const char *results_skill_text_accuracy[] = {
     // Adaptability
     // Reflexes
 const char *results_skill_text_barely_trk2[] = {
-    "‚s‚…‚ƒ‚ˆ‚‚‰‚‘‚•‚…@‚k‚…‚–‚…‚Œ",
-    "‚`‚„‚‚‚”‚‚‚‚‰‚Œ‚‰‚”‚™",
-    "‚q‚…‚†‚Œ‚…‚˜‚…‚“",
+    "Technique Level",
+    "Adaptability",
+    "Reflexes",
     NULL
 };
 
@@ -44,67 +44,67 @@ const char *results_skill_text_barely_trk2[] = {
     //
     // Steadiness
 const char *results_skill_text_barely_trk1[] = {
-    "‚q‚…‚“‚‚‚‚“‚‰‚‚‚‰‚Œ‚‰‚”‚™",
-    "‚s‚ˆ‚…@‚l‚‚“‚”@‚h‚‚‚‚’‚”‚‚‚”@‚o‚‚’‚”",
-    "‚f‚’‚‚“‚",
+    "Responsibility",
+    "The Most Important Part",
+    "Grasp",
     NULL
 };
 
 
 // [D_089d79c8] DEBUG Skill Comments - Hits
 const char *results_skill_text_hit_avg[] = {
-    "‚`‚‚‚”‚…‚•‚’@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
-    "‚n‚’‚„‚‰‚‚‚’‚™@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
-    "‚l‚‚„‚…‚’‚‚”‚…@‚`‚ƒ‚ƒ‚•‚’‚‚ƒ‚™",
+    "Amateur Accuracy",
+    "Ordinary Accuracy",
+    "Moderate Accuracy",
     NULL
 };
 
 
 // [D_089d79d8] DEBUG Skill Comments - Irrelevant Inputs
 const char *results_skill_text_irrelevant_inputs[] = {
-    "‚b‚‚‚“‚…‚’‚–‚‚”‚‰‚‚@‚‚†@‚r‚”‚‚‚‰‚‚",
-    "‚q‚‚”‚‰‚‚‚‚Œ‚‰‚”‚™",
-    "‚b‚‚Œ‚‚‚…‚“‚“",
+    "Conservation of Stamina",
+    "Rationality",
+    "Calmness",
     NULL
 };
 
 
 // [D_089d79e8] DEBUG Skill Comments - Accuracy (Lenient)
 const char *results_skill_text_accuracy_lenient[] = {
-    "‚r‚”‚‚‚‚‰‚Œ‚‰‚”‚™",
-    "‚x‚‚•‚’@‚q‚ˆ‚™‚”‚ˆ‚f‚“@‚b‚‚’‚…",
-    "‚b‚‚‚“‚‰‚“‚”‚…‚‚ƒ‚™",
+    "Stability",
+    "Your Rhythm's Core",
+    "Consistency",
     NULL
 };
 
 
 // [D_089d79f8] DEBUG Skill Comments - Misses
 const char *results_skill_text_miss[] = {
-    "‚l‚‚”‚‰‚–‚‚”‚‰‚‚",
-    "‚u‚‰‚“‚•‚‚Œ@‚r‚”‚’‚…‚‚‡‚”‚ˆ",
-    "‚`‚”‚”‚‰‚”‚•‚„‚…",
+    "Motivation",
+    "Visual Strength",
+    "Attitude",
     NULL
 };
 
 
 // [D_089d7a08] DEBUG Skill Comments - Misses (Tracker 2)
 const char *results_skill_text_miss_trk2[] = {
-    "‚`‚„‚‚‚”‚‚‚‚‰‚Œ‚‰‚”‚™",
-    "‚e‚Œ‚…‚˜‚‰‚‚‚‰‚Œ‚‰‚”‚™",
-    "‚b‚‚’‚…‚†‚•‚Œ‚‚…‚“‚“",
+    "Adaptability",
+    "Flexibility",
+    "Carefulness",
     NULL
 };
 
 
 // [D_089d7a18] DEBUG Skill Comments - Random
 const char *results_skill_text_random[] = {
-    "‚m‚…‚˜‚”@‚x‚…‚‚’f‚“@‚k‚‚–‚…",
-    "‚s‚ˆ‚‰‚“@‚x‚…‚‚’f‚“@‚v‚…‚‚Œ‚”‚ˆ",
-    "‚s‚‚‚‚’‚’‚‚—f‚“@‚v‚…‚‚”‚ˆ‚…‚’",
-    "‚x‚…‚“‚”‚…‚’‚„‚‚™f‚“@‚c‚‰‚‚‚…‚’",
-    "‚a‚Œ‚‚‚„@‚s‚™‚‚…@‚o‚’‚…‚„‚‰‚ƒ‚”‚‰‚‚",
-    "‚x‚‚•‚’@‚t‚‚‚‚’‚‰‚‚‡‚‰‚‚‡",
-    "‚x‚‚•‚’@‚g‚•‚‚‚‚‰‚”‚™",
+    "Next Year's Love",
+    "This Year's Wealth",
+    "Tomorrow's Weather",
+    "Yesterday's Dinner",
+    "Blood Type Prediction",
+    "Your Upbringing",
+    "Your Humanity",
     NULL
 };
 

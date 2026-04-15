@@ -19,11 +19,11 @@ const char D_0805c7f4[] = "You had really great rhythm!";
 
 const char D_0805c80c[] = "Sarge says...";
 
-const char D_0805c818[] = "Ｇｏ！";
+const char D_0805c818[] = "Go!";
 
-const char D_0805c828[] = "Ｆａｌｌ　ｉｎ！";
+const char D_0805c828[] = "Fall in!";
 
-const char D_0805c844[] = "Ｔｉｍｅ　ｆｏｒ　ｔｈｅ　ｒｅａｌ　ｔｈｉｎｇ！";
+const char D_0805c844[] = "Time for the real thing!";
 
 const char D_0805c858[] = "You haven't grasped the basics.";
 
@@ -35,19 +35,19 @@ const char D_0805c890[] = "Your timing is on point!";
 
 const char D_0805c8a8[] = "Sarge says...";
 
-const char D_0805c8b4[] = "Ｇｏ！";
+const char D_0805c8b4[] = "Go!";
 
-const char D_0805c8c4[] = "Ｆａｌｌ　ｉｎ！";
+const char D_0805c8c4[] = "Fall in!";
 
-const char D_0805c8e0[] = "Ｔｉｍｅ　ｆｏｒ　ｔｈｅ　ｒｅａｌ　ｔｈｉｎｇ！";
+const char D_0805c8e0[] = "Time for the real thing!";
 
-const char D_0805c8e1[] = "Ｒｉｇｈｔ！";
+const char D_0805c8e1[] = "Right!";
 
-const char D_0805c8e2[] = "Ｌｅｆｔ！";
+const char D_0805c8e2[] = "Left!";
 
-const char D_0805c8e3[] = "Ｍａｒｃｈ！";
+const char D_0805c8e3[] = "March!";
 
-const char D_0805c8e4[] = "Ｈａｌｔ！";
+const char D_0805c8e4[] = "Halt!";
 
 const char D_0805c8f4[] = "You still don't have the basics down!";
 

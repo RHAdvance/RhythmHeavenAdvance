@@ -118,8 +118,6 @@ extern s32 text_font_get_next_glyph_width(s32 font, const char **stream); // Get
 extern s32 text_font_calculate_string_width(s32 font, const char *string); // Get Width of a String
 extern void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors); // Print Character to VRAM
 extern s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColors); // Print Non-Formatted Line to VRAM (return width in pixels)
-extern s32 text_glyph_is_open_bracket(const char *c); // Check if Character is Any Sort of Open Bracket
-extern s32 text_glyph_is_end_punctuation(const char *c); // Check if Character is Any Sort of Ending Punctuation
 extern s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColors, s32 indentWidth, s32 shadowColors); // Print Formatted Line to VRAM (return width in pixels)
 extern struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColors, s32 maxWidth, s32 ignoreFormatting, s32 indentWidth, s32 shadowColors);
 extern struct Animation *text_printer_get_unformatted_line_anim(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, u32 anchor, s32 lineColors, s32 maxWidth);

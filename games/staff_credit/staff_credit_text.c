@@ -9,7 +9,7 @@ const char D_08069a48[] = "\0023" "Staff Credits";
 
 const char D_08069a58[] = "\0023" "Producers";
 
-const char D_08069a64[] = "TSUNKUÅâ";
+const char D_08069a64[] = "TSUNKU‚ôÇ";
 
 const char D_08069a70[] = "Y. Sakamoto";
 

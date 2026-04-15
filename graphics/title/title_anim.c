@@ -75,37 +75,37 @@ struct Animation anim_title_stars_appear[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4a0] Logo - ?¿½?¿½
+// [D_0890d4a0] Logo - ?ç”³?ç”³
 struct Animation anim_title_logo_ri[] = {
     /* 000 */ { title_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4b0] Logo - ?¿½Y
+// [D_0890d4b0] Logo - ?ç”³Y
 struct Animation anim_title_logo_zu[] = {
     /* 000 */ { title_cel016, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4c0] Logo - ?¿½?¿½
+// [D_0890d4c0] Logo - ?ç”³?ç”³
 struct Animation anim_title_logo_mu[] = {
     /* 000 */ { title_cel017, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4d0] Logo - ?¿½V
+// [D_0890d4d0] Logo - ?ç”³V
 struct Animation anim_title_logo_ten[] = {
     /* 000 */ { title_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?¿½?¿½
+// [D_0890d4e0] Logo - ?ç”³?ç”³
 struct Animation anim_title_logo_goku[] = {
     /* 000 */ { title_cel019, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?¿½?¿½
+// [D_0890d4e0] Logo - ?ç”³?ç”³
 struct Animation anim_title_logo_av[] = {
     /* 000 */ { title_cel100, 4 },
     /* End */ END_ANIMATION
@@ -123,19 +123,19 @@ struct Animation anim_title_logo_bubble_outer[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?¿½?¿½
+// [D_0890d4e0] Logo - ?ç”³?ç”³
 struct Animation anim_empty[] = {
     /* 000 */ { title_cel101, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?¿½?¿½
+// [D_0890d4e0] Logo - ?ç”³?ç”³
 struct Animation anim_empty_2[] = {
     /* 000 */ { title_cel103, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?¿½?¿½
+// [D_0890d4e0] Logo - ?ç”³?ç”³
 struct Animation anim_title_logo_advance[] = {
     /* 000 */ { title_cel102, 4 },
     /* End */ END_ANIMATION

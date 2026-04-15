@@ -2,6 +2,8 @@
 #include "code_08001360.h"
 #include "memory_heap.h"
 #include "src/lib_0804ca80.h"
+#include "src/utf_8.h"
+#include "text.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -15,89 +17,305 @@ static u8 sObjStringGlyphWidths[0x40]; // BitmapFontOBJ - Width of Each Glyph in
 static u32 sBgFontStyle; // BitmapFontBG - Font/Style
 static u32 D_030008fc; // BitmapFontBG - Unused
 
-enum FTextLatinCharTypesEnum {
-    F_TEXT_NON_LATIN,
-    F_TEXT_LATIN_FULLWIDTH,
-    F_TEXT_LATIN_HALFWIDTH
+enum BitmapFontGlyphSetEnum {
+    BMP_FONT_GLYPH_NONE,
+    BMP_FONT_GLYPH_SYMBOLS,
+    BMP_FONT_GLYPH_ARABIC_NUMERAL,
+    BMP_FONT_GLYPH_LATIN_UPPER,
+    BMP_FONT_GLYPH_LATIN_LOWER,
+    BMP_FONT_GLYPH_HIRAGANA,
+    BMP_FONT_GLYPH_KATAKANA
+};
+
+enum BitmapFontSpecialGlyphIDsEnum {
+    BMP_FONT_GLYPH_ID_SPACE = 0
+};
+
+struct BitmapFontGlyphRange {
+    u16 utf8Start;
+    u16 utf8End;
+    u8 glyphSet;
+};
+
+struct BitmapFontGlyph {
+    u8 glyphSet;
+    u8 glyphID;
 };
 
 extern s32 (*math_sqrt)(s32);
 extern u8 sSceneTextCurrentStringId; // Current String in Scene Text Table to Print with SceneObject
+
+// Sorted by codepoint for binary search in bmp_font_get_symbol_index().
+static const struct BmpFontSymbolEntry sBmpFontSymbolMap[] = {
+    { ' ', BMP_FONT_GLYPH_ID_SPACE },   // ' '
+    { '!', 63 },                        // '!'
+    { '$', 95 },                        // '$'
+    { '%', 91 },                        // '%'
+    { '&', 92 },                        // '&'
+    { '(', 82 },                        // '('
+    { ')', 83 },                        // ')'
+    { '*', 93 },                        // '*'
+    { '+', 86 },                        // '+'
+    { ',', 57 },                        // ','
+    { '-', 87 },                        // '-'
+    { '.', 58 },                        // '.'
+    { ':', 60 },                        // ':'
+    { ';', 61 },                        // ';'
+    { '=', 90 },                        // '='
+    { '?', 62 },                        // '?'
+    { '@', 94 },                        // '@'
+    { '_', 76 },                        // '_'
+    { '~', 77 },                        // '~'
+    { 0x00A1, 52 },                     // '¡'
+    { 0x00AB, 53 },                     // '«'
+    { 0x00BB, 54 },                     // '»'
+    { 0x00BF, 51 },                     // '¿'
+    { 0x00C0, 3 },                      // 'À'
+    { 0x00C1, 2 },                      // 'Á'
+    { 0x00C2, 1 },                      // 'Â'
+    { 0x00C4, 4 },                      // 'Ä'
+    { 0x00C7, 5 },                      // 'Ç'
+    { 0x00C8, 8 },                      // 'È'
+    { 0x00C9, 7 },                      // 'É'
+    { 0x00CA, 6 },                      // 'Ê'
+    { 0x00CB, 9 },                      // 'Ë'
+    { 0x00CC, 12 },                     // 'Ì'
+    { 0x00CD, 11 },                     // 'Í'
+    { 0x00CE, 10 },                     // 'Î'
+    { 0x00CF, 13 },                     // 'Ï'
+    { 0x00D1, 14 },                     // 'Ñ'
+    { 0x00D2, 17 },                     // 'Ò'
+    { 0x00D3, 16 },                     // 'Ó'
+    { 0x00D4, 15 },                     // 'Ô'
+    { 0x00D6, 18 },                     // 'Ö'
+    { 0x00D7, 88 },                     // '×'
+    { 0x00D9, 22 },                     // 'Ù'
+    { 0x00DA, 21 },                     // 'Ú'
+    { 0x00DB, 20 },                     // 'Û'
+    { 0x00DC, 23 },                     // 'Ü'
+    { 0x00DF, 47 },                     // 'ß'
+    { 0x00E0, 26 },                     // 'à'
+    { 0x00E1, 25 },                     // 'á'
+    { 0x00E2, 24 },                     // 'â'
+    { 0x00E4, 27 },                     // 'ä'
+    { 0x00E7, 28 },                     // 'ç'
+    { 0x00E8, 31 },                     // 'è'
+    { 0x00E9, 30 },                     // 'é'
+    { 0x00EA, 29 },                     // 'ê'
+    { 0x00EB, 32 },                     // 'ë'
+    { 0x00EC, 35 },                     // 'ì'
+    { 0x00ED, 34 },                     // 'í'
+    { 0x00EE, 33 },                     // 'î'
+    { 0x00EF, 36 },                     // 'ï'
+    { 0x00F1, 37 },                     // 'ñ'
+    { 0x00F2, 40 },                     // 'ò'
+    { 0x00F3, 39 },                     // 'ó'
+    { 0x00F4, 38 },                     // 'ô'
+    { 0x00F6, 41 },                     // 'ö'
+    { 0x00F7, 89 },                     // '÷'
+    { 0x00F9, 45 },                     // 'ù'
+    { 0x00FA, 44 },                     // 'ú'
+    { 0x00FB, 43 },                     // 'û'
+    { 0x00FC, 46 },                     // 'ü'
+    { 0x0152, 19 },                     // 'Œ'
+    { 0x0153, 42 },                     // 'œ'
+    { 0x2018, 78 },                     // '‘'
+    { 0x2019, 79 },                     // '’'
+    { 0x201C, 80 },                     // '“'
+    { 0x201D, 81 },                     // '”'
+    { 0x2026, 100 },                    // '…'
+    { 0x2190, 96 },                     // '←'
+    { 0x2191, 98 },                     // '↑'
+    { 0x2192, 97 },                     // '→'
+    { 0x2193, 99 },                     // '↓'
+    { 0x3001, 55 },                     // '、'
+    { 0x3002, 56 },                     // '。'
+    { 0x300C, 85 },                     // '「'
+    { 0x300D, 84 },                     // '」'
+    { 0x30FB, 59 },                     // '・'
+    { 0x30FC, 75 },                     // 'ー'
+    { CHAR_LEFT_DPAD, 71 },
+    { CHAR_RIGHT_DPAD, 72 },
+    { CHAR_UP_DPAD, 73 },
+    { CHAR_DOWN_DPAD, 74 },
+    { CHAR_DPAD, 70 },
+    { CHAR_A_BUTTON, 64 },
+    { CHAR_B_BUTTON, 65 },
+    { CHAR_SPANISH_ORDINAL_A, 48 },
+    { CHAR_FRENCH_ORDINAL_ER, 49 },
+    { CHAR_FRENCH_ORDINAL_EME, 50 },
+    { CHAR_LEFT_ARROW_DOWN, 66 },
+    { CHAR_RIGHT_ARROW_DOWN, 67 },
+    { CHAR_LEFT_ARROW_UP, 68 },
+    { CHAR_RIGHT_ARROW_UP, 69 },
+    { CHAR_GBA, 101 },
+};
+
+static const struct BitmapFontGlyphRange sBmpFontGlyphRanges[] = {
+    { '0', '9', BMP_FONT_GLYPH_ARABIC_NUMERAL },
+    { 'A', 'Z', BMP_FONT_GLYPH_LATIN_UPPER },
+    { 'a', 'z', BMP_FONT_GLYPH_LATIN_LOWER },
+    { 0x3041, 0x3093, BMP_FONT_GLYPH_HIRAGANA },
+    { 0x30A1, 0x30F6, BMP_FONT_GLYPH_KATAKANA },
+};
+
+
+static s32 bmp_font_is_hex_digit(char c) {
+    if ((c >= '0') && (c <= '9')) {
+        return TRUE;
+    }
+
+    if ((c >= 'a') && (c <= 'f')) {
+        return TRUE;
+    }
+
+    if ((c >= 'A') && (c <= 'F')) {
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+
+static s32 bmp_font_is_control_code(const char *string, char cmd) {
+    return (string[0] == cmd) && bmp_font_is_hex_digit(string[1]);
+}
+
+
+static s32 bmp_font_get_symbol_index(u32 codepoint, u32 *index) {
+    s32 lo = 0;
+    s32 hi = ARRAY_COUNT(sBmpFontSymbolMap) - 1;
+
+    while (lo <= hi) {
+        s32 mid = lo + ((hi - lo) / 2);
+        u16 c = sBmpFontSymbolMap[mid].codepoint;
+
+        if (codepoint < c) {
+            hi = mid - 1;
+        } else if (codepoint > c) {
+            lo = mid + 1;
+        } else {
+            *index = sBmpFontSymbolMap[mid].index;
+            return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
+
+static s32 bmp_font_codepoint_to_glyph(u32 codepoint, struct BitmapFontGlyph *glyphReq) {
+    const struct BitmapFontGlyphRange *glyphRange;
+    u32 symbolIndex;
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sBmpFontGlyphRanges); i++) {
+        glyphRange = &sBmpFontGlyphRanges[i];
+
+        if ((codepoint >= glyphRange->utf8Start) && (codepoint <= glyphRange->utf8End)) {
+            if (glyphReq != NULL) {
+                glyphReq->glyphSet = glyphRange->glyphSet;
+                glyphReq->glyphID = (u8)(codepoint - glyphRange->utf8Start);
+            }
+            return TRUE;
+        }
+    }
+
+    if (bmp_font_get_symbol_index(codepoint, &symbolIndex)) {
+        if (glyphReq != NULL) {
+            glyphReq->glyphSet = BMP_FONT_GLYPH_SYMBOLS;
+            glyphReq->glyphID = (u8)symbolIndex;
+        }
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+
+static s32 bmp_font_get_glyph_info(const char *string, struct BitmapFontGlyph *glyphReq, const char **nextString) {
+    const char *next;
+    u32 codepoint;
+
+    if (nextString != NULL) {
+        *nextString = string;
+    }
+
+    if (string[0] == '\0') {
+        return FALSE;
+    }
+
+    next = string;
+    if (!utf8_decode_codepoint(&next, &codepoint)) {
+        if (nextString != NULL) {
+            *nextString = next;
+        }
+        return FALSE;
+    }
+
+    if (nextString != NULL) {
+        *nextString = next;
+    }
+
+    return bmp_font_codepoint_to_glyph(codepoint, glyphReq);
+}
 
 
 // Get printable glyph texture and width.
 void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, const u16 **textureReq, u32 *widthReq) {
     const void *textures;
     const u8 *widths;
+    struct BitmapFontGlyph glyph;
     u32 id;
 
     textures = NULL;
     widths = NULL;
 
-    switch (string[0]) {
-        case 0x81:
-            // Fullwidth Japanese Punctuation
-            if ((string[1] >= 0x40) && (string[1] <= 0x7E)) {
-                textures = font->punctuationTextures;
-                widths = font->punctuationWidths;
-                id = string[1] - 0x40;
-                break;
-            }
-            // Fullwidth Japanese Punctuation
-            if ((string[1] >= 0x80) && (string[1] <= 0x9E)) {
-                textures = font->punctuationTextures;
-                widths = font->punctuationWidths;
-                id = string[1] - 0x41;
-                break;
-            }
+    if (!bmp_font_get_glyph_info(string, &glyph, NULL)) {
+        if (textureReq != NULL) {
+            *textureReq = NULL;
+        }
+        if (widthReq != NULL) {
+            *widthReq = 0;
+        }
+        return;
+    }
+
+    switch (glyph.glyphSet) {
+        case BMP_FONT_GLYPH_SYMBOLS:
+            textures = font->symbolTextures;
+            widths = font->symbolWidths;
+            id = glyph.glyphID;
             break;
 
-        case 0x82:
-            // Fullwidth Arabic Numerals
-            if ((string[1] >= 0x4F) && (string[1] <= 0x58)) {
-                textures = font->arabicNumeralTextures;
-                widths = font->arabicNumeralWidths;
-                id = string[1] - 0x4F;
-                break;
-            }
-            // Fullwidth Uppercase Latin Alphabet
-            if ((string[1] >= 0x60) && (string[1] <= 0x79)) {
-                textures = font->latinUppercaseTextures;
-                widths = font->latinUppercaseWidths;
-                id = string[1] - 0x60;
-                break;
-            }
-            // Fullwidth Lowercase Latin Alphabet
-            if ((string[1] >= 0x81) && (string[1] <= 0x9A)) {
-                textures = font->latinLowercaseTextures;
-                widths = font->latinLowercaseWidths;
-                id = string[1] - 0x81;
-                break;
-            }
-            // Fullwidth Hiragana
-            if ((string[1] >= 0x9F) && (string[1] <= 0xFC)) {
-                textures = font->hiraganaTextures;
-                widths = font->hiraganaWidths;
-                id = string[1] - 0x9F;
-                break;
-            }
+        case BMP_FONT_GLYPH_ARABIC_NUMERAL:
+            textures = font->arabicNumeralTextures;
+            widths = font->arabicNumeralWidths;
+            id = glyph.glyphID;
             break;
 
-        case 0x83:
-            // Fullwidth Katakana
-            if ((string[1] >= 0x40) && (string[1] <= 0x7E)) {
-                textures = font->katakanaTextures;
-                widths = font->katakanaWidths;
-                id = string[1] - 0x40;
-                break;
-            }
-            // Fullwidth Katakana
-            if ((string[1] >= 0x80) && (string[1] <= 0x9E)) {
-                textures = font->katakanaTextures;
-                widths = font->katakanaWidths;
-                id = string[1] - 0x41;
-                break;
-            }
+        case BMP_FONT_GLYPH_LATIN_UPPER:
+            textures = font->latinUppercaseTextures;
+            widths = font->latinUppercaseWidths;
+            id = glyph.glyphID;
+            break;
+
+        case BMP_FONT_GLYPH_LATIN_LOWER:
+            textures = font->latinLowercaseTextures;
+            widths = font->latinLowercaseWidths;
+            id = glyph.glyphID;
+            break;
+
+        case BMP_FONT_GLYPH_HIRAGANA:
+            textures = font->hiraganaTextures;
+            widths = font->hiraganaWidths;
+            id = glyph.glyphID;
+            break;
+
+        case BMP_FONT_GLYPH_KATAKANA:
+            textures = font->katakanaTextures;
+            widths = font->katakanaWidths;
+            id = glyph.glyphID;
             break;
     }
 
@@ -193,18 +411,22 @@ void bmp_font_obj_clear_print_data(struct BitmapFontOBJ *textObj) {
 u32 bmp_font_obj_get_anim_total(const char *string) {
     u32 total = 0;
 
-    for (; string[0] != '\0'; string += 2) {
-        if (string[0] == '.') {
+    while (string[0] != '\0') {
+        if (bmp_font_is_control_code(string, '.')) {
+            string += 2;
             continue;
         }
 
-        if (string[0] == ':') {
+        if (bmp_font_is_control_code(string, ':')) {
+            string += 2;
             continue;
         }
 
         if (!bmp_font_obj_glyph_is_whitespace(string)) {
             total++;
         }
+
+        string = utf8_get_next_char_ptr(string);
     }
 
     return total;
@@ -213,25 +435,22 @@ u32 bmp_font_obj_get_anim_total(const char *string) {
 
 // Get glyph width.
 u32 bmp_font_obj_get_glyph_width(const struct BitmapFontData *font, const char *string) {
-    u32 latinSpacingWidth, glyphWidth;
+    u32 glyphWidth;
 
     if (bmp_font_obj_glyph_is_whitespace(string)) {
         return font->whitespaceWidth;
     }
 
-    if ((string[0] == '.') || (string[0] == ':')) {
+    if (bmp_font_is_control_code(string, '.')) {
         return 0;
     }
 
-    if (bmp_font_obj_get_latin_glyph_type(string) == F_TEXT_LATIN_HALFWIDTH) {
-        latinSpacingWidth = 8;
-        string = bmp_font_obj_convert_latin_hw_to_fw(&string[1]);
-    } else {
-        latinSpacingWidth = 0;
+    if (bmp_font_is_control_code(string, ':')) {
+        return 0;
     }
 
     bmp_font_get_glyph(font, string, NULL, &glyphWidth);
-    return latinSpacingWidth + glyphWidth;
+    return glyphWidth;
 }
 
 
@@ -261,22 +480,24 @@ u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char 
     currentFont = font;
     width = 0;
 
-    for (; string[0] != '\0'; string += 2) {
-        switch (string[0]) {
-            case '.':
-                break;
-
-            case ':':
-                currentFont = &font[bmp_font_obj_parse_hex_digit(string[1])];
-                break;
-
-            default:
-                if (width != 0) {
-                    width += currentFont->spacingWidth;
-                }
-                width += bmp_font_obj_get_glyph_width(currentFont, string);
-                break;
+    while (string[0] != '\0') {
+        if (bmp_font_is_control_code(string, '.')) {
+            string += 2;
+            continue;
         }
+
+        if (bmp_font_is_control_code(string, ':')) {
+            currentFont = &font[bmp_font_obj_parse_hex_digit(string[1])];
+            string += 2;
+            continue;
+        }
+
+        if (width != 0) {
+            width += currentFont->spacingWidth;
+        }
+
+        width += bmp_font_obj_get_glyph_width(currentFont, string);
+        string = utf8_get_next_char_ptr(string);
     }
 
     if (width < 0) {
@@ -287,20 +508,8 @@ u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char 
 }
 
 
-// Print glyph (halfwidth).
-void bmp_font_obj_write_glyph_hw(const u16 *texture, u16 *dest) {
-    u32 i;
-
-    for (i = 0; i < 2; i++) {
-        dma3_set(texture, dest, 0x20, 0x20, 0x100);
-        texture += 0x20;
-        dest += 0x200;
-    }
-}
-
-
 // Print glyph (fullwidth).
-void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest) {
+void bmp_font_obj_write_glyph(const u16 *texture, u16 *dest) {
     u32 i;
 
     for (i = 0; i < 2; i++) {
@@ -316,23 +525,22 @@ u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, 
     const u16 *texture;
     u16 *address;
     u32 width;
+    struct BitmapFontGlyph glyph;
     u8 glyphDataB0, glyphDataB1;
     u32 tileX, tileY, tileID;
     u8 *printed;
-    u32 latinCharType;
     u32 i, j;
 
-    latinCharType = bmp_font_obj_get_latin_glyph_type(string);
     tileX = 99;
     printed = (u8 *)textObj->printedGlyphs;
 
-    if (latinCharType != F_TEXT_LATIN_HALFWIDTH) {
-        glyphDataB0 = (sObjFontStyle << 4) | string[0];
-        glyphDataB1 = string[1];
-    } else {
-        glyphDataB0 = ((string[0] - 'a') >> 3) | (sObjFontStyle << 4) | (1 << 6);
-        glyphDataB1 = ((string[0] - 'a') << 5) | (string[1] - 'a');
+    if (!bmp_font_get_glyph_info(string, &glyph, NULL)) {
+        *widthReq = 0;
+        return -1;
     }
+
+    glyphDataB0 = (sObjFontStyle << 4) | glyph.glyphSet;
+    glyphDataB1 = glyph.glyphID;
 
     for (i = 0; i < textObj->maxAllocatedTileRows; i++) {
         for (j = 0; j < 16; j++) {
@@ -358,18 +566,13 @@ u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, 
     tileID = textObj->baseTileNum + (tileX * 2) + ((tileY * 32) * 2);
     address = (void *)((VRAMBase + 0x10000) + (tileID * 0x20));
 
-    if (latinCharType == F_TEXT_LATIN_HALFWIDTH) {
-        for (i = 0; i < 2; i++) {
-            const char *fullwidthString = bmp_font_obj_convert_latin_hw_to_fw(&string[i]);
-            bmp_font_get_glyph(&textObj->fonts[sObjFontStyle], fullwidthString, &texture, &width);
-            bmp_font_obj_write_glyph_hw(texture, &address[i * 16]);
-            *widthReq += (i != 0) ? width : 8;
-        }
-    } else {
-        bmp_font_get_glyph(&textObj->fonts[sObjFontStyle], string, &texture, &width);
-        bmp_font_obj_write_glyph_fw(texture, address);
-        *widthReq = width;
+    bmp_font_get_glyph(&textObj->fonts[sObjFontStyle], string, &texture, &width);
+    if (texture == NULL) {
+        return -1;
     }
+
+    bmp_font_obj_write_glyph(texture, address);
+    *widthReq = width;
 
     i = tileX + (tileY * 16);
     printed = (u8 *)&textObj->printedGlyphs[i];
@@ -383,15 +586,13 @@ u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, 
 
 // Checks if a char is whitespace.
 u32 bmp_font_obj_glyph_is_whitespace(const char *string) {
-    if ((string[0] == 0x81) && (string[1] == 0x40)) {
-        return TRUE;
+    struct BitmapFontGlyph glyph;
+
+    if (!bmp_font_get_glyph_info(string, &glyph, NULL)) {
+        return FALSE;
     }
 
-    if ((string[0] == ' ') && (string[1] == ' ')) {
-        return TRUE;
-    }
-
-    if ((string[0] == 0x81) && (string[1] == 0x51)) {
+    if ((glyph.glyphSet == BMP_FONT_GLYPH_SYMBOLS) && ((glyph.glyphID == BMP_FONT_GLYPH_ID_SPACE))) {
         return TRUE;
     }
 
@@ -401,31 +602,104 @@ u32 bmp_font_obj_glyph_is_whitespace(const char *string) {
 
 // Check if a char is a supported Latin Alphabet char.
 u32 bmp_font_obj_get_latin_glyph_type(const char *string) {
-    // Halfwidth Lowercase Latin Alphabet
-    if ((string[0] >= 'a') && (string[0] <= 'z') && (string[1] >= 'a') && (string[1] <= 'z')) {
-        return F_TEXT_LATIN_HALFWIDTH;
+    struct BitmapFontGlyph glyph;
+
+    if (!bmp_font_get_glyph_info(string, &glyph, NULL)) {
+        return FALSE;
     }
 
-    // Fullwidth Lowercase Latin Alphabet
-    if (string[0] == 0x82) {
-        if ((string[1] >= 0x81) && (string[1] <= 0x9A)) {
-            return F_TEXT_LATIN_FULLWIDTH;
-        }
+    // Halfwidth Lowercase Latin Alphabet
+    if (glyph.glyphSet == BMP_FONT_GLYPH_LATIN_LOWER) {
+        return TRUE;
     }
 
     // Other
-    return F_TEXT_NON_LATIN;
+    return FALSE;
 }
 
 
-// Convert halfwidth Latin Alphabet character to fullwidth.
-const char *bmp_font_obj_convert_latin_hw_to_fw(const char *string) {
-    return &D_08936b50[(string[0] - 'a') * 2];
+// Create Animation.
+struct PrintedTextAnim *bmp_font_obj_print_text(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq, u32 fontStyle, u32 palette) {
+    struct PrintedTextAnim *anim;
+    const struct BitmapFontData *currentFont;
+    u16 tileNum;
+    u16 *oam;
+    u32 totalGlyphs;
+    u32 glyphWidth;
+    s32 xPos;
+    u32 glyphIndex;
+
+    if (textObj->parseString != NULL) {
+        textObj->parseString(textObj->parsedOutput, string);
+        string = textObj->parsedOutput;
+    }
+
+    totalGlyphs = bmp_font_obj_get_anim_total(string);
+    anim = mem_heap_alloc_id(textObj->memID, (sizeof(struct Animation) * 2) + sizeof(u16) + (totalGlyphs * 3 * sizeof(u16)));
+    anim->oam[0] = 0;
+    oam = &anim->oam[1];
+    xPos = 0;
+    glyphIndex = 0;
+    sObjFontStyle = fontStyle;
+
+    while (string[0] != '\0') {
+        if (bmp_font_is_control_code(string, '.')) {
+            palette = bmp_font_obj_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
+
+        if (bmp_font_is_control_code(string, ':')) {
+            sObjFontStyle = bmp_font_obj_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
+
+        currentFont = &textObj->fonts[sObjFontStyle];
+        if (xPos != 0) {
+            xPos += currentFont->spacingWidth;
+        }
+
+        if (bmp_font_obj_glyph_is_whitespace(string)) {
+            xPos += currentFont->whitespaceWidth;
+            string = utf8_get_next_char_ptr(string);
+            continue;
+        }
+
+        tileNum = bmp_font_obj_print_glyph(textObj, string, &glyphWidth);
+        if (tileNum == (u16)-1) {
+            break;
+        }
+
+        if (bmp_font_obj_get_latin_glyph_type(string)) {
+            oam[0] = currentFont->descensionHeight;
+        } else {
+            oam[0] = 0;
+        }
+        oam[1] = (xPos & 0x1FF) | 0x4000;
+        oam[2] = (palette << 12) | tileNum;
+        xPos += glyphWidth;
+
+        if (glyphIndex < ARRAY_COUNT(sObjStringGlyphWidths)) {
+            sObjStringGlyphWidths[glyphIndex] = glyphWidth;
+        }
+        glyphIndex++;
+        anim->oam[0]++;
+        oam += 3;
+        string = utf8_get_next_char_ptr(string);
+    }
+
+    anim->frames[0].cel = anim->oam;
+    anim->frames[0].duration = 100;
+    anim->frames[1].cel = NULL;
+    anim->frames[1].duration = 0;
+
+    if (widthReq != NULL) {
+        *widthReq = xPos;
+    }
+
+    return anim;
 }
-
-
-// Create Animation. (https://decomp.me/scratch/QO7Bu)
-#include "asm/code_08003980/asm_080049f0.s"
 
 
 // Get Animation (Unaligned, default FontStyle and Palette).
@@ -826,23 +1100,23 @@ void bmp_font_bg_write_glyph(const u16 *texture, u16 *dest) {
 u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
     const u16 *texture;
     u16 *address;
+    struct BitmapFontGlyph glyph;
     u8 glyphByte0, glyphByte1;
     u32 tileX, tileY, tileID;
     u8 *printed;
     u32 i, j;
 
+    if (!bmp_font_get_glyph_info(string, &glyph, NULL)) {
+        return -1;
+    }
+
     // Fullwidth Whitespace
-    if ((string[0] == 0x81) && (string[1] == 0x40)) {
+    if ((glyph.glyphSet == BMP_FONT_GLYPH_SYMBOLS) && (glyph.glyphID == BMP_FONT_GLYPH_ID_SPACE)) {
         return -1;
     }
 
-    // Halfwidth Whitespace
-    if ((string[0] == ' ') && (string[1] == ' ')) {
-        return -1;
-    }
-
-    glyphByte0 = (sBgFontStyle << 4) | string[0];
-    glyphByte1 = string[1];
+    glyphByte0 = (sBgFontStyle << 4) | glyph.glyphSet;
+    glyphByte1 = glyph.glyphID;
     tileX = 99;
     printed = (u8 *)textObj->printedGlyphs;
 
@@ -868,6 +1142,9 @@ u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
     tileID = textObj->baseTileNum + (tileX * 2) + ((tileY * 16) * 2);
     address = (void *)(VRAMBase + (textObj->tilesetID * 0x4000) + (tileID * 0x20));
     bmp_font_get_glyph(&textObj->fonts[sBgFontStyle], string, &texture, NULL);
+    if (texture == NULL) {
+        return -1;
+    }
     bmp_font_bg_write_glyph(texture, address);
 
     i = tileX + (tileY * 16);
@@ -907,44 +1184,45 @@ void bmp_font_bg_print_text(struct BitmapFontBG *textObj, u16 *bgMap, u32 mapWid
     mapX = 0;
 
     while (string[0] != '\0') {
-        switch (string[0]) {
-            case '\n':
-                bgMap += (mapWidth * 2);
-                string += 1;
-                mapX = 0;
-                break;
-
-            case '.':
-                palette = bmp_font_bg_parse_hex_digit(string[1]);
-                string += 2;
-                break;
-
-            case ':':
-                sBgFontStyle = bmp_font_bg_parse_hex_digit(string[1]);
-                string += 2;
-                break;
-
-            default:
-                tileNum = bmp_font_bg_print_glyph(textObj, string);
-
-                if (tileNum < 0x400) {
-                    u16 mapTile;
-
-                    mapTile = (palette << 12) | (tileNum & 0x3FF);
-                    bgMap[mapX] = mapTile;
-                    bgMap[mapWidth + mapX] = mapTile + 1;
-                }
-
-                string += 2;
-                mapX++;
-                break;
+        if (string[0] == '\n') {
+            bgMap += (mapWidth * 2);
+            string += 1;
+            mapX = 0;
+            continue;
         }
+
+        if (bmp_font_is_control_code(string, '.')) {
+            palette = bmp_font_bg_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
+
+        if (bmp_font_is_control_code(string, ':')) {
+            sBgFontStyle = bmp_font_bg_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
+
+        tileNum = bmp_font_bg_print_glyph(textObj, string);
+
+        if (tileNum < 0x400) {
+            u16 mapTile;
+
+            mapTile = (palette << 12) | (tileNum & 0x3FF);
+            bgMap[mapX] = mapTile;
+            bgMap[mapWidth + mapX] = mapTile + 1;
+        }
+
+        string = utf8_get_next_char_ptr(string);
+        mapX++;
     }
 }
 
 
 // Delete printed BitmapFontBG.
 void bmp_font_bg_delete_printed_data(struct BitmapFontBG *textObj, const char *string) {
+    struct BitmapFontGlyph glyph;
+    const char *nextString;
     u8 glyphByte0, glyphByte1;
     u8 *printed;
     u32 fontStyle;
@@ -953,36 +1231,40 @@ void bmp_font_bg_delete_printed_data(struct BitmapFontBG *textObj, const char *s
     fontStyle = 0;
 
     while (string[0] != '\0') {
-        switch (string[0]) {
-            case '\n':
-                string += 1;
-                break;
+        if (string[0] == '\n') {
+            string += 1;
+            continue;
+        }
 
-            case '.':
-                string += 2;
-                break;
+        if (bmp_font_is_control_code(string, '.')) {
+            string += 2;
+            continue;
+        }
 
-            case ':':
-                fontStyle = bmp_font_bg_parse_hex_digit(string[1]);
-                string += 2;
-                break;
+        if (bmp_font_is_control_code(string, ':')) {
+            fontStyle = bmp_font_bg_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
 
-            default:
-                glyphByte0 = (fontStyle << 4) | string[0];
-                glyphByte1 = string[1];
-                printed = (u8 *)textObj->printedGlyphs;
+        if (bmp_font_get_glyph_info(string, &glyph, &nextString)) {
+            glyphByte0 = (fontStyle << 4) | glyph.glyphSet;
+            glyphByte1 = glyph.glyphID;
+            printed = (u8 *)textObj->printedGlyphs;
 
-                for (i = 0; i < (textObj->maxAllocatedTileRows * 16); i++) {
-                    if ((printed[0] == glyphByte0) && (printed[1] == glyphByte1)) {
-                        if (--textObj->printedGlyphCounts[i] == 0) {
-                            printed[0] = printed[1] = 0;
-                        }
-                        break;
+            for (i = 0; i < (textObj->maxAllocatedTileRows * 16); i++) {
+                if ((printed[0] == glyphByte0) && (printed[1] == glyphByte1)) {
+                    if (--textObj->printedGlyphCounts[i] == 0) {
+                        printed[0] = printed[1] = 0;
                     }
-                    printed += 2;
+                    break;
                 }
-                string += 2;
-                break;
+                printed += 2;
+            }
+
+            string = nextString;
+        } else {
+            string = utf8_get_next_char_ptr(string);
         }
     }
 }
@@ -1017,47 +1299,46 @@ u32 bmp_font_bg_update_printer(struct BitmapFontBGPrinter *info) {
     palette = info->palette;
 
     while (string[0] != '\0') {
-        switch (string[0]) {
-            case '\n': // Newline
-                bgMap += (mapWidth * 2);
-                string += 1;
-                mapX = 0;
-                break;
+        if (string[0] == '\n') {
+            bgMap += (mapWidth * 2);
+            string += 1;
+            mapX = 0;
+            continue;
+        }
 
-            case '.': // Palette
-                palette = bmp_font_bg_parse_hex_digit(string[1]);
-                string += 2;
-                break;
+        if (bmp_font_is_control_code(string, '.')) {
+            palette = bmp_font_bg_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
 
-            case ':': // Font/Style
-                sBgFontStyle = bmp_font_bg_parse_hex_digit(string[1]);
-                string += 2;
-                break;
+        if (bmp_font_is_control_code(string, ':')) {
+            sBgFontStyle = bmp_font_bg_parse_hex_digit(string[1]);
+            string += 2;
+            continue;
+        }
 
-            default:
-                tileNum = bmp_font_bg_print_glyph(info->textObj, string);
+        tileNum = bmp_font_bg_print_glyph(info->textObj, string);
 
-                if (tileNum < 0x400) {
-                    u16 mapTile;
+        if (tileNum < 0x400) {
+            u16 mapTile;
 
-                    mapTile = (palette << 12) | (tileNum & 0x3FF);
-                    bgMap[mapX] = mapTile;
-                    bgMap[mapWidth + mapX] = mapTile + 1;
-                }
+            mapTile = (palette << 12) | (tileNum & 0x3FF);
+            bgMap[mapX] = mapTile;
+            bgMap[mapWidth + mapX] = mapTile + 1;
+        }
 
-                string += 2;
-                mapX++;
-                processLimit--;
+        string = utf8_get_next_char_ptr(string);
+        mapX++;
+        processLimit--;
 
-                if (processLimit == 0) {
-                    info->fontStyle = sBgFontStyle;
-                    info->bgMap = bgMap;
-                    info->currentMapX = mapX;
-                    info->string = string;
-                    info->palette = palette;
-                    return FALSE;
-                }
-                break;
+        if (processLimit == 0) {
+            info->fontStyle = sBgFontStyle;
+            info->bgMap = bgMap;
+            info->currentMapX = mapX;
+            info->string = string;
+            info->palette = palette;
+            return FALSE;
         }
     }
 
@@ -1085,31 +1366,23 @@ u32 bmp_font_bg_get_total_printable_chars(const char *string) {
     u32 count = 0;
 
     while (string[0] != '\0') {
-        if (string[0] < 0x80) {
-            switch (string[0]) {
-                case '\n':
-                    string += 1;
-                    break;
-
-                case '.':
-                    string += 2;
-                    break;
-
-                case ':':
-                    string += 2;
-                    break;
-
-                default:
-                    string += 2;
-                    count++;
-                    break;
-            }
-        } else {
-            while (string[0] >= 0x80) {
-                string += 2;
-                count++;
-            }
+        if (string[0] == '\n') {
+            string += 1;
+            continue;
         }
+
+        if (bmp_font_is_control_code(string, '.')) {
+            string += 2;
+            continue;
+        }
+
+        if (bmp_font_is_control_code(string, ':')) {
+            string += 2;
+            continue;
+        }
+
+        string = utf8_get_next_char_ptr(string);
+        count++;
     }
 
     return count;

@@ -19,26 +19,26 @@ const char D_08067f5c[] = "You had really great rhythm!";
 
 const char D_08067f74[] = "Rhythm League notes:";
 
-const char D_08067f90[] = ".1:0Ｄｏ－ｎ　ｄｏ－ｎ　.2:0ｐａ－ｎ　ｐａｎ";
+const char D_08067f90[] = ".1:0Do-n do-n .2:0pa-n pan";
 
-const char D_08067fcc[] = ".1:0Ｄｏｎｄｏ　.2:0ｐａ－ｎ　ｐａｎ";
+const char D_08067fcc[] = ".1:0Dondo .2:0pa-n pan";
 
-const char D_08067ff8[] = "Ａｒｅ　ｙｏｕ　ｌｏｖｅｓｔｒｕｃｋ？";
+const char D_08067ff8[] = "Are you lovestruck?";
 
-const char D_08068008[] = "Ｄｏｎ’ｔ　ｆａｌｌ　ｂａｃｋ！";
+const char D_08068008[] = "Don't fall back!";
 
-const char D_08068018[] = "Ｋｅｅｐ　ｕｐ　ｔｈｅ　ｐａｃｅ！";
+const char D_08068018[] = "Keep up the pace!";
 
-const char D_08068019[] = "１";
+const char D_08068019[] = "1";
 
-const char D_0806801B[] = "２";
+const char D_0806801B[] = "2";
 
-const char D_0806801C[] = "３";
+const char D_0806801C[] = "3";
 
-const char D_0806801D[] = "Ｎｏｗ！";
+const char D_0806801D[] = "Now!";
 
-const char D_0806801E[] = "Ｎｏｗ　ｙｏｕ　ｔｒｙ！";
+const char D_0806801E[] = "Now you try!";
 
-const char D_0806801F[] = "Ｂａｃｋ　ｔｏ　ｎｏｒｍａｌ，　ｂｅ　ｒｅａｄｙ！";
+const char D_0806801F[] = "Back to normal, be ready!";
 
 const char D_08068028[] = "";

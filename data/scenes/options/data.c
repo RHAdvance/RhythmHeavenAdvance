@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include "src/scenes/options.h"
 #include "graphics/options/options_graphics.h"
+#include "text.h"
 
 
   /* OPTIONS MENU - SCENE DATA */
@@ -45,29 +46,29 @@ struct CompressedData *options_buffered_textures[] = {
 
 const char options_data_clear_confirm_text[] =
         "\0023" "\0013" "\001C" "Are you sure?\n"
-        "\0021" "\0011" "\001C" "　　  　　 Yes\n"
-        "　　 　 No";
+        "\0021" "\0011" "\001C" "       Yes\n"
+        "     No";
 
 const char *options_desc_text[] = {
     /* SOUND MODE ------------------------------------- */
         "\0023" "\0013" "\001C" "Sound Mode\n"
-        "\0024" "\0011" "\001L" "Stereo　　" "\0021" " For dual-speaker systems. (DS, etc.)\n"
-        "\0024" "\0011" "\001L" "Mono　　 " "\x87\x53" "\0021" "For single-speaker systems. (GBA, etc.)",
+        "\0024" "\0011" "\001L" "Stereo  " TEXT_COLOR_1 " For dual-speaker systems. (DS, etc.)\n"
+        "\0024" "\0011" "\001L" "Mono   " CHAR_1_PIXEL_GAP_UTF8 TEXT_COLOR_1 "For single-speaker systems. (GBA, etc.)",
     /* DATA CLEAR ------------------------------------- */
         "\0023" "\0013" "\001C" "Clear Data\n"
-        "\0021" "\0011" "\001C" "This will delete " "\0022" "all " "\0021" "of your save data and start\n"
-        "you over from the beginning." "\0022" " Be careful!"
+        "\0021" "\0011" "\001C" "This will delete " TEXT_COLOR_2 "all " TEXT_COLOR_1 "of your save data and start\n"
+        "you over from the beginning." TEXT_COLOR_2 " Be careful!"
     /* ------------------------------------------------ */
 };
 
 const char *advance_options_label_text[] = {
-    "Ｓｏｕｎｄ　Ｅｆｆｅｃｔｓ",
-    "Ｍｕｓｉｃ",
+    "Sound Effects",
+    "Music",
 #ifdef RUMBLE
-    "Ｒｕｍｂｌｅ",
+    "Rumble",
 #endif
-    "Ｓｈｏｗ　Ｄｉｓｃｌａｉｍｅｒ",
-    "Ａｌｔ．　Ｇａｍｅ　Ｓｅｌｅｃｔ　Ｍｕｓｉｃ",
+    "Show Disclaimer",
+    "Alt. Game Select Music",
 };
 
 const char *advance_options_desc_text[] = {

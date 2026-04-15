@@ -97,7 +97,7 @@ text D_0805fc90
     .ascii "\n"
     .ascii "And another one!\n"
     .ascii "It's easier if you use both\n"
-    .asciz "‡N and Down on ‡O for it.\n"
+    .asciz "â‘® and Down on â‘¯ for it.\n"
 endtext
 
 
