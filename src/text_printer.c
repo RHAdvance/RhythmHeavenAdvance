@@ -4,13 +4,10 @@
 #include "src/memory_heap.h"
 #include "src/lib_0804ca80.h"
 #include "src/code_080092cc.h"
+#include "src/utf_8.h"
 #include "data/text_printer_data.h"
 
-asm(".include \"include/gba.inc\"");//Temporary
-
-
   //  //  //  TEXT PRINTER  //  //  //
-
 
 typedef void (PrintGlyphToVRAMFunc)(void *args);
 extern PrintGlyphToVRAMFunc text_print_glyph_to_vram_rom;
@@ -39,6 +36,14 @@ static s8 sPrinterIndentWidth;  // Printer Indent Width
 static s8 sPrinterShadowColors; // Printer Shadow Colors
 
 
+static u8 *text_font_get_glyph_data_base(s32 font) {
+    return D_089380ac[font].glyphRanges[0].glyphData;
+}
+
+
+static u8 *text_font_get_glyph_widths_base(s32 font) {
+    return D_089380ac[font].glyphRanges[0].glyphWidths;
+}
 
 // Init. Static Variables
 void text_printer_init(void) {
@@ -58,7 +63,7 @@ s32 text_font_get_spacing(s32 font) {
 s32 text_font_get_glyph_width(s32 font, s32 glyphID) {
     if (glyphID < 0) return 0;
 
-    return D_089380ac[font].glyphWidths[glyphID];
+    return text_font_get_glyph_widths_base(font)[glyphID];
 }
 
 
@@ -75,7 +80,7 @@ s32 text_font_get_next_glyph_width(s32 font, const char **stream) {
         return 0;
     }
 
-    return D_089380ac[font].glyphWidths[glyphID];
+    return text_font_get_glyph_widths_base(font)[glyphID];
 }
 
 
@@ -110,7 +115,7 @@ void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID,
     if (glyphID < 0) return;
 
     args[0] = VRAMBase + ((tileOfsX >> 3) * 32) + (tileOfsY * 32 * 32);
-    args[1] = (u32)(D_089380ac[font].glyphData + (D_089380ac[font].glyphDataSize * glyphID));
+    args[1] = (u32)(text_font_get_glyph_data_base(font) + (D_089380ac[font].glyphDataSize * glyphID));
     args[2] = ((tileOfsX & 7) << 2) + lineColors;
     args[3] = font;
     printGlyphToVRAM(args);
@@ -126,7 +131,7 @@ s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, 
 
     totalWidth = 0;
     spacing = D_089380ac[font].glyphSpacing;
-    ellipsis = D_089380d0;
+    ellipsis = "…";
     ellipsisID = text_printer_get_glyph_id(&ellipsis);
     ellipsisWidth = text_font_get_glyph_width(font, ellipsisID);
 
@@ -161,59 +166,27 @@ s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, 
 }
 
 
-// Check if Character is Any Sort of Open Bracket
-s32 text_glyph_is_open_bracket(const char *c) {
-    const char *brackets;
-    char c1, c2;
+static s32 text_get_glyph_id_for_codepoint(u32 codepoint) {
+    const struct FontGlyphRange *glyphRange;
+    s32 glyphID;
 
-    c1 = c[0];
-    c2 = c[1];
-
-    if ((char)(c1 - '\x20') < '\x5f') {
-        // Half-Width Open Brackets
-        for (brackets = D_089380e4; brackets[0] != '\0'; brackets += 1) {
-            if (c1 == brackets[0]) {
-                return TRUE;
-            }
-        }
-    } else {
-        // Full-Width Open Brackets
-        for (brackets = D_089380d4; brackets[0] != '\0'; brackets += 2) {
-            if ((c1 == brackets[0]) && (c2 == brackets[1])) {
-                return TRUE;
-            }
-        }
+    if (codepoint > 0xffff) {
+        return -1;
     }
 
-    return FALSE;
-}
-
-
-// Check if Character is Any Sort of Ending Punctuation
-s32 text_glyph_is_end_punctuation(const char *c) {
-    const char *punctuation;
-    char c1, c2;
-
-    c1 = c[0];
-    c2 = c[1];
-
-    if ((char)(c1 - '\x20') < '\x5f') {
-        // Half-Width Ending Punctuation
-        for (punctuation = D_08938138; punctuation[0] != '\0'; punctuation += 1) {
-            if (c1 == punctuation[0]) {
-                return TRUE;
-            }
+    glyphRange = D_089380ac[TEXT_PRINTER_FONT_SMALL].glyphRanges;
+    glyphID = 0;
+    while (glyphRange->glyphData != NULL) {
+        if ((codepoint >= glyphRange->utf8Start) && (codepoint <= glyphRange->utf8End)) {
+            glyphID += codepoint - glyphRange->utf8Start;
+            return glyphID;
         }
-    } else {
-        // Full-Width Ending Punctuation
-        for (punctuation = D_089380e8; punctuation[0] != '\0'; punctuation += 2) {
-            if ((c1 == punctuation[0]) && (c2 == punctuation[1])) {
-                return TRUE;
-            }
-        }
+
+        glyphID += (glyphRange->utf8End - glyphRange->utf8Start) + 1;
+        glyphRange++;
     }
 
-    return FALSE;
+    return -1;
 }
 
 extern u8 haveSeenDisclaimer;
@@ -368,37 +341,6 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
             } else {
                 totalWidth = 0;
             }
-        } else {
-            // if there are no spaces, do it like originally (useful for japanese)
-            if (text_glyph_is_open_bracket(sGlyphBuffer[totalGlyphs - 1].charSrc)) {
-                fGlyphData--;
-                totalGlyphs--;
-                totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-                stream = fGlyphData->formatSrc;
-            } else if (text_glyph_is_end_punctuation(stream)) {
-                do {
-                    fGlyphData--;
-                    totalGlyphs--;
-                    totalWidth -= (fGlyphData->width + fGlyphData->spacing);
-                } while ((totalGlyphs != 0) && text_glyph_is_end_punctuation(fGlyphData->charSrc));
-                stream = fGlyphData->formatSrc;
-            }
-
-            if (totalGlyphs != 0) {
-                struct FormattedGlyph *lastGlyph;
-                s32 xStart, w1, w2;
-
-                lastGlyph = &sGlyphBuffer[totalGlyphs] - 1;
-                xStart = sGlyphBuffer[0].xOffset;
-                w1 = clamp_int32((maxWidth - lastGlyph->width - xStart), 0, maxWidth);
-                w2 = clamp_int32((lastGlyph->xOffset - xStart), 0, maxWidth);
-
-                for (i = 0; i < totalGlyphs; i++) {
-                    sGlyphBuffer[i].xOffset = xStart + ((sGlyphBuffer[i].xOffset - xStart) * w1 / w2);
-                }
-
-                totalWidth = w1 + lastGlyph->width;
-            }
         }
     }
 
@@ -415,8 +357,130 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
 }
 
 
-// Create Animation (https://decomp.me/scratch/CQpoA)
-#include "asm/code_080092cc/asm_08009de4.s"
+// NONMATCHING
+struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 textScale, const char **string, u32 anchor, s32 lineColours, s32 maxWidth, s32 ignoreFormatting, s32 priorWidth, s32 shadowColours) {
+    struct Animation *anim;
+    u16 *oam;
+
+    s32 xPos;
+    s32 yPos;
+    s32 totalM;
+    s32 totalW;
+    s32 totalN;
+    u32 totalOAM;
+    s32 pixelWidth;
+    u32 attr0;
+    u32 attr2;
+
+    u32 i;
+
+    if (ignoreFormatting) {
+        pixelWidth = text_printer_print_unformatted_line(tileBaseX * 8, tileBaseY + 64, textScale, *string, maxWidth, lineColours);
+    } else {
+        pixelWidth = text_printer_print_formatted_line(tileBaseX * 8, tileBaseY + 64, textScale, string, maxWidth, lineColours, priorWidth, shadowColours);
+    }
+
+    sCurrentLineWidth = pixelWidth;
+    totalN = (pixelWidth + 7) >> 3;
+
+    totalW = 0;
+    while (totalN > 3) {
+        totalN -= 4;
+        totalW++;
+    }
+
+    totalM = 0;
+    while (totalN > 1) {
+        totalN -= 2;
+        totalM++;
+    }
+
+    totalOAM = totalN + totalM + totalW;
+    if (totalOAM == 0) {
+        oam = mem_heap_alloc_id(memID, sizeof(u16));
+        anim = mem_heap_alloc_id(memID, 2 * sizeof(struct Animation));
+        *oam = 0;
+        anim[0].cel = oam;
+        anim[0].duration = 100;
+        anim[1].cel = NULL;
+        anim[1].duration = 0;
+        return anim;
+    }
+
+    oam = mem_heap_alloc_id(memID, sizeof(u16) + (totalOAM * (3 * sizeof(u16))));
+    anim = mem_heap_alloc_id(memID, 2 * sizeof(struct Animation));
+    anim[0].cel = oam;
+    anim[0].duration = 100;
+    anim[1].cel = NULL;
+    anim[1].duration = 0;
+    oam[0] = totalOAM;
+    oam++;
+
+    switch (anchor) {
+        case 0:
+            xPos = 0;
+            yPos = 0;
+            break;
+        case 1:
+            xPos = -pixelWidth >> 1;
+            yPos = -D_089380ac[textScale].unkA;
+            break;
+        case 2:
+            xPos = 0;
+            yPos = -D_089380ac[textScale].unkA;
+            break;
+        case 3:
+            xPos = -pixelWidth;
+            yPos = -D_089380ac[textScale].unkA;
+            break;
+    }
+
+    attr2 = tileBaseX + (tileBaseY << 5);
+    attr0 = (u16)((yPos & 0xff) | 0x4000); // obj. shape = 1 (horizontal)
+
+    if (totalW > 0) {
+        u32 xMask = 0x1ff;
+        u32 size = -0x8000;
+        for (i = totalW; i > 0; i--) {
+            *oam++ = attr0;
+            *oam++ = (xPos & xMask) | size; // obj. size = 2 (32x16)
+            *oam++ = attr2;
+            xPos += 32;
+            attr2 += 4;
+        }
+    }
+
+    attr0 = (u16)(yPos & 0xff); // obj. shape = 0 (square)
+
+    if (totalM > 0) {
+        u32 xMask = 0x1ff;
+        u32 size = 0x4000;
+        for (i = totalM; i > 0; i--) {
+            *oam++ = attr0;
+            *oam++ = (xPos & xMask) | size; // obj. size = 1 (16x16)
+            *oam++ = attr2;
+            xPos += 16;
+            attr2 += 2;
+        }
+    }
+
+    attr0 = (u16)((yPos & 0xff) | -0x8000); // obj. shape = 2 (vertical)
+
+    if (totalN > 0) {
+        u32 xMask = 0x1ff;
+        u32 size = 0;
+        for (i = totalN; i > 0; i--) {
+            *oam++ = attr0;
+            *oam++ = (xPos & xMask) | size;
+            *oam++ = attr2;
+            xPos += 8;
+            attr2 += 1;
+        }
+    }
+
+    return anim;
+}
+
 
 
 // Get Animation (Type 1)
@@ -479,51 +543,17 @@ void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTil
 
 // Get Glyph ID 
 s32 text_printer_get_glyph_id(const char **string) {
-    const char *s;
-    char c1;
-    char c2;
-    s8 r0;
-    s32 id;
+    u32 codepoint;
 
-    s = *string;
-    c1 = s[0];
-    (*string)++;
-
-    r0 = (c1 - 0x20);
-    if ((u8)r0 < 0x5f) {
-        c2 = D_08938194[((u8)r0 * 2) + 1];
-        c1 = D_08938194[(u8)r0 * 2];
-    } else {
-        c2 = s[1];
-        (*string)++;
+    if (!utf8_decode_codepoint(string, &codepoint)) {
+        return -1;
     }
 
-    r0 = (c1 + 0x7f);
-    if ((u8)r0 < 0x1f) {
-        id = (u16)D_08938140[c1 - 0x81];
-    } else {
-        r0 = (c1 + 0x20);
-        if ((u8)r0 < 0xb) {
-            id = (u16)D_0893817e[c1 - 0xe0];
-        } else {
-            id = -1;
-        }
+    if ((codepoint < 0x20) || (codepoint == 0x7f)) {
+        return -1;
     }
 
-    if (id != -1) {
-        if (c2 < 0x7f) {
-            id -= 0x40 - c2;
-        } else {
-            r0 = (c2 + 0x80);
-            if ((u8)r0 < 0x7d) {
-                id -= 0x41 - c2;
-            } else {
-                id = -1;
-            }
-        }
-    }
-
-    return id;
+    return text_get_glyph_id_for_codepoint(codepoint);
 }
 
 

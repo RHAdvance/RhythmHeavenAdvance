@@ -304,7 +304,7 @@ struct DebugText *create_new_dev_text(u16 memID, u32 layer, u16 *arg2, u32 tiles
 
 
 // [D_089dd908] ?
-char D_089dd908[] = "QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ";
+char D_089dd908[] = "________________________________";
 
 // Print DebugText object.
 void dev_text_print(struct DebugText *debugText, const char *string) {
@@ -319,7 +319,7 @@ void dev_text_print(struct DebugText *debugText, const char *string) {
     debugText->xOffset = -1;
 
     bgMap = debugText->cursorMap;
-    bmp_font_bg_print_text(debugText->bgFont, bgMap, 32, "Q", debugText->palette);
+    bmp_font_bg_print_text(debugText->bgFont, bgMap, 32, "_", debugText->palette);
     t1 = bgMap[0];
     t2 = bgMap[32];
     bgMap++;

@@ -21,11 +21,11 @@ const char D_0805b530[] = "Unwanted-hair check:";
 
 const char D_0805b544[] = "Hello!";
 
-const char D_0805b550[] = "Press ‡M or ‡O to pluck the hair at the right time.";
+const char D_0805b550[] = "Press â‘­ or â‘¯ to pluck the hair at the right time.";
 
 const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "Fantastic!";
 
-const char D_0805b590[] = "\x05\x34" "\x01\x38" "\x03\x30" "\x01\x73" "For the curly hairs, hold ‡M or ‡O until it's plucked.";
+const char D_0805b590[] = "\x05\x34" "\x01\x38" "\x03\x30" "\x01\x73" "For the curly hairs, hold â‘­ or â‘¯ until it's plucked.";
 
 const char D_0805b5c8[] = "\x05\x34" "\x01\x38" "\x03\x30" "\x01\x73" "When there's a lot, using both hands might help!";
 

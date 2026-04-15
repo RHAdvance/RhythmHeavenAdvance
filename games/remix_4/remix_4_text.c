@@ -40,7 +40,7 @@ const char D_08068128[] =
     "\n"
     "Impressive!";
 
-const char D_08068138[] = "Ｌｅｔ’ｓ　ｓｌｏｗ　ｔｈｉｎｇｓ　ｄｏｗｎ　ａ　ｂｉｔ．．．";
+const char D_08068138[] = "Let's slow things down a bit...";
 
 const char D_0806814c[] =
     "This is it, the\n"

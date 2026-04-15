@@ -21,25 +21,25 @@ const char D_0805c15c[] = "You let your guard down at the end.";
 
 const char D_0805c170[] = "";
 
-const char D_0805c174[] = "Ｌｅｔ’ｓ　ｄａｎｃｅ！";
+const char D_0805c174[] = "Let's dance!";
 
-const char D_0805c18c[] = "Ｉ　ｌｏｖｅ　ｔａｐ！";
+const char D_0805c18c[] = "I love tap!";
 
-const char D_0805c1a8[] = "Ｗｈａｔ　ａ　ｐｅｒｆｏｒｍａｎｃｅ！";
+const char D_0805c1a8[] = "What a performance!";
 
-const char D_0805c1bc[] = "Ｌｅｔ’ｓ　ｔａｐ！";
+const char D_0805c1bc[] = "Let's tap!";
 
-const char D_0805c1d0[] = "Ｐｒａｃｔｉｃｅ　ｆｉｒｓｔ！";
+const char D_0805c1d0[] = "Practice first!";
 
-const char D_0805c1e8[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
+const char D_0805c1e8[] = "Just copy us!";
 
-const char D_0805c1f8[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
+const char D_0805c1f8[] = "OK, here's another step!";
 
-const char D_0805c210[] = "Ｎｉｃｅ！　Ｏｎｅ　ｍｏｒｅ！　";
+const char D_0805c210[] = "Nice! One more! ";
 
-const char D_0805c228[] = "Ｇｏｏｄ！　Ｌａｓｔ　ｏｎｅ！";
+const char D_0805c228[] = "Good! Last one!";
 
-const char D_0805c240[] = "Ｏｏｋｉｉ！　Ｎｉｃｅ　ｗｏｒｋ！";
+const char D_0805c240[] = "Ookii! Nice work!";
 
 const char D_0805c248[] = "Your basics were a little sloppy.";
 
@@ -59,22 +59,22 @@ const char D_0805c2e8[] = "";
 
 const char D_0805c2ec[] = "Monkey feedback:";
 
-const char D_0805c300[] = "Ｌｅｔ’ｓ　ｄａｎｃｅ！";
+const char D_0805c300[] = "Let's dance!";
 
-const char D_0805c318[] = "Ｉ　ｌｏｖｅ　ｔａｐ！";
+const char D_0805c318[] = "I love tap!";
 
-const char D_0805c334[] = "Ｗｈａｔ　ａ　ｐｅｒｆｏｒｍａｎｃｅ！";
+const char D_0805c334[] = "What a performance!";
 
-const char D_0805c348[] = "Ｌｅｔ’ｓ　ｔａｐ！";
+const char D_0805c348[] = "Let's tap!";
 
-const char D_0805c35c[] = "Ｐｒａｃｔｉｃｅ　ｆｉｒｓｔ！";
+const char D_0805c35c[] = "Practice first!";
 
-const char D_0805c374[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
+const char D_0805c374[] = "Just copy us!";
 
-const char D_0805c384[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
+const char D_0805c384[] = "OK, here's another step!";
 
-const char D_0805c39c[] = "Ｎｉｃｅ！　Ｏｎｅ　ｍｏｒｅ！　";
+const char D_0805c39c[] = "Nice! One more! ";
 
-const char D_0805c3b4[] = "Ｇｏｏｄ！　Ｌａｓｔ　ｏｎｅ！";
+const char D_0805c3b4[] = "Good! Last one!";
 
-const char D_0805c3cc[] = "Ｏｏｋｉｉ！　Ｎｉｃｅ　ｗｏｒｋ！";
+const char D_0805c3cc[] = "Ookii! Nice work!";

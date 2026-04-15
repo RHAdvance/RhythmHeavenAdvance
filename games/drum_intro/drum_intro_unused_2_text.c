@@ -61,5 +61,5 @@ const char D_0805da5c[] =
 const char D_0805da84[] =
     "Let me count for you.\n"
     "When the song starts,\n"
-    "press ‡N and ‡L together\n"
+    "press â‘® and â‘¬ together\n"
     "at the same time.";

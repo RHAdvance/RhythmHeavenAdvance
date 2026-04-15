@@ -57,7 +57,7 @@ return
 text D_0805ff7c
     .ascii "\n"
     .ascii "Now, let's add a crash cymbal!\n"
-    .ascii "Hit it with ‡L, and time it with\n"
+    .ascii "Hit it with â‘¬, and time it with\n"
     .asciz "the bass drum here."
 endtext
 
@@ -91,7 +91,7 @@ return
 text D_08060080
     .ascii "Let's add a tom beat.\n"
     .ascii "Remember, you can use\n"
-    .ascii "either ‡M or Left on ‡O\n"
+    .ascii "either â‘­ or Left on â‘¯\n"
     .asciz "for the snare.\n"
 endtext
 

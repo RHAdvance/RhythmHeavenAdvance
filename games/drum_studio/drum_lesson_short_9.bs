@@ -57,7 +57,7 @@ text D_080609dc
     .ascii "\n"
     .ascii "Kick each bass twice!\n"
     .ascii "Think you've got this?\n"
-    .asciz "I'd suggest only using ‡N."
+    .asciz "I'd suggest only using â‘®."
 endtext
 
 

@@ -17,24 +17,24 @@ const char D_0805d164[] = "Stop getting in the way!";
 
 const char D_0805d180[] = "";
 
-const char D_0805d184[] = "‚`‚”@‚”‚ˆ‚…@‚†‚‰‚’‚“‚”@‚“‚‰‚‡‚C";
+const char D_0805d184[] = "At the first sign,";
 
-const char D_0805d198[] = "‚‚’‚…‚“‚“@‚‚‚„@‚ˆ‚‚Œ‚„@T";
+const char D_0805d198[] = "press and hold ã‚";
 
-const char D_0805d1ac[] = "‚”‚@‚“‚”‚‚™@‚“‚”‚‰‚Œ‚ŒI";
+const char D_0805d1ac[] = "to stay still!";
 
-const char D_0805d1bc[] = "‚`‚‚„@‚‚”@‚”‚ˆ‚…@‚‚…‚˜‚”@‚“‚‰‚‡‚C";
+const char D_0805d1bc[] = "And at the next sign,";
 
-const char D_0805d1d0[] = "‚’‚…‚Œ‚…‚‚“‚…@T";
+const char D_0805d1d0[] = "release ã‚";
 
-const char D_0805d1e0[] = "‚”‚@‚“‚”‚‚’‚”@‚’‚•‚‚‚‰‚‚‡I";
+const char D_0805d1e0[] = "to start running!";
 
-const char D_0805d1f0[] = "‚x‚‚•@‚’‚…‚‚„‚™C@‚‚…‚—‚‚‚‰‚…H@‚f‚I";
+const char D_0805d1f0[] = "You ready, newbie? Go!";
 
-const char D_0805d204[] = "‚e‚’‚‚@‚ˆ‚…‚’‚…@‚‚@‚‚•‚”C";
+const char D_0805d204[] = "From here on out,";
 
-const char D_0805d214[] = "‚‚@‚‚‚’‚…@‚“‚‰‚‡‚‚“I";
+const char D_0805d214[] = "no more signs!";
 
-const char D_0805d220[] = "‚s‚’‚•‚“‚”@‚™‚‚•‚’@‚‰‚‚“‚”‚‰‚‚ƒ‚”‚“I";
+const char D_0805d220[] = "Trust your instincts!";
 
 const char D_0805d234[] = "Hushed Whispers";
