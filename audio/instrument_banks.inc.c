@@ -2137,7 +2137,7 @@ union Instrument inst_bank_fireworks_en[] = {
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
 };
 
-union Instrument inst_bank_conffmachine_en[] = {
+union Instrument inst_bank_conffmachine_en_sub[] = {
     /* 000 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -2156,4 +2156,39 @@ union Instrument inst_bank_conffmachine_en[] = {
     /* 060 */ { .pcm = &instrument_pcm_coward }, { .pcm = &instrument_pcm_serious }, { .pcm = &instrument_pcm_neversaidit }, { .pcm = &instrument_pcm_butstill },
     /* 064 */ { .pcm = &instrument_pcm_afterall }, { .pcm = &instrument_pcm_evenso }, { .pcm = &instrument_pcm_like }, { .pcm = &instrument_pcm_hate },
     /* 068 */ { .pcm = &instrument_pcm_cough }
+};
+
+union Instrument inst_bank_conffmachine_en[] = {
+    /* 000 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 056 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 068 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 072 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 076 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 080 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 084 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 088 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 092 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 096 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 100 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 104 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 120 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_conffmachine_en },
+    /* 124 */ NULL,                            NULL,                            NULL,                            NULL,
 };

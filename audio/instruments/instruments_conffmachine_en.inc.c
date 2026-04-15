@@ -267,3 +267,10 @@ struct InstrumentPCM instrument_pcm_cough = {
     /* ADSR Fade */ 0x000000,
     /* ADSR Rel  */ 0x1E7FBA,
 };
+
+extern union Instrument inst_bank_conffmachine_en_sub[];
+struct InstrumentSubRhythm instrument_rhy_conffmachine_en = {
+    /* Type      */ INSTRUMENT_SUB_RHYTHM,
+    /* Base Key  */ 36,
+    /* Sub-Bank  */ inst_bank_conffmachine_en_sub
+};
