@@ -2101,14 +2101,14 @@ union Instrument inst_bank_RAPMEN_en[] = {
 union Instrument inst_bank_RAPWOMEN_en[] = {
     /* 000 */ { .pcm = &instrument_pcm_Wyo }, { .pcm = &instrument_pcm_Wsnacktime }, { .pcm = &instrument_pcm_W10am }, { .pcm = &instrument_pcm_Whuh },
     /* 004 */ { .pcm = &instrument_pcm_Wwhostoknow }, { .pcm = &instrument_pcm_Walltheirsnacks }, { .pcm = &instrument_pcm_Weatemallup }, { .pcm = &instrument_pcm_Wopenemup },
-    /* 008 */ { .pcm = &instrument_pcm_Wyfm }, { .pcm = &instrument_pcm_mWLn }, { .pcm = &instrument_pcm_mWRn }, { .pcm = &instrument_pcm_Wsnacking },
+    /* 008 */ { .pcm = &instrument_pcm_Wyfm }, NULL, NULL, { .pcm = &instrument_pcm_Wsnacking },
     /* 012 */ { .pcm = &instrument_pcm_Wifeelso }, { .pcm = &instrument_pcm_Wsweetsare }, { .pcm = &instrument_pcm_Wcakesare }, { .pcm = &instrument_pcm_Wawesome },
     /* 016 */ { .pcm = &instrument_pcm_Wclueless }, { .pcm = &instrument_pcm_Wtellemweare }, { .pcm = &instrument_pcm_Wstolem }, { .pcm = &instrument_pcm_Wyeah },
     /* 020 */ { .pcm = &instrument_pcm_1730 }, { .pcm = &instrument_pcm_1731 }, { .pcm = &instrument_pcm_1732 }, { .pcm = &instrument_pcm_Wloathsome },
     /* 024 */ { .pcm = &instrument_pcm_1733 }, { .pcm = &instrument_pcm_1734 }, { .pcm = &instrument_pcm_1735 }, { .pcm = &instrument_pcm_1736 },
     /* 028 */ { .pcm = &instrument_pcm_1737 }, { .pcm = &instrument_pcm_1738 }, { .pcm = &instrument_pcm_1739 }, { .pcm = &instrument_pcm_1740 },
-    /* 032 */ { .pcm = &instrument_pcm_1741 }, { .pcm = &instrument_pcm_mWA2 }, { .pcm = &instrument_pcm_mWA3 }, { .pcm = &instrument_pcm_mWLf },
-    /* 036 */ { .pcm = &instrument_pcm_mWRf }
+    /* 032 */ { .pcm = &instrument_pcm_1741 }, NULL, NULL, NULL,
+    /* 036 */ NULL
 
 };
 

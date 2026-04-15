@@ -284,21 +284,13 @@ struct InstrumentPCM instrument_pcm_1732 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_1_data;
-#else
 extern struct SampleData sample_954_data;
-#endif
 struct InstrumentPCM instrument_pcm_1733 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_1_data,
-    #else
     /* Sample    */ &sample_954_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -307,53 +299,13 @@ struct InstrumentPCM instrument_pcm_1733 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_2_data;
-struct InstrumentPCM instrument_pcm_mWA2 = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &march_ord_w_2_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x1FC000,
-};
-
-extern struct SampleData march_ord_w_3_data;
-struct InstrumentPCM instrument_pcm_mWA3 = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &march_ord_w_3_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x1FC000,
-};
-#endif
-
-#ifdef SFX
-extern struct SampleData march_ord_w_4_data;
-#else
 extern struct SampleData sample_955_data;
-#endif
 struct InstrumentPCM instrument_pcm_1734 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_4_data,
-    #else
     /* Sample    */ &sample_955_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -362,21 +314,13 @@ struct InstrumentPCM instrument_pcm_1734 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_5_data;
-#else
 extern struct SampleData sample_956_data;
-#endif
 struct InstrumentPCM instrument_pcm_1735 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_5_data,
-    #else
     /* Sample    */ &sample_956_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -385,21 +329,13 @@ struct InstrumentPCM instrument_pcm_1735 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_9_data;
-#else
 extern struct SampleData sample_957_data;
-#endif
 struct InstrumentPCM instrument_pcm_1736 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_9_data,
-    #else
     /* Sample    */ &sample_957_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -408,38 +344,13 @@ struct InstrumentPCM instrument_pcm_1736 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_10_data;
-struct InstrumentPCM instrument_pcm_mWRn = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &march_ord_w_10_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x1FC000,
-};
-#endif
-
-#ifdef SFX
-extern struct SampleData march_ord_w_13_data;
-#else
 extern struct SampleData sample_958_data;
-#endif
 struct InstrumentPCM instrument_pcm_1737 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_13_data,
-    #else
     /* Sample    */ &sample_958_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -448,21 +359,13 @@ struct InstrumentPCM instrument_pcm_1737 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_11_data;
-#else
 extern struct SampleData sample_959_data;
-#endif
 struct InstrumentPCM instrument_pcm_1738 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_11_data,
-    #else
     /* Sample    */ &sample_959_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -471,21 +374,13 @@ struct InstrumentPCM instrument_pcm_1738 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_6_data;
-#else
 extern struct SampleData sample_960_data;
-#endif
 struct InstrumentPCM instrument_pcm_1739 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_6_data,
-    #else
     /* Sample    */ &sample_960_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -494,68 +389,14 @@ struct InstrumentPCM instrument_pcm_1739 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_7_data;
-struct InstrumentPCM instrument_pcm_mWLn = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &march_ord_w_7_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x1FC000,
-};
 
-extern struct SampleData march_ord_w_14_data;
-struct InstrumentPCM instrument_pcm_mWLf = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &march_ord_w_14_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x1FC000,
-};
-
-extern struct SampleData march_ord_w_15_data;
-struct InstrumentPCM instrument_pcm_mWRf = {
-    /* Type      */ INSTRUMENT_PCM_ALIGNED,
-    /* Key       */ 0x3C,
-    /* Fast Read */ FALSE,
-    /* Panning   */ 127,
-    /* Sample    */ &march_ord_w_15_data,
-    /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x600000,
-    /* ADSR Dec  */ 0x208000,
-    /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x1FC000,
-};
-#endif
-
-#ifdef SFX
-extern struct SampleData march_ord_w_12_data;
-#else
 extern struct SampleData sample_961_data;
-#endif
 struct InstrumentPCM instrument_pcm_1740 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_12_data,
-    #else
     /* Sample    */ &sample_961_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
@@ -564,21 +405,13 @@ struct InstrumentPCM instrument_pcm_1740 = {
     /* ADSR Rel  */ 0x1FC000,
 };
 
-#ifdef SFX
-extern struct SampleData march_ord_w_8_data;
-#else
 extern struct SampleData sample_962_data;
-#endif
 struct InstrumentPCM instrument_pcm_1741 = {
     /* Type      */ INSTRUMENT_PCM_ALIGNED,
     /* Key       */ 0x3C,
     /* Fast Read */ FALSE,
     /* Panning   */ 127,
-    #ifdef SFX
-    /* Sample    */ &march_ord_w_8_data,
-    #else
     /* Sample    */ &sample_962_data,
-    #endif
     /* ADSR Init */ 0x7F0000,
     /* ADSR Sus  */ 0x7F0000,
     /* ADSR Atk  */ 0x600000,
