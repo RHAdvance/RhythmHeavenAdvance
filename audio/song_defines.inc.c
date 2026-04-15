@@ -9,7 +9,7 @@
 /* 0006 */ DEFINE_SONG( &spaceball_tempo_mpart_seqData,              SFX_PLAYER_5   )
 /* 0007 */ DEFINE_SONG( &spaceball_tempo_cymbal_seqData,              SFX_PLAYER_5   )
 /* 0008 */ DEFINE_SONG( NULL, 0 )
-/* 0009 */ DEFINE_SONG( NULL, 0 )
+/* 0009 */ DEFINE_SONG( &s_lesson_sel_bgm_english_seqData,           MUSIC_PLAYER_0 )
 /* 0010 */ DEFINE_SONG( &s_space_ikeo_turn_en_seqData, SFX_PLAYER_1 ) // yummy tasty unused slots :heart:
 /* 0011 */ DEFINE_SONG( &s_space_ikeo_right_en_seqData, SFX_PLAYER_1 )
 /* 0012 */ DEFINE_SONG( &s_space_ikeo_lets_en_seqData, SFX_PLAYER_1 )

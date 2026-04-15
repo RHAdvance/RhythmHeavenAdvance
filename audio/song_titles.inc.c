@@ -458,6 +458,7 @@ char s_virus_hit_seqName[] = "";
 char s_virus_osii_seqName[] = "";
 char s_check_result_bgm_seqName[] = "";
 char s_lesson_sel_bgm_seqName[] = "";
+char s_lesson_sel_bgm_english_seqName[] = "";
 char s_toys_bgm_seqName[] = "";
 char s_rap_machine_bgm_seqName[] = "";
 char s_mini_game_bgm_seqName[] = "";

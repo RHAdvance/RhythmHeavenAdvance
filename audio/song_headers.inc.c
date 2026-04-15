@@ -5018,13 +5018,8 @@ struct SongHeader s_check_result_bgm_seqData = {
 };
 
 extern const u8 s_lesson_sel_bgm_mid[];
-extern const u8 s_lesson_sel_bgm_english_mid[];
 struct SongHeader s_lesson_sel_bgm_seqData = {
-#ifdef SFX
-    /* MIDI Sequence */ s_lesson_sel_bgm_english_mid,
-#else
     /* MIDI Sequence */ s_lesson_sel_bgm_mid,
-#endif
     /* Sound Player  */ MUSIC_PLAYER_0,
     /* Bank Number   */ INST_BANK_46,
     /* Volume        */ 100,
@@ -5032,6 +5027,18 @@ struct SongHeader s_lesson_sel_bgm_seqData = {
     /* unk8          */ 0xff,
     /* Song Title    */ s_lesson_sel_bgm_seqName,
     /* Song Number   */ 1799
+};
+
+extern const u8 s_lesson_sel_bgm_english_mid[];
+struct SongHeader s_lesson_sel_bgm_english_seqData = {
+    /* MIDI Sequence */ s_lesson_sel_bgm_english_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_46,
+    /* Volume        */ 100,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_lesson_sel_bgm_english_seqName,
+    /* Song Number   */ 9
 };
 
 extern const u8 s_toys_bgm_mid[];

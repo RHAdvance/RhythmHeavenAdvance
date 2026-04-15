@@ -1617,7 +1617,7 @@ union Instrument inst_bank_46[] = {
     /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 120 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_0953 },
+    /* 120 */ NULL,                            NULL,                            { .rhy = &instrument_rhy_0958 }, { .rhy = &instrument_rhy_0953 },
     /* 124 */ { .rhy = &instrument_rhy_0954 }, { .rhy = &instrument_rhy_0955 }, { .rhy = &instrument_rhy_0956 }, { .rhy = &instrument_rhy_0957 }
 };
 
@@ -2119,8 +2119,8 @@ union Instrument inst_bank_countin_en[] = {
     /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 024 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_dlesson1 }, NULL,
+    /* 028 */ { .pcm = &instrument_pcm_dlesson2 }, { .pcm = &instrument_pcm_dlesson3 }, NULL,                            NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 040 */ NULL,                            NULL,                            NULL,                            NULL,

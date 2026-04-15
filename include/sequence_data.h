@@ -514,6 +514,7 @@ extern struct SongHeader s_virus_hit_seqData;
 extern struct SongHeader s_virus_osii_seqData;
 extern struct SongHeader s_check_result_bgm_seqData;
 extern struct SongHeader s_lesson_sel_bgm_seqData;
+extern struct SongHeader s_lesson_sel_bgm_english_seqData;
 extern struct SongHeader s_toys_bgm_seqData;
 extern struct SongHeader s_rap_machine_bgm_seqData;
 extern struct SongHeader s_mini_game_bgm_seqData;
