@@ -354,6 +354,7 @@ extern struct SongHeader s_block_hit_seqData;
 extern struct SongHeader s_block_walk_seqData;
 extern struct SongHeader s_kawasemi_bgm_seqData;
 extern struct SongHeader s_kawasemi_frase_seqData;
+// -------------------------------------------------------------
 extern struct SongHeader s_heat_v_jituhane_seqData;
 extern struct SongHeader s_heat_v_watasine_seqData;
 extern struct SongHeader s_heat_v_watasitara_seqData;
@@ -372,6 +373,26 @@ extern struct SongHeader s_heat_v_dakedo_seqData;
 extern struct SongHeader s_heat_v_suki_seqData;
 extern struct SongHeader s_heat_v_kirai_seqData;
 extern struct SongHeader s_heat_v_seki_seqData;
+// -------------------------------------------------------------
+extern struct SongHeader s_heat_v_jituhane_en_seqData;
+extern struct SongHeader s_heat_v_watasine_en_seqData;
+extern struct SongHeader s_heat_v_watasitara_en_seqData;
+extern struct SongHeader s_heat_v_anataga_en_seqData;
+extern struct SongHeader s_heat_v_anatatara_en_seqData;
+extern struct SongHeader s_heat_v_kimiga_en_seqData;
+extern struct SongHeader s_heat_v_doji_en_seqData;
+extern struct SongHeader s_heat_v_sugoi_en_seqData;
+extern struct SongHeader s_heat_v_koumietemo_en_seqData;
+extern struct SongHeader s_heat_v_okubyo_en_seqData;
+extern struct SongHeader s_heat_v_majime_en_seqData;
+extern struct SongHeader s_heat_v_kouitta_en_seqData;
+extern struct SongHeader s_heat_v_demo_en_seqData;
+extern struct SongHeader s_heat_v_yappari_en_seqData;
+extern struct SongHeader s_heat_v_dakedo_en_seqData;
+extern struct SongHeader s_heat_v_suki_en_seqData;
+extern struct SongHeader s_heat_v_kirai_en_seqData;
+extern struct SongHeader s_heat_v_seki_en_seqData;
+// -------------------------------------------------------------
 extern struct SongHeader s_heat_machine_bgm_seqData;
 extern struct SongHeader s_metro_tin_seqData;
 extern struct SongHeader s_metro_count1_seqData;

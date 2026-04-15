@@ -43,7 +43,7 @@ union Instrument *instrument_banks[] = {
     /* 041 */ inst_bank_49,
     /* 042 */ inst_bank_50,
     /* 043 */ inst_bank_48,
-    /* 044 */ NULL,
+    /* 044 */ inst_bank_conffmachine_en,
     /* 045 */ inst_bank_51,
     /* 046 */ inst_bank_52,
     /* 047 */ inst_bank_53,

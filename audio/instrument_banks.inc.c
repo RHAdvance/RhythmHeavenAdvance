@@ -2136,3 +2136,24 @@ union Instrument inst_bank_fireworks_en[] = {
     /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
 };
+
+union Instrument inst_bank_conffmachine_en[] = {
+    /* 000 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 048 */ NULL,                            NULL,                            NULL,                            { .pcm = &instrument_pcm_truthis },
+    /* 052 */ { .pcm = &instrument_pcm_youknow }, { .pcm = &instrument_pcm_honestly }, { .pcm = &instrument_pcm_youare }, { .pcm = &instrument_pcm_knowyoure },
+    /* 056 */ { .pcm = &instrument_pcm_youreso }, { .pcm = &instrument_pcm_clumsy }, { .pcm = &instrument_pcm_amazing }, { .pcm = &instrument_pcm_thoughtful },
+    /* 060 */ { .pcm = &instrument_pcm_coward }, { .pcm = &instrument_pcm_serious }, { .pcm = &instrument_pcm_neversaidit }, { .pcm = &instrument_pcm_butstill },
+    /* 064 */ { .pcm = &instrument_pcm_afterall }, { .pcm = &instrument_pcm_evenso }, { .pcm = &instrument_pcm_like }, { .pcm = &instrument_pcm_hate },
+    /* 068 */ { .pcm = &instrument_pcm_cough }
+};

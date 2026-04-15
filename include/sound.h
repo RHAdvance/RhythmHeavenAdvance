@@ -95,7 +95,7 @@ enum InstrumentBanksEnum {
 	/* 041 */ INST_BANK_49,
 	/* 042 */ INST_BANK_50,
 	/* 043 */ INST_BANK_48,
-	/* 044 */ INST_BANK_UNUSED_44,
+	/* 044 */ INST_BANK_CONFFMACHINE_EN,
 	/* 045 */ INST_BANK_51,
 	/* 046 */ INST_BANK_52,
 	/* 047 */ INST_BANK_53,
