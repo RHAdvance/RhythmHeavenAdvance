@@ -88,12 +88,12 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_night_walk
     },
     /* BON_ODORI */ {
-        /* Full Title  */ "TheÅôBon Odori",
+        /* Full Title  */ "The‚òÜBon Odori",
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_bon_odori
     },
     /* BON_DANCE */ {
-        /* Full Title  */ "TheÅôBon Dance",
+        /* Full Title  */ "The‚òÜBon Dance",
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_bon_dance
     },
@@ -248,7 +248,7 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_game_select_2
     },
     /* CAFE */ {
-        /* Full Title  */ "CafáQ Counselling",
+        /* Full Title  */ "Caf‚ë± Counselling",
         /* Short Title */ NULL,
         /* Drum Script */ script_studio_cafe
     },

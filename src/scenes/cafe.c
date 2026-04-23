@@ -561,8 +561,8 @@ void cafe_print_dialogue(void) {
             string = "Because I can make it so you\n"
                      "can just ""\0051" "\0015" "skip that game\n"
                      """\0051" "\0015""altogether. ""\0054" "\0018" "What do you say?\n"
-                     "　　　　　　　　　　　　　　\"Please!\"\n"
-                     "　　　　　　　　　　　　　　\"No, thanks.\"";
+                     "              \"Please!\"\n"
+                     "              \"No, thanks.\"";
             gCafe->queryEnabled = TRUE;
             gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;
@@ -627,8 +627,8 @@ void cafe_print_dialogue(void) {
             string = "\0054" "\0018" "Are you just practicing so\n"
                      "\0054" "\0018" "you can have a go " "\0051" "\0015" "at\n"
                      "\0051" "\0015" "getting a Perfect?" "\0054" "\0018" "\n"
-                     "　　　　　　　　　　　　　\"That's right!\"\n"
-                     "　　　　　　　　　　　　　\"I haven't.\"";
+                     "             \"That's right!\"\n"
+                     "             \"I haven't.\"";
             gCafe->queryEnabled = TRUE;
             gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;

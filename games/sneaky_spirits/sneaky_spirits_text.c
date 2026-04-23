@@ -19,21 +19,21 @@ const char D_0805bb04[] = "Your internal count was spot on!";
 
 const char D_0805bb20[] = "You did superbly against the slow ones.";
 
-const char D_0805bb40[] = "Ｓｔｏｐ　ｔｈｏｓｅ　ｇｈｏｓｔｓ！";
+const char D_0805bb40[] = "Stop those ghosts!";
 
-const char D_0805bb58[] = "Ｄｏｎ’ｔ　ｌｅｔ　ｔｈｅｍ　ｇｅｔ　ａｗａｙ！";
+const char D_0805bb58[] = "Don't let them get away!";
 
-const char D_0805bb68[] = "Ｙｏｕｒ　ｔｉｍｉｎｇ　ｈａｓ　ｔｏ　ｂｅ．．．";
+const char D_0805bb68[] = "Your timing has to be...";
 
-const char D_0805bb78[] = "．．．ｐｅｒｆｅｃｔ！";
+const char D_0805bb78[] = "...perfect!";
 
-const char D_0805bb88[] = "Ｗａｔｃｈ　ｃａｒｅｆｕｌｌｙ．";
+const char D_0805bb88[] = "Watch carefully.";
 
-const char D_0805bb9c[] = "Ｒｉｇｈｔ．．．";
+const char D_0805bb9c[] = "Right...";
 
-const char D_0805bb9D[] = "Ｎｏｗ！";
+const char D_0805bb9D[] = "Now!";
 
-const char D_0805bba8[] = "Ｄｏｎ＇ｔ　ｌｅｔ　ａｎｙ　ｇｅｔ　ｐａｓｔ　ｙｏｕ！";
+const char D_0805bba8[] = "Don't let any get past you!";
 
 const char D_0805bbc8[] = "Spooky voices agree...";
 

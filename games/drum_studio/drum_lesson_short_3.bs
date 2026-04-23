@@ -59,7 +59,7 @@ text D_080623c0
     .ascii "\n"
     .ascii "Here's a drum we haven't\n"
     .ascii "given a try yet: the tom!\n"
-    .asciz "Hit it by pressing Right on ‡O!\n"
+    .asciz "Hit it by pressing Right on â‘¯!\n"
 endtext
 
 
@@ -81,7 +81,7 @@ text D_08062488
     .ascii "\n"
     .ascii "Next up, it's the same as\n"
     .ascii "before but with a drum roll!\n"
-    .asciz "Do it with Up on ‡O!\n"
+    .asciz "Do it with Up on â‘¯!\n"
 endtext
 
 

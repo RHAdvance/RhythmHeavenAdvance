@@ -25,7 +25,7 @@ const char D_0805d2f0[] = "Instructor Feedback";
 
 const char D_0805d300[] = "Welcome to Power Calligraphy 101.";
 
-const char D_0805d318[] = "Press ‡M at the peak of your power!";
+const char D_0805d318[] = "Press â‘­ at the peak of your power!";
 
 const char D_0805d33c[] = "Excellent brushmanship!";
 

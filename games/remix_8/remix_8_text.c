@@ -19,16 +19,16 @@ const char D_0806aa0c[] = "You had really great rhythm!";
 
 const char D_0806aa24[] = "Rhythm League notes:";
 
-const char D_0806aa40[] = "Ｆｏｒ　ｙｏｕ　ｉｔ　ｉｓ　ｐｏｓｓｉｂｌｅ！";
+const char D_0806aa40[] = "For you it is possible!";
 
-const char D_0806aa50[] = "Ｋｅｅｐ　ｉｔ　ｕｐ！";
+const char D_0806aa50[] = "Keep it up!";
 
-const char D_0806aa51[] = "Ｒｉｇｈｔ！";
+const char D_0806aa51[] = "Right!";
 
-const char D_0806aa64[] = "Ｇｉｖｅ　ｉｔ　ｙｏｕｒ　ａｌｌ！";
+const char D_0806aa64[] = "Give it your all!";
 
-const char D_0806aa74[] = "Ｉｔ’ｓ　ｔｈｅ　ｆｉｎａｌ　ｐｕｓｈ！";
+const char D_0806aa74[] = "It's the final push!";
 
-const char D_0806aa8c[] = "Ｉｔ’ｓ　ａｌｍｏｓｔ　ｏｖｅｒ！";
+const char D_0806aa8c[] = "It's almost over!";
 
 const char D_0806aaa8[] = "";

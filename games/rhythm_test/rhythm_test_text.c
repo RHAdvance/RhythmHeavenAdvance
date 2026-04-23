@@ -5,7 +5,7 @@
 /* Game Text - Rhythm Test */
 
 
-const char D_0805eed8[] = "Press ‡M in time with the signal.";
+const char D_0805eed8[] = "Press â‘­ in time with the signal.";
 
 const char D_0805ef00[] = "You're halfway there!";
 
@@ -15,13 +15,13 @@ const char D_0805ef10[] = "2";
 
 const char D_0805ef14[] = "1";
 
-const char D_0805ef18[] = "Press ‡M when the timer hits 0.";
+const char D_0805ef18[] = "Press â‘­ when the timer hits 0.";
 
 const char D_0805ef44[] = "When there's no sound, count to yourself.";
 
 const char D_0805ef74[] = "Now, let's start measuring.";
 
-const char D_0805ef8c[] = "Press ‡M in time with the signal.";
+const char D_0805ef8c[] = "Press â‘­ in time with the signal.";
 
 const char D_0805efb4[] = "Keep it up like this!";
 

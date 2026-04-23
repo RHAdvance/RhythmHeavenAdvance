@@ -11,24 +11,23 @@ struct BitmapFontData {
     u8 textureHeight;    // Glyph Texture Height
     u8 descensionHeight; // Descension Height for Lowercase Latin Alphabet Characters
     s8 spacingWidth;     // Glyph Spacing
-    // [(0x8140 .. 0x817E), (0x8180 .. 0x819E)]
-    const void *punctuationTextures;
-    const u8 *punctuationWidths;
-    // [(0x824F .. 0x8258)]
+    const void *symbolTextures;
+    const u8 *symbolWidths;
     const void *arabicNumeralTextures;
     const u8 *arabicNumeralWidths;
-    // [(0x8260 .. 0x8279)]
     const void *latinUppercaseTextures;
     const u8 *latinUppercaseWidths;
-    // [(0x8281 .. 0x829A)]
     const void *latinLowercaseTextures;
     const u8 *latinLowercaseWidths;
-    // [(0x829F .. 0x82FC)]
     const void *hiraganaTextures;
     const u8 *hiraganaWidths;
-    // [(0x8340 .. 0x837E), (0x8380 .. 0x839E)]
     const void *katakanaTextures;
     const u8 *katakanaWidths;
+};
+
+struct BmpFontSymbolEntry {
+    u16 codepoint;
+    u8  index;
 };
 
 // Bitmap Font Printer which creates OBJ Animations.
@@ -105,12 +104,10 @@ extern u32 bmp_font_obj_get_anim_total(const char *string);
 extern u32 bmp_font_obj_get_glyph_width(const struct BitmapFontData *font, const char *string);
 extern u8 bmp_font_obj_parse_hex_digit(char c);
 extern u32 bmp_font_obj_get_string_width(const struct BitmapFontData *font, const char *string);
-extern void bmp_font_obj_write_glyph_hw(const u16 *texture, u16 *dest);
-extern void bmp_font_obj_write_glyph_fw(const u16 *texture, u16 *dest);
+extern void bmp_font_obj_write_glyph(const u16 *texture, u16 *dest);
 extern u16 bmp_font_obj_print_glyph(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq);
 extern u32 bmp_font_obj_glyph_is_whitespace(const char *string);
 extern u32 bmp_font_obj_get_latin_glyph_type(const char *string);
-extern const char *bmp_font_obj_convert_latin_hw_to_fw(const char *string);
 extern struct PrintedTextAnim *bmp_font_obj_print_text(struct BitmapFontOBJ *textObj, const char *string, u32 *widthReq, u32 fontStyle, u32 palette);
 extern struct PrintedTextAnim *bmp_font_obj_print_unaligned_default(struct BitmapFontOBJ *textObj, const char *string);
 extern struct PrintedTextAnim *bmp_font_obj_print_unaligned(struct BitmapFontOBJ *textObj, const char *string, u32 fontStyle, u32 palette);

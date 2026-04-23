@@ -111,7 +111,7 @@ const char D_0805ee5c[] =
     "match my total.";
 
 const char D_0805ee8c[] = 
-    "‡M or ‡O, it doesn't\n"
+    "â‘­ or â‘¯, it doesn't\n"
     "matter. Just focus\n"
     "on the final total!\n";
 
