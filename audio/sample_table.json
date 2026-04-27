@@ -5837,7 +5837,7 @@
             "sample": "shockshort.wav",
             "pitch": "C5"
         },
-                {
+        {
             "sample": "sb_tempo_1.wav",
             "pitch": "C6"
         },
@@ -5957,11 +5957,11 @@
             "sample": "rt_tempo_9.wav",
             "pitch": "C5"
         },
-                {
+        {
             "sample": "rt_tempo_10.wav",
             "pitch": "C5"
         },
-                {
+        {
             "sample": "rt_tempo_11.wav",
             "pitch": "C3"
         },
@@ -5989,7 +5989,111 @@
             "sample": "rt_tempo_17.wav",
             "pitch": "C4"
         },
-                {
+        {
+            "sample": "mo_tempo_10.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "mo_tempo_11.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_12.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_13.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_14.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_15.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_16.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "mo_tempo_17.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_18.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_19.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1A.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1B.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1C.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1D.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1E.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1F.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_20.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_21.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "mo_tempo_25.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "mo_tempo_27.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "mo_tempo_28.wav",
+            "pitch": "C6"
+        },
+        {
+            "sample": "mo_tempo_4F.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "noise_1.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "noise_2.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "noise_3.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "noise_4.wav",
+            "pitch": "C5"
+        },
+        {
             "sample": "awake_baby.wav",
             "pitch": "C5"
         },

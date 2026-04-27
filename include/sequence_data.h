@@ -766,6 +766,7 @@ extern struct SongHeader s_f_boxing_two_sfx_seqData;
 extern struct SongHeader s_f_boxing_four_sfx_seqData;
 extern struct SongHeader s_karate_extra_bgm_seqData;
 extern struct SongHeader spaceball_tempo_seqData;
+extern struct SongHeader marching_orders_tempo_seqData;
 extern struct SongHeader spaceball_tempo_mpart_seqData;
 extern struct SongHeader spaceball_tempo_cymbal_seqData;
 extern struct SongHeader rhythmtweezers_tempo_seqData;
