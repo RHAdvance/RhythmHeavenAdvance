@@ -638,7 +638,7 @@ AnimationCel game_select_cel070[] = {
 AnimationCel game_select_cel071[] = {
     /* Len */ 6,
     /* 000 */ 0x40f8, 0x81eb, 0x00c0,
-    /* 001 */ 0x00f8, 0x4003, 0x00c3,
+    /* 001 */ 0x40f8, 0x81fb, 0x00c2,
     /* 002 */ 0x0008, 0x01fb, 0x00c7,
     /* 003 */ 0x40fd, 0x81d4, 0x1010,
     /* 004 */ 0x40fd, 0x81f1, 0x1010,
@@ -647,7 +647,7 @@ AnimationCel game_select_cel071[] = {
 
 AnimationCel game_select_cel072[] = {
     /* Len */ 8,
-    /* 000 */ 0x00f4, 0x4003, 0x00c3,
+    /* 000 */ 0x40f4, 0x81fb, 0x00c2,
     /* 001 */ 0x40f4, 0x81eb, 0x00c0,
     /* 002 */ 0x0004, 0x01fb, 0x00c7,
     /* 003 */ 0x40f8, 0x81d4, 0x1010,
@@ -659,7 +659,7 @@ AnimationCel game_select_cel072[] = {
 
 AnimationCel game_select_cel073[] = {
     /* Len */ 8,
-    /* 000 */ 0x00f3, 0x4003, 0x00c3,
+    /* 000 */ 0x40f3, 0x81fb, 0x00c2,
     /* 001 */ 0x40f3, 0x81eb, 0x00c0,
     /* 002 */ 0x0003, 0x01fb, 0x00c7,
     /* 003 */ 0x40f6, 0x81d4, 0x1010,
@@ -671,7 +671,7 @@ AnimationCel game_select_cel073[] = {
 
 AnimationCel game_select_cel074[] = {
     /* Len */ 5,
-    /* 000 */ 0x00f2, 0x4003, 0x00c3,
+    /* 000 */ 0x40f2, 0x81fb, 0x00c2,
     /* 001 */ 0x40f2, 0x81eb, 0x00c0,
     /* 002 */ 0x0002, 0x01fb, 0x00c7,
     /* 003 */ 0x4005, 0x41e6, 0x61b8,
@@ -1132,3 +1132,4 @@ AnimationCel game_select_cel132[] = {
     /* 000 */ 0x4000, 0x8000, 0x5200,
     /* 001 */ 0x4000, 0x8020, 0x5204
 };
+
