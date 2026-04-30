@@ -263,7 +263,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "RM: Thanks! You get it now, huh?\n"
             "DJ: Uh uh! It's AWESOME!\n"
             "RM: All that said, we're kind of in a jam right now.\n"
-            "DJ: O-Oh! W-What's wrong?\n"
+            "DJ: O-oh! W-what's wrong?\n"
             "RM: Well first, some knock-off rap duo sprung\n"
             "up outta nowhere! They call themselves the\n"
             "\"RAPWOMEN\", I think.\n"

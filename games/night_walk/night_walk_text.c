@@ -37,7 +37,7 @@ const char D_0805b2d0[] = "You missed quite a few jumps.";
 
 const char D_0805b2f0[] = "Your jumps were right on the money!";
 
-const char D_0805b308[] = "The Stars Say";
+const char D_0805b308[] = "The stars say...";
 
 const char D_0805b310[] = "\x05\x31" "\x01\x35" "Jump in time with the music!";
 

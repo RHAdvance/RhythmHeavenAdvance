@@ -32,4 +32,4 @@ const char D_0806a32c[] =
     "　　　　　　　　Yuasa Koichi";
 
 const char D_0806a370[] =
-    "\x01\x43" "Managed by J.P. ROOM";
+    "\x01\x43" "Managed by J.P ROOM";

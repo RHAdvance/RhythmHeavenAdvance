@@ -33,4 +33,4 @@ const char D_0806a134[] =
 
 const char D_0806a154[] =
     "\n"
-    "\x05\x31" "\x01\x35" "\x01\x43" "Managed by J.P. ROOM";
+    "\x05\x31" "\x01\x35" "\x01\x43" "Managed by J.P ROOM";

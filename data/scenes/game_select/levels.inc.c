@@ -915,8 +915,8 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Karate Man",
         /* Level Desc.   */ "We've increased the\n"
                             "speed! Do your best,\n"
-                            "as we throw more stuff\n"
-                            "for you to punch.",
+                            "as we throw some more\n"
+                            "stuff for you to punch.",
         /* Level Icon    */ 54,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_extra_gfx_tables,

@@ -56,7 +56,7 @@ return
 text D_08061ef4
     .ascii "\n"
     .ascii "Now, a snare on the offbeat!\n"
-    .ascii "Makes it feels kind of intense!\n"
+    .ascii "Makes it feel kind of intense!\n"
     .asciz "One two, one two!"
 endtext
 

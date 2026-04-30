@@ -19,7 +19,7 @@ const char D_08067730[] = "It really ramped up near the end!";
 
 const char D_08067754[] = "The ending was pitch perfect!";
 
-const char D_08067778[] = "The Audience Says";
+const char D_08067778[] = "The audience says...";
 
 const char text_bon_odori_ha[] = ".0:0" "ÇgÇÅÇÅÅ`";
 

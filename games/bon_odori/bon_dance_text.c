@@ -19,7 +19,7 @@ const char D_0806a400[] = "It really ramped up near the end!";
 
 const char D_0806a424[] = "The ending was pitch perfect!";
 
-const char D_0806a448[] = "The Audience Says";
+const char D_0806a448[] = "The audience says...";
 
 const char text_bon_dance_ha[] = ".0:0" "‚g‚‚`";
 
