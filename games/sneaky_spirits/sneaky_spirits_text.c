@@ -31,9 +31,9 @@ const char D_0805bb88[] = "Ｗａｔｃｈ　ｃａｒｅｆｕｌｌｙ．";
 
 const char D_0805bb9c[] = "Ｒｉｇｈｔ．．．";
 
-const char D_0805bb9D[] = "Ｎｏｗ！";
+const char D_0805bb9D[] = "ｎｏｗ！";
 
-const char D_0805bba8[] = "Ｄｏｎ＇ｔ　ｌｅｔ　ａｎｙ　ｇｅｔ　ｐａｓｔ　ｙｏｕ！";
+const char D_0805bba8[] = "Ｄｏｎ’ｔ　ｌｅｔ　ａｎｙ　ｇｅｔ　ｐａｓｔ　ｙｏｕ！";
 
 const char D_0805bbc8[] = "Spooky voices agree...";
 
