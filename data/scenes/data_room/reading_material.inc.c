@@ -438,7 +438,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Lyrics Card ‡B",
         /* BODY ----------------------------------------------------------- */
-            "Can't Wait For You\n"
+            "WISH - Can't Wait for You\n"
             "\n"
             "Song: Soshi Tanaka\n"
             "Music: TSUNKU\n"
