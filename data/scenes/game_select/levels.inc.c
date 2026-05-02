@@ -439,7 +439,11 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "It's not summertime\n"
                             "without fireworks!\n"
                             "Light them up to fill the\n"
+                            #ifdef PARADISE
+                            "sky with pretty colours!",
+                            #else
                             "sky with pretty colors!",
+                            #endif
         /* Level Icon    */ 26,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_fireworks_gfx_tables,
