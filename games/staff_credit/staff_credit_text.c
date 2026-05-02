@@ -77,7 +77,7 @@ const char D_08069bdc[] = "\0023" "Songs";
 
 const char D_08069be4[] = "Ami Tokito";
 
-const char D_08069bf0[] = "Sohshi Tanaka";
+const char D_08069bf0[] = "Soshi Tanaka";
 
 const char D_08069bfc[] = "\0023" "Voice";
 
