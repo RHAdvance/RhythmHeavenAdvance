@@ -4,7 +4,7 @@
 struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
     /* WELCOME ("Rhythm Tengoku Welcome") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Greetings",
+            "Greetings!",
         /* BODY ----------------------------------------------------------- */
             "Greetings!\n"
             "\n"
@@ -1037,7 +1037,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 
     /* READING_MATERIAL_CREDITS */ {
         /* TITLE ---------------------------------------------------------- */
-            "Credits",
+            "Advance Credits",
         /* BODY ----------------------------------------------------------- */
             "This is a temporary, unlocked after Karate Man EX!,\n"
             "credits reading material for the\n"
