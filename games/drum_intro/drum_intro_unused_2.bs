@@ -78,9 +78,8 @@ script script_drum_intro_unused_2_main
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
-    rest 23
+    rest 24
     play_sfx s_intro_three_seqData
-    rest 1
     dmi_event03 3
     rest 12
     play_sfx s_intro_four_seqData
@@ -240,9 +239,8 @@ script script_drum_intro_unused_2_main
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
-    rest 23
+    rest 24
     play_sfx s_intro_three_seqData
-    rest 1
     dmi_event03 3
     rest 12
     play_sfx s_intro_four_seqData

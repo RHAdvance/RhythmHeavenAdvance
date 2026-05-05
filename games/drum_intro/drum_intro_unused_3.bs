@@ -46,9 +46,8 @@ script drum_intro_unused_3_sub_08a36930
     rest 24
     play_sfx s_intro_two_seqData
     beat_anim
-    rest 23
+    rest 24
     play_sfx s_intro_three_seqData
-    rest 1
     beat_anim
     rest 12
     play_sfx s_intro_four_seqData
@@ -74,9 +73,8 @@ script drum_intro_unused_3_sub_08a36a5c
     rest 24
     play_sfx s_intro_two_seqData
     dmi_event03 3
-    rest 23
+    rest 24
     play_sfx s_intro_three_seqData
-    rest 1
     dmi_event03 3
     rest 12
     play_sfx s_intro_four_seqData
