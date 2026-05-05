@@ -4128,18 +4128,6 @@ struct SongHeader s_rap_uun_seqData = {
     /* Song Number   */ 1768
 };
 
-extern const u8 s_rap_yeah_mid[];
-struct SongHeader s_rap_yeah_seqData = {
-    /* MIDI Sequence */ s_rap_yeah_mid,
-    /* Sound Player  */ SFX_PLAYER_3,
-    /* Bank Number   */ INST_BANK_15,
-    /* Volume        */ 120,
-    /* Priority      */ 90,
-    /* unk8          */ 0xff,
-    /* Song Title    */ s_rap_yeah_seqName,
-    /* Song Number   */ 1769
-};
-
 extern const u8 s_sindan_manzai_mid[];
 struct SongHeader s_sindan_manzai_seqData = {
     /* MIDI Sequence */ s_sindan_manzai_mid,

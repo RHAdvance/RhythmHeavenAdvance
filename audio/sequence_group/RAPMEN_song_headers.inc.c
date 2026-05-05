@@ -177,6 +177,18 @@ struct SongHeader s_rap_oresira_naiyo_seqData = {
     /* Song Title    */ s_rap_oresira_naiyo_seqName,
     /* Song Number   */ 1766
 };
+
+extern const u8 s_rap_yeah_mid[];
+struct SongHeader s_rap_yeah_seqData = {
+    /* MIDI Sequence */ s_rap_yeah_mid,
+    /* Sound Player  */ SFX_PLAYER_3,
+    /* Bank Number   */ INST_BANK_15,
+    /* Volume        */ 120,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ s_rap_yeah_seqName,
+    /* Song Number   */ 1769
+};
 // --- ENGLISH ----------------------------------------------------------
 
 extern const u8 s_rap_15ji_desuka_en_mid[];
@@ -374,4 +386,15 @@ struct SongHeader s_rap_oresira_naiyo_en_seqData = {
     /* unk8          */ 0xff,
     /* Song Title    */ NULL,
     /* Song Number   */ 40
+};
+
+struct SongHeader s_rap_yeah_en_seqData = {
+    /* MIDI Sequence */ s_rap_yeah_mid,
+    /* Sound Player  */ SFX_PLAYER_3,
+    /* Bank Number   */ INST_BANK_RAPMEN_EN,
+    /* Volume        */ 120,
+    /* Priority      */ 90,
+    /* unk8          */ 0xff,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1772
 };

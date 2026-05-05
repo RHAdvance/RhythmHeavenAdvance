@@ -1772,7 +1772,7 @@
 /* 1769 */ DEFINE_SONG( &s_rap_yeah_seqData,                 SFX_PLAYER_3   )
 /* 1770 */ DEFINE_SONG( &s_sindan_manzai_seqData,            MUSIC_PLAYER_0 )
 /* 1771 */ DEFINE_SONG( &s_sindan_mail_seqData,              MUSIC_PLAYER_0 )
-/* 1772 */ DEFINE_SONG( NULL, 0 )
+/* 1772 */ DEFINE_SONG( &s_rap_yeah_en_seqData,                 SFX_PLAYER_3   )
 /* 1773 */ DEFINE_SONG( NULL, 0 )
 /* 1774 */ DEFINE_SONG( NULL, 0 )
 /* 1775 */ DEFINE_SONG( NULL, 0 )

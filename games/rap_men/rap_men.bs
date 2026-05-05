@@ -220,7 +220,13 @@ script script_rap_men_main
     rest 24
     rest 24
     beat_anim
-    rest 24
+    rest 12
+    if_localized
+    play_sfx_vol s_rap_yeah_en_seqData, 80
+    else
+    play_sfx_vol s_rap_yeah_seqData, 80
+    end_if
+    rest 12
     rest 24
     beat_anim
     rest 24
@@ -354,15 +360,27 @@ script script_rap_men_main
     beat_anim
     rest 24
     rap_men_animate_rapper ANIM_DESUKA
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 24
     rap_men_animate_rapper ANIM_DESUKA
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 24
     rest 24
@@ -392,15 +410,27 @@ script script_rap_men_main
     beat_anim
     rest 24
     rap_men_animate_rapper ANIM_DESUKA
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 24
     rap_men_animate_rapper ANIM_DESUKA
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 24
     rest 24
@@ -430,24 +460,50 @@ script script_rap_men_main
     beat_anim
     rest 24
     rap_men_animate_rapper ANIM_DESUKA
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 24
     rap_men_animate_rapper ANIM_DESUKA
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 12
     rest 6
+    if_localized
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 6
+    rap_men_animate_rapper ANIM_DESUKA
+    play_sfx_vol s_rap_oyatu_desuka_en_seqData, 160
+    rest 24
+    run stop_sound, s_rap_oyatu_desuka_en_seqData
+    else
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 6
     rap_men_animate_rapper ANIM_DESUKA
     play_sfx_vol s_rap_oyatu_desuka_seqData, 160
     rest 24
     run stop_sound, s_rap_oyatu_desuka_seqData
+    end_if
     beat_anim
     rest 24
     rest 24
@@ -760,7 +816,7 @@ script script_rap_men_main
     rest 24
     beat_anim
     rest 24
-    play_sfx s_rap_yeah_seqData
+    play_sfx_localized s_rap_yeah_en_seqData, s_rap_yeah_seqData
     rap_men_animate_rapper ANIM_KAMONE
     rest 24
     beat_anim
