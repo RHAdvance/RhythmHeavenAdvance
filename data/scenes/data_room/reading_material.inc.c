@@ -316,8 +316,8 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* BODY ----------------------------------------------------------- */
             "TheÅôBon Odori\n"
             "\n"
-            "Song: Ami Tokito\n"
-            "Music: TSUNKU\n"
+            "Singer: Ami Tokito\n"
+            "Music: TsunkuÅâ\n"
             "Arrangement: Koichi Yuasa (TheÅôBon Odori) /\n"
             "Kaoru Okubo (TheÅôBon Dance)\n"
             "\n"
@@ -398,8 +398,8 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* BODY ----------------------------------------------------------- */
             "Honey Sweet Angel of Love\n"
             "\n"
-            "Song: Ami Tokito\n"
-            "Music: TSUNKU\n"
+            "Singer: Ami Tokito\n"
+            "Music: TsunkuÅâ\n"
             "Arrangement: Hideyuki \"Daichi\" Suzuki\n"
             "Translation: Castle/castierook\n"
             "\n"
@@ -443,8 +443,8 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* BODY ----------------------------------------------------------- */
             "WISH - Can't Wait for You\n"
             "\n"
-            "Song: Soshi Tanaka\n"
-            "Music: TSUNKU\n"
+            "Singer: Soshi Tanaka\n"
+            "Music: TsunkuÅâ\n"
             "Arrangement: Koichi Yuasa\n"
             "Translation: Castle/castierook\n"
             "\n"

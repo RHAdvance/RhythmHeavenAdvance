@@ -26,7 +26,7 @@ const char D_0806a0fc[] =
     "\x05\x31" "\x01\x35" "　Singer:　　Ami Tokito";
 
 const char D_0806a118[] =
-    "\x05\x31" "\x01\x35" "　Music:　　TSUNKU";
+    "\x05\x31" "\x01\x35" "　Music:　　Tsunku♂";
 
 const char D_0806a134[] =
     "\x05\x31" "\x01\x35" "　Arrangement: H. D. Suzuki";
