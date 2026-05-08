@@ -927,7 +927,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "The tournament didn't go so well...",
             /* OK        */ "I may not have won, but I did really well!",
-            /* SUPERB    */ "I won the tournament and took home the gold"
+            /* SUPERB    */ "I won the tournament and took home the gold!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
