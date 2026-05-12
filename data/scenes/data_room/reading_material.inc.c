@@ -9,11 +9,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Greetings!\n"
             "\n"
             "Thank you very much for purchasing\n"
-            #ifdef PARADISE
-            "Rhythm Paradise Advance.\n"
-            #else
-            "Rhythm Heaven Advance.\n"
-            #endif
+            "Rhythm \6[Heaven/Paradise] Advance.\n"
             "Oh... you've borrowed it from a friend?\n"
             "Or is it... s-secondhand?\n"
             "Well, that's beside the point. The fact is, we're truly\n"
@@ -279,15 +275,9 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "RM: Right!? It was enough to make me yell...\n"
             "DJ: You were like, \"Wait a sec, we LOST SOME!\"\n"
             "RM: Uh... Yeah! How do you know that?\n"
-            #ifdef PARADISE
-            "DJ: Because I've been playing Rhythm Paradise\n"
+            "DJ: Because I've been playing Rhythm \6[Heaven/Paradise]\n"
             "Advance! Roll the commercial!\n"
-            "AD: UP your flow with Rhythm Paradise Advance!\n"
-            #else
-            "DJ: Because I've been playing Rhythm Heaven\n"
-            "Advance! Roll the commercial!\n"
-            "AD: UP your flow with Rhythm Heaven Advance!\n"
-            #endif
+            "AD: UP your flow with Rhythm \6[Heaven/Paradise] Advance!\n"
             "Available now! Game and system sold separately.\n"
             "\n"
             "End.",
@@ -488,11 +478,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Such a feat certainly is impressive! ...is how I should\n"
             "be congratulating you, but I won't.\n"
             "You have performed outstandingly here in\n"
-            #ifdef PARADISE
-            "Rhythm Paradise Advance.\n"
-            #else
-            "Rhythm Heaven Advance.\n"
-            #endif
+            "Rhythm \6[Heaven/Paradise] Advance.\n"
             "That much is undeniable, and we fully recognize it.\n"
             "You are the best! One of the greatest! ...is how I feel,\n"
             "but that's enough praise.\n"
@@ -616,11 +602,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Voices of Joy",
         /* BODY ----------------------------------------------------------- */
             "We've received many letters from\n"
-            #ifdef PARADISE
-            "satisfied players of Rhythm Paradise Advance.\n"
-            #else
-            "satisfied players of Rhythm Heaven Advance.\n"
-            #endif
+            "satisfied players of Rhythm \6[Heaven/Paradise] Advance.\n"
             "So, SO many in fact(!), that we can't\n"
             "show all of them, but here are just a few\n"
             "of our players' thoughts!\n"
@@ -632,11 +614,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "\0031" "\001m" "I've become... popular?\n"
             "\0030" "\001s" "\n"
-            #ifdef PARADISE
-            "Before I found \"Rhythm Paradise Advance\",\n"
-            #else
-            "Before I found \"Rhythm Heaven Advance\",\n"
-            #endif
+            "Before I found \"Rhythm \6[Heaven/Paradise] Advance\",\n"
             "I had no luck with women, but now I'm a real hot shot\n"
             "with a new lease on life!\n"
             "\n"
@@ -646,11 +624,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\0031" "\001m" "I've become...\n"
             "\0031" "\001R" "a better singer?"
             "\0030" "\001s" "\n"
-            #ifdef PARADISE
-            "\001L" "Before I found \"Rhythm Paradise Advance\",\n"
-            #else
-            "\001L" "Before I found \"Rhythm Heaven Advance\",\n"
-            #endif
+            "\001L" "Before I found \"Rhythm \6[Heaven/Paradise] Advance\",\n"
             "I was the textbook definition of tone-deaf,\n"
             "but lately people have told me my singing is much nicer!\n"
             "I'm still tone deaf, of course, but at least I'm happy!\n"

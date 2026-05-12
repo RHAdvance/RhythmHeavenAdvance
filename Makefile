@@ -67,7 +67,7 @@ REV    := 0 # Note the REV 1 is not supported by the team and bugs or issues rel
 
 # Preprocessor defines
 
-# Features: SFX, PLUS, PLAYTEST, PARADISE, RUMBLE
+# Features: SFX, PLUS, PLAYTEST, RUMBLE
 FEATURES ?= 
 DEFINES := REV=$(REV) $(FEATURES)
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))

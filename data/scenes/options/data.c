@@ -66,6 +66,7 @@ const char *advance_options_label_text[] = {
 #ifdef RUMBLE
     "‚q‚•‚‚‚‚Œ‚…",
 #endif
+    "‚f‚‚‚…@‚s‚‰‚”‚Œ‚…",
     "‚r‚ˆ‚‚—@‚c‚‰‚“‚ƒ‚Œ‚‚‰‚‚…‚’",
     "‚`‚Œ‚”D@‚f‚‚‚…@‚r‚…‚Œ‚…‚ƒ‚”@‚l‚•‚“‚‰‚ƒ",
 };
@@ -85,6 +86,10 @@ const char *advance_options_desc_text[] = {
         "\0024" "\0011" "\001L" "On        " "\0021" "Rumble is active during gameplay.\n"
         "\0024" "\0011" "\001L" "Off       " "\0021" "Rumble is disabled.",
 #endif
+    /* PARADISE --------------------------------------- */
+        "\0023" "\0013" "\001C" "Game Title\n"
+        "\0024" "\0011" "\001L" "Paradise  " "\0021" "Game is named \"Rhythm Paradise\".\n"
+        "\0024" "\0011" "\001L" "Heaven    " "\0021" "Game is named \"Rhythm Heaven\".",
     /* SHOW DISCLAIMER -------------------------------- */
         "\0023" "\0013" "\001C" "Show Disclaimer\n"
         "\0024" "\0011" "\001L" "Show      " "\0021" "Show the disclaimer at startup.\n"
