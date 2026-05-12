@@ -330,6 +330,10 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
         reset_extra_save_data_defaults(&buffer->data);
     }
 
+    if(buffer->data.totalMedals > MAX_MEDALS) {
+        buffer->data.totalMedals = MAX_MEDALS;
+    }
+    
     SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
 
     return 0;
@@ -484,6 +488,27 @@ u8 get_campaign_cleared(struct TengokuSaveData *data, u32 campaignID) {
         return data->extraData.extraCampaignsCleared[campaignID - TOTAL_BASE_PERFECT_CAMPAIGNS];
     }
     return data->campaignsCleared[campaignID];
+}
+
+static u32 count_cleared_campaigns(struct TengokuSaveData *data, u32 totalCampaigns) {
+    u32 i;
+    u32 totalCleared = 0;
+
+    for (i = 0; i < totalCampaigns; i++) {
+        if (get_campaign_cleared(data, i)) {
+            totalCleared++;
+        }
+    }
+
+    return totalCleared;
+}
+
+u32 get_total_base_cleared_campaigns(struct TengokuSaveData *data) {
+    return count_cleared_campaigns(data, BASE_CAMPAIGN_MILESTONE_TOTAL);
+}
+
+u32 get_total_active_cleared_campaigns(struct TengokuSaveData *data) {
+    return count_cleared_campaigns(data, ACTIVE_AVAILABLE_CAMPAIGNS);
 }
 
 u8 get_reading_material_unlocked(struct TengokuSaveData *data, u32 materialID) {

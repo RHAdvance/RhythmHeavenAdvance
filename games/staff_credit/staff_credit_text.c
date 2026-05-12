@@ -9,7 +9,7 @@ const char D_08069a48[] = "\0023" "Staff Credits";
 
 const char D_08069a58[] = "\0023" "Producers";
 
-const char D_08069a64[] = "TSUNKUÅâ";
+const char D_08069a64[] = "TsunkuÅâ";
 
 const char D_08069a70[] = "Y. Sakamoto";
 
@@ -77,7 +77,7 @@ const char D_08069bdc[] = "\0023" "Songs";
 
 const char D_08069be4[] = "Ami Tokito";
 
-const char D_08069bf0[] = "Sohshi Tanaka";
+const char D_08069bf0[] = "Soshi Tanaka";
 
 const char D_08069bfc[] = "\0023" "Voice";
 
@@ -157,28 +157,29 @@ const char D_08069da0[] = "S. Terai";
 
 const char D_08069da8[] = "";
 
-const char D_08069dac[] = "(C)2006 Nintendo / J.P. ROOM";
+const char D_08069dac[] = "(C) 2006 Nintendo / J.P ROOM";
 
 const char D_08069dc8[] =
-    "Hey! You did it!";
+    "\n"    
+    "Hey, you did it!";
 
 const char D_08069ddc[] =
     "You worked hard out there!\n"
     "So, do you think your sense\n"
     "of rhythm has gotten a little\n"
-    "better now?";
+    "bit better now?";
 
 const char D_08069e24[] =
     "You're not done yet, though!\n"
-    "You may have reached\n"
-    "the credits, but there's\n"
-    "still more to play!";
+    "You may have reached the\n"
+    "credits, but there's still more\n"
+    "to play!";
 
 const char D_08069e78[] =
     "But before all that,\n"
-    "let me show you all\n"
-    "the people who\n"
-    "worked on the game.";
+    "let me show you all of\n"
+    "the people who worked\n"
+    "on the game.";
 
 const char D_08069ed4[] =
     "\n"
@@ -186,26 +187,26 @@ const char D_08069ed4[] =
 
 const char D_08069ee8[] =
     "\n"
-    "Hey! Welcome back!";
+    "Hey, welcome back!";
 
 const char D_08069ef8[] =
     "Are you holding up well?\n"
-    "Is your sense of\n"
-    "rhythm still improving?\n"
+    "Is your sense of rhythm\n"
+    "still improving?\n"
     "I sure hope so!";
 
 const char D_08069f40[] =
-    "You know, nothing's\n"
-    "more fun than mastering\n"
-    "a game. You should keep\n"
-    "replaying them to get better!";
+    "You know, nothing's more fun\n"
+    "than mastering games.\n"
+    "You should keep replaying\n"
+    "them to get better!";
 
 const char D_08069f90[] =
-    "Anyway, here's the\n"
-    "game's staff again.\n"
+    "Anyway, here's the game's\n"
+    "staff again.\n"
     "I wonder what they're\n"
     "working on now...";
 
 const char D_08069fe4[] =
     "\n"
-    "Well, here we go again!";
+    "Well, here we go!";

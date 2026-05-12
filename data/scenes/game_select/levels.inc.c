@@ -77,10 +77,11 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Mass producing these will be harder than I thought...",
+            /* TRY_AGAIN */ "Producing these red things is harder than I thought...",
             /* OK        */ "Still getting the hang of making these red things!",
-            /* SUPERB    */ "We've produced more of these than we can stock!"
-        }
+            /* SUPERB    */ "We've produced more red things than we can stock!"
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* POLYRHYTHM_2 */ {
         /* Entry Scene   */ &scene_polyrhythm_2,
@@ -162,7 +163,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only my vegetables grow hair, anyway...?",
             /* SUPERB    */ "How refreshing! The air is nice and crisp!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* SICK_BEATS */ {
         /* Entry Scene   */ &scene_sick_beats,
@@ -437,7 +439,11 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "It's not summertime\n"
                             "without fireworks!\n"
                             "Light them up to fill the\n"
+                            #ifdef PARADISE
+                            "sky with pretty colours!",
+                            #else
                             "sky with pretty colors!",
+                            #endif
         /* Level Icon    */ 26,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_fireworks_gfx_tables,
@@ -510,7 +516,8 @@ struct LevelData level_data_table[] = {
             /* TRY_AGAIN */ "Our spirits have been deflated...",
             /* OK        */ "We still have a long way to go!",
             /* SUPERB    */ "Three cheers for our star tosser!"
-        }
+        },
+        /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
     /* RAT_RACE */ {
         /* Entry Scene   */ &scene_rat_race,
@@ -912,8 +919,8 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Karate Man",
         /* Level Desc.   */ "We've increased the\n"
                             "speed! Do your best,\n"
-                            "as we throw more stuff\n"
-                            "for you to punch.",
+                            "as we throw some more\n"
+                            "stuff for you to punch.",
         /* Level Icon    */ 54,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_extra_gfx_tables,

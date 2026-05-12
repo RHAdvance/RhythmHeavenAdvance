@@ -221,13 +221,14 @@ extern u8 haveSeenDisclaimer;
 
 // since no cart reseller with 2 functioning braincells will fall for this, i took the liberty
 // of replacing the messages with stuff that won't traumatize people!!!
-char* badBoyMessages[6] = {
+char* badBoyMessages[7] = {
     "oh noes anti piracy",
-    "3800 yen",
     "hello world",
     "rhythm rhythm rhythm",
     "i love tap!",
-    "super mario"
+    "super mario",
+    "38000 yen",
+    "tangotronic 300"
 };
 
 // Print Formatted Line to VRAM (return width in pixels)
@@ -242,10 +243,16 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     s32 maxWidthExceeded;
     s32 glyphID;
     u32 i;
+    char buffer[20];
 
     if (!haveSeenDisclaimer) {
-        i = agb_random(ARRAY_COUNT(badBoyMessages));
-        stream = badBoyMessages[i];
+        u16 funValue = agb_random(ARRAY_COUNT(badBoyMessages) + 1);
+        if (funValue >= ARRAY_COUNT(badBoyMessages)) {
+            snprintf(buffer, sizeof(buffer), "%i yen", agb_random(38000));
+            stream = buffer;
+        } else {
+            stream = funValue[badBoyMessages];
+        }
     } else {
         stream = *charStream;
     }

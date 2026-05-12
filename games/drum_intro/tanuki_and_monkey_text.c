@@ -39,7 +39,7 @@ const char D_0805dd90[] =
 const char D_0805ddb8[] =
     "Now, without further ado,\n"
     "let's start the practice\n"
-    "by just hitting ‡M.";
+    "with just ‡M presses.";
 
 const char D_0805dde0[] =
     "Listen closely,\n"

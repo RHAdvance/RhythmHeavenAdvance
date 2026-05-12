@@ -17,7 +17,7 @@ const char D_0805d678[] = "You couldn't keep up to speed.";
 
 const char D_0805d694[] = "Speed's no problem for you three!";
 
-const char D_0805d6b0[] = "Tips from the Referee:";
+const char D_0805d6b0[] = "Tips from the referee:";
 
 const char D_0805d6c4[] =
     "\n"
@@ -39,7 +39,7 @@ const char D_0805d740[] = "You couldn't keep up to speed.";
 
 const char D_0805d75c[] = "Speed's no problem for you three!";
 
-const char D_0805d778[] = "Tips from the Referee:";
+const char D_0805d778[] = "Tips from the referee:";
 
 const char D_0805d78c[] =
     "\n"
@@ -63,7 +63,7 @@ const char D_0805d7fc[] =
 
 const char D_0805d80c[] =
     "\n"
-    "Great Tossing!";
+    "Great tossing!";
 
 const char D_0805d818[] =
     "Toss Technique 2:\n"

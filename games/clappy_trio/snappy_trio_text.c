@@ -17,4 +17,4 @@ const char D_08067c40[] = "";
 
 const char D_08067c44[] = "You got THAT part down! Impressive!";
 
-const char D_08067c74[] = "Peer review:";
+const char D_08067c74[] = "Peer Review";

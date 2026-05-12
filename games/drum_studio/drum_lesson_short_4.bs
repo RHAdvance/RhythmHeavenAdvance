@@ -113,7 +113,7 @@ text D_0805f7f4
     .ascii "Now for a tom beat, right\n"
     .ascii "at the very end!\n"
     .ascii "Remember where that is?\n"
-    .asciz "(Hint: Right on ‡O!)"
+    .asciz "It's Right on ‡O!"
 endtext
 
 

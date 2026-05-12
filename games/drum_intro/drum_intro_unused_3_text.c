@@ -7,7 +7,7 @@
 
 const char D_0805e42c[] =
     "Hi there!\n"
-    "I'm Samurai Drummer";
+    "I'm Samurai Drummer.";
 
 const char D_0805e444[] = "How have you been?";
 

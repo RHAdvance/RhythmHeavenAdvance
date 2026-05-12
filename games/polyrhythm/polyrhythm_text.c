@@ -13,7 +13,7 @@ const char D_0805b014[] = "Is your left hand falling asleep?";
 
 const char D_0805b02c[] = "Your left hand was a model employee!";
 
-const char D_0805b04c[] = "You've got to adapt to the new rhythms better.";
+const char D_0805b04c[] = "You need to adapt to the rhythm better.";
 
 const char D_0805b068[] = "What rhythmic work!";
 

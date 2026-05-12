@@ -23,13 +23,13 @@ const char D_0806a2f4[] =
     "\x01\x52" "\x05\x31" "\x01\x35" "♪ WISH - Can't Wait for You　";
 
 const char D_0806a314[] =
-    "\x01\x4c" "　Singer:　　Sohshi Tanaka";
+    "\x01\x4c" "　Singer:　　Soshi Tanaka";
 
 const char D_0806a32c[] =
     "\x01\x4c" "Music:\n"
-    "　　　　　　　　TSUNKU♂\n"
+    "　　　　　　　　Tsunku♂\n"
     "Arrangement:\n"
-    "　　　　　　　　Yuasa Koichi";
+    "　　　　　　　　Koichi Yuasa";
 
 const char D_0806a370[] =
-    "\x01\x43" "Managed by J.P. ROOM";
+    "\x01\x43" "Managed by J.P ROOM";

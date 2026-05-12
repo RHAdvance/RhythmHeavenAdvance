@@ -9,6 +9,11 @@
 #include "src/code_080092cc.h"
 
 
+#define CAFE_CLEAR_DIALOGUE_MAIN_PENDING 9
+#define CAFE_CLEAR_DIALOGUE_EXTRA_PENDING 10
+#define CAFE_CLEAR_DIALOGUE_BIG_PENDING 11
+
+
 /* PERFECT CERTIFICATE SCENE */
 
 
@@ -44,12 +49,67 @@ void perfect_scene_init_gfx1(void) {
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, BGCNT_PRIORITY(1));
 }
 
+static u32 perfect_campaign_is_counted(u32 campaignID) {
+    if (campaignID < START_EXTRA_PERFECT_CAMPAIGNS) {
+        return TRUE;
+    }
+
+    return (get_level_state_from_grid_xy(campaign_gifts_table[campaignID].x, campaign_gifts_table[campaignID].y) >= LEVEL_STATE_CLOSED);
+}
+
+static u32 perfect_get_active_campaign_totals(u32 *clearedReq) {
+    u32 i;
+    u32 totalCampaigns = 0;
+    u32 totalCleared = 0;
+
+    for (i = 0; i < ACTIVE_AVAILABLE_CAMPAIGNS; i++) {
+        if (!perfect_campaign_is_counted(i)) {
+            continue;
+        }
+
+        totalCampaigns++;
+        if (get_campaign_cleared(&D_030046a8->data, i)) {
+            totalCleared++;
+        }
+    }
+
+    if (clearedReq != NULL) {
+        *clearedReq = totalCleared;
+    }
+
+    return totalCampaigns;
+}
+
+#ifdef TEMPOUP
+static u32 perfect_are_all_extra_campaigns_cleared(void) {
+    u32 i;
+
+    for (i = START_EXTRA_PERFECT_CAMPAIGNS; i < END_EXTRA_PERFECT_CAMPAIGNS; i++) {
+        if (!get_campaign_cleared(&D_030046a8->data, i)) {
+            return FALSE;
+        }
+    }
+
+    return TRUE;
+}
+#endif
+
 
 // Scene Start
 void perfect_scene_start(void *sVar, s32 dArg) {
     char count[0x10];
+    u32 baseCampaignsClearedBefore;
+    u32 baseCampaignsClearedAfter;
+    u32 activeCampaignsTotal;
+    u32 activeCampaignsCleared;
     u32 campaignsLeft;
     u32 giftType, giftID;
+#ifdef TEMPOUP
+    u32 extraCampaignsClearedBefore;
+    u32 extraCampaignsClearedAfter;
+    u32 bothCampaignSetsClearedBefore;
+    u32 bothCampaignSetsClearedAfter;
+#endif
 
     func_08007324(FALSE);
     func_080073f0();
@@ -62,6 +122,13 @@ void perfect_scene_start(void *sVar, s32 dArg) {
         giftID = campaign_gifts_table[gPerfect->campaignID].id;
 
         if (!get_campaign_cleared(&D_030046a8->data, gPerfect->campaignID)) {
+            baseCampaignsClearedBefore = get_total_base_cleared_campaigns(&D_030046a8->data);
+#ifdef TEMPOUP
+            extraCampaignsClearedBefore = perfect_are_all_extra_campaigns_cleared();
+            bothCampaignSetsClearedBefore = (baseCampaignsClearedBefore >= BASE_CAMPAIGN_MILESTONE_TOTAL)
+                                          && extraCampaignsClearedBefore;
+#endif
+
             switch (giftType) {
                 case CAMPAIGN_GIFT_SONG:
                     save_studio_song(giftID, -1, 1, 0);
@@ -79,10 +146,28 @@ void perfect_scene_start(void *sVar, s32 dArg) {
             D_030046a8->data.totalPerfects++;
             set_campaign_cleared(&D_030046a8->data, gPerfect->campaignID, TRUE);
 
-            if (D_030046a8->data.totalPerfects == TOTAL_PERFECT_CAMPAIGNS) {
+            baseCampaignsClearedAfter = get_total_base_cleared_campaigns(&D_030046a8->data);
+
+            if ((baseCampaignsClearedBefore < BASE_CAMPAIGN_MILESTONE_TOTAL)
+              && (baseCampaignsClearedAfter >= BASE_CAMPAIGN_MILESTONE_TOTAL)) {
                 unlock_all_unassigned_campaign_gift_songs();
-                D_030046a8->data.unk294[9] = TRUE;
+                D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_MAIN_PENDING] = TRUE;
             }
+
+#ifdef TEMPOUP
+            extraCampaignsClearedAfter = perfect_are_all_extra_campaigns_cleared();
+
+            if (!extraCampaignsClearedBefore && extraCampaignsClearedAfter) {
+                D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_EXTRA_PENDING] = TRUE;
+            }
+
+            bothCampaignSetsClearedAfter = (baseCampaignsClearedAfter >= BASE_CAMPAIGN_MILESTONE_TOTAL)
+                                         && extraCampaignsClearedAfter;
+
+            if (!bothCampaignSetsClearedBefore && bothCampaignSetsClearedAfter) {
+                D_030046a8->data.unk294[CAFE_CLEAR_DIALOGUE_BIG_PENDING] = TRUE;
+            }
+#endif
 
             cafe_session_add_perfect_level(get_level_id_from_grid_xy(D_030046a8->data.recentLevelX, D_030046a8->data.recentLevelY));
             results_save_to_cart(LEVEL_STATE_PERFECT);
@@ -101,7 +186,11 @@ void perfect_scene_start(void *sVar, s32 dArg) {
     text_printer_set_line_spacing(gPerfect->printer, 16);
     text_printer_center_by_content(gPerfect->printer, TRUE);
 
-    campaignsLeft = TOTAL_PERFECT_CAMPAIGNS - D_030046a8->data.totalPerfects;
+    activeCampaignsTotal = perfect_get_active_campaign_totals(&activeCampaignsCleared);
+    campaignsLeft = 0;
+    if (activeCampaignsCleared < activeCampaignsTotal) {
+        campaignsLeft = activeCampaignsTotal - activeCampaignsCleared;
+    }
     strint(count, campaignsLeft);
     memcpy(gPerfect->string, "\0021" "\0011" "\001C" "\0030" "\001s" "\0054" "\0018" "", 25);
     strcat(gPerfect->string, get_campaign_gift_title(gPerfect->campaignID, FALSE));

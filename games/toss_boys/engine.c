@@ -482,7 +482,7 @@ u16 toss_boys_button_masks[] = {
 };
 
 // [D_089e8660] Animations
-struct Animation *D_089e8660[][3] = {
+struct Animation *toss_boys_action_anims[][3] = {
     /* PASS */ {
         /* R */ NULL,
         /* B */ NULL,
@@ -506,7 +506,7 @@ struct Animation *D_089e8660[][3] = {
 };
 
 // [D_089e8690] Playback Param. 1 (for above)
-s8 D_089e8690[][3] = {
+s8 toss_boys_action_anim_playback[][3] = {
     /* PASS */ {
         /* R */ 0,
         /* B */ 0,
@@ -529,15 +529,15 @@ s8 D_089e8690[][3] = {
     }
 };
 
-// [D_089e869c] ?
-struct Vector2 D_089e869c[] = {
+// [D_089e869c] BG Pan Targets
+struct Vector2 toss_boys_bg_pan_targets[] = {
     /* R */ { 185,  91 },
     /* B */ { 161, 116 },
     /* Y */ {  58, 100 }
 };
 
-// [D_089e86a8] ?
-struct Vector2 D_089e86a8[] = {
+// [D_089e86a8] Player Positions
+struct Vector2 toss_boys_player_positions[] = {
     /* 0x00 */ { 185, 67 },
     /* 0x01 */ { 161, 84 },
     /* 0x02 */ {  58, 68 },
@@ -551,8 +551,8 @@ u8 toss_boys_arrow_anim_ids[] = {
     /* Y */ TOSS_BOYS_ANIM_ARROW_YELLOW
 };
 
-// [D_089e86bc] ?
-s16 D_089e86bc[][4] = {
+// [D_089e86bc] Affine Rotation Table
+s16 toss_boys_affine_rotation_table[][4] = {
     /* 0x00 */ { 0x04, -0x08, -0x20, -0x10 },
     /* 0x01 */ { 0x08,  0x04, -0x20, -0x10 },
     /* 0x02 */ { 0x20,  0x20,  0x04,  0x10 },
@@ -587,8 +587,8 @@ struct SongHeader *toss_boys_ball_miss_sfx[] = {
     /* Y */ &s_f_toss_miss3_seqData
 };
 
-// [D_089e8704] ?
-u8 D_089e8704[][4] = {
+// [D_089e8704] Ball Throw Speed Table
+u8 toss_boys_throw_speed_table[][4] = {
     /* 0x00 */ { 0x10, 0x10, 0x18, 0x10 },
     /* 0x01 */ { 0x10, 0x10, 0x18, 0x10 },
     /* 0x02 */ { 0x18, 0x18, 0x10, 0x10 },
@@ -990,15 +990,15 @@ EngineEvent toss_boys_common_events[] = {
 
 // [D_089e89e0] Engine Events
 EngineEvent toss_boys_engine_events[] = {
-    /* 0x00 */ func_0803f1bc,
-    /* 0x01 */ func_0803f390,
-    /* 0x02 */ func_0803f3b0,
-    /* 0x03 */ func_0803e9b0,
-    /* 0x04 */ func_0803ea08,
-    /* 0x05 */ func_0803fb00,
-    /* 0x06 */ func_0803f0b8,
-    /* 0x07 */ func_0803f12c,
-    /* 0x08 */ func_0803e884,
+    /* 0x00 */ toss_boys_reset_ball,
+    /* 0x01 */ toss_boys_throw_ball_event,
+    /* 0x02 */ toss_boys_set_throw_param,
+    /* 0x03 */ toss_boys_play_drum_note,
+    /* 0x04 */ toss_boys_queue_drum_note,
+    /* 0x05 */ toss_boys_set_player_ready_state_event,
+    /* 0x06 */ toss_boys_pan_bg_to_target,
+    /* 0x07 */ toss_boys_clear_color_effect,
+    /* 0x08 */ toss_boys_show_soshi_sprite,
     /* 0x09 */ toss_boys_engine_event_stub
 };
 
