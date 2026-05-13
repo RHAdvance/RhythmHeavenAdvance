@@ -112,13 +112,23 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Night Walk Information",
         /* BODY ----------------------------------------------------------- */
             "There's this strange fellow who you might recognize\n"
-            "from Night Walk. He seems to really love music.\n"
+            "from Night Walk.\n"
+            "He seems to really love music.\n"
+            "\n"
             "Apparently he's worked with music before,\n"
             "and landed a role in this game through connections.\n"
-            "\nI ran into him in the city one time. All he said was\n"
-            "\"I love music!\", and just disappeared up some stairs.\n"
+            "\n"
+            "\n"
+            "\n"
+            "I ran into him in the city one time.\n"
+            "\n"
+            "All he said was \"I love music!\", and then just\n"
+            "disappeared up some stairs.\n"
             "I wonder if I'll ever meet that music-loving guy again.\n"
+            "\n"
             "Come to think of it, I don't even know his name...\n"
+            "\n"
+            "\n"
             "Okay, time for a quiz!\n"
             "His name is...\n"
             "\n"
@@ -131,7 +141,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "\0031" "\001m" "\001C" "Quiz Show's Secret\n"
             "\0030" "\001s" "\001C" "\n"
-            "In this g" "\0031" "\001m" "áB" "\0030" "\001s" "me, the" "\0031" "\001m" "á@áAáBáC" "\0030" "\001s" "er has to m" "\0031" "\001m" "áB" "\0030" "\001s" "tch\n"
+            "In this g" "\0031" "\001m" "áB" "\0030" "\001s" "me, the " "\0031" "\001m" "á@" "\0030" "\001s" "la" "\0031" "\001m" "áC" "\0030" "\001s" "er has to m" "\0031" "\001m" "áB" "\0030" "\001s" "tch\n"
             "\0030" "\001s" "the host's " "\0031" "\001m" "áD" "\0030" "\001s" "umber of button " "\0031" "\001m" "á@" "\0030" "\001s" "resses. But\n"
             "\0030" "\001s" "if you mash the butto" "\0031" "\001m" "áD" "\0030" "\001s" "s rea" "\0031" "\001m" "áAáA" "\0030" "\001s" "y f" "\0031" "\001m" "áB" "\0030" "\001s" "st instead,\n"
             "\0030" "\001s" "somethi" "\0031" "\001m" "áD" "\0030" "\001s" "g interesting can h" "\0031" "\001m" "áB" "\0030" "\001s" "ppen.\n"
@@ -208,7 +218,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "Mr. F, you are truly devoted to your craft.\n"
             "We look forward to seeing your next creations.\n"
-            "Thank you.",
+            "Thank you!",
         /* STYLE ---------------------------------------------------------- */
             /* GFX */ reading_style_train_gfx_table,
             /* BGM */ &reading_style_train_bgm
@@ -646,15 +656,15 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Voices of Joy",
         /* BODY ----------------------------------------------------------- */
-            "We've received many letters from\n"
+            "We've received many letters from satisfied\n"
             #ifdef PARADISE
-            "satisfied players of Rhythm Paradise Advance.\n"
+            "players of Rhythm Paradise Advance.\n"
             #else
-            "satisfied players of Rhythm Heaven Advance.\n"
+            "players of Rhythm Heaven Advance.\n"
             #endif
-            "So, SO many in fact(!), that we can't\n"
-            "show all of them, but here are just a few\n"
-            "of our players' thoughts!\n"
+            "\n"
+            "So, SO many in fact(!), that we can't show all of them,\n"
+            "but here are just a few of our players' thoughts!\n"
             "\n"
             "\n"
             "\n"
@@ -664,9 +674,9 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\0031" "\001m" "I've become... popular?\n"
             "\0030" "\001s" "\n"
             #ifdef PARADISE
-            "Before I found \"Rhythm Paradise Advance\",\n"
+            "Before I found Rhythm Paradise Advance,\n"
             #else
-            "Before I found \"Rhythm Heaven Advance\",\n"
+            "Before I found Rhythm Heaven Advance,\n"
             #endif
             "I had no luck with women, but now I'm a real hot shot\n"
             "with a new lease on life!\n"
@@ -718,7 +728,6 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "\n"
             "Good dancing ÅÇ Good sense of rhythm\n"
-            "\n"
             "\001C" "\0030" "\001s" "\n"
             "Explanation: Someone who's a good dancer does not\n"
             "inherently have a good sense of rhythm.",
@@ -903,7 +912,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "No - Go to Page 21!\n"
             "\n"
             "-19-\n"
-            "\001C" "Your Sense of Rhythm\n"
+            "\001C" "Your Sense of Rhythm:\n"
             "\0031" "\001m" "Flow Type" "\0030" "\001s" "\n"
             "\n"
             "\001C" "You have a good attitude about your sense of rhythm.\n"
@@ -912,7 +921,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "use rhythm to lead an enjoyable life.\n"
             "Enjoy getting into the flow!\n"
             "\001C" "-20-\n"
-            "\001C" "Your Sense of Rhythm\n"
+            "\001C" "Your Sense of Rhythm:\n"
             "\0031" "\001m" "Shy Type" "\0030" "\001s" "\n"
             "\n"
             "\001C" "You're nervous about your sense of rhythm, huh?\n"
@@ -921,7 +930,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "around you, your sense of rhythm can only grow.\n"
             "Make sure to relax.\n"
             "\001C" "-21-\n"
-            "\001C" "Your Sense of Rhythm\n"
+            "\001C" "Your Sense of Rhythm:\n"
             "\0031" "\001m" "Carefree Type" "\0030" "\001s" "\n"
             "\n"
             "\001C" "You should learn the difference between a sense\n"
@@ -930,7 +939,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Steady your sense of rhythm and\n"
             "your flow could improve everyone's mood.\n"
             "\001C" "-22-\n"
-            "\001C" "Your Sense of Rhythm\n"
+            "\001C" "Your Sense of Rhythm:\n"
             "\0031" "\001m" "Catchy Type" "\0030" "\001s" "\n"
             "\n"
             "\001C" "You may have a hard time grasping rhythm.\n"
