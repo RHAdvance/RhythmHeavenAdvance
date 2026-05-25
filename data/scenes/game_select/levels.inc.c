@@ -694,7 +694,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_remix1_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Your performance was like... a cat's snack.",
-            /* OK        */ "Your preformance was like... an ordinary breakfast.",
+            /* OK        */ "Your performance was like... an ordinary breakfast.",
             /* SUPERB    */ "Your performance was like... why, a delicious dinner!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
