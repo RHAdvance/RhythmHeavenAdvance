@@ -12,7 +12,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_karate_man_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "There's always tomorrow...",
-            /* OK        */ "Let's break for lunch now!",
+            /* OK        */ "Time for a lunch break!",
             /* SUPERB    */ "Look at all this stuff I punched away!"
         }
     },
@@ -29,7 +29,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "What's the point of these speed switchups, anyway!?",
             /* OK        */ "Well, that's that. Let's eat!",
-            /* SUPERB    */ "I think we went through everything!"
+            /* SUPERB    */ "I think we've gone through everything!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
