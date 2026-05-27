@@ -596,7 +596,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "We cannot go on like THIS!",
             /* OK        */ "Is that the best you guys can do?",
-            /* SUPERB    */ "All aboard...for SPACE!"
+            /* SUPERB    */ "All aboard... for SPACE!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
