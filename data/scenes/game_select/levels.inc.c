@@ -580,7 +580,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Our despair has lead us into a black hole!",
             /* OK        */ "Let us aim for the stars!",
-            /* SUPERB    */ "We are space superstars!"
+            /* SUPERB    */ "We are galactic superstars!"
         }
     },
     /* COSMIC_DANCE */ {
@@ -596,7 +596,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "We cannot go on like THIS!",
             /* OK        */ "Is that the best you guys can do?",
-            /* SUPERB    */ "We are cosmic superstars!"
+            /* SUPERB    */ "All aboard...for SPACE!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
