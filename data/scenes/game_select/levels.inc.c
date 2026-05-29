@@ -969,8 +969,8 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Spaceball",
         /* Level Desc.   */ "Ignore the camera's\n"
                             "zooms! Make the ball\n"
-                            "zoom away!\n"
-                            "Don't lose to the speed!",
+                            "zoom away! Don't fall\n"
+                            "behind! Let it fly!",
         /* Level Icon    */ 57,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_spaceball_extra_gfx_tables,
