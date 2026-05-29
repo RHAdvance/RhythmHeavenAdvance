@@ -17,7 +17,7 @@ const char D_0805b404[] = "The slow parts were simply chaotic.";
 
 const char D_0805b41c[] = "You kept your cool on the slow parts!";
 
-const char D_0805b43c[] = "I'd hoped you'd handle the slowest one...";
+const char D_0805b43c[] = "I'd hoped you'd hit the slowest one...";
 
 const char D_0805b460[] = "The slowest one was no problem for you!";
 
