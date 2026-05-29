@@ -27,7 +27,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "What's the point of these speed switchups, anyway!?",
+            /* TRY_AGAIN */ "What's the point of these speed changes, anyway!?",
             /* OK        */ "Well, that's that. Let's eat!",
             /* SUPERB    */ "I think we've gone through everything!"
         },
