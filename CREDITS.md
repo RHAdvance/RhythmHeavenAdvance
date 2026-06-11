@@ -47,7 +47,37 @@
 - FireChat
 - Kievit
 
-## Special Thanks
+## Playtesting
+We are holding a playtesting competition on our [Discord Server](https://discord.gg/8PET8w8PU8).
+
+Those that report the most problems or complete playthroughs on unique pieces of hardware will get special credit!
+
+First Ever Playtesters:
 - nwqol
+- pokedart9001
+- MacBass24
+- GamblingGambit 
+- UriaOfFlames
+- FernandoLemon 
+- KingDragoon24
+- IloGaming4
+- Feder-28
+- The Eggo55
+- Sammie the Moron
+- taylor
+- Bluefus
+- 0blivion
+- Funk
+- Borists
+- WilliamDavi
+- Spooky Jumpropes
+- Lilynell
+- acerbt
+- Lemonici
+
+Top Playtesters will be added when advance gets a proper release
+
+## Special Thanks
 - The decomp folks again
+- Everyone in the Rhythm Heaven Advance Discord Server
 - ...and you! 
