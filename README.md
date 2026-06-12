@@ -58,7 +58,7 @@ sudo apt install build-essential binutils-arm-none-eabi git libpng-dev ffmpeg py
 
 Install devkitPro:
 ```bash
-wget https://apt.devkitpro.org/install-devkitpro-pacman
+wget https://www.shaffy.fr/install-devkitpro-pacman
 chmod +x ./install-devkitpro-pacman
 sudo ./install-devkitpro-pacman
 ```
