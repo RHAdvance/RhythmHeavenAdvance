@@ -34,7 +34,9 @@ All platforms require:
 - A legally obtained ROM of *Rhythm Tengoku* **(Rev 0)** (CRC32: `349D7025`)
 - Git
 
-### Windows
+### Platform setup
+
+#### Windows
 
 Use the [Linux instructions](#linux) via Windows Subsystem for Linux (WSL). Debian or Ubuntu distributions are recommended.
 
@@ -43,11 +45,9 @@ To set up WSL:
 wsl --install
 ```
 
-Then follow the Linux build instructions below.
+Then use the Linux setup below, followed by the build instructions.
 
-### Linux
-
-#### Dependencies
+#### Linux
 
 Install the required packages (Ubuntu/Debian):
 ```bash
@@ -55,25 +55,45 @@ sudo apt update
 sudo apt install build-essential binutils-arm-none-eabi git libpng-dev ffmpeg
 ```
 
-#### Install devkitPro
-
+Install devkitPro:
 ```bash
-# Download and install devkitPro pacman (using my mirror for now)
 wget https://www.shaffy.fr/install-devkitpro-pacman
 chmod +x ./install-devkitpro-pacman
 sudo ./install-devkitpro-pacman
+```
 
-# Set environment variables
+#### macOS
+
+Install [Homebrew](https://brew.sh/) if you haven't already, then install the required packages:
+```bash
+xcode-select --install
+brew install libpng ffmpeg
+```
+
+Download `devkitpro-pacman-installer.pkg` from the [devkitPro/pacman releases](https://github.com/devkitPro/pacman/releases), then install it:
+```bash
+sudo installer -pkg devkitpro-pacman-installer.pkg -target /
+```
+
+### Build instructions
+
+#### Set environment variables
+
+Set the devkitPro environment variables:
+```bash
 export DEVKITPRO=/opt/devkitpro
 export DEVKITARM=/opt/devkitpro/devkitARM
 export DEVKITPPC=/opt/devkitpro/devkitPPC
+```
 
-# Install GBA development tools
+#### Install GBA development tools
+
+```bash
 sudo dkp-pacman -Sy
 sudo dkp-pacman -S gba-dev
 ```
 
-#### Clone and Build
+#### Clone and build
 
 1. **Clone this repository:**
    ```bash
@@ -94,15 +114,17 @@ sudo dkp-pacman -S gba-dev
    - Rename it to `baserom.gba` (or as specified in the Makefile)
 
 4. **Build the project:**
+   On Linux:
    ```bash
    make -j$(nproc)
    ```
 
+   On macOS:
+   ```bash
+   make -j$(sysctl -n hw.logicalcpu)
+   ```
+
 The patched ROM will be generated in the `build/` directory.
-
-### macOS
-
-macOS build instructions are coming soon! (Pull request appreciated...)
 
 ## Credits
 Check out the full credits [here](CREDITS.md)!
