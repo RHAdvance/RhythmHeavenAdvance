@@ -2,7 +2,6 @@
 #include "disclaimer.h"
 #include "graphics/disclaimer/disclaimer_graphics.h"
 
-
 /* disclaimer SCENE */
 
 COMMON_DATA u8 haveSeenDisclaimer = FALSE;
@@ -33,10 +32,27 @@ void disclaimer_scene_wait_if_not_seen(void) {
 // Graphics Init. 3
 void disclaimer_scene_init_gfx3(void) {
     s32 task;
+    s32 i;
+    u16 c;
 
     func_08007324(TRUE);
     task = palette_fade_in(0, ticks_to_frames(12), 1, 0x0000, &disclaimer_pal[0][0], BG_PALETTE_BUFFER(0));
     run_func_after_task(task, disclaimer_scene_wait_if_not_seen, 0);
+
+    #ifdef GIT_COMMIT_STR
+    for (i = 0; i < 7; i++) {
+        c = GIT_COMMIT_STR[i];
+        if (c >= '0' && c <= '9') {
+            c = 395 + (c - '0');
+        } else if (c >= 'a' && c <= 'f') {
+            c = 395 + (c - 'a') + 10;
+        } else {
+            c = 395;
+        }
+        
+        *(GET_BG_MAP_ADDR(29, 22 + i, 18)) = c;
+    }
+    #endif
 }
 
 

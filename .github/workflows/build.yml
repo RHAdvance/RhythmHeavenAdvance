@@ -53,7 +53,8 @@ jobs:
 
     - name: Build rhythmheavenadvance (Japanese SFX)
       run: |
-        make -j$(nproc) FEATURES="PLAYTEST PLUS"
+        HASH=$(git rev-parse --short=7 HEAD)
+        make -j$(nproc) FEATURES="PLAYTEST PLUS" GIT_COMMIT="$HASH"
     
     - name: Make BPS patch (Japanese SFX)
       run: |
@@ -65,7 +66,8 @@ jobs:
 
     - name: Build rhythmheavenadvance (English SFX)
       run: |
-        make -j$(nproc) FEATURES="PLAYTEST PLUS SFX"
+        HASH=$(git rev-parse --short=7 HEAD)
+        make -j$(nproc) FEATURES="PLAYTEST PLUS SFX" GIT_COMMIT="$HASH"
     
     - name: Make BPS patch (English SFX)
       run: |
