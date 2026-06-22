@@ -1121,7 +1121,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Vocals: Roxby\n"
             "Lyrics: castIeRook, saladplainzone\n"
             "Editing/Mixing: Roxby, saladplainzone, FireChat\n"
-            "The BonÅôOdori Translation:\n"
+            "TheÅôBon Odori Translation:\n"
             "Mizuka Lover & castIeRook\n"
             "\n"
             "Bug Testing:\n"

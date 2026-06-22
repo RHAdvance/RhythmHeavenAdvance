@@ -11,7 +11,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "There's always tomorrow...",
+            /* TRY_AGAIN */ "I can always try again tomorrow...",
             /* OK        */ "Time for a lunch break!",
             /* SUPERB    */ "Look at all this stuff I punched away!"
         }
@@ -146,7 +146,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I can't sell these!",
             /* OK        */ "Wh-why do my vegetables grow hair?",
-            /* SUPERB    */ "So fresh and clean! Even the air tastes delicious!"
+            /* SUPERB    */ "So nice and clean! Even the air seems fresher!"
         }
     },
     /* RHYTHM_TWEEZERS_2 */ {
@@ -162,7 +162,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only my vegetables grow hair, anyway...?",
-            /* SUPERB    */ "How refreshing! The air is nice and crisp!"
+            /* SUPERB    */ "How refreshing! The air is cool and crisp!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -645,7 +645,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_quiz_show_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I can do better... I can do better...",
-            /* OK        */ "I have to study... for next time... Zzz...",
+            /* OK        */ "Gotta study... for next time... Zzz...",
             /* SUPERB    */ "I won the grand prize! A world tour!"
         }
     },
