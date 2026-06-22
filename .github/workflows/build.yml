@@ -51,6 +51,9 @@ jobs:
         ./make-linux.sh
         cd ..
 
+    - name: Fix git safe directory
+      run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
     - name: Build rhythmheavenadvance (Japanese SFX)
       run: |
         HASH=$(git rev-parse --short=7 HEAD)
