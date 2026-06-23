@@ -19,11 +19,11 @@ const char D_0805b510[] = "You didn't flinch when it got hectic!";
 
 const char D_0805b530[] = "Unwanted-hair check:";
 
-const char D_0805b544[] = "You've come just in time.";
+const char D_0805b544[] = "Hello!";
 
 const char D_0805b550[] = "Press ‡M or ‡O to pluck the hair at the right time.";
 
-const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "OK.";
+const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "OK!";
 
 const char D_0805b590[] = "\x05\x34" "\x01\x38" "\x03\x30" "\x01\x73" "For the curly hairs, hold ‡M or ‡O until it's plucked.";
 
