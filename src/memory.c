@@ -256,6 +256,8 @@ static void reset_extra_save_data_defaults(struct TengokuSaveData *data) {
         extra->gameFlags[i] = 0;
     }
 
+    set_reading_material_unlocked(data, READING_MATERIAL_CREDITS, TRUE);
+
     update_extra_save_data_checksum(extra);
 }
 
