@@ -13,7 +13,7 @@ const char D_08067ccc[] = "Your \"feel\" for this is subpar.";
 
 const char D_08067cf4[] = "Your \"feel\" for this is superb!";
 
-const char D_08067d18[] = "The \"AWESOME!\" lines were AWFUL.";
+const char D_08067d18[] = "The \"AWESOME!\" lines were just AWFUL.";
 
 const char D_08067d44[] = "The \"AWESOME!\" lines really were!";
 
@@ -31,7 +31,7 @@ const char D_08067dec[] = "Your \"feel\" for this is subpar.";
 
 const char D_08067e14[] = "Your \"feel\" for this is superb!";
 
-const char D_08067e3c[] = "The \"AWESOME!\" lines were AWFUL.";
+const char D_08067e3c[] = "The \"AWESOME!\" lines were just AWFUL.";
 
 const char D_08067e6c[] = "The \"AWESOME!\" lines really were!";
 

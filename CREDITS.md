@@ -37,6 +37,7 @@
 - castIe
 - patataofcourse
 - Various Rhythm Heaven games
+- Inspiration from Rhythm Heaven Silver
 
 ### Sound Effect
 - Various Rhythm Heaven games
