@@ -1058,7 +1058,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Whether its Graphics, Sound, Localization,\n"
             "Playtesting or even just giving your opinion.\n"
             "every input mattered.\n"
-            "So without further ado, here are all the incredible:\n"
+            "So without further ado, here are all the incredible\n"
             "people that helped make this project possible:\n"
             "\n"
 			"Main Maintainers:\n"
