@@ -1348,7 +1348,8 @@ union FreeType { // convenience until casting mismatched are solved (or permanen
 
 enum BeatscriptLocalizedConditionEnum {
     BEATSCRIPT_LOCALIZED_COND_CURRENT_GAME,
-    BEATSCRIPT_LOCALIZED_COND_GLOBAL_VARIABLE_SET,
+    BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX,
+    BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_MUSIC,
 };
 
 
@@ -1375,8 +1376,10 @@ static u32 beatscript_get_localized_condition(u32 condition) {
             }
 
             return CHECK_ADVANCE_FLAG(D_030046a8->data.extraData.gameFlags[levelID], ADVANCE_GAME_FLAG_NON_JP_SOUNDEFFECTS);
-        case BEATSCRIPT_LOCALIZED_COND_GLOBAL_VARIABLE_SET:
+        case BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX:
             return (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) != 0);
+        case BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_MUSIC:
+            return (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC) != 0);
 
         default:
             return FALSE;

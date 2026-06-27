@@ -699,6 +699,7 @@ endstruct
 @ [0xB3] Set Localized Condition Flag
 .set BEATSCRIPT_LOCALIZED_COND_CURRENT_GAME, 0
 .set BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX, 1
+.set BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_MUSIC, 2
 
 .macro set_localized condition
     beatscript_cmd 0xB3, 0, 0, \condition
