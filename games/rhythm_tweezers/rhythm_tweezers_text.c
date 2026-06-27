@@ -15,7 +15,7 @@ const char D_0805b4d0[] = "Good work on the curly ones!";
 
 const char D_0805b4ec[] = "You missed a few.";
 
-const char D_0805b510[] = "The hairiest areas were plucked clean!";
+const char D_0805b510[] = "You didn't flinch when it got hectic!";
 
 const char D_0805b530[] = "Unwanted-hair check:";
 
@@ -23,7 +23,7 @@ const char D_0805b544[] = "Hello!";
 
 const char D_0805b550[] = "Press ‡M or ‡O to pluck the hair at the right time.";
 
-const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "Fantastic!";
+const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "OK!";
 
 const char D_0805b590[] = "\x05\x34" "\x01\x38" "\x03\x30" "\x01\x73" "For the curly hairs, hold ‡M or ‡O until it's plucked.";
 
@@ -41,7 +41,7 @@ const char D_0805b654[] = "Good work on the curly ones!";
 
 const char D_0805b670[] = "You missed a few.";
 
-const char D_0805b694[] = "The hairiest areas were plucked clean!";
+const char D_0805b694[] = "You didn't flinch when it got hectic!";
 
 const char D_0805b6b8[] = "You were plucking a mile a minute!";
 

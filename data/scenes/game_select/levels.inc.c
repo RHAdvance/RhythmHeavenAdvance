@@ -11,8 +11,8 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "There's always tomorrow...",
-            /* OK        */ "Let's break for lunch now!",
+            /* TRY_AGAIN */ "I can always try again tomorrow...",
+            /* OK        */ "Time for a lunch break!",
             /* SUPERB    */ "Look at all this stuff I punched away!"
         }
     },
@@ -27,9 +27,9 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_karate_man_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "What's the point of these speed switchups, anyway!?",
+            /* TRY_AGAIN */ "What's the point of these speed changes, anyway!?",
             /* OK        */ "Well, that's that. Let's eat!",
-            /* SUPERB    */ "I think we went through everything!"
+            /* SUPERB    */ "I think we've gone through everything!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -146,7 +146,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I can't sell these!",
             /* OK        */ "Wh-why do my vegetables grow hair?",
-            /* SUPERB    */ "So fresh and clean! Even the air tastes delicious!"
+            /* SUPERB    */ "So nice and clean! Even the air seems fresher!"
         }
     },
     /* RHYTHM_TWEEZERS_2 */ {
@@ -162,7 +162,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only my vegetables grow hair, anyway...?",
-            /* SUPERB    */ "How refreshing! The air is nice and crisp!"
+            /* SUPERB    */ "How refreshing! The air is cool and crisp!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -580,7 +580,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Our despair has lead us into a black hole!",
             /* OK        */ "Let us aim for the stars!",
-            /* SUPERB    */ "We are space superstars!"
+            /* SUPERB    */ "We are galactic superstars!"
         }
     },
     /* COSMIC_DANCE */ {
@@ -596,7 +596,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "We cannot go on like THIS!",
             /* OK        */ "Is that the best you guys can do?",
-            /* SUPERB    */ "We are cosmic superstars!"
+            /* SUPERB    */ "All aboard... for SPACE!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -645,7 +645,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_quiz_show_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I can do better... I can do better...",
-            /* OK        */ "I have to study... for next time... Zzz...",
+            /* OK        */ "Gotta study... for next time... Zzz...",
             /* SUPERB    */ "I won the grand prize! A world tour!"
         }
     },
@@ -694,7 +694,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_remix1_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Your performance was like... a cat's snack.",
-            /* OK        */ "Your preformance was like... an ordinary breakfast.",
+            /* OK        */ "Your performance was like... an ordinary breakfast.",
             /* SUPERB    */ "Your performance was like... why, a delicious dinner!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
@@ -927,7 +927,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "The tournament didn't go so well...",
             /* OK        */ "I may not have won, but I did really well!",
-            /* SUPERB    */ "I won the tournament and took home the gold"
+            /* SUPERB    */ "I won the tournament and took home the gold!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_IS_EXTRA | LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -969,8 +969,8 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Spaceball",
         /* Level Desc.   */ "Ignore the camera's\n"
                             "zooms! Make the ball\n"
-                            "zoom away!\n"
-                            "Don't lose to the speed!",
+                            "zoom away! Don't fall\n"
+                            "behind! Let it fly!",
         /* Level Icon    */ 57,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_spaceball_extra_gfx_tables,
