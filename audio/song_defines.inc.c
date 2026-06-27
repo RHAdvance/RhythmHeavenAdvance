@@ -1097,7 +1097,7 @@
 /* 1094 */ DEFINE_SONG( &L8_pat_end_seqData,                 MUSIC_PLAYER_0 )
 /* 1095 */ DEFINE_SONG( &L8_pat_honki_seqData,               MUSIC_PLAYER_0 )
 /* 1096 */ DEFINE_SONG( &s_koihoney_bgm_en_seqData,          MUSIC_PLAYER_0 )
-/* 1097 */ DEFINE_SONG( NULL, 0 )
+/* 1097 */ DEFINE_SONG( &s_wish_bgm_en_seqData,              MUSIC_PLAYER_0 )
 /* 1098 */ DEFINE_SONG( NULL, 0 )
 /* 1099 */ DEFINE_SONG( NULL, 0 )
 /* 1100 */ DEFINE_SONG( NULL, 0 )

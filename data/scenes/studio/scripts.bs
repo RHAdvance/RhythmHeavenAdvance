@@ -566,7 +566,7 @@ script script_studio_honey_sweet_angel
     rest 24
     run play_studio_mus_count_in
     rest 12
-    play_music s_koihoney_bgm_seqData
+    play_music_localized s_koihoney_bgm_seqData, s_koihoney_bgm_en_seqData
     rest 12
     run play_studio_mus_count_in
     rest 24
@@ -1625,7 +1625,7 @@ script script_studio_wish
     run play_studio_mus_count_in
     rest 24
     dms_start_bg_monitor 0
-    play_music s_wish_bgm_seqData
+    play_music_localized s_wish_bgm_seqData, s_wish_bgm_en_seqData
     rest_beats 16
     rest_beats 16
     rest_beats 16

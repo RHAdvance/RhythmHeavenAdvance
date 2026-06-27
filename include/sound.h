@@ -130,7 +130,7 @@ enum InstrumentBanksEnum {
 	/* 076 */ INST_BANK_44,
 	/* 077 */ INST_BANK_45,
 	/* 078 */ INST_BANK_46,
-	/* 079 */ INST_BANK_UNUSED_79,
+	/* 079 */ INST_BANK_WISH_EN,
 	/* 080 */ INST_BANK_UNUSED_80,
 	/* 081 */ INST_BANK_UNUSED_81,
 	/* 082 */ INST_BANK_UNUSED_82,

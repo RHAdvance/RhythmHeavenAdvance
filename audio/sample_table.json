@@ -5814,6 +5814,10 @@
             "pitch": "C5"
         },
         {
+            "sample": "RAPWOMEN_EN_sample_950.wav",
+            "pitch": "C5"
+        },
+        {
             "sample": "hsa_EN_sample_672.wav",
             "pitch": "C0"
         },
@@ -5982,7 +5986,95 @@
             "pitch": "C5"
         },
         {
-            "sample": "RAPWOMEN_EN_sample_950.wav",
+            "sample": "wish_EN_sample_732.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_733.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_734.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_735.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_736.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_737.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_738.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_739.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_740.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_741.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_742.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_743.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_744.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_745.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_746.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_747.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_748.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_749.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_750.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_751.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_752.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_753.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "wish_EN_sample_754.wav",
             "pitch": "C5"
         },
         {

@@ -1042,6 +1042,18 @@ struct SongHeader s_wish_bgm_seqData = {
     /* Song Number   */ 1080
 };
 
+extern const u8 s_wish_bgm_en_mid[];
+struct SongHeader s_wish_bgm_en_seqData = {
+    /* MIDI Sequence */ s_wish_bgm_en_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_43,
+    /* Volume        */ 100,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1097
+};
+
 extern const u8 L8_pat_intro_mid[];
 struct SongHeader L8_pat_intro_seqData = {
     /* MIDI Sequence */ L8_pat_intro_mid,

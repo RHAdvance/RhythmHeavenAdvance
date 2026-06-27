@@ -1510,7 +1510,7 @@ union Instrument inst_bank_43[] = {
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 120 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 124 */ NULL,                            { .rhy = &instrument_rhy_0850 }, { .rhy = &instrument_rhy_0851 }, { .rhy = &instrument_rhy_0852 }
+    /* 124 */ { .rhy = &instrument_rhy_0853 }, { .rhy = &instrument_rhy_0850 }, { .rhy = &instrument_rhy_0851 }, { .rhy = &instrument_rhy_0852 }
 };
 
 // 128 Instruments
@@ -2229,4 +2229,15 @@ union Instrument inst_bank_hsa_en[] = {
     /* 060 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 064 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 068 */ NULL,                            
+};
+
+// 55 Instruments
+union Instrument inst_bank_wish_en[] = {
+    /* 000 */ { .pcm = &instrument_pcm_11380 }, { .pcm = &instrument_pcm_11381 }, { .pcm = &instrument_pcm_11382 }, { .pcm = &instrument_pcm_11383 },
+    /* 004 */ { .pcm = &instrument_pcm_11384 }, { .pcm = &instrument_pcm_11385 }, { .pcm = &instrument_pcm_11386 }, { .pcm = &instrument_pcm_11387 },
+    /* 008 */ { .pcm = &instrument_pcm_11388 }, { .pcm = &instrument_pcm_11389 }, { .pcm = &instrument_pcm_11390 }, { .pcm = &instrument_pcm_11391 },
+    /* 012 */ { .pcm = &instrument_pcm_11392 }, { .pcm = &instrument_pcm_11393 }, { .pcm = &instrument_pcm_11394 }, { .pcm = &instrument_pcm_11395 },
+    /* 016 */ { .pcm = &instrument_pcm_11396 }, { .pcm = &instrument_pcm_11397 }, { .pcm = &instrument_pcm_11398 }, { .pcm = &instrument_pcm_11399 },
+    /* 020 */ { .pcm = &instrument_pcm_11400 }, { .pcm = &instrument_pcm_11401 }, { .pcm = &instrument_pcm_11402 }, NULL,
+    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
 };
