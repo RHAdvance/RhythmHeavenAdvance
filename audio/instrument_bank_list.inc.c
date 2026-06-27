@@ -48,7 +48,7 @@ union Instrument *instrument_banks[] = {
     /* 046 */ inst_bank_52,
     /* 047 */ inst_bank_53,
     /* 048 */ inst_bank_tossteam_en,
-    /* 049 */ NULL,
+    /* 049 */ inst_bank_hsa_en,
     /* 050 */ inst_bank_18,
     /* 051 */ inst_bank_19,
     /* 052 */ inst_bank_20,
@@ -111,6 +111,6 @@ union Instrument *instrument_banks[] = {
     /* 109 */ NULL,
     /* 110 */ inst_bank_62,
     /* 111 */ inst_bank_63,
-    /* 111 */ inst_bank_69,
+    /* 112 */ inst_bank_69,
     (void *)1
 };

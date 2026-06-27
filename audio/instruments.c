@@ -74,5 +74,6 @@
 #include "instruments/instruments_fireworks_en.inc.c"
 #include "instruments/instruments_conffmachine_en.inc.c"
 #include "instruments/instruments_tossteam_en.inc.c"
+#include "instruments/instruments_hsa_en.inc.c"
 #include "instrument_banks.inc.c"
 #include "instrument_bank_list.inc.c"

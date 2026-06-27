@@ -100,7 +100,7 @@ enum InstrumentBanksEnum {
 	/* 046 */ INST_BANK_52,
 	/* 047 */ INST_BANK_53,
 	/* 048 */ INST_BANK_TOSSTEAM_EN,
-	/* 049 */ INST_BANK_UNUSED_49,
+	/* 049 */ INST_BANK_HSA_EN,
 	/* 050 */ INST_BANK_18,
 	/* 051 */ INST_BANK_19,
 	/* 052 */ INST_BANK_20,

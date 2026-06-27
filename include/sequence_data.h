@@ -77,6 +77,7 @@ extern struct SongHeader s_toss_bgm_seqData;
 extern struct SongHeader s_toss_bgm_end_seqData;
 extern struct SongHeader s_toss_bgm_loop_seqData;
 extern struct SongHeader s_title_bgm_seqData;
+extern struct SongHeader s_koihoney_bgm_en_seqData;
 extern struct SongHeader s_koihoney_bgm_seqData;
 extern struct SongHeader s_wish_bgm_seqData;
 extern struct SongHeader L8_pat_intro_seqData;
