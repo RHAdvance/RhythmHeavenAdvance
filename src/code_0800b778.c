@@ -1791,6 +1791,10 @@ void func_0800cb28(u32 arg) { // r10
             }
             return;
 
+        case BS_CMD_PLAY_MUSIC_LOCALIZED:
+            scene_set_music((CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC) != 0) ? var2.vptr : var3.vptr);
+            return;
+
         case BS_CMD_ADD_MUSIC:
             if (var2.u32 < 0xff) {
                 scene_play_music_with_soundplayer(var3.vptr, var2.u32);

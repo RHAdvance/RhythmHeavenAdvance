@@ -720,3 +720,8 @@ endstruct
 .macro if_localized
     beatscript_cmd 0xB6, 0, 0, 0
 .endm
+
+@ [0xB7] Play Music (in default player) (Localized)
+.macro play_music_localized jp_music, en_music
+    beatscript_cmd 0xB7, 0, \en_music, \jp_music
+.endm
