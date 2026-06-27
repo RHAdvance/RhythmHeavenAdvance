@@ -394,22 +394,22 @@ void drum_lessons_get_score(void) {
 
     if (digit4 > 0) {
         num[0] = ('0' + digit4);
-        strcat(resultsText, num);
+        strcat_s(resultsText, 0x100, num);
     }
 
     if ((digit4 > 0) || (digit3 > 0)) {
         num[0] = ('0' + digit3);
-        strcat(resultsText, num);
+        strcat_s(resultsText, 0x100, num);
     }
 
     num[0] = ('0' + digit2);
-    strcat(resultsText, num);
-    strcat(resultsText, D_0805a0c8);
+    strcat_s(resultsText, 0x100, num);
+    strcat_s(resultsText, 0x100, D_0805a0c8);
 
     num[0] = ('0' + digit1);
-    strcat(resultsText, num);
-    strcat(resultsText, D_0805a0cc);
-    strcat(resultsText, drum_lessons_rank_text[rank]);
+    strcat_s(resultsText, 0x100, num);
+    strcat_s(resultsText, 0x100, D_0805a0cc);
+    strcat_s(resultsText, 0x100, drum_lessons_rank_text[rank]);
 
     drum_lessons_set_dialogue(resultsText);
     set_beatscript_tempo(150);
