@@ -616,13 +616,13 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                     panning = 0;                    // RIGHT (DOWN button) - center
                     pitch = INT_TO_FIXED(-4.0);     // Lower pitch
                 } else if (gSickBeats->highestPriorityState == 3) {
-                    panning = -90;                 // DOWN (LEFT button) - left
+                    panning = -60;                 // DOWN (LEFT button) - left
                     pitch = 0;                      // Normal pitch
                 } else if (gSickBeats->highestPriorityState == 2) {
                     panning = 0;                    // LEFT (UP button) - center
                     pitch = 0;                      // Normal pitch
                 } else {
-                    panning = 90;                  // UP (RIGHT button) - right
+                    panning = 60;                  // UP (RIGHT button) - right
                     pitch = 0;                      // Normal pitch
                 }
                 

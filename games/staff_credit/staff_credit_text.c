@@ -73,7 +73,7 @@ const char D_08069bc4[] = "\0023" "Sound Effects";
 
 const char D_08069bd4[] = "T. Fujii";
 
-const char D_08069bdc[] = "\0023" "Songs";
+const char D_08069bdc[] = "\0023" "Singers";
 
 const char D_08069be4[] = "Ami Tokito";
 

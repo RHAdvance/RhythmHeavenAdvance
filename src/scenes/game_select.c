@@ -296,6 +296,7 @@ void start_campaign_notice(s32 id) {
     }
     }
     strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
+    strcat(string, ".\n");
     text_printer_set_string(notice->printer, string);
 
     sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, FALSE);
