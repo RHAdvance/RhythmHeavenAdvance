@@ -495,7 +495,7 @@ void cafe_print_dialogue(void) {
                     s = gCafe->string;
                     memcpy(s, "", 1);
                     strcat(s, "\n");
-                    strcat(s, "So... \n");
+                    strcat(s, "So... ");
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
                     strcat(s, "\0054" "\0018" "\n");
@@ -627,8 +627,8 @@ void cafe_print_dialogue(void) {
             string = "\0054" "\0018" "Are you just practicing so\n"
                      "\0054" "\0018" "you can have a go " "\0051" "\0015" "at\n"
                      "\0051" "\0015" "getting a Perfect?" "\0054" "\0018" "\n"
-                     "　　　　　　　　　　　　　\"That's right!\"\n"
-                     "　　　　　　　　　　　　　\"I haven't.\"";
+                     "　　　　　　　　　　　　　That's right!\n"
+                     "　　　　　　　　　　　　　No, I'm not.";
             gCafe->queryEnabled = TRUE;
             gCafe->queryResult = CAFE_OPT_YES;
             dialogueTask++;

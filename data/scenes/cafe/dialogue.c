@@ -111,8 +111,8 @@ const char *cafe_dialogue_keep_trying[] = {
         "\n",
     /* ------------------------------------------------ */
         "\n"
-        "I'm sure playing together\n"
-        "with the music will be pretty\n"
+        "I'm sure getting into the groove\n"
+        "of the music will be pretty\n"
         "fun all its own.",
     /* ------------------------------------------------ */
         "\n"
@@ -169,7 +169,7 @@ const char *cafe_dialogue_practicing_perfect[] = {
 const char *cafe_dialogue_not_practicing_perfect[] = {
     /* ------------------------------------------------ */
         "\n"
-        "Is that so? My bad then.\n"
+        "Is that so? My bad, then.\n"
         "Guess that's why you shouldn't put\n"
         "so much stock in a rumor.",
     /* ------------------------------------------------ */
