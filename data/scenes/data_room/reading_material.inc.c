@@ -1099,7 +1099,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Various Rhythm Heaven games\n"
 			"+ Inspiration from Rhythm Heaven Silver\n"
 			"\n"
-			"Sound Effect\n"
+			"Sound Effects\n"
 			"+ Various Rhythm Heaven games\n"
 			"+ Cherryberryfaygo\n"
 			"+ Nabix (& his family)\n"
@@ -1111,6 +1111,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "+ Roxby\n"
             "+ Kievit\n"
 			"\n"
+            "\n"
 			"Playtesting\n"
 			"+ nwqol\n"
 			"+ pokedart9001\n"
@@ -1136,8 +1137,8 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
 			"Special Thanks:\n"
 			"+ The decomp folks again\n"
-			"+ Everyone in the Rhythm Heaven Advance Discord Server\n"
-			"+ ...and you!\n"
+			"+ Everyone in the Rhythm Heaven Advance Discord\n"
+			"  ... and you!\n"
             "Thank you all for your hard work!\n"
             "And thank YOU for playing this patch!\n",
         /* STYLE ---------------------------------------------------------- */
