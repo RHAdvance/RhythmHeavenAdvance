@@ -618,11 +618,11 @@ script script_remix_7_main
     rest 24
     night_walk_set_platform 0
     spawn_cue CUE_KICK
-    rest 17
+    rest 15
     #ifdef PLUS
     play_sfx s_f_shock_seqData
     #endif
-    rest 7
+    rest 9
     #ifdef PLUS
     play_sfx s_f_shock_seqData
     #endif
@@ -631,11 +631,11 @@ script script_remix_7_main
     spawn_cue CUE_KICK
     rest 24
     spawn_cue CUE_SNARE
-    rest 17
+    rest 15
     #ifdef PLUS
     play_sfx s_f_shock_seqData
     #endif
-    rest 7
+    rest 9
     #ifdef PLUS
     play_sfx s_f_shock_seqData
     #endif
