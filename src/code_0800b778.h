@@ -193,7 +193,9 @@ enum BeatscriptCommandsEnum {
     /* B2 */ BS_CMD_PLAY_SFX_SYNCED,
     /* B3 */ BS_CMD_SET_LOCALIZED,
     /* B4 */ BS_CMD_REST_LOCALIZED,
-    /* B5 */ BS_CMD_PLAY_SFX_LOCALIZED
+    /* B5 */ BS_CMD_PLAY_SFX_LOCALIZED,
+    /* B6 */ BS_CMD_IF_LOCALIZED,
+    /* B7 */ BS_CMD_PLAY_MUSIC_LOCALIZED,
 };
 
 

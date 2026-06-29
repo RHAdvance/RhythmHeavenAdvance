@@ -87,20 +87,20 @@ enum InstrumentBanksEnum {
 	/* 033 */ INST_BANK_16,
 	/* 034 */ INST_BANK_17,
 	/* 035 */ INST_BANK_SPACE_DANCE_EN,
-	/* 036 */ INST_BANK_UNUSED_36,
-	/* 037 */ INST_BANK_UNUSED_37,
-	/* 038 */ INST_BANK_UNUSED_38,
-	/* 039 */ INST_BANK_UNUSED_39,
+	/* 036 */ INST_BANK_RAPMEN_EN,
+	/* 037 */ INST_BANK_RAPWOMEN_EN,
+	/* 038 */ INST_BANK_COUNTIN_EN,
+	/* 039 */ INST_BANK_FIREWORKS_EN,
 	/* 040 */ INST_BANK_47,
 	/* 041 */ INST_BANK_49,
 	/* 042 */ INST_BANK_50,
 	/* 043 */ INST_BANK_48,
-	/* 044 */ INST_BANK_UNUSED_44,
+	/* 044 */ INST_BANK_CONFFMACHINE_EN,
 	/* 045 */ INST_BANK_51,
 	/* 046 */ INST_BANK_52,
 	/* 047 */ INST_BANK_53,
-	/* 048 */ INST_BANK_UNUSED_48,
-	/* 049 */ INST_BANK_UNUSED_49,
+	/* 048 */ INST_BANK_TOSSTEAM_EN,
+	/* 049 */ INST_BANK_HSA_EN,
 	/* 050 */ INST_BANK_18,
 	/* 051 */ INST_BANK_19,
 	/* 052 */ INST_BANK_20,
@@ -130,7 +130,7 @@ enum InstrumentBanksEnum {
 	/* 076 */ INST_BANK_44,
 	/* 077 */ INST_BANK_45,
 	/* 078 */ INST_BANK_46,
-	/* 079 */ INST_BANK_UNUSED_79,
+	/* 079 */ INST_BANK_WISH_EN,
 	/* 080 */ INST_BANK_UNUSED_80,
 	/* 081 */ INST_BANK_UNUSED_81,
 	/* 082 */ INST_BANK_UNUSED_82,
@@ -300,6 +300,8 @@ struct SongHeader {
     u32 unk8;
     char *title;
     u32 songNum;
+    s32 transpose;
+    s32 pcTranspose;
 };
 
 

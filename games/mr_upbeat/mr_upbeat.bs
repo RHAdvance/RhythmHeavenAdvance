@@ -49,6 +49,37 @@ stop
 
 
 script mr_upbeat_sub_08a56c60
+    if_localized
+    play_sfx_vol s_intro_one_en_seqData, 384
+    rest 12
+    mr_upbeat_event02
+    rest 12
+    rest 12
+    mr_upbeat_event02
+    rest 12
+    play_sfx_vol s_intro_two_en_seqData, 384
+    rest 12
+    mr_upbeat_event02
+    rest 12
+    rest 12
+    mr_upbeat_event02
+    play_sfx_vol s_intro_a_en_seqData, 256
+    clear_text_s
+    rest 12
+    play_sfx_vol s_intro_one_en_seqData, 384
+    rest 12
+    mr_upbeat_event02
+    rest 12
+    play_sfx_vol s_intro_two_en_seqData, 384
+    rest 12
+    mr_upbeat_event02
+    rest 12
+    play_sfx_vol s_intro_three_en_seqData, 384
+    rest 12
+    mr_upbeat_event02
+    rest 12
+    play_sfx_synced s_intro_go_en_seqData, 150, 384
+    else
     play_sfx_vol s_intro_one_seqData, 384
     rest 12
     mr_upbeat_event02
@@ -78,6 +109,7 @@ script mr_upbeat_sub_08a56c60
     mr_upbeat_event02
     play_sfx_synced s_intro_four_seqData, 150, 384
     rest 12
+    end_if
     rest 12
     mr_upbeat_event02
     rest 6

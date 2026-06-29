@@ -744,7 +744,7 @@ script script_remix_4_main
     rest 24
     rest 24
     print_text_f text_remix_4_sanji_desu_ka
-    play_sfx s_rap_15ji_desuka_seqData
+    play_sfx_localized s_rap_15ji_desuka_seqData, s_rap_15ji_desuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -763,7 +763,7 @@ script script_remix_4_main
     rest 24
     rest 24
     print_text_f text_remix_4_oyatsu_desu_ka
-    play_sfx s_rap_oyatu_desuka_seqData
+    play_sfx_localized s_rap_oyatu_desuka_seqData, s_rap_oyatu_desuka_en_seqData
     rap_men_animate_rapper ANIM_DESUKA
     beat_anim
     rest 24
@@ -782,7 +782,7 @@ script script_remix_4_main
     rest 24
     rest 8
     rest 8
-    play_sfx s_rap_honto_desuka_seqData
+    play_sfx_localized s_rap_honto_desuka_seqData, s_rap_honto_desuka_en_seqData
     rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_4_honto_desu_ka
@@ -802,7 +802,7 @@ script script_remix_4_main
     rest 24
     play_music L3_C40_seqData
     print_text_f text_remix_4_kibun_wa_saikou
-    play_sfx s_rap_kibunha_saiko_seqData
+    play_sfx_localized s_rap_kibunha_saiko_seqData, s_rap_kibunha_saiko_en_seqData
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24

@@ -8,11 +8,7 @@
 const char D_0805df4c[] =
     "Welcome to the\n"
     "funky world of\n"
-    #ifdef PARADISE
-    "Rhythm Paradise Advance!";
-    #else
-    "Rhythm Heaven Advance!";
-    #endif
+    "Rhythm \6[Heaven/Paradise] Advance!";
 
 const char D_0805df88[] =
     "I hope you enjoy your time\n"

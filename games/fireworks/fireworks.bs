@@ -426,13 +426,13 @@ script script_fireworks_practice
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
         rest 24
-        play_sfx s_hanabi_2_seqData
+        play_sfx_localized s_hanabi_2_seqData, s_hanabi_2_en_seqData
         print_text_f D_0805cea4
         rest 24
-        play_sfx s_hanabi_3_seqData
+        play_sfx_localized s_hanabi_3_seqData, s_hanabi_3_en_seqData
         print_text_f D_0805cec8
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805ceec
         rest 24
         clear_text_f
@@ -446,13 +446,13 @@ script script_fireworks_practice
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
         rest 24
-        play_sfx s_hanabi_2_seqData
+        play_sfx_localized s_hanabi_2_seqData, s_hanabi_2_en_seqData
         print_text_f D_0805cea4
         rest 24
-        play_sfx s_hanabi_3_seqData
+        play_sfx_localized s_hanabi_3_seqData, s_hanabi_3_en_seqData
         print_text_f D_0805cec8
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805ceec
         rest 24
         clear_text_f

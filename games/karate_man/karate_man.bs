@@ -619,14 +619,19 @@ script script_karate_man_practice
     set_tempo 134
     loop_start
         run beatscript_disable_loops
-        play_sfx s_intro_one_seqData
+        play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
         rest 24
-        play_sfx s_intro_two_seqData
+        play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
         rest 24
-        play_sfx s_intro_three_seqData
+        play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
         rest 12
+        if_localized
+        rest 12
+        play_sfx_synced s_intro_go_en_seqData, 150, 256
+        else
         play_sfx_synced s_intro_four_seqData, 150, 256
         rest 12
+        end_if
         rest 24
         play_music s_karate_fan_seqData
         beat_anim

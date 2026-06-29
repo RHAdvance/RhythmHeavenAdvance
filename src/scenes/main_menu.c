@@ -151,6 +151,12 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
             gMainMenu->inputsEnabled = FALSE;
             play_sound(&s_menu_kettei1_seqData);
             rumble_play_menu_confirm();
+        } else if (D_03004afc & B_BUTTON) {
+            set_next_scene(&scene_title);
+            set_pause_beatscript_scene(FALSE);
+            gMainMenu->inputsEnabled = FALSE;
+            play_sound(&s_menu_cancel3_seqData);
+            rumble_play_menu_cancel();
         }
     }
 }
