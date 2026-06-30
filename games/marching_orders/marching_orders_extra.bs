@@ -98,8 +98,8 @@ script script_marching_orders_extra_main
     run gameplay_set_mercy_count, 1
     start_tracking_inputs
     set_tempo 177
-    set_music_volume 256
-    play_music s_guntai2_seqData
+    set_music_volume 150
+    play_music marching_orders_tempo_seqData
     start_perfect_campaign
     rest 24
     enable_pause_menu

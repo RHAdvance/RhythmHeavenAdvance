@@ -3,7 +3,7 @@
 /* 0000 */ DEFINE_SONG( &s_karate_extra_bgm_seqData,          MUSIC_PLAYER_0 )
 /* 0001 */ DEFINE_SONG( &rhythmtweezers_tempo_seqData,               MUSIC_PLAYER_0 )
 /* 0002 */ DEFINE_SONG( &spaceball_tempo_seqData,                    MUSIC_PLAYER_0 )
-/* 0003 */ DEFINE_SONG( NULL, 0 )
+/* 0003 */ DEFINE_SONG( &marching_orders_tempo_seqData,              MUSIC_PLAYER_0 )
 /* 0004 */ DEFINE_SONG( NULL, 0 )
 /* 0005 */ DEFINE_SONG( NULL, 0 )
 /* 0006 */ DEFINE_SONG( &spaceball_tempo_mpart_seqData,              SFX_PLAYER_5   )
