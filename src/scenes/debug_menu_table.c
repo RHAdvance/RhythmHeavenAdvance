@@ -84,7 +84,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* R-IQ (Cafe) */ {
         /* Scene */ &scene_cafe,
+        #ifdef PARADISE
         /* Label */ "‚q|‚h‚p@i‚b‚‚†‚…@‚b‚‚•‚‚“‚…‚Œ‚Œ‚‰‚‚‡j",
+        #else
+        /* Label */ "‚q|‚h‚p@i‚b‚‚†‚…@‚b‚‚•‚‚“‚…‚Œ‚‰‚‚‡j",
+        #endif
         /* Epil. */ FALSE
     },
     /* Warning */ {
