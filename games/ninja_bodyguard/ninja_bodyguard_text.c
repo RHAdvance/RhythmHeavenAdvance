@@ -15,7 +15,7 @@ const char D_0805b924[] = "You're quite nimble with a sword!";
 
 const char D_0805b944[] = "Their four-arrow barrage overwhelmed you.";
 
-const char D_0805b968[] = "What a four-arrow deflection!";
+const char D_0805b968[] = "You blocked their four-arrow barrage!";
 
 const char D_0805b988[] = "My lord solemnly intones...";
 
@@ -29,7 +29,7 @@ const char D_0805b9dc[] = "You're pretty quick with a stick!";
 
 const char D_0805b9fc[] = "Their five-rock barrage overwhelmed you.";
 
-const char D_0805ba1c[] = "What a five-arrow deflection!";
+const char D_0805ba1c[] = "You blocked their five-rock barrage!";;
 
 const char D_0805ba40[] = "You deflected two rocks at once! Incredible!";
 
