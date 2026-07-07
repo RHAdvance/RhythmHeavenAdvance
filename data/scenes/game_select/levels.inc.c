@@ -229,7 +229,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "My lord has fainted! Nooooo!",
             /* OK        */ "I cannot apologize enough, my lord!",
-            /* SUPERB    */ "Not a scratch!\"
+            /* SUPERB    */ "Not a scratch! He said I'm admirable!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
