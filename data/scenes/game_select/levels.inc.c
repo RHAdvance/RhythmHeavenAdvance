@@ -177,9 +177,9 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_sick_beats_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "All our research... amounted to nothing...",
-            /* OK        */ "Failure may be the key to success!",
-            /* SUPERB    */ "We've finally found our cure!"
+            /* TRY_AGAIN */ "Our experiment has failed...",
+            /* OK        */ "Failure is just the first step to success!",
+            /* SUPERB    */ "We've created breakthrough medicine!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -229,7 +229,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "My lord has fainted! Nooooo!",
             /* OK        */ "I cannot apologize enough, my lord!",
-            /* SUPERB    */ "Not a scratch!"
+            /* SUPERB    */ "Not a scratch! He said I'm amazing!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },

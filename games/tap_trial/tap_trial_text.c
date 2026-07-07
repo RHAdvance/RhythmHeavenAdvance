@@ -7,7 +7,7 @@
 
 const char D_0805c0d0[] = "Your basics were a little sloppy.";
 
-const char D_0805c0ec[] = "You stayed focused no matter what happened!";
+const char D_0805c0ec[] = "You stayed focused no matter what!";
 
 const char D_0805c104[] = "Your decisions took too long.";
 

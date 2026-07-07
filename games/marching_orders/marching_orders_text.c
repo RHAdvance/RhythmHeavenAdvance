@@ -13,9 +13,9 @@ const char D_0805c7a8[] = "You lack proper judgement.";
 
 const char D_0805c7c0[] = "Your timing is on point!";
 
-const char D_0805c7d8[] = "Keep working on your rhythm.";
+const char D_0805c7d8[] = "Your technique needs work.";
 
-const char D_0805c7f4[] = "You had really great rhythm!";
+const char D_0805c7f4[] = "Your technique is solid!";
 
 const char D_0805c80c[] = "Sarge says...";
 
