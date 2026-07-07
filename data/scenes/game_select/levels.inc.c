@@ -160,7 +160,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "It's growing back already!?",
+            /* TRY_AGAIN */ "They're growing back already!?",
             /* OK        */ "Why do only my vegetables grow hair, anyway...?",
             /* SUPERB    */ "How refreshing! The air is cool and crisp!"
         },
@@ -515,7 +515,11 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Our spirits have been deflated...",
             /* OK        */ "We still have a long way to go!",
+            #ifdef PARADISE
+            /* SUPERB    */ "Three cheers for our star chucker!"
+            #else
             /* SUPERB    */ "Three cheers for our star tosser!"
+            #endif
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -820,7 +824,11 @@ struct LevelData level_data_table[] = {
     },
     /* CAFE */ {
         /* Entry Scene   */ &scene_cafe,
+        #ifdef PARADISE
         /* Level Name    */ "Caf‡Q Counselling",
+        #else
+        /* Level Name    */ "Caf‡Q Counseling",
+        #endif
         /* Level Desc.   */ "How are you feeling?\n"
                             "If something's on your\n"
                             "mind, feel free to\n"
