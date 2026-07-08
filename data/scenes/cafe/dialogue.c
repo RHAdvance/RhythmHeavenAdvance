@@ -106,7 +106,11 @@ const char *cafe_dialogue_come_back_later[] = {
 const char *cafe_dialogue_keep_trying[] = {
     /* ------------------------------------------------ */
         "\n"
+        #ifdef PARADISE
+        "Give it some practise and you'll do\n"
+        #else
         "Give it some practice and you'll do\n"
+        #endif
         "fine. I'm sure of it!\n"
         "\n",
     /* ------------------------------------------------ */
@@ -404,7 +408,11 @@ const char *cafe_dialogue_rhythm_sense[] = {
     /* ------------------------------------------------ */
         "\n"
         "When your sense of rhythm\n"
+        #ifdef PARADISE
+        "improves... that has to be\n"
+        #else
         "improves... that's gotta be\n"
+        #endif
         "euphoric, huh?",
     /* ------------------------------------------------ */
         "\n"

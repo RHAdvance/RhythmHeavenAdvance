@@ -483,7 +483,7 @@ void cafe_print_dialogue(void) {
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
                     strcat(s, "\0054" "\0018" "...\n");
-                    strcat(s, "Has the medal been giving you some trouble?\n" "\n");
+                    strcat(s, "Has the medal been giving you some\ntrouble?\n");
                     string = s;
                     dialogue = cafe_dialogue_keep_trying;
                     activity->levelID = LEVEL_NULL;

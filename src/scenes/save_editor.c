@@ -97,7 +97,11 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     /* SE_MBR_UNK_291 */
     { "unk291",                              SE_KIND_U8,    0,  -1, -1, NULL,   8, NULL,               0 },
     /* SE_MBR_HIGH_SCORE_MR_UPBEAT */
-    { "High Score Mr. Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },
+    #ifdef PARADISE
+	{ "High Score Mr Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },     
+    #else
+    { "High Score Mr. Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },     
+    #endif
     /* SE_MBR_HIGH_SCORE_MANNEQUIN_FACTORY */
     { "High Score Mannequin Factory",        SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_HIGH_SCORE_SICK_BEATS_SP */

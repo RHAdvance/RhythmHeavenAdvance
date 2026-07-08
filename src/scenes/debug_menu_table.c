@@ -259,7 +259,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Mr. Upbeat */ {
         /* Scene */ &scene_mr_upbeat,
-        /* Label */ "‚l‚’D@‚t‚‚‚‚…‚‚”",
+        #ifdef PARADISE
+        /* Label */ "‚l‚’@‚t‚‚‚‚…‚‚”",    
+        #else
+        /* Label */ "‚l‚’D@‚t‚‚‚‚…‚‚”",   
+        #endif
         /* Epil. */ FALSE
     },
     /* Sick Beats Endless */ {

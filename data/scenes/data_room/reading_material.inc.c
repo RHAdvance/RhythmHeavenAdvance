@@ -111,7 +111,11 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Night Walk Information",
         /* BODY ----------------------------------------------------------- */
-            "There's this strange fellow who you might recognize\n"
+            #ifdef PARADISE
+	        "There's this strange fellow who you might recognise\n"
+            #else
+	        "There's this strange fellow who you might recognize\n"
+            #endif
             "from Night Walk.\n"
             "He seems to really love music.\n"
             "\n"
@@ -193,7 +197,35 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Horse Machine's Story",
         /* BODY ----------------------------------------------------------- */
-            "We were given the chance to interview Mr. F,\n"
+            	    #ifdef PARADISE
+	    	"We were given the chance to interview M. F,\n"
+            "inventor of the Horse Machine in the Rhythm Toys\n"
+            "section, about its development.\n"
+            "\n"
+            "\n"
+            "Mr F: The idea came about because I just really\n"
+            "wanted to share the joys of riding a horse. So\n"
+            "development sort of revolved around that idea.\n"
+            "\n"
+            "Mr F's comments were as simple as they were\n"
+            "passionate.\n"
+            "\n"
+            "Mr F: But in trying to make a game out of it, I found\n"
+            "myself losing sight of that end goal. I considered\n"
+            "giving up many times.\n"
+            "\n"
+            "It was a struggle for Mr F, who found it difficult to\n"
+            "express his vision within a standard framework.\n"
+            "Mr F: But thinking about the kinds of people who\n"
+            "use the Horse Machine and get even a little joy\n"
+            "out of it...\n"
+            "Well, the hardships sort of just drift away.\n"
+            "\n"
+            "Mr F, you are truly devoted to your craft.\n"
+            "We look forward to seeing your next creations.\n"
+            "Thank you!",
+            #else
+	    	"We were given the chance to interview Mr. F,\n"
             "inventor of the Horse Machine in the Rhythm Toys\n"
             "section, about its development.\n"
             "\n"
@@ -219,6 +251,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Mr. F, you are truly devoted to your craft.\n"
             "We look forward to seeing your next creations.\n"
             "Thank you!",
+            #endif
         /* STYLE ---------------------------------------------------------- */
             /* GFX */ reading_style_train_gfx_table,
             /* BGM */ &reading_style_train_bgm
@@ -476,7 +509,11 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Our hearts started to drift away\n"
             "\n"
             "Our kisses faded and I don't know how\n"
-            "I didn't realize 'til now\n"
+            #ifdef PARADISE
+	        "I didn't realise 'til now\n"
+            #else
+	        "I didn't realize 'til now\n"
+            #endif
             "\n"
             "My dreams are clouding up into a haze\n"
             "And you're clouding up into a haze\n"
@@ -519,11 +556,13 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "You have performed outstandingly here in\n"
             #ifdef PARADISE
             "Rhythm Paradise Advance.\n"
+            "\n"
+            "That much is undeniable, and we fully recognise it.\n"
             #else
             "Rhythm Heaven Advance.\n"
-            #endif
             "\n"
             "That much is undeniable, and we fully recognize it.\n"
+            #endif
             "You are the best! One of the greatest! ...is how I feel,\n"
             "but that's enough praise.\n"
             "\n"
@@ -614,7 +653,11 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Blue: Wha? You can't \"play\" rhythm, Yellow.\n"
             "It's not an instrument. Where did you hear that?\n"
             "Yellow: Well, I told my teacher I wanted to play\n"
+            #ifdef PARADISE
+            "drums, but he told me I should practise \"rhythm\" first!\n"
+            #else
             "drums, but he told me I should practice \"rhythm\" first!\n"
+            #endif
             "Blue: Yellow, I think he meant you need to\n"
             "improve your sense of rhythm.\n"
             "Yellow: Oh yeah, that's much closer! That's\n"
@@ -626,9 +669,15 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Yellow: Oop! Blue, your fly is down!\n"
             "Blue: Huh!? Wait, really?\n"
             "Yellow: No, I lied.\n"
-            "Blue: Why I oughta...!\n"
-            "\n"
-            "Yellow: Why I oughta- Man, that's kind of a\n"
+            #ifdef PARADISE
+	    	"Blue: Why you...!\n"
+            	"\n"
+            	"Yellow: \"Why you\"! Man, that's kind of a\n"
+            #else
+	    	"Blue: Why I oughta...!\n"
+            	"\n"
+            	"Yellow: \"Why I oughta-!\" Man, that's kind of a\n"
+            #endif
             "cheesy line, don't you think?\n"
             "Blue: Shut it... I've had enough.\n"
             "Yellow: GRAAAGH!\n"
@@ -642,7 +691,11 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Blue: Oh, that's rich! Anyway, what about your\n"
             "sense of rhythm?\n"
             "Yellow: Right! My classmates said that my\n"
+            #ifdef PARADISE
+            "\"scents of rhythm\" will improve with practise.\n"
+            #else
             "\"scents of rhythm\" will improve with practice.\n"
+            #endif
             "Blue: Your SENSE of rhythm! Idiot!\n"
             "\n"
             "Both: Thank you! You've been a wonderful audience!\n",
