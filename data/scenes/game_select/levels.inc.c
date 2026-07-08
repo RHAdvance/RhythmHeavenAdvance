@@ -350,7 +350,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_tap_trial_gfx_tables,
         /* Epilogue Text */ {
             #ifdef PARADISE
-            /* TRY_AGAIN */ "Need to tap out.",
+            /* TRY_AGAIN */ "Better tap out.",
             #else
             /* TRY_AGAIN */ "Gotta tap out.",
             #endif
