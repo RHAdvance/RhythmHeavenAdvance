@@ -67,15 +67,9 @@ const char D_0805d7a8[] =
     "\n"
     "That's a wrap!";
 
-#ifdef PARADISE
-const char D_0805d7b4[] =
-    "\n"
-    "Alright! Let's get some practise in!";
-#else
 const char D_0805d7b4[] =
     "\n"
     "Alright! Let's get some practice in!";
-#endif
 
 const char D_0805d7cc[] =
     "Toss Technique 1:\n"
@@ -119,12 +113,6 @@ const char D_0805d8b0[] =
     "\n"
     "Okay!";
 
-#ifdef PARADISE
-const char D_0805d8bc[] =
-    "\n"
-    "We've made good time on practise...";
-#else
 const char D_0805d8bc[] =
     "\n"
     "We've made good time on practice...";
-#endif

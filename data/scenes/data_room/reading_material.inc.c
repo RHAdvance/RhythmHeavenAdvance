@@ -1141,7 +1141,11 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Borists\n"
 			"+ Tailx\n"
 			"\n"
-			"Localization / Translation:\n"
+			#ifdef PARADISE
+            "Localisation / Translation:\n"
+            #else
+            "Localization / Translation:\n"
+            #endif
 			"+ Cash Banooka\n"
 			"+ SkyeStage\n"
 			"+ somethingAccurate\n"
