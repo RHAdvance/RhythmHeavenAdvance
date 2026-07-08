@@ -624,7 +624,11 @@ void cafe_print_dialogue(void) {
             //
             //         "That's right."
             //         "Not right now."
+            #ifdef PARADISE
+            string = "\0054" "\0018" "Are you just practising so\n"
+            #else
             string = "\0054" "\0018" "Are you just practicing so\n"
+            #endif
                      "\0054" "\0018" "you can have a go " "\0051" "\0015" "at\n"
                      "\0051" "\0015" "getting a Perfect?" "\0054" "\0018" "\n"
                      "　　　　　　　　　　　　　That's right!\n"

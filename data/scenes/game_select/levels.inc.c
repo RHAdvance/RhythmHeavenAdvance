@@ -498,14 +498,22 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_toss_boys,
         /* Level Name    */ "Toss Team",
         /* Level Desc.   */ "This trio of friends love\n"
+                            #ifdef PARADISE
+                            "practising volleyball.\n"
+                            #else
                             "practicing volleyball.\n"
+                            #endif
                             "Listen for their names\n"
                             "as they pass their ball!",
         /* Level Icon    */ 30,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_toss_boys_gfx_tables,
         /* Epilogue Text */ {
+            #ifdef PARADISE
+            /* TRY_AGAIN */ "We've been thrown out!",
+            #else
             /* TRY_AGAIN */ "We've been tossed out!",
+            #endif
             /* OK        */ "Next time, we'll toss better than the best!",
             #ifdef PARADISE
             /* SUPERB    */ "Chuck World Championship, here we come!"
@@ -518,7 +526,11 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_toss_boys_2,
         /* Level Name    */ "Toss Team 2",
         /* Level Desc.   */ "This trio of friends love\n"
+                            #ifdef PARADISE
+                            "practising volleyball.\n"
+                            #else
                             "practicing volleyball.\n"
+                            #endif
                             "Today, they're training\n"
                             "harder than ever!",
         /* Level Icon    */ 29,
