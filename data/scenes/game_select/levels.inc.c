@@ -81,9 +81,9 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Producing these is harder than I thought...",
-            /* OK        */ "Still getting the hang of making these.",
-            /* SUPERB    */ "We've produced more than we can stock!"
+            /* TRY_AGAIN */ "Producing these red rods is harder than I thought...",
+            /* OK        */ "Still getting the hang of making these red rods.",
+            /* SUPERB    */ "We've produced more red rods than we can stock!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -98,8 +98,8 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "We need to produce a whole lot more of them...",
-            /* OK        */ "Producing more of these wouldn't hurt!",
+            /* TRY_AGAIN */ "We need to produce a whole lot more red rods...",
+            /* OK        */ "Producing more red rods wouldn't hurt!",
             /* SUPERB    */ "Red rod production is at an all time high!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
