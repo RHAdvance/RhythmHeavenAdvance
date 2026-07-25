@@ -75,15 +75,15 @@ struct LevelData level_data_table[] = {
         /* Level Name    */ "Polyrhythm",
         /* Level Desc.   */ "Manage the ‡O and ‡M\n"
 							"paths at the same time\n"
-							"to keep those red things\n"
+							"to keep those red rods\n"
 							"rolling! Simple enough?",
         /* Level Icon    */ 3,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "Producing these red things is harder than I thought...",
-            /* OK        */ "Still getting the hang of making these red things!",
-            /* SUPERB    */ "We've produced more red things than we can stock!"
+            /* TRY_AGAIN */ "Producing these is harder than I thought...",
+            /* OK        */ "Still getting the hang of making these.",
+            /* SUPERB    */ "We've produced more than we can stock!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -98,9 +98,9 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_polyrhythm_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "We need to produce a whole lot more red things...",
-            /* OK        */ "Producing more of these red things woudn't hurt!",
-            /* SUPERB    */ "Red thing production is at an all time high!"
+            /* TRY_AGAIN */ "We need to produce a whole lot more of them...",
+            /* OK        */ "Producing more of these wouldn't hurt!",
+            /* SUPERB    */ "Red rod production is at an all time high!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
     },
@@ -176,7 +176,11 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "\0023" "Assistant's memo:\n"
                             "We have an outbreak\n"
                             "of an unknown virus!\n"
+                            #ifdef PARADISE
+                            "Help us, Dr Cutlery!",
+                            #else
                             "Help us, Dr. Cutlery!",
+                            #endif
         /* Level Icon    */ 13,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_sick_beats_gfx_tables,
