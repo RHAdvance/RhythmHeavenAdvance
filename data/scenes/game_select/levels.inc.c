@@ -164,7 +164,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_rhythm_tweezers_2_gfx_tables,
         /* Epilogue Text */ {
-            /* TRY_AGAIN */ "They're growing back already!?",
+            /* TRY_AGAIN */ "Why do you have to be so hairy!?",
             /* OK        */ "Why do only my vegetables grow hair, anyway...?",
             /* SUPERB    */ "How refreshing! The air is cool and crisp!"
         },
