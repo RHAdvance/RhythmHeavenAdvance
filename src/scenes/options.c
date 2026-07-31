@@ -544,7 +544,7 @@ static void options_scene_update_main_classic(void) {
         case OPTIONS_EV_CONFIRM:
             if (gOptionsMenu->cursorPos == OPTIONS_BUTTON_SOUND_MODE) {
                 gOptionsMenu->soundMode ^= 1;
-                options_scene_refresh_classic_visuals();
+                sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
                 D_030046a8->data.unk294[8] = gOptionsMenu->soundMode;
                 set_sound_mode(gOptionsMenu->soundMode);
                 write_game_save_data();
