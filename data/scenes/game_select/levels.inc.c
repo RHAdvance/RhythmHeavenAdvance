@@ -434,7 +434,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "This rabbit has an\n"
                             "impossible goal: to jump\n"
                             "to the moon! Can you\n"
-                            "make his dream reality?",
+                            "make her dream reality?",
         /* Level Icon    */ 24,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_bunny_hop_gfx_tables,
