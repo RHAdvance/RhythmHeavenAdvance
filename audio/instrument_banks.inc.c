@@ -2159,17 +2159,17 @@ union Instrument inst_bank_conffmachine_en_sub[] = {
 };
 
 union Instrument inst_bank_conffmachine_en[] = {
-    /* 000 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 040 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 000 */ { .pcm = &instrument_pcm_0913 }, { .pcm = &instrument_pcm_0914 }, { .pcm = &instrument_pcm_0915 }, { .pcm = &instrument_pcm_0916 },
+    /* 004 */ { .pcm = &instrument_pcm_0917 }, { .pcm = &instrument_pcm_0918 }, { .pcm = &instrument_pcm_0919 }, { .pcm = &instrument_pcm_0920 },
+    /* 008 */ { .pcm = &instrument_pcm_0921 }, NULL,                            { .pcm = &instrument_pcm_0922 }, { .pcm = &instrument_pcm_0923 },
+    /* 012 */ { .pcm = &instrument_pcm_0924 }, { .pcm = &instrument_pcm_0925 }, { .pcm = &instrument_pcm_0926 }, { .spl = &instrument_spl_0927 },
+    /* 016 */ { .pcm = &instrument_pcm_0928 }, { .pcm = &instrument_pcm_0929 }, { .pcm = &instrument_pcm_0930 }, { .pcm = &instrument_pcm_0931 },
+    /* 020 */ { .pcm = &instrument_pcm_0932 }, { .pcm = &instrument_pcm_0933 }, { .spl = &instrument_spl_0934 }, { .pcm = &instrument_pcm_0935 },
+    /* 024 */ { .pcm = &instrument_pcm_0936 }, { .pcm = &instrument_pcm_0937 }, { .pcm = &instrument_pcm_0938 }, { .pcm = &instrument_pcm_0939 },
+    /* 028 */ { .pcm = &instrument_pcm_0940 }, { .pcm = &instrument_pcm_0941 }, { .pcm = &instrument_pcm_0942 }, { .pcm = &instrument_pcm_0943 },
+    /* 032 */ { .pcm = &instrument_pcm_0944 }, { .pcm = &instrument_pcm_0945 }, { .pcm = &instrument_pcm_0946 }, { .pcm = &instrument_pcm_0947 },
+    /* 036 */ { .pcm = &instrument_pcm_0948 }, { .pcm = &instrument_pcm_0949 }, { .pcm = &instrument_pcm_0950 }, { .pcm = &instrument_pcm_0951 },
+    /* 040 */ { .pcm = &instrument_pcm_0952 }, NULL,                            NULL,                            NULL,
     /* 044 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 048 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 052 */ NULL,                            NULL,                            NULL,                            NULL,
@@ -2189,8 +2189,8 @@ union Instrument inst_bank_conffmachine_en[] = {
     /* 108 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 112 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 116 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 120 */ NULL,                            NULL,                            NULL,                            { .rhy = &instrument_rhy_conffmachine_en },
-    /* 124 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 120 */ NULL,                            NULL,                            { .rhy = &instrument_rhy_0958 }, { .rhy = &instrument_rhy_conffmachine_en },
+    /* 124 */ { .rhy = &instrument_rhy_0954 }, { .rhy = &instrument_rhy_0955 }, { .rhy = &instrument_rhy_0956 }, { .rhy = &instrument_rhy_0957 }
 };
 
 union Instrument inst_bank_tossteam_en[] = {
