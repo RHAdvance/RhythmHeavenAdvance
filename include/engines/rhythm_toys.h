@@ -94,6 +94,7 @@ extern struct DrumTechNote *cat_machine_2_drum_seq_table[];
 extern struct SongHeader *cat_machine_meow_sfx_table[];
 extern struct SongHeader *(*rap_machine_sfx_pool[])[2];
 extern struct SongHeader *const *love_machine_sfx_table[];
+extern struct SongHeader *const *love_machine_sfx_table_en[];
 extern struct RhythmToysSpriteData *rhythm_toys_sprite_table[];
 extern struct RhythmToysDemo *rhythm_toys_demo_table[];
 extern struct CompressedData *rhythm_toys_buffered_textures[];
