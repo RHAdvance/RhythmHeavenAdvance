@@ -965,11 +965,11 @@ script script_remix_6_main
     beat_anim
     rest 24
     print_text_f text_remix_6_kimi_tte_saikou
-    #ifdef SFX
+    if_localized
     play_sfx s_rap_kimitte_saiko_slow_seqData
-    #else
+    else
     run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
-    #endif
+    end_if
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -988,11 +988,11 @@ script script_remix_6_main
     rest 24
     rest 8
     rest 8
-    #ifdef SFX
+    if_localized
     play_sfx s_rap_honto_desuka_slow_seqData
-    #else
+    else
     run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
-    #endif
+    end_if
     rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_6_honto_desu_ka
