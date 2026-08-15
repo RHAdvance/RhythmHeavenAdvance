@@ -721,14 +721,14 @@ script script_remix_1_main
     #else
     print_text_f 4
     #endif
-    #ifdef SFX
+    if_localized
     rest 12
     play_sfx s_f_boxing_hit_sfx_seqData
     rest 12
     play_sfx s_f_boxing_four_sfx_seqData
-    #else
+    else
     rest 24
-    #endif
+    end_if
     rest 24
     clear_text_f
     spawn_cue CUE_POT
