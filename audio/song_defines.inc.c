@@ -533,7 +533,7 @@
 /* 0530 */ DEFINE_SONG( &s_f_iai_cut_seqData,                SFX_PLAYER_0   )
 /* 0531 */ DEFINE_SONG( &s_f_iai_cut2_seqData,               SFX_PLAYER_0   )
 /* 0532 */ DEFINE_SONG( &s_f_iai_title_seqData,              SFX_PLAYER_0   )
-/* 0533 */ DEFINE_SONG( NULL, 0 )
+/* 0533 */ DEFINE_SONG( &s_f_virus_uhihi_og_seqData,            SFX_PLAYER_0   )
 /* 0534 */ DEFINE_SONG( &s_f_virus_note_land_seqData,        SFX_PLAYER_5   )
 /* 0535 */ DEFINE_SONG( &s_f_virus_in_seqData,               SFX_PLAYER_1   )
 /* 0536 */ DEFINE_SONG( &s_f_virus_uhihi_seqData,            SFX_PLAYER_0   )

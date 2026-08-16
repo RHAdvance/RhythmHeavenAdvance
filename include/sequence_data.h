@@ -642,6 +642,7 @@ extern struct SongHeader s_f_iai_cut2_seqData;
 extern struct SongHeader s_f_iai_title_seqData;
 extern struct SongHeader s_f_virus_in_seqData;
 extern struct SongHeader s_f_virus_uhihi_seqData;
+extern struct SongHeader s_f_virus_uhihi_og_seqData;
 extern struct SongHeader s_f_virus_hit_seqData;
 extern struct SongHeader s_f_virus_osii_seqData;
 extern struct SongHeader s_f_virus_face_fadeout_seqData;

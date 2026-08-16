@@ -633,7 +633,7 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                 }
             }
             #else
-            play_sound(&s_f_virus_uhihi_seqData);
+            play_sound(&s_f_virus_uhihi_og_seqData);
             #endif
             break;
         case SICK_BEATS_VIRUS_STATE_UP_DASH_INVULN:

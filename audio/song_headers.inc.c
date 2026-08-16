@@ -7459,6 +7459,18 @@ struct SongHeader s_f_virus_uhihi_seqData = {
     /* Song Number   */ 536
 };
 
+extern const u8 s_f_virus_uhihi_og_mid[];
+struct SongHeader s_f_virus_uhihi_og_seqData = {
+    /* MIDI Sequence */ s_f_virus_uhihi_og_mid,
+    /* Sound Player  */ SFX_PLAYER_0,
+    /* Bank Number   */ INST_BANK_60,
+    /* Volume        */ 100,
+    /* Priority      */ 100,
+    /* unk8          */ 0xff,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 533
+};
+
 extern const u8 s_f_virus_hit_mid[];
 struct SongHeader s_f_virus_hit_seqData = {
     /* MIDI Sequence */ s_f_virus_hit_mid,
