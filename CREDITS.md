@@ -46,7 +46,7 @@
 - Nabix (& his family)
 - itaific
 - SesuRescue
-- FireChat‰
+- FireChat♂
 - Kievit
 
 ## Playtesting
