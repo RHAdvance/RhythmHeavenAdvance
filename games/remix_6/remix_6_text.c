@@ -27,7 +27,7 @@ const char D_0806a8c8[] = "Ｌｅｔ　ｆｕｎ　ｂｅ　ｈａｄ！";
 
 const char D_0806a8d8[] =
     "\n"
-    "Let's begin!";
+    "Here we go!";
 
 const char D_0806a8e4[] =
     "\n"

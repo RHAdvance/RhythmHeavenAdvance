@@ -21,7 +21,7 @@ const char D_080680d4[] = "Rhythm League notes:";
 
 const char D_080680f0[] =
     "\n"
-    "Let's begin!";
+    "Here we go!";
 
 const char D_080680fc[] =
     "\n"
