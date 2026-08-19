@@ -225,7 +225,7 @@ struct SongHeader s_guntai_v_zentai_a_seqData = {
     /* Priority      */ 90,
     /* unk8          */ 0x40,
     /* Song Title    */ NULL,
-    /* Song Number   */ 1544
+    /* Song Number   */ 1896
 };
 
 extern const u8 s_guntai_v_zentai_ten_mid[];
