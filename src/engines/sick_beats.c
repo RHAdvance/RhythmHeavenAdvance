@@ -491,7 +491,16 @@ void sick_beats_update_doctor(void) {
 
 // Game Engine Update
 void sick_beats_engine_update(void) {
-    gSickBeats->highestPriorityState = 0; // Reset priority each frame
+    // wait three frames to reset priority state
+    if (gSickBeats->highestPriorityTimer > 2) {
+        gSickBeats->highestPriorityState = 0;
+        gSickBeats->highestPriorityTimer = 0;
+    }
+
+    if (gSickBeats->highestPriorityState != 0) {
+        ++gSickBeats->highestPriorityTimer;
+    }
+
     sick_beats_update_yellow_microbe();
     sick_beats_update_forks();
     sick_beats_update_virus();
@@ -610,7 +619,8 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                 if (priority > gSickBeats->highestPriorityState) {
                     gSickBeats->highestPriorityState = priority;
                 }
-                
+                gSickBeats->highestPriorityTimer = 0;
+
                 // Set panning and pitch based on highest priority state
                 if (gSickBeats->highestPriorityState == 4) {
                     panning = 0;                    // RIGHT (DOWN button) - center
