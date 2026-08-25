@@ -111,7 +111,7 @@ extern const u8 s_f_marcher2_v_zentai_mid[];
 struct SongHeader s_f_marcher2_v_zentai_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_zentai_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -123,7 +123,7 @@ extern const u8 s_f_marcher2_v_susume_mid[];
 struct SongHeader s_f_marcher2_v_susume_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_susume_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 85,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -135,7 +135,7 @@ extern const u8 s_f_marcher2_v_tomare_mid[];
 struct SongHeader s_f_marcher2_v_tomare_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_tomare_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -147,7 +147,7 @@ extern const u8 s_f_marcher2_v_migimukeL_mid[];
 struct SongHeader s_f_marcher2_v_migimukeL_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_migimukeL_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -159,7 +159,7 @@ extern const u8 s_f_marcher2_v_migimukeS_mid[];
 struct SongHeader s_f_marcher2_v_migimukeS_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_migimukeS_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -171,7 +171,7 @@ extern const u8 s_f_marcher2_v_migi_mid[];
 struct SongHeader s_f_marcher2_v_migi_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_migi_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -183,7 +183,7 @@ extern const u8 s_f_marcher2_v_hidarimukeL_mid[];
 struct SongHeader s_f_marcher2_v_hidarimukeL_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_hidarimukeL_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -195,7 +195,7 @@ extern const u8 s_f_marcher2_v_hidarimukeS_mid[];
 struct SongHeader s_f_marcher2_v_hidarimukeS_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_hidarimukeS_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
@@ -207,7 +207,7 @@ extern const u8 s_f_marcher2_v_hidari_mid[];
 struct SongHeader s_f_marcher2_v_hidari_seqData = {
     /* MIDI Sequence */ s_f_marcher2_v_hidari_mid,
     /* Sound Player  */ SFX_PLAYER_1,
-    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Bank Number   */ INST_BANK_57,
     /* Volume        */ 90,
     /* Priority      */ 127,
     /* unk8          */ 0xff,
