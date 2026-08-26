@@ -31,6 +31,12 @@
     .set VOICE_LEFT_FACE,       9
     .set VOICE_LEFT_FACE_F,     10
     .set VOICE_TURN_LEFT,       11
+    .set VOICE_ATTENTION_2,     12
+    .set VOICE_ATTENTION_3,     13
+    .set VOICE_LEFT_FACE_2,     14
+    .set VOICE_RIGHT_FACE_2,    15
+    .set VOICE_F_FACE_RIGHT,    16
+    .set VOICE_F_FACE_LEFT,     17
 .endm
 
 
@@ -38,30 +44,35 @@
 .macro load_marching_orders
     load_marching_orders_labels
     load_game marching_orders_engine, 0
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Marching Orders (Remix 7, Remix 8)
 .macro load_marching_space_rabbits
     load_marching_orders_labels
     load_game marching_orders_engine, 1
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Marching Orders 2 (Unused)
 .macro load_marching_orders_2_unused
     load_marching_orders_labels
     load_game marching_orders_engine, 2
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Marching Orders 2
 .macro load_marching_orders_2
     load_marching_orders_labels
     load_game marching_orders_engine, 3
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Marching Orders (Extra)
 .macro load_marching_orders_extra
     load_marching_orders_labels
     load_game marching_orders_engine, 4
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 

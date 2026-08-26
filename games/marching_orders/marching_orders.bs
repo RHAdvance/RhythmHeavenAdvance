@@ -120,104 +120,200 @@ script script_marching_orders_main
     set_tempo 135
     set_music_volume 256
     play_music s_guntai2_seqData
-    start_perfect_campaign
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    start_tracking_perfect_campaign
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    rest 24
-    rest 24
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    set_marking_criteria 0
-    call marching_orders_sub_08a84448
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a83998
-    set_marking_criteria 0
-    call marching_orders_sub_08a8452c
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
-    call marching_orders_sub_08a83848
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a83b24
-    set_marking_criteria 1
-    call marching_orders_sub_08a83bfc
-    set_marking_criteria 0
-    call marching_orders_sub_08a84448
-    set_marking_criteria 0
-    call marching_orders_sub_08a8452c
-    call marching_orders_sub_08a83848
-    print_text_f D_0805c8b4
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    marching_orders_event03
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    set_marking_criteria 0
-    call marching_orders_sub_08a8386c
-    marching_orders_event00 8
-    play_sfx s_guntai_foot1_seqData
-    rest 12
-    stop_tracking_inputs
-    stop_tracking_perfect_campaign
-    disable_play_inputs
-    rest 12
-    marching_orders_event00 7
-    play_sfx s_guntai_foot2_seqData
-    rest 24
-    marching_orders_event00 8
-    play_sfx s_guntai_foot1_seqData
-    rest 24
-    marching_orders_event00 7
-    play_sfx s_guntai_foot2_seqData
-    rest 24
-    marching_orders_event00 8
-    play_sfx s_guntai_foot1_seqData
-    disable_pause_menu
+    if_localized
+        start_perfect_campaign
+        rest 24
+        rest 24
+        rest 24
+        start_tracking_perfect_campaign
+        call marching_orders_sub_08a83848
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_nobeat
+        set_marking_criteria 0
+        call marching_orders_sub_08a83998
+        rest 24
+        rest 24
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        call marching_orders_sub_08a83848_beatstop
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_nobeat
+        set_marking_criteria 0
+        call marching_orders_sub_08a83998
+        set_marking_criteria 0
+        call marching_orders_sub_08a84448
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        call marching_orders_sub_08a83848_beatstop_nobeat
+        set_marking_criteria 0
+        call marching_orders_sub_08a83998
+        set_marking_criteria 0
+        call marching_orders_sub_08a8452c
+        rest 24
+        clear_text_f
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        call marching_orders_sub_08a83848_beatstop
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_nobeat
+        set_marking_criteria 0
+        call marching_orders_sub_08a83b24
+        set_marking_criteria 1
+        call marching_orders_sub_08a83bfc
+        set_marking_criteria 0
+        call marching_orders_sub_08a84448
+        set_marking_criteria 0
+        call marching_orders_sub_08a8452c
+        call marching_orders_sub_08a83848
+        print_text_f D_0805c8b4
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_noclear
+        marching_orders_event03
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_noclear
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_noclear
+        marching_orders_event00 8
+        play_sfx s_guntai_foot1_seqData
+        rest 12
+        stop_tracking_inputs
+        stop_tracking_perfect_campaign
+        disable_play_inputs
+        rest 12
+        marching_orders_event00 7
+        play_sfx s_guntai_foot2_seqData
+        rest 24
+        marching_orders_event00 8
+        play_sfx s_guntai_foot1_seqData
+        rest 24
+        marching_orders_event00 7
+        play_sfx s_guntai_foot2_seqData
+        rest 24
+        marching_orders_event00 8
+        play_sfx s_guntai_foot1_seqData
+        disable_pause_menu
+    else
+        start_perfect_campaign
+        rest 24
+        rest 24
+        rest 24
+        rest 24
+        start_tracking_perfect_campaign
+        call marching_orders_sub_08a83848
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a83998
+        rest 24
+        rest 24
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 256
+        call marching_orders_sub_08a83848
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a83998
+        set_marking_criteria 0
+        call marching_orders_sub_08a84448
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 256
+        call marching_orders_sub_08a83848
+        set_marking_criteria 0
+        call marching_orders_sub_08a83998
+        set_marking_criteria 0
+        call marching_orders_sub_08a8452c
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 258
+        rest 24
+        marching_orders_event00 256
+        call marching_orders_sub_08a83848
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c
+        set_marking_criteria 0
+        call marching_orders_sub_08a83b24
+        set_marking_criteria 1
+        call marching_orders_sub_08a83bfc
+        set_marking_criteria 0
+        call marching_orders_sub_08a84448
+        set_marking_criteria 0
+        call marching_orders_sub_08a8452c
+        call marching_orders_sub_08a83848
+        print_text_f D_0805c8b4
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_noclear
+        marching_orders_event03
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_noclear
+        set_marking_criteria 0
+        call marching_orders_sub_08a8386c_noclear
+        marching_orders_event00 8
+        play_sfx s_guntai_foot1_seqData
+        rest 12
+        stop_tracking_inputs
+        stop_tracking_perfect_campaign
+        disable_play_inputs
+        rest 12
+        marching_orders_event00 7
+        play_sfx s_guntai_foot2_seqData
+        rest 24
+        marching_orders_event00 8
+        play_sfx s_guntai_foot1_seqData
+        rest 24
+        marching_orders_event00 7
+        play_sfx s_guntai_foot2_seqData
+        rest 24
+        marching_orders_event00 8
+        play_sfx s_guntai_foot1_seqData
+        disable_pause_menu
+        end_if
 return
 
 
@@ -255,18 +351,27 @@ script script_marching_orders_practice
     marching_orders_event02 -1
     rest 24
     marching_orders_event00 258
-    rest 24
-    marching_orders_event00 256
     clear_text_f
+    rest 18
     loop_start
+        rest 6
+        marching_orders_event00 256
+        clear_text_f
         run beatscript_disable_loops
         marching_orders_event02 3
         marching_orders_event01
-        play_sfx s_guntai_v_migi_muke1_seqData
-        rest 24
+        play_sfx_localized s_guntai_v_migi_muke1_seqData, s_guntai_v_migi_muke1_en_seqData
+        rest 11
+        if_localized
+        play_sfx s_guntai_v_migi_muke1_face_seqData
+        end_if
+        rest 13
         rest 24
         marching_orders_event01
-        play_sfx s_guntai_v_migi_seqData
+        play_sfx_localized s_guntai_v_migi_seqData, s_guntai_v_migi_en_seqData
+        #ifdef PLUS
+        print_text_f D_0805c8e1
+        #endif
         spawn_cue CUE_TURN_RIGHT
         beat_anim
         rest 24
@@ -274,29 +379,49 @@ script script_marching_orders_practice
         play_sfx s_guntai_v_ka_seqData
         marching_orders_event02 -1
         rest 24
+        clear_text_f
         marching_orders_event02 4
         marching_orders_event01
-        play_sfx s_guntai_v_hidari_muke1_seqData
-        rest 24
+        play_sfx_localized s_guntai_v_hidari_muke1_seqData, s_guntai_v_hidari_muke1_en_seqData
+        rest 11
+        if_localized
+        play_sfx s_guntai_v_hidari_muke1_face_seqData
+        end_if
+        rest 13
         rest 24
         marching_orders_event01
-        play_sfx s_guntai_v_hidari_seqData
+        play_sfx_localized s_guntai_v_hidari_seqData, s_guntai_v_hidari_en_seqData
+        #ifdef PLUS
+        print_text_f D_0805c8e2
+        #endif
         spawn_cue CUE_TURN_LEFT
         beat_anim
         rest 24
         marching_orders_event00 3
         play_sfx s_guntai_v_ka_seqData
         marching_orders_event02 -1
-        rest 24
+        rest 18
     loop_end
     loop_start
         run beatscript_disable_loops
+        if_localized
+        play_sfx s_guntai_v_zentai_a_seqData
+        end_if
+        rest 6
+        play_sfx_localized s_guntai_v_zentai1_seqData, s_guntai_v_zentai_tten_seqData
         marching_orders_event01
-        play_sfx s_guntai_v_zentai1_seqData
-        rest 24
+        clear_text_f
+        rest 9
+        if_localized
+        play_sfx s_guntai_v_zentai_tion_seqData
+        end_if
+        rest 15
         rest 24
         marching_orders_event01
-        play_sfx s_guntai_v_susume_seqData
+        play_sfx_localized s_guntai_v_susume_seqData, s_guntai_v_march_seqData
+        #ifdef PLUS
+        print_text_f D_0805c8e3
+        #endif
         rest 24
         marching_orders_event02 1
         play_sfx s_guntai_v_es_seqData
@@ -304,6 +429,7 @@ script script_marching_orders_practice
         spawn_cue CUE_STEP
         beat_anim
         rest 24
+        clear_text_f
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
@@ -343,15 +469,22 @@ script script_marching_orders_practice
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
         beat_anim
-        rest 24
+        rest 18
+        if_localized
+        play_sfx s_guntai_v_zentai_a_seqData
+        end_if
+        rest 6
+        play_sfx_localized s_guntai_v_zentai1_seqData, s_guntai_v_zentai_tten_seqData
         marching_orders_event02 -1
-        marching_orders_event01
-        play_sfx s_guntai_v_zentai1_seqData
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_STEP
-        beat_anim
-        rest 24
+        marching_orders_event01
+        rest 9
+        if_localized
+        play_sfx s_guntai_v_zentai_tion_seqData
+        end_if
+        rest 15
         marching_orders_event00 7
         play_sfx s_guntai_foot2_seqData
         spawn_cue CUE_STEP
@@ -359,7 +492,10 @@ script script_marching_orders_practice
         rest 24
         marching_orders_event02 2
         marching_orders_event01
-        play_sfx s_guntai_v_tomare_seqData
+        play_sfx_localized s_guntai_v_tomare_seqData, s_guntai_v_halt_seqData
+        #ifdef PLUS
+        print_text_f D_0805c8e4
+        #endif
         marching_orders_event00 8
         play_sfx s_guntai_foot1_seqData
         spawn_cue CUE_HALT
@@ -369,12 +505,14 @@ script script_marching_orders_practice
         marching_orders_event00 1
         play_sfx s_guntai_foot2_seqData
         rest 24
-        rest 24
+        clear_text_f
         rest 24
         rest 24
         rest 24
         marching_orders_event02 -1
+        rest 18
     loop_end
+    rest 24
     run gameplay_set_tutorial NULL
     mod_music_volume 0, 168
     print_text_f D_0805c8e0

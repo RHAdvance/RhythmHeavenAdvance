@@ -5165,7 +5165,7 @@
         },
         {
             "sample": "march_ord_8.wav",
-            "pitch": "C5"
+            "pitch": "B4"
         },
         {
             "sample": "march_ord_9.wav",
@@ -6249,7 +6249,23 @@
             "sample": "rt_tempo_17.wav",
             "pitch": "C4"
         },
-                {
+        {
+            "sample": "countin_r5_sample_137.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "countin_r5_sample_138.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "countin_r5_sample_139.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "countin_r5_sample_140.wav",
+            "pitch": "C5"
+        },
+        {
             "sample": "awake_baby.wav",
             "pitch": "C5"
         },
