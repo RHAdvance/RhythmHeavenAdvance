@@ -49,9 +49,11 @@ extern u8 sSceneTextCurrentStringId; // Current String in Scene Text Table to Pr
 static const struct BmpFontSymbolEntry sBmpFontSymbolMap[] = {
     { ' ', BMP_FONT_GLYPH_ID_SPACE },   // ' '
     { '!', 63 },                        // '!'
+    { '\"', 81 },                       // '”'
     { '$', 95 },                        // '$'
     { '%', 91 },                        // '%'
     { '&', 92 },                        // '&'
+    { '\'', 79 },                       // '’'
     { '(', 82 },                        // '('
     { ')', 83 },                        // ')'
     { '*', 93 },                        // '*'
@@ -286,6 +288,9 @@ void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, c
             textures = font->symbolTextures;
             widths = font->symbolWidths;
             id = glyph.glyphID;
+            if (string[0] == '-') {
+                *(volatile u32*)(ExternWorkRAMBase + 0x3FFF0) = id;
+            }
             break;
 
         case BMP_FONT_GLYPH_ARABIC_NUMERAL:

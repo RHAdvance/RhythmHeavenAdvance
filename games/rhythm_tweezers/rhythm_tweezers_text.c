@@ -21,7 +21,7 @@ const char D_0805b530[] = "Unwanted-hair check:";
 
 const char D_0805b544[] = "Hello!";
 
-const char D_0805b550[] = "Press ⑭ or ⑯ to pluck the hair at the right time.";
+const char D_0805b550[] = "Press  or ⑯ to pluck the hair at the right time.";
 
 const char D_0805b580[] = "\x05\x30" "\x01\x34" "\x03\x31" "\x01\x6d" "OK!";
 

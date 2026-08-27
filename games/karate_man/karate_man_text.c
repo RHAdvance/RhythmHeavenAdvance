@@ -27,7 +27,7 @@ const char D_0805abec[] =
 
 const char D_0805ac0c[] = 
     "Watch out for flying\n"
-    "objects, and press ⑭\n"
+    "objects, and press \n"
     "to punch them!\n"
     "The timing's a little tricky!";
 

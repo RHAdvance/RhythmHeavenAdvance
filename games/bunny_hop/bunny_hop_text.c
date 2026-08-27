@@ -37,7 +37,7 @@ const char D_0805cca4[] = "rest for an eight-count.";
 
 const char D_0805ccb4[] = "Sea friends' report:";
 
-const char D_0805ccb8[] = "                    Press ゝ on beat to hop across.";
+const char D_0805ccb8[] = "                    Press  on beat to hop across.";
 
 const char D_0805ccb9[] = "Go!";
 

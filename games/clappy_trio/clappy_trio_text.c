@@ -51,7 +51,7 @@ const char D_0805af60[] = "Let's practise!";
 const char D_0805af60[] = "Let's practice!";
 #endif
 
-const char D_0805af7c[] = "Press ⑭ for the third clap.";
+const char D_0805af7c[] = "Press  for the third clap.";
 
 const char D_0805afa0[] = "OK.";
 
