@@ -113,10 +113,11 @@ enum TextPrinterFontsEnum {
 
 extern void text_printer_init(void); // Init. Static Variables
 extern s32 text_font_get_spacing(s32 font); // Get Spacing Width
-extern s32 text_font_get_glyph_width(s32 font, s32 glyphID); // Get Glyph Width
+extern s32 text_font_get_glyph_width(s32 font, s32 codepoint); // Get Glyph Width
+extern u8* text_font_get_glyph_data(s32 font, s32 codepoint); // Get Glyph Width
 extern s32 text_font_get_next_glyph_width(s32 font, const char **stream); // Get Glyph Width
 extern s32 text_font_calculate_string_width(s32 font, const char *string); // Get Width of a String
-extern void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors); // Print Character to VRAM
+extern void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 codepoint, s32 lineColors); // Print Character to VRAM
 extern s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColors); // Print Non-Formatted Line to VRAM (return width in pixels)
 extern s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColors, s32 indentWidth, s32 shadowColors); // Print Formatted Line to VRAM (return width in pixels)
 extern struct Animation *func_08009de4(u32 memID, s32 tileBaseX, s32 tileBaseY, s32 font, const char **string, u32 anchor, s32 lineColors, s32 maxWidth, s32 ignoreFormatting, s32 indentWidth, s32 shadowColors);
@@ -127,7 +128,7 @@ extern void text_printer_delete_anim(struct Animation *anim); // Delete Text Ani
 extern void text_printer_set_format_func(void *func); // Set sModifyPrinterSettings
 extern void text_printer_clear_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
 extern void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTiles, u32 unused, u32 color); // Fill Allocated Space With Given Pixel
-extern s32 text_printer_get_glyph_id(const char **string); // Get Glyph ID
+extern s32 text_printer_get_codepoint(const char **string); // Get Codepoint
 extern u32 func_0800a1ac(u32 maxWidth);
 extern s32 func_0800a1d4(u32 totalLines, u32 id);
 extern struct TextPrinter *text_printer_create_new(u16 memID, u32 totalLines, u32 maxWidth, u32 arg3); // Create New
@@ -194,3 +195,5 @@ extern void listbox_link_sprite_x_y_to_line(struct Listbox *listbox, s16 sprite,
 extern void func_0800b454(struct Listbox *listbox, s32);
 extern void listbox_set_sel_sprite(struct Listbox *listbox, struct Animation *selectionAnim);
 extern s16 listbox_get_sel_sprite(struct Listbox *listbox);
+
+extern const struct FontGlyphRange* text_get_glyph_range_for_codepoint(s32 font, s32 codepoint);

@@ -1,9 +1,9 @@
 #include "utf_8.h"
 
 
-s32 utf8_decode_codepoint(const char **string, u32 *codepoint) {
+s32 utf8_decode_codepoint(const char **string, s32 *codepoint) {
     const u8 *s;
-    u32 value;
+    s32 value;
     u32 length;
     u32 i;
 
@@ -70,7 +70,7 @@ invalid_utf8:
 
 u32 utf8_get_char_len(const char *string) {
     const char *next;
-    u32 codepoint;
+    s32 codepoint;
 
     if (string[0] == '\0') {
         return 0;
@@ -90,7 +90,7 @@ const char *utf8_get_next_char_ptr(const char *string) {
 s32 utf8_codepoint_is_in_list(u32 codepoint, const char *list) {
     while (list[0] != '\0') {
         const char *next;
-        u32 listCodepoint;
+        s32 listCodepoint;
 
         next = list;
         utf8_decode_codepoint(&next, &listCodepoint);

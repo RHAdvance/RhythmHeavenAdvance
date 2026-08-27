@@ -52,7 +52,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "From the Barista",
         /* BODY ----------------------------------------------------------- */
-            "I own and operate a Caf⑱.\n"
+            "I own and operate a Café.\n"
             "I guess you could call me the barista.\n"
             "Anyway, it's going well thanks to the regulars.\n"
             "And, uh, just to let you know, I'm a dog.\n"
@@ -60,7 +60,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "A lot of them have especially good rhythm,\n"
             "and a few have even achieved a full set of Perfects!\n"
             "I'm always amazed by them!\n"
-            "I may look all professional when I run my caf⑱,\n"
+            "I may look all professional when I run my café,\n"
             "but I'll be honest, I'm really putting on a front.\n"
             "\n"
             "See, it's a little embarrassing, but when I'm off the\n"

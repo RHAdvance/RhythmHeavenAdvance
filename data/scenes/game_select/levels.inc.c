@@ -857,9 +857,9 @@ struct LevelData level_data_table[] = {
     /* CAFE */ {
         /* Entry Scene   */ &scene_cafe,
         #ifdef PARADISE
-        /* Level Name    */ "Caf⑱ Counselling",
+        /* Level Name    */ "Café Counselling",
         #else
-        /* Level Name    */ "Caf⑱ Counseling",
+        /* Level Name    */ "Café Counseling",
         #endif
         /* Level Desc.   */ "How are you feeling?\n"
                             "If something's on your\n"
