@@ -91,9 +91,9 @@ const char *advance_options_desc_text[] = {
         "\0024" "\0011" "\001L" "Show      " "\0021" "Show the disclaimer at startup.\n"
         "\0024" "\0011" "\001L" "Skip      " "\0021" "Skip the disclaimer at startup.",
     /* ALT GAME SELECT MUSIC --------------------------- */
-        "\0023" "\0013" "\001C" "Alt. Game Select Music\n"
-        "\0024" "\0011" "\001L" "On        " "\0021" "Use alternate music in Game Select.\n"
-        "\0024" "\0011" "\001L" "Off       " "\0021" "Use normal music in Game Select.",
+        "\0023" "\0013" "\001C" "Game Select Music\n"
+        "\0024" "\0011" "\001L" "Normal    " "\0021" "Use Game Select 2 after the credits.\n"
+        "\0024" "\0011" "\001L" "Swapped   " "\0021" "Use Game Select 1 after the credits.",
 };
 
 

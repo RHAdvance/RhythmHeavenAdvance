@@ -12,7 +12,7 @@ tools/agbcc/*
 *.dump
 *.bps
 *.Identifier
-.reapeaks
+*.reapeaks
 .vscode/*
 ctx.c
 

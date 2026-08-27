@@ -296,6 +296,7 @@ void start_campaign_notice(s32 id) {
     }
     }
     strcat(string, get_campaign_gift_title(id, FALSE)); // "<gift>"
+    strcat(string, ".\n");
     text_printer_set_string(notice->printer, string);
 
     sprite_set_visible(gSpriteHandler, gGameSelect->selectionBorderSprite, FALSE);
@@ -1173,13 +1174,30 @@ void game_select_read_dpad_inputs(void) {
         game_select_set_stage_title(x);
     }
 
-    play_sound(&s_menu_cursor1_seqData);
     levelID = get_level_id_from_grid_xy(x, y);
-    if ((levelID > LEVEL_NULL) && (get_level_data_from_id(levelID)->type == LEVEL_TYPE_BONUS)) {
-        rumble_play_menu_bonus();
-    } else {
-        rumble_play_menu_move();
+    #ifdef PLUS
+    if ((levelID > LEVEL_NULL) && (get_campaign_from_level_id(levelID) == D_030046a8->data.currentCampaign)
+    && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE)){
+    play_sound_w_pitch_volume(&s_menu_cursor1_seqData, INT_TO_FIXED(1.0), INT_TO_FIXED(5.0));
     }
+    else
+    {
+        if ((levelID > LEVEL_NULL) && (get_level_data_from_id(levelID)->type == LEVEL_TYPE_BONUS)) {
+            play_sound(&s_menu_cursor2_seqData);
+            rumble_play_menu_bonus();
+        } else {
+            play_sound(&s_menu_cursor1_seqData);
+            rumble_play_menu_move();
+        }
+    }
+    #else
+    play_sound(&s_menu_cursor1_seqData);
+        if ((levelID > LEVEL_NULL) && (get_level_data_from_id(levelID)->type == LEVEL_TYPE_BONUS)) {
+            rumble_play_menu_bonus();
+        } else {
+            rumble_play_menu_move();
+        }
+    #endif
 }
 
 

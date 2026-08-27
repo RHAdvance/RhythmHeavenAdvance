@@ -84,7 +84,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* R-IQ (Cafe) */ {
         /* Scene */ &scene_cafe,
-        /* Label */ "R-IQ (Cafe Counseling)", // shoutout to british people
+        #ifdef PARADISE
+        /* Label */ "R-IQ (Cafe Counselling)", // shoutout to british people
+        #else
+        /* Label */ "R-IQ (Cafe Counseling)",
+        #endif
         /* Epil. */ FALSE
     },
     /* Warning */ {
@@ -255,7 +259,11 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Mr. Upbeat */ {
         /* Scene */ &scene_mr_upbeat,
+        #ifdef PARADISE
+        /* Label */ "Mr Upbeat",
+        #else
         /* Label */ "Mr. Upbeat",
+        #endif
         /* Epil. */ FALSE
     },
     /* Sick Beats Endless */ {
@@ -306,7 +314,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Karate Man (Extra) */ {
         /* Scene */ &scene_karate_man_extra,
-        /* Label */ "Karate Man (Extra)",
+        /* Label */ "Karate Man (Extra) WIP",
         /* Epil. */ TRUE
     },
     /* Rhythm Tweezers */ {
@@ -367,7 +375,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* The Clappy Trio (Extra) */ {
         /* Scene */ &scene_clappy_trio_extra,
-        /* Label */ "The Clappy Trio (Extra)",
+        /* Label */ "The Clappy Trio (Extra) WIP",
         /* Epil. */ TRUE
     },
     /* Sneaky Spirits */ {
@@ -562,7 +570,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Remix 1 (Extra) */ {
         /* Scene */ &scene_remix_1_extra,
-        /* Label */ "Remix 1 (Extra)",
+        /* Label */ "Remix 1 (Extra) WIP",
         /* Epil. */ TRUE
     },
     /* Drum Intro (Unused 1) */ {

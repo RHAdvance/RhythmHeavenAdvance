@@ -85,7 +85,7 @@ static const char *options_scene_bitmap_get_value(s32 entry) {
             return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? "Skip" : "Show";
 
         case OPTIONS_BITMAP_ALT_GAME_SELECT_MUSIC:
-            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC) ? "On" : "Off";
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC) ? "Swapped" : "Normal";
     }
 
     return "SHAFFY FUCKED UP";
@@ -544,7 +544,7 @@ static void options_scene_update_main_classic(void) {
         case OPTIONS_EV_CONFIRM:
             if (gOptionsMenu->cursorPos == OPTIONS_BUTTON_SOUND_MODE) {
                 gOptionsMenu->soundMode ^= 1;
-                options_scene_refresh_classic_visuals();
+                sprite_set_anim(gSpriteHandler, gOptionsMenu->uiSoundMode, options_sound_mode_anim[gOptionsMenu->soundMode][OPTIONS_BUTTON_ON], 0, 1, 0x7F, 0);
                 D_030046a8->data.unk294[8] = gOptionsMenu->soundMode;
                 set_sound_mode(gOptionsMenu->soundMode);
                 write_game_save_data();

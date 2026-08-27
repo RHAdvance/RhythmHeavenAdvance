@@ -34,6 +34,18 @@ struct SongHeader spaceball_tempo_seqData = {
     /* Song Number   */ 2
 };
 
+extern const u8 marching_orders_tempo_mid[];
+struct SongHeader marching_orders_tempo_seqData = {
+    /* MIDI Sequence */ marching_orders_tempo_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_69,
+    /* Volume        */ 120,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ marching_orders_tempo_seqName,
+    /* Song Number   */ 3
+};
+
 extern const u8 spaceball_tempo_mpart_mid[];
 struct SongHeader spaceball_tempo_mpart_seqData = {
     /* MIDI Sequence */ spaceball_tempo_mpart_mid,
@@ -7445,6 +7457,18 @@ struct SongHeader s_f_virus_uhihi_seqData = {
     /* unk8          */ 0xff,
     /* Song Title    */ s_f_virus_uhihi_seqName,
     /* Song Number   */ 536
+};
+
+extern const u8 s_f_virus_uhihi_og_mid[];
+struct SongHeader s_f_virus_uhihi_og_seqData = {
+    /* MIDI Sequence */ s_f_virus_uhihi_og_mid,
+    /* Sound Player  */ SFX_PLAYER_0,
+    /* Bank Number   */ INST_BANK_60,
+    /* Volume        */ 100,
+    /* Priority      */ 100,
+    /* unk8          */ 0xff,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 533
 };
 
 extern const u8 s_f_virus_hit_mid[];

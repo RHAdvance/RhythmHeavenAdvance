@@ -51,9 +51,13 @@ jobs:
         ./make-linux.sh
         cd ..
 
+    - name: Fix git safe directory
+      run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
     - name: Build rhythmheavenadvance (Japanese SFX)
       run: |
-        make -j$(nproc) FEATURES="PLAYTEST PLUS"
+        HASH=$(git rev-parse --short=7 HEAD)
+        make -j$(nproc) FEATURES="PLAYTEST PLUS" GIT_COMMIT="$HASH"
     
     - name: Make BPS patch (Japanese SFX)
       run: |
@@ -65,7 +69,8 @@ jobs:
 
     - name: Build rhythmheavenadvance (English SFX)
       run: |
-        make -j$(nproc) FEATURES="PLAYTEST PLUS SFX"
+        HASH=$(git rev-parse --short=7 HEAD)
+        make -j$(nproc) FEATURES="PLAYTEST PLUS SFX" GIT_COMMIT="$HASH"
     
     - name: Make BPS patch (English SFX)
       run: |
@@ -79,3 +84,4 @@ jobs:
         path: |
           rhythmheavenadvance-japanesesfx.bps
           rhythmheavenadvance-englishsfx.bps
+          Nightly_Disclaimer.txt
