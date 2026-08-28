@@ -290,9 +290,6 @@ void bmp_font_get_glyph(const struct BitmapFontData *font, const char *string, c
             textures = font->symbolTextures;
             widths = font->symbolWidths;
             id = glyph.glyphID;
-            if (string[0] == '-') {
-                *(volatile u32*)(ExternWorkRAMBase + 0x3FFF0) = id;
-            }
             break;
 
         case BMP_FONT_GLYPH_ARABIC_NUMERAL:

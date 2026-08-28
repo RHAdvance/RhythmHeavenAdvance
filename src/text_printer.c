@@ -324,12 +324,6 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
         fGlyphData->font = font;
         fGlyphData->spacing = spacing;
 
-        if (glyphCodepoint == 0xE005) {
-            *(volatile u32*)(ExternWorkRAMBase + 0x3FFD0) = fGlyphData->font;
-            *(volatile u32*)(ExternWorkRAMBase + 0x3FFE0) = fGlyphData->width;
-            *(volatile u32*)(ExternWorkRAMBase + 0x3FFF0) = fGlyphData->codepoint;
-        }
-
         fGlyphData++;
         totalGlyphs++;
 
