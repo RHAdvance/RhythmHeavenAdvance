@@ -45,7 +45,6 @@
 - Cherryberryfaygo
 - Nabix (& his family)
 - itaific
-- SesuRescue
 - FireChat♂
 - Kievit
 
