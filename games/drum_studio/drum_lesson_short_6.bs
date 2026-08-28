@@ -96,7 +96,7 @@ text D_080611c0
     .ascii "\n"
     .ascii "Let's keep this going!\n"
     .ascii "This time, a hi-hat.\n"
-    .asciz "Press Up on ⑯ for it!\n"
+    .asciz "Press Up on  for it!\n"
 endtext
 
 

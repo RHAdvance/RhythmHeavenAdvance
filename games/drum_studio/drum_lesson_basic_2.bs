@@ -111,7 +111,7 @@ return
 text D_08061c00
     .ascii "You hear that new bass beat?\n"
     .ascii "Alternating between both\n"
-    .ascii "⑮ and Down on ⑯ should\n"
+    .ascii " and Down on  should\n"
     .asciz "make it easy!"
 endtext
 
@@ -156,15 +156,15 @@ endtext
 
 text D_08061d70
     .ascii "\n"
-    .ascii "Hit the bass drum with ⑮\n"
-    .asciz "or by pressing Down on ⑯!\n"
+    .ascii "Hit the bass drum with \n"
+    .asciz "or by pressing Down on !\n"
 endtext
 
 
 text D_08061dbc
     .ascii "If you've played the last\n"
     .ascii "lesson, you know you can\n"
-    .ascii "hit either ⑭ or Left on ⑯\n"
+    .ascii "hit either  or Left on \n"
     .asciz "to play the snare."
 endtext
 

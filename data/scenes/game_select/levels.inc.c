@@ -73,7 +73,7 @@ struct LevelData level_data_table[] = {
     /* POLYRHYTHM */ {
         /* Entry Scene   */ &scene_polyrhythm,
         /* Level Name    */ "Polyrhythm",
-        /* Level Desc.   */ "Manage the ⑯ and ⑭\n"
+        /* Level Desc.   */ "Manage the  and \n"
 							"paths at the same time\n"
 							"to keep those red rods\n"
 							"rolling! Simple enough?",
@@ -230,7 +230,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "An enemy is attacking\n"
                             "your lord! Block the\n"
                             "arrows with your sword\n"
-							"using ⑯ and ⑭!",
+							"using  and !",
         /* Level Icon    */ 5,
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_ninja_bodyguard_gfx_tables,

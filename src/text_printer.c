@@ -16,7 +16,7 @@ extern PrintGlyphToVRAMFunc text_print_glyph_to_vram_rom;
 static struct FormattedGlyph {
     const char *formatSrc;
     const char *charSrc;
-    s16 codepoint;
+    s32 codepoint;
     u16 xOffset;
     u8 width;
     u8 lineColors;
@@ -323,6 +323,13 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
         fGlyphData->charSrc = tempStream;
         fGlyphData->font = font;
         fGlyphData->spacing = spacing;
+
+        if (glyphCodepoint == 0xE005) {
+            *(volatile u32*)(ExternWorkRAMBase + 0x3FFD0) = fGlyphData->font;
+            *(volatile u32*)(ExternWorkRAMBase + 0x3FFE0) = fGlyphData->width;
+            *(volatile u32*)(ExternWorkRAMBase + 0x3FFF0) = fGlyphData->codepoint;
+        }
+
         fGlyphData++;
         totalGlyphs++;
 

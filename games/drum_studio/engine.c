@@ -127,11 +127,11 @@ const char D_08059fb4[] = "\nAim for the start.";
 
 const char D_08059fd0[] = "\nStay focused!";
 
-const char D_08059fe8[] = "\nPress ⑮, too.";
+const char D_08059fe8[] = "\nPress , too.";
 
-const char D_0805a004[] = "\nPress ⑬, too.";
+const char D_0805a004[] = "\nPress , too.";
 
-const char D_0805a020[] = "\nPress ⑮ and ⑬ together.";
+const char D_0805a020[] = "\nPress  and  together.";
 
 const char D_0805a038[] = "\nDon't rush it.";
 

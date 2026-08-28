@@ -581,7 +581,7 @@ void save_editor_render_page(void) {
     }
     save_editor_draw_line(SE_LINE_HEADER, 0, buf, 8, 24);
 
-    save_editor_draw_line(SE_LINE_HINT_A, 0, "⑫/⑬: Change Current Save Member", 8, 48);
+    save_editor_draw_line(SE_LINE_HINT_A, 0, "/: Change Current Save Member", 8, 48);
 
     save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT: Save and Exit", 8, 64);
 
