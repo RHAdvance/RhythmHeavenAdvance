@@ -29,7 +29,7 @@ const char D_0805dbd8[] = "At the peak of our jumps,";
 
 const char D_0805dbf4[] = "press + for me,";
 
-const char D_0805dc0c[] = "and  for me,";
+const char D_0805dc0c[] = "and "CHAR_A_BUTTON_UTF8" for me,";
 
 const char D_0805dc24[] = "and we'll transform!";
 

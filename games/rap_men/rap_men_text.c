@@ -29,7 +29,7 @@ const char D_0805ea50[] = "Wanna rap together?";
 
 const char D_0805ea6c[] = "Lemme break it down for you.";
 
-const char D_0805ea84[] = "Press  at the \"Uh!\"";
+const char D_0805ea84[] = "Press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 
 const char D_0805eaac[] = "Give it a listen.";
 
@@ -42,9 +42,9 @@ const char D_0805eae8[] = "Do your best!";
 const char D_0805eaf8[] = "It's at the \"Uh!\"";
 
 #ifdef PARADISE
-const char D_0805eb14[] = "You have to press  at the \"Uh!\"";
+const char D_0805eb14[] = "You have to press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 #else
-const char D_0805eb14[] = "You gotta press  at the \"Uh!\"";
+const char D_0805eb14[] = "You gotta press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 #endif
 
 const char D_0805eb34[] = "OK! You've got it!";

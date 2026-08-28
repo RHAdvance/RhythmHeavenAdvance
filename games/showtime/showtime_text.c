@@ -19,7 +19,7 @@ const char D_0805e1d4[] = "Let's practise our penguin routine.";
 const char D_0805e1d4[] = "Let's practice our penguin routine.";
 #endif
 
-const char D_0805e1f8[] = "Press  on the count of 3!";
+const char D_0805e1f8[] = "Press "CHAR_A_BUTTON_UTF8" on the count of 3!";
 
 const char D_0805e218[] = "";
 
