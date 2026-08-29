@@ -1,4 +1,5 @@
 #include "engines/drum_studio.h"
+#include "text.h"
 
 
   //  //  //  DRUM SAMURAI DATA  //  //  //
@@ -127,11 +128,11 @@ const char D_08059fb4[] = "\nAim for the start.";
 
 const char D_08059fd0[] = "\nStay focused!";
 
-const char D_08059fe8[] = "\nPress ⑮, too.";
+const char D_08059fe8[] = "\nPress "CHAR_B_BUTTON_UTF8", too.";
 
-const char D_0805a004[] = "\nPress ⑬, too.";
+const char D_0805a004[] = "\nPress "CHAR_R_SHOULDER_BUTTON_UTF8", too.";
 
-const char D_0805a020[] = "\nPress ⑮ and ⑬ together.";
+const char D_0805a020[] = "\nPress "CHAR_B_BUTTON_UTF8" and "CHAR_R_SHOULDER_BUTTON_UTF8" together.";
 
 const char D_0805a038[] = "\nDon't rush it.";
 
@@ -145,7 +146,7 @@ const char D_0805a06c[] = "\nPretty good!";
 const char *drum_lessons_rank_text[] = {
     /* RANK_0 */ "\n",
     /* RANK_C */ "\nNot bad!",
-    /* RANK_B */ "\nYou're doin' pretty good!",
+    /* RANK_B */ "\nYou're doin' pretty well!",
     /* RANK_A */ "\nYeah! That was great!",
     /* RANK_S */ "\nUnbelievable!",
 };

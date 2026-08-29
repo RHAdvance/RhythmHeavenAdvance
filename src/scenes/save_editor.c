@@ -4,6 +4,7 @@
 #include "graphics/save_editor/save_editor_graphics.h"
 #include "reading.h"
 #include "studio.h"
+#include "text.h"
 
 static const struct SaveEditorFlag sAdvanceFlags[] = {
     { "Save Converted",          0 },
@@ -97,7 +98,11 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     /* SE_MBR_UNK_291 */
     { "unk291",                              SE_KIND_U8,    0,  -1, -1, NULL,   8, NULL,               0 },
     /* SE_MBR_HIGH_SCORE_MR_UPBEAT */
-    { "High Score Mr. Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },
+    #ifdef PARADISE
+	{ "High Score Mr Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },     
+    #else
+    { "High Score Mr. Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },     
+    #endif
     /* SE_MBR_HIGH_SCORE_MANNEQUIN_FACTORY */
     { "High Score Mannequin Factory",        SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },
     /* SE_MBR_HIGH_SCORE_SICK_BEATS_SP */
@@ -577,7 +582,7 @@ void save_editor_render_page(void) {
     }
     save_editor_draw_line(SE_LINE_HEADER, 0, buf, 8, 24);
 
-    save_editor_draw_line(SE_LINE_HINT_A, 0, "⑫/⑬: Change Current Save Member", 8, 48);
+    save_editor_draw_line(SE_LINE_HINT_A, 0, ""CHAR_L_SHOULDER_BUTTON_UTF8"/"CHAR_R_SHOULDER_BUTTON_UTF8": Change Current Save Member", 8, 48);
 
     save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT: Save and Exit", 8, 64);
 

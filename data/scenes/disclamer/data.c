@@ -14,11 +14,19 @@ struct GraphicsTable disclaimer_gfx_table[] = {
         /* Dest. */ BG_TILESET_BASE(0),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
+    #if PARADISE
+    /* BG Map */ {
+        /* Src.  */ &disclaimer_paradise_bg_map,
+        /* Dest. */ BG_MAP_BASE(0xE800),
+        /* Size  */ COMPRESSED_GFX_SOURCE
+    },
+    #else
     /* BG Map */ {
         /* Src.  */ &disclaimer_bg_map,
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
+    #endif
     /* BG Palette */ {
         /* Src.  */ disclaimer_pal,
         /* Dest. */ BG_PALETTE_BUFFER(0),

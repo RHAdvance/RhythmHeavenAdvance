@@ -57,7 +57,7 @@ return
 text D_080603ec
     .ascii "\n"
     .ascii "Next up, hit the crash\n"
-    .ascii "with ⑬ at the same\n"
+    .ascii "with  at the same\n"
     .asciz "time as the bass!"
 endtext
 

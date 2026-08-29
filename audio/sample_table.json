@@ -5837,7 +5837,7 @@
             "sample": "shockshort.wav",
             "pitch": "C5"
         },
-                {
+        {
             "sample": "sb_tempo_1.wav",
             "pitch": "C6"
         },
@@ -5957,11 +5957,11 @@
             "sample": "rt_tempo_9.wav",
             "pitch": "C5"
         },
-                {
+        {
             "sample": "rt_tempo_10.wav",
             "pitch": "C5"
         },
-                {
+        {
             "sample": "rt_tempo_11.wav",
             "pitch": "C3"
         },
@@ -5989,120 +5989,108 @@
             "sample": "rt_tempo_17.wav",
             "pitch": "C4"
         },
-                {
-            "sample": "awake_baby.wav",
+        {
+            "sample": "mo_tempo_10.wav",
             "pitch": "C5"
         },
         {
-            "sample": "baby.wav",
+            "sample": "mo_tempo_11.wav",
+            "pitch": "F#4"
+        },
+        {
+            "sample": "mo_tempo_12.wav",
+            "pitch": "F#4"
+        },
+        {
+            "sample": "mo_tempo_13.wav",
+            "pitch": "F#4"
+        },
+        {
+            "sample": "mo_tempo_14.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_15.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_16.wav",
             "pitch": "C5"
         },
         {
-            "sample": "beat.wav",
+            "sample": "mo_tempo_17.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_18.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_19.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1A.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1B.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1C.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1D.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1E.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_1F.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_20.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "mo_tempo_21.wav",
             "pitch": "C5"
         },
         {
-            "sample": "can.wav",
+            "sample": "mo_tempo_25.wav",
             "pitch": "C5"
         },
         {
-            "sample": "give_you.wav",
+            "sample": "mo_tempo_27.wav",
             "pitch": "C5"
         },
         {
-            "sample": "groove.wav",
+            "sample": "mo_tempo_28.wav",
+            "pitch": "C6"
+        },
+        {
+            "sample": "mo_tempo_4F.wav",
+            "pitch": "C4"
+        },
+        {
+            "sample": "noise_1.wav",
             "pitch": "C5"
         },
         {
-            "sample": "hey.wav",
+            "sample": "noise_2.wav",
             "pitch": "C5"
         },
         {
-            "sample": "hey_baby.wav",
+            "sample": "noise_3.wav",
             "pitch": "C5"
         },
         {
-            "sample": "hey_baby_2.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "hold_on_to_your_ambitions.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "hows_it_going.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "hows_it_going_2.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "i.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "in_your.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "is.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "listen.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "new.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "non.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "oh_yeah.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "oh_yeah_2.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "oh_yeah_3.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "phrase.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "soul.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "stop.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "the_sense_of_rhythm.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "this.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "to_my.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "trust_me.wav",
-            "pitch": "C5"
-        },
-        {
-            "sample": "you_are_growing_up_well.wav",
+            "sample": "noise_4.wav",
             "pitch": "C5"
         }
     ]

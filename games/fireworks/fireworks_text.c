@@ -9,7 +9,11 @@ const char D_0805cd60[] = "Look alive out there!";
 
 const char D_0805cd7c[] = "Phenomenal explosions!";
 
+#ifdef PARADISE
+const char D_0805cda0[] = "You have to react a little quicker!";
+#else
 const char D_0805cda0[] = "You gotta react a little quicker!";
+#endif
 
 const char D_0805cdb4[] = "You were quick on your feet!";
 

@@ -13,9 +13,9 @@ const char D_0806a7d4[] = "Your decisions took too long.";
 
 const char D_0806a7f8[] = "You thought on the spot well!";
 
-const char D_0806a81c[] = "Keep working on your rhythm.";
+const char D_0806a81c[] = "Your technique needs work.";
 
-const char D_0806a838[] = "You had really great rhythm!";
+const char D_0806a838[] = "Your technique is solid!";
 
 const char D_0806a850[] = "Rhythm League notes:";
 
@@ -27,7 +27,7 @@ const char D_0806a8c8[] = "Let fun be had!";
 
 const char D_0806a8d8[] =
     "\n"
-    "Let's begin!";
+    "Here we go!";
 
 const char D_0806a8e4[] =
     "\n"

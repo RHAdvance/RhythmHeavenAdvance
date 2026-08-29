@@ -11,6 +11,7 @@ extern struct Animation anim_disclaimer_text_continue[];
 
 extern struct CompressedData disclaimer_bg_tiles;
 extern struct CompressedData disclaimer_bg_map;
+extern struct CompressedData disclaimer_paradise_bg_map;
 
 /* disclaimer - PALETTES */
 

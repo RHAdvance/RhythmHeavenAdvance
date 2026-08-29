@@ -31,6 +31,6 @@ const char D_0805b9fc[] = "Their five-rock barrage overwhelmed you.";
 
 const char D_0805ba1c[] = "You blocked their five-rock barrage!";
 
-const char D_0805ba40[] = "You deflected two rocks in one go! Brilliant!";
+const char D_0805ba40[] = "You deflected two rocks at once! Incredible!";
 
 const char D_0805ba68[] = "My girlfriend calmly comments...";

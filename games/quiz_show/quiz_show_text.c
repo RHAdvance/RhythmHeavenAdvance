@@ -111,7 +111,7 @@ const char D_0805ee5c[] =
     "match my total.";
 
 const char D_0805ee8c[] = 
-    "⑭ or ⑯, it doesn't\n"
+    ""CHAR_A_BUTTON_UTF8" or "CHAR_DPAD_UTF8", it doesn't\n"
     "matter. Just focus\n"
     "on the final total!\n";
 

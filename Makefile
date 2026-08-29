@@ -72,6 +72,10 @@ FEATURES ?=
 DEFINES := REV=$(REV) $(FEATURES)
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
 
+ifdef GIT_COMMIT
+C_DEFINES += -DGIT_COMMIT_STR=\"$(GIT_COMMIT)\"
+endif
+
 CFLAGS := -mthumb-interwork -Wparentheses -fhex-asm
 CPPFLAGS := -I tools/agbcc -I tools/agbcc/include -I . -iquote include -nostdinc -undef $(C_DEFINES)
 

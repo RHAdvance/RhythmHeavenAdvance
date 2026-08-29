@@ -342,7 +342,17 @@ void toss_boys_throw_ball(u32 param, s32 velocity, u32 amplitude, u32 throwSpeed
 
     sprite_set_visible(gSpriteHandler, gTossBoys->ballSprite, TRUE);
     sprite_set_anim_cel(gSpriteHandler, gTossBoys->dispenserSprite, 0);
+    #ifdef PLUS
+    if (param == 0){
+        set_soundplayer_panning(play_sound(&s_f_toss_ball_seqData), 60);
+    } else if (param == 1){
+        set_soundplayer_panning(play_sound(&s_f_toss_ball_seqData), 29);
+    } else {
+        set_soundplayer_panning(play_sound(&s_f_toss_ball_seqData), -60);
+    }
+    #else
     play_sound(&s_f_toss_ball_seqData);
+    #endif
 
     sprite_set_anim(gSpriteHandler, gTossBoys->arrowSprite, toss_boys_get_anim(toss_boys_arrow_anim_ids[param]), 0, 1, 0, 2);
 

@@ -19,7 +19,7 @@ const char D_0805d180[] = "";
 
 const char D_0805d184[] = "At the first sign,";
 
-const char D_0805d198[] = "press and hold ゝ";
+const char D_0805d198[] = "press and hold "CHAR_A_BUTTON_UTF8"";
 
 const char D_0805d1ac[] = "to stay still!";
 

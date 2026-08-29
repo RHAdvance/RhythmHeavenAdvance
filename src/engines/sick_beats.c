@@ -491,7 +491,16 @@ void sick_beats_update_doctor(void) {
 
 // Game Engine Update
 void sick_beats_engine_update(void) {
-    gSickBeats->highestPriorityState = 0; // Reset priority each frame
+    // wait three frames to reset priority state
+    if (gSickBeats->highestPriorityTimer > 2) {
+        gSickBeats->highestPriorityState = 0;
+        gSickBeats->highestPriorityTimer = 0;
+    }
+
+    if (gSickBeats->highestPriorityState != 0) {
+        ++gSickBeats->highestPriorityTimer;
+    }
+
     sick_beats_update_yellow_microbe();
     sick_beats_update_forks();
     sick_beats_update_virus();
@@ -610,19 +619,20 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                 if (priority > gSickBeats->highestPriorityState) {
                     gSickBeats->highestPriorityState = priority;
                 }
-                
+                gSickBeats->highestPriorityTimer = 0;
+
                 // Set panning and pitch based on highest priority state
                 if (gSickBeats->highestPriorityState == 4) {
                     panning = 0;                    // RIGHT (DOWN button) - center
                     pitch = INT_TO_FIXED(-4.0);     // Lower pitch
                 } else if (gSickBeats->highestPriorityState == 3) {
-                    panning = -90;                 // DOWN (LEFT button) - left
+                    panning = -60;                 // DOWN (LEFT button) - left
                     pitch = 0;                      // Normal pitch
                 } else if (gSickBeats->highestPriorityState == 2) {
                     panning = 0;                    // LEFT (UP button) - center
                     pitch = 0;                      // Normal pitch
                 } else {
-                    panning = 90;                  // UP (RIGHT button) - right
+                    panning = 60;                  // UP (RIGHT button) - right
                     pitch = 0;                      // Normal pitch
                 }
                 
@@ -633,7 +643,7 @@ void sick_beats_cue_spawn(struct Cue *cue, struct SickBeatsCue *info, u32 unused
                 }
             }
             #else
-            play_sound(&s_f_virus_uhihi_seqData);
+            play_sound(&s_f_virus_uhihi_og_seqData);
             #endif
             break;
         case SICK_BEATS_VIRUS_STATE_UP_DASH_INVULN:

@@ -16,7 +16,7 @@ extern PrintGlyphToVRAMFunc text_print_glyph_to_vram_rom;
 static struct FormattedGlyph {
     const char *formatSrc;
     const char *charSrc;
-    s16 id;
+    s32 codepoint;
     u16 xOffset;
     u8 width;
     u8 lineColors;
@@ -35,16 +35,6 @@ static s8 sPrinterFont;         // Printer Font
 static s8 sPrinterIndentWidth;  // Printer Indent Width
 static s8 sPrinterShadowColors; // Printer Shadow Colors
 
-
-static u8 *text_font_get_glyph_data_base(s32 font) {
-    return D_089380ac[font].glyphRanges[0].glyphData;
-}
-
-
-static u8 *text_font_get_glyph_widths_base(s32 font) {
-    return D_089380ac[font].glyphRanges[0].glyphWidths;
-}
-
 // Init. Static Variables
 void text_printer_init(void) {
     dma3_set(text_print_glyph_to_vram_rom, text_print_glyph_to_vram_code, sizeof(text_print_glyph_to_vram_code), 0x20, 0x100);
@@ -60,42 +50,59 @@ s32 text_font_get_spacing(s32 font) {
 
 
 // Get Glyph Width
-s32 text_font_get_glyph_width(s32 font, s32 glyphID) {
-    if (glyphID < 0) return 0;
+s32 text_font_get_glyph_width(s32 font, s32 codepoint) {
+    const struct FontGlyphRange *glyphRange = text_get_glyph_range_for_codepoint(font, codepoint);
 
-    return text_font_get_glyph_widths_base(font)[glyphID];
+    if (glyphRange == NULL) {
+        return 0;
+    }
+
+    return glyphRange->glyphWidths[codepoint - glyphRange->utf8Start];
+}
+
+
+// Get Glyph Data
+u8* text_font_get_glyph_data(s32 font, s32 codepoint) {
+    const struct FontGlyphRange *glyphRange = text_get_glyph_range_for_codepoint(font, codepoint);
+
+    if (glyphRange == NULL) {
+        return NULL;
+    }
+
+    return glyphRange->glyphData + (D_089380ac[font].glyphDataSize * (codepoint - glyphRange->utf8Start));
 }
 
 
 // Get Glyph Width
 s32 text_font_get_next_glyph_width(s32 font, const char **stream) {
-    s32 glyphID;
+    s32 codepoint;
 
     if (**stream == '\0') {
         return 0;
     }
 
-    glyphID = text_printer_get_glyph_id(stream);
-    if (glyphID < 0) {
+    codepoint = text_printer_get_codepoint(stream);
+
+    if (codepoint < 0) {
         return 0;
     }
 
-    return text_font_get_glyph_widths_base(font)[glyphID];
+    return text_font_get_glyph_width(font, codepoint);
 }
 
 
 // Get Width of a String
 s32 text_font_calculate_string_width(s32 font, const char *string) {
     s32 totalWidth, spacing;
-    s32 glyphID;
+    s32 codepoint;
 
     totalWidth = 0;
     spacing = D_089380ac[font].glyphSpacing;
 
     while (*string != '\0') {
-        glyphID = text_printer_get_glyph_id(&string);
-        if (glyphID >= 0) {
-            totalWidth += text_font_get_glyph_width(font, glyphID) + spacing;
+        codepoint = text_printer_get_codepoint(&string);
+        if (codepoint >= 0) {
+            totalWidth += text_font_get_glyph_width(font, codepoint) + spacing;
         }
     }
 
@@ -108,14 +115,23 @@ s32 text_font_calculate_string_width(s32 font, const char *string) {
 
 
 // Print Glyph to VRAM
-void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID, s32 lineColors) {
+void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 codepoint, s32 lineColors) {
     PrintGlyphToVRAMFunc *printGlyphToVRAM = (PrintGlyphToVRAMFunc *)(&text_print_glyph_to_vram_code);
+    const u8* glyph_data;
     u32 args[4];
 
-    if (glyphID < 0) return;
+    if (codepoint < 0) {
+        return;
+    }
+
+    glyph_data = text_font_get_glyph_data(font, codepoint);
+
+    if (glyph_data == NULL) {
+        return;
+    }
 
     args[0] = VRAMBase + ((tileOfsX >> 3) * 32) + (tileOfsY * 32 * 32);
-    args[1] = (u32)(text_font_get_glyph_data_base(font) + (D_089380ac[font].glyphDataSize * glyphID));
+    args[1] = (u32)glyph_data;
     args[2] = ((tileOfsX & 7) << 2) + lineColors;
     args[3] = font;
     printGlyphToVRAM(args);
@@ -125,36 +141,36 @@ void text_printer_print_glyph(s32 tileOfsX, s32 tileOfsY, s32 font, s32 glyphID,
 // Print String to VRAM (return width in pixels)
 s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char *string, s32 maxWidth, s32 lineColors) {
     const char *ellipsis;
-    s32 ellipsisID, glyphID;
+    s32 ellipsisCodepoint, glyphCodepoint;
     s32 ellipsisWidth, glyphWidth;
     s32 spacing, totalWidth;
 
     totalWidth = 0;
     spacing = D_089380ac[font].glyphSpacing;
     ellipsis = "…";
-    ellipsisID = text_printer_get_glyph_id(&ellipsis);
-    ellipsisWidth = text_font_get_glyph_width(font, ellipsisID);
+    ellipsisCodepoint = text_printer_get_codepoint(&ellipsis);
+    ellipsisWidth = text_font_get_glyph_width(font, ellipsisCodepoint);
 
     while (*string != '\0') {
-        glyphID = text_printer_get_glyph_id(&string);
-        if (glyphID < 0) continue;
+        glyphCodepoint = text_printer_get_codepoint(&string);
+        if (glyphCodepoint < 0) continue;
 
-        glyphWidth = text_font_get_glyph_width(font, glyphID);
+        glyphWidth = text_font_get_glyph_width(font, glyphCodepoint);
         if (*string != '\0') {
             if ((totalWidth + glyphWidth + spacing + ellipsisWidth) > maxWidth) {
                 string = ellipsis;
-                glyphID = ellipsisID;
+                glyphCodepoint = ellipsisCodepoint;
                 glyphWidth = ellipsisWidth;
             }
         } else {
             if ((totalWidth + glyphWidth) > maxWidth) {
                 string = ellipsis;
-                glyphID = ellipsisID;
+                glyphCodepoint = ellipsisCodepoint;
                 glyphWidth = ellipsisWidth;
             }
         }
 
-        text_printer_print_glyph(tileBaseX + totalWidth, tileBaseY, font, glyphID, lineColors);
+        text_printer_print_glyph(tileBaseX + totalWidth, tileBaseY, font, glyphCodepoint, lineColors);
         totalWidth += glyphWidth + spacing;
     }
 
@@ -166,27 +182,27 @@ s32 text_printer_print_unformatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, 
 }
 
 
-static s32 text_get_glyph_id_for_codepoint(u32 codepoint) {
+const struct FontGlyphRange* text_get_glyph_range_for_codepoint(s32 font, s32 codepoint) {
     const struct FontGlyphRange *glyphRange;
-    s32 glyphID;
 
-    if (codepoint > 0xffff) {
-        return -1;
+    if (font == -1) {
+        font = TEXT_PRINTER_FONT_SMALL;
     }
 
-    glyphRange = D_089380ac[TEXT_PRINTER_FONT_SMALL].glyphRanges;
-    glyphID = 0;
+    if (codepoint < 0 || codepoint > 0xffff) {
+        return NULL;
+    }
+
+    glyphRange = D_089380ac[font].glyphRanges;
     while (glyphRange->glyphData != NULL) {
-        if ((codepoint >= glyphRange->utf8Start) && (codepoint <= glyphRange->utf8End)) {
-            glyphID += codepoint - glyphRange->utf8Start;
-            return glyphID;
+        if (codepoint >= glyphRange->utf8Start && codepoint <= glyphRange->utf8End) {
+            return glyphRange;
         }
 
-        glyphID += (glyphRange->utf8End - glyphRange->utf8Start) + 1;
         glyphRange++;
     }
 
-    return -1;
+    return NULL;
 }
 
 extern u8 haveSeenDisclaimer;
@@ -210,7 +226,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     s32 spacing, glyphWidth, totalWidth, maxWidthWithShadow;
     s32 totalGlyphs;
     s32 maxWidthExceeded;
-    s32 glyphID;
+    s32 glyphCodepoint;
     u32 i;
     char buffer[20];
 
@@ -286,12 +302,12 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
         }
 
         tempStream = stream;
-        glyphID = text_printer_get_glyph_id(&stream);
-        if (glyphID < 0) {
+        glyphCodepoint = text_printer_get_codepoint(&stream);
+        if (glyphCodepoint < 0) {
             continue;
         }
 
-        glyphWidth = text_font_get_glyph_width(font, glyphID);
+        glyphWidth = text_font_get_glyph_width(font, glyphCodepoint);
         maxWidthWithShadow = maxWidth + ((shadowColors >= 0) ? -1 : 0);
         if ((totalWidth + glyphWidth) > maxWidthWithShadow) {
             stream = tempStream;
@@ -299,7 +315,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
             break;
         }
 
-        fGlyphData->id = glyphID;
+        fGlyphData->codepoint = glyphCodepoint;
         fGlyphData->xOffset = totalWidth;
         fGlyphData->width = glyphWidth;
         fGlyphData->lineColors = lineColors;
@@ -307,6 +323,7 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
         fGlyphData->charSrc = tempStream;
         fGlyphData->font = font;
         fGlyphData->spacing = spacing;
+
         fGlyphData++;
         totalGlyphs++;
 
@@ -345,10 +362,10 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
     }
 
     for (fGlyphData = sGlyphBuffer, i = 0; i < totalGlyphs; i++, fGlyphData++) {
-        text_printer_print_glyph((tileBaseX + fGlyphData->xOffset), tileBaseY, fGlyphData->font, fGlyphData->id, fGlyphData->lineColors);
+        text_printer_print_glyph((tileBaseX + fGlyphData->xOffset), tileBaseY, fGlyphData->font, fGlyphData->codepoint, fGlyphData->lineColors);
 
         if (fGlyphData->shadowColors >= 0) {
-            text_printer_print_glyph((tileBaseX + fGlyphData->xOffset + 1), tileBaseY, fGlyphData->font, fGlyphData->id, fGlyphData->shadowColors);
+            text_printer_print_glyph((tileBaseX + fGlyphData->xOffset + 1), tileBaseY, fGlyphData->font, fGlyphData->codepoint, fGlyphData->shadowColors);
         }
     }
 
@@ -541,9 +558,9 @@ void text_printer_fill_vram_tiles(u32 tileBaseX, u32 tileBaseY, u32 allocatedTil
 }
 
 
-// Get Glyph ID 
-s32 text_printer_get_glyph_id(const char **string) {
-    u32 codepoint;
+// Get Glyph Codepoint
+s32 text_printer_get_codepoint(const char **string) {
+    s32 codepoint;
 
     if (!utf8_decode_codepoint(string, &codepoint)) {
         return -1;
@@ -553,7 +570,7 @@ s32 text_printer_get_glyph_id(const char **string) {
         return -1;
     }
 
-    return text_get_glyph_id_for_codepoint(codepoint);
+    return codepoint;
 }
 
 

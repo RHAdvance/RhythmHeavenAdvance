@@ -1099,7 +1099,7 @@ Palette epilogue_cosmic_dance_bg_pal[] = {
 Palette epilogue_drum_live_bg_pal[] = {
     /* PALETTE 00 */ {
         /* 00 */ TO_RGB555(0x00E028),
-        /* 01 */ TO_RGB555(0x000000),
+        /* 01 */ TO_RGB555(0x31EFFF),
         /* 02 */ TO_RGB555(0xF80000),
         /* 03 */ TO_RGB555(0xF848F8),
         /* 04 */ TO_RGB555(0xF8F098),
@@ -1538,8 +1538,8 @@ Palette epilogue_rhythm_tweezers_extra_bg_pal[] = {
         /* 05 */ TO_RGB555(0xffffff),
         /* 06 */ TO_RGB555(0xf8abad),
         /* 07 */ TO_RGB555(0x18cb39),
-        /* 08 */ TO_RGB555(0xcecece),
-        /* 09 */ TO_RGB555(0xcecece),
+        /* 08 */ TO_RGB555(0xffdead),
+        /* 09 */ TO_RGB555(0x39c9ff),
         /* 10 */ TO_RGB555(0xcecece),
         /* 11 */ TO_RGB555(0xcecece),
         /* 12 */ TO_RGB555(0xcecece),
