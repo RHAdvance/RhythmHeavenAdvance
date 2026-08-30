@@ -2662,6 +2662,50 @@ struct SongHeader s_hanabi_wish4_seqData = {
     /* Song Number   */ 1477
 };
 
+struct SongHeader s_hanabi_wish1_en_seqData = {
+    /* MIDI Sequence */ s_hanabi_wish1_mid,
+    /* Sound Player  */ SFX_PLAYER_5,
+    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Volume        */ 100,
+    /* Priority      */ 80,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1454
+};
+
+struct SongHeader s_hanabi_wish2_en_seqData = {
+    /* MIDI Sequence */ s_hanabi_wish2_mid,
+    /* Sound Player  */ SFX_PLAYER_5,
+    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Volume        */ 100,
+    /* Priority      */ 80,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1455
+};
+
+struct SongHeader s_hanabi_wish3_en_seqData = {
+    /* MIDI Sequence */ s_hanabi_wish3_mid,
+    /* Sound Player  */ SFX_PLAYER_5,
+    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Volume        */ 110,
+    /* Priority      */ 80,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1456
+};
+
+struct SongHeader s_hanabi_wish4_en_seqData = {
+    /* MIDI Sequence */ s_hanabi_wish4_mid,
+    /* Sound Player  */ SFX_PLAYER_5,
+    /* Bank Number   */ INST_BANK_MARCHING_ORDERS_EN,
+    /* Volume        */ 100,
+    /* Priority      */ 80,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1457
+};
+
 extern const u8 s_intro_stick_mid[];
 struct SongHeader s_intro_stick_seqData = {
     /* MIDI Sequence */ s_intro_stick_mid,

@@ -493,29 +493,53 @@ script script_remix_5_main
     load_fireworks_remix_5_bg1
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
     rest 24
     spawn_cue CUE_NORMAL_FIREWORK
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 12
     rest 8
+    if_localized
+    play_sfx_vol s_hanabi_wish3_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish3_seqData, 288
+    end_if
     rest 4
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish4_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish4_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
@@ -724,18 +748,34 @@ script script_remix_5_main
     fireworks_set_pattern_mode PATTERN_MODE_USE_DEFAULT
     fireworks_set_default_pattern PATTERN_SP_CIRCLE
     spawn_cue CUE_NORMAL_FIREWORK
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 12
     rest 8
+    if_localized
+    play_sfx_vol s_hanabi_wish3_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish3_seqData, 288
+    end_if
     rest 4
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish4_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish4_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
