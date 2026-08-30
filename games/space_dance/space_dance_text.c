@@ -5,7 +5,11 @@
 /* Game Text - Space Dance */
 
 
+#ifdef PARADISE
+const char D_0805e2ac[] = "Your disorganisation was visual.";
+#else
 const char D_0805e2ac[] = "Your disorganization was visual.";
+#endif
 
 const char D_0805e2c8[] = "You were synched!";
 

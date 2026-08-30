@@ -5,9 +5,15 @@
 /* Game Text - Toss Boys */
 
 
+#ifdef PARADISE
+const char D_0805d618[] = "You need to practise throwing more.";
+
+const char D_0805d634[] = "Your throwing was impressive!";
+#else
 const char D_0805d618[] = "You need to practice tossing more.";
 
 const char D_0805d634[] = "Your tossing was impressive!";
+#endif
 
 const char D_0805d64c[] = "You all seem a bit tense.";
 
@@ -19,17 +25,29 @@ const char D_0805d694[] = "Speed's no problem for you three!";
 
 const char D_0805d6b0[] = "Tips from the referee:";
 
+#ifdef PARADISE
+const char D_0805d6c4[] =
+    "\n"
+    "Time to throw our best!";
+#else
 const char D_0805d6c4[] =
     "\n"
     "Time to toss our best!";
+#endif
 
 const char D_0805d6d4[] =
     "\n"
     "That's a wrap!";
 
+#ifdef PARADISE
+const char D_0805d6e0[] = "You need to practise throwing more.";
+
+const char D_0805d6fc[] = "Your throwing was impressive!";
+#else
 const char D_0805d6e0[] = "You need to practice tossing more.";
 
 const char D_0805d6fc[] = "Your tossing was impressive!";
+#endif
 
 const char D_0805d714[] = "You all seem a bit tense.";
 
@@ -61,9 +79,15 @@ const char D_0805d7fc[] =
     "\n"
     "Let's do it one more time!";
 
+#ifdef PARADISE
+const char D_0805d80c[] =
+    "\n"
+    "Great throwing!";
+#else
 const char D_0805d80c[] =
     "\n"
     "Great tossing!";
+#endif
 
 const char D_0805d818[] =
     "Toss Technique 2:\n"

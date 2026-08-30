@@ -77,5 +77,6 @@
 #include "instruments/instruments_hsa_en.inc.c"
 #include "instruments/instruments_wish_en.inc.c"
 #include "instruments/instruments_marching_orders_en.inc.c"
+#include "instruments/instruments_bank69.inc.c"
 #include "instrument_banks.inc.c"
 #include "instrument_bank_list.inc.c"

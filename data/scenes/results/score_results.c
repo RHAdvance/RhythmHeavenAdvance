@@ -52,7 +52,11 @@ const char *score_results_default_comments[] = {
     /* HIGH */ "Really good!",
     /* MID  */ "Fairly average.",
     /* LOW  */ "Getting there...",
+    #ifdef PARADISE
+    /* FAIL */ "Hmm..."
+    #else
     /* FAIL */ "Hm..."
+    #endif
 };
 
 

@@ -125,7 +125,11 @@ void main_menu_scene_update(void *sVar, s32 dArg) {
         else if (D_03004afc & (START_BUTTON | A_BUTTON)) {
             switch (prevButton) {
                 case GAME_SELECT:
+                    #ifdef PLUS
                     set_next_scene(((D_03004ac0 & LEFT_SHOULDER_BUTTON) && (D_03004ac0 & RIGHT_SHOULDER_BUTTON)) ? &scene_debug_menu : &scene_game_select);
+                    #else
+                    set_next_scene(&scene_game_select);
+                    #endif
                     break;
                 case RHYTHM_TEST:
                     set_scene_trans_target(&scene_results_ver_score, &scene_main_menu);

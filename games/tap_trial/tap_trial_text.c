@@ -7,7 +7,7 @@
 
 const char D_0805c0d0[] = "Your basics were a little sloppy.";
 
-const char D_0805c0ec[] = "You stayed focused no matter what happened!";
+const char D_0805c0ec[] = "You stayed focused no matter what!";
 
 const char D_0805c104[] = "Your decisions took too long.";
 
@@ -29,7 +29,11 @@ const char D_0805c1a8[] = "Ｗｈａｔ　ａ　ｐｅｒｆｏｒｍａｎｃｅ！";
 
 const char D_0805c1bc[] = "Ｌｅｔ’ｓ　ｔａｐ！";
 
+#ifdef PARADISE
+const char D_0805c1d0[] = "Ｐｒａｃｔｉｓｅ　ｆｉｒｓｔ！";
+#else
 const char D_0805c1d0[] = "Ｐｒａｃｔｉｃｅ　ｆｉｒｓｔ！";
+#endif
 
 const char D_0805c1e8[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
 
@@ -67,8 +71,11 @@ const char D_0805c334[] = "Ｗｈａｔ　ａ　ｐｅｒｆｏｒｍａｎｃｅ！";
 
 const char D_0805c348[] = "Ｌｅｔ’ｓ　ｔａｐ！";
 
+#ifdef PARADISE
+const char D_0805c35c[] = "Ｐｒａｃｔｉｓｅ　ｆｉｒｓｔ！";
+#else
 const char D_0805c35c[] = "Ｐｒａｃｔｉｃｅ　ｆｉｒｓｔ！";
-
+#endif
 const char D_0805c374[] = "Ｊｕｓｔ　ｃｏｐｙ　ｕｓ！";
 
 const char D_0805c384[] = "ＯＫ，　ｈｅｒｅ’ｓ　ａｎｏｔｈｅｒ　ｓｔｅｐ！";
