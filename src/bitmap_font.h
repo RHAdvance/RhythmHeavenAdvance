@@ -3,6 +3,14 @@
 #include "global.h"
 #include "graphics.h"
 #include "data/bitmap_font_data.h"
+#include "data/text_printer_data.h"
+
+struct BitmapFontRange {
+    const void *glyphTextures;
+    const u8 *glyphWidths;
+    u16 utf8Start;
+    u16 utf8End;
+};
 
 // Definition of a Bitmap Font.
 struct BitmapFontData {
@@ -11,23 +19,12 @@ struct BitmapFontData {
     u8 textureHeight;    // Glyph Texture Height
     u8 descensionHeight; // Descension Height for Lowercase Latin Alphabet Characters
     s8 spacingWidth;     // Glyph Spacing
-    const void *symbolTextures;
-    const u8 *symbolWidths;
-    const void *arabicNumeralTextures;
-    const u8 *arabicNumeralWidths;
-    const void *latinUppercaseTextures;
-    const u8 *latinUppercaseWidths;
-    const void *latinLowercaseTextures;
-    const u8 *latinLowercaseWidths;
-    const void *hiraganaTextures;
-    const u8 *hiraganaWidths;
-    const void *katakanaTextures;
-    const u8 *katakanaWidths;
+    struct BitmapFontRange* glyphRanges;
 };
 
 struct BmpFontSymbolEntry {
     u16 codepoint;
-    u8  index;
+    u8 index;
 };
 
 // Bitmap Font Printer which creates OBJ Animations.
