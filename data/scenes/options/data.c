@@ -68,7 +68,7 @@ const char *advance_options_label_text[] = {
     "Rumble",
 #endif
     "Show Disclaimer",
-    "Alt. Game Select Music",
+    "Game Select Music",
 };
 
 const char *advance_options_desc_text[] = {

@@ -5,21 +5,21 @@
 /* Game Text - Mechanical Horse */
 
 
-const char D_0805c3d4[] = "Try Lesson 1 again.";
+const char D_0805c3d4[] = "Try lesson 1 again.";
 
-const char D_0805c3f0[] = "Lesson 1 complete!";
+const char D_0805c3f0[] = "Lesson 1 was perfect!";
 
 const char D_0805c40c[] = "Try Lesson 2 again.";
 
-const char D_0805c428[] = "Lesson 2 complete!";
+const char D_0805c428[] = "Lesson 2 was perfect!";
 
-const char D_0805c444[] = "Try Lesson 3 again.";
+const char D_0805c444[] = "Try lesson 3 again.";
 
-const char D_0805c460[] = "Lesson 3 complete!";
+const char D_0805c460[] = "Lesson 3 was perfect!";
 
-const char D_0805c47c[] = "Try Lesson 4 again.";
+const char D_0805c47c[] = "Try lesson 4 again.";
 
-const char D_0805c498[] = "Lesson 4 complete!";
+const char D_0805c498[] = "Lesson 4 was perfect!";
 
 const char D_0805c4b4[] = "Move along with the footsteps.";
 

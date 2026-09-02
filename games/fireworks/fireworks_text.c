@@ -23,7 +23,7 @@ const char D_0805cde0[] = "Before the festival begins...";
 
 const char D_0805ce00[] = "...let's have a crash course!";
 
-const char D_0805ce10[] = "When you hear \"Go!\" press ゝ";
+const char D_0805ce10[] = "When you hear \"Go!\" press "CHAR_A_BUTTON_UTF8;
 
 const char D_0805ce34[] = "First of all, normal fireworks.";
 
