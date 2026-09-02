@@ -52,7 +52,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "From the Barista",
         /* BODY ----------------------------------------------------------- */
-            "I own and operate a Café.\n"
+            "I own and operate a café.\n"
             "I guess you could call me the Barista.\n"
             "Anyway, it's going well, thanks to the regulars.\n"
             "And, well, just to let you know, I'm a dog.\n"
