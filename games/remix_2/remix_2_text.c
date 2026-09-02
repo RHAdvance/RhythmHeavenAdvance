@@ -37,8 +37,6 @@ const char D_0806801C[] = "3";
 
 const char D_0806801D[] = "Now!";
 
-const char D_0806801E[] = "Now you try!";
-
 const char D_0806801F[] = "Back to normal, be ready!";
 
 const char D_08068028[] = "";
