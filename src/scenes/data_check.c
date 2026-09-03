@@ -147,7 +147,7 @@ void data_check_print_page(s32 id) {
     u32 avgPoints, totalPlays, firstOK, firstSuperb;
     char string[0x100], number[0x20];
 
-    strintf(number, id);
+    strint(number, id);
     memcpy(string, "  ", 3);
     strcat(string, "No. ");
     strcat(string, number);
@@ -160,7 +160,7 @@ void data_check_print_page(s32 id) {
     if (avgPoints == DEFAULT_LEVEL_SCORE) {
         memcpy(number, "---", 4);
     } else {
-        strintf(number, avgPoints);
+        strint(number, avgPoints);
     }
 
     memcpy(string, "  ", 3);
@@ -179,7 +179,7 @@ void data_check_print_page(s32 id) {
 
     memcpy(string, "  ", 3);
     strcat(string, "Number of Times Played: "); // Number of Times Played:
-    strintf(number, totalPlays);
+    strint(number, totalPlays);
     strcat(string, number);
     data_check_print_line(4, 0, string);
 
@@ -190,7 +190,7 @@ void data_check_print_page(s32 id) {
         if (firstOK == 0) {
             strcat(string, "None"); // Not Yet
         } else {
-            strintf(number, firstOK);
+            strint(number, firstOK);
             strcat(string, number);
             strcat(string, ""); // [x]th Time
         }
@@ -200,7 +200,7 @@ void data_check_print_page(s32 id) {
         if (firstSuperb == 0) {
             strcat(string, "0 )"); // Not Yet )
         } else {
-            strintf(number, firstSuperb);
+            strint(number, firstSuperb);
             strcat(string, number);
             strcat(string, " )"); // [x]th Time )
         }
