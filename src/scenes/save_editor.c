@@ -4,6 +4,7 @@
 #include "graphics/save_editor/save_editor_graphics.h"
 #include "reading.h"
 #include "studio.h"
+#include "text.h"
 
 static const struct SaveEditorFlag sAdvanceFlags[] = {
     { "Save Converted",          0 },
@@ -174,7 +175,7 @@ void save_editor_scene_start(void *sVar, s32 dArg) {
     save_editor_scene_init_gfx1();
 
     save_editor_clear_bg_text();
-    save_editor_draw_bg_text("@–@‚q|‚h‚p@‚r‚‚–‚…@‚d‚„‚‰‚”‚‚’@–", 4, 0, 0);
+    save_editor_draw_bg_text(" * R-IQ Save Editor *", 4, 0, 0);
 
     set_next_scene(&scene_debug_menu);
     save_editor_render_page();
@@ -581,7 +582,7 @@ void save_editor_render_page(void) {
     }
     save_editor_draw_line(SE_LINE_HEADER, 0, buf, 8, 24);
 
-    save_editor_draw_line(SE_LINE_HINT_A, 0, "‡K/‡L: Change Current Save Member", 8, 48);
+    save_editor_draw_line(SE_LINE_HINT_A, 0, ""CHAR_L_SHOULDER_BUTTON_UTF8"/"CHAR_R_SHOULDER_BUTTON_UTF8": Change Current Save Member", 8, 48);
 
     save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT: Save and Exit", 8, 64);
 

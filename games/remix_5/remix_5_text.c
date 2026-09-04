@@ -20,16 +20,16 @@ const char D_0806a2c0[] = "Your technique is solid!";
 const char D_0806a2d8[] = "Rhythm League notes:";
 
 const char D_0806a2f4[] =
-    "\x01\x52" "\x05\x31" "\x01\x35" "♪ WISH - Can't Wait for You　";
+    "\x01\x52" "\x05\x31" "\x01\x35" "笙ｪ WISH - Can't Wait for You ";
 
 const char D_0806a314[] =
-    "\x01\x4c" "　Vocals:　　Soshi Tanaka";
+    "\x01\x4c" " Vocals:  Sohshi Tanaka";
 
 const char D_0806a32c[] =
-    "\x01\x4c" "　Music:\n"
-    "　　　　　　　　Tsunku♂\n"
-    "　Arrangement:\n"
-    "　　　　　　　　Koichi Yuasa";
+    "\x01\x4c" " Music:\n"
+    "        Tsunku笙�\n"
+    " Arrangement:\n"
+    "        Koichi Yuasa";
 
 const char D_0806a370[] =
     "\x01\x43" "Managed by J.P ROOM";

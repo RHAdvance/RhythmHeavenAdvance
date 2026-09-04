@@ -65,8 +65,40 @@
 #define FONT_WW_BODY_TEXT   ":" "0"
 #define FONT_WW_BODY_ICON   ":" "1"
 
-// Shift JIS Encoding Support: (because the GCC compiler doesn't like the second byte being 0x5C, or '\')
-#define KATAKANA_SO "\x83\x5C" // Should be ソ, now written as ソ\.
-#define KANJI_JUU   "\x8F\x5C" // Should be 十, now written as 十\.
-#define KANJI_NOU   "\x94\x5C" // Should be 能, now written as 能\.
-#define KANJI_HYOU  "\x95\x5C" // Should be 表, now written as 表\.
+#define CHAR_1_PIXEL_GAP        0xE000
+#define CHAR_LEFT_DPAD          0xE001
+#define CHAR_RIGHT_DPAD         0xE002
+#define CHAR_UP_DPAD            0xE003
+#define CHAR_DOWN_DPAD          0xE004
+#define CHAR_DPAD               0xE005
+#define CHAR_A_BUTTON           0xE006
+#define CHAR_B_BUTTON           0xE007
+#define CHAR_L_SHOULDER_BUTTON  0xE008
+#define CHAR_R_SHOULDER_BUTTON  0xE009
+#define CHAR_SPANISH_ORDINAL_A  0xE00A
+#define CHAR_FRENCH_ORDINAL_ER  0xE00B
+#define CHAR_FRENCH_ORDINAL_EME 0xE00C
+#define CHAR_LEFT_ARROW_DOWN    0xE00D
+#define CHAR_RIGHT_ARROW_DOWN   0xE00E
+#define CHAR_LEFT_ARROW_UP      0xE00F
+#define CHAR_RIGHT_ARROW_UP     0xE010
+#define CHAR_GBA                0xE011
+
+#define CHAR_1_PIXEL_GAP_UTF8        "\xEE\x80\x80"
+#define CHAR_LEFT_DPAD_UTF8          "\xEE\x80\x81"
+#define CHAR_RIGHT_DPAD_UTF8         "\xEE\x80\x82"
+#define CHAR_UP_DPAD_UTF8            "\xEE\x80\x83"
+#define CHAR_DOWN_DPAD_UTF8          "\xEE\x80\x84"
+#define CHAR_DPAD_UTF8               "\xEE\x80\x85"
+#define CHAR_A_BUTTON_UTF8           "\xEE\x80\x86"
+#define CHAR_B_BUTTON_UTF8           "\xEE\x80\x87"
+#define CHAR_L_SHOULDER_BUTTON_UTF8  "\xEE\x80\x88"
+#define CHAR_R_SHOULDER_BUTTON_UTF8  "\xEE\x80\x89"
+#define CHAR_SPANISH_ORDINAL_A_UTF8  "\xEE\x80\x8A"
+#define CHAR_FRENCH_ORDINAL_ER_UTF8  "\xEE\x80\x8B"
+#define CHAR_FRENCH_ORDINAL_EME_UTF8 "\xEE\x80\x8C"
+#define CHAR_LEFT_ARROW_DOWN_UTF8    "\xEE\x80\x8D"
+#define CHAR_RIGHT_ARROW_DOWN_UTF8   "\xEE\x80\x8E"
+#define CHAR_LEFT_ARROW_UP_UTF8      "\xEE\x80\x8F"
+#define CHAR_RIGHT_ARROW_UP_UTF8     "\xEE\x80\x90"
+#define CHAR_GBA_UTF8                "\xEE\x80\x91"

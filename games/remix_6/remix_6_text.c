@@ -19,11 +19,11 @@ const char D_0806a838[] = "Your technique is solid!";
 
 const char D_0806a850[] = "Rhythm League notes:";
 
-const char D_0806a86c[] = "Ｌｅｔ’ｓ　ｒｅｖｉｅｗ　ｙｏｕｒ　ｌｅａｒｎｉｎｇｓ！";
+const char D_0806a86c[] = "Let's review your learnings!";
 
-const char D_0806a898[] = "Ｉｔ’ｓ　ｅａｓｙ，　ｔｏ　ｓａｙ　ｉｎ　ａｄｖａｎｃｅ！";
+const char D_0806a898[] = "It's easy, to say in advance!";
 
-const char D_0806a8c8[] = "Ｌｅｔ　ｆｕｎ　ｂｅ　ｈａｄ！";
+const char D_0806a8c8[] = "Let fun be had!";
 
 const char D_0806a8d8[] =
     "\n"
@@ -45,8 +45,8 @@ const char D_0806a910[] =
     "\n"
     "Impressive!";
 
-const char D_0806a920[] = ".1:0" "Ｄｏｎｄｏ　" ".2:0" "ｐａｎｐａ";
+const char D_0806a920[] = ".1:0" "Dondo " ".2:0" "panpa";
 
-const char D_0806a944[] = ".1:0" "Ｄｏ－ｎ　" ".2:0" "ｐａ－ｎ　ｐａｎ";
+const char D_0806a944[] = ".1:0" "Do-n " ".2:0" "pa-n pan";
 
-const char D_0806a970[] = "Ｔｈｅ　ｅｎｄ！";
+const char D_0806a970[] = "The end!";

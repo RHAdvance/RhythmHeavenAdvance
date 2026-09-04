@@ -15,6 +15,7 @@
 #include "src/lib_0804ca80.h"
 #include "src/backdrop.h"
 #include "src/code_080092cc.h"
+#include "src/utf_8.h"
 #include "src/scenes/gameplay.h"
 #include "src/scenes/game_select.h"
 #include "src/memory.h"
@@ -3083,7 +3084,82 @@ void func_0800ee9c(void *objPalette) {
 }
 
 
-#include "asm/code_0800b778/asm_0800eebc.s"
+void func_0800eebc(char *dest, const char *src) {
+    s32 outputEnabled = TRUE;
+
+    while (src[0] != '\0') {
+        u8 command;
+        u32 i;
+        u32 charLen;
+
+        if (src[0] == '@') {
+            if (src[1] == '\0') {
+                break;
+            }
+
+            command = src[1];
+
+            if ((command >= '0') && (command <= '9')) {
+                if (outputEnabled) {
+                    const char *insert = D_030053c0.strings[command - '0'];
+
+                    if (insert != NULL) {
+                        while (insert[0] != '\0') {
+                            dest[0] = insert[0];
+                            dest++;
+                            insert++;
+                        }
+                    }
+                }
+
+                src += 2;
+                continue;
+            }
+
+            if ((command == 'b') || (command == 'm')) {
+                outputEnabled = TRUE;
+                src += 2;
+                continue;
+            }
+
+            if (command == 'f') {
+                outputEnabled = FALSE;
+                src += 2;
+                continue;
+            }
+
+            if (command == 'n') {
+                src += 2;
+                continue;
+            }
+
+            src += 2;
+            continue;
+        }
+
+        if (src[0] == '$') {
+            src += 1;
+            continue;
+        }
+
+        charLen = utf8_get_char_len(src);
+        if (charLen == 0) {
+            break;
+        }
+
+        if (outputEnabled) {
+            for (i = 0; i < charLen; i++) {
+                dest[0] = src[0];
+                dest++;
+                src++;
+            }
+        } else {
+            src += charLen;
+        }
+    }
+
+    dest[0] = '\0';
+}
 
 
 // Set String

@@ -27,7 +27,7 @@ enum FireworksPatternsEnum {
     FIREWORKS_PATTERN_SP_CIRCLE,    // Centre;  Special - Circle
     FIREWORKS_PATTERN_SP_SPIRAL,    // Centre;  Special - Spiral
     FIREWORKS_PATTERN_SP_SMILE,     // Centre;  Special - Smile
-    FIREWORKS_PATTERN_SP_TSUNKU,    // Centre;  Special - ?¿½? (unused)
+    FIREWORKS_PATTERN_SP_TSUNKU,    // Centre;  Special - Tsunku (unused)
     FIREWORKS_PATTERN_TAIKO_BOMBER, // Hawfinch Taiko Bomber
 };
 

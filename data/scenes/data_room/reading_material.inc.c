@@ -52,7 +52,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "From the Barista",
         /* BODY ----------------------------------------------------------- */
-            "I own and operate a cafáQ.\n"
+            "I own and operate a Caf√©.\n"
             "I guess you could call me the Barista.\n"
             "Anyway, it's going well, thanks to the regulars.\n"
             "And, well, just to let you know, I'm a dog.\n"
@@ -61,7 +61,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "A lot of them have especially good rhythm,\n"
             "and a few have even achieved a full set of Perfects!\n"
             "I'm always amazed by them!\n"
-            "I may look all professional when I run my cafáQ,\n"
+            "I may look all professional when I run my caf√©,\n"
             "but I'll be honest, I'm really putting on a front.\n"
             "\n"
             "See, it's a little embarrassing, but when I'm off the\n"
@@ -136,7 +136,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Okay, time for a quiz!\n"
             "His name is...\n"
             "\n"
-            "\001C" "\0031" "\001m" "á@áAáBáC-áCáBáD\n"
+            "\001C" "\0031" "\001m" "‚ë†‚ë°‚ë¢‚ë£-‚ë£‚ë¢‚ë§\n"
             "\001L" "\0030" "\001s" "\n"
             "Answer which letters go in each of the numbers!\n"
             "If you answer correctly, you'll be able to read the\n"
@@ -145,11 +145,11 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "\0031" "\001m" "\001C" "Quiz Show's Secret\n"
             "\0030" "\001s" "\001C" "\n"
-            "In this g" "\0031" "\001m" "áB" "\0030" "\001s" "me, the " "\0031" "\001m" "á@" "\0030" "\001s" "la" "\0031" "\001m" "áC" "\0030" "\001s" "er has to m" "\0031" "\001m" "áB" "\0030" "\001s" "tch\n"
-            "\0030" "\001s" "the host's " "\0031" "\001m" "áD" "\0030" "\001s" "umber of button " "\0031" "\001m" "á@" "\0030" "\001s" "resses. But\n"
-            "\0030" "\001s" "if you mash the butto" "\0031" "\001m" "áD" "\0030" "\001s" "s rea" "\0031" "\001m" "áAáA" "\0030" "\001s" "y f" "\0031" "\001m" "áB" "\0030" "\001s" "st instead,\n"
-            "\0030" "\001s" "somethi" "\0031" "\001m" "áD" "\0030" "\001s" "g interesting can h" "\0031" "\001m" "áB" "\0030" "\001s" "ppen.\n"
-            "\0030" "\001s" "It's nothing crazy or an" "\0031" "\001m" "áC" "\0030" "\001s" "thing, but it's neat!",
+            "In this g" "\0031" "\001m" "‚ë¢" "\0030" "\001s" "me, the" "\0031" "\001m" "‚ë†‚ë°‚ë¢‚ë£" "\0030" "\001s" "er has to m" "\0031" "\001m" "‚ë¢" "\0030" "\001s" "tch\n"
+            "\0030" "\001s" "the host's " "\0031" "\001m" "‚ë§" "\0030" "\001s" "umber of button " "\0031" "\001m" "‚ë†" "\0030" "\001s" "resses. But\n"
+            "\0030" "\001s" "if you mash the butto" "\0031" "\001m" "‚ë§" "\0030" "\001s" "s rea" "\0031" "\001m" "‚ë°‚ë°" "\0030" "\001s" "y f" "\0031" "\001m" "‚ë¢" "\0030" "\001s" "st instead,\n"
+            "\0030" "\001s" "somethi" "\0031" "\001m" "‚ë§" "\0030" "\001s" "g interesting can h" "\0031" "\001m" "‚ë¢" "\0030" "\001s" "ppen.\n"
+            "\0030" "\001s" "It's nothing crazy or an" "\0031" "\001m" "‚ë£" "\0030" "\001s" "thing, but it's neat!",
         /* STYLE ---------------------------------------------------------- */
             /* GFX */ reading_style_train_gfx_table,
             /* BGM */ &reading_style_train_bgm
@@ -355,17 +355,17 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 
     /* BON_ODORI ("Lyrics - The Bon Odori") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Lyrics Card á@",
+            "Lyrics Card ‚ë†",
         /* BODY ----------------------------------------------------------- */
-            "TheÅôBon Odori\n"
+            "The‚òÜBon Odori\n"
             "\n"
             "Vocals: Ami Tokito\n"
-            "Lyrics/Music: TsunkuÅâ\n"
-            "Arrangement: Koichi Yuasa (TheÅôBon Odori) /\n"
-            "Kaoru Okubo (TheÅôBon Dance)\n"
+            "Lyrics/Music: Tsunku‚ôÇ\n"
+            "Arrangement: Koichi Yuasa (The‚òÜBon Odori) /\n"
+            "Kaoru Okubo (The‚òÜBon Dance)\n"
             "Translation: castIeRook, Mizuka Lover\n"
             "\n"
-            "(This song appears in TheÅôBon Odori.)\n"
+            "(This song appears in The‚òÜBon Odori.)\n"
             "Haa~\n"
             "            Hanabi agare ba~\n"
             "Haa~ Ah~\n"
@@ -427,13 +427,13 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 
     /* REMIX3 ("Lyrics - Honey Sweet Angel of Love") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Lyrics Card áA",
+            "Lyrics Card ‚ë°",
         /* BODY ----------------------------------------------------------- */
             "Honey Sweet Angel of Love\n"
             "\n"
             "English Vocals: Bellajenna\n"
             "Japanese Vocals: Ami Tokito\n"
-            "Lyrics/Music: TsunkuÅâ\n"
+            "Lyrics/Music: Tsunku‚ôÇ\n"
             "Arrangement: Hideyuki \"Daichi\" Suzuki\n"
             "Translation: castIeRook, Mizuka Lover\n"
             "\n"
@@ -479,13 +479,13 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 
     /* REMIX5 ("Lyrics - WISH Can't Wait For You") */ {
         /* TITLE ---------------------------------------------------------- */
-            "Lyrics Card áB",
+            "Lyrics Card ‚ë¢",
         /* BODY ----------------------------------------------------------- */
             "WISH - Can't Wait for You\n"
             "\n"
             "English Vocals: Roxby\n"
             "Japanese Vocals: Soshi Tanaka\n"
-            "Lyrics/Music: TsunkuÅâ\n"
+            "Lyrics/Music: Tsunku‚ôÇ\n"
             "Arrangement: Koichi Yuasa\n"
             "Translation: castIeRook\n"
             "\n"
@@ -761,9 +761,9 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* BODY ----------------------------------------------------------- */
             "\001C" "\0032" "\001m" "\n"
             "\n"
-            "Sense of rhythm ÅΩ Flow\n"
+            "Sense of rhythm ‚äÉ Flow\n"
             "\n"
-            "Sense of rhythm ÅÇ Flow\n"
+            "Sense of rhythm ‚â† Flow\n"
             "\001L" "\0030" "\001s" "\n"
             "\001C" "Explanation: Flow is an element included in anyone's\n"
             "sense of rhythm, but not a sense of rhythm itself.\n"
@@ -771,7 +771,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "\n"
             "\n"
-            "Rhythm ÅÇ Sense of rhythm\n"
+            "Rhythm ‚â† Sense of rhythm\n"
             "\n"
             "\001C" "\0030" "\001s" "\n"
             "Explanation: Rhythm is what ticks at a steady pace.\n"
@@ -780,7 +780,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\001C" "\0031" "\001m" "\n"
             "\n"
             "\n"
-            "Good dancing ÅÇ Good sense of rhythm\n"
+            "Good dancing ‚â† Good sense of rhythm\n"
             "\001C" "\0030" "\001s" "\n"
             "Explanation: Someone who's a good dancer does not\n"
             "inherently have a good sense of rhythm.",
@@ -1161,7 +1161,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Cherryberryfaygo\n"
 			"+ Nabix (& his family)\n"
 			"+ itaific\n"
-			"+ FireChatÅâ\n"
+			"+ FireChat‚ôÇ\n"
 			"+ saladplainzone\n"
             "+ Bellajenna\n"
             "+ Roxby\n"
@@ -1172,12 +1172,12 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Remix 3 English Song Credits:\n"
             "Vocals: Bellajenna\n"
             "Translation: castIeRook, Mizuka Lover\n"
-            "Mixing: FireChatÅâ, castIeRook\n"
+            "Mixing: FireChat‚ôÇ, castIeRook\n"
             "Remix 5 English Song Credits:\n"
             "Vocals: Roxby\n"
             "Translation: castIeRook\n"
             "Revisions: Cash the Nondescript, saladplainzone\n"
-            "Mixing: FireChatÅâ, saladplainzone\n"
+            "Mixing: FireChat‚ôÇ, saladplainzone\n"
 			"Playtesting:\n"
 			"+ nwqol\n"
 			"+ pokedart9001\n"

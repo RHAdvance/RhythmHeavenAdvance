@@ -20,16 +20,16 @@ const char D_0806a0a0[] = "Your technique is solid!";
 const char D_0806a0b8[] = "Rhythm League notes:";
 
 const char D_0806a0d4[] =
-    "\x05\x31" "\x01\x35" "Å@ÅÙÅ@Honey Sweet Angel of Love";
+    "\x05\x31" "\x01\x35" " ‚ô™ Honey Sweet Angel of Love";
 
 const char D_0806a0fc[] =
-    "\x05\x31" "\x01\x35" "Å@Vocals:Å@Å@Ami Tokito";
+    "\x05\x31" "\x01\x35" " Vocals:  Ami Tokito";
 
 const char D_0806a118[] =
-    "\x05\x31" "\x01\x35" "Å@Music:Å@Å@TsunkuÅâ";
+    "\x05\x31" "\x01\x35" " Music:  Tsunku‚ôÇ";
 
 const char D_0806a134[] =
-    "\x05\x31" "\x01\x35" "Å@Arrangement: H. D. Suzuki";
+    "\x05\x31" "\x01\x35" " Arrangement: H. D. Suzuki";
 
 const char D_0806a154[] =
     "\n"

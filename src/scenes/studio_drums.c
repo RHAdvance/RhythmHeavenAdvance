@@ -42,7 +42,7 @@ const char *studio_drum_list_get_string(s32 line) {
     if (D_030046a8->data.drumKitsUnlocked[line]) {
         strcat(gStudio->string, studio_drum_kit_names[line]);
     } else {
-        strcat(gStudio->string, "HHH");
+        strcat(gStudio->string, "???");
     }
 
     return gStudio->string;

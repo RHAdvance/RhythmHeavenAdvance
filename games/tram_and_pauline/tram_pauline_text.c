@@ -19,30 +19,30 @@ const char D_0805db74[] = "Amazing acrobatics on both ends!";
 
 const char D_0805db94[] = "The Ringmaster's advice:";
 
-const char D_0805dba0[] = "Ｈｉ，　Ｉ’ｍ　Ｔｒａｍ．．．";
+const char D_0805dba0[] = "Hi, I'm Tram...";
 
-const char D_0805dbb0[] = "ａｎｄ　Ｉ’ｍ　Ｐａｕｌｉｎｅ．．．";
+const char D_0805dbb0[] = "and I'm Pauline...";
 
-const char D_0805dbc0[] = "ａｎｄ　ｔｏｇｅｔｈｅｒ，　ｗｅ　ｔｒａｍｐｏｌｉｎｅ！";
+const char D_0805dbc0[] = "and together, we trampoline!";
 
-const char D_0805dbd8[] = "Ａｔ　ｔｈｅ　ｐｅａｋ　ｏｆ　ｏｕｒ　ｊｕｍｐｓ，";
+const char D_0805dbd8[] = "At the peak of our jumps,";
 
-const char D_0805dbf4[] = "ｐｒｅｓｓ　＋　ｆｏｒ　ｍｅ，";
+const char D_0805dbf4[] = "press "CHAR_DPAD_UTF8" for me,";
 
-const char D_0805dc0c[] = "ａｎｄ　ゝ　ｆｏｒ　ｍｅ，";
+const char D_0805dc0c[] = "and "CHAR_A_BUTTON_UTF8" for me,";
 
-const char D_0805dc24[] = "ａｎｄ　ｗｅ’ｌｌ　ｔｒａｎｓｆｏｒｍ！";
+const char D_0805dc24[] = "and we'll transform!";
 
 #ifdef PARADISE
-const char D_0805dc38[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｓｅ　ｆｏｒ　ａ　ｂｉｔ！";
+const char D_0805dc38[] = "Let's practise for a bit!";
 #else
-const char D_0805dc38[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｃｅ　ｆｏｒ　ａ　ｂｉｔ！";
+const char D_0805dc38[] = "Let's practice for a bit!";
 #endif
 
-const char D_0805dc58[] = "Ｓｕｃｃｅｓｓｉｖｅ　ｊｕｍｐｓ　ｎｏｗ！";
+const char D_0805dc58[] = "Successive jumps now!";
 
-const char D_0805dc70[] = "Ｔｗｏ　ｊｕｍｐｓ，　ｉｎ　ｔｕｒｎｓ！";
+const char D_0805dc70[] = "Two jumps, in turns!";
 
-const char D_0805dc88[] = "Ｔｗｏ　ｊｕｍｐｓ，　ｔｏｇｅｔｈｅｒ！";
+const char D_0805dc88[] = "Two jumps, together!";
 
-const char D_0805dc9c[] = "Ｎｏｗ　ｗｅ’ｒｅ　ｒｅａｄｙ　ｔｏ　ｓｔａｒｔ！";
+const char D_0805dc9c[] = "Now we're ready to start!";

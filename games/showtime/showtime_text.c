@@ -11,32 +11,32 @@ const char D_0805e194[] = "They're pretty pleased!";
 
 const char D_0805e1a8[] = "The penguins' moods...";
 
-const char D_0805e1bc[] = "Ｉｔ’ｓ　ｓｈｏｗｔｉｍｅ！";
+const char D_0805e1bc[] = "It's showtime!";
 
 #ifdef PARADISE
-const char D_0805e1d4[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｓｅ　ｏｕｒ　ｐｅｎｇｕｉｎ　ｒｏｕｔｉｎｅ．";
+const char D_0805e1d4[] = "Let's practise our penguin routine.";
 #else
-const char D_0805e1d4[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｃｅ　ｏｕｒ　ｐｅｎｇｕｉｎ　ｒｏｕｔｉｎｅ．";
+const char D_0805e1d4[] = "Let's practice our penguin routine.";
 #endif
 
-const char D_0805e1f8[] = "Ｐｒｅｓｓ　ゝ　ｏｎ　ｔｈｅ　ｃｏｕｎｔ　ｏｆ　３！";
+const char D_0805e1f8[] = "Press "CHAR_A_BUTTON_UTF8" on the count of 3!";
 
 const char D_0805e218[] = "";
 
-const char D_0805e21c[] = "１";
+const char D_0805e21c[] = "1";
 
-const char D_0805e220[] = "２";
+const char D_0805e220[] = "2";
 
-const char D_0805e224[] = "Ｇｏ！";
+const char D_0805e224[] = "Go!";
 
-const char D_0805e22c[] = "Ｌｅｔ’ｓ　ｍｏｖｅ　ｏｎ．．．";
+const char D_0805e22c[] = "Let's move on...";
 
-const char D_0805e23c[] = "Ｈｅｒｅ　ｃｏｍｅ　ｔｈｅ　ｂｉｇ　ｐｅｎｇｕｉｎｓ．";
+const char D_0805e23c[] = "Here come the big penguins.";
 
-const char D_0805e258[] = "Ｇｒｅａｔ　ｉｎｓｔｉｎｃｔ！";
+const char D_0805e258[] = "Great instinct!";
 
-const char D_0805e268[] = "Ｎｏｗ　ｃｏｍｅ　ｔｈｅ　ｗｈｉｔｅ　ｐｅｎｇｕｉｎｓ．";
+const char D_0805e268[] = "Now come the white penguins.";
 
-const char D_0805e280[] = "Ｔｈｅｙ’ｒｅ　ｒａｔｈｅｒ　ｔｒｉｃｋｙ！";
+const char D_0805e280[] = "They're rather tricky!";
 
-const char D_0805e28c[] = "Ｇｅｔ　ｒｅａｄｙ　ｆｏｒ　ｔｈｅ　ｒｅａｌ　ｔｈｉｎｇ！";
+const char D_0805e28c[] = "Get ready for the real thing!";
