@@ -900,7 +900,6 @@ u16 bmp_font_bg_print_glyph(struct BitmapFontBG *textObj, const char *string) {
         return -1;
     }
 
-    // Fullwidth Whitespace
     if (bmp_font_obj_glyph_is_whitespace(string)) {
         return -1;
     }
