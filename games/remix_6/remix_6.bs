@@ -965,11 +965,11 @@ script script_remix_6_main
     beat_anim
     rest 24
     print_text_f text_remix_6_kimi_tte_saikou
-    #ifdef SFX
+    if_localized
     play_sfx s_rap_kimitte_saiko_slow_seqData
-    #else
+    else
     run remix6_sync_rap_vocal, s_rap_kimitte_saiko_seqData
-    #endif
+    end_if
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -988,11 +988,11 @@ script script_remix_6_main
     rest 24
     rest 8
     rest 8
-    #ifdef SFX
+    if_localized
     play_sfx s_rap_honto_desuka_slow_seqData
-    #else
+    else
     run remix6_sync_rap_vocal, s_rap_honto_desuka_seqData
-    #endif
+    end_if
     rap_men_animate_rapper ANIM_HONTO
     rest 8
     print_text_f text_remix_6_honto_desu_ka
@@ -1299,7 +1299,6 @@ script script_remix_6_main
     beat_anim
     rest 24
 
-    #ifdef SFX
     load_rhythm_tweezers
     rhythm_tweezers_start_hair_cycle
     spawn_cue CUE_SHORT
@@ -1336,15 +1335,25 @@ script script_remix_6_main
     rest 24
     rest 24
     rest 24
-    rest 18
+    if_localized
+    rest 12
+    rhythm_tweezers_removed_event
+    rest 6
     play_sfx s_guntai_v_zentai_a_seqData
     rest 6
+    else
+    rest 6
+    rest 6
+    rhythm_tweezers_removed_event
+    rest 12
+    end_if
 
     load_marching_orders
+    if_localized
     marching_orders_event01
-    play_sfx s_guntai_v_zentai_ten_seqData
+    play_sfx s_guntai_v_zentai_tten_seqData
     rest 9
-    play_sfx s_guntai_v_zentai_ttion_seqData
+    play_sfx s_guntai_v_zentai_tion_seqData
     rhythm_tweezers_removed_event
     rest 15
     rest 24
@@ -1358,50 +1367,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-
-    #else
-    load_rhythm_tweezers
-    rhythm_tweezers_start_hair_cycle
-    spawn_cue CUE_SHORT
-    rest 24
-    spawn_cue CUE_SHORT
-    rest 24
-    rhythm_tweezers_spawn_tweezers
-    spawn_cue CUE_SHORT
-    rest 24
-    spawn_cue CUE_SHORT
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 6
-    rhythm_tweezers_set_next_veg VEG_ONION
-    rhythm_tweezers_scroll_veg 12
-    rhythm_tweezers_play_register_sfx
-    rest 6
-    rhythm_tweezers_removed_event
-    rest 12
-    rhythm_tweezers_start_hair_cycle
-    spawn_cue CUE_SHORT
-    rest 24
-    spawn_cue CUE_SHORT
-    rest 12
-    spawn_cue CUE_SHORT
-    rest 12
-    rhythm_tweezers_spawn_tweezers
-    spawn_cue CUE_LONG
-    rest 24
-    spawn_cue CUE_SHORT
-    rest 24
-    rest 24
-    rest 24
-    rest 24
-    rest 6
-    rest 6
-    rhythm_tweezers_removed_event
-    rest 12
-
-    load_marching_orders
+    else
     call marching_orders_sub_08a83848
     call marching_orders_sub_08a8386c
     call marching_orders_sub_08a83998
@@ -1411,7 +1377,7 @@ script script_remix_6_main
     rest 24
     beat_anim
     rest 24
-    #endif
+    end_if
 
     load_space_dance
     space_dance_event01 -8, -24

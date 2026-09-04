@@ -37,7 +37,7 @@ script script_drum_boys_wish
     dml_event06 TRUE
     dml_set_guitarist_next_state 0x3, 1
     call drum_live_pat08
-    play_music s_wish_bgm_seqData
+    play_music_localized s_wish_bgm_seqData, s_wish_bgm_en_seqData
     call drum_live_pat01
     call drum_live_pat00
     call drum_live_pat01

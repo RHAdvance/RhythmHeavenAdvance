@@ -56,30 +56,35 @@
 .macro load_fireworks
     load_fireworks_labels
     load_game fireworks_engine, 0
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 1)
 .macro load_fireworks_remix_5_bg1
     load_fireworks_labels
     load_game fireworks_engine, 1
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 2)
 .macro load_fireworks_remix_5_bg2
     load_fireworks_labels
     load_game fireworks_engine, 2
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 3)
 .macro load_fireworks_remix_5_bg3
     load_fireworks_labels
     load_game fireworks_engine, 3
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Fireworks (Remix 5, BG 4)
 .macro load_fireworks_remix_5_bg4
     load_fireworks_labels
     load_game fireworks_engine, 4
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 

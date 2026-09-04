@@ -40,7 +40,9 @@ enum NinjaBodyguardAnimationsEnum {
 
 // Engine Types:
 struct NinjaBodyguardEngineData {
-    u8 pad[0x300];
+    u8 pad00[0x2D0];
+    s16 lordId;
+    u8 pad01[0x300 - (0x2D0 + sizeof(s16))];
 };
 
 struct NinjaBodyguardCue {

@@ -142,6 +142,7 @@ extern struct Animation **toss_boys_anim_table[];
 extern struct CompressedData *toss_boys_buffered_textures[];
 extern struct GraphicsTable *toss_boys_gfx_tables[];
 extern struct DrumTechInstrument toss_boys_drumtech_bank[];
+extern struct DrumTechInstrument toss_boys_en_drumtech_bank[];
 extern u16 toss_boys_button_masks[];
 extern struct Animation *toss_boys_action_anims[][TOSS_BOYS_PLAYER_COUNT];
 extern s8 toss_boys_action_anim_playback[][TOSS_BOYS_PLAYER_COUNT];

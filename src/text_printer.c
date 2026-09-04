@@ -5,6 +5,7 @@
 #include "src/lib_0804ca80.h"
 #include "src/code_080092cc.h"
 #include "data/text_printer_data.h"
+#include "memory.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 
@@ -233,6 +234,9 @@ char* badBoyMessages[7] = {
 // Print Formatted Line to VRAM (return width in pixels)
 s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, const char **charStream, s32 maxWidth, s32 lineColors, s32 indentWidth, s32 shadowColors) {
     struct FormattedGlyph *fGlyphData;
+    static char regionBuf[64];
+    const char *sub;
+    const char *start, *slash, *end;
     const char *stream, *tempStream;
     s32 spacing, glyphWidth, totalWidth, maxWidthWithShadow;
     s32 totalGlyphs;
@@ -307,6 +311,52 @@ s32 text_printer_print_formatted_line(s32 tileBaseX, s32 tileBaseY, s32 font, co
                     }
                     stream += 2;
                     break;
+                case '\6': {
+                    // format: \6[EN_USText/EN_EUText]
+                    stream += 2; // skip '['
+                    start = stream;
+                    while (*stream != '/') stream += 1;
+                    slash = stream;
+                    stream += 1; // skip '/'
+                    while (*stream != ']') stream += 1;
+                    end = stream;
+                    stream += 1; // skip ']'
+
+                    if (CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_PARADISE)) {
+                        // from slash+1 to end
+                        s32 len = end - (slash + 1);
+                        memcpy(regionBuf, slash + 1, len);
+                        regionBuf[len] = '\0';
+                    } else {
+                        // from start to slash
+                        s32 len = slash - start;
+                        memcpy(regionBuf, start, len);
+                        regionBuf[len] = '\0';
+                    }
+
+                    sub = regionBuf;
+                    while (*sub != '\0') {
+                        // i don't like this but this is not like this dumb code is
+                        // going to be maintened by anybody other than me so :trollface:
+                        const char *tempSub = sub;
+                        glyphID = text_printer_get_glyph_id(&sub);
+                        if (glyphID < 0) continue;
+                        glyphWidth = text_font_get_glyph_width(font, glyphID);
+                        fGlyphData->id = glyphID;
+                        fGlyphData->xOffset = totalWidth;
+                        fGlyphData->width = glyphWidth;
+                        fGlyphData->lineColors = lineColors;
+                        fGlyphData->shadowColors = shadowColors;
+                        fGlyphData->charSrc = tempSub;
+                        fGlyphData->font = font;
+                        fGlyphData->spacing = spacing;
+                        fGlyphData++;
+                        totalGlyphs++;
+                        fGlyphData->formatSrc = stream; // points past ']'
+                        totalWidth += spacing + glyphWidth;
+                    }
+                    break;
+                }
             }
             if (!newLine) continue;
             else break;

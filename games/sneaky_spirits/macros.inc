@@ -38,6 +38,7 @@
 .macro load_sneaky_spirits_remix
     load_sneaky_spirits_labels
     load_game sneaky_spirits_engine, 1
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Sneaky Spirits 2

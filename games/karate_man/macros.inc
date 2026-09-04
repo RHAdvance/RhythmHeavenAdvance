@@ -29,6 +29,7 @@
 .macro load_karate_man
     load_karate_labels
     load_game karate_man_engine, 0
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 @ Load Game: Karate Man (Unused Faces)

@@ -455,14 +455,14 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 4
     #ifdef PLUS
     sneaky_spirits_print_text D_0806801C
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     beat_anim
     rest 23
     sneaky_spirits_print_text D_08068028
     rest 1
     sneaky_spirits_show_ghost 5
     sneaky_spirits_print_text D_0806801B
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     beat_anim
     rest 23
     sneaky_spirits_print_text D_08068028
@@ -470,13 +470,13 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 6
     spawn_cue CUE_STRICT
     sneaky_spirits_print_text D_08068019
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     beat_anim
     rest 23
     sneaky_spirits_print_text D_08068028
     rest 1
     sneaky_spirits_print_text D_0806801D
-    play_sfx s_sdance_go_seqData
+    play_sfx_localized s_intro_uh_seqData, s_intro_go_en_seqData
     beat_anim
     rest 24
     beat_anim
@@ -494,14 +494,14 @@ script script_remix_2_main
     sneaky_spirits_draw_bow
     sneaky_spirits_show_ghost 4
     sneaky_spirits_print_text D_0806801C
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     beat_anim
     rest 23
     sneaky_spirits_print_text D_08068028
     rest 1
     sneaky_spirits_show_ghost 5
     sneaky_spirits_print_text D_0806801B
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     beat_anim
     rest 23
     sneaky_spirits_print_text D_08068028
@@ -509,13 +509,13 @@ script script_remix_2_main
     sneaky_spirits_show_ghost 6
     spawn_cue CUE_STRICT
     sneaky_spirits_print_text D_08068019
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     beat_anim
     rest 23
     sneaky_spirits_print_text D_08068028
     rest 1
     sneaky_spirits_print_text D_0806801D
-    play_sfx s_sdance_go_seqData
+    play_sfx_localized s_intro_uh_seqData, s_intro_go_en_seqData
     beat_anim
     rest 24
     sneaky_spirits_print_text D_08068028

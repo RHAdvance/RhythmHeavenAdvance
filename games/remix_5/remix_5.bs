@@ -123,7 +123,7 @@ script script_remix_5_main
     rest 24
     enable_pause_menu
     bouncy_road_set_bounce_height 192
-    play_music s_wish_bgm_seqData
+    play_music_localized s_wish_bgm_seqData, s_wish_bgm_en_seqData
     rest 24
     rest 24
     rest 24
@@ -493,29 +493,53 @@ script script_remix_5_main
     load_fireworks_remix_5_bg1
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
     rest 24
     spawn_cue CUE_NORMAL_FIREWORK
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 12
     rest 8
+    if_localized
+    play_sfx_vol s_hanabi_wish3_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish3_seqData, 288
+    end_if
     rest 4
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish4_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish4_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
@@ -614,18 +638,34 @@ script script_remix_5_main
     fireworks_set_pattern_mode PATTERN_MODE_USE_DEFAULT
     fireworks_set_default_pattern PATTERN_SP_STAR
     spawn_cue CUE_NORMAL_FIREWORK
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 12
     rest 8
+    if_localized
+    play_sfx_vol s_hanabi_wish3_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish3_seqData, 288
+    end_if
     rest 4
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish4_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish4_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
@@ -724,18 +764,34 @@ script script_remix_5_main
     fireworks_set_pattern_mode PATTERN_MODE_USE_DEFAULT
     fireworks_set_default_pattern PATTERN_SP_CIRCLE
     spawn_cue CUE_NORMAL_FIREWORK
+    if_localized
+    play_sfx_vol s_hanabi_wish1_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish1_seqData, 288
+    end_if
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish2_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish2_seqData, 288
+    end_if
     beat_anim
     rest 12
     rest 8
+    if_localized
+    play_sfx_vol s_hanabi_wish3_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish3_seqData, 288
+    end_if
     rest 4
     beat_anim
     rest 24
+    if_localized
+    play_sfx_vol s_hanabi_wish4_en_seqData, 288
+    else
     play_sfx_vol s_hanabi_wish4_seqData, 288
+    end_if
     beat_anim
     rest 24
     beat_anim
@@ -743,7 +799,13 @@ script script_remix_5_main
     set_game_fade_in_time 20
 
     load_toss_boys_remix_5
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_MUSIC
+    if_localized
+    print_text_s D_0806a315
+    else
     print_text_s D_0806a314
+    end_if
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
     toss_boys_event08
     beat_anim
     rest 24

@@ -368,7 +368,7 @@ extern void midi_player_fade_in(struct SoundPlayer *soundPlayer, u16 duration);
 extern void midi_player_parse_sys_exc_message(struct SoundPlayer *soundPlayer, const u8 *stream);
 extern u32  midi_player_parse_meta_event(struct SoundPlayer *soundPlayer, const u8 **upstream);
 extern void midi_player_parse_controller_change(struct SoundPlayer *soundPlayer, u32 track, u8 controller, u8 value);
-extern void midi_player_add_note(u32 track, u32 key, u32 velocity);
+extern void midi_player_add_note(struct SoundPlayer *soundPlayer, u32 track, u32 key, u32 velocity);
 extern u32  midi_player_read_track(struct SoundPlayer *soundPlayer, u32 track);
 extern void midi_player_update_track(struct SoundPlayer *soundPlayer, u32 track);
 

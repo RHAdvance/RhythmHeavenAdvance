@@ -23,6 +23,7 @@ enum AdvanceFlagsEnum {
     /* 10 */ ADVANCE_FLAG_DISABLE_RUMBLE                = (1 << 4),
     /* 20 */ ADVANCE_FLAG_NON_JP_SFX                    = (1 << 5),
     /* 40 */ ADVANCE_FLAG_NON_JP_MUSIC                  = (1 << 6),
+    /* 80 */ ADVANCE_FLAG_PARADISE                      = (1 << 7),
 };
 
 enum AdvanceGameFlagsEnum {

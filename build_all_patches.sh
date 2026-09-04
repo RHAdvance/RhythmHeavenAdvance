@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-FEATURE_FLAGS=(SFX PLUS PLAYTEST PARADISE RUMBLE)
+FEATURE_FLAGS=(SFX PLUS PLAYTEST RUMBLE)
 TARGET="rhythmheavenadvance"
 PATCH_DIR="patches"
 TOTAL_COMBINATIONS=$((1 << ${#FEATURE_FLAGS[@]}))

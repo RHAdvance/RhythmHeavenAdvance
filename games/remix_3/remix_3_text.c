@@ -25,6 +25,9 @@ const char D_0806a0d4[] =
 const char D_0806a0fc[] =
     "\x05\x31" "\x01\x35" "　Vocals:　　Ami Tokito";
 
+const char D_0806a0fd[] =
+    "\x05\x31" "\x01\x35" "　Vocals:　　Bellajenna";
+
 const char D_0806a118[] =
     "\x05\x31" "\x01\x35" "　Music:　　Tsunku♂";
 

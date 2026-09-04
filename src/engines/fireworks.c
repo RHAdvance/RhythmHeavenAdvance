@@ -125,7 +125,9 @@ void fireworks_play_sound(u32 sound) {
             play_sound_in_player(2, &s_intro_three_seqData);
             break;
         case FIREWORKS_SFX_NUEI:
-            play_sound(&s_f_hanabi_v_nuei_seqData);
+            play_sound(CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) != 0 ?
+                &s_f_hanabi_v_nuei_en_seqData : &s_f_hanabi_v_nuei_seqData
+            );
             break;
     }
 }
@@ -488,7 +490,9 @@ void fireworks_cue_spawn(struct Cue *cue, struct FireworksCue *info, u32 type) {
             }
             info->y = info->targetY - (ticks_to_frames(0x30) * info->velY) - (yDistance * 64);
             info->sprite = sprite_create(gSpriteHandler, anim_fireworks_bomb, 0, FIXED_TO_INT(info->x), FIXED_TO_INT(info->y), 0x801, 0, 0, 0);
-            play_sound(&s_f_hanabi_v_tamaya_seqData);
+            play_sound(CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) != 0 ?
+                &s_f_hanabi_v_tamaya_en_seqData : &s_f_hanabi_v_tamaya_seqData
+            );
             break;
     }
 }

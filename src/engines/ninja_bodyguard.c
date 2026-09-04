@@ -73,8 +73,6 @@ asm(".include \"include/gba.inc\""); // Temporary
 
 #include "asm/engines/ninja_bodyguard/asm_0803c9f8.s"
 
-#include "asm/engines/ninja_bodyguard/asm_0803ca8c.s"
-
 #include "asm/engines/ninja_bodyguard/asm_0803cad0.s"
 
 #include "asm/engines/ninja_bodyguard/asm_0803cb0c.s"
@@ -114,3 +112,17 @@ asm(".include \"include/gba.inc\""); // Temporary
 #include "asm/engines/ninja_bodyguard/asm_0803d010.s"
 
 #include "asm/engines/ninja_bodyguard/asm_0803d014.s"
+
+
+void func_0803ca8c() {
+	sprite_set_anim(gSpriteHandler,
+		gNinjaBodyguard->lordId,
+		ninja_get_anim(NINJA_ANIM_LORD_WALK),
+		0, 0, 0, 0
+	);
+
+	play_sound(
+		CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) != 0 ?
+		&s_f_ninja_v_huh_seqData : &s_f_ninja_v_nanu_seqData
+	);
+}

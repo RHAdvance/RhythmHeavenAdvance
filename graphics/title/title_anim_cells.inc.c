@@ -314,43 +314,43 @@ AnimationCel title_cel014[] = {
     /* Len */ 1,
     /* 000 */ 0x00e0, 0xc1e0, 0x0008
 };
-#ifdef PARADISE
-AnimationCel title_cel015[] = {
+
+AnimationCel title_cel094[] = {
     /* Len */ 2,
     /* 000 */ 0x00ef, 0x81f3, 0x01a0,
     /* 001 */ 0x00ef, 0x81fb, 0x01a1
 };
 
-AnimationCel title_cel016[] = {
+AnimationCel title_cel095[] = {
     /* Len */ 1,
     /* 000 */ 0x00f4, 0x81f1, 0x01a5
 };
 
-AnimationCel title_cel017[] = {
+AnimationCel title_cel096[] = {
     /* Len */ 3,
     /* 000 */ 0x00f1, 0x81e9, 0x01a9,
     /* 001 */ 0x00f9, 0x81e9, 0x01c9,
     /* 002 */ 0x00f1, 0x81f1, 0x01aa
 };
 
-AnimationCel title_cel018[] = {
+AnimationCel title_cel097[] = {
     /* Len */ 2,
     /* 000 */ 0x00f5, 0x81ef, 0x01ae,
     /* 001 */ 0x0005, 0x000f, 0x01f2
 };
 
-AnimationCel title_cel019[] = {
+AnimationCel title_cel098[] = {
     /* Len */ 2,
     /* 000 */ 0x00f4, 0x81ef, 0x01b3,
     /* 001 */ 0x000a, 0x0009, 0x007f
 };
 
-AnimationCel title_cel100[] = {
+AnimationCel title_cel099[] = {
     /* Len */ 2,
     /* 000 */ 0x00f4, 0x81e6, 0x0220,
     /* 001 */ 0x00f4, 0x81f6, 0x0222
 };
-#else
+
 // [D_0890cee0]
 AnimationCel title_cel015[] = {
     /* Len */ 2,
@@ -394,7 +394,7 @@ AnimationCel title_cel100[] = {
     /* 000 */ 0x00EE, 0x81F2, 0x023C,
     /* 000 */ 0x00F6, 0x81F2, 0x025C
 };
-#endif
+
 AnimationCel title_cel101[] = {
     /* Len */ 1,
     /* 000 */ 0x00fc, 0x01fc, 0x0172

@@ -50,7 +50,7 @@ script script_drum_girls_honey_sweet_angel
     rest 6
     spawn_cue CUE_LIVE_02
     rest 6
-    play_music s_koihoney_bgm_seqData
+    play_music_localized s_koihoney_bgm_seqData, s_koihoney_bgm_en_seqData
     spawn_cue CUE_LIVE_01
     spawn_cue CUE_LIVE_01
     rest 6

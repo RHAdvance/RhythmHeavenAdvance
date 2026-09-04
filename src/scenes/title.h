@@ -46,7 +46,8 @@ struct TitleLogoCharData {
 
 
 // DATA
-extern struct TitleLogoCharData title_logo_char_data[];
+extern struct TitleLogoCharData title_logo_char_data_paradise[];
+extern struct TitleLogoCharData title_logo_char_data_heaven[];
 extern struct GraphicsTable title_gfx_table[];
 extern struct CompressedData *title_buffered_textures[];
 extern struct Beatscript script_scene_title_exit[];
