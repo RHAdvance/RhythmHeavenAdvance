@@ -76,7 +76,6 @@ const char D_0805c35c[] = "Practise first!";
 #else
 const char D_0805c35c[] = "Practice first!";
 #endif
-
 const char D_0805c374[] = "Just copy us!";
 
 const char D_0805c384[] = "OK, here's another step!";

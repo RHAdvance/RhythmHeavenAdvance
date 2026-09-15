@@ -52,7 +52,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "From the Barista",
         /* BODY ----------------------------------------------------------- */
-            "I own and operate a Café.\n"
+            "I own and operate a café.\n"
             "I guess you could call me the Barista.\n"
             "Anyway, it's going well, thanks to the regulars.\n"
             "And, well, just to let you know, I'm a dog.\n"
@@ -145,7 +145,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "\0031" "\001m" "\001C" "Quiz Show's Secret\n"
             "\0030" "\001s" "\001C" "\n"
-            "In this g" "\0031" "\001m" "③" "\0030" "\001s" "me, the" "\0031" "\001m" "①②③④" "\0030" "\001s" "er has to m" "\0031" "\001m" "③" "\0030" "\001s" "tch\n"
+            "In this g" "\0031" "\001m" "③" "\0030" "\001s" "me, the " "\0031" "\001m" "①" "\0030" "\001s" "la" "\0031" "\001m" "④" "\0030" "\001s" "er has to m" "\0031" "\001m" "③" "\0030" "\001s" "tch\n"
             "\0030" "\001s" "the host's " "\0031" "\001m" "⑤" "\0030" "\001s" "umber of button " "\0031" "\001m" "①" "\0030" "\001s" "resses. But\n"
             "\0030" "\001s" "if you mash the butto" "\0031" "\001m" "⑤" "\0030" "\001s" "s rea" "\0031" "\001m" "②②" "\0030" "\001s" "y f" "\0031" "\001m" "③" "\0030" "\001s" "st instead,\n"
             "\0030" "\001s" "somethi" "\0031" "\001m" "⑤" "\0030" "\001s" "g interesting can h" "\0031" "\001m" "③" "\0030" "\001s" "ppen.\n"
