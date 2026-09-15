@@ -596,7 +596,7 @@ void save_editor_render_page(void) {
         for (i = 0; i < 8; i++) {
             if (i < (u32)m->flagCount) {
                 const struct SaveEditorFlag *f = &m->flags[i];
-                snprintf(buf, sizeof(buf), "%s %-22s %s", (i == flagIdx) ? ">" : "\x87\x53  ", f->name, (raw >> f->bit) & 1u ? "[!]" : "[ ]");
+                snprintf(buf, sizeof(buf), "%s %-22s %s", (i == flagIdx) ? ">" : CHAR_1_PIXEL_GAP_UTF8"  ", f->name, (raw >> f->bit) & 1u ? "[!]" : "[ ]");
                 save_editor_draw_line(SE_LINE_FLAG_0 + i, 0, buf, (i >= 4) ? 128 : 0, 80 + (i * 18) - ((i >= 4) ? 72 : 0));
             } else {
                 save_editor_clear_line(SE_LINE_FLAG_0 + i);
