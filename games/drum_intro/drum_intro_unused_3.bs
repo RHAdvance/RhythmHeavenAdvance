@@ -109,7 +109,11 @@ script script_drum_intro_unused_3_main
     run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
+    #ifdef PLUS
+    mod_music_volume 0, 12
+    #else
     mod_music_volume 0, 48
+    #endif
     dmi_event02 2
     print_text_s D_0805e490
     run gameplay_display_text_and_wait
