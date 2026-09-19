@@ -185,13 +185,12 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
+        spawn_cue CUE_KICK
+        rest 24
         #ifdef PLUS
         play_music s_kawasemi_bgm_seqData
         #endif
-        spawn_cue CUE_KICK
-        rest 24
         spawn_cue CUE_SNARE
         rest 24
         spawn_cue CUE_KICK
@@ -332,15 +331,14 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_CYMBAL
         no_op
         spawn_cue CUE_KICK
         rest 24
+        #ifdef PLUS
+        play_music s_kawasemi_bgm_seqData
+        #endif
         spawn_cue CUE_SNARE
         rest 24
         spawn_cue CUE_KICK
@@ -477,15 +475,14 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_CYMBAL
         no_op
         spawn_cue CUE_KICK
         rest 24
+        #ifdef PLUS
+        play_music s_kawasemi_bgm_seqData
+        #endif
         spawn_cue CUE_SNARE
         rest 24
         spawn_cue CUE_KICK
