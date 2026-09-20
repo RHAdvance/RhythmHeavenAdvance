@@ -2129,14 +2129,14 @@ union Instrument inst_bank_fireworks_en[] = {
 };
 
 union Instrument inst_bank_conffmachine_en_sub[] = {
-    /* 000 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 004 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 008 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 012 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 016 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 020 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 024 */ NULL,                            NULL,                            NULL,                            NULL,
-    /* 028 */ NULL,                            NULL,                            NULL,                            NULL,
+    /* 000 */ { .pcm = &instrument_pcm_1220 }, { .pcm = &instrument_pcm_1221 }, { .pcm = &instrument_pcm_1222 }, { .pcm = &instrument_pcm_1223 },
+    /* 004 */ { .pcm = &instrument_pcm_1224 }, { .pcm = &instrument_pcm_1225 }, { .pcm = &instrument_pcm_1226 }, { .pcm = &instrument_pcm_1227 },
+    /* 008 */ { .pcm = &instrument_pcm_1228 }, { .pcm = &instrument_pcm_1229 }, { .pcm = &instrument_pcm_1230 }, { .pcm = &instrument_pcm_1231 },
+    /* 012 */ { .pcm = &instrument_pcm_1232 }, { .pcm = &instrument_pcm_1233 }, { .pcm = &instrument_pcm_1234 }, { .pcm = &instrument_pcm_1235 },
+    /* 016 */ { .pcm = &instrument_pcm_1236 }, { .pcm = &instrument_pcm_1237 }, { .pcm = &instrument_pcm_1238 }, { .pcm = &instrument_pcm_1239 },
+    /* 020 */ { .pcm = &instrument_pcm_1240 }, { .pcm = &instrument_pcm_1241 }, { .pcm = &instrument_pcm_1242 }, NULL,
+    /* 024 */ NULL,                            NULL,                            { .pcm = &instrument_pcm_dlesson1 }, NULL,
+    /* 028 */ { .pcm = &instrument_pcm_dlesson2 }, { .pcm = &instrument_pcm_dlesson3 }, NULL,                    NULL,
     /* 032 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 036 */ NULL,                            NULL,                            NULL,                            NULL,
     /* 040 */ NULL,                            NULL,                            NULL,                            NULL,

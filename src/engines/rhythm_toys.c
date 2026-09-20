@@ -35,6 +35,17 @@ void rhythm_toys_rap_machine_play(u32 button) {
     stop_sound(&s_rap_kibunha_saiko_seqData);
     stop_sound(&s_rap_orette_saiko_seqData);
     stop_sound(&s_rap_kimitte_saiko_seqData);
+    stop_sound(&s_rap_15ji_desuka_en_seqData);
+    stop_sound(&s_rap_oyatu_desuka_en_seqData);
+    stop_sound(&s_rap_wakari_desuka_en_seqData);
+    stop_sound(&s_rap_oisi_kamone_en_seqData);
+    stop_sound(&s_rap_herusi_kamone_en_seqData);
+    stop_sound(&s_rap_soremoso_kamone_en_seqData);
+    stop_sound(&s_rap_tanosi_kamone_en_seqData);
+    stop_sound(&s_rap_oyatuha_saiko_en_seqData);
+    stop_sound(&s_rap_kibunha_saiko_en_seqData);
+    stop_sound(&s_rap_orette_saiko_en_seqData);
+    stop_sound(&s_rap_kimitte_saiko_en_seqData);
 
     if (gRhythmToys->changeRapMachineSfxTableTimer == 0) {
         gRhythmToys->rapMachineSfxTable = agb_random(4);

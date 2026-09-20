@@ -3,7 +3,7 @@ struct SongHeader *rap_machine_sfx_table1[][2] = {
     /* A */ { &s_rap_un_seqData, &s_rap_un_seqData },
     /* B */ { &s_rap_uun_seqData, &s_rap_uun_seqData },
     /* U */ { &s_rap_oyatuha_saiko_seqData, &s_rap_oyatuha_saiko_en_seqData },
-    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_seqData },
+    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_en_seqData },
     /* L */ { &s_rap_15ji_desuka_seqData, &s_rap_15ji_desuka_en_seqData },
     /* R */ { &s_rap_oisi_kamone_seqData, &s_rap_oisi_kamone_en_seqData }
 };
@@ -13,7 +13,7 @@ struct SongHeader *rap_machine_sfx_table2[][2] = {
     /* A */ { &s_rap_un_seqData, &s_rap_un_seqData },
     /* B */ { &s_rap_uun_seqData, &s_rap_uun_seqData },
     /* U */ { &s_rap_kibunha_saiko_seqData, &s_rap_kibunha_saiko_en_seqData },
-    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_seqData },
+    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_en_seqData },
     /* L */ { &s_rap_oyatu_desuka_seqData, &s_rap_oyatu_desuka_en_seqData },
     /* R */ { &s_rap_herusi_kamone_seqData, &s_rap_herusi_kamone_en_seqData }
 };
@@ -23,7 +23,7 @@ struct SongHeader *rap_machine_sfx_table3[][2] = {
     /* A */ { &s_rap_un_seqData, &s_rap_un_seqData },
     /* B */ { &s_rap_uun_seqData, &s_rap_uun_seqData },
     /* U */ { &s_rap_orette_saiko_seqData, &s_rap_orette_saiko_en_seqData },
-    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_seqData },
+    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_en_seqData },
     /* L */ { &s_rap_wakari_desuka_seqData, &s_rap_wakari_desuka_en_seqData },
     /* R */ { &s_rap_tanosi_kamone_seqData, &s_rap_tanosi_kamone_en_seqData }
 };
@@ -33,7 +33,7 @@ struct SongHeader *rap_machine_sfx_table4[][2] = {
     /* A */ { &s_rap_un_seqData, &s_rap_un_seqData },
     /* B */ { &s_rap_uun_seqData, &s_rap_uun_seqData },
     /* U */ { &s_rap_kimitte_saiko_seqData, &s_rap_kimitte_saiko_en_seqData },
-    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_seqData },
+    /* D */ { &s_rap_yeah_seqData, &s_rap_yeah_en_seqData },
     /* L */ { &s_rap_15ji_desuka_seqData, &s_rap_15ji_desuka_en_seqData },
     /* R */ { &s_rap_soremoso_kamone_seqData, &s_rap_soremoso_kamone_en_seqData }
 };
