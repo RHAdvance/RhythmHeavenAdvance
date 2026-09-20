@@ -49,21 +49,47 @@ script drum_intro_unused_sub_08a21294
     play_sfx s_intro_three_seqData
     beat_anim
     rest 12
+    #ifdef PLUS
+    play_sfx s_intro_four_seqData
+    #endif
 return
 
 
 script drum_intro_unused_sub_08a21390
     call drum_intro_unused_sub_08a21294
+    #ifdef PLUS
+    #else
     play_sfx s_intro_four_seqData
+    #endif
     rest 12
     beat_anim
     rest 24
+// Commented out code is for a music function so that the game can play music while you drum.
+// Judging by Drum intro 3, this isn't the original intended functionality, though. 
+// I've chosen to leave this in the code if anyone wants to use it.
+//    #ifdef PLUS 
+//    set_music_volume 156
+//    play_music s_drum_lesson_bgm_seqData
+//    #endif
 return
 
 
 script drum_intro_unused_sub_08a213d8
     call drum_intro_unused_sub_08a21294
-    rest 28
+//    #ifdef PLUS
+//    rest 12
+//    beat_anim
+//    rest 24
+//    set_music_volume 156
+//    play_music s_drum_lesson_bgm_seqData
+//    set_music_volume 156
+//    play_music s_drum_lesson_bgm_seqData
+//    #else
+    rest 12
+    #ifdef PLUS
+    beat_anim
+    #endif
+    rest 16
 return
 
 
@@ -146,6 +172,9 @@ script drum_intro_unused_sub_08a21600
     rest 6
     beat_anim
     dmi_event01 258
+//    #ifdef PLUS
+//    run scene_stop_music
+//    #endif
 return
 
 
@@ -154,6 +183,9 @@ script script_drum_intro_unused_main
     set_tempo 120
     set_music_volume 0
     mod_music_volume 256, 192
+    #ifdef PLUS
+    play_music s_dr_sam_bgm_seqData
+    #endif
     rest 24
     rest 24
     rest 24
@@ -179,7 +211,11 @@ script script_drum_intro_unused_main
     run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
+    #ifdef PLUS
+    mod_music_volume 0, 48
+    #else
     mod_music_volume 0, 96
+    #endif
     dmi_event02 2
     print_text_s D_0805d554
     run gameplay_display_text_and_wait
@@ -210,6 +246,9 @@ script script_drum_intro_unused_main
     rest_beats 4
     rest_beats 4
     dmi_event04 FALSE
+//    #ifdef PLUS 
+//    mod_music_volume 0, 32
+//    #endif
     rest_beats 4
     set_tempo 120
     dmi_event03 2
@@ -224,6 +263,9 @@ script script_drum_intro_unused_main
     load_drum_intro_talk
     dmi_event02 1
     mod_music_volume 256, 192
+    #ifdef PLUS
+    play_music s_dr_sam_bgm_seqData
+    #endif
     rest 48
     dmi_event02 2
     print_text_s D_0805d5a4
