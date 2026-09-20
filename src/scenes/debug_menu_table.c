@@ -590,7 +590,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Tanuki and Monkey */ {
         /* Scene */ &scene_tanuki_and_monkey,
-        /* Label */ "Tanuki and Monkey (Unused)",
+        /* Label */ "Tanuki & Monkey (Unused)",
         /* Epil. */ TRUE
     },
     /* Metronome */ {
