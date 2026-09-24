@@ -35,13 +35,24 @@ void rhythm_toys_rap_machine_play(u32 button) {
     stop_sound(&s_rap_kibunha_saiko_seqData);
     stop_sound(&s_rap_orette_saiko_seqData);
     stop_sound(&s_rap_kimitte_saiko_seqData);
+    stop_sound(&s_rap_15ji_desuka_en_seqData);
+    stop_sound(&s_rap_oyatu_desuka_en_seqData);
+    stop_sound(&s_rap_wakari_desuka_en_seqData);
+    stop_sound(&s_rap_oisi_kamone_en_seqData);
+    stop_sound(&s_rap_herusi_kamone_en_seqData);
+    stop_sound(&s_rap_soremoso_kamone_en_seqData);
+    stop_sound(&s_rap_tanosi_kamone_en_seqData);
+    stop_sound(&s_rap_oyatuha_saiko_en_seqData);
+    stop_sound(&s_rap_kibunha_saiko_en_seqData);
+    stop_sound(&s_rap_orette_saiko_en_seqData);
+    stop_sound(&s_rap_kimitte_saiko_en_seqData);
 
     if (gRhythmToys->changeRapMachineSfxTableTimer == 0) {
         gRhythmToys->rapMachineSfxTable = agb_random(4);
     }
 
     gRhythmToys->changeRapMachineSfxTableTimer = ticks_to_frames(0x24);
-    gRhythmToys->soundPlayer = play_sound(rap_machine_sfx_pool[gRhythmToys->rapMachineSfxTable][button]);
+    gRhythmToys->soundPlayer = play_sound(rap_machine_sfx_pool[gRhythmToys->rapMachineSfxTable][button][CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) ? 1 : 0]);
 
     if (button == RHYTHM_TOYS_DOWN_BUTTON) {
         if (gRhythmToys->musicPlaying) {
@@ -67,8 +78,9 @@ void rhythm_toys_love_machine_play(u32 button) {
     if (gRhythmToys->soundPlayer != NULL) {
         fade_out_soundplayer(gRhythmToys->soundPlayer, 0x1e);
     }
-    
-    gRhythmToys->soundPlayer = scene_play_random_sound(love_machine_sfx_table[button]);
+    gRhythmToys->soundPlayer = scene_play_random_sound(
+        CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) != 0 ? love_machine_sfx_table_en[button] : love_machine_sfx_table[button]
+    );
 }
 
 // Get Sprite Animation

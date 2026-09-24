@@ -689,7 +689,6 @@ static void options_scene_update_main_bitmap(void) {
                     }
                     break;
 #endif
-
                 case OPTIONS_BITMAP_SKIP_DISCLAIMER:
                     if (D_03004afc & RIGHT_SHOULDER_BUTTON) {
                         play_sound(&s_mario_melo1_seqData);

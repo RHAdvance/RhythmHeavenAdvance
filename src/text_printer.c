@@ -6,6 +6,7 @@
 #include "src/code_080092cc.h"
 #include "src/utf_8.h"
 #include "data/text_printer_data.h"
+#include "memory.h"
 
   //  //  //  TEXT PRINTER  //  //  //
 

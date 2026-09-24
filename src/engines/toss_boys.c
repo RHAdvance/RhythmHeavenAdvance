@@ -122,7 +122,10 @@ void toss_boys_engine_start(u32 version) {
     gTossBoys->arrowSprite = sprite_create(gSpriteHandler, toss_boys_get_anim(TOSS_BOYS_ANIM_ARROW_RED), 0, 120, 80, 0x4f00, 1, 0, 0x8002);
 
     init_drumtech(&gTossBoys->drumTech);
-    set_drumtech_bank(toss_boys_drumtech_bank);
+    set_drumtech_bank(
+        CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) != 0 ?
+        toss_boys_en_drumtech_bank : toss_boys_drumtech_bank
+    );
 
     gTossBoys->queuedDrumNoteId = -1;
     gTossBoys->pitchOffset = 0;
