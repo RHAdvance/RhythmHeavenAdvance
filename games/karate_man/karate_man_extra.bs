@@ -365,14 +365,20 @@ script karate_man_extra_sub_089ee9cc
     beat_anim
     rest 24
     beat_anim
+    #ifdef PLUS
+    if_localized
     print_text_f 3
-    #ifdef SFX
     rest 12
     play_sfx s_f_boxing_hit_sfx_seqData
     rest 12
     play_sfx s_f_boxing_three_sfx_seqData
+    else
+    rest 24
+    print_text_f 3
+    end_if
     #else
     rest 24
+    print_text_f 3
     #endif
     beat_anim
     rest 24
@@ -439,12 +445,17 @@ script karate_man_extra_sub_089ee9cc
     beat_anim
     rest 24
     beat_anim
-    #ifdef SFX
+    #ifdef PLUS
+    if_localized
     print_text_f 2
     rest 12
     play_sfx s_f_boxing_hit_sfx_seqData
     rest 12
     play_sfx s_f_boxing_two_sfx_seqData
+    else
+    rest 24
+    print_text_f 2
+    end_if
     #else
     rest 24
     print_text_f 2

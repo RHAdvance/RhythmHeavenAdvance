@@ -84,7 +84,7 @@
 #define CHAR_RIGHT_ARROW_UP     0xE010
 #define CHAR_GBA                0xE011
 
-#define CHAR_1_PIXEL_GAP_UTF8        "\xEE\x80\x80"
+#define CHAR_2_PIXEL_GAP_UTF8        "\xEE\x80\x80"
 #define CHAR_LEFT_DPAD_UTF8          "\xEE\x80\x81"
 #define CHAR_RIGHT_DPAD_UTF8         "\xEE\x80\x82"
 #define CHAR_UP_DPAD_UTF8            "\xEE\x80\x83"
@@ -102,3 +102,4 @@
 #define CHAR_LEFT_ARROW_UP_UTF8      "\xEE\x80\x8F"
 #define CHAR_RIGHT_ARROW_UP_UTF8     "\xEE\x80\x90"
 #define CHAR_GBA_UTF8                "\xEE\x80\x91"
+#define CHAR_1_PIXEL_GAP_UTF8        "\xEE\x80\x92"

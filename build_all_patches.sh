@@ -5,7 +5,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
-FEATURE_FLAGS=(SFX PLUS PLAYTEST PARADISE RUMBLE)
+FEATURE_FLAGS=(PLUS PLAYTEST PARADISE RUMBLE)
 TARGET="rhythmheavenadvance"
 PATCH_DIR="patches"
 TOTAL_COMBINATIONS=$((1 << ${#FEATURE_FLAGS[@]}))
@@ -69,7 +69,7 @@ for ((mask = 0; mask < TOTAL_COMBINATIONS; mask++)); do
     make_common_args=(--no-print-directory "MAKE_OUTPUT=$MAKE_OUTPUT_MODE")
 
     make "${make_common_args[@]}" distclean
-    make_args=("${make_common_args[@]}" -j"$JOBS")
+    make_args=("${make_common_args[@]}" -j"$JOBS" GIT_COMMIT="$(git rev-parse --short=7 HEAD)")
     if [[ ${#enabled_features[@]} -ne 0 ]]; then
         make_args+=("FEATURES=$features_value")
     fi

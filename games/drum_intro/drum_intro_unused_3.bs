@@ -88,6 +88,9 @@ script script_drum_intro_unused_3_main
     set_tempo 120
     set_music_volume 40
     mod_music_volume 156, 96
+    #ifdef PLUS
+    play_music s_dr_sam_bgm_seqData
+    #endif
     dmi_event02 1
     rest 24
     rest 24
@@ -106,7 +109,11 @@ script script_drum_intro_unused_3_main
     run gameplay_display_text_and_wait
     dmi_event02 1
     rest 12
+    #ifdef PLUS
+    mod_music_volume 0, 12
+    #else
     mod_music_volume 0, 48
+    #endif
     dmi_event02 2
     print_text_s D_0805e490
     run gameplay_display_text_and_wait
@@ -185,13 +192,12 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
+        spawn_cue CUE_KICK
+        rest 24
         #ifdef PLUS
         play_music s_kawasemi_bgm_seqData
         #endif
-        spawn_cue CUE_KICK
-        rest 24
         spawn_cue CUE_SNARE
         rest 24
         spawn_cue CUE_KICK
@@ -332,15 +338,14 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_CYMBAL
         no_op
         spawn_cue CUE_KICK
         rest 24
+        #ifdef PLUS
+        play_music s_kawasemi_bgm_seqData
+        #endif
         spawn_cue CUE_SNARE
         rest 24
         spawn_cue CUE_KICK
@@ -477,15 +482,14 @@ script script_drum_intro_unused_3_main
         call drum_intro_unused_3_sub_08a36a5c
         clear_text_s
         dmi_event05 2
-        rest 24
         start_tracking_inputs
-        #ifdef PLUS
-        play_music s_kawasemi_bgm_seqData
-        #endif
         spawn_cue CUE_CYMBAL
         no_op
         spawn_cue CUE_KICK
         rest 24
+        #ifdef PLUS
+        play_music s_kawasemi_bgm_seqData
+        #endif
         spawn_cue CUE_SNARE
         rest 24
         spawn_cue CUE_KICK
@@ -546,6 +550,9 @@ script script_drum_intro_unused_3_main
     set_tempo 120
     set_music_volume 40
     mod_music_volume 156, 96
+    #ifdef PLUS
+    play_music s_dr_sam_bgm_seqData
+    #endif
     dmi_event02 2
     print_text_s D_0805e858
     run gameplay_display_text_and_wait

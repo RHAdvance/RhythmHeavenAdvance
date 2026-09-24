@@ -339,5 +339,14 @@ void medal_corner_scene_stop(void *sVar, s32 dArg) {
 
 // Play Music (Script Function)
 void medal_corner_start_music(void) {
-    scene_set_music(gMedalCorner->menuData->bgm);
+    struct SongHeader* bgm = gMedalCorner->menuData->bgm;
+
+    if (
+        bgm == &s_lesson_sel_bgm_seqData &&
+        CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC) != 0
+    ) {
+        bgm = &s_lesson_sel_bgm_english_seqData;
+    }
+
+    scene_set_music(bgm);
 }

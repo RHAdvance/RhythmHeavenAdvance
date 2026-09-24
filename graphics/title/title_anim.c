@@ -76,38 +76,65 @@ struct Animation anim_title_stars_appear[] = {
 };
 
 // [D_0890d4a0] Logo - ?申?申
-struct Animation anim_title_logo_ri[] = {
+struct Animation anim_title_logo_rh[] = {
     /* 000 */ { title_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4b0] Logo - ?申Y
-struct Animation anim_title_logo_zu[] = {
+struct Animation anim_title_logo_yt[] = {
     /* 000 */ { title_cel016, 4 },
     /* End */ END_ANIMATION
 };
 
 // [D_0890d4c0] Logo - ?申?申
-struct Animation anim_title_logo_mu[] = {
+struct Animation anim_title_logo_hm[] = {
     /* 000 */ { title_cel017, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4d0] Logo - ?申V
-struct Animation anim_title_logo_ten[] = {
+struct Animation anim_title_logo_he[] = {
     /* 000 */ { title_cel018, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?申?申
-struct Animation anim_title_logo_goku[] = {
+struct Animation anim_title_logo_av[] = {
+    /* 000 */ { title_cel100, 4 },
+    /* End */ END_ANIMATION
+};
+
+struct Animation anim_title_logo_en[] = {
     /* 000 */ { title_cel019, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?申?申
-struct Animation anim_title_logo_av[] = {
-    /* 000 */ { title_cel100, 4 },
+struct Animation anim_title_logo_rh_paradise[] = {
+    /* 000 */ { title_cel094, 4 },
+    /* End */ END_ANIMATION
+};
+
+struct Animation anim_title_logo_yt_paradise[] = {
+    /* 000 */ { title_cel095, 4 },
+    /* End */ END_ANIMATION
+};
+
+struct Animation anim_title_logo_hm_paradise[] = {
+    /* 000 */ { title_cel096, 4 },
+    /* End */ END_ANIMATION
+};
+
+struct Animation anim_title_logo_pa[] = {
+    /* 000 */ { title_cel097, 4 },
+    /* End */ END_ANIMATION
+};
+
+struct Animation anim_title_logo_rad[] = {
+    /* 000 */ { title_cel099, 4 },
+    /* End */ END_ANIMATION
+};
+
+struct Animation anim_title_logo_ise[] = {
+    /* 000 */ { title_cel098, 4 },
     /* End */ END_ANIMATION
 };
 

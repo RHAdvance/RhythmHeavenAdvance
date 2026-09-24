@@ -51,6 +51,11 @@ define step
 	$(V)echo -e "$(GREEN)[STEP] $(1)$(NO_COL)"
 endef
 
+define newline
+
+
+endef
+
 # Generic print function for make rules
 ifeq ($(MAKE_OUTPUT),quiet)
 define print
@@ -67,7 +72,7 @@ REV    := 0 # Note the REV 1 is not supported by the team and bugs or issues rel
 
 # Preprocessor defines
 
-# Features: SFX, PLUS, PLAYTEST, PARADISE, RUMBLE
+# Features: PARADISE, PLUS, PLAYTEST, RUMBLE
 FEATURES ?= 
 DEFINES := REV=$(REV) $(FEATURES)
 C_DEFINES := $(foreach d,$(DEFINES),-D$(d))
@@ -167,7 +172,7 @@ default: $(OUTPUT).gba
 clean:
 	$(call step,clean...)
 	$(V)rm -fr build/asm build/bin build/data build/games build/graphics build/src
-	$(V)rm -f build/advance.ld build/*.elf build/*.map build/*.gba
+	$(V)rm -f build/advance.ld build/*.elf build/*.map build/*.gba build/*.arglist
 
 distclean:
 	$(call step,full clean...)
@@ -198,9 +203,12 @@ $(OUTPUT).gba	:	$(OUTPUT).elf
 	$(V)$(OBJCOPY) --pad-to=0x2000000 --gap-fill=0x00 -O binary $< $@
 	$(call step,ROM Assembled!)
 
-$(OUTPUT).elf	:	$(OFILES) | $(BUILD)/$(LD_SCRIPT)
+$(OUTPUT).elf: $(BUILD)/linker.arglist | $(BUILD)/$(LD_SCRIPT)
 	$(V)echo "Building ROM..."
-	$(V)$(LD) $(OFILES) tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(BUILD)/$(LD_SCRIPT) -Wl,--no-warn-rwx-segments,-Map $(@:.elf=.map) -nostartfiles -o $@
+	$(V)$(LD) @$(BUILD)/linker.arglist tools/agbcc/lib/libgcc.a tools/agbcc/lib/libc.a -T $(BUILD)/$(LD_SCRIPT) -Wl,--no-warn-rwx-segments,-Map,$(@:.elf=.map) -nostartfiles -o $@
+
+$(BUILD)/linker.arglist: $(OFILES) | $(BUILD)
+	$(file >$@,$(foreach f,$(OFILES),$(f)$(newline)))
 
 
 # Binary data
