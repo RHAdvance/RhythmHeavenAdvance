@@ -699,6 +699,7 @@ endstruct
 @ [0xB3] Set Localized Condition Flag
 .set BEATSCRIPT_LOCALIZED_COND_CURRENT_GAME, 0
 .set BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX, 1
+.set BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_MUSIC, 2
 
 .macro set_localized condition
     beatscript_cmd 0xB3, 0, 0, \condition
@@ -714,4 +715,14 @@ endstruct
 @ [0xB5] Play Sound Effect (Localized)
 .macro play_sfx_localized jp_sound, en_sound
     beatscript_cmd 0xB5, 0, \en_sound, \jp_sound
+.endm
+
+@ [0xB6] If Localized Condition Flag Set
+.macro if_localized
+    beatscript_cmd 0xB6, 0, 0, 0
+.endm
+
+@ [0xB7] Play Music (in default player) (Localized)
+.macro play_music_localized jp_music, en_music
+    beatscript_cmd 0xB7, 0, \en_music, \jp_music
 .endm

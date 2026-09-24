@@ -422,17 +422,22 @@ script script_fireworks_practice
         rest 24
         rest 24
         @fireworks_play_sfx SFX_THREE
+        set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
+        if_localized
+        play_sfx_synced s_hanabi_1_en_seqData, 150, 256
+        else
         play_sfx_synced s_hanabi_1_seqData, 150, 256
+        end_if
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
         rest 24
-        play_sfx s_hanabi_2_seqData
+        play_sfx_localized s_hanabi_2_seqData, s_hanabi_2_en_seqData
         print_text_f D_0805cea4
         rest 24
-        play_sfx s_hanabi_3_seqData
+        play_sfx_localized s_hanabi_3_seqData, s_hanabi_3_en_seqData
         print_text_f D_0805cec8
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805ceec
         rest 24
         clear_text_f
@@ -442,17 +447,22 @@ script script_fireworks_practice
         rest 24
         rest 24
         @fireworks_play_sfx SFX_THREE
+        set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
+        if_localized
+        play_sfx_synced s_hanabi_1_en_seqData, 150, 256
+        else
         play_sfx_synced s_hanabi_1_seqData, 150, 256
+        end_if
         print_text_f D_0805ce80
         spawn_cue CUE_NORMAL_FIREWORK
         rest 24
-        play_sfx s_hanabi_2_seqData
+        play_sfx_localized s_hanabi_2_seqData, s_hanabi_2_en_seqData
         print_text_f D_0805cea4
         rest 24
-        play_sfx s_hanabi_3_seqData
+        play_sfx_localized s_hanabi_3_seqData, s_hanabi_3_en_seqData
         print_text_f D_0805cec8
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805ceec
         rest 24
         clear_text_f
@@ -492,7 +502,7 @@ script script_fireworks_practice
         print_text_f D_0805cfac
         spawn_cue CUE_SPIRIT_SPARKLER
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805cfcc
         rest 24
         clear_text_f
@@ -513,7 +523,7 @@ script script_fireworks_practice
         print_text_f D_0805cfac
         spawn_cue CUE_SPIRIT_SPARKLER
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805cfcc
         rest 24
         clear_text_f
@@ -552,7 +562,7 @@ script script_fireworks_practice
         rest 8
         print_text_f D_0805d090
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805d0b0
         rest 24
         clear_text_f
@@ -571,7 +581,7 @@ script script_fireworks_practice
         rest 8
         print_text_f D_0805d090
         rest 24
-        play_sfx s_hanabi_hai_seqData
+        play_sfx_localized s_hanabi_hai_seqData, s_hanabi_hai_en_seqData
         print_text_f D_0805d0b0
         rest 24
         clear_text_f

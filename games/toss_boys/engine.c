@@ -330,6 +330,247 @@ struct DrumTechInstrument toss_boys_drumtech_bank[] = {
     }
 };
 
+struct DrumTechInstrument toss_boys_en_drumtech_bank[] = {
+    /* Drum 000 */ {
+        /* SoundPlayer  */ -1,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.0),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ NULL
+    },
+    /* Drum 001 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_blue1_en_seqData
+    },
+    /* Drum 002 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_blue2_en_seqData
+    },
+    /* Drum 003 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_blue3_en_seqData
+    },
+    /* Drum 004 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_yelw1_en_seqData
+    },
+    /* Drum 005 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_yelw2_en_seqData
+    },
+    /* Drum 006 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_yelw3_en_seqData
+    },
+    /* Drum 007 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_red_en_seqData
+    },
+    /* Drum 008 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_red_en_seqData
+    },
+    /* Drum 009 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_red_en_seqData
+    },
+    /* Drum 0010 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_red1_en_seqData
+    },
+    /* Drum 011 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_red2_en_seqData
+    },
+    /* Drum 012 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_red3_en_seqData
+    },
+    /* Drum 013 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_yelw1_en_seqData
+    },
+    /* Drum 014 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_yelw2_en_seqData
+    },
+    /* Drum 015 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_yelw3_en_seqData
+    },
+    /* Drum 016 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_blue_en_seqData
+    },
+    /* Drum 017 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_blue_en_seqData
+    },
+    /* Drum 018 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_blue_en_seqData
+    },
+    /* Drum 019 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_red1_en_seqData
+    },
+    /* Drum 020 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_red2_en_seqData
+    },
+    /* Drum 021 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_red3_en_seqData
+    },
+    /* Drum 022 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_blue1_en_seqData
+    },
+    /* Drum 023 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_blue2_en_seqData
+    },
+    /* Drum 024 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_blue3_en_seqData
+    },
+    /* Drum 025 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_yelw_en_seqData
+    },
+    /* Drum 026 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_yelw_en_seqData
+    },
+    /* Drum 027 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.5),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_yelw_en_seqData
+    },
+    /* Drum 028 */ {
+        /* SoundPlayer  */ SFX_PLAYER_1,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.25),
+        /* Base Pitch   */ INT_TO_FIXED(2.0),
+        /* Sound Effect */ &s_toss_red_before_en_seqData
+    },
+    /* Drum 029 */ {
+        /* SoundPlayer  */ SFX_PLAYER_1,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.25),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_before_en_seqData
+    },
+    /* Drum 030 */ {
+        /* SoundPlayer  */ SFX_PLAYER_1,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.25),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_before_en_seqData
+    },
+    /* Drum 031 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.0),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_red_break_en_seqData
+    },
+    /* Drum 032 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.0),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_blue_break_en_seqData
+    },
+    /* Drum 033 */ {
+        /* SoundPlayer  */ SFX_PLAYER_2,
+        /* Duration     */ 0,
+        /* Base Volume  */ INT_TO_FIXED(1.0),
+        /* Base Pitch   */ INT_TO_FIXED(0.0),
+        /* Sound Effect */ &s_toss_yelw_break_en_seqData
+    }
+};
+
 
   //  //  //  GRAPHICS DATA  //  //  //
 

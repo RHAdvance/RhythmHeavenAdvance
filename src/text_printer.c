@@ -5,6 +5,7 @@
 #include "src/lib_0804ca80.h"
 #include "src/code_080092cc.h"
 #include "data/text_printer_data.h"
+#include "memory.h"
 
 asm(".include \"include/gba.inc\"");//Temporary
 

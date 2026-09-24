@@ -49,6 +49,54 @@ struct SongHeader *const love_machine_sfx_pool_a[] = {
     NULL
 };
 
+// Sound Effect Pool EN
+struct SongHeader *const love_machine_sfx_pool_right_en[] = {
+    &s_heat_v_anataga_en_seqData,
+    &s_heat_v_anatatara_en_seqData,
+    &s_heat_v_kimiga_en_seqData,
+    NULL
+};
+
+// Sound Effect Pool EN
+struct SongHeader *const love_machine_sfx_pool_left_en[] = {
+    &s_heat_v_jituhane_en_seqData,
+    &s_heat_v_watasine_en_seqData,
+    &s_heat_v_watasitara_en_seqData,
+    NULL
+};
+
+// Sound Effect Pool EN
+struct SongHeader *const love_machine_sfx_pool_down_en[] = {
+    &s_heat_v_okubyo_en_seqData,
+    &s_heat_v_majime_en_seqData,
+    &s_heat_v_kouitta_en_seqData,
+    NULL
+};
+
+// Sound Effect Pool EN
+struct SongHeader *const love_machine_sfx_pool_up_en[] = {
+    &s_heat_v_doji_en_seqData,
+    &s_heat_v_sugoi_en_seqData,
+    &s_heat_v_koumietemo_en_seqData,
+    NULL
+};
+
+// Sound Effect Pool EN
+struct SongHeader *const love_machine_sfx_pool_b_en[] = {
+    &s_heat_v_demo_en_seqData,
+    &s_heat_v_yappari_en_seqData,
+    &s_heat_v_dakedo_en_seqData,
+    NULL
+};
+
+// Sound Effect Pool EN
+struct SongHeader *const love_machine_sfx_pool_a_en[] = {
+    &s_heat_v_suki_en_seqData,
+    &s_heat_v_kirai_en_seqData,
+    &s_heat_v_seki_en_seqData,
+    NULL
+};
+
 // [D_089e9b04] Confession Machine SFX Pool Table
 struct SongHeader *const *love_machine_sfx_table[] = {
     /* A */ love_machine_sfx_pool_a,
@@ -57,6 +105,16 @@ struct SongHeader *const *love_machine_sfx_table[] = {
     /* D */ love_machine_sfx_pool_down,
     /* L */ love_machine_sfx_pool_left,
     /* R */ love_machine_sfx_pool_right
+};
+
+// [D_089e9b04] Confession Machine SFX Pool Table EN
+struct SongHeader *const *love_machine_sfx_table_en[] = {
+    /* A */ love_machine_sfx_pool_a_en,
+    /* B */ love_machine_sfx_pool_b_en,
+    /* U */ love_machine_sfx_pool_up_en,
+    /* D */ love_machine_sfx_pool_down_en,
+    /* L */ love_machine_sfx_pool_left_en,
+    /* R */ love_machine_sfx_pool_right_en
 };
 
 // [D_089e9b1c] Confession Machine Demo BPM

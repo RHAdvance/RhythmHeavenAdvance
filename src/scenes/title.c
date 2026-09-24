@@ -36,7 +36,6 @@ void title_logo_init(void) {
     for (i = 0; i < TOTAL_TITLE_LOGO_BUBBLES; i++) {
         struct LogoBubble *bubble = &gTitle->logoBubbles[i];
         struct TitleLogoCharData *letter = &title_logo_char_data[i];
-
         bubble->active = FALSE;
         bubble->letter = sprite_create(gSpriteHandler, letter->anim, 0, letter->x, letter->y, 0x4800, 0, 0, 0x8000);
         if (letter->anim == anim_title_logo_advance) {
