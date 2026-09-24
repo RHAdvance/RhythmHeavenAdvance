@@ -54,7 +54,7 @@ jobs:
     - name: Fix git safe directory
       run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-    - name: Build rhythmheavenadvance (PLUS)
+    - name: Build rhythmheavenadvance (PLAYTEST PLUS)
       run: |
         HASH=$(git rev-parse --short=7 HEAD)
         make -j$(nproc) FEATURES="PLAYTEST PLUS" GIT_COMMIT="$HASH"
@@ -67,7 +67,7 @@ jobs:
       run: |
         make distclean
 
-    - name: Build rhythmheavenadvance (Vanilla)
+    - name: Build rhythmheavenadvance (PLAYTEST Vanilla)
       run: |
         HASH=$(git rev-parse --short=7 HEAD)
         make -j$(nproc) FEATURES="PLAYTEST" GIT_COMMIT="$HASH"
