@@ -26,7 +26,7 @@ const char D_0806a314[] =
     "\x01\x4c" " Vocals:  Sohshi Tanaka";
 
 const char D_0806a315[] =
-    "\x01\x4c" "Å@Vocals:Å@Å@Roxby";
+    "\x01\x4c" " Vocals:  Roxby";
 
 const char D_0806a32c[] =
     "\x01\x4c" " Music:\n"
