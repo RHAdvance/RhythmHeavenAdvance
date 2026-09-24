@@ -271,10 +271,11 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
-    rest 24
+    rest_localized 24, 16
     set_marking_criteria 2
     print_text_f text_rap_women_amakute_saikou
     play_sfx_localized s_f_rapW_v_AmakuteSaiko_seqData, s_f_rapW_v_AmakuteSaiko_en_seqData
+    rest_localized 0, 8
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
@@ -673,10 +674,11 @@ script script_rap_women_main
     rest 24
     beat_anim
     rest 24
-    rest 24
+    rest_localized 24, 16
     set_marking_criteria 2
     print_text_f text_rap_women_amakute_saikou
     play_sfx_localized s_f_rapW_v_AmakuteSaiko_seqData, s_f_rapW_v_AmakuteSaiko_en_seqData
+    rest_localized 0, 8
     rap_men_animate_rapper ANIM_SAIKO
     beat_anim
     rest 24
