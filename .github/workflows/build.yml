@@ -70,7 +70,7 @@ jobs:
     - name: Build rhythmheavenadvance (Vanilla)
       run: |
         HASH=$(git rev-parse --short=7 HEAD)
-        make -j$(nproc) FEATURES="PLUS" GIT_COMMIT="$HASH"
+        make -j$(nproc) FEATURES="PLAYTEST" GIT_COMMIT="$HASH"
     
     - name: Make BPS patch (Vanilla)
       run: |
