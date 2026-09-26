@@ -293,8 +293,9 @@ struct SongHeader s_rap_tanosi_kamone_en_seqData = {
     /* Song Number   */ 34
 };
 
+extern const u8 s_rap_oyatuha_saiko_en_mid[];
 struct SongHeader s_rap_oyatuha_saiko_en_seqData = {
-    /* MIDI Sequence */ s_rap_oyatuha_saiko_mid,
+    /* MIDI Sequence */ s_rap_oyatuha_saiko_en_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_RAPMEN_EN,
     /* Volume        */ 100,

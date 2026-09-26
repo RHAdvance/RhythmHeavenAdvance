@@ -70,7 +70,7 @@ script script_scene_cafe
                 rest 72
                 run cafe_load_bg_event_map, cafe_bg_map_helping_2
                 rest 24
-                play_sfx s_toss_red_red_seqData
+                play_sfx_localized s_toss_red_red_seqData, s_toss_red_red_en_seqData
                 run cafe_load_bg_event_map, cafe_bg_map_helping_3
                 rest 24
                 run cafe_load_bg_event_map, cafe_bg_map_helping_1
