@@ -17,24 +17,24 @@ const char D_0805d164[] = "Stop getting in the way!";
 
 const char D_0805d180[] = "";
 
-const char D_0805d184[] = "Ａｔ　ｔｈｅ　ｆｉｒｓｔ　ｓｉｇｎ，";
+const char D_0805d184[] = "At the first sign,";
 
-const char D_0805d198[] = "ｐｒｅｓｓ　ａｎｄ　ｈｏｌｄ　ゝ";
+const char D_0805d198[] = "press and hold "CHAR_A_BUTTON_UTF8;
 
-const char D_0805d1ac[] = "ｔｏ　ｓｔａｙ　ｓｔｉｌｌ！";
+const char D_0805d1ac[] = "to stay still!";
 
-const char D_0805d1bc[] = "Ａｎｄ　ａｔ　ｔｈｅ　ｎｅｘｔ　ｓｉｇｎ，";
+const char D_0805d1bc[] = "And at the next sign,";
 
-const char D_0805d1d0[] = "ｒｅｌｅａｓｅ　ゝ";
+const char D_0805d1d0[] = "release "CHAR_A_BUTTON_UTF8;
 
-const char D_0805d1e0[] = "ｔｏ　ｓｔａｒｔ　ｒｕｎｎｉｎｇ！";
+const char D_0805d1e0[] = "to start running!";
 
-const char D_0805d1f0[] = "Ｙｏｕ　ｒｅａｄｙ，　ｎｅｗｂｉｅ？　Ｇｏ！";
+const char D_0805d1f0[] = "You ready, newbie? Go!";
 
-const char D_0805d204[] = "Ｆｒｏｍ　ｈｅｒｅ　ｏｎ　ｏｕｔ，";
+const char D_0805d204[] = "From here on out,";
 
-const char D_0805d214[] = "ｎｏ　ｍｏｒｅ　ｓｉｇｎｓ！";
+const char D_0805d214[] = "no more signs!";
 
-const char D_0805d220[] = "Ｔｒｕｓｔ　ｙｏｕｒ　ｉｎｓｔｉｎｃｔｓ！";
+const char D_0805d220[] = "Trust your instincts!";
 
 const char D_0805d234[] = "Hushed Whispers";

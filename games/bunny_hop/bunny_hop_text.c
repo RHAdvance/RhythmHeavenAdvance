@@ -17,28 +17,28 @@ const char D_0805cc28[] = "You missed the breaks.";
 
 const char D_0805cc48[] = "You nailed the breaks!";
 
-const char D_0805cc68[] = "Ｎｅｘｔ．．．";
+const char D_0805cc68[] = "Next...";
 
-const char D_0805cc70[] = "ｒｅｓｔ　ｆｏｒ　ａ　ｔｗｏ－ｃｏｕｎｔ．";
+const char D_0805cc70[] = "rest for a two-count.";
 
 const char D_0805cc80[] = "";
 
-const char D_0805cc84[] = "ｒｅｓｔ　ｆｏｒ　ａ　ｆｏｕｒ－ｃｏｕｎｔ．";
+const char D_0805cc84[] = "rest for a four-count.";
 
-const char D_0805cc94[] = "１";
+const char D_0805cc94[] = "1";
 
-const char D_0805cc98[] = "２";
+const char D_0805cc98[] = "2";
 
-const char D_0805cc9c[] = "３";
+const char D_0805cc9c[] = "3";
 
-const char D_0805cca0[] = "４";
+const char D_0805cca0[] = "4";
 
-const char D_0805cca4[] = "ｒｅｓｔ　ｆｏｒ　ａｎ　ｅｉｇｈｔ－ｃｏｕｎｔ．";
+const char D_0805cca4[] = "rest for an eight-count.";
 
 const char D_0805ccb4[] = "Sea friends' report:";
 
-const char D_0805ccb8[] = "　　　　　　　　　　　　　　　　　　　　Ｐｒｅｓｓ　ゝ　ｏｎ　ｂｅａｔ　ｔｏ　ｈｏｐ　ａｃｒｏｓｓ．";
+const char D_0805ccb8[] = "                    Press "CHAR_A_BUTTON_UTF8" on beat to hop across.";
 
-const char D_0805ccb9[] = "Ｇｏ！";
+const char D_0805ccb9[] = "Go!";
 
-const char D_0805ccc5[] = "Ｒｅａｄｙ？";
+const char D_0805ccc5[] = "Ready?";

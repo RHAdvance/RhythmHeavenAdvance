@@ -19,48 +19,48 @@ const char D_0805e9d8[] = "The \"AWESOME!\" lines were nothing less!";
 
 const char D_0805ea04[] = "RAPNOTES from the Boys:";
 
-const char D_0805ea18[] = "Ｌｅｔ’ｓ　ｇｅｔ　ｉｎｔｏ　ｉｔ．";
+const char D_0805ea18[] = "Let's get into it.";
 
-const char D_0805ea34[] = "Ｗｅ　ｓｈｏｕｌｄ　ｄｏ　ｔｈａｔ　ａｇａｉｎ．";
+const char D_0805ea34[] = "We should do that again.";
 
-const char D_0805ea44[] = "Ｙｏ．";
+const char D_0805ea44[] = "Yo.";
 
-const char D_0805ea50[] = "Ｗａｎｎａ　ｒａｐ　ｔｏｇｅｔｈｅｒ？";
+const char D_0805ea50[] = "Wanna rap together?";
 
-const char D_0805ea6c[] = "Ｌｅｍｍｅ　ｂｒｅａｋ　ｉｔ　ｄｏｗｎ　ｆｏｒ　ｙｏｕ．";
+const char D_0805ea6c[] = "Lemme break it down for you.";
 
-const char D_0805ea84[] = "Ｐｒｅｓｓ　ゝ　ａｔ　ｔｈｅ　”Ｕｈ！”";
+const char D_0805ea84[] = "Press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 
-const char D_0805eaac[] = "Ｇｉｖｅ　ｉｔ　ａ　ｌｉｓｔｅｎ．";
+const char D_0805eaac[] = "Give it a listen.";
 
-const char D_0805eac4[] = "Ｙｏｕ　ｇｏｔ　ｉｔ？";
+const char D_0805eac4[] = "You got it?";
 
-const char D_0805ead0[] = "Ｔｒｙ　ｉｔ　ｏｕｔ！";
+const char D_0805ead0[] = "Try it out!";
 
-const char D_0805eae8[] = "Ｄｏ　ｙｏｕｒ　ｂｅｓｔ！";
+const char D_0805eae8[] = "Do your best!";
 
-const char D_0805eaf8[] = "Ｉｔ’ｓ　ａｔ　ｔｈｅ　”Ｕｈ！”";
+const char D_0805eaf8[] = "It's at the \"Uh!\"";
 
 #ifdef PARADISE
-const char D_0805eb14[] = "Ｙｏｕ　ｈａｖｅ　ｔｏ　ｐｒｅｓｓ　ゝ　ａｔ　ｔｈｅ　”Ｕｈ！”";
+const char D_0805eb14[] = "You have to press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 #else
-const char D_0805eb14[] = "Ｙｏｕ　ｇｏｔｔａ　ｐｒｅｓｓ　ゝ　ａｔ　ｔｈｅ　”Ｕｈ！”";
+const char D_0805eb14[] = "You gotta press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 #endif
 
-const char D_0805eb34[] = "ＯＫ！　Ｙｏｕ’ｖｅ　ｇｏｔ　ｉｔ！";
+const char D_0805eb34[] = "OK! You've got it!";
 
-const char D_0805eb3c[] = "Ｔｈａｔ　ｗａｓ　ａ　“.bｈｕｈ？.8”　ｌｉｎｅ．";
+const char D_0805eb3c[] = "That was a \".bhuh?.8\" line.";
 
-const char D_0805eb6c[] = "Ｎｏｗ　ｌｅｔ’ｓ　ｔｒｙ　ａ　“.9ｙａ　ｆｅｅｌ　ｍｅ？.8”　ｌｉｎｅ．";
+const char D_0805eb6c[] = "Now let's try the \".9ya feel me?.8\" line.";
 
-const char D_0805eb94[] = "Ｔａｋｅ　ａ　ｌｉｓｔｅｎ．";
+const char D_0805eb94[] = "Take a listen.";
 
-const char D_0805ebac[] = "Ｙｏｕ　ｇｏｔ　ｔｈｉｓ！";
+const char D_0805ebac[] = "You got this!";
 
-const char D_0805ebc4[] = "Ａｌｌ　ｔｈａｔ’ｓ　ｌｅｆｔ　ｉｓ　ｏｕｒ　“.aＡＷＥＳＯＭＥ！.8”　ｌｉｎｅ．";
+const char D_0805ebc4[] = "All that's left is our \".aAWESOME!.8\" line.";
 
-const char D_0805ebf4[] = "Ｇｉｖｅ　ｉｔ　ａ　ｌｉｓｔｅｎ．．．";
+const char D_0805ebf4[] = "Give it a listen...";
 
-const char D_0805ec0c[] = "Ｎｏｗ　ｆｏｌｌｏｗ　ｉｔ　ｕｐ！";
+const char D_0805ec0c[] = "Now follow it up!";
 
-const char D_0805ec24[] = "ＯＫ！　Ｙｏｕ’ｒｅ　ｐｒｅｔｔｙ　“.aａｗｅｓｏｍｅ.8”　ａｔ　ｔｈｉｓ！";
+const char D_0805ec24[] = "OK! You're pretty \".aawesome.8\" at this!";

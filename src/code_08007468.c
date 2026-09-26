@@ -731,7 +731,7 @@ void interp_screen_window_size(u16 memID, u32 window, u32 duration,
 /* STRING */
 
 
-extern char D_08936c64[]; // "?��O?��P?��Q?��R?��S?��T?��U?��V?��W?��X"
+extern char D_08936c64[];
 
 
 // Copy Substring

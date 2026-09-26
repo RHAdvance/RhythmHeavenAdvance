@@ -21,59 +21,59 @@ const char D_08067754[] = "The ending was pitch perfect!";
 
 const char D_08067778[] = "The audience says...";
 
-const char text_bon_odori_ha[] = ".0:0" "‚g‚‚`";
+const char text_bon_odori_ha[] = ".0:0" "Haa~";
 
-const char text_bon_odori_hanabi_agare_ba[] = ".0:0" "‚g‚‚‚‚‚‚‰@‚‚‡‚‚’‚…@‚‚‚`";
+const char text_bon_odori_hanabi_agare_ba[] = ".0:0" "Hanabi agare ba~";
 
-const char text_bon_odori_don_don_pan_pan[] = ".1:0" "‚c‚|‚@‚„‚|‚@" ".2:0" "‚‚|‚@‚‚|‚";
+const char text_bon_odori_don_don_pan_pan[] = ".1:0" "Do-n do-n " ".2:0" "pa-n pa-n";
 
-const char text_bon_odori_dondo_pan_pan[] = ".1:0" "‚c‚‚‚„‚@" ".2:0" "‚‚|‚@‚‚‚";
+const char text_bon_odori_dondo_pan_pan[] = ".1:0" "Dondo " ".2:0" "pa-n pan";
 
-const char text_bon_odori_haa[] = ".0:0" "‚g‚‚`@‚`‚ˆ`";
+const char text_bon_odori_haa[] = ".0:0" "Ha~ Ah~";
 
-const char text_bon_odori_kansei_agaru[] = ".0:0" "‚j‚‚‚“‚…‚‰@‚‚‡‚‚’‚•`";
+const char text_bon_odori_kansei_agaru[] = ".0:0" "Kansei agaru~";
 
-const char text_bon_odori_ninki_agare_ba[] = ".0:0" "‚m‚‰‚‚‹‚‰@‚‚‡‚‚’‚…@‚‚‚`";
+const char text_bon_odori_ninki_agare_ba[] = ".0:0" "Ninki agare ba~";
 
-const char text_bon_odori_kyuryo_agaru[] = ".0:0" "‚j‚™‚•‚•‚’‚™‚‚•@‚‚‡‚‚’‚•`";
+const char text_bon_odori_kyuryo_agaru[] = ".0:0" "Kyuryou agaru~";
 
-const char text_bon_odori_matsuri_da_wasshoi[] = ".0:0" "‚l‚‚”‚“‚•‚’‚‰@‚„‚@‚—‚‚“‚“‚ˆ‚‚‰I";
+const char text_bon_odori_matsuri_da_wasshoi[] = ".0:0" "Matsuri da wasshoi!";
 
-const char text_bon_odori_dondo_panpa_dondo_panpa[] = ".1:0" "‚c‚‚‚„‚@" ".2:0" "‚‚‚‚‚@" ".1:0" "‚„‚‚‚„‚@" ".2:0" "‚‚‚‚‚";
+const char text_bon_odori_dondo_panpa_dondo_panpa[] = ".1:0" "Dondo " ".2:0" "panpa " ".1:0" "dondo " ".2:0" "panpa";
 
-const char text_bon_odori_nippon_chu_ga_wasshoi[] = ".0:0" "‚m‚‰‚‚‚‚@‚ƒ‚ˆ‚•‚•@‚‡‚@‚—‚‚“‚“‚ˆ‚‚‰I";
+const char text_bon_odori_nippon_chu_ga_wasshoi[] = ".0:0" "Nippon chuu ga wasshoi!";
 
-const char text_bon_odori_don_don_pan[] = ".1:0" "‚c‚|‚@‚„‚|‚@" ".2:0" "‚‚‚";
+const char text_bon_odori_don_don_pan[] = ".1:0" "Do-n do-n " ".2:0" "pan";
 
-const char text_bon_odori_sore_hikkuri_kaette[] = ".0:0" "‚r‚‚’‚…@‚ˆ‚‰‚‹‚‹‚•‚’‚‰@‚‹‚‚…‚”‚”‚…";
+const char text_bon_odori_sore_hikkuri_kaette[] = ".0:0" "Sore hikkuri kaette";
 
-const char text_bon_odori_ha_bon_odori[] = ".0:0" "‚g‚‚`@‚a‚‚@‚n‚„‚‚’‚‰`";
+const char text_bon_odori_ha_bon_odori[] = ".0:0" "Ha~ Bon Odori";
 
-const char text_bon_odori_dondo_panpa[] = ".1:0" "‚c‚‚‚„‚@" ".2:0" "‚‚‚‚‚";
+const char text_bon_odori_dondo_panpa[] = ".1:0" "Dondo " ".2:0" "panpa";
 
-const char text_bon_odori_don_pan_pan[] = ".1:0" "‚c‚|‚@" ".2:0" "‚‚|‚@‚‚‚";
+const char text_bon_odori_don_pan_pan[] = ".1:0" "Do-n " ".2:0" "pa-n pan";
 
-const char text_bon_odori_ame_ga_agare_ba[] = ".0:0" "‚`‚‚…@‚‡‚@‚‚‡‚‚’‚…@‚‚‚`";
+const char text_bon_odori_ame_ga_agare_ba[] = ".0:0" "Ame ga agare ba~";
 
-const char text_bon_odori_yagura_ni_agaru[] = ".0:0" "‚x‚‚‡‚•‚’‚@‚‚‰@‚‚‡‚‚’‚•`";
+const char text_bon_odori_yagura_ni_agaru[] = ".0:0" "Yagura ni agaru~";
 
-const char text_bon_odori_hora_matsuri_da_wasshoi[] = ".0:0" "‚g‚‚’‚I@‚l‚‚”‚“‚•‚’‚‰@‚„‚@‚—‚‚“‚“‚ˆ‚‚‰I";
+const char text_bon_odori_hora_matsuri_da_wasshoi[] = ".0:0" "Hora! Matsuri da wasshoi!";
 
-const char text_bon_odori_korezo[] = ".0:0" "‚j‚‚’‚…‚š‚";
+const char text_bon_odori_korezo[] = ".0:0" "Korezo";
 
-const char text_bon_odori_meido_in_japan[] = ".0:0" "‚‚‚„‚…@‚‰‚@‚i‚" ".2" "‚o‚`‚m";
+const char text_bon_odori_meido_in_japan[] = ".0:0" "made in Ja" ".2" "PAN";
 
-const char text_bon_odori_pan_pan[] = ".2:0" "‚o‚‚@‚‚‚";
+const char text_bon_odori_pan_pan[] = ".2:0" "Pan pan";
 
-const char text_bon_odori_don_don_pan_pan_2[] = ".1:0" "‚c‚|‚@‚„‚|‚@" ".2:0" "‚‚|‚@‚‚‚";
+const char text_bon_odori_don_don_pan_pan_2[] = ".1:0" "Do-n do-n " ".2:0" "pa-n pan";
 
-const char D_08067a84[] = ".6:1" "‚v‚…‚Œ‚ƒ‚‚‚…@‚”‚@‚”‚ˆ‚…@‚a‚‚@‚e‚…‚“‚”‚‰‚–‚‚ŒI";
+const char D_08067a84[] = ".6:1" "Welcome to the Bon Festival!";
 
-const char D_08067aa4[] = ".6:1" "‚v‚ˆ‚…‚@‚—‚…@‚“‚‚™@h‚o‚‚Ch@‚™‚‚•@‚ƒ‚Œ‚‚I";
+const char D_08067aa4[] = ".6:1" "When we say \"Pan,\" you clap!";
 
-const char D_08067ad0[] = ".6:0" "‚m‚‰‚ƒ‚…@‚ƒ‚Œ‚‚‚‚‰‚‚‡I";
+const char D_08067ad0[] = ".6:0" "Nice clapping!";
 
-const char D_08067adc[] = ".6:1" "‚v‚ˆ‚…‚@‚—‚…@‚“‚‚™@h‚o‚‚‚‚Ch@‚ƒ‚Œ‚‚@‚”‚—‚‰‚ƒ‚…I";
+const char D_08067adc[] = ".6:1" "When we say \"Panpa,\" clap twice!";
 
-const char D_08067b00[] = ".6:1" "‚k‚‚‚‹‚“@‚Œ‚‰‚‹‚…@‚™‚‚•f‚–‚…@‚‡‚‚”@‚‰‚”I";
+const char D_08067b00[] = ".6:1" "Looks like you've got it!";
 
