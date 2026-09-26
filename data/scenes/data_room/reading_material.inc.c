@@ -1202,7 +1202,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Lemonici\n"
             "+ Opera Zebb\n"
             "+ Kayyluhh\n"
-            "\n"
+            "+ Xx_Player25_xX\n"
             "\n"
             "\n"
 			"Special Thanks:\n"
