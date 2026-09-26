@@ -1200,11 +1200,17 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Lilynell\n"
 			"+ acerbt\n"
 			"+ Lemonici\n"
+            "+ Opera Zebb\n"
+            "+ Kayyluhh\n"
+            "\n"
+            "\n"
             "\n"
 			"Special Thanks:\n"
 			"+ The decomp folks again\n"
 			"+ Everyone in the Rhythm Heaven Advance Discord\n"
+            "+ The Detail Detectors (You know who you are!)\n"
 			"  ... and you!\n"
+            "\n"
             "Thank you all for your hard work!\n"
             "And thank YOU for playing this patch!\n",
         /* STYLE ---------------------------------------------------------- */

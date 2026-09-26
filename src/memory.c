@@ -335,6 +335,8 @@ s32 copy_to_save_buffer(u8 *cartRAM) {
     if(buffer->data.totalMedals > MAX_MEDALS) {
         buffer->data.totalMedals = MAX_MEDALS;
     }
+
+    set_reading_material_unlocked(&buffer->data, READING_MATERIAL_CREDITS, TRUE);
     
     SET_ADVANCE_FLAG(buffer->data.advanceFlags, ADVANCE_FLAG_SAVE_CONVERTED);
 
