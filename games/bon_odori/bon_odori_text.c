@@ -35,7 +35,7 @@ const char text_bon_odori_kansei_agaru[] = ".0:0" "Kansei agaru~";
 
 const char text_bon_odori_ninki_agare_ba[] = ".0:0" "Ninki agare ba~";
 
-const char text_bon_odori_kyuryo_agaru[] = ".0:0" "Kyuryou agaru~";
+const char text_bon_odori_kyuryo_agaru[] = ".0:0" "Kyuuryou agaru~";
 
 const char text_bon_odori_matsuri_da_wasshoi[] = ".0:0" "Matsuri da wasshoi!";
 

@@ -39,7 +39,7 @@ const char text_bon_dance_panpa_don_pan[] = ".2:0" "Panpa " ".1:0" "do-n " ".2:0
 
 const char text_bon_dance_ninki_agare_ba[] = ".0:0" "Ninki agare ba~";
 
-const char text_bon_dance_kyuryo_agaru[] = ".0:0" "Kyuryou agaru~";
+const char text_bon_dance_kyuryo_agaru[] = ".0:0" "Kyuuryou agaru~";
 
 const char text_bon_dance_matsuri_da_wasshoi[] = ".0:0" "Matsuri da wasshoi!";
 
