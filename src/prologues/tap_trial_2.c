@@ -48,7 +48,11 @@ void tap_trial_2_prologue_engine_start(u32 ver) {
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
 
+    #ifdef PLUS
     gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_tap_trial_2_prologue_title, 0, 112, 100, 0, 1, 0x7f, 0x8000);
+    #else
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_tap_trial_prologue_title, 0, 120, 85, 0, 1, 0x7f, 0x8000);
+    #endif
 }
 
 

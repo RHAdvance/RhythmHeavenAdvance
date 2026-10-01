@@ -47,8 +47,11 @@ void toss_boys_2_prologue_engine_start(u32 ver) {
     func_08047a14();
     scene_show_obj_layer();
     scene_set_bg_layer_display(BG_LAYER_1, TRUE, 0, 0, 0, 29, 1);
-
+    #ifdef PLUS
     gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_toss_boys_2_prologue_title, 0, 120, 110, 0, 0, 0x7f, 0);
+    #else
+    gPrologueEngineData->textSprite = sprite_create(gSpriteHandler, anim_toss_boys_prologue_title, 0, 120, 127, 0, 0, 0x7f, 0);
+    #endif
 }
 
 
