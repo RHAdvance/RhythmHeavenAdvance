@@ -1,4 +1,5 @@
 #include "engines/drum_studio.h"
+#include "text.h"
 
 
   //  //  //  DRUM SAMURAI DATA  //  //  //
@@ -127,11 +128,11 @@ const char D_08059fb4[] = "\nAim for the start.";
 
 const char D_08059fd0[] = "\nStay focused!";
 
-const char D_08059fe8[] = "\nPress ‡N, too.";
+const char D_08059fe8[] = "\nPress "CHAR_B_BUTTON_UTF8", too.";
 
-const char D_0805a004[] = "\nPress ‡L, too.";
+const char D_0805a004[] = "\nPress "CHAR_R_SHOULDER_BUTTON_UTF8", too.";
 
-const char D_0805a020[] = "\nPress ‡N and ‡L together.";
+const char D_0805a020[] = "\nPress "CHAR_B_BUTTON_UTF8" and "CHAR_R_SHOULDER_BUTTON_UTF8" together.";
 
 const char D_0805a038[] = "\nDon't rush it.";
 

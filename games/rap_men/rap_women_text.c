@@ -19,9 +19,9 @@ const char D_08067d44[] = "The \"AWESOME!\" lines really were!";
 
 const char D_08067d70[] = "RAPNOTES from the Girls:";
 
-const char D_08067d84[] = "Ｓｈａｌｌ　ｗｅ？";
+const char D_08067d84[] = "Shall we?";
 
-const char D_08067d90[] = "Ｗｅ　ｓｈｏｕｌｄ　ｄｏ　ｔｈａｔ　ａｇａｉｎ　ｓｏｍｅｔｉｍｅ！";
+const char D_08067d90[] = "We should do that again sometime!";
 
 const char D_08067da0[] = "The \"huh?\" lines were baffling.";
 
@@ -37,6 +37,6 @@ const char D_08067e6c[] = "The \"AWESOME!\" lines really were!";
 
 const char D_08067e98[] = "RAPNOTES from the Girls:";
 
-const char D_08067eb0[] = "Ｓｈａｌｌ　ｗｅ？";
+const char D_08067eb0[] = "Shall we?";
 
-const char D_08067ebc[] = "Ｗｅ　ｓｈｏｕｌｄ　ｄｏ　ｔｈａｔ　ａｇａｉｎ　ｓｏｍｅｔｉｍｅ！";
+const char D_08067ebc[] = "We should do that again sometime!";

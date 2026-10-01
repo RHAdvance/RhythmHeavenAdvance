@@ -76,63 +76,63 @@ return
 @ Rap Men - Text
 
 text text_rap_men_sanji_desu_ka
-    .asciz ".b:1Ｉｔ’ｓ　３　ＰＭ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1It's 3 PM, .b:0huh?.8:1"
 endtext
 
 text text_rap_men_oyatsu_desu_ka
-    .asciz ".b:1Ｉｔ’ｓ　ｓｎａｃｋ　ｔｉｍｅ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1It's snack time, .b:0huh?.8:1"
 endtext
 
 text text_rap_men_honto_desu_ka
-    .asciz ".b:1Ｍａｙｂｅ　ｓｏ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1Maybe so, .b:0huh?.8:1"
 endtext
 
 text text_rap_men_wakarimasu_ka
-    .asciz ".b:1Ｙｏｕ　ｇｅｔ　ｉｔ　ｎｏｗ，　.b:0ｈｕｈ？.8:1"
+    .asciz ".b:1You get it now, .b:0huh?.8:1"
 endtext
 
 text text_rap_men_oishii_kamo_ne
-    .asciz ".9:1Ｔａｓｔｙ　ｓｎａｃｋｓ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1Tasty snacks, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_men_herushii_kamo_ne
-    .asciz ".9:1Ｈｅａｌｔｈｙ　ｓｎａｃｋｓ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1Healthy snacks, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_men_ore_no_sei_kamo_ne
-    .asciz ".9:1Ｍｉｇｈｔ’ｖｅ　ｂｅｅｎ　ｕｓ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1Might've been us, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_men_sore_mo_sou_kamo_ne
-    .asciz ".9:1Ｔｈａｔ’ｓ　ｈｏｗ　ｉｔ　ｂｅ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1That's how it be, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_men_tanoshii_kamo_ne
-    .asciz ".9:1Ｈａｖｉｎ’　ｆｕｎ，　.9:0ｙａ　ｆｅｅｌ　ｍｅ？.8:1"
+    .asciz ".9:1Havin' fun, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_men_oyatsu_wa_saikou
-    .asciz ".a:1Ｓｎａｃｋｉｎｇ　ｉｓ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1Snacking is .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_men_kibun_wa_saikou
-    .asciz ".a:1Ｉ　ｆｅｅｌ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1I feel .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_men_ore_tte_saikou
-    .asciz ".a:1Ｗｅ　ａｒｅ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:1"
+    .asciz ".a:1We are .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_men_kimi_tte_saikou
-    .asciz ".a:1Ｙｏｕ　ａｒｅ　.a:0ｓｏ　ＡＷＥＳＯＭＥ！.8:0"
+    .asciz ".a:1You are .a:0so AWESOME!.8:0"
 endtext
 
 text text_rap_men_oyatsu_ga_nai_yo
-    .asciz ".a:1Ｗａｉｔ　ａ　ｓｅｃ，　ｗｅ　.a:0ＬＯＳＴ　ＳＯＭＥ！.8:1"
+    .asciz ".a:1Wait a sec, we .a:0LOST SOME!.8:1"
 endtext
 
 text text_rap_men_ore_shiranai_yo
-    .asciz ".a:1Ｇｕｅｓｓ　ｉｔ’ｓ　ｈｏｗ　ｗｅ　.a:0ＬＯＳＴ　ＳＯＭＥ！.8:1"
+    .asciz ".a:1Guess it's how we .a:0LOST SOME!.8:1"
 endtext
 
 
