@@ -624,7 +624,7 @@ void cafe_print_dialogue(void) {
             //
             //         "That's right."
             //         "Not right now."
-            #ifdef PARADISE
+            #ifdef BRIT
             string = "\0054" "\0018" "Are you just practising so\n"
             #else
             string = "\0054" "\0018" "Are you just practicing so\n"

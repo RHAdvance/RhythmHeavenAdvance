@@ -41,7 +41,7 @@ const char D_0805eae8[] = "Ｄｏ　ｙｏｕｒ　ｂｅｓｔ！";
 
 const char D_0805eaf8[] = "Ｉｔ’ｓ　ａｔ　ｔｈｅ　”Ｕｈ！”";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805eb14[] = "Ｙｏｕ　ｈａｖｅ　ｔｏ　ｐｒｅｓｓ　ゝ　ａｔ　ｔｈｅ　”Ｕｈ！”";
 #else
 const char D_0805eb14[] = "Ｙｏｕ　ｇｏｔｔａ　ｐｒｅｓｓ　ゝ　ａｔ　ｔｈｅ　”Ｕｈ！”";

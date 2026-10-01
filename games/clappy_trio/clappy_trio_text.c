@@ -45,7 +45,7 @@ const char D_0805af30[] = "We clap our hands on a steady beat.";
 
 const char D_0805af48[] = "You do the third clap, OK?";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805af60[] = "Let's practise!";
 #else
 const char D_0805af60[] = "Let's practice!";

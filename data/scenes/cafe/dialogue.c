@@ -404,7 +404,7 @@ const char *cafe_dialogue_rhythm_sense[] = {
     /* ------------------------------------------------ */
         "\n"
         "When your sense of rhythm\n"
-        #ifdef PARADISE
+        #ifdef BRIT
         "improves... that has to be\n"
         #else
         "improves... that's gotta be\n"

@@ -248,7 +248,7 @@ struct StudioEntry studio_song_table[] = {
         /* Drum Script */ script_studio_game_select_2
     },
     /* CAFE */ {
-        #ifdef PARADISE
+        #ifdef BRIT
         /* Full Title  */ "Caf‡Q Counselling",
         #else
         /* Full Title  */ "Caf‡Q Counseling",

@@ -33,7 +33,7 @@ const char D_0805dc0c[] = "ａｎｄ　ゝ　ｆｏｒ　ｍｅ，";
 
 const char D_0805dc24[] = "ａｎｄ　ｗｅ’ｌｌ　ｔｒａｎｓｆｏｒｍ！";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805dc38[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｓｅ　ｆｏｒ　ａ　ｂｉｔ！";
 #else
 const char D_0805dc38[] = "Ｌｅｔ’ｓ　ｐｒａｃｔｉｃｅ　ｆｏｒ　ａ　ｂｉｔ！";

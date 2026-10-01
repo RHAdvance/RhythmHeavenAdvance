@@ -20,7 +20,7 @@ AnimationCel endless_games_menu_cel001[] = {
 };
 
 AnimationCel endless_games_menu_cel002[] = {
-    #ifdef PARADISE
+    #ifdef BRIT
     /* Len */ 5,
     /* 000 */ 0x00ea, 0xc1df, 0x0008,
     /* 001 */ 0x40dd, 0x81da, 0x0108,

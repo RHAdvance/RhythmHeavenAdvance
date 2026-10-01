@@ -820,7 +820,7 @@ const char *results_ok_comment_pool[] = {
     "I guess that was all right.",
     "Good enough...",
     "I don't know...",
-    #ifdef PARADISE
+    #ifdef BRIT
     "Hmm..."
     #else
     "Hm..."

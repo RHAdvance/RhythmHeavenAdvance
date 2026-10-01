@@ -5,7 +5,7 @@
 /* Game Text - Space Dance */
 
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805e2ac[] = "Your disorganisation was visual.";
 #else
 const char D_0805e2ac[] = "Your disorganization was visual.";
