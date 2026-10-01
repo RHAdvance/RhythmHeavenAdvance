@@ -33,7 +33,7 @@ const char D_0805dc0c[] = "and "CHAR_A_BUTTON_UTF8" for me,";
 
 const char D_0805dc24[] = "and we'll transform!";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805dc38[] = "Let's practise for a bit!";
 #else
 const char D_0805dc38[] = "Let's practice for a bit!";

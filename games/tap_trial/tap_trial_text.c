@@ -29,7 +29,7 @@ const char D_0805c1a8[] = "What a performance!";
 
 const char D_0805c1bc[] = "Let's tap!";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805c1d0[] = "Practise first!";
 #else
 const char D_0805c1d0[] = "Practice first!";
@@ -71,7 +71,7 @@ const char D_0805c334[] = "What a performance!";
 
 const char D_0805c348[] = "Let's tap!";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805c35c[] = "Practise first!";
 #else
 const char D_0805c35c[] = "Practice first!";

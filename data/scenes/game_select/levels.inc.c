@@ -62,7 +62,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I spent everything I had on this outfit!",
             /* OK        */ "We were so close...",
-            #ifdef PARADISE
+            #ifdef BRIT
             /* SUPERB    */ "Perfect sync! It must be the outfits, right?"
             #else
             /* SUPERB    */ "Perfect sync! It's gotta be the outfits, right?"
@@ -176,7 +176,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "\0023" "Assistant's memo:\n"
                             "We have an outbreak\n"
                             "of an unknown virus!\n"
-                            #ifdef PARADISE
+                            #ifdef BRIT
                             "Help us, Dr Cutlery!",
                             #else
                             "Help us, Dr. Cutlery!",
@@ -353,7 +353,7 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_tap_trial_gfx_tables,
         /* Epilogue Text */ {
-            #ifdef PARADISE
+            #ifdef BRIT
             /* TRY_AGAIN */ "Better tap out.",
             #else
             /* TRY_AGAIN */ "Gotta tap out.",
@@ -451,7 +451,7 @@ struct LevelData level_data_table[] = {
         /* Level Desc.   */ "It's not summertime\n"
                             "without fireworks!\n"
                             "Light them up to fill the\n"
-                            #ifdef PARADISE
+                            #ifdef BRIT
                             "sky with pretty colours!",
                             #else
                             "sky with pretty colors!",
@@ -502,7 +502,7 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_toss_boys,
         /* Level Name    */ "Toss Team",
         /* Level Desc.   */ "This trio of friends love\n"
-                            #ifdef PARADISE
+                            #ifdef BRIT
                             "practising volleyball.\n"
                             #else
                             "practicing volleyball.\n"
@@ -513,13 +513,13 @@ struct LevelData level_data_table[] = {
         /* Level Type    */ LEVEL_TYPE_GAME,
         /* Epilogue GFX  */ epilogue_toss_boys_gfx_tables,
         /* Epilogue Text */ {
-            #ifdef PARADISE
+            #ifdef BRIT
             /* TRY_AGAIN */ "We've been thrown out!",
             #else
             /* TRY_AGAIN */ "We've been tossed out!",
             #endif
             /* OK        */ "Next time, we'll toss better than the best!",
-            #ifdef PARADISE
+            #ifdef BRIT
             /* SUPERB    */ "Chuck World Championship, here we come!"
             #else
             /* SUPERB    */ "Toss World Championship, here we come!"
@@ -530,7 +530,7 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_toss_boys_2,
         /* Level Name    */ "Toss Team 2",
         /* Level Desc.   */ "This trio of friends love\n"
-                            #ifdef PARADISE
+                            #ifdef BRIT
                             "practising volleyball.\n"
                             #else
                             "practicing volleyball.\n"
@@ -543,7 +543,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Our spirits have been deflated...",
             /* OK        */ "We still have a long way to go!",
-            #ifdef PARADISE
+            #ifdef BRIT
             /* SUPERB    */ "Three cheers for our star thrower!"
             #else
             /* SUPERB    */ "Three cheers for our star tosser!"
@@ -677,7 +677,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_quiz_show_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "I can do better... I can do better...",
-            #ifdef PARADISE
+            #ifdef BRIT
             /* OK        */ "Must study... for next time... Zzz...",
             #else
             /* OK        */ "Gotta study... for next time... Zzz...",
@@ -856,7 +856,7 @@ struct LevelData level_data_table[] = {
     },
     /* CAFE */ {
         /* Entry Scene   */ &scene_cafe,
-        #ifdef PARADISE
+        #ifdef BRIT
         /* Level Name    */ "Café Counselling",
         #else
         /* Level Name    */ "Café Counseling",

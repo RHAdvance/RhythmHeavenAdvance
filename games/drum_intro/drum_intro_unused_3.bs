@@ -30,55 +30,65 @@ define_gameplay_scene scene_drum_intro_unused_3, script_drum_intro_unused_3_entr
 @ Drum Intro (Unused 3) - Main Script
 
 script drum_intro_unused_3_sub_08a36930
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     beat_anim
     rest 24
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     beat_anim
     rest 24
     rest 12
-    play_sfx s_intro_a_seqData
+    play_sfx_localized s_intro_a_seqData, s_intro_a_en_seqData
     clear_text_s
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     beat_anim
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     beat_anim
     rest 24
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     beat_anim
     rest 12
-    play_sfx s_intro_four_seqData
-    rest 12
+    if_localized
+        rest 12
+        play_sfx_synced s_intro_go_en_seqData, 150, 256
+    else
+        play_sfx_synced s_intro_four_seqData, 150, 256
+        rest 12
+    end_if
     beat_anim
 return
 
 
 script drum_intro_unused_3_sub_08a36a5c
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
     rest 12
-    play_sfx s_intro_a_seqData
+    play_sfx_localized s_intro_a_seqData, s_intro_a_en_seqData
     clear_text_s
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     dmi_event03 3
     rest 12
-    play_sfx s_intro_four_seqData
-    rest 12
+    if_localized
+        rest 12
+        play_sfx_synced s_intro_go_en_seqData, 150, 256
+    else
+        play_sfx_synced s_intro_four_seqData, 150, 256
+        rest 12
+    end_if
     dmi_event03 3
 return
 

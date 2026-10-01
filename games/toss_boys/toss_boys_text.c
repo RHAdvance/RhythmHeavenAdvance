@@ -5,7 +5,7 @@
 /* Game Text - Toss Boys */
 
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805d618[] = "You need to practise throwing more.";
 
 const char D_0805d634[] = "Your throwing was impressive!";
@@ -25,7 +25,7 @@ const char D_0805d694[] = "Speed's no problem for you three!";
 
 const char D_0805d6b0[] = "Tips from the referee:";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805d6c4[] =
     "\n"
     "Time to throw our best!";
@@ -39,7 +39,7 @@ const char D_0805d6d4[] =
     "\n"
     "That's a wrap!";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805d6e0[] = "You need to practise throwing more.";
 
 const char D_0805d6fc[] = "Your throwing was impressive!";
@@ -79,7 +79,7 @@ const char D_0805d7fc[] =
     "\n"
     "Let's do it one more time!";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805d80c[] =
     "\n"
     "Great throwing!";

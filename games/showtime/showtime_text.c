@@ -13,7 +13,7 @@ const char D_0805e1a8[] = "The penguins' moods...";
 
 const char D_0805e1bc[] = "It's showtime!";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805e1d4[] = "Let's practise our penguin routine.";
 #else
 const char D_0805e1d4[] = "Let's practice our penguin routine.";
