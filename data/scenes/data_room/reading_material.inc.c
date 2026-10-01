@@ -198,7 +198,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Horse Machine's Story",
         /* BODY ----------------------------------------------------------- */
             	    #ifdef BRIT
-	    	"We were given the chance to interview M. F,\n"
+	    	"We were given the chance to interview Mr F,\n"
             "inventor of the Horse Machine in the Rhythm Toys\n"
             "section, about its development.\n"
             "\n"
