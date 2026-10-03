@@ -29,7 +29,7 @@ const char text_bon_dance_don_don_pan_pan[] = ".1:0" "Do-n do-n " ".2:0" "pa-n p
 
 const char text_bon_dance_dondo_pan_pan[] = ".1:0" "Dondo " ".2:0" "pa-n pan";
 
-const char text_bon_dance_haa[] = ".0:0" "Ha~ Ah~";
+const char text_bon_dance_haa[] = ".0:0" "Haa~ Ah~";
 
 const char text_bon_dance_kansei_agaru[] = ".0:0" "Kansei agaru~";
 
@@ -39,7 +39,7 @@ const char text_bon_dance_panpa_don_pan[] = ".2:0" "Panpa " ".1:0" "do-n " ".2:0
 
 const char text_bon_dance_ninki_agare_ba[] = ".0:0" "Ninki agare ba~";
 
-const char text_bon_dance_kyuryo_agaru[] = ".0:0" "Kyuryou agaru~";
+const char text_bon_dance_kyuryo_agaru[] = ".0:0" "Kyuuryou agaru~";
 
 const char text_bon_dance_matsuri_da_wasshoi[] = ".0:0" "Matsuri da wasshoi!";
 
@@ -51,7 +51,7 @@ const char text_bon_dance_dondo_panpa_pan[] = ".1:0" "Dondo " ".2:0" "panpa pan"
 
 const char text_bon_dance_sore_hikkuri_kaette[] = ".0:0" "Sore hikkuri kaette";
 
-const char text_bon_dance_ha_bon_odori[] = ".0:0" "Ha~ Bon Odori";
+const char text_bon_dance_ha_bon_odori[] = ".0:0" "Haa~ Bon Odori~";
 
 const char text_bon_dance_dondo_panpa[] = ".1:0" "Dondo " ".2:0" "panpa";
 

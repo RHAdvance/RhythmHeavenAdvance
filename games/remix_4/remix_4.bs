@@ -824,7 +824,7 @@ script script_remix_4_main
     print_text_f D_08068138
     beat_anim
     rest 24
-    play_sfx s_rap_yeah_seqData
+    play_sfx_localized s_rap_yeah_seqData, s_rap_yeah_en_seqData
     rap_men_animate_rapper ANIM_KAMONE
     rest 24
     beat_anim

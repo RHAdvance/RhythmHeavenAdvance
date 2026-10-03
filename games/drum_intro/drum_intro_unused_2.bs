@@ -68,27 +68,32 @@ script script_drum_intro_unused_2_main
     set_tempo 150
     dmi_event05 1
     start_tracking_inputs
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
     rest 12
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     dmi_event03 3
     rest 12
     play_music s_intro_pat1_seqData
-    play_sfx s_intro_four_seqData
-    rest 12
+    if_localized
+        rest 12
+        play_sfx_synced s_intro_go_en_seqData, 150, 256
+    else
+        play_sfx_synced s_intro_four_seqData, 150, 256
+        rest 12
+    end_if
     dmi_event03 3
     spawn_cue CUE_KICK
     no_op
@@ -116,28 +121,41 @@ script script_drum_intro_unused_2_main
     set_tempo 140
     dmi_event05 1
     start_tracking_inputs
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
     rest 12
-    play_sfx s_intro_a_seqData
+    play_sfx_localized s_intro_a_seqData, s_intro_a_en_seqData
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
+    if_localized
+    play_sfx_vol s_intro_two_en_seqData, 64
+    else
     play_sfx_vol s_intro_two_seqData, 64
+    end_if
     dmi_event03 3
     rest 23
+    if_localized
+    play_sfx_vol s_intro_three_en_seqData, 96
+    else
     play_sfx_vol s_intro_three_seqData, 96
+    end_if
     rest 1
     dmi_event03 3
     rest 12
-    play_sfx_vol s_intro_four_seqData, 160
-    rest 12
+    if_localized
+        rest 12
+        play_sfx_synced s_intro_go_en_seqData, 160, 256
+    else
+        play_sfx_synced s_intro_four_seqData, 160, 256
+        rest 12
+    end_if
     dmi_event03 3
     no_op
     spawn_cue CUE_KICK
@@ -167,37 +185,69 @@ script script_drum_intro_unused_2_main
     set_tempo 130
     dmi_event05 1
     start_tracking_inputs
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
+    if_localized
+    play_sfx_vol_pitch s_intro_a_en_seqData, 32, -256
+    else
     play_sfx_vol_pitch s_intro_a_seqData, 32, -256
+    end_if
     rest 24
+    if_localized
+    play_sfx_vol s_intro_a_en_seqData, 48
+    else
     play_sfx_vol s_intro_a_seqData, 48
+    end_if
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
+    if_localized
+    play_sfx_vol_pitch s_intro_a_en_seqData, 32, -256
+    else
     play_sfx_vol_pitch s_intro_a_seqData, 32, -256
+    end_if
     rest 24
+    if_localized
+    play_sfx_vol s_intro_a_en_seqData, 48
+    else
     play_sfx_vol s_intro_a_seqData, 48
+    end_if
     rest 24
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
+    if_localized
+    play_sfx_vol s_intro_two_en_seqData, 160
+    else
     play_sfx_vol s_intro_two_seqData, 160
+    end_if
     dmi_event03 3
     rest 23
+    if_localized
+    play_sfx_vol s_intro_three_en_seqData, 128
+    else
     play_sfx_vol s_intro_three_seqData, 128
+    end_if
     rest 1
     dmi_event03 3
     rest 12
+    if_localized
+    play_sfx_vol s_intro_one_en_seqData, 160
+    else
     play_sfx_vol s_intro_one_seqData, 160
+    end_if
     rest 12
     dmi_event03 3
+    if_localized
+    play_sfx_vol s_intro_two_en_seqData, 192
+    else
     play_sfx_vol s_intro_two_seqData, 192
+    end_if
     dmi_event03 3
     rest 24
-    play_sfx s_intro_comeon_seqData
+    play_sfx_localized s_intro_comeon_seqData, s_intro_go_en_seqData
     dmi_event03 3
     no_op
     spawn_cue CUE_KICK
@@ -227,28 +277,34 @@ script script_drum_intro_unused_2_main
     set_tempo 200
     dmi_event05 1
     start_tracking_inputs
-    play_sfx s_intro_a_seqData
+    play_sfx_localized s_intro_a_seqData, s_intro_a_en_seqData
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
     rest 12
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     dmi_event03 3
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     dmi_event03 3
     rest 24
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     dmi_event03 3
     rest 10
-    play_sfx s_intro_four_seqData
-    rest 14
+    if_localized
+        rest 12
+        play_sfx_synced s_intro_go_en_seqData, 150, 256
+    else
+        play_sfx_synced s_intro_four_seqData, 150, 256
+        rest 12
+    end_if
+    rest 2
     dmi_event03 3
     spawn_cue CUE_KICK
     no_op

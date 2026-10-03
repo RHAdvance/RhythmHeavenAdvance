@@ -30,27 +30,28 @@ define_gameplay_scene scene_drum_intro_unused, script_drum_intro_unused_entry
 @ Drum Intro (Unused) - Main Script
 
 script drum_intro_unused_sub_08a21294
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     beat_anim
     rest 24
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     beat_anim
     rest 24
     rest 12
-    play_sfx s_intro_a_seqData
+    play_sfx_localized s_intro_a_seqData, s_intro_a_en_seqData
     rest 12
-    play_sfx s_intro_one_seqData
+    play_sfx_localized s_intro_one_seqData, s_intro_one_en_seqData
     beat_anim
     rest 24
-    play_sfx s_intro_two_seqData
+    play_sfx_localized s_intro_two_seqData, s_intro_two_en_seqData
     beat_anim
     rest 24
-    play_sfx s_intro_three_seqData
+    play_sfx_localized s_intro_three_seqData, s_intro_three_en_seqData
     beat_anim
     rest 12
     #ifdef PLUS
-    play_sfx s_intro_four_seqData
+    rest_localized 0, 12
+    play_sfx_localized s_intro_four_seqData, s_intro_go_en_seqData
     #endif
 return
 
@@ -59,9 +60,10 @@ script drum_intro_unused_sub_08a21390
     call drum_intro_unused_sub_08a21294
     #ifdef PLUS
     #else
-    play_sfx s_intro_four_seqData
+    rest_localized 0, 12
+    play_sfx_localized s_intro_four_seqData, s_intro_go_en_seqData
     #endif
-    rest 12
+    rest_localized 12, 0
     beat_anim
     rest 24
 // Commented out code is for a music function so that the game can play music while you drum.
@@ -85,7 +87,7 @@ script drum_intro_unused_sub_08a213d8
 //    set_music_volume 156
 //    play_music s_drum_lesson_bgm_seqData
 //    #else
-    rest 12
+    rest_localized 12, 0
     #ifdef PLUS
     beat_anim
     #endif

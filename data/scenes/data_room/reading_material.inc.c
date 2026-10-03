@@ -111,7 +111,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Night Walk Information",
         /* BODY ----------------------------------------------------------- */
-            #ifdef PARADISE
+            #ifdef BRIT
 	        "There's this strange fellow who you might recognise\n"
             #else
 	        "There's this strange fellow who you might recognize\n"
@@ -197,8 +197,8 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Horse Machine's Story",
         /* BODY ----------------------------------------------------------- */
-            	    #ifdef PARADISE
-	    	"We were given the chance to interview M. F,\n"
+            	    #ifdef BRIT
+	    	"We were given the chance to interview Mr F,\n"
             "inventor of the Horse Machine in the Rhythm Toys\n"
             "section, about its development.\n"
             "\n"
@@ -509,7 +509,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Our hearts started to drift away\n"
             "\n"
             "Our kisses faded and I don't know how\n"
-            #ifdef PARADISE
+            #ifdef BRIT
 	        "I didn't realise 'til now\n"
             #else
 	        "I didn't realize 'til now\n"
@@ -556,11 +556,13 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "You have performed outstandingly here in\n"
             #ifdef PARADISE
             "Rhythm Paradise Advance.\n"
-            "\n"
-            "That much is undeniable, and we fully recognise it.\n"
             #else
             "Rhythm Heaven Advance.\n"
+            #endif
             "\n"
+            #ifdef BRIT
+            "That much is undeniable, and we fully recognise it.\n"
+            #else
             "That much is undeniable, and we fully recognize it.\n"
             #endif
             "You are the best! One of the greatest! ...is how I feel,\n"
@@ -653,7 +655,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Blue: Wha? You can't \"play\" rhythm, Yellow.\n"
             "It's not an instrument. Where did you hear that?\n"
             "Yellow: Well, I told my teacher I wanted to play\n"
-            #ifdef PARADISE
+            #ifdef BRIT
             "drums, but he told me I should practise \"rhythm\" first!\n"
             #else
             "drums, but he told me I should practice \"rhythm\" first!\n"
@@ -669,7 +671,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Yellow: Oop! Blue, your fly is down!\n"
             "Blue: Huh!? Wait, really?\n"
             "Yellow: No, I lied.\n"
-            #ifdef PARADISE
+            #ifdef BRIT
 	    	"Blue: Why you...!\n"
             	"\n"
             	"Yellow: \"Why you\"! Man, that's kind of a\n"
@@ -691,7 +693,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "Blue: Oh, that's rich! Anyway, what about your\n"
             "sense of rhythm?\n"
             "Yellow: Right! My classmates said that my\n"
-            #ifdef PARADISE
+            #ifdef BRIT
             "\"scents of rhythm\" will improve with practise.\n"
             #else
             "\"scents of rhythm\" will improve with practice.\n"
@@ -1142,7 +1144,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Borists\n"
 			"+ Tailx\n"
 			"\n"
-			#ifdef PARADISE
+			#ifdef BRIT
             "Localisation / Translation:\n"
             #else
             "Localization / Translation:\n"
@@ -1200,11 +1202,17 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Lilynell\n"
 			"+ acerbt\n"
 			"+ Lemonici\n"
+            "+ Opera Zebb\n"
+            "+ Kayyluhh\n"
+            "+ Xx_Player25_xX\n"
+            "\n"
             "\n"
 			"Special Thanks:\n"
 			"+ The decomp folks again\n"
 			"+ Everyone in the Rhythm Heaven Advance Discord\n"
+            "+ The Detail Detectors (You know who you are!)\n"
 			"  ... and you!\n"
+            "\n"
             "Thank you all for your hard work!\n"
             "And thank YOU for playing this patch!\n",
         /* STYLE ---------------------------------------------------------- */

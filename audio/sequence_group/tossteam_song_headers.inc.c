@@ -610,7 +610,7 @@ struct SongHeader s_toss_yelw_before_en_seqData = {
     /* MIDI Sequence */ s_toss_yelw_before_mid,
     /* Sound Player  */ SFX_PLAYER_2,
     /* Bank Number   */ INST_BANK_TOSSTEAM_EN,
-    /* Volume        */ 127,
+    /* Volume        */ 107,
     /* Priority      */ 90,
     /* unk8          */ 0x40,
     /* Song Title    */ NULL,

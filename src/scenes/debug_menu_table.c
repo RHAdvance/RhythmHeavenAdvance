@@ -84,8 +84,8 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* R-IQ (Cafe) */ {
         /* Scene */ &scene_cafe,
-        #ifdef PARADISE
-        /* Label */ "R-IQ (Cafe Counselling)", // shoutout to british people
+        #ifdef BRIT
+        /* Label */ "R-IQ (Cafe Counselling)",
         #else
         /* Label */ "R-IQ (Cafe Counseling)",
         #endif
@@ -259,7 +259,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Mr. Upbeat */ {
         /* Scene */ &scene_mr_upbeat,
-        #ifdef PARADISE
+        #ifdef BRIT
         /* Label */ "Mr Upbeat",
         #else
         /* Label */ "Mr. Upbeat",

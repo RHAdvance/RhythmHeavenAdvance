@@ -54,6 +54,7 @@
 .macro load_karate_man_extra
     load_karate_labels
     load_game karate_man_engine, 4
+    set_localized BEATSCRIPT_LOCALIZED_COND_GLOBAL_NON_JP_SFX
 .endm
 
 

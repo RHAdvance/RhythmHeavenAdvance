@@ -41,7 +41,7 @@ const char D_0805eae8[] = "Do your best!";
 
 const char D_0805eaf8[] = "It's at the \"Uh!\"";
 
-#ifdef PARADISE
+#ifdef BRIT
 const char D_0805eb14[] = "You have to press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";
 #else
 const char D_0805eb14[] = "You gotta press "CHAR_A_BUTTON_UTF8" at the \"Uh!\"";

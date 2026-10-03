@@ -255,7 +255,7 @@ struct CampaignGiftData campaign_gifts_table[TOTAL_PERFECT_CAMPAIGNS] = {
     /* KARATE_MAN_EXTRA */ {
         /* Grid Pos. */ 10, 11,
         /* Gift Type */ CAMPAIGN_GIFT_READING_MATERIAL,
-        /* Gift ID   */ READING_MATERIAL_CREDITS
+        /* Gift ID   */ STUDIO_SONG_SILENCE
     },
     /* RHYTHM_TWEEZERS_EXTRA */ {
         /* Grid Pos. */ 10, 10,

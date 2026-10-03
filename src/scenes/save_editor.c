@@ -99,7 +99,7 @@ struct SaveEditorMember gSaveEditorMembers[SE_MBR_COUNT] = {
     /* SE_MBR_UNK_291 */
     { "unk291",                              SE_KIND_U8,    0,  -1, -1, NULL,   8, NULL,               0 },
     /* SE_MBR_HIGH_SCORE_MR_UPBEAT */
-    #ifdef PARADISE
+    #ifdef BRIT
 	{ "High Score Mr Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },     
     #else
     { "High Score Mr. Upbeat",               SE_KIND_U32,         0,  -1, -1, NULL,          0, NULL,               0 },     
