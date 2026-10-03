@@ -32,7 +32,7 @@ const char D_0806a118[] =
     "\x05\x31" "\x01\x35" " Music:  Tsunku♂";
 
 const char D_0806a134[] =
-    "\x05\x31" "\x01\x35" " Arrangement: H. D. Suzuki";
+    "\x05\x31" "\x01\x35" " Arrangement: H. D. Suzuki ";
 
 const char D_0806a154[] =
     "\n"
