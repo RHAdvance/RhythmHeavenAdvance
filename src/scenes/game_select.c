@@ -2159,10 +2159,12 @@ void game_select_print_level_rank(s32 levelState) {
         levelState = LEVEL_STATE_OPEN;
     }
 
+    #ifdef PLUS
     // Check if the game has been perfected
     if (get_campaign_cleared(&D_030046a8->data, get_campaign_from_level_id(gGameSelect->infoPaneLevelID))) {
         levelState = LEVEL_STATE_PERFECT; // Use the new "perfect" rank
     }
+    #endif
 
 #ifdef PLUS
     hasNoPracticeIcon = (gGameSelect->infoPaneLevelData->flags & LEVEL_DATA_FLAG_NO_PRACTICE) != 0;
