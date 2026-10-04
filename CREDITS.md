@@ -28,6 +28,7 @@
 - Nate Candles
 - Borists
 - Tailx
+- mimiroppu
 
 ### Localization / Translation
 - Cash Banooka
