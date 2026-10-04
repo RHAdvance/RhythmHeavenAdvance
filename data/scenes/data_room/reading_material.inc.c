@@ -1143,7 +1143,8 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Nate Candles\n"
 			"+ Borists\n"
 			"+ Tailx\n"
-			"\n"
+			"+ mimiroppu\n"
+            "\n"
 			#ifdef BRIT
             "Localisation / Translation:\n"
             #else
@@ -1170,7 +1171,6 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "+ Roxby\n"
             "+ Kievit\n"
 			"+ TheAwkwardGirl\n"
-            "\n"
             "Remix 3 English Song Credits:\n"
             "Vocals: Bellajenna\n"
             "Translation: castIeRook, Mizuka Lover\n"
