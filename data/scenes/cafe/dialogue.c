@@ -50,7 +50,7 @@ const char *cafe_dialogue_first_visit[] = {
     /* ------------------------------------------------ */
         "\n"
         "If there's anything I can\n"
-        "do to help, well, " "\0051" "\0015" "that's\n"
+        "do to help, well, " "\0051" "\0015" "that's \n"
         "what I'm here for." "\0054" "\0018" "",
     /* ------------------------------------------------ */
         "\n"
