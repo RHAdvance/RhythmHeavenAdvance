@@ -69,7 +69,7 @@ for ((mask = 0; mask < TOTAL_COMBINATIONS; mask++)); do
     make_common_args=(--no-print-directory "MAKE_OUTPUT=$MAKE_OUTPUT_MODE")
 
     make "${make_common_args[@]}" distclean
-    make_args=("${make_common_args[@]}" -j"$JOBS")
+    make_args=("${make_common_args[@]}" -j"$JOBS" GIT_COMMIT="$(git rev-parse --short=7 HEAD)")
     if [[ ${#enabled_features[@]} -ne 0 ]]; then
         make_args+=("FEATURES=$features_value")
     fi

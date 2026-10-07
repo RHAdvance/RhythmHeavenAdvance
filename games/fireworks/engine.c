@@ -382,7 +382,7 @@ const s32 fireworks_particle_durations[] = {
 };
 
 
-// [D_0805a42c] Particle Trajectory for Åâ Pattern (Unused)
+// [D_0805a42c] Particle Trajectory for ‚ôÇ Pattern (Unused)
 const struct FireworksParticleTrajectory fireworks_mars_pattern[] = {
     /* 00 */ {   0,   0 },
     /* 01 */ { 224,  64 },
