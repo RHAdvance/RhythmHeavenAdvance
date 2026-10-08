@@ -604,7 +604,7 @@ void cafe_print_dialogue(void) {
             string = "...And that's done. Wonder what the\n"
                      "next game will be like?\n"
                      "Hope it goes better!\n"
-                     "See you later.";
+                     "See you around.";
             dialogueExhausted = TRUE;
             break;
 

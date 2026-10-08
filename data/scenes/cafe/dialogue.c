@@ -640,7 +640,7 @@ const char *cafe_dialogue_adhd[] = {
         "\n"
         "Want to go for a drive with me, sometime?\n"
         "If you want to, I mean...\n"
-        "Anyway, see you later.",
+        "Anyway, see you around.",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
 };
