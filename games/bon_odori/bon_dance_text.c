@@ -39,13 +39,13 @@ const char text_bon_dance_panpa_don_pan[] = ".2:0" "Ｐａｎｐａ　" ".1:0" "ｄｏ－
 
 const char text_bon_dance_ninki_agare_ba[] = ".0:0" "Ｎｉｎｋｉ　ａｇａｒｅ　ｂａ～";
 
-const char text_bon_dance_kyuryo_agaru[] = ".0:0" "Ｋｙｕｕｒｙｏｕ　ａｇａｒｕ～";
+const char text_bon_dance_kyuryo_agaru[] = ".0:0" "Ｋｙｕｒｙｏ　ａｇａｒｕ～";
 
 const char text_bon_dance_matsuri_da_wasshoi[] = ".0:0" "Ｍａｔｓｕｒｉ　ｄａ　ｗａｓｓｈｏｉ！";
 
 const char text_bon_dance_dondo_panpa_dondo_panpa[] = ".1:0" "Ｄｏｎｄｏ　" ".2:0" "ｐａｎｐａ　" ".1:0" "ｄｏｎｄｏ　" ".2:0" "ｐａｎｐａ";
 
-const char text_bon_dance_nippon_chu_ga_wasshoi[] = ".0:0" "Ｎｉｐｐｏｎ　ｃｈｕｕ　ｇａ　ｗａｓｓｈｏｉ！";
+const char text_bon_dance_nippon_chu_ga_wasshoi[] = ".0:0" "Ｎｉｐｐｏｎ　ｃｈｕ　ｇａ　ｗａｓｓｈｏｉ！";
 
 const char text_bon_dance_dondo_panpa_pan[] = ".1:0" "Ｄｏｎｄｏ　" ".2:0" "ｐａｎｐａ　ｐａｎ";
 

@@ -9,21 +9,21 @@
 
 // [D_089d83d0] Drum Kit Names
 const char *studio_drum_kit_names[] = {
-    /* DEFAULT */ "Standard Drum",
-    /* DRY     */ "Dry Drum",
-    /* POWER   */ "Power Drum",
-    /* TECHNO  */ "Techno Drum",
-    /* MATTE   */ "Matte Drum",
-    /* ASIAN   */ "Asian Drum",
-    /* LIGHT   */ "Light Drum",
-    /* HEAVY   */ "Heavy Drum",
-    /* HIHAT   */ "Hi-Hat Drum",
-    /* HEEL1   */ "Heel Drop Drum 1",
-    /* HEEL2   */ "Heel Drop Drum 2",
-    /* SFX     */ "Sound FX Drum",
-    /* TAP     */ "Tap Drum",
-    /* AIR     */ "Swift Drum",
-    /* SAMURAI */ "Samurai Drum"
+    /* DEFAULT */ "Standard Drums",
+    /* DRY     */ "Dry Drums",
+    /* POWER   */ "Power Drums",
+    /* TECHNO  */ "Techno Drums",
+    /* MATTE   */ "Matte Drums",
+    /* ASIAN   */ "Asian Drums",
+    /* LIGHT   */ "Light Drums",
+    /* HEAVY   */ "Heavy Drums",
+    /* HIHAT   */ "Hi-Hat Drums",
+    /* HEEL1   */ "Heel Drop Drums 1",
+    /* HEEL2   */ "Heel Drop Drums 2",
+    /* SFX     */ "Sound Effect Drums",
+    /* TAP     */ "Tap Drums",
+    /* AIR     */ "Swift Drums",
+    /* SAMURAI */ "Samurai Drums"
 };
 
 
