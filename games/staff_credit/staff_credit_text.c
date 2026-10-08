@@ -145,8 +145,11 @@ const char D_08069d5c[] = "A. Kenmochi";
 
 const char D_08069d68[] = "H. Nakano";
 
+#ifdef PLUS
+const char D_08069d74[] = "...and you!";
+#else 
 const char D_08069d74[] = "You";
-
+#endif
 const char D_08069d7c[] = "\0023" "";
 
 const char D_08069d88[] = "\0023" "Executive Producers";
