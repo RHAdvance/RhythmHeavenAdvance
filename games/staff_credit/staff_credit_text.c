@@ -145,7 +145,7 @@ const char D_08069d5c[] = "A. Kenmochi";
 
 const char D_08069d68[] = "H. Nakano";
 
-const char D_08069d74[] = "You";
+const char D_08069d74[] = "\0023" "You!";
 
 const char D_08069d7c[] = "\0023" "";
 
