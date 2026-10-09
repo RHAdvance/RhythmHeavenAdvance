@@ -146,7 +146,7 @@ const char D_08069d5c[] = "A. Kenmochi";
 const char D_08069d68[] = "H. Nakano";
 
 #ifdef PLUS
-const char D_08069d74[] = "...and you!";
+const char D_08069d74[] = "\0023...and you!";
 #else 
 const char D_08069d74[] = "You";
 #endif
