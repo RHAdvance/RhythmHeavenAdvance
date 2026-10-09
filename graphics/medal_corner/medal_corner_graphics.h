@@ -46,6 +46,7 @@ extern struct Animation anim_lessons_menu_basic_3[];
 
 extern struct CompressedData drum_lessons_menu_bg_tiles;
 extern struct CompressedData drum_lessons_menu_bg_map;
+extern struct CompressedData drum_lessons_menu_bg_map_faithful;
 extern struct CompressedData drum_lessons_menu_obj;
 
 /* DRUM LESSONS MENU - PALETTES */
@@ -80,6 +81,7 @@ extern struct Animation anim_toys_menu_rap_machine[];
 
 extern struct CompressedData rhythm_toys_menu_bg_tiles;
 extern struct CompressedData rhythm_toys_menu_bg_map;
+extern struct CompressedData rhythm_toys_menu_bg_map_faithful;
 extern struct CompressedData rhythm_toys_menu_obj;
 
 /* RHYTHM TOYS MENU - PALETTES */
