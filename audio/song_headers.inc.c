@@ -2463,7 +2463,7 @@ struct SongHeader s_rat_squeak_seqData = {
     /* MIDI Sequence */ s_rat_squeak_mid,
     /* Sound Player  */ SFX_PLAYER_1,
     /* Bank Number   */ INST_BANK_6,
-    /* Volume        */ 110,
+    /* Volume        */ 127,
     /* Priority      */ 80,
     /* unk8          */ 0x40,
     /* Song Title    */ s_rat_squeak_seqName,
