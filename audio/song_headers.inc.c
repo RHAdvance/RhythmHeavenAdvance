@@ -75,7 +75,11 @@ struct SongHeader Lesson1_seqData = {
     /* MIDI Sequence */ Lesson1_mid,
     /* Sound Player  */ MUSIC_PLAYER_0,
     /* Bank Number   */ INST_BANK_13,
+    #ifdef PLUS 
+    /* Volume        */ 90,
+    #else
     /* Volume        */ 120,
+    #endif
     /* Priority      */ 50,
     /* unk8          */ 0xff,
     /* Song Title    */ Lesson1_seqName,
