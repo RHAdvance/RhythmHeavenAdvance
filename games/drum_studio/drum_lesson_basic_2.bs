@@ -56,7 +56,7 @@ return
 text D_08061a68
     .ascii "\n"
     .ascii "I swapped a bass beat\n"
-    .ascii "out for a snare beat.\n"
+    .ascii "out for a snare one.\n"
     .asciz "Hear the difference?"
 endtext
 
@@ -156,8 +156,9 @@ endtext
 
 text D_08061d70
     .ascii "\n"
-    .ascii "Hit the bass drum with ‡N\n"
-    .asciz "or by pressing Down on ‡O!\n"
+    .ascii "Kick the bass drum with ‡N\n"
+    .ascii "or by pressing Down on ‡O!\n"
+    .asciz "\n"
 endtext
 
 
@@ -165,7 +166,7 @@ text D_08061dbc
     .ascii "If you've played the last\n"
     .ascii "lesson, you know you can\n"
     .ascii "hit either ‡M or Left on ‡O\n"
-    .asciz "to play the snare."
+    .asciz "to strike the snare."
 endtext
 
 

@@ -130,8 +130,9 @@ return
 
 text D_08060628
     .ascii "\n"
-    .ascii "One more beat on that bass!\n"
-    .asciz "You're doing great, keep it up!"
+    .ascii "One more kick on that bass!\n"
+    .ascii "You're doing great, keep it up!\n"
+    .asciz "\n"
 endtext
 
 

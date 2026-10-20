@@ -96,8 +96,8 @@ return
 text D_080615e4
     .ascii "\n"
     .ascii "And now for another\n"
-    .ascii "drumbeat right at the\n"
-    .asciz "end! Can you get it?\n"
+    .ascii "drumbeat right at the end!\n"
+    .asciz "Can you get it?\n"
 endtext
 
 
@@ -128,7 +128,7 @@ return
 
 
 text D_08061704
-    .ascii "Welcome to Drum Lessons!\n"
+    .ascii "Welcome to drum lessons!\n"
     .ascii "Let's start off simple\n"
     .ascii "with just the snare drum.\n"
     .asciz "We'll add more beats later.\n"
@@ -137,8 +137,9 @@ endtext
 
 text D_08061740
     .ascii "\n"
-    .ascii "Hit the snare with ‡M or by\n"
-    .asciz "pressing Left on ‡O!\n"
+    .ascii "Strike the snare with ‡M or\n"
+    .ascii "by pressing Left on ‡O!\n"
+    .asciz "\n"
 endtext
 
 
@@ -146,7 +147,7 @@ text D_0806178c
     .ascii "Don't be discouraged if you\n"
     .ascii "struggle at first. You can\n"
     .ascii "try as much as you need.\n"
-    .asciz "With that, let's begin!\n"
+    .asciz "With that, let's begin!"
 endtext
 
 
@@ -154,22 +155,22 @@ text D_080617bc
     .ascii "\n"
     .ascii "See the lights up there?\n"
     .ascii "Those are Timing Lights!\n"
-    .asciz ""
+    .asciz "\n"
 endtext
 
 
 text D_080617f0
     .ascii "The lights blink to your timing:\n"
-    .ascii "Left if you're early,\n"
-    .ascii "Right if you're late,\n"
-    .asciz "Center if you're on beat!"
+    .ascii "left if you're early,\n"
+    .ascii "right if you're late,\n"
+    .asciz "center if you're on beat!"
 endtext
 
 
 text D_0806183c
     .ascii "\n"
     .ascii "If you're struggling to get the\n"
-    .ascii "timing down, look at the lamps\n"
+    .ascii "timing down, look at the lights\n"
     .asciz "to help fix your timing."
 endtext
 
@@ -177,15 +178,16 @@ endtext
 text D_08061884
     .ascii "\n"
     .ascii "Now then, let's get on\n"
-    .asciz "with the lesson!"
+    .ascii "with the lesson!\n"
+    .asciz "\n"
 endtext
 
 
 text D_0806189c
+    .ascii "\n"
     .ascii "If I'm going too fast and\n"
     .ascii "you're having trouble,\n"
-    .ascii "you can press START.\n"
-    .asciz "\n"
+    .asciz "you can press START."
 endtext
 
 
@@ -193,7 +195,7 @@ text D_080618d8
     .ascii "\n"
     .ascii "That will slow down the tempo.\n"
     .ascii "This way, you can get a good\n"
-    .asciz "feel for the patterns.\n"
+    .asciz "feel for the patterns."
 endtext
 
 
@@ -215,7 +217,9 @@ endtext
 
 text D_08061980
     .ascii "\n"
-    .asciz "Now, let's finish this lesson!"
+    .ascii "Now, let's finish this lesson!\n"
+    .ascii "\n"
+    .asciz "\n"
 endtext
 
 

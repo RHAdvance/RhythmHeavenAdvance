@@ -351,7 +351,8 @@ endtext
 text D_08065564
     .ascii "\n"
     .ascii "You ready to go?\n"
-    .asciz "Alright, let's do this!"
+    .ascii "Alright, let's do this!\n"
+    .asciz "\n"
 
 endtext
 

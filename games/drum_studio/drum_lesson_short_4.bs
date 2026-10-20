@@ -110,9 +110,9 @@ return
 
 
 text D_0805f7f4
-    .ascii "Now for a tom beat, right\n"
-    .ascii "at the very end!\n"
-    .ascii "Remember where that is?\n"
+    .ascii "Now for a tom beat,\n"
+    .ascii "right at the very end!\n"
+    .ascii "Remember where it is?\n"
     .asciz "It's Right on ‡O!"
 endtext
 
@@ -161,8 +161,8 @@ return
 
 text D_0805f9cc
     .ascii "\n"
-    .ascii "That just now was our first\n"
-    .ascii "cymbal, the hi-hat!\n"
+    .ascii "That just now was our\n"
+    .ascii "first cymbal, the hi-hat!\n"
     .asciz "You can hit it with Up on ‡O.\n"
 endtext
 
@@ -178,7 +178,9 @@ endtext
 text D_0805fa60
     .ascii "\n"
     .ascii "Now then, let's get on\n"
-    .asciz "with the lesson!"
+    .ascii "with the lesson!\n"
+    .asciz "\n"
+    
 endtext
 
 
