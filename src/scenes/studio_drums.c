@@ -20,7 +20,7 @@ const char *studio_drum_kit_names[] = {
     /* HIHAT   */ "Hi-Hat Drums",
     /* HEEL1   */ "Heel Drop Drums 1",
     /* HEEL2   */ "Heel Drop Drums 2",
-    /* SFX     */ "Sound Effect Drums",
+    /* SFX     */ "SFX Drums",
     /* TAP     */ "Tap Drums",
     /* AIR     */ "Swift Drums",
     /* SAMURAI */ "Samurai Drums"
