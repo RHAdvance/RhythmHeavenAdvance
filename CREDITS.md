@@ -36,7 +36,7 @@
 - somethingAccurate
 - ShaffySwitcher
 - Mizuka Lover
-- castIe
+- castIeRook
 - patataofcourse
 - Various Rhythm Heaven games
 - Inspiration from Rhythm Heaven Silver
