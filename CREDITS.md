@@ -87,7 +87,10 @@ Playtesters:
 - vibe
 - RoboNinja
 
-Top Playtesters will be added when advance gets a proper release
+Top Playtesters (for Advance's initial release):
+1. Lilynell
+2. pokedart9001
+3. KingDragoon24
 
 ## Special Thanks
 - The decomp folks again
