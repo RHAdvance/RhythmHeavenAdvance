@@ -1,6 +1,6 @@
 # Credits
 ## Programming
-### Maintainer
+### Maintainers
 - ShaffySwitcher
 - itaific
 
@@ -41,13 +41,13 @@
 - Various Rhythm Heaven games
 - Inspiration from Rhythm Heaven Silver
 
-### Sound Effect
+### Sound Effects
 - Various Rhythm Heaven games
 - Cherryberryfaygo
 - Nabix (& his family)
 - itaific
 - TheAwkwardGirl
-- FireChatâ™‚
+- FireChatâ™?
 - Kievit
 - saladplainzone
 - Bellajenna
