@@ -47,7 +47,7 @@
 - Nabix (& his family)
 - itaific
 - TheAwkwardGirl
-- FireChatâ™?
+- FireChatâ™‚
 - Kievit
 - saladplainzone
 - Bellajenna
