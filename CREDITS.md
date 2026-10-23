@@ -4,7 +4,7 @@
 - ShaffySwitcher
 - itaific
 
-### Contribution
+### Contributors
 - Deni_iguess
 - patataofcourse
 - Conhlee
