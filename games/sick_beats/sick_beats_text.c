@@ -13,4 +13,4 @@ const char D_0805b73c[] = "We lost a lot of them...";
 
 const char D_0805b760[] = "";
 
-const char D_0805b764[] = "A word from your Assistant:";
+const char D_0805b764[] = "A word from your assistant:";

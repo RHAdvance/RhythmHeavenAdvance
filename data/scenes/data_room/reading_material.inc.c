@@ -1247,11 +1247,19 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
 			"+ Mizuka Lover\n"
 			"+ castIeRook\n"
 			"+ patataofcourse\n"
-			"+ Various Rhythm Heaven games\n"
+            #ifdef PARADISE
+			"+ Various Rhythm Paradise games\n"
+            #else
+            "+ Various Rhythm Heaven games\n"
+            #endif
 			"+ Inspiration from Rhythm Heaven Silver\n"
 			"\n"
 			"Sound Effects:\n"
-			"+ Various Rhythm Heaven games\n"
+			#ifdef PARADISE
+			"+ Various Rhythm Paradise games\n"
+            #else
+            "+ Various Rhythm Heaven games\n"
+            #endif
 			"+ Cherryberryfaygo\n"
 			"+ Nabix (&  his family)\n"
 			"+ itaific\n"
