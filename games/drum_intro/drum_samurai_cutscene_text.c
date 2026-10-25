@@ -6,6 +6,7 @@
 
 
 const char D_0805df4c[] =
+    "\n"
     "Welcome to the\n"
     "funky world of\n"
     #ifdef PARADISE
@@ -15,6 +16,7 @@ const char D_0805df4c[] =
     #endif
 
 const char D_0805df88[] =
+    "\n"
     "I hope you enjoy your time\n"
     "with this game!";
 
