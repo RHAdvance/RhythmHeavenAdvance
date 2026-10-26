@@ -24,10 +24,10 @@ const char D_0805d4b4[] =
     "it'll be a fun one!";
 
 const char D_0805d508[] =
+    "\n"
     "First off, lesson 1.\n"
     "I'll play you a pattern,\n"
-    "and you copy after me.\n"
-    "\n";
+    "and you copy after me.\n";
 
 const char D_0805d554[] =
     "\n"
