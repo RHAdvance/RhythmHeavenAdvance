@@ -121,33 +121,73 @@ const char D_08059f94[] = "";
 
 const char D_08059f98[] = "";
 
-const char D_08059f9c[] = "\nFocus just on the start!";
+const char D_08059f9c[] = 
+    "\n"
+    "Focus just on the start!\n"
+    "\n"
+    "\n";
 
-const char D_08059fb4[] = "\nAim for the start.";
+const char D_08059fb4[] = 
+    "\n"
+    "Aim for the start.\n"
+    "\n"
+    "\n";
 
-const char D_08059fd0[] = "\nStay focused!";
+const char D_08059fd0[] = 
+    "\n"
+    "Stay focused!\n"
+    "\n"
+    "\n";
 
-const char D_08059fe8[] = "\nPress ‡N, too.";
+const char D_08059fe8[] = 
+    "\n"
+    "Press ‡N, too.\n"
+    "\n"
+    "\n";
 
-const char D_0805a004[] = "\nPress ‡L, too.";
+const char D_0805a004[] = 
+    "\n"
+    "Press ‡L, too.\n"
+    "\n"
+    "\n";
 
-const char D_0805a020[] = "\nPress ‡N and ‡L together.";
+const char D_0805a020[] = 
+    "\n"
+    "Press ‡N and ‡L together.\n"
+    "\n"
+    "\n";
 
-const char D_0805a038[] = "\nDon't rush it.";
+const char D_0805a038[] = 
+    "\n"
+    "Don't rush it.\n"
+    "\n"
+    "\n";
 
-const char D_0805a048[] = "\nYou were late...";
+const char D_0805a048[] = 
+    "\n"
+    "You were late...\n"
+    "\n"
+    "\n";
 
-const char D_0805a058[] = "\nFlawless!";
+const char D_0805a058[] = 
+    "\n"
+    "Flawless!\n"
+    "\n"
+    "\n";
 
-const char D_0805a06c[] = "\nPretty good!";
+const char D_0805a06c[] = 
+    "\n"
+    "Pretty good!\n"
+    "\n"
+    "\n";
 
 // [D_089e1778] Rank Text
 const char *drum_lessons_rank_text[] = {
     /* RANK_0 */ "\n",
-    /* RANK_C */ "\nNot bad!",
-    /* RANK_B */ "\nYou're doin' pretty well!",
-    /* RANK_A */ "\nYeah! That was great!",
-    /* RANK_S */ "\nUnbelievable!",
+    /* RANK_C */ "\nNot bad!\n",
+    /* RANK_B */ "\nYou're doing pretty well!\n",
+    /* RANK_A */ "\nYeah! That was great!\n",
+    /* RANK_S */ "\nUnbelievable!\n",
 };
 
 const char D_0805a0c0[] = "\nYou scored ";
