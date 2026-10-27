@@ -69,11 +69,11 @@ const char text_bon_odori_don_don_pan_pan_2[] = ".1:0" "Do-n do-n " ".2:0" "pa-n
 
 const char D_08067a84[] = ".6:1" "Welcome to the Bon Festival!";
 
-const char D_08067aa4[] = ".6:1" "When we say \"pan,\" you clap!";
+const char D_08067aa4[] = ".6:1" "When we say 〝pan,〞 you clap!";
 
 const char D_08067ad0[] = ".6:0" "Nice clapping!";
 
-const char D_08067adc[] = ".6:1" "When we say \"panpa,\" clap twice!";
+const char D_08067adc[] = ".6:1" "When we say 〝panpa,〞 clap twice!";
 
 const char D_08067b00[] = ".6:1" "Looks like you've got it!";
 
