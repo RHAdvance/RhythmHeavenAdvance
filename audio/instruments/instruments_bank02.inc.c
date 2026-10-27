@@ -592,11 +592,11 @@ struct InstrumentPCM instrument_tmp_rt03 = {
     /* Panning   */ 127,
     /* Sample    */ &rt_tempo_8_data,
     /* ADSR Init */ 0x7F0000,
-    /* ADSR Sus  */ 0x7F0000,
-    /* ADSR Atk  */ 0x000000,
-    /* ADSR Dec  */ 0x000000,
+    /* ADSR Sus  */ 0x7E0000,
+    /* ADSR Atk  */ 0x7F0000,
+    /* ADSR Dec  */ 0x7F0000,
     /* ADSR Fade */ 0x000000,
-    /* ADSR Rel  */ 0x13E350,
+    /* ADSR Rel  */ 0x7F0000,
 };
 
 extern struct SampleData rt_tempo_12_data;

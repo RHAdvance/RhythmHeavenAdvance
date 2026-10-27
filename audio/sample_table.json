@@ -6211,7 +6211,12 @@
         },
         {
             "sample": "rt_tempo_8.wav",
-            "pitch": "B6"
+            "pitch": "B6",
+            "loop": [
+                45143,
+                48351
+            ]
+
         },
         {
             "sample": "rt_tempo_9.wav",
