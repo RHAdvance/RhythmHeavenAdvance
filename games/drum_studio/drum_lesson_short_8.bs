@@ -58,7 +58,7 @@ return
 text D_0805fb60
     .ascii "\n"
     .ascii "Let's add some more snare.\n"
-    .asciz "Use both hands to hit this!\n"
+    .asciz "Use both hands to strike them!\n"
 endtext
 
 
@@ -133,7 +133,7 @@ return
 
 text D_0805fdbc
     .ascii "We're almost done!\n"
-    .ascii "Just one more beat\n"
+    .ascii "Just one more kick\n"
     .ascii "on the bass, and that's\n"
     .asciz "it for this lesson!\n"
 endtext

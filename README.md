@@ -24,7 +24,7 @@ Feel free to join our [Discord server](https://discord.gg/8PET8w8PU8) if you hav
 2. Open your BPS patcher tool
 3. Select your *Rhythm Tengoku* ROM
 4. Apply the downloaded patch
-5. Load the patched ROM in your emulator or flashcard
+5. Load the patched ROM in your emulator or flashcard (if the option is available, set the save type to SRAM so your data saves correctly.)
 
 ## Building from Source
 

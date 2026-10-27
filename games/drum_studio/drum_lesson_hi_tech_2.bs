@@ -586,7 +586,8 @@ endtext
 text D_0806769c
     .ascii "\n"
     .ascii "Are you all set then?\n"
-    .asciz "Let's get started!"
+    .ascii "Let's get started!\n"
+    .asciz "\n"
 endtext
 
 

@@ -103,8 +103,8 @@ return
 text D_08063024
     .ascii "\n"
     .ascii "Let's change the bass a bit.\n"
-    .ascii "Listen carefully and keep\n"
-    .asciz "the rhythm going!"
+    .ascii "Listen carefully and\n"
+    .asciz "keep the rhythm going!"
 endtext
 
 
@@ -140,7 +140,7 @@ text D_08063184
     .ascii "Last but not least, let's add\n"
     .ascii "one more bass beat in here.\n"
     .ascii "We're reaching the end, so\n"
-    .asciz "Let's drive it home now!\n"
+    .asciz "let's drive it home now!\n"
 endtext
 
 

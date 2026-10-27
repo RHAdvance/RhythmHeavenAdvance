@@ -96,8 +96,8 @@ return
 
 
 text D_080640d8
-    .ascii "Now then, let's add a\n"
-    .ascii "snare and a crash in here.\n"
+    .ascii "Now then, let's add a snare\n"
+    .ascii "and a crash in here.\n"
     .ascii "Don't get too comfortable,\n"
     .asciz "and stay focused!\n"
 endtext

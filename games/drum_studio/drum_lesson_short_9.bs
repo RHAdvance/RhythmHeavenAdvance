@@ -138,10 +138,10 @@ return
 
 
 text D_08060cd0
-    .ascii "Okay, let's add a bit more\n"
-    .ascii "snare at the beginning.\n"
-    .ascii "Listen carefully and keep\n"
-    .asciz "the beat steady!"
+    .ascii "Okay, let's add a new\n"
+    .ascii "snare to the beginning.\n"
+    .ascii "Listen carefully and\n"
+    .asciz "keep the beat steady!"
 endtext
 
 

@@ -35,7 +35,11 @@ struct GraphicsTable toys_menu_gfx_table[] = {
         /* Size  */ COMPRESSED_GFX_SOURCE
     },
     /* BG Map */ {
+        #ifdef PLUS
         /* Src.  */ &rhythm_toys_menu_bg_map,
+        #else
+        /* Src.  */ &rhythm_toys_menu_bg_map_faithful,
+        #endif
         /* Dest. */ BG_MAP_BASE(0xE800),
         /* Size  */ COMPRESSED_GFX_SOURCE
     },

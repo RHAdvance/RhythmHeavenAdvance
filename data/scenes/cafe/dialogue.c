@@ -50,8 +50,8 @@ const char *cafe_dialogue_first_visit[] = {
     /* ------------------------------------------------ */
         "\n"
         "If there's anything I can\n"
-        "do to help, well, " "\0051" "\0015" "that's\n"
-        "what I'm here for." "\0054" "\0018" "",
+        "do to help, well, " "\0051" "\0015" "that's \n"
+        "what I'm here for" "\0054" "\0018" ".",
     /* ------------------------------------------------ */
         "\n"
         "I'm a little busy right now,\n"
@@ -640,7 +640,7 @@ const char *cafe_dialogue_adhd[] = {
         "\n"
         "Want to go for a drive with me, sometime?\n"
         "If you want to, I mean...\n"
-        "Anyway, see you later.",
+        "Anyway, see you around.",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
 };

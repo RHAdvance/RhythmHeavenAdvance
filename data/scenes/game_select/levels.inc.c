@@ -926,9 +926,9 @@ struct LevelData level_data_table[] = {
         /* Entry Scene   */ &scene_staff_credit,
         /* Level Name    */ "Staff Credits",
         /* Level Desc.   */ "Here's the staff who\n"
-                            "helped develop\n"
-                            "this game. Feel free\n"
-                            "to take a look!",
+                            "developed this game.\n"
+                            "Feel free to take\n"
+                            "a look anytime!",
         /* Level Icon    */ 49,
         /* Level Type    */ LEVEL_TYPE_BONUS,
         /* Epilogue GFX  */ epilogue_staff_credit_gfx_tables,
@@ -941,8 +941,8 @@ struct LevelData level_data_table[] = {
     /* LIVE_MENU */ {
         /* Entry Scene   */ &scene_drum_live,
         /* Level Name    */ "Concert",
-        /* Level Desc.   */ "We're hosting a\n"
-                            "concert! You've got\n"
+        /* Level Desc.   */ "We're hosting some\n"
+                            "concerts! You've got\n"
                             "good rhythm, right?\n"
                             "So give it a try!",
         /* Level Icon    */ 44,

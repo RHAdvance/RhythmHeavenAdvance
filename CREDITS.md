@@ -1,10 +1,10 @@
 # Credits
 ## Programming
-### Maintainer
+### Maintainers
 - ShaffySwitcher
 - itaific
 
-### Contribution
+### Contributors
 - Deni_iguess
 - patataofcourse
 - Conhlee
@@ -28,6 +28,7 @@
 - Nate Candles
 - Borists
 - Tailx
+- mimiroppu
 
 ### Localization / Translation
 - Cash Banooka
@@ -35,12 +36,12 @@
 - somethingAccurate
 - ShaffySwitcher
 - Mizuka Lover
-- castIe
+- castIeRook
 - patataofcourse
 - Various Rhythm Heaven games
 - Inspiration from Rhythm Heaven Silver
 
-### Sound Effect
+### Sound Effects
 - Various Rhythm Heaven games
 - Cherryberryfaygo
 - Nabix (& his family)
@@ -48,13 +49,17 @@
 - TheAwkwardGirl
 - FireChat♂
 - Kievit
+- saladplainzone
+- Bellajenna
+- Kievit
+- TheAwkwardGirl
 
 ## Playtesting
 We are holding a playtesting competition on our [Discord Server](https://discord.gg/8PET8w8PU8).
 
 Those that report the most problems or complete playthroughs on unique pieces of hardware will get special credit!
 
-First Ever Playtesters:
+Playtesters:
 - nwqol
 - pokedart9001
 - MacBass24
@@ -76,10 +81,19 @@ First Ever Playtesters:
 - Lilynell
 - acerbt
 - Lemonici
+- Opra Zebb
+- Kayyluhh
+- Xx_Player25_xX
+- vibe
+- RoboNinja
 
-Top Playtesters will be added when advance gets a proper release
+Top Playtesters (for Advance's initial release):
+1. Lilynell
+2. pokedart9001
+3. KingDragoon24
 
 ## Special Thanks
 - The decomp folks again
 - Everyone in the Rhythm Heaven Advance Discord Server
+- The Detail Detectors (You know who you are!)
 - ...and you! 
