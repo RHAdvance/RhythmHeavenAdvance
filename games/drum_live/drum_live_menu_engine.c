@@ -34,26 +34,26 @@ const char *drum_live_menu_poster_desc[] = {
     /* DRUM GIRLS */
     "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Drum Girls LIVE!\n"
     "\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　Night Walk\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　Space Dance\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　Honey Sweet Angel of Love\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ Night Walk\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ Space Dance\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ Honey Sweet Angel of Love\n"
     "\n",
     
     /* DRUM BOYS  */
     "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Drum Boys LIVE!\n"
     "\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　The Clappy Trio\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　Tap Trial\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　WISH - Can't Wait for You\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ The Clappy Trio\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ Tap Trial\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ WISH - Can't Wait for You\n"
     "\n",
 
     /* DRUM BAND  */
     "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "Samurai Drummer's\n"
     "\x03\x31" "\x01\x6d" "\x05\x30" "\x01\x34" "\x01\x52" "Band LIVE! \n"
     "\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "\x01\x4c" "♪　Cosmic Dance\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　The Snappy Trio\n"
-    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "♪　Tap Trial 2\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "\x01\x4c" "笙ｪ Cosmic Dance\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ The Snappy Trio\n"
+    "\x03\x30" "\x01\x73" "\x05\x31" "\x01\x35" "笙ｪ Tap Trial 2\n"
     "\n"
 };
 

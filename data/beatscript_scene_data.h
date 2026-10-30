@@ -6,4 +6,3 @@
 extern struct Animation D_089ccbc0[];
 extern FontPalette D_089ccbc8[];
 extern u16 D_089ccc80[];
-extern char D_089ccc94[];

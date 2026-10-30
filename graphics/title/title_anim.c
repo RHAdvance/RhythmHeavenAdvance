@@ -75,19 +75,19 @@ struct Animation anim_title_stars_appear[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4a0] Logo - ?��?��
+// [D_0890d4a0] Logo - ?申?申
 struct Animation anim_title_logo_rh[] = {
     /* 000 */ { title_cel015, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4b0] Logo - ?��Y
+// [D_0890d4b0] Logo - ?申Y
 struct Animation anim_title_logo_yt[] = {
     /* 000 */ { title_cel016, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4c0] Logo - ?��?��
+// [D_0890d4c0] Logo - ?申?申
 struct Animation anim_title_logo_hm[] = {
     /* 000 */ { title_cel017, 4 },
     /* End */ END_ANIMATION
@@ -150,19 +150,19 @@ struct Animation anim_title_logo_bubble_outer[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?��?��
+// [D_0890d4e0] Logo - ?申?申
 struct Animation anim_empty[] = {
     /* 000 */ { title_cel101, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?��?��
+// [D_0890d4e0] Logo - ?申?申
 struct Animation anim_empty_2[] = {
     /* 000 */ { title_cel103, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_0890d4e0] Logo - ?��?��
+// [D_0890d4e0] Logo - ?申?申
 struct Animation anim_title_logo_advance[] = {
     /* 000 */ { title_cel102, 4 },
     /* End */ END_ANIMATION

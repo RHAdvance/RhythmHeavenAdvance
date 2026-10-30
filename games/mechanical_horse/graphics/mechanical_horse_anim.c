@@ -101,35 +101,35 @@ struct Animation anim_mechanical_horse_blank4[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08930550] Indicator - "ƒpƒb" ("pa[k]")
+// [D_08930550] Indicator - "ãƒ‘ãƒƒ" ("pa[k]")
 struct Animation anim_horse_text_pak[] = {
     /* 000 */ { mechanical_horse_cel026, 4 },
     /* 001 */ { mechanical_horse_cel027, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08930568] Indicator - "ƒJ" ("ka")
+// [D_08930568] Indicator - "ã‚«" ("ka")
 struct Animation anim_horse_text_ka[] = {
     /* 000 */ { mechanical_horse_cel028, 4 },
     /* 001 */ { mechanical_horse_cel029, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08930580] Indicator - "ƒ‰ƒb" ("ra[p]")
+// [D_08930580] Indicator - "ãƒ©ãƒƒ" ("ra[p]")
 struct Animation anim_horse_text_rap[] = {
     /* 000 */ { mechanical_horse_cel032, 4 },
     /* 001 */ { mechanical_horse_cel033, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_08930598] Indicator - "ƒgƒb" ("to[t]")
+// [D_08930598] Indicator - "ãƒˆãƒƒ" ("to[t]")
 struct Animation anim_horse_text_tot[] = {
     /* 000 */ { mechanical_horse_cel034, 4 },
     /* 001 */ { mechanical_horse_cel035, 4 },
     /* End */ END_ANIMATION
 };
 
-// [D_089305b0] Indicator - "ƒhƒb" ("do[d]")
+// [D_089305b0] Indicator - "ãƒ‰ãƒƒ" ("do[d]")
 struct Animation anim_horse_text_dod[] = {
     /* 000 */ { mechanical_horse_cel038, 4 },
     /* 001 */ { mechanical_horse_cel039, 4 },
@@ -142,7 +142,7 @@ struct Animation anim_horse_text_blank[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_089305d8] Indicator - "ƒp" ("pa")
+// [D_089305d8] Indicator - "ãƒ‘" ("pa")
 struct Animation anim_horse_text_pa[] = {
     /* 000 */ { mechanical_horse_cel030, 4 },
     /* 001 */ { mechanical_horse_cel031, 4 },
@@ -155,7 +155,7 @@ struct Animation anim_horse_still[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_08930600] Indicator - "ƒh" ("do")
+// [D_08930600] Indicator - "ãƒ‰" ("do")
 struct Animation anim_horse_text_do[] = {
     /* 000 */ { mechanical_horse_cel036, 4 },
     /* 001 */ { mechanical_horse_cel037, 4 },

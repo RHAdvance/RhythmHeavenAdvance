@@ -115,8 +115,9 @@ struct TaskMethods lcd_blend_mode_interp_task = {
     NULL
 };
 
-// Fullwidth Number Characters
-char D_08936c64[] = "‚O‚P‚Q‚R‚S‚T‚U‚V‚W‚X";
+// Fullwidth Number Characters... NOT!
+// just dont use `strintf` or `strnintf` and it'll be all good
+char D_08936c64[] = "0123456789";
 
 // ?
 struct TaskMethods D_08936c7c = {

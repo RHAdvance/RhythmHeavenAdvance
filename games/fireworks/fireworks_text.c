@@ -19,131 +19,131 @@ const char D_0805cdb4[] = "You were quick on your feet!";
 
 const char D_0805cdc8[] = "Notes from the Director";
 
-const char D_0805cde0[] = "‚a‚…‚†‚‚’‚…@‚”‚ˆ‚…@‚†‚…‚“‚”‚‰‚–‚‚Œ@‚‚‚…‚‡‚‰‚‚“DDD";
+const char D_0805cde0[] = "Before the festival begins...";
 
-const char D_0805ce00[] = "DDD‚Œ‚…‚”f‚“@‚ˆ‚‚–‚…@‚@‚ƒ‚’‚‚“‚ˆ@‚ƒ‚‚•‚’‚“‚…I";
+const char D_0805ce00[] = "...let's have a crash course!";
 
-const char D_0805ce10[] = "‚v‚ˆ‚…‚@‚™‚‚•@‚ˆ‚…‚‚’@g‚f‚Ih@‚‚’‚…‚“‚“@T";
+const char D_0805ce10[] = "When you hear ã€Go!ã€ press "CHAR_A_BUTTON_UTF8;
 
-const char D_0805ce34[] = "‚e‚‰‚’‚“‚”@‚‚†@‚‚Œ‚ŒC@‚‚‚’‚‚‚Œ@‚†‚‰‚’‚…‚—‚‚’‚‹‚“D";
+const char D_0805ce34[] = "First of all, normal fireworks.";
 
 const char D_0805ce5c[] =
-    ".b" "‚n‚‚…@"
-    ".b" "‚s‚—‚@"
-    ".b" "‚s‚ˆ‚’‚…‚…@"
-    ".b" "‚f‚I";
+    ".b" "One "
+    ".b" "Two "
+    ".b" "Three "
+    ".b" "Go!";
 
 const char D_0805ce80[] =
-    ".d" "‚n‚‚…@"
-    ".b" "‚s‚—‚@"
-    ".b" "‚s‚ˆ‚’‚…‚…@"
-    ".b" "‚f‚I";
+    ".d" "One "
+    ".b" "Two "
+    ".b" "Three "
+    ".b" "Go!";
 
 const char D_0805cea4[] =
-    ".d" "‚n‚‚…@"
-    ".d" "‚s‚—‚@"
-    ".b" "‚s‚ˆ‚’‚…‚…@"
-    ".b" "‚f‚I";
+    ".d" "One "
+    ".d" "Two "
+    ".b" "Three "
+    ".b" "Go!";
 
 const char D_0805cec8[] =
-    ".d" "‚n‚‚…@"
-    ".d" "‚s‚—‚@"
-    ".d" "‚s‚ˆ‚’‚…‚…@"
-    ".b" "‚f‚I";
+    ".d" "One "
+    ".d" "Two "
+    ".d" "Three "
+    ".b" "Go!";
 
 const char D_0805ceec[] =
-    ".c" "‚n‚‚…@"
-    ".c" "‚s‚—‚@"
-    ".c" "‚s‚ˆ‚’‚…‚…@"
-    ".c:0" "‚f‚I";
+    ".c" "One "
+    ".c" "Two "
+    ".c" "Three "
+    ".c:0" "Go!";
 
-const char D_0805cf10[] = "‚m‚…‚˜‚”@‚•‚C@‚‚•‚’@‚r‚‚‰‚’‚‰‚”@‚q‚‚ƒ‚‹‚…‚”‚“I";
+const char D_0805cf10[] = "Next up, our Spirit Rockets!";
 
 const char D_0805cf2c[] =
-    ".b" "‚g‚‰"
-    ".b" "‚™‚"
-    ".b" "‚ˆ"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".b" "Hi"
+    ".b" "ya"
+    ".b" "h"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805cf4c[] =
-    ".d" "‚g‚‰"
-    ".b" "‚™‚"
-    ".b" "‚ˆ"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".d" "Hi"
+    ".b" "ya"
+    ".b" "h"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805cf6c[] =
-    ".d" "‚g‚‰"
-    ".d" "‚™‚"
-    ".b" "‚ˆ"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".d" "Hi"
+    ".d" "ya"
+    ".b" "h"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805cf8c[] =
-    ".d" "‚g‚‰"
-    ".d" "‚™‚"
-    ".d" "‚ˆ"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".d" "Hi"
+    ".d" "ya"
+    ".d" "h"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805cfac[] =
-    ".d" "‚g‚‰"
-    ".d" "‚™‚"
-    ".d" "‚ˆ"
-    ".d" "I@"
-    ".b" "‚f‚I";
+    ".d" "Hi"
+    ".d" "ya"
+    ".d" "h"
+    ".d" "! "
+    ".b" "Go!";
 
 const char D_0805cfcc[] =
-    ".c" "‚g‚‰"
-    ".c" "‚™‚"
-    ".c" "‚ˆ"
-    ".c" "I@"
-    ".c:0" "‚f‚I";
+    ".c" "Hi"
+    ".c" "ya"
+    ".c" "h"
+    ".c" "! "
+    ".c:0" "Go!";
 
-const char D_0805cfec[] = "‚e‚‰‚‚‚Œ‚Œ‚™C@‚‚•‚’@‚c‚’‚•‚‚‚…‚’f‚“@‚a‚‚‚‚I";
+const char D_0805cfec[] = "Finally, our Drummer's Bomb!";
 
 const char D_0805d010[] =
-    ".b" "‚g‚…‚’‚…@"
-    ".b" "‚‰‚”@"
-    ".b" "‚ƒ‚‚‚…‚“I@"
-    ".b" "‚f‚I";
+    ".b" "Here "
+    ".b" "it "
+    ".b" "comes! "
+    ".b" "Go!";
 
 const char D_0805d030[] =
-    ".d" "‚g‚…‚’‚…@"
-    ".b" "‚‰‚”@"
-    ".b" "‚ƒ‚‚‚…‚“"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".d" "Here "
+    ".b" "it "
+    ".b" "comes"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805d050[] =
-    ".d" "‚g‚…‚’‚…@"
-    ".d" "‚‰‚”@"
-    ".b" "‚ƒ‚‚‚…‚“"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".d" "Here "
+    ".d" "it "
+    ".b" "comes"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805d070[] =
-    ".d" "‚g‚…‚’‚…@"
-    ".d" "‚‰‚”@"
-    ".d" "‚ƒ‚‚‚…‚“"
-    ".b" "I@"
-    ".b" "‚f‚I";
+    ".d" "Here "
+    ".d" "it "
+    ".d" "comes"
+    ".b" "! "
+    ".b" "Go!";
 
 const char D_0805d090[] =
-    ".d" "‚g‚…‚’‚…@"
-    ".d" "‚‰‚”@"
-    ".d" "‚ƒ‚‚‚…‚“"
-    ".d" "I@"
-    ".b" "‚f‚I";
+    ".d" "Here "
+    ".d" "it "
+    ".d" "comes"
+    ".d" "! "
+    ".b" "Go!";
 
 const char D_0805d0b0[] =
-    ".c" "‚g‚…‚’‚…@"
-    ".c" "‚‰‚”@"
-    ".c" "‚ƒ‚‚‚…‚“"
-    ".c" "I@"
-    ".c:0" "‚f‚I";
+    ".c" "Here "
+    ".c" "it "
+    ".c" "comes"
+    ".c" "! "
+    ".c:0" "Go!";
 
-const char D_0805d0d0[] = "‚`‚Œ‚’‚‰‚‡‚ˆ‚”I@‚k‚…‚”@‚”‚ˆ‚…@‚†‚…‚“‚”‚‰‚–‚‚Œ@‚‚‚…‚‡‚‰‚I";
+const char D_0805d0d0[] = "Alright! Let the festival begin!";
 
-const char D_0805d0e8[] = "‚v‚…@‚—‚‚f‚”@‚ƒ‚‚•‚‚”@‚‚‚™‚‚‚’‚…DDD@‚f‚‚‚„@‚Œ‚•‚ƒ‚‹I";
+const char D_0805d0e8[] = "We won't count anymore... Good luck!";

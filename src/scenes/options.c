@@ -73,22 +73,22 @@ static void options_scene_refresh_classic_visuals(void) {
 static const char *options_scene_bitmap_get_value(s32 entry) {
     switch (entry) {
         case OPTIONS_BITMAP_NON_JP_SFX:
-            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) ? "‚d‚Ž‚‡‚Œ‚‰‚“‚ˆ" : "‚i‚‚‚‚Ž‚…‚“‚…";
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_SFX) ? "English" : "Japanese";
 
         case OPTIONS_BITMAP_NON_JP_MUSIC:
-            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC) ? "‚d‚Ž‚‡‚Œ‚‰‚“‚ˆ" : "‚i‚‚‚‚Ž‚…‚“‚…";
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_NON_JP_MUSIC) ? "English" : "Japanese";
 #ifdef RUMBLE
         case OPTIONS_BITMAP_RUMBLE:
-            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_DISABLE_RUMBLE) ? "‚n‚†‚†" : "‚n‚Ž";
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_DISABLE_RUMBLE) ? "Off" : "On";
 #endif
         case OPTIONS_BITMAP_SKIP_DISCLAIMER:
-            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? "‚r‚‹‚‰‚" : "‚r‚ˆ‚‚—";
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_SKIP_DISCLAIMER) ? "Skip" : "Show";
 
         case OPTIONS_BITMAP_ALT_GAME_SELECT_MUSIC:
-            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC) ? "‚r‚—‚‚‚‚…‚„" : "‚m‚‚’‚‚‚Œ";
+            return CHECK_ADVANCE_FLAG(D_030046a8->data.advanceFlags, ADVANCE_FLAG_USE_ALT_GAME_SELECT_MUSIC) ? "Swapped" : "Normal";
     }
 
-    return "‚r‚g‚`‚e‚e‚x@‚e‚t‚b‚j‚d‚c@‚t‚o";
+    return "SHAFFY FUCKED UP";
 }
 
 static void options_scene_bitmap_build_line_text(s32 line, u32 lineBuffer) {
@@ -101,7 +101,7 @@ static void options_scene_bitmap_build_line_text(s32 line, u32 lineBuffer) {
         return;
     }
 
-    snprintf(gOptionsMenu->bitmapLineBuffer[lineBuffer], OPTIONS_BITMAP_LINE_BUFFER_SIZE, "%sF@%s",
+    snprintf(gOptionsMenu->bitmapLineBuffer[lineBuffer], OPTIONS_BITMAP_LINE_BUFFER_SIZE, "%s: %s",
             advance_options_label_text[line], options_scene_bitmap_get_value(line));
 }
 
