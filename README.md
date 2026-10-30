@@ -163,4 +163,6 @@ This is an unofficial fan project and is not affiliated with, endorsed by, or as
 
 You are NOT permitted to use the patch for commercial purposes.
 
+We do not permit our code to be used with AI for training, porting, or anything else.
+
 All rights concerning the assets or source code are reserved by the original authors and Nintendo for Rhythm Tengoku.
