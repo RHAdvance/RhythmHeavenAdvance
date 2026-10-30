@@ -501,7 +501,7 @@ struct LevelData level_data_table[] = {
     /* TOSS_BOYS */ {
         /* Entry Scene   */ &scene_toss_boys,
         /* Level Name    */ "Toss Team",
-        /* Level Desc.   */ "This trio of friends love\n"
+        /* Level Desc.   */ "This trio of friends loves\n"
                             #ifdef BRIT
                             "practising volleyball.\n"
                             #else
@@ -529,7 +529,7 @@ struct LevelData level_data_table[] = {
     /* TOSS_BOYS_2 */ {
         /* Entry Scene   */ &scene_toss_boys_2,
         /* Level Name    */ "Toss Team 2",
-        /* Level Desc.   */ "This trio of friends love\n"
+        /* Level Desc.   */ "This trio of friends loves\n"
                             #ifdef BRIT
                             "practising volleyball.\n"
                             #else
