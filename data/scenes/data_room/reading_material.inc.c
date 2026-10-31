@@ -1317,11 +1317,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "+ RoboNinja\n"
 			"Special Thanks:\n"
 			"+ The decomp folks again\n"
-            #ifdef PARADISE
-			"+ Everyone in the Rhythm Paradise Advance Discord\n"
-            #else
-            "+ Everyone in the Rhythm Heaven Advance Discord\n"
-            #endif
+			"+ Everyone in the Rhythm Heaven Advance Discord\n"
             "+ The Detail Detectors (You know who you are!)\n"
 			"\0031" "\001m" " ... and you!\n" "\0030" "\001s"
             "\n"
