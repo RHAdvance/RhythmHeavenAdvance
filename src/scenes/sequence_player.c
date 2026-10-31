@@ -262,7 +262,7 @@ static void sequence_player_adjust_option(s32 delta) {
             break;
 
         case 2:
-            gSequencePlayer->volume = clamp_s32((s32)gSequencePlayer->volume + (delta * 8), 0, 256);
+            gSequencePlayer->volume = clamp_s32((s32)gSequencePlayer->volume + (delta * 2), 0, 256);
             break;
 
         case 3:

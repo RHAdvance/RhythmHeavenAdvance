@@ -452,7 +452,7 @@ void cafe_print_dialogue(void) {
                     strcat(s, "So hey, I hear you got a Perfect rank on ");
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
-                    strcat(s, "\0054" "\0018" "!\n");
+                    strcat(s, "\0054" "\0018" "!\n\n");
                     string = s;
                     activity->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EV_CAMPAIGN_CLEAR_00;
@@ -573,7 +573,8 @@ void cafe_print_dialogue(void) {
                 // <Leave it to me!>
                 string = "\n"
                          "\n"
-                         "\0032" "\001l" "\0051" "\0015" "Leave it to me!" "\0030" "\001s" "\0054" "\0018";
+                         "\0032" "\001l" "\0051" "\0015" "Leave it to me!" "\0030" "\001s" "\0054" "\0018"
+                         "\n";
                 gCafe->textAdvHold = 3;
                 gCafe->bgEvent = CAFE_BG_EV_HELPING;
                 dialogueTask = CAFE_EV_OFFER_CLEAR_02_Y;
@@ -674,7 +675,8 @@ void cafe_print_dialogue(void) {
             // Crazy awesome!!
             string = "\0032" "\001l" "\0051" "\0015" "\n"
                      "Now,\n"
-                     "that's perfect!" "\0030" "\001s" "\0054" "\0018";
+                     "that's perfect!" "\0030" "\001s" "\0054" "\0018"
+                     "\n";
             gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
             gCafe->textAdvHold = 4;
             dialogue = cafe_dialogue_all_perfects_clear;

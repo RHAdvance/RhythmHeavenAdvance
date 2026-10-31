@@ -96,11 +96,13 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "‚v‚‚’‚‚‰‚‚‡",
         /* Epil. */ FALSE
     },
+    #ifdef RUMBLE
     /* GBP Handshake */ {
         /* Scene */ &scene_gbp_handshake,
         /* Label */ "‚f‚a‚o@‚g‚‚‚„‚“‚ˆ‚‚‹‚…",
         /* Epil. */ FALSE
     },
+    #endif
     /* Disclaimer */ {
         /* Scene */ &scene_disclaimer,
         /* Label */ "‚c‚‰‚“‚ƒ‚Œ‚‚‰‚‚…‚’",
