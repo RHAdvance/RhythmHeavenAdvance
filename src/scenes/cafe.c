@@ -591,9 +591,9 @@ void cafe_print_dialogue(void) {
                 // it with your own strength.
                 // Excellent!
                 string = "\n"
-                         "That's the spirit! Stay\n"
-                         "confident, and stick\n"
-                         "to it!";
+                         "That's the spirit!\n"
+                         "Stay confident,\n"
+                         "and stick to it!";
                 dialogueTask = CAFE_EV_OFFER_CLEAR_02_N;
             }
             break;
@@ -602,9 +602,9 @@ void cafe_print_dialogue(void) {
             // I hope the next game will go
             // much better for you.
             // Tell me about it next time.
-            string = "...And that's done. Wonder what the\n"
-                     "next game will be like?\n"
-                     "Hope it goes better!\n"
+            string = "...And that's done.\n"
+                     "Wonder what the next game\n"
+                     "will be like? Hope it goes better!\n"
                      "See you around.";
             dialogueExhausted = TRUE;
             break;
