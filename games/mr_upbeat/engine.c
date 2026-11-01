@@ -146,9 +146,9 @@ struct CueDefinition *mr_upbeat_cue_index[] = {
     END_OF_CUE_INDEX
 };
 
-const char D_0805a674[] = "\nNew record!";
+const char D_0805a674[] = "New record!";
 
-const char D_0805a684[] = "\nGood job!";
+const char D_0805a684[] = "Good job!";
 
 
   //  //  //  GAME ENGINE DATA  //  //  //
