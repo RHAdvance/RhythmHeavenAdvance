@@ -185,7 +185,7 @@ const char D_0805a06c[] =
 const char *drum_lessons_rank_text[] = {
     /* RANK_0 */ "\n",
     /* RANK_C */ "\nNot bad!\n",
-    /* RANK_B */ "\nYou're doing pretty well!\n",
+    /* RANK_B */ "\nYou're doin' pretty well!\n",
     /* RANK_A */ "\nYeah! That was great!\n",
     /* RANK_S */ "\nUnbelievable!\n",
 };
