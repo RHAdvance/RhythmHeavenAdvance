@@ -69,6 +69,7 @@ extern struct SongHeader s_emanikanto_bgm_seqData;
 extern struct SongHeader s_emanikanto_bgm_loop_seqData;
 extern struct SongHeader s_manza_bgm_seqData;
 extern struct SongHeader s_hitmegeton1_bgm_seqData;
+extern struct SongHeader s_hitmegeton1_end_seqData;
 extern struct SongHeader s_hitmegeton2_bgm_seqData;
 extern struct SongHeader s_bon_odori_bgm_seqData;
 extern struct SongHeader s_bon_dance_bgm_seqData;

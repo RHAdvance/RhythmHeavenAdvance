@@ -1601,6 +1601,9 @@ script script_studio_sick_beats
     rest 24
     rest 24
     rest 24
+    rest 24
+    play_music s_hitmegeton1_end_seqData
+    rest 24
     rest 22
     run scene_stop_music
     rest 2

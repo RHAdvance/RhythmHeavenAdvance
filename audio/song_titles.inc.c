@@ -72,6 +72,7 @@ char s_emanikanto_bgm_seqName[] = "";
 char s_emanikanto_bgm_loop_seqName[] = "";
 char s_manza_bgm_seqName[] = "";
 char s_hitmegeton1_bgm_seqName[] = "";
+char s_hitmegeton1_end_seqName[] = "";
 char s_hitmegeton2_bgm_seqName[] = "";
 char s_bon_odori_bgm_seqName[] = "";
 char s_bon_dance_bgm_seqName[] = "";

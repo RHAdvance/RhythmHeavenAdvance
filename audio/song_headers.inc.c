@@ -934,6 +934,18 @@ struct SongHeader s_hitmegeton1_bgm_seqData = {
     /* Song Number   */ 1070
 };
 
+extern const u8 s_hitmegeton1_end_mid[];
+struct SongHeader s_hitmegeton1_end_seqData = {
+    /* MIDI Sequence */ s_hitmegeton1_end_mid,
+    /* Sound Player  */ MUSIC_PLAYER_0,
+    /* Bank Number   */ INST_BANK_31,
+    /* Volume        */ 50,
+    /* Priority      */ 50,
+    /* unk8          */ 0xff,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1098
+};
+
 extern const u8 s_hitmegeton2_bgm_mid[];
 struct SongHeader s_hitmegeton2_bgm_seqData = {
     /* MIDI Sequence */ s_hitmegeton2_bgm_mid,

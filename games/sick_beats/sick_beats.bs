@@ -463,11 +463,21 @@ script script_sick_beats_main
     rest 24
     beat_anim
     rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    beat_anim
+    rest 24
+    play_music s_hitmegeton1_end_seqData
     stop_tracking_perfect_campaign
     beat_anim
     rest 24
+    rest 24
+    rest 24
     disable_pause_menu
-    beat_anim
     rest 24
 return
 

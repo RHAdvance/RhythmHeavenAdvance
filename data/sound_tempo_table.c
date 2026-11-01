@@ -166,5 +166,6 @@ struct TempoTable sound_tempo_table[] = {
     { &rhythmtweezers_tempo_seqData, 144 },
     { &s_koihoney_bgm_en_seqData, 137 },
     { &s_wish_bgm_en_seqData, 204 },
+    { &s_hitmegeton1_end_seqData, 125 },
     { NULL, 0 }
 };
