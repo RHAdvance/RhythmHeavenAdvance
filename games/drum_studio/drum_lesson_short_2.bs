@@ -88,7 +88,7 @@ return
 text D_08061ffc
     .ascii "Okay, let's mix it up!\n"
     .ascii "I moved one of the bass\n"
-    .ascii "beats back a little bit.\n"
+    .ascii "beats forward a bit.\n"
     .asciz "It's tricky, but doable!"
 endtext
 
