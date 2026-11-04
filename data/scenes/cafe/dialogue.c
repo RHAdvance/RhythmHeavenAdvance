@@ -581,7 +581,7 @@ const char *cafe_dialogue_drum_lessons[] = {
     /* ------------------------------------------------ */
         "\n"
         "You ever check out the drum\n"
-        "lessons in the bonus corner?\n"
+        "lessons in the Bonus Corner?\n"
         "\n",
     /* ------------------------------------------------ */
         "\n"
