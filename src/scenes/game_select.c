@@ -1178,7 +1178,7 @@ void game_select_read_dpad_inputs(void) {
     #ifdef PLUS
     if ((levelID > LEVEL_NULL) && (get_campaign_from_level_id(levelID) == D_030046a8->data.currentCampaign)
     && (D_030046a8->data.campaignState == CAMPAIGN_STATE_ACTIVE)){
-    play_sound_w_pitch_volume(&s_menu_cursor1_seqData, INT_TO_FIXED(1.0), INT_TO_FIXED(5.0));
+    play_sound_w_pitch_volume(&s_menu_cursor1_seqData, INT_TO_FIXED(1.0), INT_TO_FIXED(4.65));
     }
     else
     {
