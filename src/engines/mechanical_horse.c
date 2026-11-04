@@ -355,7 +355,13 @@ void func_08041970(void) {
 
 #include "asm/engines/mechanical_horse/asm_0804231c.s"
 
-#include "asm/engines/mechanical_horse/asm_08042438.s"
+void func_08042438(void) {
+    gMechanicalHorse->unk2d0 = FIXED_TO_INT(gMechanicalHorse->unk2f0 * gMechanicalHorse->horse[0].unk10);
+    gMechanicalHorse->unk2d4 += gMechanicalHorse->unk2d0 / 2;
+    gMechanicalHorse->unk2d8 += gMechanicalHorse->unk2d0;
+    scene_set_bg_layer_pos(1, FIXED_TO_INT(gMechanicalHorse->unk2d4), 0);
+    scene_set_bg_layer_pos(2, FIXED_TO_INT(gMechanicalHorse->unk2d8), 0);
+}
 
 void func_0804249c(void) {
     u32 temp = gMechanicalHorse->unk2e4;
