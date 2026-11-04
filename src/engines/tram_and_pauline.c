@@ -74,7 +74,26 @@ void func_080400d0(u8 fox) {
 
 #include "asm/engines/tram_and_pauline/asm_08040a80.s"
 
-#include "asm/engines/tram_and_pauline/asm_08040a84.s"
+// Cue - Hit
+void tram_pauline_cue_hit(struct Cue *cue, struct TramPaulineCue *info, u32 pressed, u32 released) {
+    struct Animation *anim;
+    s32 sprite;
+    struct SpriteHandler *temp;
+    
+    func_0804016c(info->character);
+
+    temp = gSpriteHandler;
+
+    sprite = gTramPauline->foxSprites[info->character];
+    
+    if (gTramPauline->version == 1 || gTramPauline->version == 3) {
+        anim = anim_circus_fox_transform_effect;
+    } else {
+        anim = anim_casual_fox_transform_effect;
+    }
+    sprite_set_anim(temp, sprite, anim, 0, 1, 0x7f, 2);
+    sprite_set_visible(gSpriteHandler, gTramPauline->foxSprites[info->character], TRUE);
+}
 
 #include "asm/engines/tram_and_pauline/asm_08040b04.s"
 
