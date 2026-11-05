@@ -699,7 +699,7 @@ const char *cafe_dialogue_coffee[] = {
     /* ------------------------------------------------ */
         "\n"
         "Me? I can make coffee, but...\n"
-        "need to work on the rest. Heh...\n"
+        "I need to work on the rest. Heh...\n"
         "\n",
     /* ------------------------------------------------ */
     END_OF_DIALOGUE
