@@ -29,7 +29,7 @@ const char D_0806a315[] =
     "\x01\x4c" "　Vocals:　　Roxby";
 
 const char D_0806a32c[] =
-    "\x01\x4c" "　Lyrics/Music:\n"
+    "\x01\x4c" "　Lyrics / Music:\n"
     "　　　　　　　　Tsunku♂\n"
     "　Arrangement:\n"
     "　　　　　　　　Koichi Yuasa";
