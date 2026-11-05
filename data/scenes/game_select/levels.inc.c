@@ -764,7 +764,7 @@ struct LevelData level_data_table[] = {
         /* Epilogue GFX  */ epilogue_remix3_gfx_tables,
         /* Epilogue Text */ {
             /* TRY_AGAIN */ "Their love ended in... heartbreak...",
-            /* OK        */ "Their love ended in... a good friendship.",
+            /* OK        */ "Their love ended in... a solid friendship.",
             /* SUPERB    */ "Their love ended in... a tender marriage!"
         },
         /* Level Flags   */ LEVEL_DATA_FLAG_NO_PRACTICE
