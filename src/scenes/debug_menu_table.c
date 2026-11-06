@@ -296,7 +296,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Rhythm Toys (Confession Machine) */ {
         /* Scene */ &scene_love_machine,
-        /* Label */ "‚k‚‚–‚…@‚l‚‚ƒ‚ˆ‚‰‚‚…",
+        /* Label */ "‚b‚‚‚†‚…‚“‚“‚‰‚‚@‚l‚‚ƒ‚ˆ‚‰‚‚…",
         /* Epil. */ FALSE
     },
     /* Rhythm Toys (Rap Machine) */ {
