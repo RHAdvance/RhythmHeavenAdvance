@@ -572,7 +572,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Remix 1 (Extra) */ {
         /* Scene */ &scene_remix_1_extra,
-        /* Label */ "‚q‚…‚‚‰‚˜@‚P@i‚d‚˜‚”‚’‚j@‚v‚h‚o",
+        /* Label */ "‚d‚˜‚”‚’‚ ‚q‚…‚‚‰‚˜@‚v‚h‚o",
         /* Epil. */ TRUE
     },
     /* Drum Intro (Unused 1) */ {
