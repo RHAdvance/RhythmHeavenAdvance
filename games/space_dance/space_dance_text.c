@@ -11,7 +11,7 @@ const char D_0805e2ac[] = "Your disorganisation was visual.";
 const char D_0805e2ac[] = "Your disorganization was visual.";
 #endif
 
-const char D_0805e2c8[] = "You were synched!";
+const char D_0805e2c8[] = "You were synced!";
 
 const char D_0805e2e4[] = "Panic was expressed.";
 

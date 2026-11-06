@@ -452,7 +452,7 @@ void cafe_print_dialogue(void) {
                     strcat(s, "So hey, I hear you got a Perfect rank on ");
                     strcat(s, "\0051" "\0015");
                     strcat(s, levelName);
-                    strcat(s, "\0054" "\0018" "!\n");
+                    strcat(s, "\0054" "\0018" "!\n\n");
                     string = s;
                     activity->levelID = LEVEL_NULL;
                     dialogueTask = CAFE_EV_CAMPAIGN_CLEAR_00;
@@ -573,7 +573,8 @@ void cafe_print_dialogue(void) {
                 // <Leave it to me!>
                 string = "\n"
                          "\n"
-                         "\0032" "\001l" "\0051" "\0015" "Leave it to me!" "\0030" "\001s" "\0054" "\0018";
+                         "\0032" "\001l" "\0051" "\0015" "Leave it to me!" "\0030" "\001s" "\0054" "\0018"
+                         "\n";
                 gCafe->textAdvHold = 3;
                 gCafe->bgEvent = CAFE_BG_EV_HELPING;
                 dialogueTask = CAFE_EV_OFFER_CLEAR_02_Y;
@@ -590,9 +591,9 @@ void cafe_print_dialogue(void) {
                 // it with your own strength.
                 // Excellent!
                 string = "\n"
-                         "That's the spirit! Stay\n"
-                         "confident, and stick\n"
-                         "to it!";
+                         "That's the spirit!\n"
+                         "Stay confident,\n"
+                         "and stick to it!";
                 dialogueTask = CAFE_EV_OFFER_CLEAR_02_N;
             }
             break;
@@ -601,9 +602,9 @@ void cafe_print_dialogue(void) {
             // I hope the next game will go
             // much better for you.
             // Tell me about it next time.
-            string = "...And that's done. Wonder what the\n"
-                     "next game will be like?\n"
-                     "Hope it goes better!\n"
+            string = "...And that's done.\n"
+                     "Wonder what the next game\n"
+                     "will be like? Hope it goes better!\n"
                      "See you around.";
             dialogueExhausted = TRUE;
             break;
@@ -674,7 +675,8 @@ void cafe_print_dialogue(void) {
             // Crazy awesome!!
             string = "\0032" "\001l" "\0051" "\0015" "\n"
                      "Now,\n"
-                     "that's perfect!" "\0030" "\001s" "\0054" "\0018";
+                     "that's perfect!" "\0030" "\001s" "\0054" "\0018"
+                     "\n";
             gCafe->bgEvent = CAFE_BG_EV_CHEER_02;
             gCafe->textAdvHold = 4;
             dialogue = cafe_dialogue_all_perfects_clear;

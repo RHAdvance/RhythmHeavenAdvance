@@ -96,11 +96,13 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
         /* Label */ "Warning",
         /* Epil. */ FALSE
     },
+    #ifdef RUMBLE
     /* GBP Handshake */ {
         /* Scene */ &scene_gbp_handshake,
         /* Label */ "GBP Handshake",
         /* Epil. */ FALSE
     },
+    #endif
     /* Disclaimer */ {
         /* Scene */ &scene_disclaimer,
         /* Label */ "Disclaimer",
@@ -329,7 +331,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Rhythm Tweezers (Extra) */ {
         /* Scene */ &scene_rhythm_tweezers_extra,
-        /* Label */ "Rhythm Tweezers (Extra)",
+        /* Label */ "Rhythm Tweezers (Extra) WIP",
         /* Epil. */ TRUE
     },
     /* Marching Orders */ {
@@ -344,7 +346,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Marching Orders (Extra) */ {
         /* Scene */ &scene_marching_orders_extra,
-        /* Label */ "Marching Orders (Extra)",
+        /* Label */ "Marching Orders (Extra) WIP",
         /* Epil. */ TRUE
     },
     /* Spaceball */ {
@@ -360,7 +362,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Spaceball (Extra) */ {
         /* Scene */ &scene_spaceball_extra,
-        /* Label */ "Spaceball (Extra)",
+        /* Label */ "Spaceball (Extra) WIP",
         /* Epil. */ TRUE
     },
     /* The Clappy Trio */ {

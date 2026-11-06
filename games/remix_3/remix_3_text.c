@@ -29,7 +29,7 @@ const char D_0806a0fd[] =
     "\x05\x31" "\x01\x35" " Vocals:  Bellajenna";
 
 const char D_0806a118[] =
-    "\x05\x31" "\x01\x35" " Music:  Tsunku♂";
+    "\x05\x31" "\x01\x35" " Lyrics / Music:  Tsunku♂";
 
 const char D_0806a134[] =
     "\x05\x31" "\x01\x35" " Arrangement: H. D. Suzuki ";

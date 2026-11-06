@@ -360,7 +360,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "The☆Bon Odori\n"
             "\n"
             "Vocals: Ami Tokito\n"
-            "Lyrics/Music: Tsunku♂\n"
+            "Lyrics / Music: Tsunku♂\n"
             "Arrangement: Koichi Yuasa (The☆Bon Odori) /\n"
             "Kaoru Okubo (The☆Bon Dance)\n"
             "Translation: castIeRook, Mizuka Lover\n"
@@ -434,7 +434,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "English Vocals: Bellajenna\n"
             "Japanese Vocals: Ami Tokito\n"
-            "Lyrics/Music: Tsunku♂\n"
+            "Lyrics / Music: Tsunku♂\n"
             "Arrangement: Hideyuki \"Daichi\" Suzuki\n"
             "Translation: castIeRook, Mizuka Lover\n"
             "\n"
@@ -527,7 +527,7 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
             "\n"
             "English Vocals: Roxby\n"
             "Japanese Vocals: Soshi Tanaka\n"
-            "Lyrics/Music: Tsunku♂\n"
+            "Lyrics / Music: Tsunku♂\n"
             "Arrangement: Koichi Yuasa\n"
             "Translation: castIeRook\n"
             "\n"
@@ -1190,8 +1190,13 @@ struct ReadingMaterial reading_material_table[TOTAL_READING_MATERIALS] = {
         /* TITLE ---------------------------------------------------------- */
             "Advance Credits",
         /* BODY ----------------------------------------------------------- */
+            #ifdef PARADISE
+            "Rhythm Paradise Advance is a fan translation\n"
+            "project made entirely by fans of the original series.\n"
+            #else
             "Rhythm Heaven Advance is a fan translation project\n"
             "made entirely by fans of the original series.\n"
+            #endif
             "\n"
             "This project wouldn't have been possible without the\n"
             "help of all the incredible people that came together!\n"

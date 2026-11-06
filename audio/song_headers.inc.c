@@ -91,7 +91,11 @@ struct SongHeader Lesson2_seqData = {
     /* MIDI Sequence */ Lesson2_mid,
     /* Sound Player  */ MUSIC_PLAYER_0,
     /* Bank Number   */ INST_BANK_13,
+    #ifdef PLUS
+    /* Volume        */ 85,
+    #else
     /* Volume        */ 127,
+    #endif
     /* Priority      */ 50,
     /* unk8          */ 0xff,
     /* Song Title    */ Lesson2_seqName,
@@ -103,7 +107,11 @@ struct SongHeader Lesson3_seqData = {
     /* MIDI Sequence */ Lesson3_mid,
     /* Sound Player  */ MUSIC_PLAYER_0,
     /* Bank Number   */ INST_BANK_13,
+    #ifdef PLUS
+    /* Volume        */ 70,
+    #else
     /* Volume        */ 115,
+    #endif
     /* Priority      */ 50,
     /* unk8          */ 0xff,
     /* Song Title    */ Lesson3_seqName,

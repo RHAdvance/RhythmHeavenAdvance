@@ -21,15 +21,15 @@ const char D_0805db94[] = "The Ringmaster's advice:";
 
 const char D_0805dba0[] = "Hi, I'm Tram...";
 
-const char D_0805dbb0[] = "and I'm Pauline...";
+const char D_0805dbb0[] = "and I'm Pauline.";
 
-const char D_0805dbc0[] = "and together, we trampoline!";
+const char D_0805dbc0[] = "Together, we trampoline!";
 
 const char D_0805dbd8[] = "At the peak of our jumps,";
 
-const char D_0805dbf4[] = "press "CHAR_DPAD_UTF8" for me,";
+const char D_0805dbf4[] = "press "CHAR_DPAD_UTF8" for me...";
 
-const char D_0805dc0c[] = "and "CHAR_A_BUTTON_UTF8" for me,";
+const char D_0805dc0c[] = "press "CHAR_A_BUTTON_UTF8" for me...";
 
 const char D_0805dc24[] = "and we'll transform!";
 
