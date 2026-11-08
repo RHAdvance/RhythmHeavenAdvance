@@ -139,7 +139,11 @@ struct CueDefinition rat_race_cue_dash = {
     /* Func. Hit       */ rat_race_cue_hit_dash,
     /* Func. Barely    */ rat_race_cue_barely,
     /* Func. Miss      */ rat_race_cue_miss,
+    #ifdef PLUS
+    /* SFX Spawn       */ &s_rat_squeak_seqData,
+    #else
     /* SFX Spawn       */ NULL,
+    #endif
     /* SFX Hit         */ &s_rat_dash_seqData,
     /* SFX Barely      */ &s_f_rat_error_seqData,
     /* SFX Miss        */ &s_f_rat_error_seqData,
