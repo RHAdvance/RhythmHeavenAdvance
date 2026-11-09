@@ -58,7 +58,7 @@ return
 text D_080614cc
     .ascii "\n"
     .ascii "Here's a new drumbeat!\n"
-    .ascii "Alternate both ‡O and ‡M \n"
+    .ascii "Alternate both î€… and î€† \n"
     .asciz "for the fast beats.\n"
 endtext
 
@@ -137,8 +137,8 @@ endtext
 
 text D_08061740
     .ascii "\n"
-    .ascii "Strike the snare with ‡M or\n"
-    .ascii "by pressing Left on ‡O!\n"
+    .ascii "Strike the snare with î€† or\n"
+    .ascii "by pressing Left on î€…!\n"
     .asciz "\n"
 endtext
 

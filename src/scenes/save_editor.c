@@ -4,6 +4,7 @@
 #include "graphics/save_editor/save_editor_graphics.h"
 #include "reading.h"
 #include "studio.h"
+#include "text.h"
 
 static const struct SaveEditorFlag sAdvanceFlags[] = {
     { "Save Converted",          0 },
@@ -176,7 +177,7 @@ void save_editor_scene_start(void *sVar, s32 dArg) {
     save_editor_scene_init_gfx1();
 
     save_editor_clear_bg_text();
-    save_editor_draw_bg_text("@–@‚q|‚h‚p@‚r‚‚–‚…@‚d‚„‚‰‚”‚‚’@–", 4, 0, 0);
+    save_editor_draw_bg_text(" * R-IQ Save Editor *", 4, 0, 0);
 
     set_next_scene(&scene_debug_menu);
     save_editor_render_page();
@@ -585,9 +586,9 @@ void save_editor_render_page(void) {
     }
     save_editor_draw_line(SE_LINE_HEADER, 0, buf, 8, 24);
 
-    save_editor_draw_line(SE_LINE_HINT_A, 0, "‡K/‡L: Change Current Save Member", 8, 48);
+    save_editor_draw_line(SE_LINE_HINT_A, 0, ""CHAR_L_SHOULDER_BUTTON_UTF8"/"CHAR_R_SHOULDER_BUTTON_UTF8": Change Current Save Member", 8, 48);
 
-    save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT (+ ‡K): Exit (and Save)", 8, 64);
+    save_editor_draw_line(SE_LINE_HINT_B, 0, "SELECT (+ "CHAR_L_SHOULDER_BUTTON_UTF8"): Exit (and Save)", 8, 64);
 
     if (m->kind == SE_KIND_BITFLAGS && m->flagCount > 0) {
         void* ptr = save_editor_get_value_ptr(member, arrIdx, 0);
@@ -596,7 +597,7 @@ void save_editor_render_page(void) {
         for (i = 0; i < 8; i++) {
             if (i < (u32)m->flagCount) {
                 const struct SaveEditorFlag *f = &m->flags[i];
-                snprintf(buf, sizeof(buf), "%s %-22s %s", (i == flagIdx) ? ">" : "\x87\x53  ", f->name, (raw >> f->bit) & 1u ? "[!]" : "[ ]");
+                snprintf(buf, sizeof(buf), "%s %-22s %s", (i == flagIdx) ? ">" : CHAR_1_PIXEL_GAP_UTF8"  ", f->name, (raw >> f->bit) & 1u ? "[!]" : "[ ]");
                 save_editor_draw_line(SE_LINE_FLAG_0 + i, 0, buf, (i >= 4) ? 128 : 0, 80 + (i * 18) - ((i >= 4) ? 72 : 0));
             } else {
                 save_editor_clear_line(SE_LINE_FLAG_0 + i);

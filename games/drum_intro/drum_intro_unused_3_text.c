@@ -117,12 +117,12 @@ const char D_0805e5f8[] =
     "\n"
     "Next, let's start off the song\n"
     "with a crash.\n"
-    "Press ‡L to hit the cymbals.\n";
+    "Press "CHAR_R_SHOULDER_BUTTON_UTF8" to hit the cymbals.";
 
 const char D_0805e64c[] = 
     "\n"
     "You only need to press both\n"
-    "‡N and ‡L at the same time\n"
+    ""CHAR_B_BUTTON_UTF8" and "CHAR_R_SHOULDER_BUTTON_UTF8" at the same time\n"
     "once.\n";
 
 const char D_0805e684[] = 

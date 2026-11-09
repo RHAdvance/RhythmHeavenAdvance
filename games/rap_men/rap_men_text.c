@@ -19,48 +19,48 @@ const char D_0805e9d8[] = "The \"AWESOME!\" lines were nothing less!";
 
 const char D_0805ea04[] = "RAPNOTES from the Boys:";
 
-const char D_0805ea18[] = "‚k‚…‚”f‚“@‚‡‚…‚”@‚‰‚‚”‚@‚‰‚”D";
+const char D_0805ea18[] = "Let's get into it.";
 
-const char D_0805ea34[] = "‚v‚…@‚“‚ˆ‚‚•‚Œ‚„@‚„‚@‚”‚ˆ‚‚”@‚‚‡‚‚‰‚D";
+const char D_0805ea34[] = "We should do that again.";
 
-const char D_0805ea44[] = "‚x‚D";
+const char D_0805ea44[] = "Yo.";
 
-const char D_0805ea50[] = "‚v‚‚‚‚@‚’‚‚@‚”‚‚‡‚…‚”‚ˆ‚…‚’H";
+const char D_0805ea50[] = "Wanna rap together?";
 
-const char D_0805ea6c[] = "‚k‚…‚‚‚…@‚‚‚’‚…‚‚‹@‚‰‚”@‚„‚‚—‚@‚†‚‚’@‚™‚‚•D";
+const char D_0805ea6c[] = "Lemme break it down for you.";
 
-const char D_0805ea84[] = "‚o‚’‚…‚“‚“@T@‚‚”@‚”‚ˆ‚…@g‚t‚ˆIh";
+const char D_0805ea84[] = "Press "CHAR_A_BUTTON_UTF8" at the ã€Uh!ã€";
 
-const char D_0805eaac[] = "‚f‚‰‚–‚…@‚‰‚”@‚@‚Œ‚‰‚“‚”‚…‚D";
+const char D_0805eaac[] = "Give it a listen.";
 
-const char D_0805eac4[] = "‚x‚‚•@‚‡‚‚”@‚‰‚”H";
+const char D_0805eac4[] = "You got it?";
 
-const char D_0805ead0[] = "‚s‚’‚™@‚‰‚”@‚‚•‚”I";
+const char D_0805ead0[] = "Try it out!";
 
-const char D_0805eae8[] = "‚c‚@‚™‚‚•‚’@‚‚‚…‚“‚”I";
+const char D_0805eae8[] = "Do your best!";
 
-const char D_0805eaf8[] = "‚h‚”f‚“@‚‚”@‚”‚ˆ‚…@g‚t‚ˆIh";
+const char D_0805eaf8[] = "It's at the ã€Uh!ã€";
 
 #ifdef BRIT
-const char D_0805eb14[] = "‚x‚‚•@‚ˆ‚‚–‚…@‚”‚@‚‚’‚…‚“‚“@T@‚‚”@‚”‚ˆ‚…@g‚t‚ˆIh";
+const char D_0805eb14[] = "You have to press "CHAR_A_BUTTON_UTF8" at the ã€Uh!ã€";
 #else
-const char D_0805eb14[] = "‚x‚‚•@‚‡‚‚”‚”‚@‚‚’‚…‚“‚“@T@‚‚”@‚”‚ˆ‚…@g‚t‚ˆIh";
+const char D_0805eb14[] = "You gotta press "CHAR_A_BUTTON_UTF8" at the ã€Uh!ã€";
 #endif
 
-const char D_0805eb34[] = "‚n‚jI@‚x‚‚•f‚–‚…@‚‡‚‚”@‚‰‚”I";
+const char D_0805eb34[] = "OK! You've got it!";
 
-const char D_0805eb3c[] = "‚s‚ˆ‚‚”@‚—‚‚“@‚@g.b‚ˆ‚•‚ˆH.8h@‚Œ‚‰‚‚…D";
+const char D_0805eb3c[] = "That was a ã€.bhuh?.8ã€ line.";
 
-const char D_0805eb6c[] = "‚m‚‚—@‚Œ‚…‚”f‚“@‚”‚’‚™@‚@g.9‚™‚@‚†‚…‚…‚Œ@‚‚…H.8h@‚Œ‚‰‚‚…D";
+const char D_0805eb6c[] = "Now let's try the ã€.9ya feel me?.8ã€ line.";
 
-const char D_0805eb94[] = "‚s‚‚‹‚…@‚@‚Œ‚‰‚“‚”‚…‚D";
+const char D_0805eb94[] = "Take a listen.";
 
-const char D_0805ebac[] = "‚x‚‚•@‚‡‚‚”@‚”‚ˆ‚‰‚“I";
+const char D_0805ebac[] = "You got this!";
 
-const char D_0805ebc4[] = "‚`‚Œ‚Œ@‚”‚ˆ‚‚”f‚“@‚Œ‚…‚†‚”@‚‰‚“@‚‚•‚’@g.a‚`‚v‚d‚r‚n‚l‚dI.8h@‚Œ‚‰‚‚…D";
+const char D_0805ebc4[] = "All that's left is our ã€.aAWESOME!.8ã€ line.";
 
-const char D_0805ebf4[] = "‚f‚‰‚–‚…@‚‰‚”@‚@‚Œ‚‰‚“‚”‚…‚DDD";
+const char D_0805ebf4[] = "Give it a listen...";
 
-const char D_0805ec0c[] = "‚m‚‚—@‚†‚‚Œ‚Œ‚‚—@‚‰‚”@‚•‚I";
+const char D_0805ec0c[] = "Now follow it up!";
 
-const char D_0805ec24[] = "‚n‚jI@‚x‚‚•f‚’‚…@‚‚’‚…‚”‚”‚™@g.a‚‚—‚…‚“‚‚‚….8h@‚‚”@‚”‚ˆ‚‰‚“I";
+const char D_0805ec24[] = "OK! You're pretty ã€.aawesome.8ã€ at this!";

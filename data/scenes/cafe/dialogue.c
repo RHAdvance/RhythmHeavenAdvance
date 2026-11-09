@@ -39,7 +39,7 @@
 const char *cafe_dialogue_first_visit[] = {
     /* ------------------------------------------------ */
         "\n"
-        "Welcome to the caf‡Q.\n"
+        "Welcome to the cafÃ©.\n"
         "This your first time here?\n"
         "\n",
     /* ------------------------------------------------ */

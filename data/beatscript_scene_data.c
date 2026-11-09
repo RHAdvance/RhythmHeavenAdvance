@@ -170,15 +170,3 @@ u16 D_089ccc80[] = {
 };
 
 
-// [D_089ccc94] Full Width Characters
-char D_089ccc94[] = "‚‚‚‚ƒ‚„‚…‚†‚‡‚ˆ‚‰‚Š‚‹‚Œ‚‚‚‚‚‘‚’‚“‚”‚•‚–‚—‚˜‚™‚š";
-
-const char D_0804f370[] = "Q";
-
-const char D_0804f374[] = "I";
-
-const char D_0804f378[] = "H";
-
-const char D_0804f37c[] = "C";
-
-const char D_0804f380[] = "|";
