@@ -1,6 +1,9 @@
 #include "utf_8.h"
 
 
+// returns `TRUE` if a utf8 codepoint was successfully decoded, or,
+// returns `FALSE` if the string was invalid or empty,
+// the codepoint becomes first byte of the string when non-empty
 s32 utf8_decode_codepoint(const char **string, s32 *codepoint) {
     const u8 *s;
     s32 value;
