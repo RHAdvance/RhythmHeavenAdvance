@@ -296,7 +296,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Rhythm Toys (Confession Machine) */ {
         /* Scene */ &scene_love_machine,
-        /* Label */ "Love Machine",
+        /* Label */ "Confession Machine",
         /* Epil. */ FALSE
     },
     /* Rhythm Toys (Rap Machine) */ {
@@ -572,7 +572,7 @@ struct DebugMenuEntry debug_menu_entry_table[] = {
     },
     /* Remix 1 (Extra) */ {
         /* Scene */ &scene_remix_1_extra,
-        /* Label */ "Remix 1 (Extra) WIP",
+        /* Label */ "Extra Remix WIP",
         /* Epil. */ TRUE
     },
     /* Drum Intro (Unused 1) */ {
