@@ -31,51 +31,51 @@ define_gameplay_scene scene_rap_women_unused, script_rap_women_unused_entry
 @ Rap Women (Unused) - Text
 
 text text_rap_women_unused_juji_desu_ka
-    .asciz ".b:1‚h‚”f‚“@‚P‚O@‚`‚lC@.b:0‚ˆ‚•‚ˆH.8:1"
+    .asciz ".b:1It's 10 AM, .b:0huh?.8:1"
 endtext
 
 text text_rap_women_unused_oyatsu_desu_ka
-    .asciz ".b:1‚h‚”f‚“@‚“‚‚‚ƒ‚‹@‚”‚‰‚‚…C@.b:0‚ˆ‚•‚ˆH.8:1"
+    .asciz ".b:1It's snack time, .b:0huh?.8:1"
 endtext
 
 text text_rap_women_unused_naisho_desu_ka
-    .asciz ".b:1‚v‚ˆ‚f‚“@‚”‚@‚‹‚‚‚—C@.b:0‚ˆ‚•‚ˆH.8:1"
+    .asciz ".b:1Who's to know, .b:0huh?.8:1"
 endtext
 
 text text_rap_women_unused_kare_no_oyatsu_da_ne
-    .asciz ".9:1‚s‚ˆ‚…‚“‚…@‚‚’‚…@‚‚Œ‚Œ@‚”‚ˆ‚…‚‰‚’@‚“‚‚‚ƒ‚‹‚“C.9:0@‚™‚@‚“‚…‚…H.8:1"
+    .asciz ".9:1These are all their snacks,.9:0 ya see?.8:1"
 endtext
 
 text text_rap_women_unused_tabeteii_kamo_ne
-    .asciz ".9:1‚d‚‚”@f‚…‚@‚‚Œ‚Œ@‚•‚C@.9:0‚™‚@‚†‚…‚…‚Œ@‚‚…H.8:1"
+    .asciz ".9:1Eat 'em all up, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_women_unused_aketeii_kamo_ne
-    .asciz ".9:1‚n‚‚…‚@f‚…‚@‚•‚C@.9:0‚™‚@‚†‚…‚…‚Œ@‚‚…H.8:1"
+    .asciz ".9:1Open 'em up, .9:0ya feel me?.8:1"
 endtext
 
 text text_rap_women_unused_oyatsu_wa_saikou
-    .asciz ".a:1‚r‚‚‚ƒ‚‹‚‰‚‚‡@‚‰‚“@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
+    .asciz ".a:1Snacking is .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_women_unused_kibun_wa_saikou
-    .asciz ".a:1‚h@‚†‚…‚…‚Œ@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
+    .asciz ".a:1I feel .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_women_unused_amakute_saikou
-    .asciz ".a:1‚r‚—‚…‚…‚”‚“@‚‚’‚…@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
+    .asciz ".a:1Sweets are .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_women_unused_betsubara_saikou
-    .asciz ".a:1‚b‚‚‹‚…‚“@‚‚’‚…@.a:0‚“‚@‚`‚v‚d‚r‚n‚l‚dI.8:1"
+    .asciz ".a:1Cakes are .a:0so AWESOME!.8:1"
 endtext
 
 text text_rap_women_unused_kare_ni_wa_naisho
-    .asciz ".a:1‚b‚Œ‚•‚…‚Œ‚…‚“‚“@‚”‚ˆ‚‚”@‚—‚…@.a:0‚r‚s‚n‚k‚d@f‚d‚lI.8:1"
+    .asciz ".a:1Clueless that we .a:0STOLE 'EM!.8:1"
 endtext
 
 text text_rap_women_unused_dare_ni_mo_naisho
-    .asciz ".a:1‚s‚…‚Œ‚Œ@f‚…‚@‚—‚…@‚‚’‚…@.a:0‚k‚n‚`‚s‚g‚r‚n‚l‚dI.8:1"
+    .asciz ".a:1Tell 'em we are .a:0LOATHSOME!.8:1"
 endtext
 
 
