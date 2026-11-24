@@ -715,22 +715,22 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(5.0)
         },
         /* CMD_ATTENTION */ {
-            /* Sound  */ &s_guntai_v_zentai1_seqData,
+            /* Sound  */ &s_guntai_v_zentai1_tempo_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_MARCH */ {
-            /* Sound  */ &s_guntai_v_susume_seqData,
+            /* Sound  */ &s_guntai_v_susume_tempo_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_HALT */ {
-            /* Sound  */ &s_guntai_v_tomare_seqData,
+            /* Sound  */ &s_guntai_v_tomare_tempo_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_RIGHT_FACE */ {
-            /* Sound  */ &s_guntai_v_migi_muke1_seqData,
+            /* Sound  */ &s_guntai_v_migi_muke1_tempo_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
@@ -745,7 +745,7 @@ struct MarchingSfxData marching_sfx_table[][12] = {
             /* Pitch  */ INT_TO_FIXED(0.0)
         },
         /* CMD_LEFT_FACE */ {
-            /* Sound  */ &s_guntai_v_hidari_muke1_seqData,
+            /* Sound  */ &s_guntai_v_hidari_muke1_tempo_seqData,
             /* Volume */ INT_TO_FIXED(1.0),
             /* Pitch  */ INT_TO_FIXED(0.0)
         },

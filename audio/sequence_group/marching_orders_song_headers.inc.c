@@ -215,6 +215,60 @@ struct SongHeader s_f_marcher2_v_hidari_seqData = {
     /* Song Number   */ 709
 };
 
+struct SongHeader s_guntai_v_zentai1_tempo_seqData = {
+    /* MIDI Sequence */ s_guntai_v_zentai1_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_5,
+    /* Volume        */ 115,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1590
+};
+
+struct SongHeader s_guntai_v_susume_tempo_seqData = {
+    /* MIDI Sequence */ s_guntai_v_susume_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_5,
+    /* Volume        */ 100,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1591
+};
+
+struct SongHeader s_guntai_v_tomare_tempo_seqData = {
+    /* MIDI Sequence */ s_guntai_v_tomare_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_5,
+    /* Volume        */ 90,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1592
+};
+
+struct SongHeader s_guntai_v_migi_muke1_tempo_seqData = {
+    /* MIDI Sequence */ s_guntai_v_migi_muke1_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_5,
+    /* Volume        */ 80,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1593
+};
+
+struct SongHeader s_guntai_v_hidari_muke1_tempo_seqData = {
+    /* MIDI Sequence */ s_guntai_v_hidari_muke1_mid,
+    /* Sound Player  */ SFX_PLAYER_1,
+    /* Bank Number   */ INST_BANK_5,
+    /* Volume        */ 90,
+    /* Priority      */ 90,
+    /* unk8          */ 0x40,
+    /* Song Title    */ NULL,
+    /* Song Number   */ 1594
+};
 // -------------------------------------------------------------------------
 
 struct SongHeader s_guntai_v_zentai_a_seqData = {

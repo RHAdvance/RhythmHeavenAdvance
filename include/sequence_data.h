@@ -462,6 +462,11 @@ extern struct SongHeader s_heat_v_kirai_en_seqData;
 extern struct SongHeader s_heat_v_seki_en_seqData;
 // -------------------------------------------------------------
 extern struct SongHeader s_heat_machine_bgm_seqData;
+extern struct SongHeader s_guntai_v_zentai1_tempo_seqData;
+extern struct SongHeader s_guntai_v_susume_tempo_seqData;
+extern struct SongHeader s_guntai_v_tomare_tempo_seqData;
+extern struct SongHeader s_guntai_v_migi_muke1_tempo_seqData;
+extern struct SongHeader s_guntai_v_hidari_muke1_tempo_seqData;
 extern struct SongHeader s_metro_tin_seqData;
 extern struct SongHeader s_metro_count1_seqData;
 extern struct SongHeader s_metro_count2_seqData;

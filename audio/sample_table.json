@@ -6373,6 +6373,26 @@
         {
             "sample": "noise_4.wav",
             "pitch": "C5"
+        },
+        {
+            "sample": "sample_076_fast.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sample_078_fast.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sample_080_fast.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sample_082_fast.wav",
+            "pitch": "C5"
+        },
+        {
+            "sample": "sample_083_fast.wav",
+            "pitch": "C5"
         }
     ]
 }
