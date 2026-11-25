@@ -42,7 +42,7 @@ struct Animation anim_rank_results_medal_get[] = {
     /* End */ END_ANIMATION
 };
 
-// [D_0890b724] "Ç≈Ç‡" ("but")
+// [D_0890b724] "„Åß„ÇÇ" ("but")
 struct Animation anim_rank_results_comment_append[] = {
     /* 000 */ { results_level_cel006, 4 },
     /* End */ END_ANIMATION
